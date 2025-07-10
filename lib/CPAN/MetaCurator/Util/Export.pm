@@ -81,7 +81,7 @@ sub format_text
 	my(@text)				= grep{length} split(/\n/, $text);
 	@text					= map{s/^-\s+//; s/:$//; $_} @text;
 	my($inside_see_also)	= false;
-	my($module_name_re)		= qr/^(?:[A-Z]+[a-z]{0,}|[a-z]+)/; # A Perl module, hopefully.
+	my($module_name_re)		= qr/^([A-Z]+[a-z]{0,}|[a-z]+)/; # A Perl module, hopefully.
 
 	my($href);
 	my(@lines);
@@ -119,7 +119,7 @@ sub format_text
 			}
 			elsif ($$token{text} =~ $module_name_re) # Eg: builtins, Imager, GD and GD::Polyline.
 			{
-				$$token{href} .= "<a href = 'https://metacpan.org/pod/$$token{text}'>$$token{text}</a>";
+				$$token{text} .= "<a href = 'https://metacpan.org/pod/$$token{text}'>$$token{text}</a>";
 			}
 			elsif ($_ <= $#text - 2)
 			{
