@@ -26,7 +26,7 @@
 	Perl module: CPAN::MetaCurator
 </div>
 <div>
-	V 1.00. 2025-07-10T15:15:57
+	V 1.00. 2025-07-10T15:29:25
 </div>
 <div>
 	<a href = 'http://savage.net.au/'>My home page, for downloading Perl.Wiki.html</a>
@@ -343,7 +343,7 @@ Notes:
 <ul>
 <li id = '32001'><a href = 'https://metacpan.org/pod/App::ProcUtils'>App::ProcUtils: Command line utilities related to processes</a></li>
 <li id = '32002'><a href = 'https://metacpan.org/pod/Command::Runner'>Command::Runner: Run external commands and Perl code refs</a></li>
-<li id = '32003'><a href = 'https://metacpan.org/pod/Daemons'>Daemons: HTTP::Daemon</a></li>
+<li id = '32003'><a href = 'https://metacpan.org/pod/HTTP::Daemon'>HTTP::Daemon: A simple http server class</a></li>
 <li id = '32004'><a href = 'https://metacpan.org/pod/Forks::Super'>Forks::Super: Extensions and convenience methods to manage background processes</a></li>
 <li id = '32005'><a href = 'https://metacpan.org/pod/IPC::Cmd'>IPC::Cmd: Finding and running system commands made easy</a></li>
 <li id = '32006'><a href = 'https://metacpan.org/pod/IPC::Run'>IPC::Run: system() and background procs w/ piping, redirs, ptys (Unix, Win32)</a></li>
@@ -361,26 +361,28 @@ Notes:
 <li id = '32018'><a href = 'https://metacpan.org/pod/Argv, Capture::Tiny'>Argv, Capture::Tiny</a></li>
 <li id = '32019'><a href = 'https://metacpan.org/pod/Child'>Child</a></li>
 <li id = '32020'><a href = 'https://metacpan.org/pod/Forks::Super'>Forks::Super</a></li>
-<li id = '32021'><a href = 'https://metacpan.org/pod/IO::Pipe'>IO::Pipe</a></li>
-<li id = '32022'><a href = 'https://metacpan.org/pod/IPC::Capture'>IPC::Capture</a></li>
-<li id = '32023'><a href = 'https://metacpan.org/pod/IPC::Cmd'>IPC::Cmd</a></li>
-<li id = '32024'><a href = 'https://metacpan.org/pod/IPC::Command::Multiplex'>IPC::Command::Multiplex</a></li>
-<li id = '32025'><a href = 'https://metacpan.org/pod/IPC::Exe'>IPC::Exe</a></li>
-<li id = '32026'><a href = 'https://metacpan.org/pod/IPC::Open3'>IPC::Open3</a></li>
-<li id = '32027'><a href = 'https://metacpan.org/pod/IPC::Open3::Simple'>IPC::Open3::Simple</a></li>
-<li id = '32028'><a href = 'https://metacpan.org/pod/IPC::Run'>IPC::Run</a></li>
-<li id = '32029'><a href = 'https://metacpan.org/pod/IPC::Run3'>IPC::Run3</a></li>
-<li id = '32030'><a href = 'https://metacpan.org/pod/IPC::RunSession::Simple'>IPC::RunSession::Simple</a></li>
-<li id = '32031'><a href = 'https://metacpan.org/pod/IPC::ShellCmd'>IPC::ShellCmd</a></li>
-<li id = '32032'><a href = 'https://metacpan.org/pod/IPC::System::Simple'>IPC::System::Simple</a></li>
-<li id = '32033'><a href = 'https://metacpan.org/pod/ParallelProcessing'>ParallelProcessing</a></li>
-<li id = '32034'><a href = 'https://metacpan.org/pod/POE::Pipe::TwoWay'>POE::Pipe::TwoWay</a></li>
-<li id = '32035'><a href = 'https://metacpan.org/pod/Proc::Background'>Proc::Background</a></li>
-<li id = '32036'><a href = 'https://metacpan.org/pod/Proc::Fork'>Proc::Fork</a></li>
-<li id = '32037'><a href = 'https://metacpan.org/pod/Proc::ProcessTable::Colorizer'>Proc::ProcessTable::Colorizer</a></li>
-<li id = '32038'><a href = 'https://metacpan.org/pod/Proc::Spawn'>Proc::Spawn</a></li>
-<li id = '32039'><a href = 'https://metacpan.org/pod/Spawn::Safe'>Spawn::Safe</a></li>
-<li id = '32040'><a href = 'https://metacpan.org/pod/System::Command'>System::Command</a></li>
+<li id = '32021'>[[HTTPHandling]]</li>
+<li id = '32022'>[[IO]]</li>
+<li id = '32023'><a href = 'https://metacpan.org/pod/IO::Pipe'>IO::Pipe</a></li>
+<li id = '32024'><a href = 'https://metacpan.org/pod/IPC::Capture'>IPC::Capture</a></li>
+<li id = '32025'><a href = 'https://metacpan.org/pod/IPC::Cmd'>IPC::Cmd</a></li>
+<li id = '32026'><a href = 'https://metacpan.org/pod/IPC::Command::Multiplex'>IPC::Command::Multiplex</a></li>
+<li id = '32027'><a href = 'https://metacpan.org/pod/IPC::Exe'>IPC::Exe</a></li>
+<li id = '32028'><a href = 'https://metacpan.org/pod/IPC::Open3'>IPC::Open3</a></li>
+<li id = '32029'><a href = 'https://metacpan.org/pod/IPC::Open3::Simple'>IPC::Open3::Simple</a></li>
+<li id = '32030'><a href = 'https://metacpan.org/pod/IPC::Run'>IPC::Run</a></li>
+<li id = '32031'><a href = 'https://metacpan.org/pod/IPC::Run3'>IPC::Run3</a></li>
+<li id = '32032'><a href = 'https://metacpan.org/pod/IPC::RunSession::Simple'>IPC::RunSession::Simple</a></li>
+<li id = '32033'><a href = 'https://metacpan.org/pod/IPC::ShellCmd'>IPC::ShellCmd</a></li>
+<li id = '32034'><a href = 'https://metacpan.org/pod/IPC::System::Simple'>IPC::System::Simple</a></li>
+<li id = '32035'><a href = 'https://metacpan.org/pod/ParallelProcessing'>ParallelProcessing</a></li>
+<li id = '32036'><a href = 'https://metacpan.org/pod/POE::Pipe::TwoWay'>POE::Pipe::TwoWay</a></li>
+<li id = '32037'><a href = 'https://metacpan.org/pod/Proc::Background'>Proc::Background</a></li>
+<li id = '32038'><a href = 'https://metacpan.org/pod/Proc::Fork'>Proc::Fork</a></li>
+<li id = '32039'><a href = 'https://metacpan.org/pod/Proc::ProcessTable::Colorizer'>Proc::ProcessTable::Colorizer</a></li>
+<li id = '32040'><a href = 'https://metacpan.org/pod/Proc::Spawn'>Proc::Spawn</a></li>
+<li id = '32041'><a href = 'https://metacpan.org/pod/Spawn::Safe'>Spawn::Safe</a></li>
+<li id = '32042'><a href = 'https://metacpan.org/pod/System::Command'>System::Command</a></li>
 </ul>
 </li>
 	<li id = '33'>ClassStuff
@@ -1489,12 +1491,13 @@ Notes:
 <li id = '87061'><a href = 'https://metacpan.org/pod/FileHandling'>FileHandling</a></li>
 <li id = '87062'><a href = 'https://metacpan.org/pod/HashHandling (for CGI params)'>HashHandling (for CGI params)</a></li>
 <li id = '87063'>[[HTTPServers]]</li>
-<li id = '87064'><a href = 'https://metacpan.org/pod/LoggingStuff'>LoggingStuff</a></li>
-<li id = '87065'><a href = 'https://metacpan.org/pod/ParallelProcessing'>ParallelProcessing</a></li>
-<li id = '87066'><a href = 'https://metacpan.org/pod/SwitchStatements'>SwitchStatements</a></li>
-<li id = '87067'><a href = 'https://metacpan.org/pod/SystemMonitoring'>SystemMonitoring</a></li>
-<li id = '87068'><a href = 'https://dev.to/fgasper/perling-and-curling-2i10'>https://dev.to/fgasper/perling-and-curling-2i10</a></li>
-<li id = '87069'><a href = 'https://metacpan.org/pod/My home page http://savage.net.au/index.html for the Mojolicious.Wiki'>My home page http://savage.net.au/index.html for the Mojolicious.Wiki</a></li>
+<li id = '87064'>[[IO]]</li>
+<li id = '87065'><a href = 'https://metacpan.org/pod/LoggingStuff'>LoggingStuff</a></li>
+<li id = '87066'><a href = 'https://metacpan.org/pod/ParallelProcessing'>ParallelProcessing</a></li>
+<li id = '87067'><a href = 'https://metacpan.org/pod/SwitchStatements'>SwitchStatements</a></li>
+<li id = '87068'><a href = 'https://metacpan.org/pod/SystemMonitoring'>SystemMonitoring</a></li>
+<li id = '87069'><a href = 'https://dev.to/fgasper/perling-and-curling-2i10'>https://dev.to/fgasper/perling-and-curling-2i10</a></li>
+<li id = '87070'><a href = 'https://metacpan.org/pod/My home page http://savage.net.au/index.html for the Mojolicious.Wiki'>My home page http://savage.net.au/index.html for the Mojolicious.Wiki</a></li>
 </ul>
 </li>
 	<li id = '88'>HTTPServers
@@ -1558,24 +1561,27 @@ Notes:
 <li id = '93002'><a href = 'https://metacpan.org/pod/IO::AIO'>IO::AIO: Asynchronous/Advanced Input/Output</a></li>
 <li id = '93003'><a href = 'https://metacpan.org/pod/IO::AIO::LoadLimited'>IO::AIO::LoadLimited: A tiny IO::AIO extension that allows to load multiple files</a></li>
 <li id = '93004'><a href = 'https://metacpan.org/pod/IO::AIO::Util'>IO::AIO::Util: Useful functions missing from IO::AIO</a></li>
-<li id = '93005'><a href = 'https://metacpan.org/pod/IO::Interactive'>IO::Interactive: Utilities for interactive I/O</a></li>
-<li id = '93006'>See also:</li>
-<li id = '93007'><a href = 'https://metacpan.org/pod/FileHandling'>FileHandling</a></li>
-<li id = '93008'><a href = 'https://metacpan.org/pod/NetworkProgramming'>NetworkProgramming</a></li>
-<li id = '93009'><a href = 'https://metacpan.org/pod/OfficeFiles'>OfficeFiles</a></li>
-<li id = '93010'><a href = 'https://metacpan.org/pod/OrgDocHandling'>OrgDocHandling</a></li>
-<li id = '93011'><a href = 'https://metacpan.org/pod/ParallelProcessing'>ParallelProcessing</a></li>
-<li id = '93012'><a href = 'https://metacpan.org/pod/RotateLogFiles'>RotateLogFiles</a></li>
-<li id = '93013'><a href = 'https://metacpan.org/pod/SocketStuff'>SocketStuff</a></li>
-<li id = '93014'><a href = 'https://metacpan.org/pod/SpreadsheetStuff'>SpreadsheetStuff</a></li>
-<li id = '93015'>[[SSH]]</li>
-<li id = '93016'>[[TCP/IP]]</li>
-<li id = '93017'><a href = 'https://metacpan.org/pod/UserInput'>UserInput</a></li>
-<li id = '93018'><a href = 'https://metacpan.org/pod/WebPush'>WebPush</a></li>
-<li id = '93019'><a href = 'https://metacpan.org/pod/WebServices'>WebServices</a></li>
-<li id = '93020'><a href = 'https://metacpan.org/pod/YamlStuff'>YamlStuff</a></li>
-<li id = '93021'><a href = 'https://metacpan.org/pod/ZipFiles'>ZipFiles</a></li>
-<li id = '93022'>[[ZMQ]]</li>
+<li id = '93005'><a href = 'https://metacpan.org/pod/IO::Handle'>IO::Handle: Supply object methods for I/O handles</a></li>
+<li id = '93006'><a href = 'https://metacpan.org/pod/IO::Interactive'>IO::Interactive: Utilities for interactive I/O</a></li>
+<li id = '93007'><a href = 'https://metacpan.org/pod/IO::Socket'>IO::Socket: Object interface to socket communications</a></li>
+<li id = '93008'><a href = 'https://metacpan.org/pod/IO::Socket::IP'>IO::Socket::IP: Family-neutral IP socket supporting both IPv4 and IPv6</a></li>
+<li id = '93009'>See also:</li>
+<li id = '93010'><a href = 'https://metacpan.org/pod/FileHandling'>FileHandling</a></li>
+<li id = '93011'><a href = 'https://metacpan.org/pod/NetworkProgramming'>NetworkProgramming</a></li>
+<li id = '93012'><a href = 'https://metacpan.org/pod/OfficeFiles'>OfficeFiles</a></li>
+<li id = '93013'><a href = 'https://metacpan.org/pod/OrgDocHandling'>OrgDocHandling</a></li>
+<li id = '93014'><a href = 'https://metacpan.org/pod/ParallelProcessing'>ParallelProcessing</a></li>
+<li id = '93015'><a href = 'https://metacpan.org/pod/RotateLogFiles'>RotateLogFiles</a></li>
+<li id = '93016'><a href = 'https://metacpan.org/pod/SocketStuff'>SocketStuff</a></li>
+<li id = '93017'><a href = 'https://metacpan.org/pod/SpreadsheetStuff'>SpreadsheetStuff</a></li>
+<li id = '93018'>[[SSH]]</li>
+<li id = '93019'>[[TCP/IP]]</li>
+<li id = '93020'><a href = 'https://metacpan.org/pod/UserInput'>UserInput</a></li>
+<li id = '93021'><a href = 'https://metacpan.org/pod/WebPush'>WebPush</a></li>
+<li id = '93022'><a href = 'https://metacpan.org/pod/WebServices'>WebServices</a></li>
+<li id = '93023'><a href = 'https://metacpan.org/pod/YamlStuff'>YamlStuff</a></li>
+<li id = '93024'><a href = 'https://metacpan.org/pod/ZipFiles'>ZipFiles</a></li>
+<li id = '93025'>[[ZMQ]]</li>
 </ul>
 </li>
 	<li id = '94'>IoLayers
