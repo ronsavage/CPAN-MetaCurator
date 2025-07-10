@@ -125,8 +125,10 @@ sub format_text
 				}
 				elsif ($$token{text} =~ $module_name_re) # Eg: builtins, Imager, GD and GD::Polyline.
 				{
-					$$token{href} .= "<a href = 'https://metacpan.org/pod/$$token{text}'>$$token{text}</a>";
+					$$token{href} = "<a href = 'https://metacpan.org/pod/$$token{text}'>$$token{text}</a>";
 					$$token{text} .= " => $text[$_ + 1]";
+
+					say $$token{text};
 				}
 				else
 				{
