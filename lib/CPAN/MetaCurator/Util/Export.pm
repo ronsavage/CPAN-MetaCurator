@@ -171,6 +171,7 @@ sub format_text
 		}
 
 		$text_is_para	= $$title{$_} ? true : false;
+		$text_is_para	= true if ($_ =~ /^\[\[/);
 		$token			= {href => '', text => ''};
 
 		say "$_ is " . ($text_is_para ? '' : 'not ') . ' a para';
