@@ -170,7 +170,7 @@ sub format_text
 			push @lines, $token;
 		}
 
-		$text_is_para	= $$title{$_} ? true : $false;
+		$text_is_para	= $$title{$_} ? true : false;
 		$token			= {href => '', text => ''};
 
 		say "$_ is " . ($text_is_para ? '' : 'not ') . ' a para';
