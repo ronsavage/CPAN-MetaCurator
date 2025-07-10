@@ -29,7 +29,7 @@ say "create.tables.pl - Create all tables\n";
 my(%options);
 
 $options{help}	 	= 0;
-$options{home_path}	= "$ENV{HOME}/perl.modules/CPAN::MetaCurator";
+$options{home_path}	= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
 $options{log_level}	= 'info';
 my(%opts)			=
 (
