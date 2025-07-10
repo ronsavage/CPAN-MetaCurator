@@ -153,7 +153,7 @@ sub format_text
 		{
 			$$token{text} .= "<a href = '$_'>$_</a>";
 		}
-		elsif ($_ =~ /^[A-Za-z]+/) # A Perl module, hopefully. Eg: builtins, Imager, GD and GD::Polyline.
+		elsif ($_ =~ /^([A-Z]+[a-z]*|[a-z]+)/) # A Perl module, hopefully. Eg: builtins, Imager, GD and GD::Polyline.
 		{
 			$$token{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_</a>";
 		}
