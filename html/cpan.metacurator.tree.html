@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Perl Wiki Tree</title>
+    <meta http-equiv = 'Content-Type'	content = 'text/html; charset=utf-8'>
+	<meta name = 'language'				content = 'en-au'>
+	<meta property = 'og:url'			content = 'http://savage.net.au/cpan.metacurator.tree.html'>
+	<meta property = 'og:type'			content = 'website'>
+	<meta property = 'og:title	'		content = 'CPAN::MetaCurator'>
+	<meta property = 'og:description'	content = 'CPAN::MetaCurator'>
+	<meta property = 'og:image'			content = '/assets/images/local/rons.logo.png'>
+	<link rel = 'stylesheet'			type = 'text/css' href = '/assets/css/local/default.css'>
+	<link rel = 'stylesheet'			type = 'text/css' href = '/assets/css/datatables.min.css'>
+	<link rel = 'stylesheet'			type = 'text/css' href = '/assets/css/dist/themes/default/style.min.css'>
+	<script src = '/assets/js/jquery-3.7.1.min.js'></script>
+	<script src = '/assets/js/jstree.min.js'></script>
+  </head>
+  <body>
+	<a id = 'top'></a>
+<div>
+	<span><img src = '/assets/images/local/rons.logo.png' width = '120' height = '120' alt = 'Logo for page: index'></span>
+	<span class = 'page_title'>Perl.Wiki morphs into a jsTree...</span>
+</div>
+<br>
+<div>
+	Perl module: CPAN::MetaCurator
+</div>
+<div>
+	V 1.00. 2025-07-10T12:56:44
+</div>
+<div>
+	<a href = 'http://savage.net.au/'>My home page, for downloading Perl.Wiki.html</a>
+</div>
+Notes:
+<ul>
+	<li>Almost all leaf node are links, so use a middle-button click to open the link in another tab</li>
+	<li>Tokens like [[XYZ]] are for TiddlyWiki to interpret as CamelCase paragraph names, and thus linkable</li>
+	<li>Infomation in Perl.Wiki beyond the first 3 lines per entry is not yet transferred into the jsTree</li>
+</ul>
+<hr>
+<div id="jstree_div" class="demo">
+<ul>
+<li data-jstree='{"opened": true}' id = ''><a href = '#'></a>
+<ul>
+</ul>
+</li>
+</ul>
+</div>
+<script>
+$(function () {
+	$('#jstree_div').jstree();
+});
+</script>
+<div id = 'footer'></div>
+<script>
+	fetch('/misc/footer.html')
+	.then(response => response.text())
+	.then(data =>
+	{
+		document.getElementById('footer').innerHTML = data;
+	});
+</script>
+</body>
+</html>
