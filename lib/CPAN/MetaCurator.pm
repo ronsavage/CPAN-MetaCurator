@@ -17,20 +17,19 @@ our $VERSION = '1.00';
 Download Perl.Wiki.html from http://savage.net.au/
 Download and unpack the distro CPAN::MetaCurator from https://metacpan.org/
 Beware: If you use a case-insensitive file system...
-Don't put my Perl.Wiki.html in html/ because Import.pm outputs to html/perl.wiki.html
 Update Perl.Wiki.html if desired
 Export its data by clicking the Tools tab on the top right:
 1: Choose 'export all'
 2: Choose 'JSON format' in the pop-up
 3: The file tiddlers.json will appear in your downloads directory (eg ~/Downloads/ under Debian)
-4: Move tiddlers.json into the distro's data/ as perl.wiki.tiddlers.json to replace the copy shipped with the distro
+4: Move tiddlers.json into the distro's data/ as cpan.metacurator.tiddlers.json to replace the copy shipped with the distro
 Run scripts/build.db.sh. This runs:
 1: scripts/drop.tables.pl
 2: scripts/create.tables.pl
 3: scripts/populate.sqlite.tables.pl
-This reads data/perl.wiki.tiddlers.json and outputs data/perl.wiki.sqlite
+This reads data/cpan.metacurator.tiddlers.json and outputs data/cpan.metacurator.sqlite
 4: scripts/export.as.tree.pl
-This reads data/perl.wiki.sqlite and outputs html/perl.wiki.html
+This reads data/cpan.metacurator.sqlite and outputs html/cpan.metacurator.tree.html
 Note:
 The code shipped can be configured to change the home_path()
 And it logs to log/development.log
