@@ -27,6 +27,15 @@ sub export_as_tree
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad);
 
+	# Get the topics' titles, which are TiddlyWiki paragraph names.
+
+	my(%title, $topic);
+
+	for $topic (@{$$pad{topics} })
+	{
+		$title{$$topic{title} } = $$topic{id};
+	}
+
 	# Populate the body.
 
 	my(@list)	= '<ul>';
@@ -41,10 +50,10 @@ sub export_as_tree
 	my($item);
 	my($lines);
 
-	for my $topic (@{$$pad{topics} })
+	for $topic (@{$$pad{topics} })
 	{
 		$id		= 1000 * $$topic{id};
-		$lines	= $self -> format_text($$topic{text});
+		$lines	= $self -> format_text(\%title, $$topic{text});
 
 		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
@@ -77,11 +86,11 @@ sub export_as_tree
 
 sub format_text
 {
-	my($self, $text)		= @_;
-	my(@text)				= grep{length} split(/\n/, $text);
-	@text					= map{s/^-\s+//; s/:$//; $_} @text;
-	my($inside_see_also)	= false;
-	my($module_name_re)		= qr/^([A-Z]+[a-z]{0,}|[a-z]+)/o; # A Perl module, hopefully.
+	my($self, $title, $text)	= @_;
+	my(@text)					= grep{length} split(/\n/, $text);
+	@text						= map{s/^-\s+//; s/:$//; $_} @text;
+	my($inside_see_also)		= false;
+	my($module_name_re)			= qr/^([A-Z]+[a-z]{0,}|[a-z]+)/o; # A Perl module, hopefully.
 
 	my($href);
 	my(@lines);
@@ -148,6 +157,8 @@ sub format_text
 
 	my($count) = 0;
 
+	my($text_is_para);
+
 	for (@see_also)
 	{
 		$count++;
@@ -159,7 +170,10 @@ sub format_text
 			push @lines, $token;
 		}
 
-		$token = {href => '', text => ''};
+		$text_is_para	= $$title{$_} ? true : $false;
+		$token			= {href => '', text => ''};
+
+		say "$_ is " . ($text_is_para ? '' : 'not ') . ' a para';
 
 		if ($_ =~ /^http/)
 		{
