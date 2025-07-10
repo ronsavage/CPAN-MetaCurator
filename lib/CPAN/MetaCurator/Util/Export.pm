@@ -117,15 +117,15 @@ sub format_text
 
 				next; # Discard this line. Add it back below, with a ':'.
 			}
-			elsif ($$token{text} =~ $module_name_re) # Eg: builtins, Imager, GD and GD::Polyline.
-			{
-				$$token{text} .= "<a href = 'https://metacpan.org/pod/$$token{text}'>$$token{text}</a>";
-			}
 			elsif ($_ <= $#text - 2)
 			{
 				if ($text[$_ + 1] =~ /^http/) # Eg: AudioVisual.
 				{
 					$$token{href} = $text[$_ + 1];
+				}
+				elsif ($$token{text} =~ $module_name_re) # Eg: builtins, Imager, GD and GD::Polyline.
+				{
+					$$token{href} .= "<a href = 'https://metacpan.org/pod/$$token{text}'>$$token{text}</a>";
 				}
 				else
 				{
@@ -146,11 +146,18 @@ sub format_text
 		}
 	}
 
+	my($count) = 0;
+
 	for (@see_also)
 	{
-		$token = {href => '', text => 'See also:'};
+		$count++;
 
-		push @lines, $token;
+		if ($count == 1)
+		{
+			$token = {href => '', text => 'See also:'};
+
+			push @lines, $token;
+		}
 
 		$token = {href => '', text => ''};
 
