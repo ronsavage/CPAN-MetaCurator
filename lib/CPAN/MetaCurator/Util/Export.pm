@@ -143,6 +143,10 @@ sub format_text
 
 	for (@see_also)
 	{
+		$token = {href => '', text => 'See also:'};
+
+		push @lines, $token;
+
 		$token = {href => '', text => ''};
 
 		if ($_ =~ /^http/)
