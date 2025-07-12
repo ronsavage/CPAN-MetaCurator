@@ -128,6 +128,8 @@ sub populate_topics_table
 		$text	= $$data[$index]{text};
 		$title	= $$data[$index]{title};
 
+		$self -> logger -> info("Missing text @ line $index. title: $title") if (length($text) == 0);
+
 		next if ($title =~ 'MainMenu'); # TiddlyWiki special case.
 
 		$count++;
