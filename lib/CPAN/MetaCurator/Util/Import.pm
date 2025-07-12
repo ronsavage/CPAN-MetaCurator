@@ -128,7 +128,7 @@ sub populate_topics_table
 		$text	= $$data[$index]{text};
 		$title	= $$data[$index]{title};
 
-		say "Missing text @ line $index. title: $title" if (! $text);
+		say "Missing text @ line $index. title: $title" if (! defined $text);
 
 		next if ($title =~ 'MainMenu'); # TiddlyWiki special case.
 
