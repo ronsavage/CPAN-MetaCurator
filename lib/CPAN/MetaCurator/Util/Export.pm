@@ -107,6 +107,8 @@ sub format_text
 		{
 			$$token{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
 
+			$self -> logger -> info("Missing text @ line $_") if (length($text[$_]) == 0);
+
 			if ($inside_see_also)
 			{
 				$inside_see_also = false;
