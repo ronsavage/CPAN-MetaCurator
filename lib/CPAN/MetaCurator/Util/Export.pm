@@ -184,11 +184,11 @@ sub format_text
 		}
 		elsif ( ($_ =~ $module_name_re) && (! $text_is_para) ) # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
 		{
-			$$token{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_</a>";
+			$$token{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_ (module name)</a>";
 		}
 		else
 		{
-			$$token{text} .= $_;
+			$$token{text} .= "$_ (para name)";
 		}
 
 		push @lines, $token;
