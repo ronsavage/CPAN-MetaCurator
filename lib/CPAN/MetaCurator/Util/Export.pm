@@ -176,7 +176,7 @@ sub format_text
 		$text_is_para	= true if ($_ =~ /^\[\[/);
 		$token			= {href => '', text => ''};
 
-		say "<$_> is" . ($text_is_para ? '' : ' not ') . ' a para';
+		say "<$_> is" . ($text_is_para ? '' : ' not') . ' a para';
 
 		if ($_ =~ /^http/)
 		{

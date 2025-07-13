@@ -525,9 +525,9 @@
     },
     {
         "created": "20211224225921579",
-        "text": "\"\"\"\no See also:\n- DnsStuff\n- CSV - https://datatracker.ietf.org/doc/html/rfc4180\n- DN (LDAP) - https://datatracker.ietf.org/doc/html/rfc4514 (primary)\n- DN (LDAP) - https://datatracker.ietf.org/doc/html/rfc4512 (secondary)\n- DN (LDAP) - https://datatracker.ietf.org/doc/html/rfc4517\n- ABNF (Augmented BNF) - https://datatracker.ietf.org/doc/html/rfc5234\n- Note: rfc5234 obsoletes rfc4234\n- UTF-8 - https://datatracker.ietf.org/doc/html/rfc3629\n- UTF-8 DNs - https://datatracker.ietf.org/doc/html/rfc2253\n",
+        "text": "\"\"\"\no See also:\n- DnsStuff\n- CSV - https://datatracker.ietf.org/doc/html/rfc4180 - CSV\n-  https://datatracker.ietf.org/doc/html/rfc4514 (primary) - DN (LDAP)\n- https://datatracker.ietf.org/doc/html/rfc4512 (secondary) - DN (LDAP)\n- https://datatracker.ietf.org/doc/html/rfc4517 - DN (LDAP)\n- https://datatracker.ietf.org/doc/html/rfc5234 ABNF (Augmented BNF)\n- Note: rfc5234 obsoletes rfc4234\n-  https://datatracker.ietf.org/doc/html/rfc3629 - UTF-8\n-  https://datatracker.ietf.org/doc/html/rfc2253 - UTF-8 DNs\n",
         "title": "IETF",
-        "modified": "20250713064434817"
+        "modified": "20250713064800780"
     },
     {
         "text": "\"\"\"\no See also:\n- ChartingAndPlotting\n",
