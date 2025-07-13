@@ -128,13 +128,12 @@ sub populate_topics_table
 		$text	= $$data[$index]{text};
 		$title	= $$data[$index]{title};
 
-		say "Missing text @ line $index. title: $title" if (! defined $text);
-
 		next if ($title =~ 'MainMenu'); # TiddlyWiki special case.
 
 		$count++;
 
-		say "Record: $count. Missing prefix", next if ($text !~ m/^\"\"\"\no (.+)$/s);
+		$self -> logger -> info("Missing text @ line: $index. title: $title"), next if (! defined $text);
+		$self -> logger -> info("Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
 
 		$$record{parent_id}	= $root_id;
 		$$record{title}		= $title;
