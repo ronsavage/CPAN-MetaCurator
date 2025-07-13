@@ -188,7 +188,7 @@ sub format_text
 		}
 		else
 		{
-			$$token{text} .= "[[$_]]" if (substr($_, 0, 2) ne '[[');
+			$$token{text} .= "[[$_]]" if (($_ !~ /^\[\[/));
 		}
 
 		push @lines, $token;
