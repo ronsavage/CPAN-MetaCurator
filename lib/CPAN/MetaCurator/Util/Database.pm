@@ -101,13 +101,11 @@ sub build_pad
 
 	# Constants.
 
-	for (@{$$pad{constants} })
+	for (qw/domain_name encoding logo_path time_zone title_font_path title_font_size uri/)
 	{
-		$$pad{encoding}			= $$_{value} if ($$_{name} eq 'encoding');
-		$$pad{logo_path}		= $$_{value} if ($$_{name} eq 'logo_path');
-		$$pad{time_zone}		= $$_{value} if ($$_{name} eq 'time_zone');
-		$$pad{title_font_path}	= $$_{value} if ($$_{name} eq 'title_font_path');
-		$$pad{title_font_size}	= $$_{value} if ($$_{name} eq 'title_font_size');
+		$$pad{$_} = $$pad{constants}{value};
+
+		say "$_ => $$pad{$_}";
 	}
 
 	# Dates.

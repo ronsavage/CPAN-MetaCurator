@@ -21,7 +21,8 @@ sub build_html
 	my($body)		= $self -> load_template('body', $pad);
 	my($footer)		= $self -> load_template('footer', $pad);
 	my($now)		= DateTime::Tiny -> now; # (time_zone => $$pad{time_zone});# DateTime::Tiny does not handle time_zone.
-	my(%data)		= (logo_path => $$pad{logo_path}, module => 'CPAN::MetaCurator', time => $now -> as_string, version => $VERSION);
+	my(%data)		= (domain => $$pad{domain}, logo_path => $$pad{logo_path}, module => 'CPAN::MetaCurator',
+						time => $now -> as_string, uri => $$pad{uri}, version => $VERSION);
 
 	# Populate the header.
 

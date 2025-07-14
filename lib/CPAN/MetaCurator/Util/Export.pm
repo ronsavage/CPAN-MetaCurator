@@ -188,6 +188,7 @@ sub format_text
 		}
 		else
 		{
+#			$$token{html}	= '/cpan.metacurator.tree.html/
 			$$token{text} .= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
 		}
 
