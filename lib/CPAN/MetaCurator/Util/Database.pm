@@ -101,13 +101,14 @@ sub build_pad
 
 	# Constants.
 
-	say "constants table: \n" . Dumper($$pad{constants});
-
-	for (qw/domain_name encoding logo_path time_zone title_font_path title_font_size uri/)
+	for my $key (@$pad)
 	{
-		$$pad{$_} = $$pad{constants}{$_}{value};
+		for (qw/domain_name encoding logo_path time_zone title_font_path title_font_size uri/)
+		{
+			$$pad{$_} = $$key{$_}{value} if ($$key{$_}{name} eq $_);
 
-		say "$_ => $$pad{$_}";
+			say "$_ => $$pad{$_}";
+		}
 	}
 
 	# Dates.
