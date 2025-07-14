@@ -188,10 +188,10 @@ sub format_text
 		}
 		else
 		{
-			$$token{html}	= "\#$$title{$_}";
+			$$token{html}	= "http://$$pad{domain_name}/$$pad{page_name}#$$title{$_}";
 			$$token{text}	.= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
 
-			$self -> logger -> info("Token. html: $$token{html}. text: $$token{text}");
+			$self -> logger -> info("Token: $_. html: $$token{html}. text: $$token{text}. title: $$title{$_}");
 		}
 
 		push @lines, $token;
