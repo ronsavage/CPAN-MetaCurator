@@ -101,7 +101,7 @@ sub build_pad
 
 	# Constants.
 
-	for my $key (@$pad)
+	for my $key (@{$$pad{constants})
 	{
 		for (qw/domain_name encoding logo_path time_zone title_font_path title_font_size uri/)
 		{
