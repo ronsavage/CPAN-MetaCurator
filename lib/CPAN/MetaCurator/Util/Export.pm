@@ -191,7 +191,7 @@ sub format_text
 			$$token{html}	= "/$$pad{page_name}/#$$title{$_}";
 			$$token{text}	.= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
 
-			$self -> logger -> info("Token. html: $$token{html}. text: $token{text}");
+			$self -> logger -> info("Token. html: $$token{html}. text: $$token{text}");
 		}
 
 		push @lines, $token;
