@@ -101,9 +101,11 @@ sub build_pad
 
 	# Constants.
 
+	say "constants table: \n" . Dumper($$pad{constants});
+
 	for (qw/domain_name encoding logo_path time_zone title_font_path title_font_size uri/)
 	{
-		$$pad{$_} = $$pad{constants}{value};
+		$$pad{$_} = $$pad{constants}{$_}{value};
 
 		say "$_ => $$pad{$_}";
 	}
