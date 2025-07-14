@@ -193,7 +193,7 @@ sub format_text
 			$$token{html}	= "http://$$pad{domain_name}/$$pad{page_name}\#$$title{$topic_name}";
 			$$token{text}	.= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
 
-			$self -> logger -> info("Token: $_. html: $$token{html}. text: $$token{text}. id: $$title{$_}");
+			$self -> logger -> info("Token: $_. html: $$token{html}. text: $$token{text}. id: $$title{$_} or $$title{$topic_name}");
 		}
 
 		push @lines, $token;
