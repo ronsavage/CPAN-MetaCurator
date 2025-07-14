@@ -159,7 +159,7 @@ sub format_text
 
 	my($count) = 0;
 
-	my($text_is_para);
+	my($text_is_para, $topic_name);
 
 	for (@see_also)
 	{
@@ -188,7 +188,9 @@ sub format_text
 		}
 		else
 		{
-			$$token{html}	= "http://$$pad{domain_name}/$$pad{page_name}#$$title{$_}";
+			$topic_name		= $$title{$_};
+			$topic_name		= $1 if ($token_name ~= /\[\[(.+)\]\]/);
+			$$token{html}	= "http://$$pad{domain_name}/$$pad{page_name}\#$$title{$topic_name}";
 			$$token{text}	.= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
 
 			$self -> logger -> info("Token: $_. html: $$token{html}. text: $$token{text}. id: $$title{$_}");
