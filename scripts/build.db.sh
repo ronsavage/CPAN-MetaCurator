@@ -11,4 +11,4 @@ scripts/export.as.tree.pl
 
 cp html/cpan.metacurator.tree.html $DS
 
-echo Copied html/cpan.metacurator.tree.html to $DS
+echo Copied html/cpan.metacurator.tree.html to $DS/misc
