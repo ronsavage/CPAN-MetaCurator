@@ -9,8 +9,9 @@ scripts/create.tables.pl
 scripts/populate.sqlite.tables.pl
 scripts/export.as.tree.pl
 
-SOURCE = html/cpan.metacurator.tree.html
-DEST =   $DS/misc
+set SOURCE = html/cpan.metacurator.tree.html
+set DEST =   $DS/misc
+
 
 cp $SOURCE $DEST
 
