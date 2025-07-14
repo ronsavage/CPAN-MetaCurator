@@ -188,7 +188,7 @@ sub format_text
 		}
 		else
 		{
-			$$token{html}	= "$$pad{uri}/#$$title{$_}";
+			$$token{html}	= "/$$pad{page_name}/#$$title{$_}";
 			$$token{text}	.= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
 		}
 
