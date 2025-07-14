@@ -103,9 +103,11 @@ sub build_pad
 
 	for my $key (@{$$pad{constants} })
 	{
+		say "key: " . Dumper($key);
+
 		for (qw/domain_name encoding logo_path time_zone title_font_path title_font_size uri/)
 		{
-			$$pad{$_} = $$key{$_}{value} if ($$key{$_}{name} eq $_);
+			$$pad{$_} = $$key{value} if ($$key{name} eq $_);
 
 			say "$_ => $$pad{$_}";
 		}
