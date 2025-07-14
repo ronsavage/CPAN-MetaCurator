@@ -103,13 +103,13 @@ sub build_pad
 
 	for my $key (@{$$pad{constants} })
 	{
-		for (qw/domain_name encoding logo_path time_zone title_font_path title_font_size uri/)
+		for (qw/domain_name encoding logo_path page_name time_zone title_font_path title_font_size/)
 		{
 			$$pad{$_} = $$key{value} if ($$key{name} eq $_);
+
+			$self -> logger -> info("$_ => pad{$_}");
 		}
 	}
-
-	$self -> logger -> info("pad: " . Dumper($pad) );
 
 	# Dates.
 	# DateTime::Tiny does not handle time_zone.
