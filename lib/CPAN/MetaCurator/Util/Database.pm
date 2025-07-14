@@ -88,7 +88,8 @@ has time_option =>
 	required	=> 0,
 );
 
-our $VERSION = '1.00';
+our $lines		= '-' x 50;
+our $VERSION	= '1.00';
 
 # -----------------------------------------------
 
@@ -106,10 +107,15 @@ sub build_pad
 		for (qw/domain_name encoding logo_path page_name time_zone title_font_path title_font_size/)
 		{
 			$$pad{$_} = $$key{value} if ($$key{name} eq $_);
-
-			$self -> logger -> info("$_ => pad{$_}");
 		}
 	}
+
+	for (qw/domain_name encoding logo_path page_name time_zone title_font_path title_font_size/)
+	{
+		$self -> logger -> info("$_ => $$pad{$_}");
+	}
+
+	$self -> logger -> info($lines);
 
 	# Dates.
 	# DateTime::Tiny does not handle time_zone.
@@ -169,7 +175,7 @@ sub init_db
 	$self -> engine($self -> creator -> db_vendor =~ /(?:Mysql)/i ? 'engine=innodb' : '');
 	$self -> time_option($self -> creator -> db_vendor =~ /(?:MySQL|Postgres)/i ? '(0) without time zone' : '');
 	$self -> logger -> info("Connected to $dsn[0]");
-	$self -> logger -> info('-' x 50);
+	$self -> logger -> info($lines);
 
 } # End of init_db.
 
