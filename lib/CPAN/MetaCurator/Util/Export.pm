@@ -188,8 +188,8 @@ sub format_text
 		}
 		else
 		{
-			$topic_name		= $$title{$_};
-			$topic_name		= $1 if ($token_name ~= /\[\[(.+)\]\]/);
+			$topic_name		= $_;
+			$topic_name		= $1 if ($topic_name ~= /\[\[(.+)\]\]/);
 			$$token{html}	= "http://$$pad{domain_name}/$$pad{page_name}\#$$title{$topic_name}";
 			$$token{text}	.= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
 
