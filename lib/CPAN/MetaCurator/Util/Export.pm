@@ -173,10 +173,10 @@ sub format_text
 		}
 
 		$text_is_para	= $$title{$_} ? true : false;
-		$text_is_para	= true if ($_ =~ /^\[\[/);
+		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
 		$token			= {href => '', text => ''};
 
-		say "<$_> is" . ($text_is_para ? '' : ' not') . ' a para';
+		#say "<$_> is" . ($text_is_para ? '' : ' not') . ' a para';
 
 		if ($_ =~ /^http/)
 		{
@@ -190,9 +190,13 @@ sub format_text
 		{
 			$$token{html}	= "/$$pad{page_name}/#$$title{$_}";
 			$$token{text}	.= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
+
+			$self -> logger -> info("Token. html: $$token{html}. text: $token{text}");
 		}
 
 		push @lines, $token;
+
+		$$token{html} = '';
 	}
 
 	$self -> logger -> info("Line $_: <$lines[$_]{text}> & <$lines[$_]{href}>") for (0 .. $#lines);
