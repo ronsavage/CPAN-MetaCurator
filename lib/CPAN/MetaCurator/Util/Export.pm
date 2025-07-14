@@ -190,10 +190,10 @@ sub format_text
 		{
 			$topic_name		= $_;
 			$topic_name		= $1 if ($topic_name =~ /\[\[(.+)\]\]/);
-			$$token{html}	= "\#$$title{$topic_name}";
+			$$token{html}	= "/$$pad{page_name}\#$$title{$topic_name}";
 			$$token{text}	.= ($_ =~ /^\[\[/) ? $_ : "[[$_]]";
 
-			$self -> logger -> info("Token: $_. html: $$token{html}. text: $$token{text}. id: $$title{$_} or $$title{$topic_name}");
+			$self -> logger -> info("Token: $_. html: $$token{html}. text: $$token{text}. id: $$title{$topic_name}");
 		}
 
 		push @lines, $token;
