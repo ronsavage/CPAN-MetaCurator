@@ -159,6 +159,7 @@ sub format_text
 
 	my($count) = 0;
 
+	my(@pieces);
 	my($text_is_para, $topic_name);
 
 	for (@see_also)
@@ -180,7 +181,9 @@ sub format_text
 
 		if ($_ =~ /^http/)
 		{
-			$$token{text} .= "<a href = '$_'>$_</a>";
+			@pieces			= split(/ - /, $_);
+			$pieces[1]		= "$pieces[0] - $pieces[1]" if ($pieces[1]);
+			$$token{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
 		}
 		elsif ( ($_ =~ $module_name_re) && (! $text_is_para) ) # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
 		{
