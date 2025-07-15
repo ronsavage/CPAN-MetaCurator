@@ -193,7 +193,7 @@ sub format_text
 		{
 			$topic_name		= $_;
 			$topic_name		= $1 if ($topic_name =~ /\[\[(.+)\]\]/);
-			$$token{text}	= "<a href = '/$$pad{page_name}\#$$title{$topic_name}'>$topic_name</a>";
+			$$token{text}	= "<a href = '/$$pad{page_name}\#$$title{$topic_name}'>$topic_name (topic)</a>";
 
 			$self -> logger -> info("Token: $_. text: $$token{text}. id: $$title{$topic_name}");
 		}
