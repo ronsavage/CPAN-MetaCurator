@@ -693,16 +693,16 @@
         "modified": "20250715030150890"
     },
     {
-        "text": "\"\"\"\no MIDI::RtController:\n- Control your MIDI controller\n- https://metacpan.org/dist/MIDI-RtController\n\no MIDI::RtController::Filter::CC:\n- Control-change based RtController filters\n- https://metacpan.org/dist/MIDI-RtController-Filter-CC\n\no Types::MIDI:\n- Type library for MIDI\n",
+        "created": "20250308064018243",
+        "text": "\"\"\"\no MIDI::RtController:\n- Control your MIDI controller\n- https://metacpan.org/dist/MIDI-RtController\n\no MIDI::RtController::Filter::CC:\n- Control-change based RtController filters\n- https://metacpan.org/dist/MIDI-RtController-Filter-CC\n\no Types::MIDI:\n- Type library for MIDI\n- https://metacpan.org/dist/Types-MIDI\n",
         "title": "MidiControllers",
-        "modified": "20250525235256851",
-        "created": "20250308064018243"
+        "modified": "20250715030447042"
     },
     {
-        "text": "\"\"\"\no HTML should look like:\n&lt;head>\n&lt;meta charset=\"UTF-8\">\n&lt;meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">\n&lt;title>Personal Home Page</title>\n&lt;/head>\n\no The viewport meta element, necessary for viewing web pages on mobile phones, is automatically added to the output:\n- Added when using HTML::Make::Page\n",
+        "created": "20230731014436363",
+        "text": "\"\"\"\no See also:<pre>HTML should look like:\n&lt;head>\n&lt;meta charset=\"UTF-8\">\n&lt;meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">\n&lt;title>Personal Home Page</title>\n&lt;/head></pre>\n<pre>The viewport meta element, necessary for viewing web pages on mobile phones, is automatically added to the output by modules such as HTML::Make::Page</pre>\n\no HTML::Make::Page:\n- Automate making HTML tags 'head' and 'body' \n- https://metacpan.org/dist/HTML-Make-Page\n",
         "title": "MobilePhones",
-        "modified": "20250323232425026",
-        "created": "20230731014436363"
+        "modified": "20250715031505596"
     },
     {
         "text": "\"\"\"\no Modern::Perl:\n- Enable all of the features of Modern Perl with one import\n- https://metacpan.org/pod/Modern::Perl\n- Usage: use Modern::Perl '2024';\n- But V 1.20250607 says: Enhance documentation to discourage this module for v5.38 and newer\n",
