@@ -687,10 +687,10 @@
         "modified": "20250715025825023"
     },
     {
-        "text": "\"\"\"\no Linux::Smaps::Tiny\n- See also Linux::Smaps\n\no File::Map:\n- Memory mapping made simple and safe\n",
+        "created": "20211021063633606",
+        "text": "\"\"\"\no File::Map:\n- Memory mapping made simple and safe\n- https://metacpan.org/dist/File-Map\n\no Linux::Smaps\n- A Perl interface to /proc/PID/smaps\n- https://metacpan.org/dist/Linux-Smaps\n\no Linux::Smaps::Tiny\n- A minimal and fast alternative to Linux::Smaps\n- https://metacpan.org/dist/Linux-Smaps-Tiny\n",
         "title": "MemoryUsage",
-        "modified": "20230410235037063",
-        "created": "20211021063633606"
+        "modified": "20250715030150890"
     },
     {
         "text": "\"\"\"\no MIDI::RtController:\n- Control your MIDI controller\n- https://metacpan.org/dist/MIDI-RtController\n\no MIDI::RtController::Filter::CC:\n- Control-change based RtController filters\n- https://metacpan.org/dist/MIDI-RtController-Filter-CC\n\no Types::MIDI:\n- Type library for MIDI\n",
