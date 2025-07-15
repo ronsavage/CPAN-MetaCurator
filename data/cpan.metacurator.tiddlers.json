@@ -821,10 +821,10 @@
         "created": "20240323023937100"
     },
     {
-        "text": "\"\"\"\no  App::sdview:\n- A terminal document viewer for Pod and other syntaxes\n- Contains sdview which supports POD and Markdown\n- https://metacpan.org/dist/App-sdview\n- See also App::sdview::Output::Tickit - interactive terminal-based viewer for App::sdview\n- https://metacpan.org/pod/App::sdview::Output::Tickit\n\no Module::CoreList:\n- What modules shipped with versions of perl\n- https://metacpan.org/dist/Module-CoreList\n\no perlfaq:\n- Frequently asked questions about Perl\n- https://metacpan.org/dist/perlfaq\n\no podweaver:\n- Run Pod::Weaver on a file or distribution\n- https://metacpan.org/dist/App-podweaver/view/script/podweaver\n\no https://metacpan.org/pod/perlsecret\n\no https://perldoc.perl.org/\n\no https://perldoc.perl.org/perlpodspec\n\no Prima:\n- a Perl graphic toolkit\n- Contains podview\n- https://metacpan.org/pod/Prima\n\no Recent modules:\n- https://niceperl.blogspot.com/\n\no For regexp stuff, search the above for Reference Manual, and under that Tutorials, and under that perlrequick and perlretut and perlrebackslash\n",
+        "created": "20210920080620336",
+        "text": "\"\"\"\no See also:\n- https://metacpan.org/pod/App::sdview::Output::Tickit - Interactive terminal-based viewer for App::sdview\n- https://niceperl.blogspot.com/ - Recent modules\n\no  App::sdview:\n- A terminal document viewer for Pod and other syntaxes\n- https://metacpan.org/dist/App-sdview\n- Contains sdview which supports POD and Markdown\n\no Module::CoreList:\n- What modules shipped with versions of perl\n- https://metacpan.org/dist/Module-CoreList\n\no perlfaq:\n- Frequently asked questions about Perl\n- https://metacpan.org/dist/perlfaq\n\no podweaver:\n- Run Pod::Weaver on a file or distribution\n- https://metacpan.org/dist/App-podweaver/view/script/podweaver\n\no https://metacpan.org/pod/perlsecret\n\no https://perldoc.perl.org/\n\no https://perldoc.perl.org/perlpodspec\n\no Prima:\n- a Perl graphic toolkit\n- https://metacpan.org/pod/Prima\n- Contains podview\n",
         "title": "PerlDocumentation",
-        "modified": "20250619061147558",
-        "created": "20210920080620336"
+        "modified": "20250715065556264"
     },
     {
         "created": "20250629024631868",
