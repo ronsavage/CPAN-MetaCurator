@@ -199,9 +199,9 @@
     },
     {
         "created": "20211101070351904",
-        "text": "\"\"\"\no See also:\n- HTMLHandling\n- tidy [-o out_file] [-ascii | -utf8] in_file - How to run tidy\n\no http://www.html-tidy.org/\n- https://github.com/htacg/tidy-html5/issues/\n\no HTML validator:\n- https://html5.validator.nu/\n\no Code::TidyAll:\n- Engine for tidyall, your all-in-one code tidier and validator\n- https://metacpan.org/pod/Code::TidyAll\n\no Perl::Critic::Grape:\n- Additional Perl::Critic policies\n- https://metacpan.org/dist/Perl-Critic-Grape\n\no Plugins for tidyall:\n<pre>\n    Perl: perlcritic, perltidy, perltidy-sweet\n    Pod: podchecker, podspell, podtidy\n    Mason: masontidy\n    JavaScript: js-beautify, jshint, jslint\n    JSON: JSON\n    CSS: cssunminifier\n    PHP: phpcs\n    Misc: Code::TidyAll::Plugin::SortLines\n</pre>\n",
+        "text": "\"\"\"\no See also:\n- HTMLHandling\n\no http://www.html-tidy.org/\n- https://github.com/htacg/tidy-html5/issues/\n\no HTML validator:\n- https://html5.validator.nu/\n\no Code::TidyAll:\n- Engine for tidyall, your all-in-one code tidier and validator\n- https://metacpan.org/pod/Code::TidyAll\n\no Perl::Critic::Grape:\n- Additional Perl::Critic policies\n- https://metacpan.org/dist/Perl-Critic-Grape\n\no Plugins for tidyall:\n<pre>\n    Perl: perlcritic, perltidy, perltidy-sweet\n    Pod: podchecker, podspell, podtidy\n    Mason: masontidy\n    JavaScript: js-beautify, jshint, jslint\n    JSON: JSON\n    CSS: cssunminifier\n    PHP: phpcs\n    Misc: Code::TidyAll::Plugin::SortLines\n</pre>\n\no How to run tidy:\n<pre>tidy [-o out_file] [-ascii | -utf8] in_file</pre>\n",
         "title": "CodeTidyingCode",
-        "modified": "20250715032900066"
+        "modified": "20250715033038655"
     },
     {
         "text": "\"\"\"\no Use 'use standard' and Test::V0\n- For the former, see next item\n- For the latter, see TestingHelp\n\no Guacamole:\n- A Perl parser. Provided 'use standard'\n- https://metacpan.org/pod/standard\n\no Use Type::Tiny:\n- Contains Types::Standard\n- See DataTypes\n",
