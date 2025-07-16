@@ -1011,10 +1011,10 @@
         "modified": "20250716005632902"
     },
     {
-        "text": "\"\"\"\no See also:\n- ConfigFiles\n- NetworkProgramming\n\no App::RemoteCommand:\n- Simple remote command launcher via ssh\n- https://metacpan.org/dist/App-RemoteCommand\n-Includes the tutorial  App::RemoteCommand::Tutorial\n\no App::sshca:\n- A minimal SSH Certificate Authority\n- https://metacpan.org/dist/App-sshca\n\no Libssh::Session:\n- Support for the SSH protocol via libssh.\n- https://metacpan.org/dist/Libssh-Session\n\no Net::FullAuto:\n- Fully Automate any workload with *persistent* SSH/SFTP from one host\n- https://metacpan.org/pod/Net::FullAuto\n\no Net::OpenSSH:\n- See https://metacpan.org/pod/Net::OpenSSH#Net::OpenSSH-Vs.-Net::SSH::.*-modules\n\no ssh_config:\n- OpenSSH client configuration file\n- https://man.openbsd.org/ssh_config\n",
+        "created": "20200713064643975",
+        "text": "\"\"\"\no See also:\n- ConfigFiles\n- NetworkProgramming\n- https://man.openbsd.org/ssh_config - OpenSSH client configuration file\n\no App::RemoteCommand:\n- Simple remote command launcher via ssh\n- https://metacpan.org/dist/App-RemoteCommand\n-Includes the tutorial  App::RemoteCommand::Tutorial\n\no App::sshca:\n- A minimal SSH Certificate Authority\n- https://metacpan.org/dist/App-sshca\n\no Libssh::Session:\n- Support for the SSH protocol via libssh.\n- https://metacpan.org/dist/Libssh-Session\n\no Net::FullAuto:\n- Fully Automate any workload with *persistent* SSH/SFTP from one host\n- https://metacpan.org/pod/Net::FullAuto\n\no Net::OpenSSH:\n- See https://metacpan.org/pod/Net::OpenSSH#Net::OpenSSH-Vs.-Net::SSH::.*-modules\n",
         "title": "SSH",
-        "modified": "20250629033813952",
-        "created": "20200713064643975"
+        "modified": "20250716005903136"
     },
     {
         "text": "\"\"\"\no App::sitelenmute:\n- A static image gallery creator\n- https://metacpan.org/pod/App::sitelenmute\n",
