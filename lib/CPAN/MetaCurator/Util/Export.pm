@@ -179,7 +179,7 @@ sub format_text
 
 		#say "<$_> is" . ($text_is_para ? '' : ' not') . ' a para';
 
-		if ($_ =~ /^http/)
+		if ($_ =~ /^http/) # https://perldoc.perl.org/ - PerlDoc
 		{
 			@pieces			= split(/ - /, $_);
 			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
@@ -189,13 +189,12 @@ sub format_text
 		{
 			$$token{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_</a>";
 		}
-		else
+		else # GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
-			$topic_name		= $_;
+			@pieces			= split(/ - /, $_);
+			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 			$topic_name		= $1 if ($topic_name =~ /\[\[(.+)\]\]/);
 			$$token{text}	= "<a href = '/$$pad{page_name}\#$$title{$topic_name}'>$topic_name (topic)</a>";
-
-			$self -> logger -> info("Token: $_. text: $$token{text}. id: $$title{$topic_name}");
 		}
 
 		push @lines, $token;
