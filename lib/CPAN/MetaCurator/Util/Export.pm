@@ -191,10 +191,10 @@ sub format_text
 		}
 		else # GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
+			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			@pieces			= split(/ - /, $_);
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-			$topic_name		= $1 if ($topic_name =~ /\[\[(.+)\]\]/);
-			$$token{text}	= "<a href = '/$$pad{page_name}\#$$title{$topic_name}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '/$$pad{page_name}\#$$title{$pieces[0]}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
