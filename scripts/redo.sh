@@ -1,6 +1,7 @@
 #!/bin/bash
 
 declare -x PREFIX=cpan.metacurator
+
 mv ~/Downloads/tiddlers.json data/$PREFIX.tiddlers.json
 cd $HOME/perl.modules/CPAN-MetaCurator/
 echo Work dir: `pwd`
@@ -14,9 +15,15 @@ scripts/export.as.tree.pl
 
 declare -x SOURCE=html/$PREFIX.tree.html
 declare -x DEST=$DS/misc
+
 cp $SOURCE $DEST
 
 echo Copied $SOURCE to $DEST
 echo Lastly check no other tiddlers.json in ~/Downloads
-echo Warning: Expect -> dir: cannot access '/home/ron/Downloads/tiddlers*': No such file or directory
-dir ~/Downloads/tiddlers*
+
+declare -x FILE1='/home/ron/Downloads/tiddlers(1).json'
+
+if [[ -a $FILE1 ]]
+then
+	echo Warning: $FILE1 exists
+fi
