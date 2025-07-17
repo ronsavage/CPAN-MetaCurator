@@ -213,9 +213,9 @@ sub format_text
 			$self -> logger -> info("Note: only topic:   $topic_name");
 			$self -> logger -> info("Note: only pieces0: $pieces[0]");
 			$self -> logger -> info("Note: only pieces1: $pieces[1]");
-			$self -> logger -> info("Note: only title:   $$title{$topic_name}");
+			$self -> logger -> info("Note: only title:   $$title{$_}");
 
-			$$token{text}	= "<a href = '$$pad{page_name}\#$$title{$topic_name}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '$$pad{page_name}\#$$title{$_}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
