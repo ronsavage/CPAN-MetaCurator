@@ -1103,10 +1103,10 @@
         "created": "20250323233832528"
     },
     {
-        "text": "\"\"\"\no App::pmuninstall\n- Contains pm-uninstall\n",
+        "created": "20220501000528719",
+        "text": "\"\"\"\no App::pmuninstall\n- Uninstall modules\n- https://metacpan.org/dist/App-pmuninstall",
         "title": "UninstallModule",
-        "modified": "20220501000544727",
-        "created": "20220501000528719"
+        "modified": "20250717072404232"
     },
     {
         "text": "\"\"\"\no See also:\n- DebianOS\n- SeismicOS\n",
