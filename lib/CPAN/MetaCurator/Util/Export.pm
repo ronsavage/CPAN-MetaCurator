@@ -209,11 +209,11 @@ sub format_text
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
-			$self -> logger -> info("only page:   $$pad{page_name}.")	if (! defined($$pad{page_name}) );
-			$self -> logger -> info("only topic:   $topic_name}.")		if (! defined($topic_name) );
-			$self -> logger -> info("only pieces0: $pieces[0].")		if (! defined($pieces[0]) );
-			$self -> logger -> info("only pieces1: $pieces[1].")		if (! defined($pieces[1]) );
-			$self -> logger -> info("page: $$pad{page_name}. topic: $topic_name. pieces: $pieces[0]/$pieces[1]. id: $$title{$pieces[0]}.") if ($_ eq 'CryptoStuff');
+			$self -> logger -> info("Note: only page:    $$pad{page_name}");
+			$self -> logger -> info("Note: only topic:   $topic_name}");
+			$self -> logger -> info("Note: only pieces0: $pieces[0]");
+			$self -> logger -> info("Note: only pieces1: $pieces[1]");
+			$self -> logger -> info("Note: only title:   $$title{$pieces[0]}");
 
 			$$token{text}	= "<a href = '$$pad{page_name}\#$$title{$pieces[0]}'>$topic_name (topic)</a>";
 		}
