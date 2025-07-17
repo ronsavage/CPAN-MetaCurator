@@ -26,6 +26,9 @@ sub export_as_tree
 
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad);
+	my($topic_count)			= $#{$$pad{topics} } + 1;
+
+	$self -> logger -> info("Topic count: $topic_count");
 
 	# Get the topics' titles, which are TiddlyWiki paragraph names.
 
@@ -38,10 +41,11 @@ sub export_as_tree
 
 	# Populate the body.
 
-	my(@list)	= '<ul>';
-	my($root)	= shift @{$$pad{topics} };
-	my($id)		= $$root{id};
-	$root		= $$root{title};
+	my($leaf_count)	= 0;
+	my(@list)		= '<ul>';
+	my($root)		= shift @{$$pad{topics} };
+	my($id)			= $$root{id};
+	$root			= $$root{title};
 
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$root</a>|;
 	push @list, '<ul>';
@@ -61,6 +65,7 @@ sub export_as_tree
 		for (@$lines)
 		{
 			$id++;
+			$leaf_count++;
 
 			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
 
@@ -77,6 +82,8 @@ sub export_as_tree
 	$body		=~ s/!list!/$list/;
 
 	$self -> write_file($header, $body, $footer, $pad);
+
+	$self -> logger -> info("Leaf count: $leaf_count");
 
 	return 0;
 
@@ -162,6 +169,8 @@ sub format_text
 	my(@pieces);
 	my($text_is_para, $topic_name);
 
+	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
+
 	for (@see_also)
 	{
 		$count++;
@@ -200,7 +209,7 @@ sub format_text
 
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-			$$token{text}	= "<a href = '/$$pad{page_name}\#$$title{$pieces[0]}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = './$$pad{page_name}\#$$title{$pieces[0]}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
@@ -209,6 +218,7 @@ sub format_text
 	}
 
 	$self -> logger -> info("Line $_: <$lines[$_]{text}> & <$lines[$_]{href}>") for (0 .. $#lines);
+	$self -> logger -> info("ZZZ. Count: $count");
 
 	return \@lines;
 
