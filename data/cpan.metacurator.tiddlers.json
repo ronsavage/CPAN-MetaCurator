@@ -1193,10 +1193,10 @@
         "modified": "20250717074546794"
     },
     {
-        "text": "\"\"\"\no See also:\n- DataTraversl\n- [[UTF8]]\n\no XML::Entities:\n- Decode strings with XML entities\n- https://metacpan.org/pod/XML::Entities\n\no XML::Fast:\n- Simple and very fast XML - hash conversion\n- https://metacpan.org/dist/XML-Fast\n\no XML::GDOME:\n- Interface to Level 2 DOM gdome2 library\n- https://metacpan.org/pod/XML::GDOME\n\no XML::Hash::XS:\n- Simple and fast hash to XML and XML to hash conversion written in C\n- https://metacpan.org/dist/XML-Hash-XS\n\no XML::IETF:\n- An interface to the IETF XML Registry.\n- https://metacpan.org/dist/XML-IETF\n\no XML::LibXML:\n- Perl Binding for libxml2\n- https://metacpan.org/dist/XML-LibXML\n- http://grantm.github.io/perl-libxml-by-example/\n- Supports parsing huge documents\n- Supports parsing (possibly faulty) HTML\n\no XML::PP:\n- A simple XML parser\n- https://metacpan.org/dist/XML-PP\n- Prefer XML::Simple or XML::LibXML\n\no XML::Sig:\n- A toolkit to help sign and verify XML Digital Signatures\n- https://metacpan.org/dist/XML-Sig\n\no XML::Simple:\n- An API for simple XML files\n- https://metacpan.org/pod/XML::Simple\n- Deprecated\n\no XML::Twig:\n- A Perl module for processing huge XML documents in tree mode\n- https://metacpan.org/dist/XML-Twig\n\no See also XML in file:///home/ron/Documents/wiki/Mojo.html\n",
+        "created": "20210405091835001",
+        "text": "\"\"\"\no See also:\n- DataTraversal\n- [[UTF8]]\n\no XML::Entities:\n- Decode strings with XML entities\n- https://metacpan.org/pod/XML::Entities\n\no XML::Fast:\n- Simple and very fast XML - hash conversion\n- https://metacpan.org/dist/XML-Fast\n\no XML::GDOME:\n- Interface to Level 2 DOM gdome2 library\n- https://metacpan.org/pod/XML::GDOME\n\no XML::Hash::XS:\n- Simple and fast hash to XML and XML to hash conversion written in C\n- https://metacpan.org/dist/XML-Hash-XS\n\no XML::IETF:\n- An interface to the IETF XML Registry.\n- https://metacpan.org/dist/XML-IETF\n\no XML::LibXML:\n- Perl Binding for libxml2\n- https://metacpan.org/dist/XML-LibXML\n- http://grantm.github.io/perl-libxml-by-example/\n- Supports parsing huge documents\n- Supports parsing (possibly faulty) HTML\n\no XML::PP:\n- A simple XML parser\n- https://metacpan.org/dist/XML-PP\n- Prefer XML::Simple or XML::LibXML\n\no XML::Sig:\n- A toolkit to help sign and verify XML Digital Signatures\n- https://metacpan.org/dist/XML-Sig\n\no XML::Simple:\n- An API for simple XML files\n- https://metacpan.org/pod/XML::Simple\n- Deprecated\n\no XML::Twig:\n- A Perl module for processing huge XML documents in tree mode\n- https://metacpan.org/dist/XML-Twig\n\no See also XML in file:///home/ron/Documents/wiki/Mojo.html\n",
         "title": "XML",
-        "modified": "20250713021435079",
-        "created": "20210405091835001"
+        "modified": "20250717074652065"
     },
     {
         "text": "\"\"\"\no See also:\n- ArrayHandling\n- EventStuff\n- NewOperators\n\no List::Util::MaybeXS:\n- List::Util but with Pure Perl fallback\n- https://metacpan.org/dist/List-Util-MaybeXS\n\no List::Util::XS:\n- Indicate if List::Util was compiled with a C compiler\n- https://metacpan.org/pod/List::Util::XS\n- Ships in Scalar::List::Utils\n\no Missing::XS:\n- Print warnings about XS modules you should probably install\n- https://metacpan.org/pod/Missing::XS\n- Meaning you are using the pure Perl version but an  XS version exists\n\no XS::Parse::Sublike:\n- XS functions to assist in parsing sub-like syntax\n- https://metacpan.org/dist/XS-Parse-Sublike\n",
@@ -1205,10 +1205,10 @@
         "created": "20230609061015187"
     },
     {
-        "text": "\"\"\"\no App::DesktopNotifyUtils:\n- https://metacpan.org/pod/App::DesktopNotifyUtils\n\no Desktop::Notify:\n- This module provides a Perl interface to the Desktop Notifications framework\n- The framework allows applications to display pop-up notifications on an X desktop\n- More information is available from http://trac.galago-project.org/wiki/DesktopNotifications\n\no Net::DBus:\n- Perl extension for the DBus message system\n- https://metacpan.org/dist/Net-DBus\n- Used by Desktop::Notify above\n",
+        "created": "20240917022358199",
+        "text": "\"\"\"\no App::DesktopNotifyUtils:\n- Utilities related to Desktop::Notify\n- https://metacpan.org/pod/App::DesktopNotifyUtils\n\no Desktop::Notify:\n- This module provides a Perl interface to the Desktop Notifications framework\n- https://metacpan.org/pod/Desktop::Notify\n- The framework allows applications to display pop-up notifications on an X desktop\n- More information is available from http://trac.galago-project.org/wiki/DesktopNotifications\n\no Net::DBus:\n- Perl extension for the DBus message system\n- https://metacpan.org/dist/Net-DBus\n- Used by Desktop::Notify above\n",
         "title": "XWindowsStuff",
-        "modified": "20240926003730192",
-        "created": "20240917022358199"
+        "modified": "20250717074904258"
     },
     {
         "text": "\"\"\"\no Alien::YAMLScript:\n- Find or install libys\n- https://metacpan.org/dist/Alien-YAMLScript\n\no Config::LNPath:\n- A Simple YAML Config Reader.\n- https://metacpan.org/dist/Config-LNPath\n\no YAMLScript:\n- Program in YAML — Code is Data\n- https://metacpan.org/dist/YAMLScript\n\no YAML::XS:\n- Perl YAML Serialization using XS and libyaml\n\no Text::FrontMatter::YAML:\n- Read the 'YAML front matter' format\n- See the module's own docs for an explanation\n",
