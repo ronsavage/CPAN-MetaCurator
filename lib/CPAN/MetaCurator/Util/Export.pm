@@ -217,7 +217,7 @@ sub format_text
 			$self -> logger -> info("Note: pieces[1]:	$pieces[1]");
 			$self -> logger -> info("Note: title_id:	$title_id");
 
-			$$token{text}	= "<a href = '$$pad{page_name}\#$title_id'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '#$title_id'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
