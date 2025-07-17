@@ -204,10 +204,11 @@ sub format_text
 		else # GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
 			$self -> logger -> info("C: $_ is a para");
+			$self -> logger -> info("pieces[0]: $pieces[0]. pieces[1]: $pieces[1]. id: $$title{$pieces[0]}") if ($_ eq 'CryptoStuff');
 
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-			$$token{text}	= "<a href = '#$$title{$pieces[0]}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '$pad{page_name}#$$title{$pieces[0]}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
