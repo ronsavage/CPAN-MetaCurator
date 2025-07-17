@@ -1187,10 +1187,10 @@
         "created": "20250705005848067"
     },
     {
-        "text": "\"\"\"\no File::XDG:\n- Basic implementation of the XDG base directory specification\n- https://metacpan.org/pod/File::XDG\n\no XDG Base Directory Specification:\n- https://specifications.freedesktop.org/basedir-spec/latest/\n",
+        "created": "20240831002147023",
+        "text": "\"\"\"\no See also:\n- https://specifications.freedesktop.org/basedir-spec/latest/ - XDG Base Directory Specification\n\no File::XDG:\n- Basic implementation of the XDG base directory specification\n- https://metacpan.org/pod/File::XDG\n",
         "title": "XDGBaseDirectorySpecification",
-        "modified": "20240831002311279",
-        "created": "20240831002147023"
+        "modified": "20250717074546794"
     },
     {
         "text": "\"\"\"\no See also:\n- DataTraversl\n- [[UTF8]]\n\no XML::Entities:\n- Decode strings with XML entities\n- https://metacpan.org/pod/XML::Entities\n\no XML::Fast:\n- Simple and very fast XML - hash conversion\n- https://metacpan.org/dist/XML-Fast\n\no XML::GDOME:\n- Interface to Level 2 DOM gdome2 library\n- https://metacpan.org/pod/XML::GDOME\n\no XML::Hash::XS:\n- Simple and fast hash to XML and XML to hash conversion written in C\n- https://metacpan.org/dist/XML-Hash-XS\n\no XML::IETF:\n- An interface to the IETF XML Registry.\n- https://metacpan.org/dist/XML-IETF\n\no XML::LibXML:\n- Perl Binding for libxml2\n- https://metacpan.org/dist/XML-LibXML\n- http://grantm.github.io/perl-libxml-by-example/\n- Supports parsing huge documents\n- Supports parsing (possibly faulty) HTML\n\no XML::PP:\n- A simple XML parser\n- https://metacpan.org/dist/XML-PP\n- Prefer XML::Simple or XML::LibXML\n\no XML::Sig:\n- A toolkit to help sign and verify XML Digital Signatures\n- https://metacpan.org/dist/XML-Sig\n\no XML::Simple:\n- An API for simple XML files\n- https://metacpan.org/pod/XML::Simple\n- Deprecated\n\no XML::Twig:\n- A Perl module for processing huge XML documents in tree mode\n- https://metacpan.org/dist/XML-Twig\n\no See also XML in file:///home/ron/Documents/wiki/Mojo.html\n",
