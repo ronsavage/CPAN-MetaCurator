@@ -208,7 +208,7 @@ sub format_text
 
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-			$$token{text}	= "<a href = '$pad{page_name}#$$title{$pieces[0]}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '$$pad{page_name}#$$title{$pieces[0]}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
