@@ -208,9 +208,9 @@ sub format_text
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
-			$self -> logger -> info("page_name: $$pad{page_name}. topic_name: $topic_name. pieces[0]: $pieces[0]. pieces[1]: $pieces[1]. id: $$title{$pieces[0]}") if ($_ eq 'CryptoStuff');
+			$self -> logger -> info("page: $$pad{page_name}. topic: $topic_name. pieces: $pieces[0]/$pieces[1]. id: $$title{$pieces[0]}") if ($_ eq 'CryptoStuff');
 
-			$$token{text}	= "<a href = '$$pad{page_name}#$$title{$pieces[0]}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '$$pad{page_name}\#$$title{$pieces[0]}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
