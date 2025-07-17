@@ -7,7 +7,7 @@ cd $HOME/perl.modules/CPAN-MetaCurator/
 echo Work dir: `pwd`
 gss
 cp /dev/null log/development.log
-echo Building module...
+git commit -am"$1"
 build.module.sh CPAN::MetaCurator 1.00
 
 scripts/drop.tables.pl
