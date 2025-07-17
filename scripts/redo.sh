@@ -6,7 +6,8 @@ mv ~/Downloads/tiddlers.json data/$PREFIX.tiddlers.json
 cd $HOME/perl.modules/CPAN-MetaCurator/
 echo Work dir: `pwd`
 gss
-cp /dev/null log/development.log;
+cp /dev/null log/development.log
+echo Building module...
 build.module.sh CPAN::MetaCurator 1.00
 
 scripts/drop.tables.pl
