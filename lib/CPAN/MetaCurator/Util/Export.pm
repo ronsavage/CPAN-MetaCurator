@@ -174,6 +174,7 @@ sub format_text
 		}
 
 		@pieces			= split(/ - /, $_);
+		$_				= $pieces[0];
 		$text_is_para	= $$title{$pieces[0]} ? true : false;
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
 		$token			= {href => '', text => ''};
@@ -182,15 +183,21 @@ sub format_text
 
 		if ($_ =~ /^http/) # https://perldoc.perl.org/ - PerlDoc
 		{
+			$self -> logger -> info("A: $_ starts with http");
+
 			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 			$$token{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
 		}
 		elsif ( ($_ =~ $module_name_re) && (! $text_is_para) ) # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
 		{
+			$self -> logger -> info("B: $_ is a module name and not a para");
+
 			$$token{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_</a>";
 		}
 		else # GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
+			$self -> logger -> info("C: $_ is a para");
+
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 			$$token{text}	= "<a href = '/$$pad{page_name}\#$$title{$pieces[0]}'>$topic_name (topic)</a>";
