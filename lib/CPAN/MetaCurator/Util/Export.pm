@@ -167,7 +167,7 @@ sub format_text
 	my($count) = 0;
 
 	my(@pieces);
-	my($text_is_para, $topic_name);
+	my($text_is_para, $title_id, $title_name, $topic_name);
 
 	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
 
@@ -207,15 +207,17 @@ sub format_text
 			$self -> logger -> info("C: $_ is a para");
 
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
+			$title_name		= $topic_name;
+			$title_id		= $$title{$title_name};
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
-			$self -> logger -> info("Note: only page:    $$pad{page_name}");
-			$self -> logger -> info("Note: only topic:   $topic_name");
-			$self -> logger -> info("Note: only pieces0: $pieces[0]");
-			$self -> logger -> info("Note: only pieces1: $pieces[1]");
-			$self -> logger -> info("Note: only title:   $$title{$_}");
+			$self -> logger -> info("Note: page_name:	$$pad{page_name}");
+			$self -> logger -> info("Note: topic_name:	$topic_name");
+			$self -> logger -> info("Note: pieces[0]:	$pieces[0]");
+			$self -> logger -> info("Note: pieces[1]:	$pieces[1]");
+			$self -> logger -> info("Note: title_id:	$title_id");
 
-			$$token{text}	= "<a href = '$$pad{page_name}\#$$title{$_}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '$$pad{page_name}\#$title_id'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
