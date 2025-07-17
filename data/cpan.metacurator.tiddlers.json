@@ -1133,10 +1133,10 @@
         "modified": "20250717073555188"
     },
     {
-        "text": "\"\"\"\no Data::GUID:\n- https://metacpan.org/pod/Data::GUID\n- Currently (2024-03-19) uses Data::UUID\n\no  Data::ULID:\n- Universally Unique Lexicographically Sortable Identifier\n- https://metacpan.org/dist/Data-ULID\n\no Data::UUID:\n- https://metacpan.org/pod/Data::UUID\n\no UUID:\n- DCE compatible Universally Unique Identifier library for Perl\n- https://metacpan.org/dist/UUID\n- Uses ChaCha20 which is in CryptX. See CryptoStuff\n",
+        "created": "20231101070631052",
+        "text": "\"\"\"\no See also:\n- CryptoStuff - UUID uses ChaCha20 which is in CryptX\n\no Data::GUID:\n- Globally unique identifiers\n- https://metacpan.org/pod/Data::GUID\n\no  Data::ULID:\n- Universally Unique Lexicographically Sortable Identifier\n- https://metacpan.org/dist/Data-ULID\n\no Data::UUID:\n- Globally/Universally Unique Identifiers (GUIDs/UUIDs)\n- https://metacpan.org/pod/Data::UUID\n\no UUID:\n- DCE compatible Universally Unique Identifier library for Perl\n- https://metacpan.org/dist/UUID\n",
         "title": "UUID",
-        "modified": "20240605022052391",
-        "created": "20231101070631052"
+        "modified": "20250717073914574"
     },
     {
         "created": "20240717002307158",
