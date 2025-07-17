@@ -184,7 +184,7 @@ sub format_text
 
 		@pieces			= split(/ - /, $_);
 		$_				= $pieces[0];
-		$pieces[1]		= '' if (length($pieces[1]) == 0);
+		$pieces[1]		= '' if (! $pieces[1]);
 		$text_is_para	= $$title{$pieces[0]} ? true : false;
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
 		$token			= {href => '', text => ''};
