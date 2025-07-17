@@ -216,6 +216,7 @@ sub format_text
 			$self -> logger -> info("Note: pieces[0]:	$pieces[0]");
 			$self -> logger -> info("Note: pieces[1]:	$pieces[1]");
 			$self -> logger -> info("Note: title_id:	$title_id");
+			$self -> logger -> info("Note: panic:	    No id") if (! defined($title_id) );
 
 			$$token{text}	= "<a href = '#$title_id'>$topic_name (topic)</a>";
 		}
