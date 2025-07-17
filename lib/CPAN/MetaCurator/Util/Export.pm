@@ -188,8 +188,6 @@ sub format_text
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
 		$token			= {href => '', text => ''};
 
-		#say "<$_> is" . ($text_is_para ? '' : ' not') . ' a para';
-
 		if ($_ =~ /^http/) # https://perldoc.perl.org/ - PerlDoc
 		{
 			$self -> logger -> info("A: $_ starts with http");
@@ -209,7 +207,7 @@ sub format_text
 
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-			$$token{text}	= "<a href = './\#$$title{$pieces[0]}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '#$$title{$pieces[0]}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
