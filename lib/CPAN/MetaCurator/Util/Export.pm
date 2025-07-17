@@ -173,7 +173,8 @@ sub format_text
 			push @lines, $token;
 		}
 
-		$text_is_para	= $$title{$_} ? true : false;
+		@pieces			= split(/ - /, $_);
+		$text_is_para	= $$title{$pieces[0]} ? true : false;
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
 		$token			= {href => '', text => ''};
 
@@ -181,7 +182,6 @@ sub format_text
 
 		if ($_ =~ /^http/) # https://perldoc.perl.org/ - PerlDoc
 		{
-			@pieces			= split(/ - /, $_);
 			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 			$$token{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
 		}
@@ -192,7 +192,6 @@ sub format_text
 		else # GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
-			@pieces			= split(/ - /, $topic_name);
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 			$$token{text}	= "<a href = '/$$pad{page_name}\#$$title{$pieces[0]}'>$topic_name (topic)</a>";
 		}
