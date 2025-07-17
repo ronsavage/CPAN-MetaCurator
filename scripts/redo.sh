@@ -16,5 +16,7 @@ declare -x SOURCE=html/$PREFIX.tree.html
 declare -x DEST=$DS/misc
 cp $SOURCE $DEST
 
-echo Copied $SOURCE to $DEST. Lastly check no other tiddlers.json in ~/Downloads
+echo Copied $SOURCE to $DEST
+echo Lastly check no other tiddlers.json in ~/Downloads
+echo Warning: Expect -> dir: cannot access '/home/ron/Downloads/tiddlers*': No such file or directory
 dir ~/Downloads/tiddlers*
