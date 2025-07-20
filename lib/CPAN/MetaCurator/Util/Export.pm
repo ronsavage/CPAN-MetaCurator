@@ -86,8 +86,8 @@ sub export_as_tree
 
 	$self -> write_file($header, $body, $footer, $pad);
 
-	$self -> logger -> info("Leaf count:  $leaf_count");
-	$self -> logger -> info("Topic count: $topic_count");
+	$self -> logger -> info("Leaf count:  $$pad{leaf_count}");
+	$self -> logger -> info("Topic count: $$pad{topic_count}");
 
 	return 0;
 
