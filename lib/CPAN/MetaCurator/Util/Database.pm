@@ -95,8 +95,10 @@ our $VERSION	= '1.00';
 
 sub build_pad
 {
-	my($self)	= @_;
-	my($pad)	= {};
+	my($self)			= @_;
+	my($pad)			= {};
+	$$pad{leaf_count}	= 0;
+	$$pad{topic_count}	= 0;
 
 	for (@{$self -> table_names}) {$$pad{$_} = $self -> read_table($_) };
 

@@ -25,10 +25,8 @@ sub export_as_tree
 	$self -> init_db;
 
 	my($pad)					= $self -> build_pad;
+	$$pad{topic_count}			= $#{$$pad{topics} } + 1;
 	my($header, $body, $footer)	= $self -> build_html($pad);
-	my($topic_count)			= $#{$$pad{topics} } + 1;
-
-	$self -> logger -> info("Topic count: $topic_count");
 
 	# Get the topics' titles, which are TiddlyWiki paragraph names.
 
@@ -41,11 +39,10 @@ sub export_as_tree
 
 	# Populate the body.
 
-	my($leaf_count)	= 0;
-	my(@list)		= '<ul>';
-	my($root)		= shift @{$$pad{topics} };
-	my($id)			= $$root{id};
-	$root			= $$root{title};
+	my(@list)	= '<ul>';
+	my($root)	= shift @{$$pad{topics} };
+	my($id)		= $$root{id};
+	$root		= $$root{title};
 
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$root</a>|;
 	push @list, '<ul>';
@@ -65,7 +62,7 @@ sub export_as_tree
 		for (@$lines)
 		{
 			$id++;
-			$leaf_count++;
+			$$pad{leaf_count}++;
 
 			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
 
@@ -80,10 +77,17 @@ sub export_as_tree
 
 	my($list)	= join("\n", @list);
 	$body		=~ s/!list!/$list/;
+	my(%data)	= (leaf_count => $$pad{leaf_count}, topic_count => $$pad{topic_count});
+
+	for $_ (keys %data)
+	{
+		$header =~ s/!$_!/$data{$_}/;
+	}
 
 	$self -> write_file($header, $body, $footer, $pad);
 
-	$self -> logger -> info("Leaf count: $leaf_count");
+	$self -> logger -> info("Leaf count:  $leaf_count");
+	$self -> logger -> info("Topic count: $topic_count");
 
 	return 0;
 

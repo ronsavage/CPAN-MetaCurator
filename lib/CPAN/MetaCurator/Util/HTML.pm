@@ -1,5 +1,6 @@
 package CPAN::MetaCurator::Util::HTML;
 
+use 5.40.0;
 use parent 'CPAN::MetaCurator::Util::Database';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
@@ -23,8 +24,6 @@ sub build_html
 	my($now)		= DateTime::Tiny -> now; # (time_zone => $$pad{time_zone});# DateTime::Tiny does not handle time_zone.
 	my(%data)		= (domain_name => $$pad{domain_name}, logo_path => $$pad{logo_path}, module => 'CPAN::MetaCurator',
 						page_name => $$pad{page_name}, time => $now -> as_string, version => $VERSION);
-
-	# Populate the header.
 
 	for $_ (keys %data)
 	{
