@@ -101,7 +101,7 @@ sub format_text
 	my(@text)				= grep{length} split(/\n/, $text);
 	@text					= map{s/^-\s+//; s/:$//; $_} @text;
 	my($inside_see_also)	= false;
-	my($module_name_re)		= qr/^([A-Z]+[a-z]{0,}|[a-z]+)/o; # A Perl module, hopefully.
+	my($module_name_re)		= qr/^([A-Z]+[a-z0-9]{0,}|[a-z]+)/o; # A Perl module, hopefully. Eg: X11:XCB
 
 	my($href);
 	my(@lines);
@@ -215,12 +215,12 @@ sub format_text
 			$title_id		= $$title{$title_name};
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
-			$self -> logger -> info("Note: page_name:	$$pad{page_name}");
-			$self -> logger -> info("Note: topic_name:	$topic_name");
-			$self -> logger -> info("Note: pieces[0]:	$pieces[0]");
-			$self -> logger -> info("Note: pieces[1]:	$pieces[1]");
-			$self -> logger -> info("Note: title_id:	$title_id");
-			$self -> logger -> info("Note: panic:	    No id") if (! defined($title_id) );
+			$self -> logger -> info("Note: page_name:  $$pad{page_name}");
+			$self -> logger -> info("Note: topic_name: $topic_name");
+			$self -> logger -> info("Note: pieces[0]:  $pieces[0]");
+			$self -> logger -> info("Note: pieces[1]:  $pieces[1]");
+			$self -> logger -> info("Note: title_id:   $title_id");
+			$self -> logger -> info("Note: panic:      No id") if (! defined($title_id) );
 
 			$$token{text}	= "<a href = '#$title_id'>$topic_name (topic)</a>";
 		}
