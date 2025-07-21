@@ -45,7 +45,7 @@ sub export_as_tree
 	for my $topic (@{$$pad{topics} })
 	{
 		$id			= $$topic{id};	# Id for topic.
-		$topic{id}	= 10000 * $id;	# Fake id for leaf.
+		$$topic{id}	= 10000 * $id;	# Fake id for leaf.
 		$lines		= $self -> format_text($pad, $topic);
 
 		push @list, qq|\t<li id = '$id'>$$topic{title}|;
@@ -58,7 +58,7 @@ sub export_as_tree
 
 			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
 
-			push @list, "<li id = '$topic{id}'>$item</li>";
+			push @list, "<li id = '$$topic{id}'>$item</li>";
 		}
 
 		push @list, '</ul>';
