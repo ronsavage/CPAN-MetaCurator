@@ -108,7 +108,7 @@ sub format_text
 	my(@see_also);
 	my($token);
 
-	$self -> logger -> info('Called format_text()');
+	$self -> logger -> info("Called format_text(pad, $title, text)");
 
 	for (0 .. $#text)
 	{
