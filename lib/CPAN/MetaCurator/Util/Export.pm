@@ -195,7 +195,7 @@ sub format_text
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
 		$token			= {href => '', text => ''};
 
-		if ($_ =~ /^http/) # https://perldoc.perl.org/ - PerlDoc
+		if ($_ =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
 			$self -> logger -> info("A: $_ starts with http");
 
@@ -208,7 +208,7 @@ sub format_text
 
 			$$token{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_</a>";
 		}
-		else # GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
+		else # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
 			$self -> logger -> info("C: $_ is a para");
 
