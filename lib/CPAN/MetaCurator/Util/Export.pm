@@ -41,12 +41,11 @@ sub export_as_tree
 	my(@divs);
 	my($item);
 	my($lines);
-	my($topic_id);
 
 	for my $topic (@{$$pad{topics} })
 	{
 		$id			= $$topic{id};	# Id for topic.
-		$topic_id	= 1000 * $id;	# Fake id for leaf.
+		$topic{id}	= 10000 * $id;	# Fake id for leaf.
 		$lines		= $self -> format_text($pad, $topic);
 
 		push @list, qq|\t<li id = '$id'>$$topic{title}|;
@@ -59,7 +58,7 @@ sub export_as_tree
 
 			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
 
-			push @list, "<li id = '$topic_id'>$item</li>";
+			push @list, "<li id = '$topic{id}'>$item</li>";
 		}
 
 		push @list, '</ul>';
@@ -92,7 +91,7 @@ sub format_text
 {
 	my($self, $pad, $token)	= @_;
 	my(@text)				= grep{length} split(/\n/, $$token{text});
-	@text					= map{s/^-\s+//; s/:$//; $_} @text;
+	@text					= map{s/^-\s+//; s/\s+$//; s/:$//; $_} @text;
 	my($inside_see_also)	= false;
 	my($module_name_re)		= qr/^([A-Z]+[a-z0-9]{0,}|[a-z]+)/o; # A Perl module, hopefully. Eg: X11:XCB
 
@@ -105,6 +104,8 @@ sub format_text
 
 	for (0 .. $#text)
 	{
+		$$token{id}++;
+
 		$self -> logger -> info("Starting topic: $text[$_]");
 
 		$item = {href => '', text => ''};
@@ -113,7 +114,7 @@ sub format_text
 		{
 			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
 
-			$self -> logger -> info("Missing text @ line $_") if (length($text[$_]) == 0);
+			$self -> logger -> error("Missing text @ line $_") if (length($text[$_]) == 0);
 
 			if ($inside_see_also)
 			{
