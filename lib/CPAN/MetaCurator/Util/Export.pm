@@ -108,6 +108,8 @@ sub format_text
 	my(@see_also);
 	my($token);
 
+	$self -> logger -> info('Called format_text()');
+
 	for (0 .. $#text)
 	{
 		$self -> logger -> info("Starting topic: $text[$_]");
