@@ -28,15 +28,6 @@ sub export_as_tree
 	$$pad{topic_count}			= $#{$$pad{topics} } + 1;
 	my($header, $body, $footer)	= $self -> build_html($pad);
 
-	# Get the topics' titles, which are TiddlyWiki paragraph names.
-
-	my(%title2id, $topic);
-
-	for $topic (@{$$pad{topics} })
-	{
-		$title2id{$$topic{title} } = $$topic{id};
-	}
-
 	# Populate the body.
 
 	my(@list)	= '<ul>';
@@ -52,13 +43,13 @@ sub export_as_tree
 	my($lines);
 	my($topic_id);
 
-	for $topic (@{$$pad{topics} })
+	for my $topic (@{$$pad{topics} })
 	{
-		$id			= $$topic{id};
-		$topic_id	= 1000 * $id;
-		$lines		= $self -> format_text($pad, $token);
+		$id			= $$topic{id};	# Id for topic.
+		$topic_id	= 1000 * $id;	# Fake id for leaf.
+		$lines		= $self -> format_text($pad, $topic);
 
-		push @list, qq|\t<li id = '$id'>$title|;
+		push @list, qq|\t<li id = '$id'>$$topic{title}|;
 		push @list, '<ul>';
 
 		for (@$lines)
@@ -175,7 +166,7 @@ sub format_text
 	my($count) = 0;
 
 	my(@pieces);
-	my($text_is_para, $title_id, $title_name, $topic_name);
+	my($text_is_para, $title_name, $topic_name);
 
 	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
 
@@ -195,7 +186,7 @@ sub format_text
 		$pieces[1]		= '' if (! $pieces[1]);
 		$text_is_para	= $$title{$pieces[0]} ? true : false;
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
-		$token			= {href => '', text => ''};
+		$item			= {href => '', text => ''};
 
 		if ($_ =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
@@ -223,10 +214,10 @@ sub format_text
 			$self -> logger -> info("Note: topic_name: $topic_name");
 			$self -> logger -> info("Note: pieces[0]:  $pieces[0]");
 			$self -> logger -> info("Note: pieces[1]:  $pieces[1]");
-			$self -> logger -> info("Note: title_id:   $title_id");
-			$self -> logger -> info("Note: panic:      No id") if (! defined($title_id) );
+			$self -> logger -> info("Note: token_id:   $$token{$id}");
+			$self -> logger -> info("Note: panic:      No id") if (! defined($$token{$id}) );
 
-			$$token{text}	= "<a href = '#$title_id'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '\#$$token{$id}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
