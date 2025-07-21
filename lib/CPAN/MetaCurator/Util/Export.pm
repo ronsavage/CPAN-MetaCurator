@@ -30,11 +30,11 @@ sub export_as_tree
 
 	# Get the topics' titles, which are TiddlyWiki paragraph names.
 
-	my(%title, $topic);
+	my(%title2id, $topic);
 
 	for $topic (@{$$pad{topics} })
 	{
-		$title{$$topic{title} } = $$topic{id};
+		$title2id{$$topic{title} } = $$topic{id};
 	}
 
 	# Populate the body.
@@ -50,13 +50,15 @@ sub export_as_tree
 	my(@divs);
 	my($item);
 	my($lines);
+	my($topic_id);
 
 	for $topic (@{$$pad{topics} })
 	{
-		$id		= 1000 * $$topic{id};
-		$lines	= $self -> format_text($pad, \%title, $$topic{text});
+		$id			= $$topic{id};
+		$topic_id	= 1000 * $id;
+		$lines		= $self -> format_text($pad, $token);
 
-		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
+		push @list, qq|\t<li id = '$id'>$title|;
 		push @list, '<ul>';
 
 		for (@$lines)
@@ -66,7 +68,7 @@ sub export_as_tree
 
 			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
 
-			push @list, "<li id = '$id'>$item</li>";
+			push @list, "<li id = '$topic_id'>$item</li>";
 		}
 
 		push @list, '</ul>';
@@ -97,28 +99,28 @@ sub export_as_tree
 
 sub format_text
 {
-	my($self, $pad, $title, $text)	= @_;
-	my(@text)				= grep{length} split(/\n/, $text);
+	my($self, $pad, $token)	= @_;
+	my(@text)				= grep{length} split(/\n/, $$token{text});
 	@text					= map{s/^-\s+//; s/:$//; $_} @text;
 	my($inside_see_also)	= false;
 	my($module_name_re)		= qr/^([A-Z]+[a-z0-9]{0,}|[a-z]+)/o; # A Perl module, hopefully. Eg: X11:XCB
 
 	my($href);
+	my($item);
 	my(@lines);
 	my(@see_also);
-	my($token);
 
-	$self -> logger -> info("Called format_text(pad, $$topic{title}, text)");
+	$self -> logger -> info("Called format_text. id: $$token{id}. text: $$token{text}. title: $$token{title}");
 
 	for (0 .. $#text)
 	{
 		$self -> logger -> info("Starting topic: $text[$_]");
 
-		$token = {href => '', text => ''};
+		$item = {href => '', text => ''};
 
 		if ($text[$_] =~ /^o\s+/)
 		{
-			$$token{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
+			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
 
 			$self -> logger -> info("Missing text @ line $_") if (length($text[$_]) == 0);
 
@@ -127,15 +129,15 @@ sub format_text
 				$inside_see_also = false;
 			}
 
-			if ($$token{text} =~ /^[A-Z]+$/) # Eg: Acronyms.
+			if ($$item{text} =~ /^[A-Z]+$/) # Eg: Acronyms.
 			{
-				$$token{text} .= " => $text[$_ + 1]";
+				$$item{text} .= " => $text[$_ + 1]";
 			}
-			elsif ($$token{text} =~ /^http/) # Eg: AdventPlanet.
+			elsif ($$item{text} =~ /^http/) # Eg: AdventPlanet.
 			{
-				$$token{href} = $$token{text};
+				$$item{href} = $$item{text};
 			}
-			elsif ($$token{text} =~ /^See also/) # Eg: ApacheStuff.
+			elsif ($$item{text} =~ /^See also/) # Eg: ApacheStuff.
 			{
 				$inside_see_also = true;
 
@@ -145,24 +147,24 @@ sub format_text
 			{
 				if ($text[$_ + 1] =~ /^http/) # Eg: AudioVisual.
 				{
-					$$token{href} = $text[$_ + 1];
+					$$item{href} = $text[$_ + 1];
 				}
-				elsif ($$token{text} =~ $module_name_re) # Eg: builtins, Imager, GD and GD::Polyline.
+				elsif ($$item{text} =~ $module_name_re) # Eg: builtins, Imager, GD and GD::Polyline.
 				{
-					$$token{text} = "<a href = 'https://metacpan.org/pod/$$token{text}'>$$token{text} - $text[$_ + 1]</a>";
+					$$item{text} = "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text} - $text[$_ + 1]</a>";
 				}
 				else
 				{
-					$$token{text} .= " => $text[$_ + 1]";
+					$$item{text} .= " => $text[$_ + 1]";
 
 					if ($text[$_ + 2] =~ /^http/) # Eg: Most entries.
 					{
-						$$token{href} = $text[$_ + 2];
+						$$item{href} = $text[$_ + 2];
 					}
 				}
 			}
 
-			push @lines, $token;
+			push @lines, $item;
 		}
 		elsif ($inside_see_also)
 		{
@@ -183,9 +185,9 @@ sub format_text
 
 		if ($count == 1)
 		{
-			$token = {href => '', text => 'See also:'};
+			$item = {href => '', text => 'See also:'};
 
-			push @lines, $token;
+			push @lines, $item;
 		}
 
 		@pieces			= split(/ - /, $_);
@@ -200,13 +202,13 @@ sub format_text
 			$self -> logger -> info("A: $_ starts with http");
 
 			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-			$$token{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
+			$$item{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
 		}
 		elsif ( ($_ =~ $module_name_re) && (! $text_is_para) ) # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
 		{
 			$self -> logger -> info("B: $_ is a module name and not a para");
 
-			$$token{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_</a>";
+			$$item{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_</a>";
 		}
 		else # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
@@ -214,7 +216,7 @@ sub format_text
 
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$title_name		= $topic_name;
-			$title_id		= $$title{$title_name};
+			$title_id		= $$token{$id};
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
 			$self -> logger -> info("Note: page_name:  $$pad{page_name}");
