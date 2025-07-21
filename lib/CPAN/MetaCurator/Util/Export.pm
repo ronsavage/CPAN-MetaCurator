@@ -216,12 +216,10 @@ sub format_text
 			$self -> logger -> info("Note: token_id:   $$token{id}");
 			$self -> logger -> info("Note: panic:      No id") if (! defined($$token{id}) );
 
-			$$token{text}	= "<a href = '\#$$token{id}'>$topic_name (topic)</a>";
+			$$item{text}	= "<a href = '\#$$token{id}'>$topic_name (topic)</a>";
 		}
 
-		push @lines, $token;
-
-		$$token{html} = '';
+		push @lines, $item;
 	}
 
 	$self -> logger -> info("Line $_: <$lines[$_]{text}> & <$lines[$_]{href}>") for (0 .. $#lines);
