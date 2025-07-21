@@ -184,7 +184,7 @@ sub format_text
 		@pieces			= split(/ - /, $_);
 		$_				= $pieces[0];
 		$pieces[1]		= '' if (! $pieces[1]);
-		$text_is_para	= $$title{$pieces[0]} ? true : false;
+		$text_is_para	= $$token{$pieces[0]} ? true : false;
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
 		$item			= {href => '', text => ''};
 
@@ -207,17 +207,16 @@ sub format_text
 
 			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
 			$title_name		= $topic_name;
-			$title_id		= $$token{$id};
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
 			$self -> logger -> info("Note: page_name:  $$pad{page_name}");
 			$self -> logger -> info("Note: topic_name: $topic_name");
 			$self -> logger -> info("Note: pieces[0]:  $pieces[0]");
 			$self -> logger -> info("Note: pieces[1]:  $pieces[1]");
-			$self -> logger -> info("Note: token_id:   $$token{$id}");
-			$self -> logger -> info("Note: panic:      No id") if (! defined($$token{$id}) );
+			$self -> logger -> info("Note: token_id:   $$token{id}");
+			$self -> logger -> info("Note: panic:      No id") if (! defined($$token{id}) );
 
-			$$token{text}	= "<a href = '\#$$token{$id}'>$topic_name (topic)</a>";
+			$$token{text}	= "<a href = '\#$$token{id}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $token;
