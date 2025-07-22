@@ -32,7 +32,6 @@ sub export_as_tree
 
 	my(@list)	= '<ul>';
 	my($root)	= shift @{$$pad{topics} };
-	$root		= $$root{title};
 
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$$root{id}'><a href = '#'>$$root{title}</a>|;
 	push @list, '<ul>';
