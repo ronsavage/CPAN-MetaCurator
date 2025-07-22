@@ -42,6 +42,8 @@ sub export_as_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
+		$self -> logger -> info("New topic record. id: $$topic{id}. title: $$topic{title}");
+
 		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
 
@@ -100,9 +102,11 @@ sub format_text
 
 	for (0 .. $#text)
 	{
-		$self -> logger -> info("Starting topic: $text[$_]");
+		$$topic{id}++;
 
-		$item = {href => '', id => $$topic{id}++, text => ''};
+		$self -> logger -> info("Starting leaf: $text[$_]");
+
+		$item = {href => '', id => $$topic{id}, text => ''};
 
 		if ($text[$_] =~ /^o\s+/)
 		{
@@ -168,10 +172,11 @@ sub format_text
 	for (@see_also)
 	{
 		$count++;
+		$$topic{id}++;
 
 		if ($count == 1)
 		{
-			$item = {href => '', id => $$topic{id}++, text => 'See also:'};
+			$item = {href => '', id => $$topic{id}, text => 'See also:'};
 
 			push @lines, $item;
 		}
