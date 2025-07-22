@@ -114,7 +114,7 @@ sub build_pad
 		}
 	}
 
-	$self -> logger -> info{'Constants:');
+	$self -> logger -> info('Constants:');
 
 	for (qw/domain_name encoding logo_path page_name time_zone title_font_path title_font_size/)
 	{
@@ -134,7 +134,7 @@ sub build_pad
 		$$pad{topic_names}{$$_{title} } = $$_{id};
 	}
 
-	$self -> logger -> info{'Topics:');
+	$self -> logger -> info('Topics:');
 
 	for (sort keys %{$$pad{topic_names} })
 	{
