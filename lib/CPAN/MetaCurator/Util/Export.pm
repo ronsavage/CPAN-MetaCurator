@@ -167,52 +167,49 @@ sub format_text
 
 	my($count) = 0;
 
+	my($entry);
 	my(@pieces);
 	my($text_is_para, $title_name, $topic_name);
 
 	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
 
-	for (@see_also)
+	for $item (@see_also)
 	{
 		$count++;
-		$$topic{id}++;
 
-		$self -> logger -> info("Starting see_also: id: $$_{id}. $$_{text}");
+		$self -> logger -> info("Starting see_also: id: $$item{id}. $$item{text}");
 
 		if ($count == 1)
 		{
-			$item = {href => '', id => $$topic{id}, text => 'See also:'};
+			push @lines, {href => '', $$item{id}, text => 'See also:'};
 
-			push @lines, $item;
-
-			$$topic{id}++;
+			$$item{id}++;
 		}
 
-		@pieces			= split(/ - /, $_);
-		$_				= $pieces[0];
+		@pieces			= split(/ - /, $$item{text});
+		$$item{text}	= $pieces[0];
 		$pieces[1]		= '' if (! $pieces[1]);
 		$text_is_para	= $$topic{$pieces[0]} ? true : false;
-		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
-		$item			= {href => '', id => $$topic{id}, text => ''};
+		$text_is_para	= true if (substr($$item{text}, 0, 2) eq '[[');
 
-		if ($_ =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
+		if ($$item{text} =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
-			$self -> logger -> info("A: $_ starts with http");
+			$self -> logger -> info("A: $$item{text} starts with http");
 
 			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 			$$item{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
 		}
-		elsif ( ($_ =~ $module_name_re) && (! $text_is_para) ) # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
+		elsif ( ($$item{text} =~ $module_name_re) && (! $text_is_para) ) # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
 		{
-			$self -> logger -> info("B: $_ is a module name and not a para");
+			$self -> logger -> info("B: $$item{text} is a module name and not a para");
 
-			$$item{text} .= "<a href = 'https://metacpan.org/pod/$_'>$_</a>";
+			$$item{text} .= "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text}</a>";
 		}
 		else # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
-			$self -> logger -> info("C: $_ is a para");
+			$self -> logger -> info("C: $$item{text} is a para");
 
-			$topic_name		= ($_ =~ /\[\[(.+)\]\]/) ? $1 : $_;
+			$topic_name		= ($$item{text} =~ /\[\[(.+)\]\]/) ? $1 : $$item{text};
 			$title_name		= $topic_name;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
@@ -220,10 +217,10 @@ sub format_text
 			$self -> logger -> info("Note: topic_name: $topic_name");
 			$self -> logger -> info("Note: pieces[0]:  $pieces[0]");
 			$self -> logger -> info("Note: pieces[1]:  $pieces[1]");
-			$self -> logger -> info("Note: topic_id:   $$topic{id}");
-			$self -> logger -> info("Note: panic:      No id") if (! defined($$topic{id}) );
+			$self -> logger -> info("Note: topic_id:   $$item{id}");
+			$self -> logger -> error("Note: panic:      No id") if (! defined($$item{id}) );
 
-			$$item{text}	= "<a href = '\#$$topic{id}'>$topic_name (topic)</a>";
+			$$item{text}	= "<a href = '\#$$item{id}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $item;
