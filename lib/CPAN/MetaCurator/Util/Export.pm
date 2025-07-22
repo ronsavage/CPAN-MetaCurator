@@ -99,7 +99,7 @@ sub format_text
 	my(@lines);
 	my(@see_also);
 
-	$self -> logger -> info("Called format_text. id: $$topic{id}. text: $$topic{text}. title: $$topic{title}");
+	$self -> logger -> info("Called format_text. title: $$topic{title}. id: $$topic{id}. text: $$topic{text}");
 
 	for (0 .. $#text)
 	{
