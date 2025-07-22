@@ -32,10 +32,9 @@ sub export_as_tree
 
 	my(@list)	= '<ul>';
 	my($root)	= shift @{$$pad{topics} };
-	my($id)		= $$root{id};
 	$root		= $$root{title};
 
-	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$root</a>|;
+	push @list, qq|<li data-jstree='{"opened": true}' id = '$$root{id}'><a href = '#'>$$root{title}</a>|;
 	push @list, '<ul>';
 
 	my(@divs);
@@ -44,16 +43,14 @@ sub export_as_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
-		$id			= $$topic{id};	# Id for topic.
-		$$topic{id}	= 10000 * $id;	# Fake id for leaf.
-		$lines		= $self -> format_text($pad, $topic);
-
-		push @list, qq|\t<li id = '$id'>$$topic{title}|;
+		push @list, qq|\t<li id = '$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
+
+		$topic{id}	= 10000 * $topic{id}; # Fake id offset for leaf.
+		$lines		= $self -> format_text($pad, $topic);
 
 		for (@$lines)
 		{
-			$id++;
 			$$pad{leaf_count}++;
 
 			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
@@ -89,8 +86,8 @@ sub export_as_tree
 
 sub format_text
 {
-	my($self, $pad, $token)	= @_;
-	my(@text)				= grep{length} split(/\n/, $$token{text});
+	my($self, $pad, $topic)	= @_;
+	my(@text)				= grep{length} split(/\n/, $$topic{text});
 	@text					= map{s/^-\s+//; s/\s+$//; s/:$//; $_} @text;
 	my($inside_see_also)	= false;
 	my($module_name_re)		= qr/^([A-Z]+[a-z0-9]{0,}|[a-z]+)/o; # A Perl module, hopefully. Eg: X11:XCB
@@ -100,15 +97,13 @@ sub format_text
 	my(@lines);
 	my(@see_also);
 
-	$self -> logger -> info("Called format_text. id: $$token{id}. text: $$token{text}. title: $$token{title}");
+	$self -> logger -> info("Called format_text. id: $$topic{id}. text: $$topic{text}. title: $$topic{title}");
 
 	for (0 .. $#text)
 	{
-		$$token{id}++;
-
 		$self -> logger -> info("Starting topic: $text[$_]");
 
-		$item = {href => '', text => ''};
+		$item = {href => '', id => $$topic{id}++, text => ''};
 
 		if ($text[$_] =~ /^o\s+/)
 		{
@@ -177,7 +172,7 @@ sub format_text
 
 		if ($count == 1)
 		{
-			$item = {href => '', text => 'See also:'};
+			$item = {href => '', id => $$topic{id}++, text => 'See also:'};
 
 			push @lines, $item;
 		}
@@ -185,9 +180,9 @@ sub format_text
 		@pieces			= split(/ - /, $_);
 		$_				= $pieces[0];
 		$pieces[1]		= '' if (! $pieces[1]);
-		$text_is_para	= $$token{$pieces[0]} ? true : false;
+		$text_is_para	= $$topic{$pieces[0]} ? true : false;
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
-		$item			= {href => '', text => ''};
+		$item			= {href => '', id => $$topic{id}++, text => ''};
 
 		if ($_ =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
@@ -214,10 +209,10 @@ sub format_text
 			$self -> logger -> info("Note: topic_name: $topic_name");
 			$self -> logger -> info("Note: pieces[0]:  $pieces[0]");
 			$self -> logger -> info("Note: pieces[1]:  $pieces[1]");
-			$self -> logger -> info("Note: token_id:   $$token{id}");
-			$self -> logger -> info("Note: panic:      No id") if (! defined($$token{id}) );
+			$self -> logger -> info("Note: topic_id:   $$topic{id}");
+			$self -> logger -> info("Note: panic:      No id") if (! defined($$topic{id}) );
 
-			$$item{text}	= "<a href = '\#$$token{id}'>$topic_name (topic)</a>";
+			$$item{text}	= "<a href = '\#$$topic{id}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $item;
