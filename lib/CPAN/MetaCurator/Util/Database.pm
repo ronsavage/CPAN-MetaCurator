@@ -104,7 +104,9 @@ sub build_pad
 
 	# Constants.
 
-	for my $key (@{$$pad{constants} })
+	my($key);
+
+	for $key (@{$$pad{constants} })
 	{
 		for (qw/domain_name encoding logo_path page_name time_zone title_font_path title_font_size/)
 		{
@@ -112,9 +114,31 @@ sub build_pad
 		}
 	}
 
+	$self -> logger -> info{'Constants:');
+
 	for (qw/domain_name encoding logo_path page_name time_zone title_font_path title_font_size/)
 	{
 		$self -> logger -> info("$_ => $$pad{$_}");
+	}
+
+	$self -> logger -> info($lines);
+
+	# Topics.
+	# There is a db table called topics so we need another name for the hash
+	# where the keys are the names of the topics and the values are db ids.
+
+	$$pad{topic_names} = {};
+
+	for $_ (@{$$pad{topics} })
+	{
+		$$pad{topic_names}{$$_{title} } = $$_{id};
+	}
+
+	$self -> logger -> info{'Topics:');
+
+	for (sort keys %{$$pad{topic_names} })
+	{
+		$self -> logger -> info("$_ => $$pad{topic_names}{$_}");
 	}
 
 	$self -> logger -> info($lines);
