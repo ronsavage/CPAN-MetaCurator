@@ -43,10 +43,10 @@ sub export_as_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
-		push @list, qq|\t<li id = '$topic{id}'>$$topic{title}|;
+		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
 
-		$topic{id}	= 10000 * $topic{id}; # Fake id offset for leaf.
+		$$topic{id}	= 10000 * $$topic{id}; # Fake id offset for leaf.
 		$lines		= $self -> format_text($pad, $topic);
 
 		for (@$lines)
