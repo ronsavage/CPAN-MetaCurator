@@ -181,9 +181,7 @@ sub format_text
 
 		if ($count == 1)
 		{
-			push @lines, {href => '', id => $$item{id}, text => 'See also:'};
-
-			$$item{id}++;
+			push @lines, {href => '', id => 0, text => 'See also:'};
 		}
 
 		@pieces			= split(/ - /, $$item{text});
@@ -220,7 +218,7 @@ sub format_text
 			$self -> logger -> info("Note: topic_id:   $$item{id}");
 			$self -> logger -> error("Note: panic:      No id") if (! defined($$item{id}) );
 
-			$$item{text}	= "<a href = '\#$$item{id}'>$topic_name (topic)</a>";
+			$$item{text}	= "<a href = '#$$item{id}'>$topic_name (topic)</a>";
 		}
 
 		push @lines, $item;
