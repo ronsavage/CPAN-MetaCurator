@@ -2,6 +2,7 @@ package CPAN::MetaCurator::Util::Export;
 
 use 5.40.0;
 use boolean;
+use contant id_scale_factor = 10000;
 use open qw(:std :utf8);
 use parent 'CPAN::MetaCurator::Util::HTML';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
@@ -47,7 +48,7 @@ sub export_as_tree
 		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
 
-		$$topic{id}	= 10000 * $$topic{id}; # Fake id offset for leaf.
+		$$topic{id}	= id_scale_factor * $$topic{id}; # Fake id offset for leaf.
 		$lines		= $self -> format_text($pad, $topic);
 
 		for (@$lines)
@@ -104,7 +105,7 @@ sub format_text
 	{
 		$$topic{id}++;
 
-		$self -> logger -> info("Starting leaf: $text[$_]");
+		$self -> logger -> info("Starting leaf: id: $$topic{id}. $text[$_]");
 
 		$item = {href => '', id => $$topic{id}, text => ''};
 
@@ -158,7 +159,9 @@ sub format_text
 		}
 		elsif ($inside_see_also)
 		{
-			push @see_also, $text[$_];
+			$$item{text} = $text[$_];
+
+			push @see_also, $item;
 		}
 	}
 
@@ -174,11 +177,15 @@ sub format_text
 		$count++;
 		$$topic{id}++;
 
+		$self -> logger -> info("Starting see_also: id: $$_{id}. $$_{text}");
+
 		if ($count == 1)
 		{
 			$item = {href => '', id => $$topic{id}, text => 'See also:'};
 
 			push @lines, $item;
+
+			$$topic{id}++;
 		}
 
 		@pieces			= split(/ - /, $_);
@@ -186,7 +193,7 @@ sub format_text
 		$pieces[1]		= '' if (! $pieces[1]);
 		$text_is_para	= $$topic{$pieces[0]} ? true : false;
 		$text_is_para	= true if (substr($_, 0, 2) eq '[[');
-		$item			= {href => '', id => $$topic{id}++, text => ''};
+		$item			= {href => '', id => $$topic{id}, text => ''};
 
 		if ($_ =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
