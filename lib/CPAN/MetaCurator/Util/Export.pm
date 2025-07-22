@@ -57,7 +57,7 @@ sub export_as_tree
 
 			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
 
-			push @list, "<li id = '$$topic{id}'>$item</li>";
+			push @list, "<li id = '$$_{id}'>$item</li>";
 		}
 
 		push @list, '</ul>';
