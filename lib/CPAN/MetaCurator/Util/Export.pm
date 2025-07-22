@@ -2,7 +2,7 @@ package CPAN::MetaCurator::Util::Export;
 
 use 5.40.0;
 use boolean;
-use contant id_scale_factor = 10000;
+use contant id_scale_factor => 10000;
 use open qw(:std :utf8);
 use parent 'CPAN::MetaCurator::Util::HTML';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
