@@ -181,7 +181,7 @@ sub format_text
 
 		if ($count == 1)
 		{
-			push @lines, {href => '', $$item{id}, text => 'See also:'};
+			push @lines, {href => '', id => $$item{id}, text => 'See also:'};
 
 			$$item{id}++;
 		}
