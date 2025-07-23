@@ -64,6 +64,7 @@ sub export_as_tree
 		push @list, '</li>';
 
 		$self -> logger -> info($lines);
+		$self -> logger -> info($lines);
 	}
 
 	push @list, '</ul>', '</li>', '</ul>';
