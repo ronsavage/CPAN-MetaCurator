@@ -78,6 +78,14 @@ has logo_path =>
 	required	=> 0,
 );
 
+has separator =>
+(
+	default		=> '-' x 50,
+	is			=> 'r',
+	isa			=> Str,
+	required	=> 0,
+);
+
 # Warning. Order is important because of foreign key constraints.
 # The tables are created in this order, and dropped in reverse order.
 # Currently, memos and modules are not used.

@@ -63,8 +63,8 @@ sub export_as_tree
 		push @list, '</ul>';
 		push @list, '</li>';
 
-		$self -> logger -> info($separator);
-		$self -> logger -> info($separator);
+		$self -> logger -> info($self -> separator);
+		$self -> logger -> info($self -> separator);
 	}
 
 	push @list, '</ul>', '</li>', '</ul>';
