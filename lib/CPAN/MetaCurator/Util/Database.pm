@@ -88,7 +88,7 @@ has time_option =>
 	required	=> 0,
 );
 
-our $lines		= '-' x 50;
+our $seperator	= '-' x 50;
 our $VERSION	= '1.00';
 
 # -----------------------------------------------
@@ -121,7 +121,7 @@ sub build_pad
 		$self -> logger -> info("$_ => $$pad{$_}");
 	}
 
-	$self -> logger -> info($lines);
+	$self -> logger -> info($seperator);
 
 	# Topics.
 	# There is a db table called topics so we need another name for the hash
@@ -141,7 +141,7 @@ sub build_pad
 		$self -> logger -> info("$_ => $$pad{topic_names}{$_}");
 	}
 
-	$self -> logger -> info($lines);
+	$self -> logger -> info($seperator);
 
 	# Dates.
 	# DateTime::Tiny does not handle time_zone.
@@ -201,7 +201,7 @@ sub init_db
 	$self -> engine($self -> creator -> db_vendor =~ /(?:Mysql)/i ? 'engine=innodb' : '');
 	$self -> time_option($self -> creator -> db_vendor =~ /(?:MySQL|Postgres)/i ? '(0) without time zone' : '');
 	$self -> logger -> info("Connected to $dsn[0]");
-	$self -> logger -> info($lines);
+	$self -> logger -> info($seperator);
 
 } # End of init_db.
 
