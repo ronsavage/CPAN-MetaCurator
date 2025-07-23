@@ -96,6 +96,7 @@ sub format_text
 	@text					= map{s/^-\s+//; s/\s+$//; s/:$//; $_} @text;
 	my($inside_see_also)	= false;
 	my($module_name_re)		= qr/^([A-Z]+[a-z0-9]{0,}|[a-z]+)/o; # A Perl module, hopefully. Eg: X11:XCB
+	my($topic_name_re)		= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
 
 	my($href);
 	my($item);
@@ -203,7 +204,7 @@ sub format_text
 		{
 			$self -> logger -> info("B: $$item{text} is a para");
 
-			$topic_name		= ($$item{text} =~ /\[\[(.+)\]\]/) ? $1 : $$item{text};
+			$topic_name		= ($$item{text} =~ $topic_name_re) ? $1 : $$item{text};
 			$title_name		= $topic_name;
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
