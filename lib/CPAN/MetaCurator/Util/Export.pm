@@ -169,7 +169,7 @@ sub format_text
 
 	my($entry);
 	my(@pieces);
-	my($title_name, $topic_name);
+	my($text_is_para, $title_name, $topic_name);
 
 	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
 
