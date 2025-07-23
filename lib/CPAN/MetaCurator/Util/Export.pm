@@ -169,7 +169,7 @@ sub format_text
 
 	my($entry);
 	my(@pieces);
-	my($text_is_para, $title_name, $topic_name);
+	my($title_name, $topic_name);
 
 	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
 
@@ -187,8 +187,7 @@ sub format_text
 		@pieces			= split(/ - /, $$item{text});
 		$$item{text}	= $pieces[0];
 		$pieces[1]		= '' if (! $pieces[1]);
-		$text_is_para	= $$topic{$pieces[0]} ? true : false;
-		$text_is_para	= true if (substr($$item{text}, 0, 2) eq '[[');
+		$text_is_para	= $$pad{topic_names}{$pieces[0]} ? true : false;
 
 		if ($$item{text} =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
@@ -197,15 +196,9 @@ sub format_text
 			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 			$$item{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
 		}
-		elsif ( ($$item{text} =~ $module_name_re) && (! $text_is_para) ) # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
+		elsif ($text_is_para) # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
-			$self -> logger -> info("B: $$item{text} is a module name and not a para");
-
-			$$item{text} .= "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text}</a>";
-		}
-		else # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
-		{
-			$self -> logger -> info("C: $$item{text} is a para");
+			$self -> logger -> info("B: $$item{text} is a para");
 
 			$topic_name		= ($$item{text} =~ /\[\[(.+)\]\]/) ? $1 : $$item{text};
 			$title_name		= $topic_name;
@@ -219,6 +212,12 @@ sub format_text
 			$self -> logger -> error("Note: panic:      No id") if (! defined($$item{id}) );
 
 			$$item{text}	= "<a href = '#$$item{id}'>$topic_name (topic)</a>";
+		}
+		else # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
+		{
+			$self -> logger -> info("C: $$item{text} is a module name");
+
+			$$item{text} .= "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text}</a>";
 		}
 
 		push @lines, $item;
