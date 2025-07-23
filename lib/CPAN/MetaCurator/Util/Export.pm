@@ -62,6 +62,8 @@ sub export_as_tree
 
 		push @list, '</ul>';
 		push @list, '</li>';
+
+		$self -> logger -> info($lines);
 	}
 
 	push @list, '</ul>', '</li>', '</ul>';
@@ -78,7 +80,7 @@ sub export_as_tree
 	$self -> write_file($header, $body, $footer, $pad);
 
 	$self -> logger -> info("Leaf count:  $$pad{leaf_count}");
-	$self -> logger -> info("Topic count: $$pad{topic_count}");
+	$self -> logger -> info("Topic count: $$pad{topic_count}\n");
 
 	return 0;
 
