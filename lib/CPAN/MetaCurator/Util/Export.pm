@@ -173,7 +173,7 @@ sub format_text
 
 	my($entry);
 	my(@pieces);
-	my($text_is_para, $title_name, $topic_name);
+	my($text_is_topic, $topic_id, $topic_name);
 
 	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
 
@@ -189,9 +189,11 @@ sub format_text
 		}
 
 		@pieces			= split(/ - /, $$item{text});
+		$pieces[0]		= $1 if ($pieces[0] =~ $topic_name_re); # Eg: [[XS]].
 		$$item{text}	= $pieces[0];
 		$pieces[1]		= '' if (! $pieces[1]);
-		$text_is_para	= $$pad{topic_names}{$pieces[0]} ? true : false;
+		$topic_id		= $$pad{topic_names}{$pieces[0]} || 0;
+		$text_is_topic	= ($topic_id > 0) ? true : false;
 
 		if ($$item{text} =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
@@ -200,26 +202,25 @@ sub format_text
 			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 			$$item{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
 		}
-		elsif ($text_is_para) # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
+		elsif ($text_is_topic) # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
-			$self -> logger -> info("B: $$item{text} is a para");
+			$self -> logger -> info("B: $$item{text} is a topic");
 
-			$topic_name		= ($$item{text} =~ $topic_name_re) ? $1 : $$item{text};
-			$title_name		= $topic_name;
+			$topic_name		= $pieces[0];
 			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
 
-			$self -> logger -> info("Note: page_name:  $$pad{page_name}");
-			$self -> logger -> info("Note: topic_name: $topic_name");
-			$self -> logger -> info("Note: pieces[0]:  $pieces[0]");
-			$self -> logger -> info("Note: pieces[1]:  $pieces[1]");
-			$self -> logger -> info("Note: topic_id:   $$pad{topic_names}{$pieces[0]}");
-			$self -> logger -> error("Note: panic:      No id") if (! defined($$pad{topic_names}{$pieces[0]}) );
+			$self -> logger -> info("page_name:  $$pad{page_name}");
+			$self -> logger -> info("topic_name: $topic_name");
+			$self -> logger -> info("pieces[0]:  $pieces[0]");
+			$self -> logger -> info("pieces[1]:  $pieces[1]");
+			$self -> logger -> info("topic_id:   $topic_id");
+			$self -> logger -> error("Missing id for topic") if ($topic_id == 0);
 
-			$$item{text}	= "<a href = '#$$pad{topic_names}{$pieces[0]}'>$topic_name (topic)</a>";
+			$$item{text}	= "<a href = '#$topic_id}'>$topic_name (topic)</a>";
 		}
 		else # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
 		{
-			$self -> logger -> info("C: $$item{text} is a module name");
+			$self -> logger -> info("C: $$item{text} is a module");
 
 			$$item{text} .= "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text}</a>";
 		}
