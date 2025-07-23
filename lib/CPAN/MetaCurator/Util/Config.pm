@@ -81,7 +81,7 @@ has logo_path =>
 has separator =>
 (
 	default		=> '-' x 50,
-	is			=> 'r',
+	is			=> 'ro',
 	isa			=> Str,
 	required	=> 0,
 );
