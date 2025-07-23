@@ -208,10 +208,10 @@ sub format_text
 			$self -> logger -> info("Note: topic_name: $topic_name");
 			$self -> logger -> info("Note: pieces[0]:  $pieces[0]");
 			$self -> logger -> info("Note: pieces[1]:  $pieces[1]");
-			$self -> logger -> info("Note: topic_id:   $$item{id}");
-			$self -> logger -> error("Note: panic:      No id") if (! defined($$item{id}) );
+			$self -> logger -> info("Note: topic_id:   $$pad{topic_names}{$pieces[0]}");
+			$self -> logger -> error("Note: panic:      No id") if (! defined($$pad{topic_names}{$pieces[0]}) );
 
-			$$item{text}	= "<a href = '#$$item{id}'>$topic_name (topic)</a>";
+			$$item{text}	= "<a href = '#$$pad{topic_names}{$pieces[0]}'>$topic_name (topic)</a>";
 		}
 		else # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
 		{
