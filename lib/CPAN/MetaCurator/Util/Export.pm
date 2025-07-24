@@ -217,7 +217,7 @@ sub format_text
 			$self -> logger -> error("Missing id for topic") if ($topic_id == 0);
 
 			#$$item{text}	= "<a href = '#$topic_id'>$topic_name (topic)</a>";
-			$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('$topic_id');">$topic_name (topic)</button>|;
+			$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('\#$topic_id');">$topic_name (topic)</button>|;
 		}
 		else # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
 		{
