@@ -226,7 +226,7 @@ sub format_text
 		{
 			$self -> logger -> info("C: $$item{text} is a module");
 
-			$$item{text} .= "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text}</a>";
+			$$item{text} = "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text}</a>";
 		}
 
 		push @lines, $item;
