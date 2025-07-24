@@ -19,8 +19,9 @@ declare -x SOURCE=html/$PREFIX.tree.html
 declare -x DEST=$DS/misc
 
 cp $SOURCE $DEST
+cp $SOURCE $HOME/savage.net.au/misc
 
-echo Copied $SOURCE to $DEST
+echo Copied $SOURCE to $DEST and to ~/savage.net.au/misc
 echo Lastly check no other tiddlers.json in ~/Downloads
 
 declare -x FILE1='/home/ron/Downloads/tiddlers(1).json'
