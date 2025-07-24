@@ -14,9 +14,9 @@ our $VERSION = '1.00';
 
 =head1 How to convert a Perl.Wiki.html into a jsTree
 
+Note: My web host and I use case-sensitive file systems
 Download Perl.Wiki.html from http://savage.net.au/
 Download and unpack the distro CPAN::MetaCurator from https://metacpan.org/
-Beware: If you use a case-insensitive file system...
 Update Perl.Wiki.html if desired
 Export its data by clicking the Tools tab on the top right:
 1: Choose 'export all'
@@ -30,7 +30,6 @@ Run scripts/build.db.sh. This runs:
 This reads data/cpan.metacurator.tiddlers.json and outputs data/cpan.metacurator.sqlite
 4: scripts/export.as.tree.pl
 This reads data/cpan.metacurator.sqlite and outputs html/cpan.metacurator.tree.html
-Note:
 The code shipped can be configured to change the home_path()
 And it logs to log/development.log
 
