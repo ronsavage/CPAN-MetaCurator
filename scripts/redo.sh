@@ -16,7 +16,7 @@ scripts/populate.sqlite.tables.pl
 scripts/export.as.tree.pl
 
 declare -x SOURCE=html/$PREFIX.tree.html
-declare -x DEST=$DS/misc
+declare -x DEST=$DH/misc
 
 cp $SOURCE $DEST
 cp $SOURCE $HOME/savage.net.au/misc
