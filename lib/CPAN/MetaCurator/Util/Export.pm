@@ -190,7 +190,6 @@ sub format_text
 
 		@pieces			= split(/ - /, $$item{text});
 		$pieces[0]		= $1 if ($pieces[0] =~ $topic_name_re); # Eg: [[XS]].
-		$$item{text}	= $pieces[0];
 		$pieces[1]		= '' if (! $pieces[1]);
 		$topic_id		= $$pad{topic_names}{$pieces[0]} || 0;
 		$text_is_topic	= ($topic_id > 0) ? true : false;
@@ -200,7 +199,7 @@ sub format_text
 			$self -> logger -> info("A: $$item{text} starts with http");
 
 			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-			$$item{text}	.= "<a href = '$pieces[0]'>$pieces[1]</a>";
+			$$item{text}	= "<a href = '$pieces[0]'>$pieces[1]</a>";
 		}
 		elsif ($text_is_topic) # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
