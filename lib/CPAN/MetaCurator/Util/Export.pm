@@ -174,7 +174,7 @@ sub format_text
 	}
 
 	$self -> logger -> info($self -> separator);
-	$self -> logger -> info("Hover. $_: $hover[$_]") 0 .. $#hover;
+	$self -> logger -> info("Hover. $_: $hover[$_]") for 0 .. $#hover;
 	$self -> logger -> info($self -> separator);
 
 	my($count) = 0;
