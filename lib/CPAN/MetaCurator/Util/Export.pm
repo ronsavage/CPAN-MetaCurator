@@ -98,7 +98,7 @@ sub format_text
 	my($module_name_re)		= qr/^([A-Z]+[a-z0-9]{0,}|[a-z]+)/o; # A Perl module, hopefully. Eg: X11:XCB
 	my($topic_name_re)		= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
 
-	my($href);
+	my($href, @hover);
 	my($item);
 	my(@lines);
 	my(@see_also);
@@ -167,7 +167,15 @@ sub format_text
 
 			push @see_also, $item;
 		}
+		else
+		{
+			push @hover, $text[$_]
+		}
 	}
+
+	$self -> logger -> info($self -> separator);
+	$self -> logger -> info("Hover. $_: $hover[$_]") 0 .. $#hover;
+	$self -> logger -> info($self -> separator);
 
 	my($count) = 0;
 
