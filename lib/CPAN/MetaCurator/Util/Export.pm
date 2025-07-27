@@ -158,6 +158,10 @@ sub format_text
 					}
 				}
 			}
+			else
+			{
+				push @hover, $text[$_]
+			}
 
 			push @lines, $item;
 		}
@@ -166,10 +170,6 @@ sub format_text
 			$$item{text} = $text[$_];
 
 			push @see_also, $item;
-		}
-		else
-		{
-			push @hover, $text[$_]
 		}
 	}
 
