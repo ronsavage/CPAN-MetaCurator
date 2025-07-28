@@ -131,8 +131,8 @@ sub populate_modules_table
 	{
 		@pieces = split(/\s+/, $_, 3); # 3 => [0], [1], [*].
 
-		next if (length($pieces[0]) == 0);	# Skip blank lines.
-		next if ($pieces[0] =~ /:$/);		# Skip headers.
+		next if (! $pieces[0]);			# Skip blank lines.
+		next if ($pieces[0] =~ /:$/);	# Skip headers.
 
 		$count++;
 
