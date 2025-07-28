@@ -33,6 +33,13 @@ This reads data/cpan.metacurator.sqlite and outputs html/cpan.metacurator.tree.h
 The code shipped can be configured to change the home_path()
 And it logs to log/development.log
 
+Note: Development process
+1: Download Perl's 02packages.details.txt and store it as data/cpan.metacurator.modules.txt. Size: 23,868,403
+2: Run buid.db.sh which uses that data to populate the modules table, which contains 268,476 records (2025-07-28)
+3: This creates data/cpan.metacurator.sqlite of size 13,737,984 bytes
+4: Delete data/cpan.metacurator.modules.txt since there is no point shipping it
+5: Patch Import.pm to comment out populate_modules_table() because it takes 50 mins to run.
+
 =head1 Machine-Readable Change Log
 
 The file Changes was converted into Changelog.ini by L<Module::Metadata::Changes>.
