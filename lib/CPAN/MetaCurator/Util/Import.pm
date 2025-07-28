@@ -36,7 +36,7 @@ sub populate_all_tables
 	});
 
 	$self -> populate_constants_table($csv);
-	$self -> populate_modules_table($csv);
+	#$self -> populate_modules_table($csv);
 	$self -> populate_topics_table;
 
 	$self -> logger -> info('Populated all tables');
@@ -139,6 +139,8 @@ sub populate_modules_table
 		$$record{name}		= $pieces[0];
 		$$record{version}	= $pieces[1];
 		$id					= $self -> insert_hashref($table_name, $record);
+
+		$self -> logger -> info("Stored $count records into '$table_name'") if ($count % 10000 == 0);
 	}
 
 	$self -> logger -> info("Stored $count records into '$table_name'");
