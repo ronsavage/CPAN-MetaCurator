@@ -140,6 +140,8 @@ sub format_text
 			}
 			elsif ($_ <= $#text - 2)
 			{
+				push @hover, $text[$_];
+
 				if ($text[$_ + 1] =~ /^http/) # Eg: AudioVisual.
 				{
 					$$item{href} = $text[$_ + 1];
@@ -158,10 +160,6 @@ sub format_text
 					}
 				}
 			}
-			else
-			{
-				push @hover, $text[$_]
-			}
 
 			push @lines, $item;
 		}
@@ -173,9 +171,9 @@ sub format_text
 		}
 	}
 
-	$self -> logger -> info($self -> separator);
+	$self -> logger -> info('Hover: ' . $self -> separator);
 	$self -> logger -> info("Hover. $_: $hover[$_]") for 0 .. $#hover;
-	$self -> logger -> info($self -> separator);
+	$self -> logger -> info('Hover: ' . $self -> separator);
 
 	my($count) = 0;
 
