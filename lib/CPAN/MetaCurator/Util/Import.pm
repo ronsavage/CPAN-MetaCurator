@@ -16,7 +16,7 @@ use Mojo::JSON 'from_json';
 use Text::CSV::Encoded;
 use Types::Standard qw/Str/;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 # -----------------------------------------------
 
