@@ -124,6 +124,8 @@ sub populate_modules_table
 	my(@names)	= read_lines($path);
 	my($record)	= {};
 
+	$self -> logger -> info("Read {[$#names + 1]} records from $path into table '$table_name'");
+
 	my($id);
 	my(%names);
 	my(@pieces);
