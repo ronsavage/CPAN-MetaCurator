@@ -10,8 +10,8 @@ cp /dev/null log/development.log
 git commit -am"$1"
 build.module.sh CPAN::MetaCurator 1.00
 
-time scripts/drop.tables.pl
-time scripts/create.tables.pl
+scripts/drop.tables.pl
+scripts/create.tables.pl
 time scripts/populate.sqlite.tables.pl
 time scripts/export.as.tree.pl
 
