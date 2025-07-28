@@ -10,10 +10,10 @@ cp /dev/null log/development.log
 git commit -am"$1"
 build.module.sh CPAN::MetaCurator 1.00
 
-scripts/drop.tables.pl
-scripts/create.tables.pl
-scripts/populate.sqlite.tables.pl
-scripts/export.as.tree.pl
+time scripts/drop.tables.pl
+time scripts/create.tables.pl
+time scripts/populate.sqlite.tables.pl
+time scripts/export.as.tree.pl
 
 declare -x SOURCE=html/$PREFIX.tree.html
 declare -x DEST=$DH/misc
