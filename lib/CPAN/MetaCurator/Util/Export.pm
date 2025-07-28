@@ -101,6 +101,7 @@ sub format_text
 	my($href, @hover);
 	my($item);
 	my(@lines);
+	my($offset);
 	my(@see_also);
 
 	$self -> logger -> info("Called format_text. title: $$topic{title}. id: $$topic{id}. text: $$topic{text}");
@@ -115,6 +116,8 @@ sub format_text
 
 		if ($text[$_] =~ /^o\s+/)
 		{
+			$offset = $_;
+
 			$self -> logger -> error("Missing trailing : for $text[$_]") if ($text[$_] !~ /:$/);
 
 			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
@@ -160,6 +163,10 @@ sub format_text
 					}
 				}
 			}
+			else
+			{
+				push @hover, $text[$_];
+			}
 
 			push @lines, $item;
 		}
@@ -168,10 +175,6 @@ sub format_text
 			$$item{text} = $text[$_];
 
 			push @see_also, $item;
-		}
-		else
-		{
-			push @hover, $text[$_];
 		}
 	}
 

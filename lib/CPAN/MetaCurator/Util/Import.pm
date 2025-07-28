@@ -8,7 +8,7 @@ use Data::Dumper::Concise; # For Dumper().
 use DateTime::Tiny;
 
 use File::Spec;
-use File::Slurper 'read_text';
+use File::Slurper 'read_lines read_text';
 
 use Moo;
 use Mojo::JSON 'from_json';
@@ -37,6 +37,7 @@ sub populate_all_tables
 	});
 
 	$self -> populate_constants_table($csv, $path);
+	$self -> populate_modules_table($csv, $path);
 	$self -> populate_topics_table;
 
 	$self -> logger -> info('Populated all tables');
@@ -106,6 +107,45 @@ sub populate_constants_table
 	$self -> logger -> info("Stored $count records into '$table_name'");
 
 }	# End of populate_constants_table.
+
+# -----------------------------------------------
+
+sub populate_modules_table
+{
+	my($self, $csv, $path)	= @_;
+	my($table_name)			= 'modules';
+	$path					=~ s/levies_due/$table_name/;
+
+	# Populates $self -> column_names.
+
+	$self -> get_table_column_names(true, $table_name);
+
+	my($count)	= 0;
+	my(@names)	= read_lines($path);
+
+	my($id);
+	my(%names);
+	my(@pieces);
+	my(%record);
+
+	for (@names)
+	{
+		@pieces = split(/\s+/, $_, 3); # 3 => [0], [1], [*].
+
+		next if ($pieces[0] =~ /:?$/);	# Skip headers and blank line.
+
+		$count++;
+
+		$record{name}		= $pieces[0];
+		$record{version}	= $pieces[1];
+		$id					= $self -> insert_hashref($table_name, $record);
+	}
+
+	my($count)	= $#names + 1;
+
+	$self -> logger -> info("Stored $count records into '$table_name'");
+
+}	# End of populate_modules_table.
 
 # -----------------------------------------------
 
