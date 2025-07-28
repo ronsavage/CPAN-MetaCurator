@@ -120,8 +120,7 @@ sub populate_modules_table
 
 	$self -> get_table_column_names(true, $table_name);
 
-	my($count)	= 0;
-	my(@names)	= read_lines($path);
+	my(@names) = read_lines($path);
 
 	my($id);
 	my(%names);
@@ -133,8 +132,6 @@ sub populate_modules_table
 		@pieces = split(/\s+/, $_, 3); # 3 => [0], [1], [*].
 
 		next if ($pieces[0] =~ /:?$/);	# Skip headers and blank line.
-
-		$count++;
 
 		$record{name}		= $pieces[0];
 		$record{version}	= $pieces[1];

@@ -1,0 +1,27 @@
+[2025-07-28 12:48:28.73639] [73152] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-07-28 12:48:28.73658] [73152] [info] --------------------------------------------------
+[2025-07-28 12:48:28.73661] [73152] [info] Dropping all tables
+[2025-07-28 12:48:28.75048] [73152] [info] Dropped all tables
+[2025-07-28 12:48:28.75051] [73152] [info] --------------------------------------------------
+[2025-07-28 12:48:28.96804] [73153] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-07-28 12:48:28.96822] [73153] [info] --------------------------------------------------
+[2025-07-28 12:48:28.96824] [73153] [info] Creating all tables
+[2025-07-28 12:48:28.98572] [73153] [info] Created all tables
+[2025-07-28 12:48:28.98581] [73153] [info] --------------------------------------------------
+[2025-07-28 12:48:29.45272] [73155] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-07-28 12:48:29.45290] [73155] [info] --------------------------------------------------
+[2025-07-28 12:48:29.45335] [73155] [info] Constants:
+[2025-07-28 12:48:29.45339] [73155] [info] domain_name => 
+[2025-07-28 12:48:29.45342] [73155] [info] encoding => 
+[2025-07-28 12:48:29.45345] [73155] [info] logo_path => 
+[2025-07-28 12:48:29.45350] [73155] [info] page_name => 
+[2025-07-28 12:48:29.45353] [73155] [info] time_zone => 
+[2025-07-28 12:48:29.45355] [73155] [info] title_font_path => 
+[2025-07-28 12:48:29.45358] [73155] [info] title_font_size => 
+[2025-07-28 12:48:29.45360] [73155] [info] --------------------------------------------------
+[2025-07-28 12:48:29.45364] [73155] [info] Topics:
+[2025-07-28 12:48:29.45368] [73155] [info] --------------------------------------------------
+[2025-07-28 12:48:29.45424] [73155] [info] Created /home/ron/perl.modules/CPAN-MetaCurator/html/cpan.metacurator.tree.html. Encoding: 
+[2025-07-28 12:48:29.45427] [73155] [info] Leaf count:  0
+[2025-07-28 12:48:29.45430] [73155] [info] Topic count: 0
+
