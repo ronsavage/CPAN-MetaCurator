@@ -55,7 +55,6 @@ sub populate_constants_table
 {
 	my($self, $csv, $path)	= @_;
 	my($table_name)			= 'constants';
-	$path					=~ s/levies_due/$table_name/;
 
 	# Populates $self -> column_names.
 
@@ -114,7 +113,7 @@ sub populate_modules_table
 {
 	my($self, $csv, $path)	= @_;
 	my($table_name)			= 'modules';
-	$path					=~ s/levies_due/$table_name/;
+	$path					=~ s/constants/$table_name/;
 
 	# Populates $self -> column_names.
 
