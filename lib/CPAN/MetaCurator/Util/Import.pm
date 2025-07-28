@@ -8,7 +8,7 @@ use Data::Dumper::Concise; # For Dumper().
 use DateTime::Tiny;
 
 use File::Spec;
-use File::Slurper 'read_lines read_text';
+use File::Slurper 'read_lines';
 
 use Moo;
 use Mojo::JSON 'from_json';
@@ -194,7 +194,7 @@ sub read_tiddlers_file
 {
 	my($self)		= @_;
 	my($file_name)	= File::Spec -> catfile($self -> home_path, $self -> tiddlers_path);
-	my($json)		= read_text($file_name, 'UTF-8');
+	my($json)		= join('', read_lines($file_name, 'UTF-8') );
 
 	return from_json $json;
 
