@@ -140,8 +140,6 @@ sub format_text
 			}
 			elsif ($_ <= $#text - 2)
 			{
-				push @hover, $text[$_];
-
 				if ($text[$_ + 1] =~ /^http/) # Eg: AudioVisual.
 				{
 					$$item{href} = $text[$_ + 1];
@@ -168,6 +166,10 @@ sub format_text
 			$$item{text} = $text[$_];
 
 			push @see_also, $item;
+		}
+		else
+		{
+			push @hover, $text[$_];
 		}
 	}
 
