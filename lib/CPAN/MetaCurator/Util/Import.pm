@@ -28,16 +28,15 @@ sub populate_all_tables
 	$self -> init_db;
 	$self -> logger -> info('Populating all tables');
 
-	my($path)	= File::Spec -> catfile($self -> home_path, $self -> constants_path);
-	my($csv)	= Text::CSV::Encoded -> new
+	my($csv) = Text::CSV::Encoded -> new
 	({
 		allow_whitespace	=> 1,
 		encoding_in			=> 'utf-8',
 		strict				=> 1,
 	});
 
-	$self -> populate_constants_table($csv, $path);
-	$self -> populate_modules_table($csv, $path);
+	$self -> populate_constants_table($csv);
+	$self -> populate_modules_table($csv);
 	$self -> populate_topics_table;
 
 	$self -> logger -> info('Populated all tables');
@@ -53,8 +52,9 @@ sub populate_all_tables
 
 sub populate_constants_table
 {
-	my($self, $csv, $path)	= @_;
-	my($table_name)			= 'constants';
+	my($self, $csv)	= @_;
+	my($path)		= File::Spec -> catfile($self -> home_path, $self -> constants_path);
+	my($table_name)	= 'constants';
 
 	# Populates $self -> column_names.
 
@@ -111,9 +111,9 @@ sub populate_constants_table
 
 sub populate_modules_table
 {
-	my($self, $csv, $path)	= @_;
-	my($table_name)			= 'modules';
-	$path					=~ s/constants/$table_name/;
+	my($self, $csv)		= @_;
+	my($path)			= File::Spec -> catfile($self -> home_path, $self -> modules_path);
+	my($table_name)		= 'modules';
 
 	# Populates $self -> column_names.
 

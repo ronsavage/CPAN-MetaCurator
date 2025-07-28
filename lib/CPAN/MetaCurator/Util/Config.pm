@@ -78,6 +78,14 @@ has logo_path =>
 	required	=> 0,
 );
 
+has modules_path =>
+(
+	default		=> sub{return 'data/cpan.metacurator.modules.txt'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
 has separator =>
 (
 	default		=> '-' x 50,
