@@ -2,3 +2,8 @@ Revision history for Perl extension CPAN::MetaCurator.
 
 1.00  2025-05-27T12:00:00
 	  - Original version
+
+1.02  2025-07-28T11:41:00
+      - Add data/02packages.details.txt
+      - Use it to populate the modules table
+      - Modify Export.format_text() to detect text to hover over
