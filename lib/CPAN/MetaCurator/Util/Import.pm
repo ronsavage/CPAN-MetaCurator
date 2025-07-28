@@ -120,12 +120,13 @@ sub populate_modules_table
 
 	$self -> get_table_column_names(true, $table_name);
 
-	my(@names) = read_lines($path);
+	my($count)	= 0;
+	my(@names)	= read_lines($path);
+	my($record)	= {};
 
 	my($id);
 	my(%names);
 	my(@pieces);
-	my(%record);
 
 	for (@names)
 	{
@@ -133,12 +134,12 @@ sub populate_modules_table
 
 		next if ($pieces[0] =~ /:?$/);	# Skip headers and blank line.
 
-		$record{name}		= $pieces[0];
-		$record{version}	= $pieces[1];
+		$count++;
+
+		$$record{name}		= $pieces[0];
+		$$record{version}	= $pieces[1];
 		$id					= $self -> insert_hashref($table_name, $record);
 	}
-
-	my($count)	= $#names + 1;
 
 	$self -> logger -> info("Stored $count records into '$table_name'");
 
