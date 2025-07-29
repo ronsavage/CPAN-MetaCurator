@@ -1,0 +1,31 @@
+[2025-07-29 11:25:21.69153] [100538] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-07-29 11:25:21.69192] [100538] [info] --------------------------------------------------
+[2025-07-29 11:25:21.69199] [100538] [info] Dropping all tables
+[2025-07-29 11:25:21.71308] [100538] [info] Dropped all tables
+[2025-07-29 11:25:21.71314] [100538] [info] --------------------------------------------------
+[2025-07-29 11:25:21.93100] [100539] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-07-29 11:25:21.93118] [100539] [info] --------------------------------------------------
+[2025-07-29 11:25:21.93121] [100539] [info] Creating all tables
+[2025-07-29 11:25:21.94601] [100539] [info] Created all tables
+[2025-07-29 11:25:21.94605] [100539] [info] --------------------------------------------------
+[2025-07-29 11:25:22.18894] [100540] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-07-29 11:25:22.18912] [100540] [info] --------------------------------------------------
+[2025-07-29 11:25:22.18915] [100540] [info] Populating all tables
+[2025-07-29 11:25:22.22546] [100540] [info] Stored 7 records into 'constants'
+[2025-07-29 11:25:22.46845] [100541] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-07-29 11:25:22.46863] [100541] [info] --------------------------------------------------
+[2025-07-29 11:25:22.46911] [100541] [info] Constants:
+[2025-07-29 11:25:22.46914] [100541] [info] domain_name => savage.net.au
+[2025-07-29 11:25:22.46916] [100541] [info] encoding => :encoding(UTF-8)
+[2025-07-29 11:25:22.46918] [100541] [info] logo_path => /assets/images/local/rons.logo.png
+[2025-07-29 11:25:22.46919] [100541] [info] page_name => cpan.metacurator.tree.html
+[2025-07-29 11:25:22.46921] [100541] [info] time_zone => Australia/Melbourne
+[2025-07-29 11:25:22.46923] [100541] [info] title_font_path => /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
+[2025-07-29 11:25:22.46924] [100541] [info] title_font_size => 16
+[2025-07-29 11:25:22.46926] [100541] [info] --------------------------------------------------
+[2025-07-29 11:25:22.46927] [100541] [info] Topics:
+[2025-07-29 11:25:22.46929] [100541] [info] --------------------------------------------------
+[2025-07-29 11:25:22.46971] [100541] [info] Created /home/ron/perl.modules/CPAN-MetaCurator/html/cpan.metacurator.tree.html. Encoding: :encoding(utf-8)
+[2025-07-29 11:25:22.46974] [100541] [info] Leaf count:  0
+[2025-07-29 11:25:22.46978] [100541] [info] Topic count: 0
+
