@@ -93,9 +93,8 @@ sub format_text
 {
 	my($self, $pad, $topic)	= @_;
 	my(@text)				= grep{length} split(/\n/, $$topic{text});
-	@text					= map{s/^-\s+//; s/\s+$//; $_} @text;
+	@text					= map{s/^-\s+//; s/:$//; s/\s+$//; $_} @text;
 	my($inside_see_also)	= false;
-	my($module_name_re)		= qr/^([A-Z]+[a-z0-9]{0,}|[a-z]+)/o; # A Perl module, hopefully. Eg: X11:XCB
 	my($topic_name_re)		= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
 
 	my($href, @hover);
@@ -118,18 +117,16 @@ sub format_text
 		{
 			$offset = $_;
 
-			$self -> logger -> error("Missing trailing : for $text[$_]") if ($text[$_] !~ /:$/);
-
 			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
 
-			$self -> logger -> error("Missing text @ line $_") if (length($text[$_]) == 0);
+			$self -> logger -> error("Missing text @ line # $_") if (length($text[$_]) == 0);
 
 			if ($inside_see_also)
 			{
 				$inside_see_also = false;
 			}
 
-			if ($$item{text} =~ /^[A-Z]+$/) # Eg: Acronyms.
+			if ($$item{text} =~ /^[A-Z]+$/) # Eg: Any acronym.
 			{
 				$$item{text} .= " => $text[$_ + 1]";
 			}
@@ -149,7 +146,7 @@ sub format_text
 				{
 					$$item{href} = $text[$_ + 1];
 				}
-				elsif ($$item{text} =~ $module_name_re) # Eg: builtins, Imager, GD and GD::Polyline.
+				elsif ($$pad{module_names}{$$item{text} }) # Eg: builtins, GD, GD::Polyline.
 				{
 					$$item{text} = "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text} - $text[$_ + 1]</a>";
 				}
