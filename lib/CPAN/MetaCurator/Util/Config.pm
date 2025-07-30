@@ -78,9 +78,19 @@ has logo_path =>
 	required	=> 0,
 );
 
-has modules_path =>
+# Of the next 2 files, prefer the first. If absent switch to the second.
+
+has modules_table_path =>
 (
-	default		=> sub{return 'data/cpan.metacurator.modules.txt'},
+	default		=> sub{return 'data/modules.table.csv'}, # Format: id, name, version.
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
+has perl_modules_path =>
+(
+	default		=> sub{return 'data/02packages.details.txt'}, # Format: Header + linear.
 	is			=> 'rw',
 	isa			=> Str,
 	required	=> 0,

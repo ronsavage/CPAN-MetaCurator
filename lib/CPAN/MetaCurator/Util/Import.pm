@@ -20,45 +20,9 @@ our $VERSION = '1.01';
 
 # -----------------------------------------------
 
-sub populate_all_tables
+sub import_csv_file
 {
-	my($self) = @_;
-
-	$self -> init_config;
-	$self -> init_db;
-	$self -> logger -> info('Populating all tables');
-
-	my($csv) = Text::CSV::Encoded -> new
-	({
-		allow_whitespace	=> 1,
-		encoding_in			=> 'utf-8',
-		strict				=> 1,
-	});
-
-	$self -> populate_constants_table($csv);
-	#$self -> populate_modules_table($csv);
-	$self -> populate_topics_table;
-
-	$self -> logger -> info('Populated all tables');
-	$self -> logger -> info('-' x 50);
-
-	# Return 0 for OK and 1 for error.
-
-	return 0;
-
-}	# End of populate_all_tables.
-
-# -----------------------------------------------
-
-sub populate_constants_table
-{
-	my($self, $csv)	= @_;
-	my($path)		= File::Spec -> catfile($self -> home_path, $self -> constants_path);
-	my($table_name)	= 'constants';
-
-	# Populates $self -> column_names.
-
-	$self -> get_table_column_names(true, $table_name);
+	my($self, $csv, $path, $table_name) = @_;
 
 	open(my $io, '<', $path) || die "Can't open($path): $!\n";
 
@@ -105,15 +69,21 @@ sub populate_constants_table
 
 	$self -> logger -> info("Stored $count records into '$table_name'");
 
-}	# End of populate_constants_table.
+} # End of import_csv_file.
 
 # -----------------------------------------------
 
-sub populate_modules_table
+sub import_modules_table
 {
-	my($self, $csv)		= @_;
-	my($path)			= File::Spec -> catfile($self -> home_path, $self -> modules_path);
-	my($table_name)		= 'modules';
+	my($self, $csv) = @_;
+
+} # End of import_modules_table.
+
+# -----------------------------------------------
+
+sub import_perl_modules
+{
+	my($self, $path, $table_name) = @_;
 
 	# Populates $self -> column_names.
 
@@ -140,7 +110,80 @@ sub populate_modules_table
 		$$record{version}	= $pieces[1];
 		$id					= $self -> insert_hashref($table_name, $record);
 
-		$self -> logger -> info("Stored $count records into '$table_name'") if ($count % 10000 == 0);
+		say "Stored $count records into '$table_name'" if ($count % 10000 == 0);
+	}
+
+	$self -> logger -> info("Stored $count records into '$table_name'");
+
+} # End of import_perl_modules.
+
+# -----------------------------------------------
+
+sub populate_all_tables
+{
+	my($self) = @_;
+
+	$self -> init_config;
+	$self -> init_db;
+	$self -> logger -> info('Populating all tables');
+
+	my($csv) = Text::CSV::Encoded -> new
+	({
+		allow_whitespace	=> 1,
+		encoding_in			=> 'utf-8',
+		strict				=> 1,
+	});
+
+	$self -> populate_constants_table($csv);
+	$self -> populate_modules_table($csv);
+	$self -> populate_topics_table;
+
+	$self -> logger -> info('Populated all tables');
+	$self -> logger -> info('-' x 50);
+
+	# Return 0 for OK and 1 for error.
+
+	return 0;
+
+}	# End of populate_all_tables.
+
+# -----------------------------------------------
+
+sub populate_constants_table
+{
+	my($self, $csv)	= @_;
+	my($path)		= File::Spec -> catfile($self -> home_path, $self -> constants_path);
+	my($table_name)	= 'constants';
+
+	# Populates $self -> column_names.
+
+	$self -> get_table_column_names(true, $table_name);
+	$self -> import_csv_file($csv, $path, $table_name);
+
+}	# End of populate_constants_table.
+
+# -----------------------------------------------
+
+sub populate_modules_table
+{
+	my($self, $csv)		= @_;
+	my($path)			= File::Spec -> catfile($self -> home_path, $self -> modules_table_path);
+	my($status)			= (-e $path) ? 'Present' : 'Absent';
+	my($table_name)		= 'modules';
+
+	# Populates $self -> column_names.
+
+	$self -> get_table_column_names(true, $table_name);
+
+	my($count);
+
+	if ($status eq 'Present')
+	{
+		$count = $self -> import_modules_table($csv, $table_name);
+	}
+	else
+	{
+		$count = $self -> import_perl_modules($self -> home_path, $self -> perl_modules_path, $table_name);
 	}
 
 	$self -> logger -> info("Stored $count records into '$table_name'");
