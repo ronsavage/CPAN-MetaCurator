@@ -63,6 +63,8 @@ sub import_csv_file
 				$col_name_2	=> $$item{$col_name_2},
 			}
 		);
+
+		say "Stored $count records into '$table_name'" if ($count % 10000 == 0);
 	}
 
 	close $io;
@@ -158,18 +160,14 @@ sub populate_modules_table
 
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 
-	my($count);
-
 	if ($status eq 'Present')
 	{
 		$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 	}
 	else
 	{
-		$count = $self -> import_perl_modules($self -> home_path, $self -> perl_modules_path, $table_name);
+		$self -> import_perl_modules($self -> home_path, $self -> perl_modules_path, $table_name);
 	}
-
-	$self -> logger -> info("Stored $count records into '$table_name'");
 
 }	# End of populate_modules_table.
 
