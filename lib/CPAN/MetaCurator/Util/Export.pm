@@ -197,7 +197,7 @@ sub format_text
 
 	my($entry);
 	my(@pieces);
-	my($text_is_topic, $topic_id, $topic_name);
+	my($text_is_topic, $topic_id);
 
 	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
 
@@ -214,42 +214,32 @@ sub format_text
 
 		@pieces			= split(/ - /, $$item{text});
 		$pieces[0]		= $1 if ($pieces[0] =~ $topic_name_re); # Eg: [[XS]].
-		$pieces[1]		= '' if (! $pieces[1]);
+		$pieces[1]		= defined($pieces[1]) && (length($pieces[1]) ) ? "$pieces[0] - $pieces[1]" : $pieces[0];
 		$topic_id		= $$pad{topic_names}{$pieces[0]} || 0;
 		$text_is_topic	= ($topic_id > 0) ? true : false;
 
 		if ($$item{text} =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
-			$self -> logger -> info("A: $$item{text} starts with http");
+			$self -> logger -> info("$$item{text} is a URI");
 
-			$pieces[1]		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-			$$item{text}	= "<a href = '$pieces[0]'>$pieces[1]</a>";
+			$$item{text} = "<a href = '$pieces[0]'>$$item{text}</a>";
 		}
 		elsif ($text_is_topic) # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
-			$self -> logger -> info("B: $$item{text} is a topic");
-
-			$topic_name		= $pieces[0];
-			$topic_name		= $pieces[1] ? "$pieces[0] - $pieces[1]" : $pieces[0];
-
-			$self -> logger -> info("page_name:  $$pad{page_name}");
-			$self -> logger -> info("topic_name: $topic_name");
-			$self -> logger -> info("pieces[0]:  $pieces[0]");
-			$self -> logger -> info("pieces[1]:  $pieces[1]");
-			$self -> logger -> info("topic_id:   $topic_id");
+			$self -> logger -> info("$$item{text} is a topic");
 			$self -> logger -> error("Missing id for topic") if ($topic_id == 0);
 
-			$$item{text}	= "$topic_name (topic)";
-			#$$item{text}	= "<a href = '#$topic_id'>$topic_name (topic)</a>";
-			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('$topic_id');">$topic_name (topic)</button>|;
-			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('#$topic_id');">$topic_name (topic)</button>|;
-			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('\#$topic_id');">$topic_name (topic)</button>|;
+			$$item{text}	= "$pieces[0] (topic)";
+			#$$item{text}	= "<a href = '#$topic_id'>pieces[1]</a>";
+			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('$topic_id');">$$item{text}</button>|;
+			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('#$topic_id');">$$item{text}</button>|;
+			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('\#$topic_id');">$$item{text}</button>|;
 		}
-		else # Eg: builtins, Imager, GD and GD::Polyline. Not ChartingAndPlotting.
+		else # Eg: It's a module.
 		{
-			$self -> logger -> info("C: $$item{text} is a module");
+			$self -> logger -> info("$$item{text} is a module");
 
-			$$item{text} = "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text}</a>";
+			$$item{text} = "<a href = 'https://metacpan.org/pod/$pieces[0]'>$$item{text}</a>";
 		}
 
 		push @lines, $item;
