@@ -156,7 +156,7 @@ sub populate_modules_table
 	my($status)			= (-e $path) ? 'Present' : 'Absent';
 	my($table_name)		= 'modules';
 
-	$self -> get_table_column_names(true, $path, $table_name); # Populates $self -> column_names.
+	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 
 	my($count);
 
