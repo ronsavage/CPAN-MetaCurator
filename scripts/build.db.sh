@@ -2,6 +2,8 @@
 
 cd $HOME/perl.modules/CPAN-MetaCurator/
 echo Work dir: `pwd`
+cp /dev/null log/development.log
+git commit -am"Rebuilding the distro"
 build.module.sh CPAN::MetaCurator 1.00
 
 scripts/drop.tables.pl
@@ -13,5 +15,4 @@ declare -x SOURCE=html/cpan.metacurator.tree.html
 declare -x DEST=$DS/misc
 
 cp $SOURCE $DEST
-
 echo Copied $SOURCE to $DEST

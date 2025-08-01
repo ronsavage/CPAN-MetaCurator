@@ -30,7 +30,7 @@
 	Perl module: CPAN::MetaCurator
 </div>
 <div>
-	V 1.01. 2025-08-01T09:22:21
+	V 1.01. 2025-08-01T10:07:32
 </div>
 <div>
 	<a href = 'http://savage.net.au/'>My home page, for downloading Perl.Wiki.html</a>
@@ -45,7 +45,7 @@ Notes:
 	<li>Next, see 'DataTraversal (topic)' under ArayHandling: I can't get the JS right so clicking the text would focus on node 'DataTraversal'.</li>
 	<li>See line 219 etc of Export.pm for the versions of code I tried.</li>
 	<li>Lastly, the code does not yet cleanly handle special cases. Eg: &lt;pre&gt; and &lt;/pre&gt; etc.</li>
-	<li>Topic count: 201. Leaf count: 2526.</li>
+	<li>Topic count: 201. Leaf count: 2553.</li>
 </ul>
 <hr>
 <div id="jstree_div" class="demo">
@@ -140,8 +140,10 @@ Notes:
 <li id = '110083'><a href = 'https://metacpan.org/pod/IO::Compress::Brotli'>IO::Compress::Brotli => Write Brotli buffers/streams</a></li>
 <li id = '110086'><a href = 'https://metacpan.org/pod/IO::Compress::Zip'>IO::Compress::Zip => Write zip files/buffers</a></li>
 <li id = '110090'><a href = 'https://metacpan.org/pod/IO::Uncompress::Unzip'>IO::Uncompress::Unzip => Read zip files/buffers</a></li>
-<li id = '110093'><a href = 'https://metacpan.org/pod/streamzip'>streamzip => Create a zip file from stdin</a></li>
-<li id = '110097'><a href = 'https://metacpan.org/pod/XS::libbrotli'>XS::libbrotli => Brotli compression library for XS.</a></li>
+<li id = '110093'>PAR => Perl Archive Toolkit</li>
+<li id = '110097'><a href = 'https://metacpan.org/pod/PAR::Packer'>PAR::Packer => PAR Packager</a></li>
+<li id = '110101'><a href = 'https://metacpan.org/pod/streamzip'>streamzip => Create a zip file from stdin</a></li>
+<li id = '110105'><a href = 'https://metacpan.org/pod/XS::libbrotli'>XS::libbrotli => Brotli compression library for XS.</a></li>
 </ul>
 </li>
 	<li id = '12'>ArrayHandling
@@ -340,8 +342,8 @@ Notes:
 </li>
 	<li id = '32'>ChangesFiles
 <ul>
-<li id = '320001'>Changes (module) => Changes file management</li>
-<li id = '320004'><a href = 'https://metacpan.org/pod/Module::Metadata::Changes'>Module::Metadata::Changes => Manage machine-readable Changes/CHANGES/Changelog.ini files</a></li>
+<li id = '320001'><a href = 'https://metacpan.org/dist/Changes'>Changes => Changes file management</a></li>
+<li id = '320005'><a href = 'https://metacpan.org/pod/Module::Metadata::Changes'>Module::Metadata::Changes => Manage machine-readable Changes/CHANGES/Changelog.ini files</a></li>
 </ul>
 </li>
 	<li id = '33'>ChartingAndPlotting
@@ -605,6 +607,7 @@ Notes:
 <li id = '450053'><a href = 'https://metacpan.org/dist/CPANPLUS-Dist-Debora'>CPANPLUS::Dist::Debora => Create Debian or RPM packages from Perl modules</a></li>
 <li id = '450056'><a href = 'https://metacpan.org/dist/MetaCPAN-Client'>MetaCPAN::Client => A comprehensive, DWIM-featured client to the MetaCPAN API</a></li>
 <li id = '450059'><a href = 'https://metacpan.org/dist/MetaCPAN-Role'>MetaCPAN::Role => A collection of roles useful to MetaCPAN project</a></li>
+<li id = '450062'><a href = 'https://metacpan.org/dist/Net-API-CPAN'>Net::API::CPAN => Meta CPAN API</a></li>
 <li id = '0'>See also:</li>
 <li id = '450002'><a href = 'https://fastapi.metacpan.org'>https://fastapi.metacpan.org</a></li>
 <li id = '450003'><a href = 'https://metacpan.org'>https://metacpan.org</a></li>
@@ -796,126 +799,126 @@ Notes:
 </li>
 	<li id = '52'>DataTraversal
 <ul>
-<li id = '520022'><a href = 'https://metacpan.org/dist/Algorithm-CurveFit'>Algorithm::CurveFit => Nonlinear Least Squares Fitting</a></li>
-<li id = '520025'><a href = 'https://metacpan.org/dist/App-abgrep'>App::abgrep => Print lines matching a pattern. Has many options</a></li>
-<li id = '520028'><a href = 'https://metacpan.org/dist/App-bookmarks'>App::bookmarks => Export bookmarks from browsers and files</a></li>
-<li id = '520031'><a href = 'https://metacpan.org/dist/App-csvtool'>App::csvtool => Implements the csvtool core commands</a></li>
-<li id = '520034'><a href = 'https://metacpan.org/dist/App-DPath'>App::DPath => A Cmdline tool around Data::DPath (see below)</a></li>
-<li id = '520037'><a href = 'https://metacpan.org/dist/App-Greple'>App::Greple => Extensible grep with lexical expression and region control</a></li>
-<li id = '520040'><a href = 'https://metacpan.org/dist/App-Greple-charcode'>App::Greple::charcode => Greple module to annotate unicode character data</a></li>
-<li id = '520045'><a href = 'https://metacpan.org/dist/App-Greple-pw'>App::Greple::pw => Module to get password from file</a></li>
-<li id = '520048'><a href = 'https://metacpan.org/dist/App-Greple-stripe'>App::Greple::stripe => Greple zebra stripe module. Produces coloured background bars of output</a></li>
-<li id = '520051'><a href = 'https://metacpan.org/dist/App-Greple-subst'>App::Greple::subst => Greple module for text search and substitution</a></li>
-<li id = '520054'><a href = 'https://metacpan.org/dist/App-Greple-xlate'>App::Greple::xlate => Translation support module for greple</a></li>
-<li id = '520059'><a href = 'https://metacpan.org/pod/App::Greple::xp'>App::Greple::xp => Extended pattern module</a></li>
-<li id = '520062'><a href = 'https://metacpan.org/dist/App-remotediff'>App::remotediff => Remote diff over rsync</a></li>
-<li id = '520065'><a href = 'https://metacpan.org/dist/App-sdif'>App::sdif => sdif (side-by-side) and family tools, cdif (visual char diff) and watchdiff (repetition of diff)</a></li>
-<li id = '520068'><a href = 'https://metacpan.org/dist/App-td'>App::td => Does for tables what jq does for JSON. Has a huge range of options</a></li>
-<li id = '520072'><a href = 'https://metacpan.org/dist/App-uricolor'>App::uricolor => Colorize URIs with ANSI colors</a></li>
-<li id = '520075'><a href = 'https://metacpan.org/pod/Archive::BagIt'>Archive::BagIt => The main module to handle bags</a></li>
-<li id = '520078'><a href = 'https://metacpan.org/dist/Array-Contains'>Array::Contains => Check if an array contains a specific element</a></li>
-<li id = '520081'><a href = 'https://metacpan.org/pod/assign'>assign => Destructuring Assignment Syntax for Perl</a></li>
-<li id = '520085'><a href = 'https://metacpan.org/pod/autobox'>autobox => Call methods on native types</a></li>
-<li id = '520088'><a href = 'https://metacpan.org/pod/autobox::Lookup'>autobox::Lookup => Easy autoboxed lookup</a></li>
-<li id = '520091'><a href = 'https://metacpan.org/pod/autobox::Text'>autobox::Text => Turns baubles into trinkets</a></li>
-<li id = '520094'><a href = 'https://metacpan.org/dist/autobox-Time-Piece'>autobox::Time::Piece => On-the-fly date conversion</a></li>
-<li id = '520097'><a href = 'https://metacpan.org/dist/Catmandu'>Catmandu => A data toolkit</a></li>
-<li id = '520101'><a href = 'http://metacpan.org/dist/Class-XPath'>Class::XPath => Adds xpath matching to object trees</a></li>
-<li id = '520104'><a href = 'https://metacpan.org/pod/Connector'>Connector => A generic connection to a hierarchical-structured data set</a></li>
-<li id = '520107'><a href = 'https://metacpan.org/dist/csvgrep'>csvgrep => Search for patterns in a CSV and display results in a table</a></li>
-<li id = '520110'>CSV-oriented => App::CSVUtils</li>
-<li id = '520116'><a href = 'https://metacpan.org/dist/CXC-Data-Visitor'>CXC::Data::Visitor => Invoke a callback on every element at every level of a data structure.</a></li>
-<li id = '520119'><a href = 'https://metacpan.org/dist/Data-Alias'>Data::Alias => Comprehensive set of aliasing operations</a></li>
-<li id = '520123'><a href = 'https://metacpan.org/dist/DBIx-Class-MaterializedPath'>DBIx::Class::MaterializedPath => Efficiently retrieve and search trees with DBIx::Class</a></li>
-<li id = '520126'><a href = 'https://metacpan.org/dist/Data-Clone'>Data::Clone => Polymorphic data cloning</a></li>
-<li id = '520130'><a href = 'https://metacpan.org/dist/Data-Difference'>Data::Difference => Compare simple hierarchical data</a></li>
-<li id = '520133'><a href = 'https://metacpan.org/dist/Data-DPath'>Data::DPath => DPath is not XPath!</a></li>
-<li id = '520137'><a href = 'https://metacpan.org/dist/Data-DRef'>Data::DRef => Delimited-key access to complex data structures</a></li>
-<li id = '520140'><a href = 'https://metacpan.org/pod/Data::Dump'>Data::Dump</a></li>
-<li id = '520144'><a href = 'https://metacpan.org/dist/Data-Dump-Color'>Data::Dump::Color => Like Data::Dump, but with color</a></li>
-<li id = '520147'><a href = 'https://metacpan.org/dist/Data-Dump-HTML-Collapsible'>Data::Dump::HTML::Collapsible</a></li>
-<li id = '520150'><a href = 'https://metacpan.org/pod/Data::Dump::Partial'>Data::Dump::Partial => Dump data structure compactly and potentially partially</a></li>
-<li id = '520153'><a href = 'https://metacpan.org/dist/Data-Dumper'>Data::Dumper => Stringified perl data structures, suitable for both printing and eval</a></li>
-<li id = '520156'><a href = 'https://metacpan.org/dist/Data-Dumper-Concise'>Data::Dumper::Concise => Less indentation and newlines plus sub deparsing</a></li>
-<li id = '520159'><a href = 'https://metacpan.org/dist/Data-Dumper-Interp'>Data::Dumper::Interp => Interpolate Data::Dumper output into strings for human consumption</a></li>
-<li id = '520162'><a href = 'https://metacpan.org/pod/Data::Edit::Xml'>Data::Edit::Xml => Edit data held in the XML format</a></li>
-<li id = '520166'><a href = 'https://metacpan.org/dist/Data-Edit-Xml-Reuse'>Data::Edit::Xml::Reuse => Reuse Xml via the Dita conref facility</a></li>
-<li id = '520169'><a href = 'https://metacpan.org/pod/Data::FastPack'>Data::FastPack => FastPack Record format, Parsing and Serialising</a></li>
-<li id = '520172'><a href = 'https://metacpan.org/dist/Data-HexDump'>Data::HexDump => Hexadecimal Dumper</a></li>
-<li id = '520176'><a href = 'https://metacpan.org/pod/Data::LNPath'>Data::LNPath => Lookup on nested data via path</a></li>
-<li id = '520179'><a href = 'https://metacpan.org/pod/Data::Match'>Data::Match => Complex data structure pattern matching</a></li>
-<li id = '520182'><a href = 'https://metacpan.org/dist/Data-Mirror'>Data::Mirror => A simple way to efficiently retrieve data from the World Wide Web</a></li>
-<li id = '520187'><a href = 'https://metacpan.org/pod/Data::Munge'>Data::Munge => Various utility functions</a></li>
-<li id = '520190'><a href = 'https://metacpan.org/pod/Data::NestedKey'>Data::NestedKey => Object-oriented handling of deeply nested hash structures</a></li>
-<li id = '520194'><a href = 'https://metacpan.org/pod/Data::Page'>Data::Page => Help when paging through sets of results</a></li>
-<li id = '520197'><a href = 'https://metacpan.org/pod/Data::Pageset'>Data::Pageset => Page numbering and page sets</a></li>
-<li id = '520200'><a href = 'https://metacpan.org/dist/Data-Pageset-Exponential'>Data::Pageset::Exponential => Page numbering for very large page numbers</a></li>
-<li id = '520203'><a href = 'https://metacpan.org/dist/Data-Peek'>Data::Peek => A collection of low-level debug facilities</a></li>
-<li id = '520206'><a href = 'https://metacpan.org/pod/Data::Pretty'>Data::Pretty => Data Dump Beautifier</a></li>
-<li id = '520209'><a href = 'https://metacpan.org/dist/Data-Printer'>Data::Printer => Colored & full-featured pretty print of Perl data structures and objects</a></li>
-<li id = '520213'><a href = 'https://metacpan.org/pod/Data::Printer::Filter::JMAP'>Data::Printer::Filter::JMAP => A Data::Printer filter for JMAP::Tester-related objects</a></li>
-<li id = '520216'><a href = 'https://metacpan.org/pod/Data::Record::Serialize::Encode::csv'>Data::Record::Serialize::Encode::csv => Encode a record as csv</a></li>
-<li id = '520219'><a href = 'https://metacpan.org/dist/Data-Reuse'>Data::Reuse => Share constant values with Data::Alias</a></li>
-<li id = '520222'><a href = 'https://metacpan.org/dist/Data-Rmap'>Data::Rmap => Recursive map, apply a block to a data structure</a></li>
-<li id = '520225'><a href = 'https://metacpan.org/pod/Data::Roundtrip'>Data::Roundtrip => Convert between Perl data structures, YAML and JSON with unicode support (I believe ...)</a></li>
-<li id = '520228'><a href = 'https://metacpan.org/pod/Data::Section'>Data::Section => Read multiple, named, chunks of data out of your __DATA__ section</a></li>
-<li id = '520231'><a href = 'https://metacpan.org/dist/Data-Section-Pluggable'>Data::Section::Pluggable => Read structured data from __DATA__</a></li>
-<li id = '520234'><a href = 'https://metacpan.org/pod/Data::Section::Simple'>Data::Section::Simple => Read multiple, named, chunks of data out of your __DATA__ section</a></li>
-<li id = '520237'><a href = 'https://metacpan.org/pod/Data::Show'>Data::Show => Dump data structures with name and point-of-origin</a></li>
-<li id = '520240'><a href = 'https://metacpan.org/pod/Data::Transfigure'>Data::Transfigure => Performs rule-based data transfigurations of arbitrary structures</a></li>
-<li id = '520243'><a href = 'https://metacpan.org/pod/Data::Transform'>Data::Transform => Performs rule-based data transformations of arbitrary structures</a></li>
-<li id = '520246'><a href = 'https://metacpan.org/pod/Data::Traverse'>Data::Traverse => Callback-based depth-first traversal of Perl data structures</a></li>
-<li id = '520249'><a href = 'https://metacpan.org/dist/DBIx-Tree'>DBIx::Tree => Generate a tree from a self-referential database table</a></li>
-<li id = '520252'><a href = 'https://metacpan.org/dist/DBIx-Tree-MaterializedPath'>DBIx::Tree::MaterializedPath => Fast DBI queries and updates on "materialized path" trees</a></li>
-<li id = '520255'><a href = 'https://metacpan.org/pod/Data::Unixish'>Data::Unixish => Implementation for Unixish, a data transformation framework</a></li>
-<li id = '520258'><a href = 'https://metacpan.org/dist/Data-Visitor'>Data::Visitor => Visitor style traversal of Perl data structures</a></li>
-<li id = '520261'><a href = 'https://metacpan.org/pod/Data::Visitor::Lite'>Data::Visitor::Lite => An easy implementation of Data::Visitor::Callback</a></li>
-<li id = '520264'><a href = 'https://metacpan.org/pod/Data::Visitor::Tiny'>Data::Visitor::Tiny => Recursively walk data structures</a></li>
-<li id = '520267'><a href = 'https://metacpan.org/pod/Data::Walk'>Data::Walk => Traverse Perl data structures</a></li>
-<li id = '520270'><a href = 'https://metacpan.org/pod/Data::Walker'>Data::Walker => A tool for navigating through Perl data structures</a></li>
-<li id = '520273'><a href = 'https://metacpan.org/pod/DBIx::Array'>DBIx::Array => DBI Wrapper with Perl style data structure interfaces</a></li>
-<li id = '520276'><a href = 'https://metacpan.org/dist/DBIx-HTML'>DBIx::HTML => Just another HTML table generating DBI extension</a></li>
-<li id = '520279'><a href = 'https://metacpan.org/dist/Devel-Walk'>Devel::Walk => Walk a complex object or reference</a></li>
-<li id = '520282'><a href = 'https://metacpan.org/dist/Directory-Diff'>Directory::Diff => Recursively find differences between similar directories</a></li>
-<li id = '520285'><a href = 'https://metacpan.org/pod/Doubly'>Doubly => Doubly linked lists</a></li>
-<li id = '520289'><a href = 'https://metacpan.org/pod/Doubly::Linked'>Doubly::Linked => Doubly linked lists</a></li>
-<li id = '520293'><a href = 'https://metacpan.org/dist/Doubly-Linked-PP'>Doubly::Linked::PP => Linked lists</a></li>
-<li id = '520296'><a href = 'https://metacpan.org/dist/File-LoadLines'>File::LoadLines => Load lines from files and network</a></li>
-<li id = '520300'><a href = 'http://metacpan.org/dist/Hash-Path'>Hash::Path => A simple way to return a path of HoH</a></li>
-<li id = '520303'><a href = 'https://metacpan.org/pod/Iterator'>Iterator => A general-purpose iterator class</a></li>
-<li id = '520306'><a href = 'https://metacpan.org/pod/Iterator::DBI'>Iterator::DBI => An iterator for returning DBI query results</a></li>
-<li id = '520309'><a href = 'https://metacpan.org/dist/Iterator-Flex'>Iterator::Flex => Iterators with flexible behaviors</a></li>
-<li id = '520312'><a href = 'https://metacpan.org/pod/Iterator::IO'>Iterator::IO => Filesystem and stream iterators</a></li>
-<li id = '520315'><a href = 'https://metacpan.org/pod/Iterator::Misc'>Iterator::Misc => Miscellaneous iterator functions</a></li>
-<li id = '520318'><a href = 'https://metacpan.org/pod/Iterator::Simple'>Iterator::Simple => Simple iterator and utilities</a></li>
-<li id = '520322'><a href = 'https://metacpan.org/pod/Iterator::Util'>Iterator::Util => Essential utilities for the Iterator class</a></li>
-<li id = '520327'><a href = 'https://metacpan.org/dist/List-AllUtils'>List::AllUtils => Combines List::Util, List::SomeUtils and List::UtilsBy in one bite-sized package</a></li>
-<li id = '520330'><a href = 'https://metacpan.org/pod/List::Gen::Cookbook'>List::Gen => Provides functions for generating lists</a></li>
-<li id = '520333'><a href = 'https://metacpan.org/dist/List-Lazy'>List::Lazy => Generate lists lazily</a></li>
-<li id = '520336'><a href = 'https://metacpan.org/dist/List-Regexp'>List::Regexp => Convert list of strings to a regular expression</a></li>
-<li id = '520340'><a href = 'https://metacpan.org/pod/List::Util'>List::Util => A selection of general-utility list subroutines</a></li>
-<li id = '520343'><a href = 'https://metacpan.org/dist/List-Uniqnum'>List::Uniqnum => A rendition of List::Util::uniqnum minus the bugs</a></li>
-<li id = '520346'><a href = 'https://metacpan.org/pod/meta'>meta => Meta-programming API</a></li>
-<li id = '520350'><a href = 'https://metacpan.org/pod/Module::Features::PluginSystem'>Module::Features::PluginSystem</a></li>
-<li id = '520353'><a href = 'https://metacpan.org/dist/Number-Iterator-XS'>Number::Iterator::XS => Iterate numbers faster</a></li>
-<li id = '520356'><a href = 'https://metacpan.org/pod/NumSeq::Iter'>NumSeq::Iter => Generate a coderef iterator from a number sequence specification</a></li>
-<li id = '520359'><a href = 'https://metacpan.org/dist/Object-Iterate'>Object::Iterate => Iterators for objects that know the next element</a></li>
-<li id = '520362'><a href = 'https://metacpan.org/pod/OMOP::CSV::Validator'>OMOP::CSV::Validator => Validates OMOP CDM CSV files against their expected data types</a></li>
-<li id = '520365'><a href = 'https://metacpan.org/dist/Parser-FIT'>Parser::FIT => A parser for garmin FIT (Flexible and Interoperable Data Transfer) files</a></li>
-<li id = '520368'><a href = 'https://metacpan.org/pod/Syntax::Keyword::Junction'>Syntax::Keyword::Junction => Perl6 style Junction operators in Perl5</a></li>
-<li id = '520373'><a href = 'https://metacpan.org/dist/Scalar-List-Utils'>Scalar::List::Utils => A distribution of general-utility subroutines</a></li>
-<li id = '520376'><a href = 'https://metacpan.org/dist/Term-TablePrint'>Term::TablePrint => Print a table to the terminal and browse it interactively</a></li>
-<li id = '520379'><a href = 'https://metacpan.org/pod/Text::ANSITable'>Text::ANSITable => Create nice formatted tables using extended ASCII and ANSI colors</a></li>
-<li id = '520382'><a href = 'https://metacpan.org/pod/Text::ASCIITable'>Text::ASCIITable => Create a nice formatted table using ASCII characters</a></li>
-<li id = '520385'><a href = 'https://metacpan.org/pod/Text::NumericData'>Text::NumericData => Many tools for parsing and writing of textual numeric data files</a></li>
-<li id = '520388'><a href = 'https://metacpan.org/dist/Text-Pipe'>Text::Pipe => Common text filter API</a></li>
-<li id = '520393'><a href = 'https://metacpan.org/dist/Tree-DAG_Node'>Tree::DAG_Mode => An N-ary tree</a></li>
-<li id = '520396'><a href = 'https://metacpan.org/pod/Tree::Simple::VisitorFactory'>Tree::Simple::VisitorFactory => A factory object for dispensing Visitor objects</a></li>
-<li id = '520399'><a href = 'https://metacpan.org/pod/Text::Treesitter'>Text::Treesitter => Perl binding for tree-sitter</a></li>
-<li id = '520405'><a href = 'https://metacpan.org/dist/Text-Table-Read-RelationOn-Tiny'>Text::Table::Read::RelationOn::Tiny => Read binary "relation on (over) a set" from a text table</a></li>
-<li id = '520408'><a href = 'http://metacpan.org/dist/Tree-XPathEngine'>Tree::XPathEngine => A re-usable XPath engine</a></li>
-<li id = '520411'><a href = 'https://metacpan.org/pod/Util::Medley::List'>Util::Medley::List => Utility methods for working with lists</a></li>
-<li id = '520414'><a href = 'http://metacpan.org/dist/XML-XPathEngine'>XML::XPathEngine => A re-usable XPath engine for DOM-like trees</a></li>
+<li id = '520021'><a href = 'https://metacpan.org/dist/Algorithm-CurveFit'>Algorithm::CurveFit => Nonlinear Least Squares Fitting</a></li>
+<li id = '520024'><a href = 'https://metacpan.org/dist/App-abgrep'>App::abgrep => Print lines matching a pattern. Has many options</a></li>
+<li id = '520027'><a href = 'https://metacpan.org/dist/App-bookmarks'>App::bookmarks => Export bookmarks from browsers and files</a></li>
+<li id = '520030'><a href = 'https://metacpan.org/dist/App-csvtool'>App::csvtool => Implements the csvtool core commands</a></li>
+<li id = '520033'><a href = 'https://metacpan.org/dist/App-DPath'>App::DPath => A Cmdline tool around Data::DPath (see below)</a></li>
+<li id = '520036'><a href = 'https://metacpan.org/dist/App-Greple'>App::Greple => Extensible grep with lexical expression and region control</a></li>
+<li id = '520039'><a href = 'https://metacpan.org/dist/App-Greple-charcode'>App::Greple::charcode => Greple module to annotate unicode character data</a></li>
+<li id = '520044'><a href = 'https://metacpan.org/dist/App-Greple-pw'>App::Greple::pw => Module to get password from file</a></li>
+<li id = '520047'><a href = 'https://metacpan.org/dist/App-Greple-stripe'>App::Greple::stripe => Greple zebra stripe module. Produces coloured background bars of output</a></li>
+<li id = '520050'><a href = 'https://metacpan.org/dist/App-Greple-subst'>App::Greple::subst => Greple module for text search and substitution</a></li>
+<li id = '520053'><a href = 'https://metacpan.org/dist/App-Greple-xlate'>App::Greple::xlate => Translation support module for greple</a></li>
+<li id = '520058'><a href = 'https://metacpan.org/pod/App::Greple::xp'>App::Greple::xp => Extended pattern module</a></li>
+<li id = '520061'><a href = 'https://metacpan.org/dist/App-remotediff'>App::remotediff => Remote diff over rsync</a></li>
+<li id = '520064'><a href = 'https://metacpan.org/dist/App-sdif'>App::sdif => sdif (side-by-side) and family tools, cdif (visual char diff) and watchdiff (repetition of diff)</a></li>
+<li id = '520067'><a href = 'https://metacpan.org/dist/App-td'>App::td => Does for tables what jq does for JSON. Has a huge range of options</a></li>
+<li id = '520071'><a href = 'https://metacpan.org/dist/App-uricolor'>App::uricolor => Colorize URIs with ANSI colors</a></li>
+<li id = '520074'><a href = 'https://metacpan.org/pod/Archive::BagIt'>Archive::BagIt => The main module to handle bags</a></li>
+<li id = '520077'><a href = 'https://metacpan.org/dist/Array-Contains'>Array::Contains => Check if an array contains a specific element</a></li>
+<li id = '520080'><a href = 'https://metacpan.org/pod/assign'>assign => Destructuring Assignment Syntax for Perl</a></li>
+<li id = '520084'><a href = 'https://metacpan.org/pod/autobox'>autobox => Call methods on native types</a></li>
+<li id = '520087'><a href = 'https://metacpan.org/pod/autobox::Lookup'>autobox::Lookup => Easy autoboxed lookup</a></li>
+<li id = '520090'><a href = 'https://metacpan.org/pod/autobox::Text'>autobox::Text => Turns baubles into trinkets</a></li>
+<li id = '520093'><a href = 'https://metacpan.org/dist/autobox-Time-Piece'>autobox::Time::Piece => On-the-fly date conversion</a></li>
+<li id = '520096'><a href = 'https://metacpan.org/dist/Catmandu'>Catmandu => A data toolkit</a></li>
+<li id = '520100'><a href = 'http://metacpan.org/dist/Class-XPath'>Class::XPath => Adds xpath matching to object trees</a></li>
+<li id = '520103'><a href = 'https://metacpan.org/pod/Connector'>Connector => A generic connection to a hierarchical-structured data set</a></li>
+<li id = '520106'><a href = 'https://metacpan.org/dist/csvgrep'>csvgrep => Search for patterns in a CSV and display results in a table</a></li>
+<li id = '520109'>CSV-oriented => App::CSVUtils</li>
+<li id = '520115'><a href = 'https://metacpan.org/dist/CXC-Data-Visitor'>CXC::Data::Visitor => Invoke a callback on every element at every level of a data structure.</a></li>
+<li id = '520118'><a href = 'https://metacpan.org/dist/Data-Alias'>Data::Alias => Comprehensive set of aliasing operations</a></li>
+<li id = '520122'><a href = 'https://metacpan.org/dist/DBIx-Class-MaterializedPath'>DBIx::Class::MaterializedPath => Efficiently retrieve and search trees with DBIx::Class</a></li>
+<li id = '520125'><a href = 'https://metacpan.org/dist/Data-Clone'>Data::Clone => Polymorphic data cloning</a></li>
+<li id = '520129'><a href = 'https://metacpan.org/dist/Data-Difference'>Data::Difference => Compare simple hierarchical data</a></li>
+<li id = '520132'><a href = 'https://metacpan.org/dist/Data-DPath'>Data::DPath => DPath is not XPath!</a></li>
+<li id = '520136'><a href = 'https://metacpan.org/dist/Data-DRef'>Data::DRef => Delimited-key access to complex data structures</a></li>
+<li id = '520139'><a href = 'https://metacpan.org/pod/Data::Dump'>Data::Dump</a></li>
+<li id = '520143'><a href = 'https://metacpan.org/dist/Data-Dump-Color'>Data::Dump::Color => Like Data::Dump, but with color</a></li>
+<li id = '520146'><a href = 'https://metacpan.org/dist/Data-Dump-HTML-Collapsible'>Data::Dump::HTML::Collapsible</a></li>
+<li id = '520149'><a href = 'https://metacpan.org/pod/Data::Dump::Partial'>Data::Dump::Partial => Dump data structure compactly and potentially partially</a></li>
+<li id = '520152'><a href = 'https://metacpan.org/dist/Data-Dumper'>Data::Dumper => Stringified perl data structures, suitable for both printing and eval</a></li>
+<li id = '520155'><a href = 'https://metacpan.org/dist/Data-Dumper-Concise'>Data::Dumper::Concise => Less indentation and newlines plus sub deparsing</a></li>
+<li id = '520158'><a href = 'https://metacpan.org/dist/Data-Dumper-Interp'>Data::Dumper::Interp => Interpolate Data::Dumper output into strings for human consumption</a></li>
+<li id = '520161'><a href = 'https://metacpan.org/pod/Data::Edit::Xml'>Data::Edit::Xml => Edit data held in the XML format</a></li>
+<li id = '520165'><a href = 'https://metacpan.org/dist/Data-Edit-Xml-Reuse'>Data::Edit::Xml::Reuse => Reuse Xml via the Dita conref facility</a></li>
+<li id = '520168'><a href = 'https://metacpan.org/pod/Data::FastPack'>Data::FastPack => FastPack Record format, Parsing and Serialising</a></li>
+<li id = '520171'><a href = 'https://metacpan.org/dist/Data-HexDump'>Data::HexDump => Hexadecimal Dumper</a></li>
+<li id = '520175'><a href = 'https://metacpan.org/pod/Data::LNPath'>Data::LNPath => Lookup on nested data via path</a></li>
+<li id = '520178'><a href = 'https://metacpan.org/pod/Data::Match'>Data::Match => Complex data structure pattern matching</a></li>
+<li id = '520181'><a href = 'https://metacpan.org/dist/Data-Mirror'>Data::Mirror => A simple way to efficiently retrieve data from the World Wide Web</a></li>
+<li id = '520186'><a href = 'https://metacpan.org/pod/Data::Munge'>Data::Munge => Various utility functions</a></li>
+<li id = '520189'><a href = 'https://metacpan.org/pod/Data::NestedKey'>Data::NestedKey => Object-oriented handling of deeply nested hash structures</a></li>
+<li id = '520193'><a href = 'https://metacpan.org/pod/Data::Page'>Data::Page => Help when paging through sets of results</a></li>
+<li id = '520196'><a href = 'https://metacpan.org/pod/Data::Pageset'>Data::Pageset => Page numbering and page sets</a></li>
+<li id = '520199'><a href = 'https://metacpan.org/dist/Data-Pageset-Exponential'>Data::Pageset::Exponential => Page numbering for very large page numbers</a></li>
+<li id = '520202'><a href = 'https://metacpan.org/dist/Data-Peek'>Data::Peek => A collection of low-level debug facilities</a></li>
+<li id = '520205'><a href = 'https://metacpan.org/pod/Data::Pretty'>Data::Pretty => Data Dump Beautifier</a></li>
+<li id = '520208'><a href = 'https://metacpan.org/dist/Data-Printer'>Data::Printer => Colored & full-featured pretty print of Perl data structures and objects</a></li>
+<li id = '520212'><a href = 'https://metacpan.org/pod/Data::Printer::Filter::JMAP'>Data::Printer::Filter::JMAP => A Data::Printer filter for JMAP::Tester-related objects</a></li>
+<li id = '520215'><a href = 'https://metacpan.org/pod/Data::Record::Serialize::Encode::csv'>Data::Record::Serialize::Encode::csv => Encode a record as csv</a></li>
+<li id = '520218'><a href = 'https://metacpan.org/dist/Data-Reuse'>Data::Reuse => Share constant values with Data::Alias</a></li>
+<li id = '520221'><a href = 'https://metacpan.org/dist/Data-Rmap'>Data::Rmap => Recursive map, apply a block to a data structure</a></li>
+<li id = '520224'><a href = 'https://metacpan.org/pod/Data::Roundtrip'>Data::Roundtrip => Convert between Perl data structures, YAML and JSON with unicode support (I believe ...)</a></li>
+<li id = '520227'><a href = 'https://metacpan.org/pod/Data::Section'>Data::Section => Read multiple, named, chunks of data out of your __DATA__ section</a></li>
+<li id = '520230'><a href = 'https://metacpan.org/dist/Data-Section-Pluggable'>Data::Section::Pluggable => Read structured data from __DATA__</a></li>
+<li id = '520233'><a href = 'https://metacpan.org/pod/Data::Section::Simple'>Data::Section::Simple => Read multiple, named, chunks of data out of your __DATA__ section</a></li>
+<li id = '520236'><a href = 'https://metacpan.org/pod/Data::Show'>Data::Show => Dump data structures with name and point-of-origin</a></li>
+<li id = '520239'><a href = 'https://metacpan.org/pod/Data::Transfigure'>Data::Transfigure => Performs rule-based data transfigurations of arbitrary structures</a></li>
+<li id = '520242'><a href = 'https://metacpan.org/pod/Data::Transform'>Data::Transform => Performs rule-based data transformations of arbitrary structures</a></li>
+<li id = '520245'><a href = 'https://metacpan.org/pod/Data::Traverse'>Data::Traverse => Callback-based depth-first traversal of Perl data structures</a></li>
+<li id = '520248'><a href = 'https://metacpan.org/dist/DBIx-Tree'>DBIx::Tree => Generate a tree from a self-referential database table</a></li>
+<li id = '520251'><a href = 'https://metacpan.org/dist/DBIx-Tree-MaterializedPath'>DBIx::Tree::MaterializedPath => Fast DBI queries and updates on "materialized path" trees</a></li>
+<li id = '520254'><a href = 'https://metacpan.org/pod/Data::Unixish'>Data::Unixish => Implementation for Unixish, a data transformation framework</a></li>
+<li id = '520257'><a href = 'https://metacpan.org/dist/Data-Visitor'>Data::Visitor => Visitor style traversal of Perl data structures</a></li>
+<li id = '520260'><a href = 'https://metacpan.org/pod/Data::Visitor::Lite'>Data::Visitor::Lite => An easy implementation of Data::Visitor::Callback</a></li>
+<li id = '520263'><a href = 'https://metacpan.org/pod/Data::Visitor::Tiny'>Data::Visitor::Tiny => Recursively walk data structures</a></li>
+<li id = '520266'><a href = 'https://metacpan.org/pod/Data::Walk'>Data::Walk => Traverse Perl data structures</a></li>
+<li id = '520269'><a href = 'https://metacpan.org/pod/Data::Walker'>Data::Walker => A tool for navigating through Perl data structures</a></li>
+<li id = '520272'><a href = 'https://metacpan.org/pod/DBIx::Array'>DBIx::Array => DBI Wrapper with Perl style data structure interfaces</a></li>
+<li id = '520275'><a href = 'https://metacpan.org/dist/DBIx-HTML'>DBIx::HTML => Just another HTML table generating DBI extension</a></li>
+<li id = '520278'><a href = 'https://metacpan.org/dist/Devel-Walk'>Devel::Walk => Walk a complex object or reference</a></li>
+<li id = '520281'><a href = 'https://metacpan.org/dist/Directory-Diff'>Directory::Diff => Recursively find differences between similar directories</a></li>
+<li id = '520284'><a href = 'https://metacpan.org/pod/Doubly'>Doubly => Doubly linked lists</a></li>
+<li id = '520288'><a href = 'https://metacpan.org/pod/Doubly::Linked'>Doubly::Linked => Doubly linked lists</a></li>
+<li id = '520292'><a href = 'https://metacpan.org/dist/Doubly-Linked-PP'>Doubly::Linked::PP => Linked lists</a></li>
+<li id = '520295'><a href = 'https://metacpan.org/dist/File-LoadLines'>File::LoadLines => Load lines from files and network</a></li>
+<li id = '520299'><a href = 'http://metacpan.org/dist/Hash-Path'>Hash::Path => A simple way to return a path of HoH</a></li>
+<li id = '520302'><a href = 'https://metacpan.org/pod/Iterator'>Iterator => A general-purpose iterator class</a></li>
+<li id = '520305'><a href = 'https://metacpan.org/pod/Iterator::DBI'>Iterator::DBI => An iterator for returning DBI query results</a></li>
+<li id = '520308'><a href = 'https://metacpan.org/dist/Iterator-Flex'>Iterator::Flex => Iterators with flexible behaviors</a></li>
+<li id = '520311'><a href = 'https://metacpan.org/pod/Iterator::IO'>Iterator::IO => Filesystem and stream iterators</a></li>
+<li id = '520314'><a href = 'https://metacpan.org/pod/Iterator::Misc'>Iterator::Misc => Miscellaneous iterator functions</a></li>
+<li id = '520317'><a href = 'https://metacpan.org/pod/Iterator::Simple'>Iterator::Simple => Simple iterator and utilities</a></li>
+<li id = '520321'><a href = 'https://metacpan.org/pod/Iterator::Util'>Iterator::Util => Essential utilities for the Iterator class</a></li>
+<li id = '520326'><a href = 'https://metacpan.org/dist/List-AllUtils'>List::AllUtils => Combines List::Util, List::SomeUtils and List::UtilsBy in one bite-sized package</a></li>
+<li id = '520329'><a href = 'https://metacpan.org/pod/List::Gen::Cookbook'>List::Gen => Provides functions for generating lists</a></li>
+<li id = '520332'><a href = 'https://metacpan.org/dist/List-Lazy'>List::Lazy => Generate lists lazily</a></li>
+<li id = '520335'><a href = 'https://metacpan.org/dist/List-Regexp'>List::Regexp => Convert list of strings to a regular expression</a></li>
+<li id = '520339'><a href = 'https://metacpan.org/pod/List::Util'>List::Util => A selection of general-utility list subroutines</a></li>
+<li id = '520342'><a href = 'https://metacpan.org/dist/List-Uniqnum'>List::Uniqnum => A rendition of List::Util::uniqnum minus the bugs</a></li>
+<li id = '520345'><a href = 'https://metacpan.org/pod/meta'>meta => Meta-programming API</a></li>
+<li id = '520349'><a href = 'https://metacpan.org/pod/Module::Features::PluginSystem'>Module::Features::PluginSystem</a></li>
+<li id = '520352'><a href = 'https://metacpan.org/dist/Number-Iterator-XS'>Number::Iterator::XS => Iterate numbers faster</a></li>
+<li id = '520355'><a href = 'https://metacpan.org/pod/NumSeq::Iter'>NumSeq::Iter => Generate a coderef iterator from a number sequence specification</a></li>
+<li id = '520358'><a href = 'https://metacpan.org/dist/Object-Iterate'>Object::Iterate => Iterators for objects that know the next element</a></li>
+<li id = '520361'><a href = 'https://metacpan.org/pod/OMOP::CSV::Validator'>OMOP::CSV::Validator => Validates OMOP CDM CSV files against their expected data types</a></li>
+<li id = '520364'><a href = 'https://metacpan.org/dist/Parser-FIT'>Parser::FIT => A parser for garmin FIT (Flexible and Interoperable Data Transfer) files</a></li>
+<li id = '520367'><a href = 'https://metacpan.org/pod/Syntax::Keyword::Junction'>Syntax::Keyword::Junction => Perl6 style Junction operators in Perl5</a></li>
+<li id = '520372'><a href = 'https://metacpan.org/dist/Scalar-List-Utils'>Scalar::List::Utils => A distribution of general-utility subroutines</a></li>
+<li id = '520375'><a href = 'https://metacpan.org/dist/Term-TablePrint'>Term::TablePrint => Print a table to the terminal and browse it interactively</a></li>
+<li id = '520378'><a href = 'https://metacpan.org/pod/Text::ANSITable'>Text::ANSITable => Create nice formatted tables using extended ASCII and ANSI colors</a></li>
+<li id = '520381'><a href = 'https://metacpan.org/pod/Text::ASCIITable'>Text::ASCIITable => Create a nice formatted table using ASCII characters</a></li>
+<li id = '520384'><a href = 'https://metacpan.org/pod/Text::NumericData'>Text::NumericData => Many tools for parsing and writing of textual numeric data files</a></li>
+<li id = '520387'><a href = 'https://metacpan.org/dist/Text-Pipe'>Text::Pipe => Common text filter API</a></li>
+<li id = '520392'><a href = 'https://metacpan.org/dist/Tree-DAG_Node'>Tree::DAG_Mode => An N-ary tree</a></li>
+<li id = '520395'><a href = 'https://metacpan.org/pod/Tree::Simple::VisitorFactory'>Tree::Simple::VisitorFactory => A factory object for dispensing Visitor objects</a></li>
+<li id = '520398'><a href = 'https://metacpan.org/pod/Text::Treesitter'>Text::Treesitter => Perl binding for tree-sitter</a></li>
+<li id = '520404'><a href = 'https://metacpan.org/dist/Text-Table-Read-RelationOn-Tiny'>Text::Table::Read::RelationOn::Tiny => Read binary "relation on (over) a set" from a text table</a></li>
+<li id = '520407'><a href = 'http://metacpan.org/dist/Tree-XPathEngine'>Tree::XPathEngine => A re-usable XPath engine</a></li>
+<li id = '520410'><a href = 'https://metacpan.org/pod/Util::Medley::List'>Util::Medley::List => Utility methods for working with lists</a></li>
+<li id = '520413'><a href = 'http://metacpan.org/dist/XML-XPathEngine'>XML::XPathEngine => A re-usable XPath engine for DOM-like trees</a></li>
 <li id = '0'>See also:</li>
 <li id = '520002'>ArrayHandling (topic)</li>
 <li id = '520003'>DataCleaning (topic)</li>
@@ -932,11 +935,10 @@ Notes:
 <li id = '520014'>SpreadsheetStuff (topic)</li>
 <li id = '520015'>StringStuff (topic)</li>
 <li id = '520016'><a href = 'https://metacpan.org/pod/TableDataRoles::Standard'>TableDataRoles::Standard</a></li>
-<li id = '520017'><a href = 'https://metacpan.org/pod/Table::Data::Text'>Table::Data::Text</a></li>
-<li id = '520018'><a href = 'https://metacpan.org/pod/Text::Table::Manifold'>Text::Table::Manifold</a></li>
-<li id = '520019'><a href = 'https://metacpan.org/pod/Text::Table::Tiny'>Text::Table::Tiny</a></li>
-<li id = '520020'>XS (topic)</li>
-<li id = '520021'><a href = 'https://datatracker.ietf.org/doc/html/rfc8493'>https://datatracker.ietf.org/doc/html/rfc8493</a></li>
+<li id = '520017'><a href = 'https://metacpan.org/pod/Text::Table::Manifold'>Text::Table::Manifold</a></li>
+<li id = '520018'><a href = 'https://metacpan.org/pod/Text::Table::Tiny'>Text::Table::Tiny</a></li>
+<li id = '520019'>XS (topic)</li>
+<li id = '520020'><a href = 'https://datatracker.ietf.org/doc/html/rfc8493'>https://datatracker.ietf.org/doc/html/rfc8493</a></li>
 </ul>
 </li>
 	<li id = '53'>DataTypes
@@ -948,36 +950,37 @@ Notes:
 <li id = '530015'><a href = 'https://metacpan.org/pod/Data::CEFACT::Unit'>Data::CEFACT::Unit => Data object for CEFACT unit</a></li>
 <li id = '530019'><a href = 'https://metacpan.org/pod/Data::Float'>Data::Float => Details of the floating point data type</a></li>
 <li id = '530022'><a href = 'https://metacpan.org/dist/Data-HashType'>Data::HashType => Data object for hash type</a></li>
-<li id = '530025'><a href = 'https://metacpan.org/dist/Data-IconText'>Data::IconText => Work with icon text</a></li>
-<li id = '530028'><a href = 'https://metacpan.org/pod/Data::Identifier'>Data::Identifier => Format independent identifier object</a></li>
-<li id = '530031'><a href = 'https://metacpan.org/pod/Data::Identifier::Cloudlet'>Data::Identifier::Cloudlet => Format independent identifier object</a></li>
-<li id = '530034'><a href = 'https://metacpan.org/pod/Data::Identifier::Generate'>Data::Identifier::Generate => Format independent identifier object</a></li>
-<li id = '530037'><a href = 'https://metacpan.org/pod/Data::Identifier::Interface::Known'>Data::Identifier::Interface::Known => Format independent identifier object</a></li>
-<li id = '530040'><a href = 'https://metacpan.org/pod/Data::Identifier::Interface::Userdata'>Data::Identifier::Interface::Userdata => Format independent identifier object</a></li>
-<li id = '530043'><a href = 'https://metacpan.org/dist/Data-Integer'>Data::Integer => Details of the native integer data type</a></li>
-<li id = '530046'><a href = 'https://metacpan.org/pod/Data::Perl'>Data::Perl => Base classes wrapping fundamental Perl data types.</a></li>
-<li id = '530050'><a href = 'https://metacpan.org/dist/Data-Pond'>Data::Pond => Perl-based open notation for data</a></li>
-<li id = '530053'><a href = 'https://metacpan.org/dist/Hydrogen'>Hydrogen => Utilities for the simplest elements of Perl</a></li>
-<li id = '530056'><a href = 'https://metacpan.org/dist/Keyword-Anonymous-Object'>Keyword::Anonymous::Object => Anonymous objects</a></li>
-<li id = '530059'><a href = 'https://metacpan.org/dist/MooseX-Types'>MooseX::Types => Organize your Moose types in libraries</a></li>
-<li id = '530062'><a href = 'https://metacpan.org/pod/MooX::HandlesVia'>MooX::HandlesVia => NativeTrait-like behavior for Moo.</a></li>
-<li id = '530066'><a href = 'https://metacpan.org/dist/Number-Format'>Number::Format => Perl extension for formatting numbers</a></li>
-<li id = '530069'><a href = 'https://metacpan.org/dist/Perl-Types'>Perl::Types => Enable Perl data types</a></li>
-<li id = '530072'><a href = 'https://metacpan.org/dist/Range-Merge'>Range::Merge => Merges ranges of data including subset/superset ranges</a></li>
-<li id = '530075'><a href = 'https://metacpan.org/dist/Rope'>Rope => Tied objects</a></li>
-<li id = '530078'><a href = 'https://metacpan.org/pod/Scalar::Number'>Scalar::Number => Numeric aspects of scalars</a></li>
-<li id = '530081'><a href = 'https://metacpan.org/dist/Specio'>Specio => Type constraints and coercions for Perl</a></li>
-<li id = '530084'><a href = 'https://metacpan.org/pod/String::BooleanSimple'>String::BooleanSimple => Gets the boolean representative of a string</a></li>
-<li id = '530087'><a href = 'https://metacpan.org/dist/Struct-Dumb'>Struct::Dumb => Make simple lightweight record-like structures</a></li>
-<li id = '530090'><a href = 'https://metacpan.org/pod/Sub::HandlesVia'>Sub::HandlesVia => Alternative handles_via implementation</a></li>
-<li id = '530094'><a href = 'https://metacpan.org/dist/Tie-BoundedInteger'>Tie::BoundedInteger => Limit the magnitude of a number in a scalar</a></li>
-<li id = '530097'><a href = 'https://metacpan.org/dist/Tie-Cycle'>Tie::Cycle => Cycle through a list of values via a scalar</a></li>
-<li id = '530100'><a href = 'https://metacpan.org/dist/Tie-Toggle'>Tie::Toggle => False and true, alternately, ad infinitum</a></li>
-<li id = '530104'><a href = 'https://metacpan.org/pod/Type::Guess'>Type::Guess => Infer data types from an array of scalars</a></li>
-<li id = '530107'><a href = 'https://metacpan.org/pod/Type::Params'>Type::Params => Sub signature validation using Type::Tiny type constraints and coercions</a></li>
-<li id = '530111'>Type::Tiny => Tiny, yet Moo(se)-compatible, type constraint</li>
-<li id = '530114'><a href = 'https://metacpan.org/dist/Types-Equal'>Types::Equal => Type constraints for single value equality</a></li>
-<li id = '530117'><a href = 'https://metacpan.org/pod/Types::Music'>Types::Music => Type Library for Music Programming</a></li>
+<li id = '530025'><a href = 'https://metacpan.org/dist/Data-HexConverter'>Data::HexConverter => High performance hex string to binary converter</a></li>
+<li id = '530028'><a href = 'https://metacpan.org/dist/Data-IconText'>Data::IconText => Work with icon text</a></li>
+<li id = '530031'><a href = 'https://metacpan.org/pod/Data::Identifier'>Data::Identifier => Format independent identifier object</a></li>
+<li id = '530034'><a href = 'https://metacpan.org/pod/Data::Identifier::Cloudlet'>Data::Identifier::Cloudlet => Format independent identifier object</a></li>
+<li id = '530037'><a href = 'https://metacpan.org/pod/Data::Identifier::Generate'>Data::Identifier::Generate => Format independent identifier object</a></li>
+<li id = '530040'><a href = 'https://metacpan.org/pod/Data::Identifier::Interface::Known'>Data::Identifier::Interface::Known => Format independent identifier object</a></li>
+<li id = '530043'><a href = 'https://metacpan.org/pod/Data::Identifier::Interface::Userdata'>Data::Identifier::Interface::Userdata => Format independent identifier object</a></li>
+<li id = '530046'><a href = 'https://metacpan.org/dist/Data-Integer'>Data::Integer => Details of the native integer data type</a></li>
+<li id = '530049'><a href = 'https://metacpan.org/pod/Data::Perl'>Data::Perl => Base classes wrapping fundamental Perl data types.</a></li>
+<li id = '530053'><a href = 'https://metacpan.org/dist/Data-Pond'>Data::Pond => Perl-based open notation for data</a></li>
+<li id = '530056'><a href = 'https://metacpan.org/dist/Hydrogen'>Hydrogen => Utilities for the simplest elements of Perl</a></li>
+<li id = '530059'><a href = 'https://metacpan.org/dist/Keyword-Anonymous-Object'>Keyword::Anonymous::Object => Anonymous objects</a></li>
+<li id = '530062'><a href = 'https://metacpan.org/dist/MooseX-Types'>MooseX::Types => Organize your Moose types in libraries</a></li>
+<li id = '530065'><a href = 'https://metacpan.org/pod/MooX::HandlesVia'>MooX::HandlesVia => NativeTrait-like behavior for Moo.</a></li>
+<li id = '530069'><a href = 'https://metacpan.org/dist/Number-Format'>Number::Format => Perl extension for formatting numbers</a></li>
+<li id = '530072'><a href = 'https://metacpan.org/dist/Perl-Types'>Perl::Types => Enable Perl data types</a></li>
+<li id = '530075'><a href = 'https://metacpan.org/dist/Range-Merge'>Range::Merge => Merges ranges of data including subset/superset ranges</a></li>
+<li id = '530078'><a href = 'https://metacpan.org/dist/Rope'>Rope => Tied objects</a></li>
+<li id = '530081'><a href = 'https://metacpan.org/pod/Scalar::Number'>Scalar::Number => Numeric aspects of scalars</a></li>
+<li id = '530084'><a href = 'https://metacpan.org/dist/Specio'>Specio => Type constraints and coercions for Perl</a></li>
+<li id = '530087'><a href = 'https://metacpan.org/pod/String::BooleanSimple'>String::BooleanSimple => Gets the boolean representative of a string</a></li>
+<li id = '530090'><a href = 'https://metacpan.org/dist/Struct-Dumb'>Struct::Dumb => Make simple lightweight record-like structures</a></li>
+<li id = '530093'><a href = 'https://metacpan.org/pod/Sub::HandlesVia'>Sub::HandlesVia => Alternative handles_via implementation</a></li>
+<li id = '530097'><a href = 'https://metacpan.org/dist/Tie-BoundedInteger'>Tie::BoundedInteger => Limit the magnitude of a number in a scalar</a></li>
+<li id = '530100'><a href = 'https://metacpan.org/dist/Tie-Cycle'>Tie::Cycle => Cycle through a list of values via a scalar</a></li>
+<li id = '530103'><a href = 'https://metacpan.org/dist/Tie-Toggle'>Tie::Toggle => False and true, alternately, ad infinitum</a></li>
+<li id = '530107'><a href = 'https://metacpan.org/pod/Type::Guess'>Type::Guess => Infer data types from an array of scalars</a></li>
+<li id = '530110'><a href = 'https://metacpan.org/pod/Type::Params'>Type::Params => Sub signature validation using Type::Tiny type constraints and coercions</a></li>
+<li id = '530114'>Type::Tiny => Tiny, yet Moo(se)-compatible, type constraint</li>
+<li id = '530117'><a href = 'https://metacpan.org/dist/Types-Equal'>Types::Equal => Type constraints for single value equality</a></li>
+<li id = '530120'><a href = 'https://metacpan.org/pod/Types::Music'>Types::Music => Type Library for Music Programming</a></li>
 <li id = '0'>See also:</li>
 <li id = '530002'>LinguaStuff (topic)</li>
 <li id = '530003'>ParameterTypes (topic)</li>
@@ -1195,17 +1198,24 @@ Notes:
 <ul>
 <li id = '660005'><a href = 'https://metacpan.org/pod/AnyEvent'>AnyEvent => The DBI of event loop programming</a></li>
 <li id = '660008'>AnyEvent::Net::Curl::Queued => Moo wrapper for queued downloads via Net::Curl & AnyEvent</li>
-<li id = '660012'><a href = 'https://metacpan.org/dist/AnyEvent-YACurl'>AnyEvent::YACurl => Yet Another curl binding for AnyEvent</a></li>
-<li id = '660015'><a href = 'https://metacpan.org/dist/Devel-Events'>Devel::Events => Extensible instrumentation framework</a></li>
-<li id = '660018'>EV => Perl interface to libev, a high performance full-featured event loop</li>
-<li id = '660021'><a href = 'https://metacpan.org/dist/Event-RPC'>Event::RPC => Event based transparent Client/Server RPC framework</a></li>
-<li id = '660024'><a href = 'https://metacpan.org/dist/Feersum'>Feersum => A PSGI engine for Perl based on EV/libev</a></li>
-<li id = '660027'><a href = 'https://metacpan.org/dist/Future'>Future => Represent an operation awaiting completion</a></li>
-<li id = '660030'><a href = 'https://metacpan.org/dist/Future-IO'>Future::IO => Future-returning IO methods</a></li>
-<li id = '660033'><a href = 'https://metacpan.org/dist/Future-Selector'>Future::Selector => Manage a collection of pending futures</a></li>
-<li id = '660036'><a href = 'https://metacpan.org/dist/Future-XS'>Future::XS => Experimental XS implementation of Future</a></li>
-<li id = '660039'><a href = 'http://software.schmorp.de/pkg/libev.html'>libev</a></li>
-<li id = '660042'><a href = 'https://metacpan.org/dist/Promises'>Promises => An implementation of Promises in Perl</a></li>
+<li id = '660012'><a href = 'https://metacpan.org/pod/AnyEvent::Promises'>AnyEvent::Promises => Simple implementation of Promises/A+ spec</a></li>
+<li id = '660015'><a href = 'https://metacpan.org/pod/AnyEvent::XSPromises'>AnyEvent::XSPromises => Another Promises library, this time implemented in XS for performance</a></li>
+<li id = '660018'><a href = 'https://metacpan.org/dist/AnyEvent-YACurl'>AnyEvent::YACurl => Yet Another curl binding for AnyEvent</a></li>
+<li id = '660021'><a href = 'https://metacpan.org/dist/Devel-Events'>Devel::Events => Extensible instrumentation framework</a></li>
+<li id = '660024'>EV => Perl interface to libev, a high performance full-featured event loop</li>
+<li id = '660027'><a href = 'https://metacpan.org/dist/Event-RPC'>Event::RPC => Event based transparent Client/Server RPC framework</a></li>
+<li id = '660030'><a href = 'https://metacpan.org/dist/Feersum'>Feersum => A PSGI engine for Perl based on EV/libev</a></li>
+<li id = '660033'><a href = 'https://metacpan.org/dist/Future'>Future => Represent an operation awaiting completion</a></li>
+<li id = '660036'><a href = 'https://metacpan.org/pod/Future::AsyncAwait'>Future::AsyncAwait => Deferred subroutine syntax for futures</a></li>
+<li id = '660039'><a href = 'https://metacpan.org/dist/Future-IO'>Future::IO => Future-returning IO methods</a></li>
+<li id = '660042'><a href = 'https://metacpan.org/dist/Future-Selector'>Future::Selector => Manage a collection of pending futures</a></li>
+<li id = '660045'><a href = 'https://metacpan.org/dist/Future-XS'>Future::XS => Experimental XS implementation of Future</a></li>
+<li id = '660048'><a href = 'http://software.schmorp.de/pkg/libev.html'>libev</a></li>
+<li id = '660051'><a href = 'https://metacpan.org/pod/Promise::AsyncAwait'>Promise::AsyncAwait => Async/await with promises</a></li>
+<li id = '660054'><a href = 'https://metacpan.org/dist/Promise-Me'>Promise::Me => Fork Based Promise with Asynchronous Execution, Async, Await and Shared Data</a></li>
+<li id = '660057'><a href = 'https://metacpan.org/pod/Promise::XS'>Promise::XS => Fast promises in Perl</a></li>
+<li id = '660060'><a href = 'https://metacpan.org/dist/Promises'>Promises => An implementation of Promises in Perl</a></li>
+<li id = '660063'><a href = 'https://metacpan.org/pod/Syntax::Keyword::Defer'>Syntax::Keyword::Defer => Execute code when leaving a block</a></li>
 <li id = '0'>See also:</li>
 <li id = '660002'>ParallelProcessing (topic)</li>
 <li id = '660003'>TestingHelp (topic)</li>
@@ -1262,61 +1272,62 @@ Notes:
 <li id = '700004'><a href = 'https://metacpan.org/dist/App-CdUtils'>App::CdUtils => CLI utilities related to changing directories</a></li>
 <li id = '700007'><a href = 'https://metacpan.org/dist/App-DownloadsDirUtils'>App::DownloadsDirUtils => Utilities related to downloads directories</a></li>
 <li id = '700010'><a href = 'https://metacpan.org/dist/App-sdif'>App::sdif => Contains utility programs cdif, sdif and watchdiff to post-process output of diff</a></li>
-<li id = '700013'><a href = 'https://metacpan.org/dist/AWS-Lambda'>AWS::Lambda => Perl support for AWS Lambda Custom Runtime</a></li>
-<li id = '700016'><a href = 'https://metacpan.org/dist/AWS-S3'>AWS::S3 => Lightweight interface to Amazon S3 (Simple Storage Service)</a></li>
-<li id = '700019'><a href = 'https://metacpan.org/pod/AWS::XRay'>AWS::XRay => AWS X-Ray tracing library</a></li>
-<li id = '700022'>CSV => See DataTraversal</li>
-<li id = '700024'><a href = 'https://metacpan.org/dist/FFI-C-Stat'>FFI::C::Stat => Object-oriented FFI interface to native stat and lstat</a></li>
-<li id = '700027'>File::chdir => A more sensible way to change directories</li>
-<li id = '700031'><a href = 'https://metacpan.org/dist/File-Copy-clonefile'>File::Copy::clonefile => Call clonefile system call</a></li>
-<li id = '700035'><a href = 'https://metacpan.org/pod/File::Copy::NoClobber'>File::Copy::NoClobber => Rename copied files safely if destination exists</a></li>
-<li id = '700039'>File diffs => App::UniqFiles</li>
-<li id = '700042'><a href = 'https://metacpan.org/pod/File::DirList'>File::DirList</a></li>
-<li id = '700044'><a href = 'https://metacpan.org/dist/File-Fetch'>File::Fetch => A generic file fetching mechanism</a></li>
-<li id = '700047'><a href = 'https://metacpan.org/dist/File-Find-Closures'>File::Find::Closures => Functions you can use with File::Find</a></li>
-<li id = '700050'><a href = 'https://metacpan.org/dist/File-Find-Rule'>File::Find::Rule => Alternative interface to File::Find</a></li>
-<li id = '700053'><a href = 'https://metacpan.org/dist/File-FindUniq'>File::FindUniq => Find unique or duplicate file {contents,names}</a></li>
-<li id = '700056'><a href = 'https://metacpan.org/pod/File::FStore'>File::FStore => Module for interacting with file stores</a></li>
-<li id = '700059'><a href = 'https://metacpan.org/pod/File::FStore::Base'>File::FStore::Base => Module for interacting with file stores</a></li>
-<li id = '700062'><a href = 'https://metacpan.org/pod/File::FStore::File'>File::FStore::File => Module for interacting with file stores</a></li>
-<li id = '700065'><a href = 'https://metacpan.org/pod/File::HomeDir'>File::HomeDir => Find your home and other directories on any platform</a></li>
-<li id = '700068'><a href = 'https://metacpan.org/dist/File-Information'>File::Information => Generic module for extracting information from filesystems</a></li>
-<li id = '700071'><a href = 'https://metacpan.org/pod/File::Information::Base'>File::Information::Base => Generic module for extracting information from filesystems</a></li>
-<li id = '700074'><a href = 'https://metacpan.org/pod/File::Information::Filesystem'>File::Information::Filesystem => Generic module for extracting information from filesystems</a></li>
-<li id = '700077'><a href = 'https://metacpan.org/pod/File::Information::Inode'>File::Information::Inode => Generic module for extracting information from filesystems</a></li>
-<li id = '700080'><a href = 'https://metacpan.org/dist/File-Listing'>File::Listing => Parse a directory listing</a></li>
-<li id = '700083'><a href = 'https://metacpan.org/dist/File-Lockfile-Emacs'>File::Lockfile::Emacs => Create/check/delete Emacs-style lockfiles</a></li>
-<li id = '700086'><a href = 'https://metacpan.org/dist/File-MoreUtil'>File::MoreUtil</a></li>
-<li id = '700089'><a href = 'https://metacpan.org/dist/File-Open-NoCache-ReadOnly'>File::Open::NoCache::ReadOnly => Open a file and flush from memory on closing</a></li>
-<li id = '700092'><a href = 'https://metacpan.org/pod/File::Print::Many'>File::Print::Many => Print to more than one file descriptor at once</a></li>
-<li id = '700095'><a href = 'https://metacpan.org/dist/File-Process'>File::Process</a></li>
-<li id = '700098'><a href = 'https://metacpan.org/pod/File::ShareDir'>File::ShareDir => Locate per-dist and per-module shared files</a></li>
-<li id = '700102'><a href = 'https://metacpan.org/pod/File::ShareDir::Tiny'>File::ShareDir::Tiny => Locate per-dist and per-module shared files</a></li>
-<li id = '700106'><a href = 'https://metacpan.org/dist/File-Slurper'>File::Slurper => A simple, sane and efficient module to slurp a file</a></li>
-<li id = '700110'><a href = 'https://metacpan.org/dist/File-Slurper-Temp'>File::Slurper::Temp</a></li>
-<li id = '700114'>File::Sticker => Read, Write file meta-data</li>
-<li id = '700118'><a href = 'https://metacpan.org/dist/File-FStore'>File::Store => Module for interacting with file stores</a></li>
-<li id = '700121'><a href = 'https://metacpan.org/dist/File-Stubb'>File::Stubb => Stub file creator</a></li>
-<li id = '700124'><a href = 'https://metacpan.org/pod/File::URIList'>File::URIList => Module for reading and writing RFC 2483 URI lists</a></li>
-<li id = '700128'><a href = 'https://metacpan.org/pod/File::Util::Copy'>File::Util::Copy => Utilities related to copying files</a></li>
-<li id = '700131'><a href = 'https://metacpan.org/dist/File-Util-Rename'>File::Util::Rename => Utilities related to renaming files</a></li>
-<li id = '700135'>File uploading => jQuery::File::Upload</li>
-<li id = '700137'><a href = 'https://metacpan.org/dist/Filename-Type-Archive'>Filename::Type::Archive => Check whether filename indicates being an archive file</a></li>
-<li id = '700140'><a href = 'https://metacpan.org/dist/Filename-Type-Audio'>Filename::Type::Audio => Check whether filename indicates being an audio file</a></li>
-<li id = '700143'><a href = 'https://metacpan.org/dist/Filename-Type-Backup'>Filename::Type::Backup => Check whether filename indicates being a backup file</a></li>
-<li id = '700146'><a href = 'https://metacpan.org/dist/Filename-Type-Compressed'>Filename::Type::Compressed => Check whether filename indicates being compressed</a></li>
-<li id = '700149'><a href = 'https://metacpan.org/pod/Filename::Type::Ebook'>Filename::Type::Ebook => Check whether filename indicates being an e-book</a></li>
-<li id = '700152'><a href = 'https://metacpan.org/dist/Filename-Type-Executable'>Filename::Type::Executable => Check whether filename indicates being an executable program/script</a></li>
-<li id = '700155'><a href = 'https://metacpan.org/pod/Filename::Type::Image'>Filename::Type::Image => Check whether filename indicates being an image</a></li>
-<li id = '700158'><a href = 'https://metacpan.org/dist/Filename-Type-Perl-Release'>Filename::Type::Perl::Release => Check whether filename looks like a perl module release archive, e.g. a CPAN release tarball</a></li>
-<li id = '700161'><a href = 'https://metacpan.org/dist/Filename-Type-Video'>Filename::Type::Video => Check whether filename indicates being a video file</a></li>
-<li id = '700164'><a href = 'https://metacpan.org/pod/FindApp'>FindApp => Find your application home and config your process for it</a></li>
-<li id = '700169'><a href = 'https://metacpan.org/dist/Linux-FD'>Linux::FD => Linux specific special filehandles</a></li>
-<li id = '700172'><a href = 'https://metacpan.org/pod/Module::Filename'>Module::Filename => Provides an object oriented, cross platform interface for getting a module's filename</a></li>
-<li id = '700175'>Redirection (sends errors to /dev/null) => local(*STDERR);</li>
-<li id = '700178'><a href = 'https://metacpan.org/dist/Regexp-Pattern-Filename-Type-Archive'>Regexp::Pattern::Filename::Type::Archive => Archive filename</a></li>
-<li id = '700181'><a href = 'https://metacpan.org/pod/rename'>rename => Renames multiple files using perl expressions</a></li>
-<li id = '700184'><a href = 'https://metacpan.org/dist/Storage-Abstract'>Storage::Abstract => Abstraction for file storage</a></li>
+<li id = '700013'><a href = 'https://metacpan.org/dist/App-Sky'>App::Sky => Wrapper to rsync/etc. to upload files to a remote server and give download links</a></li>
+<li id = '700016'><a href = 'https://metacpan.org/dist/AWS-Lambda'>AWS::Lambda => Perl support for AWS Lambda Custom Runtime</a></li>
+<li id = '700019'><a href = 'https://metacpan.org/dist/AWS-S3'>AWS::S3 => Lightweight interface to Amazon S3 (Simple Storage Service)</a></li>
+<li id = '700022'><a href = 'https://metacpan.org/pod/AWS::XRay'>AWS::XRay => AWS X-Ray tracing library</a></li>
+<li id = '700025'>CSV => See DataTraversal</li>
+<li id = '700027'><a href = 'https://metacpan.org/dist/FFI-C-Stat'>FFI::C::Stat => Object-oriented FFI interface to native stat and lstat</a></li>
+<li id = '700030'>File::chdir => A more sensible way to change directories</li>
+<li id = '700034'><a href = 'https://metacpan.org/dist/File-Copy-clonefile'>File::Copy::clonefile => Call clonefile system call</a></li>
+<li id = '700038'><a href = 'https://metacpan.org/pod/File::Copy::NoClobber'>File::Copy::NoClobber => Rename copied files safely if destination exists</a></li>
+<li id = '700042'>File diffs => App::UniqFiles</li>
+<li id = '700045'><a href = 'https://metacpan.org/pod/File::DirList'>File::DirList</a></li>
+<li id = '700047'><a href = 'https://metacpan.org/dist/File-Fetch'>File::Fetch => A generic file fetching mechanism</a></li>
+<li id = '700050'><a href = 'https://metacpan.org/dist/File-Find-Closures'>File::Find::Closures => Functions you can use with File::Find</a></li>
+<li id = '700053'><a href = 'https://metacpan.org/dist/File-Find-Rule'>File::Find::Rule => Alternative interface to File::Find</a></li>
+<li id = '700056'><a href = 'https://metacpan.org/dist/File-FindUniq'>File::FindUniq => Find unique or duplicate file {contents,names}</a></li>
+<li id = '700059'><a href = 'https://metacpan.org/pod/File::FStore'>File::FStore => Module for interacting with file stores</a></li>
+<li id = '700062'><a href = 'https://metacpan.org/pod/File::FStore::Base'>File::FStore::Base => Module for interacting with file stores</a></li>
+<li id = '700065'><a href = 'https://metacpan.org/pod/File::FStore::File'>File::FStore::File => Module for interacting with file stores</a></li>
+<li id = '700068'><a href = 'https://metacpan.org/pod/File::HomeDir'>File::HomeDir => Find your home and other directories on any platform</a></li>
+<li id = '700071'><a href = 'https://metacpan.org/dist/File-Information'>File::Information => Generic module for extracting information from filesystems</a></li>
+<li id = '700074'><a href = 'https://metacpan.org/pod/File::Information::Base'>File::Information::Base => Generic module for extracting information from filesystems</a></li>
+<li id = '700077'><a href = 'https://metacpan.org/pod/File::Information::Filesystem'>File::Information::Filesystem => Generic module for extracting information from filesystems</a></li>
+<li id = '700080'><a href = 'https://metacpan.org/pod/File::Information::Inode'>File::Information::Inode => Generic module for extracting information from filesystems</a></li>
+<li id = '700083'><a href = 'https://metacpan.org/dist/File-Listing'>File::Listing => Parse a directory listing</a></li>
+<li id = '700086'><a href = 'https://metacpan.org/dist/File-Lockfile-Emacs'>File::Lockfile::Emacs => Create/check/delete Emacs-style lockfiles</a></li>
+<li id = '700089'><a href = 'https://metacpan.org/dist/File-MoreUtil'>File::MoreUtil</a></li>
+<li id = '700092'><a href = 'https://metacpan.org/dist/File-Open-NoCache-ReadOnly'>File::Open::NoCache::ReadOnly => Open a file and flush from memory on closing</a></li>
+<li id = '700095'><a href = 'https://metacpan.org/pod/File::Print::Many'>File::Print::Many => Print to more than one file descriptor at once</a></li>
+<li id = '700098'><a href = 'https://metacpan.org/dist/File-Process'>File::Process</a></li>
+<li id = '700101'><a href = 'https://metacpan.org/pod/File::ShareDir'>File::ShareDir => Locate per-dist and per-module shared files</a></li>
+<li id = '700105'><a href = 'https://metacpan.org/pod/File::ShareDir::Tiny'>File::ShareDir::Tiny => Locate per-dist and per-module shared files</a></li>
+<li id = '700109'><a href = 'https://metacpan.org/dist/File-Slurper'>File::Slurper => A simple, sane and efficient module to slurp a file</a></li>
+<li id = '700113'><a href = 'https://metacpan.org/dist/File-Slurper-Temp'>File::Slurper::Temp</a></li>
+<li id = '700117'>File::Sticker => Read, Write file meta-data</li>
+<li id = '700121'><a href = 'https://metacpan.org/dist/File-FStore'>File::Store => Module for interacting with file stores</a></li>
+<li id = '700124'><a href = 'https://metacpan.org/dist/File-Stubb'>File::Stubb => Stub file creator</a></li>
+<li id = '700127'><a href = 'https://metacpan.org/pod/File::URIList'>File::URIList => Module for reading and writing RFC 2483 URI lists</a></li>
+<li id = '700131'><a href = 'https://metacpan.org/pod/File::Util::Copy'>File::Util::Copy => Utilities related to copying files</a></li>
+<li id = '700134'><a href = 'https://metacpan.org/dist/File-Util-Rename'>File::Util::Rename => Utilities related to renaming files</a></li>
+<li id = '700138'>File uploading => jQuery::File::Upload</li>
+<li id = '700140'><a href = 'https://metacpan.org/dist/Filename-Type-Archive'>Filename::Type::Archive => Check whether filename indicates being an archive file</a></li>
+<li id = '700143'><a href = 'https://metacpan.org/dist/Filename-Type-Audio'>Filename::Type::Audio => Check whether filename indicates being an audio file</a></li>
+<li id = '700146'><a href = 'https://metacpan.org/dist/Filename-Type-Backup'>Filename::Type::Backup => Check whether filename indicates being a backup file</a></li>
+<li id = '700149'><a href = 'https://metacpan.org/dist/Filename-Type-Compressed'>Filename::Type::Compressed => Check whether filename indicates being compressed</a></li>
+<li id = '700152'><a href = 'https://metacpan.org/pod/Filename::Type::Ebook'>Filename::Type::Ebook => Check whether filename indicates being an e-book</a></li>
+<li id = '700155'><a href = 'https://metacpan.org/dist/Filename-Type-Executable'>Filename::Type::Executable => Check whether filename indicates being an executable program/script</a></li>
+<li id = '700158'><a href = 'https://metacpan.org/pod/Filename::Type::Image'>Filename::Type::Image => Check whether filename indicates being an image</a></li>
+<li id = '700161'><a href = 'https://metacpan.org/dist/Filename-Type-Perl-Release'>Filename::Type::Perl::Release => Check whether filename looks like a perl module release archive, e.g. a CPAN release tarball</a></li>
+<li id = '700164'><a href = 'https://metacpan.org/dist/Filename-Type-Video'>Filename::Type::Video => Check whether filename indicates being a video file</a></li>
+<li id = '700167'><a href = 'https://metacpan.org/pod/FindApp'>FindApp => Find your application home and config your process for it</a></li>
+<li id = '700172'><a href = 'https://metacpan.org/dist/Linux-FD'>Linux::FD => Linux specific special filehandles</a></li>
+<li id = '700175'><a href = 'https://metacpan.org/pod/Module::Filename'>Module::Filename => Provides an object oriented, cross platform interface for getting a module's filename</a></li>
+<li id = '700178'>Redirection (sends errors to /dev/null) => local(*STDERR);</li>
+<li id = '700181'><a href = 'https://metacpan.org/dist/Regexp-Pattern-Filename-Type-Archive'>Regexp::Pattern::Filename::Type::Archive => Archive filename</a></li>
+<li id = '700184'><a href = 'https://metacpan.org/pod/rename'>rename => Renames multiple files using perl expressions</a></li>
+<li id = '700187'><a href = 'https://metacpan.org/dist/Storage-Abstract'>Storage::Abstract => Abstraction for file storage</a></li>
 <li id = '0'>See also:</li>
 <li id = '700002'>DataTraversal (topic)</li>
 <li id = '700003'>SortModules (topic)</li>
@@ -2134,68 +2145,69 @@ Notes:
 <li id = '1170027'>App::ModuleBuildTiny => A standalone authoring tool for Module::Build::Tiny and Dist::Build</li>
 <li id = '1170035'><a href = 'https://metacpan.org/dist/App-Module-Lister'>App::Module::Lister => List the Perl modules in @INC</a></li>
 <li id = '1170038'><a href = 'https://metacpan.org/dist/App-perlimports'>App::perlimports => Make implicit imports explicit</a></li>
-<li id = '1170041'>B => The Perl Compiler Backend</li>
-<li id = '1170045'><a href = 'https://metacpan.org/dist/B-Keywords'>B::Keywords => Lists of reserved barewords and symbol names</a></li>
-<li id = '1170048'><a href = 'https://metacpan.org/pod/Blessed::Merge'>Blessed::Merge => Merge Blessed Refs</a></li>
-<li id = '1170051'><a href = 'https://metacpan.org/pod/BsDiPa'>BsDiPa => Create or apply binary difference patch</a></li>
-<li id = '1170054'><a href = 'https://metacpan.org/dist/Caller-Reverse'>Caller::Reverse => Reverse the caller stack</a></li>
-<li id = '1170057'><a href = 'https://metacpan.org/pod/Class::Accessor'>Class::Accessor => Automated accessor generation</a></li>
-<li id = '1170060'><a href = 'https://metacpan.org/pod/Class::Accessor::Fast'>Class::Accessor::Fast => Faster, but less expandable, accessors</a></li>
-<li id = '1170063'><a href = 'https://metacpan.org/pod/Class::Accessor::Validated'>Class::Accessor::Validated => Drop-in constructor validation for Class::Accessor::Fast-based classes</a></li>
-<li id = '1170066'><a href = 'https://metacpan.org/pod/DBIx::VersionedSubs'>DBIx::VersionedSubs => All your code are belong into the DB</a></li>
-<li id = '1170069'><a href = 'https://metacpan.org/dist/Devel-MaintBlead'>Devel::MaintBlead => Handle maint / blead code paths for distributions</a></li>
-<li id = '1170072'><a href = 'https://metacpan.org/dist/Devel-PPPort'>Devel::PPPort => Perl/Pollution/Portability</a></li>
-<li id = '1170075'><a href = 'https://metacpan.org/pod/Devel::Required'>Devel::Required => Automatic update of required modules documentation</a></li>
-<li id = '1170078'><a href = 'https://metacpan.org/dist/Devel-ThreadsForks'>Devel::ThreadsForks => Check for availability of threads or forks</a></li>
-<li id = '1170081'><a href = 'https://metacpan.org/dist/Dist-Build'>Dist::Build => A modern module builder, author tools not included!</a></li>
-<li id = '1170085'><a href = 'https://metacpan.org/pod/exact'>exact => Perl pseudo pragma to enable strict, warnings, features, mro, filehandle methods</a></li>
-<li id = '1170088'><a href = 'https://metacpan.org/pod/experimental'>experimental => Experimental features made easy</a></li>
-<li id = '1170091'><a href = 'https://metacpan.org/dist/ExtUtils-Builder'>ExtUtils::Builder => An overview of the foundations of the ExtUtils::Builder Plan framework</a></li>
-<li id = '1170094'><a href = 'https://metacpan.org/dist/ExtUtils-Builder-Compiler'>ExtUtils::Builder::Compiler => An interface around different compilers</a></li>
-<li id = '1170097'><a href = 'https://metacpan.org/dist/ExtUtils-Depends'>ExtUtils::Depends => Easily build XS extensions that depend on XS extensions</a></li>
-<li id = '1170100'><a href = 'https://metacpan.org/pod/ExtUtils::Helpers'>ExtUtils::Helpers => Various portability utilities for module builders</a></li>
-<li id = '1170103'><a href = 'https://metacpan.org/dist/ExtUtils-ParseXS'>ExtUtils::ParseXS => Converts Perl XS code into C code</a></li>
-<li id = '1170106'><a href = 'https://metacpan.org/dist/ExtUtils-Typemaps-Magic'>ExtUtils::Typemaps::Magic => Typemap for storing objects in magic</a></li>
-<li id = '1170110'><a href = 'https://metacpan.org/dist/ExtUtils-Typemaps-Misc'>ExtUtils::Typemaps::Misc => A collection of miscelaneous typemap templates</a></li>
-<li id = '1170113'><a href = 'https://metacpan.org/dist/Factory-Sub'>Factory::Sub => Generate a factory of subs</a></li>
-<li id = '1170116'><a href = 'https://metacpan.org/pod/Hades'>Hades => Less is more, more is less!</a></li>
-<li id = '1170119'><a href = 'https://metacpan.org/dist/Hades-Realm-Exporter'>Hades::Realm::Exporter => Hades realm for Exporter</a></li>
-<li id = '1170122'><a href = 'https://metacpan.org/dist/Hades-Realm-Import-Export'>Hades::Realm::Import::Export => Hades realm for Import::Export</a></li>
-<li id = '1170125'><a href = 'https://medium.com/@mayurkoshti12/install-perl-module-without-cpan-2fe935f3a45a'>Install without using CPAN</a></li>
-<li id = '1170127'><a href = 'https://metacpan.org/pod/LaunchDarkly::Server'>LaunchDarkly::Server => Perl server side SDK for LaunchDarkly, a fancy release manager</a></li>
-<li id = '1170131'><a href = 'https://metacpan.org/dist/Minilla'>Minilla => CPAN module authoring tool</a></li>
-<li id = '1170135'><a href = 'https://metacpan.org/pod/Mite'>Mite => Moose-like OO, fast to load, with zero dependencies</a></li>
-<li id = '1170139'>Module::Build::Tiny => Looks good</li>
-<li id = '1170142'><a href = 'https://metacpan.org/pod/Module::Extract::VERSION'>Module::Extract::VERSION => Extract a module version safely</a></li>
-<li id = '1170145'><a href = 'https://metacpan.org/pod/Module::Generate'>Module::Generate => Assist with module generation</a></li>
-<li id = '1170148'><a href = 'https://metacpan.org/dist/Module-Generic'>Module::Generic => Generic Module to inherit from</a></li>
-<li id = '1170151'><a href = 'https://metacpan.org/pod/Module::List'>Module::List => Module 'directory' listing</a></li>
-<li id = '1170155'><a href = 'https://metacpan.org/pod/Module::Patch'>Module::Patch => Patch package with a set of patches</a></li>
-<li id = '1170158'><a href = 'https://metacpan.org/dist/Module-Runtime'>Module::Runtime => Runtime module handling</a></li>
-<li id = '1170161'><a href = 'https://metacpan.org/dist/Module-Signature'>Module::Signature => Module signature file manipulation</a></li>
-<li id = '1170165'>Module::Starter::AddModule => Add a new module to a distribution</li>
-<li id = '1170167'><a href = 'https://metacpan.org/dist/MooX-LazierAttributes'>MooX::LazierAttributes => Lazier Attributes</a></li>
-<li id = '1170170'><a href = 'https://metacpan.org/pod/MooX::Private::Attribute'>MooX::Private::Attribute => Private attributes</a></li>
-<li id = '1170173'><a href = 'https://metacpan.org/pod/Nefarious'>Nefarious => Wicked or criminal objects</a></li>
-<li id = '1170176'><a href = 'https://metacpan.org/dist/Object-Configure'>Object::Configure => Runtime Configuration for an Object</a></li>
-<li id = '1170180'>ODS => Object Data Store</li>
-<li id = '1170183'><a href = 'https://metacpan.org/pod/ogd'>ogd => Ordered global destruction</a></li>
-<li id = '1170186'><a href = 'https://metacpan.org/pod/Package::Subroutine'>Package::Subroutine => Minimalistic import/export and other util methods</a></li>
-<li id = '1170189'><a href = 'https://metacpan.org/dist/PAR-Packer'>PAR::Packer => PAR Packager</a></li>
-<li id = '1170192'><a href = 'https://metacpan.org/dist/Perl-APIReference'>Perl::APIReference => Programmatically query the perlapi</a></li>
-<li id = '1170195'><a href = 'https://metacpan.org/pod/PPI::Dumper'>PPI::Dumper => Dumping of PDOM trees</a></li>
-<li id = '1170198'><a href = 'https://metacpan.org/pod/Role::Basic'>Role::Basic => Just roles. Nothing else</a></li>
-<li id = '1170201'><a href = 'https://metacpan.org/pod/Simple::Tuple'>Simple::Tuple => Because tuples should be simple and simple to use!</a></li>
-<li id = '1170204'><a href = 'https://metacpan.org/dist/SourceCode-LineCounter-Perl'>SourceCode::LineCounter::Perl => Count lines in Perl source code</a></li>
-<li id = '1170207'><a href = 'https://metacpan.org/pod/Subclass::Of'>Subclass::Of => Import a magic subclass</a></li>
-<li id = '1170210'><a href = 'https://metacpan.org/dist/Syntax-Construct'>Syntax::Construct => Explicitly state which non-feature constructs are used in the code</a></li>
-<li id = '1170213'><a href = 'https://metacpan.org/pod/URI::PackageURL'>URI::PackageURL => Perl extension for Package URL (aka "purl")</a></li>
-<li id = '1170216'><a href = 'https://metacpan.org/pod/Variable::Magic'>Variable::Magic</a></li>
-<li id = '1170222'>Xerarch => Introspection of the package</li>
-<li id = '1170226'><a href = 'https://metacpan.org/pod/XS::Framework'>XS::Framework => Framework for building C++ XS modules with shared code, typemaps and C++ perl API</a></li>
-<li id = '1170229'><a href = 'https://metacpan.org/pod/XS::Install'>XS::Install => ExtUtils::MakeMaker based module installer for XS modules</a></li>
-<li id = '1170232'><a href = 'https://metacpan.org/pod/XS::Manifesto'>XS::Manifesto => Shared XS modules manifesto</a></li>
-<li id = '1170235'>YAOO => Yet Another Object Orientation</li>
+<li id = '1170041'><a href = 'https://metacpan.org/dist/App-ThisDist'>App::ThisDist => Print Perl {distribution,module,author,...} associated with current directory</a></li>
+<li id = '1170044'>B => The Perl Compiler Backend</li>
+<li id = '1170048'><a href = 'https://metacpan.org/dist/B-Keywords'>B::Keywords => Lists of reserved barewords and symbol names</a></li>
+<li id = '1170051'><a href = 'https://metacpan.org/pod/Blessed::Merge'>Blessed::Merge => Merge Blessed Refs</a></li>
+<li id = '1170054'><a href = 'https://metacpan.org/pod/BsDiPa'>BsDiPa => Create or apply binary difference patch</a></li>
+<li id = '1170057'><a href = 'https://metacpan.org/dist/Caller-Reverse'>Caller::Reverse => Reverse the caller stack</a></li>
+<li id = '1170060'><a href = 'https://metacpan.org/pod/Class::Accessor'>Class::Accessor => Automated accessor generation</a></li>
+<li id = '1170063'><a href = 'https://metacpan.org/pod/Class::Accessor::Fast'>Class::Accessor::Fast => Faster, but less expandable, accessors</a></li>
+<li id = '1170066'><a href = 'https://metacpan.org/pod/Class::Accessor::Validated'>Class::Accessor::Validated => Drop-in constructor validation for Class::Accessor::Fast-based classes</a></li>
+<li id = '1170069'><a href = 'https://metacpan.org/pod/DBIx::VersionedSubs'>DBIx::VersionedSubs => All your code are belong into the DB</a></li>
+<li id = '1170072'><a href = 'https://metacpan.org/dist/Devel-MaintBlead'>Devel::MaintBlead => Handle maint / blead code paths for distributions</a></li>
+<li id = '1170075'><a href = 'https://metacpan.org/dist/Devel-PPPort'>Devel::PPPort => Perl/Pollution/Portability</a></li>
+<li id = '1170078'><a href = 'https://metacpan.org/pod/Devel::Required'>Devel::Required => Automatic update of required modules documentation</a></li>
+<li id = '1170081'><a href = 'https://metacpan.org/dist/Devel-ThreadsForks'>Devel::ThreadsForks => Check for availability of threads or forks</a></li>
+<li id = '1170084'><a href = 'https://metacpan.org/dist/Dist-Build'>Dist::Build => A modern module builder, author tools not included!</a></li>
+<li id = '1170088'><a href = 'https://metacpan.org/pod/exact'>exact => Perl pseudo pragma to enable strict, warnings, features, mro, filehandle methods</a></li>
+<li id = '1170091'><a href = 'https://metacpan.org/pod/experimental'>experimental => Experimental features made easy</a></li>
+<li id = '1170094'><a href = 'https://metacpan.org/dist/ExtUtils-Builder'>ExtUtils::Builder => An overview of the foundations of the ExtUtils::Builder Plan framework</a></li>
+<li id = '1170097'><a href = 'https://metacpan.org/dist/ExtUtils-Builder-Compiler'>ExtUtils::Builder::Compiler => An interface around different compilers</a></li>
+<li id = '1170100'><a href = 'https://metacpan.org/dist/ExtUtils-Depends'>ExtUtils::Depends => Easily build XS extensions that depend on XS extensions</a></li>
+<li id = '1170103'><a href = 'https://metacpan.org/pod/ExtUtils::Helpers'>ExtUtils::Helpers => Various portability utilities for module builders</a></li>
+<li id = '1170106'><a href = 'https://metacpan.org/dist/ExtUtils-ParseXS'>ExtUtils::ParseXS => Converts Perl XS code into C code</a></li>
+<li id = '1170109'><a href = 'https://metacpan.org/dist/ExtUtils-Typemaps-Magic'>ExtUtils::Typemaps::Magic => Typemap for storing objects in magic</a></li>
+<li id = '1170113'><a href = 'https://metacpan.org/dist/ExtUtils-Typemaps-Misc'>ExtUtils::Typemaps::Misc => A collection of miscelaneous typemap templates</a></li>
+<li id = '1170116'><a href = 'https://metacpan.org/dist/Factory-Sub'>Factory::Sub => Generate a factory of subs</a></li>
+<li id = '1170119'><a href = 'https://metacpan.org/pod/Hades'>Hades => Less is more, more is less!</a></li>
+<li id = '1170122'><a href = 'https://metacpan.org/dist/Hades-Realm-Exporter'>Hades::Realm::Exporter => Hades realm for Exporter</a></li>
+<li id = '1170125'><a href = 'https://metacpan.org/dist/Hades-Realm-Import-Export'>Hades::Realm::Import::Export => Hades realm for Import::Export</a></li>
+<li id = '1170128'><a href = 'https://medium.com/@mayurkoshti12/install-perl-module-without-cpan-2fe935f3a45a'>Install without using CPAN</a></li>
+<li id = '1170130'><a href = 'https://metacpan.org/pod/LaunchDarkly::Server'>LaunchDarkly::Server => Perl server side SDK for LaunchDarkly, a fancy release manager</a></li>
+<li id = '1170134'><a href = 'https://metacpan.org/dist/Minilla'>Minilla => CPAN module authoring tool</a></li>
+<li id = '1170138'><a href = 'https://metacpan.org/pod/Mite'>Mite => Moose-like OO, fast to load, with zero dependencies</a></li>
+<li id = '1170142'>Module::Build::Tiny => Looks good</li>
+<li id = '1170145'><a href = 'https://metacpan.org/pod/Module::Extract::VERSION'>Module::Extract::VERSION => Extract a module version safely</a></li>
+<li id = '1170148'><a href = 'https://metacpan.org/pod/Module::Generate'>Module::Generate => Assist with module generation</a></li>
+<li id = '1170151'><a href = 'https://metacpan.org/dist/Module-Generic'>Module::Generic => Generic Module to inherit from</a></li>
+<li id = '1170154'><a href = 'https://metacpan.org/pod/Module::List'>Module::List => Module 'directory' listing</a></li>
+<li id = '1170158'><a href = 'https://metacpan.org/pod/Module::Patch'>Module::Patch => Patch package with a set of patches</a></li>
+<li id = '1170161'><a href = 'https://metacpan.org/dist/Module-Runtime'>Module::Runtime => Runtime module handling</a></li>
+<li id = '1170164'><a href = 'https://metacpan.org/dist/Module-Signature'>Module::Signature => Module signature file manipulation</a></li>
+<li id = '1170168'>Module::Starter::AddModule => Add a new module to a distribution</li>
+<li id = '1170170'><a href = 'https://metacpan.org/dist/MooX-LazierAttributes'>MooX::LazierAttributes => Lazier Attributes</a></li>
+<li id = '1170173'><a href = 'https://metacpan.org/pod/MooX::Private::Attribute'>MooX::Private::Attribute => Private attributes</a></li>
+<li id = '1170176'><a href = 'https://metacpan.org/pod/Nefarious'>Nefarious => Wicked or criminal objects</a></li>
+<li id = '1170179'><a href = 'https://metacpan.org/dist/Object-Configure'>Object::Configure => Runtime Configuration for an Object</a></li>
+<li id = '1170183'>ODS => Object Data Store</li>
+<li id = '1170186'><a href = 'https://metacpan.org/pod/ogd'>ogd => Ordered global destruction</a></li>
+<li id = '1170189'><a href = 'https://metacpan.org/pod/Package::Subroutine'>Package::Subroutine => Minimalistic import/export and other util methods</a></li>
+<li id = '1170192'><a href = 'https://metacpan.org/dist/PAR-Packer'>PAR::Packer => PAR Packager</a></li>
+<li id = '1170195'><a href = 'https://metacpan.org/dist/Perl-APIReference'>Perl::APIReference => Programmatically query the perlapi</a></li>
+<li id = '1170198'><a href = 'https://metacpan.org/pod/PPI::Dumper'>PPI::Dumper => Dumping of PDOM trees</a></li>
+<li id = '1170201'><a href = 'https://metacpan.org/pod/Role::Basic'>Role::Basic => Just roles. Nothing else</a></li>
+<li id = '1170204'><a href = 'https://metacpan.org/pod/Simple::Tuple'>Simple::Tuple => Because tuples should be simple and simple to use!</a></li>
+<li id = '1170207'><a href = 'https://metacpan.org/dist/SourceCode-LineCounter-Perl'>SourceCode::LineCounter::Perl => Count lines in Perl source code</a></li>
+<li id = '1170210'><a href = 'https://metacpan.org/pod/Subclass::Of'>Subclass::Of => Import a magic subclass</a></li>
+<li id = '1170213'><a href = 'https://metacpan.org/dist/Syntax-Construct'>Syntax::Construct => Explicitly state which non-feature constructs are used in the code</a></li>
+<li id = '1170216'><a href = 'https://metacpan.org/pod/URI::PackageURL'>URI::PackageURL => Perl extension for Package URL (aka "purl")</a></li>
+<li id = '1170219'><a href = 'https://metacpan.org/pod/Variable::Magic'>Variable::Magic</a></li>
+<li id = '1170225'>Xerarch => Introspection of the package</li>
+<li id = '1170229'><a href = 'https://metacpan.org/pod/XS::Framework'>XS::Framework => Framework for building C++ XS modules with shared code, typemaps and C++ perl API</a></li>
+<li id = '1170232'><a href = 'https://metacpan.org/pod/XS::Install'>XS::Install => ExtUtils::MakeMaker based module installer for XS modules</a></li>
+<li id = '1170235'><a href = 'https://metacpan.org/pod/XS::Manifesto'>XS::Manifesto => Shared XS modules manifesto</a></li>
+<li id = '1170238'>YAOO => Yet Another Object Orientation</li>
 <li id = '0'>See also:</li>
 <li id = '1170002'>ClassStuff (topic)</li>
 <li id = '1170003'>Graphs (topic)</li>
@@ -2250,21 +2262,24 @@ Notes:
 </li>
 	<li id = '121'>NewOperators
 <ul>
-<li id = '1210004'><a href = 'https://metacpan.org/pod/Syntax::Operator::Equ'>Syntax::Operator::Equ => equ and === are operators similar to eq and ==, except that they are aware that undef is distinct from the empty string or the number zero and don't compare the same. Useful combined with match/case</a></li>
-<li id = '1210007'><a href = 'https://metacpan.org/pod/Syntax::Operator::Elem'>Syntax::Operator::Elem => elem and similar operators, and the `in` meta-operator allow you to easily ask the question "does this string appear in that set of strings?" or similar for numbers. Useful combined with match/case</a></li>
-<li id = '1210015'><a href = 'https://metacpan.org/pod/List::Keywords'>List::Keywords => A selection of list utility keywords</a></li>
-<li id = '1210019'><a href = 'https://metacpan.org/pod/Safe::Isa'>Safe::Isa => Call isa, can, does and DOES safely on things that may not be objects</a></li>
-<li id = '1210022'><a href = 'https://metacpan.org/dist/Syntax-Feature-Loop'>Syntax::Feature::Loop => Provides the loop BLOCK syntax for unconditional loops</a></li>
-<li id = '1210025'><a href = 'https://metacpan.org/dist/Syntax-Feature-QwComments'>Syntax::Feature::QwComments => Pragma to allow comments in qw()</a></li>
-<li id = '1210028'><a href = 'https://metacpan.org/dist/Syntax-Feature-Void'>Syntax::Feature::Void => Provides the void operator to force void context</a></li>
-<li id = '1210031'><a href = 'https://metacpan.org/pod/Syntax::Operator::Elem'>Syntax::Operator::Elem => Element-of-list operators</a></li>
-<li id = '1210038'><a href = 'https://metacpan.org/pod/Syntax::Operator::Equ'>Syntax::Operator::Equ => Equality operators that distinguish undef</a></li>
-<li id = '1210043'><a href = 'https://metacpan.org/dist/Syntax-Operator-Is'>Syntax::Operator::Is => Match operator using Data::Checks constraints</a></li>
-<li id = '1210046'><a href = 'https://metacpan.org/pod/Syntax::Operator::Zip'>Syntax::Operator::Zip => Infix operator to compose two lists together</a></li>
-<li id = '1210051'><a href = 'https://metacpan.org/pod/XS::Parse::Infix'>XS::Parse::Infix => This module is the one that powers my entire Syntax::Operator::* namespace of modules</a></li>
+<li id = '1210006'><a href = 'https://metacpan.org/pod/Syntax::Operator::Equ'>Syntax::Operator::Equ => equ and === are operators similar to eq and ==, except that they are aware that undef is distinct from the empty string or the number zero and don't compare the same. Useful combined with match/case</a></li>
+<li id = '1210009'><a href = 'https://metacpan.org/pod/Syntax::Operator::Elem'>Syntax::Operator::Elem => elem and similar operators, and the `in` meta-operator allow you to easily ask the question "does this string appear in that set of strings?" or similar for numbers. Useful combined with match/case</a></li>
+<li id = '1210017'><a href = 'https://metacpan.org/pod/List::Keywords'>List::Keywords => A selection of list utility keywords</a></li>
+<li id = '1210021'><a href = 'https://metacpan.org/pod/Safe::Isa'>Safe::Isa => Call isa, can, does and DOES safely on things that may not be objects</a></li>
+<li id = '1210024'><a href = 'https://metacpan.org/dist/Syntax-Feature-Loop'>Syntax::Feature::Loop => Provides the loop BLOCK syntax for unconditional loops</a></li>
+<li id = '1210027'><a href = 'https://metacpan.org/dist/Syntax-Feature-QwComments'>Syntax::Feature::QwComments => Pragma to allow comments in qw()</a></li>
+<li id = '1210030'><a href = 'https://metacpan.org/dist/Syntax-Feature-Void'>Syntax::Feature::Void => Provides the void operator to force void context</a></li>
+<li id = '1210033'><a href = 'https://metacpan.org/pod/Syntax::Keyword::Dynamically'>Syntax::Keyword::Dynamically => Dynamically change the value of a variable</a></li>
+<li id = '1210036'><a href = 'https://metacpan.org/pod/Syntax::Operator::Elem'>Syntax::Operator::Elem => Element-of-list operators</a></li>
+<li id = '1210043'><a href = 'https://metacpan.org/pod/Syntax::Operator::Equ'>Syntax::Operator::Equ => Equality operators that distinguish undef</a></li>
+<li id = '1210048'><a href = 'https://metacpan.org/dist/Syntax-Operator-Is'>Syntax::Operator::Is => Match operator using Data::Checks constraints</a></li>
+<li id = '1210051'><a href = 'https://metacpan.org/pod/Syntax::Operator::Zip'>Syntax::Operator::Zip => Infix operator to compose two lists together</a></li>
+<li id = '1210056'><a href = 'https://metacpan.org/pod/XS::Parse::Infix'>XS::Parse::Infix => This module is the one that powers my entire Syntax::Operator::* namespace of modules</a></li>
 <li id = '0'>See also:</li>
 <li id = '1210002'>ArrayHandling (topic)</li>
-<li id = '1210003'>XS (topic)</li>
+<li id = '1210003'>ExportHandling (topic)</li>
+<li id = '1210004'>SwitchStatements (topic)</li>
+<li id = '1210005'>XS (topic)</li>
 </ul>
 </li>
 	<li id = '122'>OfficeFiles
@@ -2332,54 +2347,53 @@ Notes:
 </li>
 	<li id = '128'>ParallelProcessing
 <ul>
-<li id = '1280009'><a href = 'https://metacpan.org/pod/Coro'>Coro => The only real threads in perl</a></li>
-<li id = '1280012'><a href = 'https://metacpan.org/pod/Coro::LWP'>Coro::LWP => Make LWP non-blocking - as much as possible</a></li>
-<li id = '1280016'><a href = 'https://metacpan.org/pod/Coro::Multicore'>Coro::Multicore => Make coro threads on multiple cores with specially supported modules</a></li>
-<li id = '1280020'><a href = 'https://metacpan.org/pod/Coro::Select'>Coro::Select => A (slow but coro-aware) replacement for CORE::select</a></li>
-<li id = '1280023'><a href = 'https://metacpan.org/dist/Data-Fetch'>Data::Fetch => Prime method calls for background execution using threads</a></li>
-<li id = '1280026'><a href = 'https://metacpan.org/dist/IO-Async'>IO::Async => Asynchronous event-driven programming</a></li>
-<li id = '1280030'><a href = 'https://metacpan.org/pod/IO::Async::Loop::Epoll'>IO::Async::Loop::Epoll => Use IO::Async with epoll on Linux</a></li>
-<li id = '1280033'>IO::Async::Loop::Epoll::FD => Use IO::Async with Epoll and special filehandles</li>
-<li id = '1280036'><a href = 'https://metacpan.org/pod/IO::Async::Process'>IO::Async::Process => Start and manage a child process</a></li>
-<li id = '1280039'><a href = 'https://metacpan.org/dist/IPC-ReadpipeX'>IPC::ReadpipeX => Also, see Also within that module's POD</a></li>
-<li id = '1280042'><a href = 'https://metacpan.org/pod/IPC::Run3'>IPC::Run3 => Run a subprocess with input/output redirection</a></li>
-<li id = '1280045'><a href = 'https://metacpan.org/dist/IPC-System-Options'> IPC::System::Options => Perl's system(), readpipe()/qx, IPC::Run's run(), start() (with more options)</a></li>
-<li id = '1280048'><a href = 'https://metacpan.org/pod/IPC::System::Simple'>IPC::System::Simple => Run commands simply, with detailed diagnostics</a></li>
-<li id = '1280051'>MCE => Many-Core Engine for Perl providing parallel processing capabilities</li>
-<li id = '1280054'><a href = 'https://metacpan.org/pod/Net::Waiter'>Net::Waiter => Compact INET socket server</a></li>
-<li id = '1280057'><a href = 'https://metacpan.org/pod/Parallel::Iterator'>Parallel::Iterator => Simple parallel execution</a></li>
-<li id = '1280060'><a href = 'https://metacpan.org/dist/Parallel-Pipes'>Parallel::Pipes => Parallel processing using pipe(2) for communication and synchronization</a></li>
-<li id = '1280064'><a href = 'https://metacpan.org/dist/Parallel-WorkUnit/view/README.pod'>Parallel::WorkUnit => Provide multi-paradigm forking with ability to pass back data</a></li>
-<li id = '1280068'><a href = 'https://metacpan.org/dist/POE-Loop-EV'>POE::Loop::EV => A bridge that supports EV from POE</a></li>
-<li id = '1280071'><a href = 'https://metacpan.org/pod/POSIX::AtFork'>POSIX::AtFork => Hook registrations at fork(2)</a></li>
-<li id = '1280074'><a href = 'https://metacpan.org/pod/prefork'>prefork => Optimized module loading for forking or non-forking processes</a></li>
-<li id = '1280077'><a href = 'https://metacpan.org/dist/Protocol-DBus'>Protocol::DBus => D-Bus in pure Perl</a></li>
-<li id = '1280082'><a href = 'https://metacpan.org/dist/Thread-Bless'>Thread::Bless => Make blessed objects thread-aware</a></li>
-<li id = '1280085'><a href = 'https://metacpan.org/pod/Thread::Conveyor'>Thread::Conveyor => Transport of any data-structure between threads</a></li>
-<li id = '1280088'><a href = 'https://metacpan.org/dist/Thread-Conveyor-Monitored'>Thread::Conveyor::Monitored => Monitor a belt for specific content</a></li>
-<li id = '1280091'><a href = 'https://metacpan.org/dist/Thread-CSP'>Thread::CSP => Communicating sequential processes threading for Perl</a></li>
-<li id = '1280094'><a href = 'https://metacpan.org/dist/Thread-Deadlock'>Thread::Deadlock => Report deadlocks with stacktrace</a></li>
-<li id = '1280097'><a href = 'https://metacpan.org/dist/Thread-Exit'>Thread::Exit => Provide thread-local exit(), BEGIN {}, END {} and exited()</a></li>
-<li id = '1280100'><a href = 'https://metacpan.org/dist/Thread-Needs'>Thread::Needs => Remove unneeded modules from CLONEd memory</a></li>
-<li id = '1280103'><a href = 'https://metacpan.org/pod/Thread::Pool'>Thread::Pool => Group of threads for performing similar jobs</a></li>
-<li id = '1280106'><a href = 'https://metacpan.org/dist/Thread-Pool-Resolve'>Thread::Pool::Resolve => Resolve logs asynchronously</a></li>
-<li id = '1280109'><a href = 'https://metacpan.org/dist/Thread-Queue-Any'>Thread::Queue::Any => Thread-safe queues for any data-structure</a></li>
-<li id = '1280112'><a href = 'https://metacpan.org/dist/Thread-Queue-Any-Monitored'>Thread::Queue::Any::Monitored => Monitor a queue for any specific content</a></li>
-<li id = '1280115'><a href = 'https://metacpan.org/dist/Thread-Rand'>Thread::Rand => Repeatable random sequences between threads</a></li>
-<li id = '1280118'><a href = 'https://metacpan.org/dist/Thread-Running'>Thread::Running => Provide non-blocking check whether threads are running</a></li>
-<li id = '1280121'><a href = 'https://metacpan.org/pod/Thread::Serialize'>Thread::Serialize => Serialize data-structures between threads</a></li>
-<li id = '1280124'><a href = 'https://metacpan.org/dist/Thread-Status'>Thread::Status => Report stack status of all running threads</a></li>
-<li id = '1280127'><a href = 'https://metacpan.org/dist/Thread-Synchronized'>Thread::Synchronized => Synchronize subroutine calls between threads</a></li>
-<li id = '1280130'><a href = 'https://metacpan.org/dist/Thread-Use'>Thread::Use => Use a module inside a thread only</a></li>
-<li id = '1280133'><a href = 'https://metacpan.org/dist/threads-farm'>threads::farm => Group of threads for performing similar jobs</a></li>
+<li id = '1280008'><a href = 'https://metacpan.org/pod/Coro'>Coro => The only real threads in perl</a></li>
+<li id = '1280011'><a href = 'https://metacpan.org/pod/Coro::LWP'>Coro::LWP => Make LWP non-blocking - as much as possible</a></li>
+<li id = '1280015'><a href = 'https://metacpan.org/pod/Coro::Multicore'>Coro::Multicore => Make coro threads on multiple cores with specially supported modules</a></li>
+<li id = '1280019'><a href = 'https://metacpan.org/pod/Coro::Select'>Coro::Select => A (slow but coro-aware) replacement for CORE::select</a></li>
+<li id = '1280022'><a href = 'https://metacpan.org/dist/Data-Fetch'>Data::Fetch => Prime method calls for background execution using threads</a></li>
+<li id = '1280025'><a href = 'https://metacpan.org/dist/IO-Async'>IO::Async => Asynchronous event-driven programming</a></li>
+<li id = '1280029'><a href = 'https://metacpan.org/pod/IO::Async::Loop::Epoll'>IO::Async::Loop::Epoll => Use IO::Async with epoll on Linux</a></li>
+<li id = '1280032'>IO::Async::Loop::Epoll::FD => Use IO::Async with Epoll and special filehandles</li>
+<li id = '1280035'><a href = 'https://metacpan.org/pod/IO::Async::Process'>IO::Async::Process => Start and manage a child process</a></li>
+<li id = '1280038'><a href = 'https://metacpan.org/dist/IPC-ReadpipeX'>IPC::ReadpipeX => Also, see Also within that module's POD</a></li>
+<li id = '1280041'><a href = 'https://metacpan.org/pod/IPC::Run3'>IPC::Run3 => Run a subprocess with input/output redirection</a></li>
+<li id = '1280044'><a href = 'https://metacpan.org/dist/IPC-System-Options'> IPC::System::Options => Perl's system(), readpipe()/qx, IPC::Run's run(), start() (with more options)</a></li>
+<li id = '1280047'><a href = 'https://metacpan.org/pod/IPC::System::Simple'>IPC::System::Simple => Run commands simply, with detailed diagnostics</a></li>
+<li id = '1280050'>MCE => Many-Core Engine for Perl providing parallel processing capabilities</li>
+<li id = '1280053'><a href = 'https://metacpan.org/pod/Net::Waiter'>Net::Waiter => Compact INET socket server</a></li>
+<li id = '1280056'><a href = 'https://metacpan.org/pod/Parallel::Iterator'>Parallel::Iterator => Simple parallel execution</a></li>
+<li id = '1280059'><a href = 'https://metacpan.org/dist/Parallel-Pipes'>Parallel::Pipes => Parallel processing using pipe(2) for communication and synchronization</a></li>
+<li id = '1280063'><a href = 'https://metacpan.org/dist/Parallel-WorkUnit/view/README.pod'>Parallel::WorkUnit => Provide multi-paradigm forking with ability to pass back data</a></li>
+<li id = '1280067'><a href = 'https://metacpan.org/dist/POE-Loop-EV'>POE::Loop::EV => A bridge that supports EV from POE</a></li>
+<li id = '1280070'><a href = 'https://metacpan.org/pod/POSIX::AtFork'>POSIX::AtFork => Hook registrations at fork(2)</a></li>
+<li id = '1280073'><a href = 'https://metacpan.org/pod/prefork'>prefork => Optimized module loading for forking or non-forking processes</a></li>
+<li id = '1280076'><a href = 'https://metacpan.org/dist/Protocol-DBus'>Protocol::DBus => D-Bus in pure Perl</a></li>
+<li id = '1280081'><a href = 'https://metacpan.org/dist/Thread-Bless'>Thread::Bless => Make blessed objects thread-aware</a></li>
+<li id = '1280084'><a href = 'https://metacpan.org/pod/Thread::Conveyor'>Thread::Conveyor => Transport of any data-structure between threads</a></li>
+<li id = '1280087'><a href = 'https://metacpan.org/dist/Thread-Conveyor-Monitored'>Thread::Conveyor::Monitored => Monitor a belt for specific content</a></li>
+<li id = '1280090'><a href = 'https://metacpan.org/dist/Thread-CSP'>Thread::CSP => Communicating sequential processes threading for Perl</a></li>
+<li id = '1280093'><a href = 'https://metacpan.org/dist/Thread-Deadlock'>Thread::Deadlock => Report deadlocks with stacktrace</a></li>
+<li id = '1280096'><a href = 'https://metacpan.org/dist/Thread-Exit'>Thread::Exit => Provide thread-local exit(), BEGIN {}, END {} and exited()</a></li>
+<li id = '1280099'><a href = 'https://metacpan.org/dist/Thread-Needs'>Thread::Needs => Remove unneeded modules from CLONEd memory</a></li>
+<li id = '1280102'><a href = 'https://metacpan.org/pod/Thread::Pool'>Thread::Pool => Group of threads for performing similar jobs</a></li>
+<li id = '1280105'><a href = 'https://metacpan.org/dist/Thread-Pool-Resolve'>Thread::Pool::Resolve => Resolve logs asynchronously</a></li>
+<li id = '1280108'><a href = 'https://metacpan.org/dist/Thread-Queue-Any'>Thread::Queue::Any => Thread-safe queues for any data-structure</a></li>
+<li id = '1280111'><a href = 'https://metacpan.org/dist/Thread-Queue-Any-Monitored'>Thread::Queue::Any::Monitored => Monitor a queue for any specific content</a></li>
+<li id = '1280114'><a href = 'https://metacpan.org/dist/Thread-Rand'>Thread::Rand => Repeatable random sequences between threads</a></li>
+<li id = '1280117'><a href = 'https://metacpan.org/dist/Thread-Running'>Thread::Running => Provide non-blocking check whether threads are running</a></li>
+<li id = '1280120'><a href = 'https://metacpan.org/pod/Thread::Serialize'>Thread::Serialize => Serialize data-structures between threads</a></li>
+<li id = '1280123'><a href = 'https://metacpan.org/dist/Thread-Status'>Thread::Status => Report stack status of all running threads</a></li>
+<li id = '1280126'><a href = 'https://metacpan.org/dist/Thread-Synchronized'>Thread::Synchronized => Synchronize subroutine calls between threads</a></li>
+<li id = '1280129'><a href = 'https://metacpan.org/dist/Thread-Use'>Thread::Use => Use a module inside a thread only</a></li>
+<li id = '1280132'><a href = 'https://metacpan.org/dist/threads-farm'>threads::farm => Group of threads for performing similar jobs</a></li>
 <li id = '0'>See also:</li>
 <li id = '1280002'>ChildProcesses (topic)</li>
-<li id = '1280003'><a href = 'https://metacpan.org/pod/CloneStuff'>CloneStuff</a></li>
-<li id = '1280004'>EnterpriseApps (topic)</li>
-<li id = '1280005'>EventStuff (topic)</li>
-<li id = '1280006'>HTTPHandling (topic)</li>
-<li id = '1280007'>HTTPServers (topic)</li>
-<li id = '1280008'>IO (topic)</li>
+<li id = '1280003'>EnterpriseApps (topic)</li>
+<li id = '1280004'>EventStuff (topic)</li>
+<li id = '1280005'>HTTPHandling (topic)</li>
+<li id = '1280006'>HTTPServers (topic)</li>
+<li id = '1280007'>IO (topic)</li>
 </ul>
 </li>
 	<li id = '129'>ParameterTypes
@@ -2415,32 +2429,38 @@ Notes:
 </li>
 	<li id = '132'>PdfStuff
 <ul>
-<li id = '1320001'><a href = 'https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/pdfreference1.7old.pdf'>Adobe PDF reference</a></li>
-<li id = '1320004'><a href = 'https://metacpan.org/dist/Alien-PDFio'>Alien::PDFio => Alien distribution for PDFio</a></li>
-<li id = '1320008'>App::DiffPDFText => Diff the text of two PDF documents</li>
-<li id = '1320010'><a href = 'https://metacpan.org/dist/App-Mxpress-PDF'>App::Mxpress::PDF => A utility application for generating PDFs</a></li>
-<li id = '1320013'><a href = 'https://metacpan.org/pod/App::paperback'>App::paperback => Copy and transform pages from a PDF into a new PDF</a></li>
-<li id = '1320016'>App::pdfresize => Resize each page of PDF file to a new dimension</li>
-<li id = '1320018'><a href = 'https://metacpan.org/dist/App-PDFUtils'>App::PDFUtils => Command-line utilities related to PDF files</a></li>
-<li id = '1320022'>CAM::PDF => This package reads and writes any document that conforms to the PDF</li>
-<li id = '1320024'><a href = 'https://metacpan.org/dist/CtrlO-PDF'>CtrlO::PDF => High level PDF creator</a></li>
-<li id = '1320027'><a href = 'https://qpdf.sourceforge.io/'>qpdf</a></li>
-<li id = '1320037'>Google Bard says => <pre>Command-line options</li>
-<li id = '1320055'><a href = 'https://metacpan.org/dist/PDF-API2'>PDF::API2 => Create, modify, and examine PDF files</a></li>
-<li id = '1320059'><a href = 'https://metacpan.org/dist/PDF-API2-Resource-XObject-Image-Imager'>PDF::API2::Resource::XObject::Image::Imager => Import Imager images into PDF</a></li>
-<li id = '1320062'><a href = 'https://github.polettix.it/ETOOBUSY/2022/11/07/a-pdf-workaround/'>PDF::Builder => Facilitates the creation and modification of PDF files</a></li>
-<li id = '1320068'><a href = 'https://github.polettix.it/ETOOBUSY/2023/05/09/svg-text-elements/'>PDF::Collage => Layer stuff, e.g. SVG images, over PDFs</a></li>
-<li id = '1320071'>PDF::Data => Manipulate PDF files and objects as data structures</li>
-<li id = '1320077'><a href = 'https://metacpan.org/dist/PDF-FromHTML'>PDF::FromHTML => Convert HTML documents to PDF</a></li>
-<li id = '1320080'>PDF other => Mojo::PDF</li>
-<li id = '1320089'><a href = 'https://metacpan.org/dist/PDF-Reuse'>PDF::Reuse => Reuse and mass produce PDF documents</a></li>
-<li id = '1320093'>PDF::Table => A utility class for building table layouts in a PDF::Builder (or PDF::API2) object</li>
-<li id = '1320097'><a href = 'https://metacpan.org/dist/PDF-WebKit'>PDF::WebKit => Use WebKit to Generate PDFs from HTML (via wkhtmltopdf)</a></li>
-<li id = '1320100'><a href = 'https://metacpan.org/dist/PDFio-Architect'>PDFio::Architect => Creating and manipulating PDF files</a></li>
-<li id = '1320103'><a href = 'https://metacpan.org/pod/PDFio::FFI'>PDFio::FFI => Perl FFI bindings for the PDFio C library</a></li>
-<li id = '1320107'><a href = 'https://metacpan.org/pod/Poppler'>Poppler</a></li>
-<li id = '1320121'>SVGPDF => Create PDF XObject from SVG data</li>
-<li id = '1320125'><a href = 'https://tools.pdf24.org/en/'>Tools</a></li>
+<li id = '1320007'><a href = 'https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/pdfreference1.7old.pdf'>Adobe PDF reference => Versions of PDF are 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 and now 2.0.  There was never a public release using version number 1.06 (from an email from Deven T. Corzine)</a></li>
+<li id = '1320010'><a href = 'https://metacpan.org/dist/Alien-PDFio'>Alien::PDFio => Alien distribution for PDFio</a></li>
+<li id = '1320014'><a href = 'https://metacpan.org/pod/App::DiffPDFText'>App::DiffPDFText => Diff the text of two PDF documents</a></li>
+<li id = '1320017'><a href = 'https://metacpan.org/dist/App-Mxpress-PDF'>App::Mxpress::PDF => A utility application for generating PDFs</a></li>
+<li id = '1320020'><a href = 'https://metacpan.org/pod/App::paperback'>App::paperback => Copy and transform pages from a PDF into a new PDF</a></li>
+<li id = '1320023'><a href = 'https://metacpan.org/pod/App::pdfresize'>App::pdfresize => Resize each page of PDF file to a new dimension</a></li>
+<li id = '1320026'><a href = 'https://metacpan.org/dist/App-PDFUtils'>App::PDFUtils => Command-line utilities related to PDF files</a></li>
+<li id = '1320030'><a href = 'https://metacpan.org/pod/CAM::PDF'>CAM::PDF => PDF manipulation library</a></li>
+<li id = '1320033'><a href = 'https://metacpan.org/dist/CtrlO-PDF'>CtrlO::PDF => High level PDF creator</a></li>
+<li id = '1320036'><a href = 'https://qpdf.sourceforge.io/'>qpdf => QPDF is a command-line tool and C++ library that performs content-preserving transformations on PDF files</a></li>
+<li id = '1320047'><a href = 'https://metacpan.org/dist/PDF-API2'>PDF::API2 => Create, modify, and examine PDF files</a></li>
+<li id = '1320051'><a href = 'https://metacpan.org/dist/PDF-API2-Resource-XObject-Image-Imager'>PDF::API2::Resource::XObject::Image::Imager => Import Imager images into PDF</a></li>
+<li id = '1320054'><a href = 'https://github.polettix.it/ETOOBUSY/2022/11/07/a-pdf-workaround/'>PDF::Builder => Facilitates the creation and modification of PDF files</a></li>
+<li id = '1320060'><a href = 'https://github.polettix.it/ETOOBUSY/2023/05/09/svg-text-elements/'>PDF::Collage => Layer stuff, e.g. SVG images, over PDFs</a></li>
+<li id = '1320063'>PDF::Data => Manipulate PDF files and objects as data structures</li>
+<li id = '1320069'><a href = 'https://metacpan.org/dist/PDF-FromHTML'>PDF::FromHTML => Convert HTML documents to PDF</a></li>
+<li id = '1320072'>PDF other => Mojo::PDF</li>
+<li id = '1320081'><a href = 'https://metacpan.org/dist/PDF-Reuse'>PDF::Reuse => Reuse and mass produce PDF documents</a></li>
+<li id = '1320085'>PDF::Table => A utility class for building table layouts in a PDF::Builder (or PDF::API2) object</li>
+<li id = '1320089'><a href = 'https://metacpan.org/dist/PDF-WebKit'>PDF::WebKit => Use WebKit to Generate PDFs from HTML (via wkhtmltopdf)</a></li>
+<li id = '1320092'><a href = 'https://metacpan.org/dist/PDFio-Architect'>PDFio::Architect => Creating and manipulating PDF files</a></li>
+<li id = '1320095'><a href = 'https://metacpan.org/pod/PDFio::FFI'>PDFio::FFI => Perl FFI bindings for the PDFio C library</a></li>
+<li id = '1320099'><a href = 'https://metacpan.org/pod/Poppler'>Poppler => Bindings to the poppler PDF rendering library</a></li>
+<li id = '1320113'>SVGPDF => Create PDF XObject from SVG data</li>
+<li id = '1320117'><a href = 'https://metacpan.org/dist/WWW-Mechanize-Chrome-Webshot'>WWW::Mechanize::Chrome::Webshot => Cheap and cheerful html2pdf converter, take a screenshot of rendered HTML, complete with CSS and Javascript</a></li>
+<li id = '1320121'>Google Bard says => Command-line options</li>
+<li id = '0'>See also:</li>
+<li id = '1320002'><a href = 'https://metacpan.org/pod/PDF::FromHTML - Contains html2pdf.pl. Does not handle CSS'>PDF::FromHTML - Contains html2pdf.pl. Does not handle CSS</a></li>
+<li id = '1320003'><a href = 'https://metacpan.org/pod/WWW::Mechanize::Chrome::Webshot - Converts HTML to PDF, with CSS. Uses Chrome'>WWW::Mechanize::Chrome::Webshot - Converts HTML to PDF, with CSS. Uses Chrome</a></li>
+<li id = '1320004'><a href = 'https://qpdf.sourceforge.io/'>https://qpdf.sourceforge.io/ - Includes qpdf andqpdfview, More below</a></li>
+<li id = '1320005'><a href = 'https://tools.pdf24.org/en/'>https://tools.pdf24.org/en/ - Offers a huge array of free online PDF tools</a></li>
+<li id = '1320006'><a href = 'https://metacpan.org/pod/Use Gemini to search for command line programs. Bard output below'>Use Gemini to search for command line programs. Bard output below</a></li>
 </ul>
 </li>
 	<li id = '133'>Perl V7
@@ -2677,14 +2697,15 @@ Notes:
 </li>
 	<li id = '158'>SampleCode
 <ul>
-<li id = '1580006'>Interpolate arithmetic into a string. e.g. an array record count => "... @{[$#lines + 1]} ..."</li>
-<li id = '1580008'>Invert the keys and values in a hash => <pre></li>
-<li id = '1580023'>Syntax::Keyword::Dynamically => Dynamically change the value of a variable</li>
+<li id = '1580007'>Interpolate arithmetic into a string. e.g. an array record count => "... @{[$#lines + 1]} ..."</li>
+<li id = '1580009'>Invert the keys and values in a hash => <pre></li>
+<li id = '1580024'>Syntax::Keyword::Dynamically => Dynamically change the value of a variable</li>
 <li id = '0'>See also:</li>
 <li id = '1580002'>GitStuff (topic)</li>
-<li id = '1580003'>TCP/IP (topic)</li>
-<li id = '1580004'>UTF8 (topic)</li>
-<li id = '1580005'><a href = 'https://metacpan.org/dist/Perl-Examples'>https://metacpan.org/dist/Perl-Examples - Sample code</a></li>
+<li id = '1580003'>SwitchStatements (topic)</li>
+<li id = '1580004'>TCP/IP (topic)</li>
+<li id = '1580005'>UTF8 (topic)</li>
+<li id = '1580006'><a href = 'https://metacpan.org/dist/Perl-Examples'>https://metacpan.org/dist/Perl-Examples - Sample code</a></li>
 </ul>
 </li>
 	<li id = '159'>ScreenStuff
@@ -2844,21 +2865,24 @@ Notes:
 </li>
 	<li id = '172'>SwitchStatements
 <ul>
-<li id = '1720004'><a href = 'https://metacpan.org/dist/Dispatch-Class'>Dispatch::Class => Dispatch on the type (class) of an argument</a></li>
-<li id = '1720007'><a href = 'https://metacpan.org/pod/Hustle::Table'>Hustle::Table => Cached general purpose dispatch and routing table</a></li>
-<li id = '1720010'><a href = 'https://metacpan.org/dist/match-simple'>match::simple => Simplified clone of smartmatch operator</a></li>
-<li id = '1720014'><a href = 'https://metacpan.org/pod/Smart::Dispatch'>Smart::Dispatch => First-class switch statements</a></li>
-<li id = '1720017'><a href = 'https://metacpan.org/pod/Struct::Match'>Struct::Match => Exact Match (SCALAR|HASH|ARRAY)'s</a></li>
-<li id = '1720020'><a href = 'https://metacpan.org/pod/Switch::Again'>Switch::Again => Keyword for either generating a reusable switch statement or calling the generated switch function directly</a></li>
-<li id = '1720023'><a href = 'https://metacpan.org/dist/Switch-Back'> Switch::Back => Given/when for a post-given/when Perl</a></li>
-<li id = '1720026'><a href = 'https://metacpan.org/pod/Switch::Right'>Switch::Right => Switch and smartmatch done right this time</a></li>
-<li id = '1720029'><a href = 'https://metacpan.org/dist/Syntax-Infix-Smartmatch'>Syntax::Infix::Smartmatch => Requires Module::Build::Tiny which will not install under GCC V 8.3.0</a></li>
-<li id = '1720032'><a href = 'https://metacpan.org/pod/Syntax::Keyword::Match'>Syntax::Keyword::Match => A match/case syntax for perl</a></li>
-<li id = '1720035'><a href = 'https://metacpan.org/dist/Syntax-Operator-Matches'>Syntax::Operator::Matches => match::simple but as a real infix operator</a></li>
-<li id = '1720038'><a href = 'https://metacpan.org/pod/Switch::Plain'>Switch::Plain =>  - A simple switch statement for Perl</a></li>
+<li id = '1720006'><a href = 'https://metacpan.org/dist/Dispatch-Class'>Dispatch::Class => Dispatch on the type (class) of an argument</a></li>
+<li id = '1720009'><a href = 'https://metacpan.org/pod/Hustle::Table'>Hustle::Table => Cached general purpose dispatch and routing table</a></li>
+<li id = '1720012'><a href = 'https://metacpan.org/dist/match-simple'>match::simple => Simplified clone of smartmatch operator</a></li>
+<li id = '1720016'><a href = 'https://metacpan.org/pod/Smart::Dispatch'>Smart::Dispatch => First-class switch statements</a></li>
+<li id = '1720019'><a href = 'https://metacpan.org/pod/Struct::Match'>Struct::Match => Exact Match (SCALAR|HASH|ARRAY)'s</a></li>
+<li id = '1720022'><a href = 'https://metacpan.org/pod/Switch::Again'>Switch::Again => Keyword for either generating a reusable switch statement or calling the generated switch function directly</a></li>
+<li id = '1720025'><a href = 'https://metacpan.org/dist/Switch-Back'> Switch::Back => Given/when for a post-given/when Perl</a></li>
+<li id = '1720028'><a href = 'https://metacpan.org/pod/Switch::Right'>Switch::Right => Switch and smartmatch done right this time</a></li>
+<li id = '1720031'><a href = 'https://metacpan.org/dist/Syntax-Infix-Smartmatch'>Syntax::Infix::Smartmatch => Requires Module::Build::Tiny which will not install under GCC V 8.3.0</a></li>
+<li id = '1720034'><a href = 'https://metacpan.org/pod/Syntax::Keyword::Match'>Syntax::Keyword::Match => A match/case syntax for perl</a></li>
+<li id = '1720037'><a href = 'https://metacpan.org/dist/Syntax-Operator-Matches'>Syntax::Operator::Matches => match::simple but as a real infix operator</a></li>
+<li id = '1720040'><a href = 'https://metacpan.org/pod/Syntax::Keyword::MultiSub'>Syntax::Keyword::MultiSub => Multiple dispatch on subroutines</a></li>
+<li id = '1720043'><a href = 'https://metacpan.org/pod/Switch::Plain'>Switch::Plain =>  - A simple switch statement for Perl</a></li>
 <li id = '0'>See also:</li>
-<li id = '1720002'>ExportHandling (topic)</li>
-<li id = '1720003'><a href = 'https://en.wikipedia.org/wiki/Zombie'>https://en.wikipedia.org/wiki/Zombie - A reference to smartmatch</a></li>
+<li id = '1720002'>ArrayHandling (topic)</li>
+<li id = '1720003'>ExportHandling (topic)</li>
+<li id = '1720004'><a href = 'https://en.wikipedia.org/wiki/Zombie'>https://en.wikipedia.org/wiki/Zombie - A reference to smartmatch</a></li>
+<li id = '1720005'>XS (topic)</li>
 </ul>
 </li>
 	<li id = '173'>SystemInfo
@@ -3227,29 +3251,30 @@ Notes:
 <li id = '1880001'>Author => Ron Savage</li>
 <li id = '1880008'><a href = 'https://metacpan.org/dist/versionhttps://metacpan.org/dist/version'>version => Perl extension for Version Objects</a></li>
 <li id = '1880011'>V 1.30 => 2025-07-25</li>
-<li id = '1880040'>V 1.29 => 2025-07-24</li>
-<li id = '1880154'>V 1.28 => 2025-06-01</li>
-<li id = '1880192'>V 1.27 => 21-05-2025</li>
-<li id = '1880259'>V 1.26 => 2025-05-02</li>
-<li id = '1880339'>V 1.25 => 2025-03-31</li>
-<li id = '1880408'>V 1.24 => 2025-03-01</li>
-<li id = '1880471'>V 1.23 => 2025-02-07</li>
-<li id = '1880497'>V 1.22 => 2025-01-20</li>
-<li id = '1880550'>V 1.21 => 2024-12-26</li>
-<li id = '1880597'>V 1.20 => 2024-10-29</li>
-<li id = '1880618'>V 1.09 => 2024-10-19</li>
-<li id = '1880626'>V 1.08 => 2024-10-18</li>
-<li id = '1880647'>V 1.07 => 2024-10-12</li>
-<li id = '1880661'>V 1.06 => 2024-10-02</li>
-<li id = '1880671'>V 1.05 => 2024-09-27</li>
-<li id = '1880680'>V 1.04 => 2024-09-11</li>
-<li id = '1880693'>V 1.03 => 2024-08-27</li>
-<li id = '1880711'>V 1.02 => Previously there was no such para so there is no history</li>
+<li id = '1880049'>V 1.29 => 2025-07-24</li>
+<li id = '1880163'>V 1.28 => 2025-06-01</li>
+<li id = '1880201'>V 1.27 => 21-05-2025</li>
+<li id = '1880268'>V 1.26 => 2025-05-02</li>
+<li id = '1880348'>V 1.25 => 2025-03-31</li>
+<li id = '1880417'>V 1.24 => 2025-03-01</li>
+<li id = '1880480'>V 1.23 => 2025-02-07</li>
+<li id = '1880506'>V 1.22 => 2025-01-20</li>
+<li id = '1880559'>V 1.21 => 2024-12-26</li>
+<li id = '1880606'>V 1.20 => 2024-10-29</li>
+<li id = '1880627'>V 1.09 => 2024-10-19</li>
+<li id = '1880635'>V 1.08 => 2024-10-18</li>
+<li id = '1880656'>V 1.07 => 2024-10-12</li>
+<li id = '1880670'>V 1.06 => 2024-10-02</li>
+<li id = '1880680'>V 1.05 => 2024-09-27</li>
+<li id = '1880689'>V 1.04 => 2024-09-11</li>
+<li id = '1880702'>V 1.03 => 2024-08-27</li>
+<li id = '1880720'>V 1.02 => Previously there was no such para so there is no history</li>
 </ul>
 </li>
-	<li id = '189'>VirtualEnvironment
+	<li id = '189'>VirtualMachines
 <ul>
 <li id = '1890001'><a href = 'https://metacpan.org/pod/Net::Proxmox::VE'>Net::Proxmox::VE => Pure Perl API for Proxmox Virtual Environment</a></li>
+<li id = '1890004'><a href = 'https://metacpan.org/dist/SIRTX-VM'>SIRTX::VM => Module for interacting with SIRTX VM code</a></li>
 </ul>
 </li>
 	<li id = '190'>WantArray
@@ -3343,14 +3368,16 @@ Notes:
 </li>
 	<li id = '198'>XS
 <ul>
-<li id = '1980005'><a href = 'https://metacpan.org/dist/List-Util-MaybeXS'>List::Util::MaybeXS => List::Util but with Pure Perl fallback</a></li>
-<li id = '1980008'><a href = 'https://metacpan.org/pod/List::Util::XS'>List::Util::XS => Indicate if List::Util was compiled with a C compiler</a></li>
-<li id = '1980012'><a href = 'https://metacpan.org/pod/Missing::XS'>Missing::XS => Print warnings about XS modules you should probably install</a></li>
-<li id = '1980016'><a href = 'https://metacpan.org/dist/XS-Parse-Sublike'>XS::Parse::Sublike => XS functions to assist in parsing sub-like syntax</a></li>
+<li id = '1980007'><a href = 'https://metacpan.org/dist/List-Util-MaybeXS'>List::Util::MaybeXS => List::Util but with Pure Perl fallback</a></li>
+<li id = '1980010'><a href = 'https://metacpan.org/pod/List::Util::XS'>List::Util::XS => Indicate if List::Util was compiled with a C compiler</a></li>
+<li id = '1980014'><a href = 'https://metacpan.org/pod/Missing::XS'>Missing::XS => Print warnings about XS modules you should probably install</a></li>
+<li id = '1980018'><a href = 'https://metacpan.org/dist/XS-Parse-Sublike'>XS::Parse::Sublike => XS functions to assist in parsing sub-like syntax</a></li>
 <li id = '0'>See also:</li>
 <li id = '1980002'>ArrayHandling (topic)</li>
 <li id = '1980003'>EventStuff (topic)</li>
-<li id = '1980004'>NewOperators (topic)</li>
+<li id = '1980004'>ExportHandling (topic)</li>
+<li id = '1980005'>NewOperators (topic)</li>
+<li id = '1980006'>SwitchStatements (topic)</li>
 </ul>
 </li>
 	<li id = '199'>XWindowsStuff
