@@ -96,6 +96,7 @@ sub format_text
 	@text					= map{s/^-\s+//; s/:$//; s/\s+$//; $_} @text;
 	my($inside_see_also)	= false;
 	my($topic_name_re)		= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
+	my($skip)				= false;
 
 	my($href, @hover);
 	my($item);
@@ -107,6 +108,19 @@ sub format_text
 
 	for (0 .. $#text)
 	{
+		if $skip)
+		{
+			$skip = false if ($_ =~ /<\/pre>/);
+
+			next;
+		}
+		elsif ($_ =~ /<pre>/)
+		{
+			$skip = true;
+
+			next;
+		}
+
 		$$topic{id}++;
 
 		$self -> logger -> info("Starting leaf: id: $$topic{id}. $text[$_]");
