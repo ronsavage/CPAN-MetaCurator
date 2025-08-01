@@ -34,11 +34,12 @@ The code shipped can be configured to change the home_path()
 And it logs to log/development.log
 
 Note: Development process
-1: Download Perl's 02packages.details.txt and store it as data/cpan.metacurator.modules.txt. Size: 23,868,403
-2: Run buid.db.sh which uses that data to populate the modules table, which contains 268,476 records (2025-07-28)
-3: This creates data/cpan.metacurator.sqlite of size 13,737,984 bytes
-4: Delete data/cpan.metacurator.modules.txt since there is no point shipping it
-5: Patch Import.pm to comment out populate_modules_table() because it takes 50 mins to run.
+1: Download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403.
+2: Run buid.db.sh which uses that data to populate the modules table, which contains 268,476 records (2025-07-28).
+	The code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
+	The former is manually exported from an initial run using data/02packages.details.txt.
+3: This creates data/cpan.metacurator.sqlite of size 13,737,984 bytes.
+4: Delete data/02packages.details.txt since there is no point shipping it.
 
 =head1 Machine-Readable Change Log
 
