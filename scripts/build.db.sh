@@ -8,8 +8,8 @@ build.module.sh CPAN::MetaCurator 1.01
 
 scripts/drop.tables.pl
 scripts/create.tables.pl
-scripts/populate.sqlite.tables.pl
-scripts/export.as.tree.pl
+time scripts/populate.sqlite.tables.pl
+time scripts/export.as.tree.pl
 
 declare -x SOURCE=html/cpan.metacurator.tree.html
 declare -x DEST=$DS/misc
