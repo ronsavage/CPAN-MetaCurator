@@ -1,0 +1,17 @@
+[2025-08-01 10:30:42.62175] [49363] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-01 10:30:42.62194] [49363] [info] --------------------------------------------------
+[2025-08-01 10:30:42.62197] [49363] [info] Populating all tables
+[2025-08-01 10:30:42.65848] [49363] [info] Stored 7 records into 'constants'
+[2025-08-01 10:30:42.65873] [49363] [info] Stored 3 records into 'modules'
+[2025-08-01 10:30:42.67168] [49363] [info] AiEngines: o Langertha:
+- The clan of fierce vikings with 🪓 and 🛡️ to AId your rAId
+- https://metacpan.org/dist/Langertha
+- This module is designed to facilitate interactions with various AI models
+
+o OpenAPI::Client::OpenAI:
+- A client for the OpenAI API
+- https://metacpan.org/dist/OpenAPI-Client-OpenAI
+
+[2025-08-01 10:30:43.21522] [49363] [info] Stored 201 records into 'topics'
+[2025-08-01 10:30:43.21564] [49363] [info] Populated all tables
+[2025-08-01 10:30:43.21573] [49363] [info] --------------------------------------------------

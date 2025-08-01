@@ -73,22 +73,9 @@ sub import_csv_file
 
 # -----------------------------------------------
 
-sub import_modules_table
-{
-	my($self, $csv) = @_;
-
-} # End of import_modules_table.
-
-# -----------------------------------------------
-
 sub import_perl_modules
 {
 	my($self, $path, $table_name) = @_;
-
-	# Populates $self -> column_names.
-
-	$self -> get_table_column_names(true, $table_name);
-
 	my($count)	= 0;
 	my(@names)	= read_lines($path);
 	my($record)	= {};
@@ -155,9 +142,7 @@ sub populate_constants_table
 	my($path)		= File::Spec -> catfile($self -> home_path, $self -> constants_path);
 	my($table_name)	= 'constants';
 
-	# Populates $self -> column_names.
-
-	$self -> get_table_column_names(true, $table_name);
+	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 	$self -> import_csv_file($csv, $path, $table_name);
 
 }	# End of populate_constants_table.
@@ -171,15 +156,13 @@ sub populate_modules_table
 	my($status)			= (-e $path) ? 'Present' : 'Absent';
 	my($table_name)		= 'modules';
 
-	# Populates $self -> column_names.
-
-	$self -> get_table_column_names(true, $table_name);
+	$self -> get_table_column_names(true, $path, $table_name); # Populates $self -> column_names.
 
 	my($count);
 
 	if ($status eq 'Present')
 	{
-		$count = $self -> import_modules_table($csv, $table_name);
+		$self -> import_csv_file($csv, $path, $table_name);
 	}
 	else
 	{
