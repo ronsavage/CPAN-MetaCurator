@@ -12,7 +12,7 @@ my($modules_file)	= 'data/modules.table.csv';
 my($count)			= 0;
 
 open(my $io, '>:encoding(UTF-8)', $modules_file) || die "Can't open($modules_file): $!\n";
-print $io "id,name,version\n";
+print $io "name,version\n";
 
 my(@fields);
 
@@ -23,9 +23,7 @@ for (@lines)
 	next if (! $fields[0]); # Skip blank lines.
 	next if ($fields[0] =~ /:$/); # Skip header.
 
-	$count++;
-
-	print $io "$count,$fields[0],$fields[1]\n";
+	print $io "$fields[0],$fields[1]\n";
 }
 
 close $io;
