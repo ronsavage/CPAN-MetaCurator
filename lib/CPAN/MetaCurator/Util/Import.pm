@@ -22,7 +22,7 @@ our $VERSION = '1.01';
 
 sub import_csv_file
 {
-	my($self, $csv, $path, $table_name) = @_;
+	my($self, $csv, $path, $table_name, $col_name_1, $col_name_2) = @_;
 
 	open(my $io, '<', $path) || die "Can't open($path): $!\n";
 
@@ -45,22 +45,22 @@ sub import_csv_file
 			}
 		}
 
-		if ($keys{$$item{name} })
+		if ($keys{$$item{$col_name_1} })
 		{
-			$error_message = "$table_name. Duplicate $table_name.name: $keys{$$item{name} }";
+			$error_message = "$table_name. Duplicate $table_name.$col_name_1: $keys{$$item{$col_name_1} }";
 
 			$self -> logger -> error($error_message);
 
 			die $error_message;
 		}
 
-		$keys{$$item{name} } = $self -> insert_hashref
+		$keys{$$item{$col_name_1} } = $self -> insert_hashref
 		(
 			$table_name,
 			{
-				id		=> $count,
-				name	=> $$item{name},
-				value	=> $$item{value},
+				id			=> $count,
+				$col_name_1	=> $$item{$col_name_1},
+				$col_name_2	=> $$item{$col_name_2},
 			}
 		);
 	}
@@ -143,7 +143,7 @@ sub populate_constants_table
 	my($table_name)	= 'constants';
 
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
-	$self -> import_csv_file($csv, $path, $table_name);
+	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
 }	# End of populate_constants_table.
 
@@ -162,7 +162,7 @@ sub populate_modules_table
 
 	if ($status eq 'Present')
 	{
-		$self -> import_csv_file($csv, $path, $table_name);
+		$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 	}
 	else
 	{
