@@ -44,8 +44,9 @@ sub init
 	$$options{border_width}	= 5;
 	$$options{image_width}	= 400 + 2 * $$options{border_width};
 	$$options{image_height}	= 900 + 2 * $$options{border_width};
-	$$options{box_width}	= 150;
+	$$options{box_width}	= 200;
 	$$options{box_height}	= 40;
+	$$options{box_gap}		= 20;
 	$$options{image}		= Imager -> new(xsize => $$options{image_width}, ysize => $$options{image_height});
 	$$options{black}		= Imager::Color -> new(0, 0, 0) || die $$options{image} -> errstr;
 	$$options{blue}			= Imager::Color -> new(0, 127, 255) || die $$options{image} -> errstr;
@@ -86,10 +87,10 @@ $options{image} -> box(filled => 1, color => $options{black});
 
 border(\%options);
 box(\%options, 'green', 20, 20, $options{box_width}, $options{box_height});
-box(\%options, 'red', 20, 160, $options{box_width}, $options{box_height});
+box(\%options, 'red', 20, 20 + $options{box_height} + $options{box_gap}, $options{box_width}, $options{box_height});
 
-message(\%options, 'white', 'Hello', 25, 50);
-message(\%options, 'blue', 'Goodbye', 25, 190);
+message(\%options, 'white', 'TiddlyWiki', 25, $options{box_height} + 15);
+message(\%options, 'blue', 'JSON file', 25, 2 * $options{box_height} + $options{box_gap} + 15);
 
 my($file_name) = 'data/one.png';
 
