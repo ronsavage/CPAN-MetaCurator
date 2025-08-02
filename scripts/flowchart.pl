@@ -44,11 +44,14 @@ sub init
 	$$options{border_width}	= 5;
 	$$options{image_width}	= 400 + 2 * $$options{border_width};
 	$$options{image_height}	= 900 + 2 * $$options{border_width};
+	$$options{box_width}	= 150;
+	$$options{box_height}	= 40;
 	$$options{image}		= Imager -> new(xsize => $$options{image_width}, ysize => $$options{image_height});
-	$$options{black}		= Imager::Color -> new(0, 0, 0, 0) || die $$options{image} -> errstr;
-	$$options{white}		= Imager::Color -> new(255, 255, 255, 0) || die $$options{image} -> errstr;
-	$$options{red}			= Imager::Color -> new(255, 0, 0, 0) || die $$options{image} -> errstr;
-	$$options{green}		= Imager::Color -> new(0, 255, 0, 0) || die $$options{image} -> errstr;
+	$$options{black}		= Imager::Color -> new(0, 0, 0) || die $$options{image} -> errstr;
+	$$options{blue}			= Imager::Color -> new(0, 127, 255) || die $$options{image} -> errstr;
+	$$options{white}		= Imager::Color -> new(255, 255, 255) || die $$options{image} -> errstr;
+	$$options{red}			= Imager::Color -> new(255, 0, 0) || die $$options{image} -> errstr;
+	$$options{green}		= Imager::Color -> new(0, 127, 0) || die $$options{image} -> errstr;
 	$$options{font}			= Imager::Font -> new(file => "/home/ron/Documents/Fonts/AndadaPro-MediumItalic.ttf") || die $$options{image} -> errstr;
 	$$options{font_size}	= 32;
 
@@ -82,20 +85,11 @@ init(\%options);
 $options{image} -> box(filled => 1, color => $options{black});
 
 border(\%options);
-box(\%options, 'red', 20, 20, 150, 60);
-box(\%options, 'red', 20, 160, 150, 60);
+box(\%options, 'green', 20, 20, $options{box_width}, $options{box_height});
+box(\%options, 'red', 20, 160, $options{box_width}, $options{box_height});
 
-message(\%options, 'white', 'Hello', 25, 30);
-message(\%options, 'green', 'Goodbye', 25, 140);
-
-$options{image} -> string(
-	color => $options{white},
-	font => $options{font},
-	size => $options{font_size},
-	string => 'Hello World!',
-	x => 250,
-	y => 250,
-) || die $options{image} -> errstr;
+message(\%options, 'white', 'Hello', 25, 50);
+message(\%options, 'blue', 'Goodbye', 25, 190);
 
 my($file_name) = 'data/one.png';
 
