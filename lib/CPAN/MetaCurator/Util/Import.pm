@@ -167,7 +167,7 @@ sub populate_modules_table
 
 	if ($status eq 'Present')
 	{
-		#Takes 3-4 hours. The next line takes 1.7s!
+		#Takes 3-4 hours. The next line takes 2.7s!
 		#$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 
 		`csv2sqlite --format=csv --table modules $csv_path $database_path`;

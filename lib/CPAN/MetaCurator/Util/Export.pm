@@ -117,11 +117,14 @@ sub format_text
 
 			$skip_pre = false if ($_ =~ /<\/pre>/);
 
-			$item = {text => "Skipped $skip_count lines of preformatted text"};
+			if (! $skip_pre) # Ie no longer skipping.
+			{
+				$item = {text => "Skipped $skip_count lines of preformatted text"};
 
-			push @lines, $item;
+				push @lines, $item;
 
-			$item = {text => ''};
+				$item = {href => '', id => $$topic{id}, text => ''};
+			}
 
 			next;
 		}
