@@ -7,9 +7,11 @@ cd $HOME/perl.modules/CPAN-MetaCurator/
 echo Work dir: `pwd`
 gss
 cp /dev/null log/development.log
-git commit -am"$1"
-build.module.sh CPAN::MetaCurator 1.01
 
+if [ $1 != '']; then
+	git commit -am"$1"
+	build.module.sh CPAN::MetaCurator 1.01
+fi
 scripts/drop.tables.pl
 scripts/create.tables.pl
 time scripts/populate.sqlite.tables.pl
