@@ -111,7 +111,7 @@ sub format_text
 	{
 		$item = {href => '', id => $$topic{id}, text => ''};
 
-		if $skip_pre)
+		if ($skip_pre)
 		{
 			$skip_count++;
 
