@@ -1,0 +1,20 @@
+[2025-08-03 14:27:43.52521] [109055] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 14:27:43.52541] [109055] [info] --------------------------------------------------
+[2025-08-03 14:27:43.52544] [109055] [info] Dropping all tables
+[2025-08-03 14:27:43.54023] [109055] [info] Dropped all tables
+[2025-08-03 14:27:43.54026] [109055] [info] --------------------------------------------------
+[2025-08-03 14:27:50.45416] [109061] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 14:27:50.45435] [109061] [info] --------------------------------------------------
+[2025-08-03 14:27:50.45438] [109061] [info] Creating all tables
+[2025-08-03 14:27:50.47321] [109061] [info] Created all tables
+[2025-08-03 14:27:50.47331] [109061] [info] --------------------------------------------------
+[2025-08-03 16:24:35.66813] [109525] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 16:24:35.66832] [109525] [info] --------------------------------------------------
+[2025-08-03 16:24:35.66834] [109525] [info] Dropping all tables
+[2025-08-03 16:24:35.68246] [109525] [info] Dropped all tables
+[2025-08-03 16:24:35.68249] [109525] [info] --------------------------------------------------
+[2025-08-03 16:24:38.62354] [109531] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 16:24:38.62373] [109531] [info] --------------------------------------------------
+[2025-08-03 16:24:38.62375] [109531] [info] Creating all tables
+[2025-08-03 16:24:38.64038] [109531] [info] Created all tables
+[2025-08-03 16:24:38.64045] [109531] [info] --------------------------------------------------

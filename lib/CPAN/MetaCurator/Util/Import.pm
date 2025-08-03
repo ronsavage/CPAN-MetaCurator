@@ -158,15 +158,19 @@ sub populate_constants_table
 sub populate_modules_table
 {
 	my($self, $csv)		= @_;
-	my($path)			= File::Spec -> catfile($self -> home_path, $self -> modules_table_path);
-	my($status)			= (-e $path) ? 'Present' : 'Absent';
+	my($database_path)	= File::Spec -> catfile($self -> home_path, $self -> database_path);
+	my($csv_path)		= File::Spec -> catfile($self -> home_path, $self -> modules_table_path);
+	my($status)			= (-e $path_csv) ? 'Present' : 'Absent';
 	my($table_name)		= 'modules';
 
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 
 	if ($status eq 'Present')
 	{
-		$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
+		#Takes hours. The next line takes 1.7s!
+		#$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
+
+		`csv2sqlite --format=csv --table $csv_path $database_path`;
 	}
 	else
 	{

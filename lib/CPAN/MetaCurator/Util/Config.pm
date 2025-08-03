@@ -37,6 +37,14 @@ has constants_path =>
 	required	=> 0,
 );
 
+has database_path =>
+(
+	default		=> sub{return 'data/cpan.metacurator.sqlite'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
 has error =>
 (
 	default		=> sub{return ''},
