@@ -160,7 +160,7 @@ sub populate_modules_table
 	my($self, $csv)		= @_;
 	my($database_path)	= File::Spec -> catfile($self -> home_path, $self -> database_path);
 	my($csv_path)		= File::Spec -> catfile($self -> home_path, $self -> modules_table_path);
-	my($status)			= (-e $path_csv) ? 'Present' : 'Absent';
+	my($status)			= (-e $csv_path) ? 'Present' : 'Absent';
 	my($table_name)		= 'modules';
 
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
