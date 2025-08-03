@@ -156,7 +156,7 @@
         "created": "20240121223908328"
     },
     {
-        "text": "\"\"\"\no Install all the new builtins from the builtin namespace:\n- use 5.40.0;\n- And then to get the list below:\n- use builtins;\n- And later make them vanish:\n- no builtins;\n\no Provides:\n- blessed\n- ceil\n- created_as_number\n- created_as_string\n- false\n- floor\n- indexed\n- is_bool\n- is_weak\n- refaddr\n- reftype\n- trim\n- true\n- unweaken\n- weaken\n",
+        "text": "\"\"\"\no Install all the new builtins from the builtin namespace:\n- use 5.36.0;\n- And then to get the list below:\n- use builtins;\n- And later make them vanish:\n- no builtins;\n\no Provides:\n- blessed\n- ceil\n- created_as_number\n- created_as_string\n- false\n- floor\n- indexed\n- is_bool\n- is_weak\n- refaddr\n- reftype\n- trim\n- true\n- unweaken\n- weaken\n",
         "title": "builtins",
         "modified": "20250709065000869",
         "created": "20230609060037236"

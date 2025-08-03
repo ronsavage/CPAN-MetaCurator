@@ -1,6 +1,6 @@
 package CPAN::MetaCurator::Util::Export;
 
-use 5.40.0;
+use 5.36.0;
 use boolean;
 use constant id_scale_factor => 10000;
 use open qw(:std :utf8);
@@ -105,7 +105,7 @@ sub format_text
 	my($offset);
 	my(@see_also);
 
-	$self -> logger -> info("Called format_text. title: $$topic{title}. id: $$topic{id}. text: $$topic{text}");
+	$self -> logger -> info("Called format_text(). title: $$topic{title}. id: $$topic{id}. text: $$topic{text}");
 
 	for (0 .. $#text)
 	{
