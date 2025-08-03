@@ -8,7 +8,7 @@ echo Work dir: `pwd`
 gss
 cp /dev/null log/development.log
 git commit -am"$1"
-build.module.sh CPAN::MetaCurator 1.00
+build.module.sh CPAN::MetaCurator 1.01
 
 scripts/drop.tables.pl
 scripts/create.tables.pl

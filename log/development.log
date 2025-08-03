@@ -1,0 +1,29 @@
+[2025-08-03 13:00:43.06645] [105106] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 13:00:43.06668] [105106] [info] --------------------------------------------------
+[2025-08-03 13:00:43.06670] [105106] [info] Dropping all tables
+[2025-08-03 13:00:43.08964] [105106] [info] Dropped all tables
+[2025-08-03 13:00:43.08969] [105106] [info] --------------------------------------------------
+[2025-08-03 13:00:43.31106] [105108] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 13:00:43.31124] [105108] [info] --------------------------------------------------
+[2025-08-03 13:00:43.31126] [105108] [info] Creating all tables
+[2025-08-03 13:00:43.33139] [105108] [info] Created all tables
+[2025-08-03 13:00:43.33148] [105108] [info] --------------------------------------------------
+[2025-08-03 13:00:43.59730] [105110] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 13:00:43.59749] [105110] [info] --------------------------------------------------
+[2025-08-03 13:00:43.59752] [105110] [info] Populating all tables
+[2025-08-03 13:00:43.62228] [105110] [info] Stored 7 records into 'constants'
+[2025-08-03 13:01:45.42282] [105152] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 13:01:45.42301] [105152] [info] --------------------------------------------------
+[2025-08-03 13:01:45.42303] [105152] [info] Dropping all tables
+[2025-08-03 13:01:45.43856] [105152] [info] Dropped all tables
+[2025-08-03 13:01:45.43864] [105152] [info] --------------------------------------------------
+[2025-08-03 13:01:53.00638] [105156] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 13:01:53.00661] [105156] [info] --------------------------------------------------
+[2025-08-03 13:01:53.00664] [105156] [info] Creating all tables
+[2025-08-03 13:01:53.02348] [105156] [info] Created all tables
+[2025-08-03 13:01:53.02355] [105156] [info] --------------------------------------------------
+[2025-08-03 13:14:54.22852] [105668] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-08-03 13:14:54.22870] [105668] [info] --------------------------------------------------
+[2025-08-03 13:14:54.22873] [105668] [info] Creating all tables
+[2025-08-03 13:14:54.24748] [105668] [info] Created all tables
+[2025-08-03 13:14:54.24755] [105668] [info] --------------------------------------------------
