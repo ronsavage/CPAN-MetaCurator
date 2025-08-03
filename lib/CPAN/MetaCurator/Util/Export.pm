@@ -119,6 +119,8 @@ sub format_text
 
 			if (! $skip_pre) # Ie no longer skipping.
 			{
+				say "Topic: $$topic{title}. No longer skipping";
+
 				$$item{text} = "Skipped $skip_count lines of preformatted text";
 
 				push @lines, $item;
@@ -133,6 +135,8 @@ sub format_text
 			$skip_count++;
 
 			$skip_pre = true;
+
+			say "Topic: $$topic{title}. Starting to skip";
 
 			next;
 		}
