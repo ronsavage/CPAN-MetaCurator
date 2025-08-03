@@ -119,7 +119,7 @@ sub format_text
 			{
 				say "Topic: $$topic{title}. No longer skipping";
 
-				$item{href => '', id => 0, text => "Skipped $skip_count lines of preformatted text"};
+				$item = {href => '', id => 0, text => "Skipped $skip_count lines of preformatted text"};
 
 				push @lines, $item;
 
