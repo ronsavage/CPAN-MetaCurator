@@ -109,28 +109,26 @@ sub format_text
 
 	for (0 .. $#text)
 	{
-		$item = {href => '', id => $$topic{id}, text => ''};
-
 		if ($skip_pre)
 		{
 			$skip_count++;
 
-			$skip_pre = false if ($_ =~ /<\/pre>/);
+			$skip_pre = false if ($text[$_] =~ /<\/pre>/);
 
 			if (! $skip_pre) # Ie no longer skipping.
 			{
 				say "Topic: $$topic{title}. No longer skipping";
 
-				$$item{text} = "Skipped $skip_count lines of preformatted text";
+				$item{href => '', id => 0, text => "Skipped $skip_count lines of preformatted text"};
 
 				push @lines, $item;
 
-				$$item{text} = '';
+				$skip_count = 0;
 			}
 
 			next;
 		}
-		elsif ($_ =~ /<pre>/)
+		elsif ($text[$_] =~ /<pre>/)
 		{
 			$skip_count++;
 
@@ -142,6 +140,8 @@ sub format_text
 		}
 
 		$$topic{id}++;
+
+		$item = {href => '', id => $$topic{id}, text => ''};
 
 		$self -> logger -> info("Starting leaf: id: $$topic{id}. $text[$_]");
 
