@@ -127,7 +127,7 @@ sub format_text
 		}
 		elsif ($_ =~ /<pre>/)
 		{
-			$skip_count++
+			$skip_count++;
 
 			$skip_pre = true;
 
