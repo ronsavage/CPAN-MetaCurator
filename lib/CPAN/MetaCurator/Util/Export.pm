@@ -96,7 +96,8 @@ sub format_text
 	@text					= map{s/^-\s+//; s/:$//; s/\s+$//; $_} @text;
 	my($inside_see_also)	= false;
 	my($topic_name_re)		= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
-	my($skip)				= false;
+	my($skip_count)			= 0;
+	my($skip_pre)			= false;
 
 	my($href, @hover);
 	my($item);
@@ -108,15 +109,27 @@ sub format_text
 
 	for (0 .. $#text)
 	{
-		if $skip)
+		$item = {href => '', id => $$topic{id}, text => ''};
+
+		if $skip_pre)
 		{
-			$skip = false if ($_ =~ /<\/pre>/);
+			$skip_count++;
+
+			$skip_pre = false if ($_ =~ /<\/pre>/);
+
+			$item = {text => "Skipped $skip_count lines of preformatted text"};
+
+			push @lines, $item;
+
+			$item = {text => ''};
 
 			next;
 		}
 		elsif ($_ =~ /<pre>/)
 		{
-			$skip = true;
+			$skip_count++
+
+			$skip_pre = true;
 
 			next;
 		}
@@ -124,8 +137,6 @@ sub format_text
 		$$topic{id}++;
 
 		$self -> logger -> info("Starting leaf: id: $$topic{id}. $text[$_]");
-
-		$item = {href => '', id => $$topic{id}, text => ''};
 
 		if ($text[$_] =~ /^o\s+/)
 		{

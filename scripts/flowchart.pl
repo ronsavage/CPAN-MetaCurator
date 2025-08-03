@@ -89,8 +89,8 @@ border(\%options);
 box(\%options, 'green', 20, 20, $options{box_width}, $options{box_height});
 box(\%options, 'red', 20, 20 + $options{box_height} + $options{box_gap}, $options{box_width}, $options{box_height});
 
-message(\%options, 'white', 'TiddlyWiki', 25, $options{box_height} + 15);
-message(\%options, 'blue', 'JSON file', 25, 2 * $options{box_height} + $options{box_gap} + 15);
+message(\%options, 'white', 'TiddlyWiki', 25, $options{box_height} + 12);
+message(\%options, 'blue', 'JSON file', 25, 2 * $options{box_height} + $options{box_gap} + 12);
 
 my($file_name) = 'data/one.png';
 
