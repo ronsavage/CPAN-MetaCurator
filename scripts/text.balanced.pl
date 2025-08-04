@@ -4,7 +4,7 @@ use 5.36.0;
 
 use File::Slurper 'read_text';
 
-use Text::Balanced qw/extract_tagged gen_extract_tagged/;
+use Text::Balanced qw/extract_bracketed gen_extract_tagged/;
 
 # -----------------
 
@@ -16,18 +16,21 @@ my($extracted, $remainder)	= $matcher -> ($text);
 print 'Using gen_extract_tagged(). ';
 say $extracted ? "Extracted: $extracted." : 'No <pre>...</pre> tags found';
 
-($extracted, $remainder)	= extract_tagged($text);
+($extracted, $remainder)	= extract_bracketed($text, '<>');
 
-print 'Using extract_tagged(). ';
+print 'Using extract_bracketed(). ';
 say $extracted ? "Extracted: $extracted." : 'No <pre>...</pre> tags found';
 
-$text =~ /<pre>(.*)<\/pre>/s;
+$text			=~ /<pre>(.*)<\/pre>/s;
+my($match)		= $1;
+my(@lines)		= split(/\n/, $match);
+my($line_count)	= $#lines + 1;
 
 print 'Using regexp. ';
 
-if ($1)
+if ($match)
 {
-	say "Extracted: $1.";
+	say "Extracted. Line count: $line_count";
 }
 else
 {

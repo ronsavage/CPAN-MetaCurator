@@ -117,7 +117,7 @@ sub format_text
 
 			if (! $skip_pre) # Ie no longer skipping.
 			{
-				say "Topic: $$topic{title}. No longer skipping";
+				say "Topic: $$topic{title}. Stop  skipping";
 
 				$item = {href => '', id => 0, text => "Skipped $skip_count lines of preformatted text"};
 
@@ -134,7 +134,7 @@ sub format_text
 
 			$skip_pre = true;
 
-			say "Topic: $$topic{title}. Starting to skip";
+			say "Topic: $$topic{title}. Start skipping";
 
 			next;
 		}
