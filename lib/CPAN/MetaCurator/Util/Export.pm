@@ -95,11 +95,11 @@ sub format_text
 
 	my($pre_count, $pre_ara);
 
-	($pre_count, $topic)	= $self -> handle_pre($topic); # Excises <pre>...</pre>. Uses $$topic{text}.
-	my(@text)				= grep{length} split(/\n/, $$topic{text});
-	@text					= map{s/^-\s+//; s/:$//; s/\s+$//; $_} @text;
-	my($inside_see_also)	= false;
-	my($topic_name_re)		= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
+	($pre_count, $pre_ara, $topic)	= $self -> handle_pre($topic); # Excises <pre>...</pre>. Uses $$topic{text}.
+	my(@text)						= grep{length} split(/\n/, $$topic{text});
+	@text							= map{s/^-\s+//; s/:$//; s/\s+$//; $_} @text;
+	my($inside_see_also)			= false;
+	my($topic_name_re)				= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
 
 	my($href, @hover);
 	my($item);
