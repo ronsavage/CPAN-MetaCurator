@@ -93,7 +93,7 @@ sub format_text
 {
 	my($self, $pad, $topic) = @_;
 
-	my($pre_count);
+	my($pre_count, $pre_ara);
 
 	($pre_count, $topic)	= $self -> handle_pre($topic); # Excises <pre>...</pre>. Uses $$topic{text}.
 	my(@text)				= grep{length} split(/\n/, $$topic{text});
@@ -255,11 +255,11 @@ sub handle_pre
 	my($prefix)			= $1 || '';
 	my($match)			= $2 || '';
 	my($suffix)			= $3 || '';
-	$$topic{text}		= "$1$3";
-	my(@lines)			= split(/\n/, $match);
-	my($line_count)		= $#lines + 1;
+	$$topic{text}		= "$prefix$suffix"; # Hopefully, $suffix is always empty.
+	my(@pre_ara)		= split(/\n/, $match);
+	my($pre_count)		= $pre_ara + 1;
 
-	return ($line_count, $topic);
+	return ($pre_count, \@pre_ara, $topic);
 
 } # End of handle_pre.
 
