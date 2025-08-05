@@ -91,7 +91,10 @@ sub export_as_tree
 
 sub format_text
 {
-	my($self, $pad, $topic)	= @_;
+	my($self, $pad, $topic) = @_;
+
+	my($pre_count);
+
 	($pre_count, $topic)	= $self -> handle_pre($topic); # Excises <pre>...</pre>. Uses $$topic{text}.
 	my(@text)				= grep{length} split(/\n/, $$topic{text});
 	@text					= map{s/^-\s+//; s/:$//; s/\s+$//; $_} @text;
@@ -100,6 +103,7 @@ sub format_text
 
 	my($href, @hover);
 	my($item);
+	my(@lines);
 	my(@see_also);
 
 	$self -> logger -> info("Called format_text(). title: $$topic{title}. id: $$topic{id}. text: $$topic{text}");
