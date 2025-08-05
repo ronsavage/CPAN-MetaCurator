@@ -255,9 +255,9 @@ sub handle_pre
 	my($prefix)			= $1 || '';
 	my($match)			= $2 || '';
 	my($suffix)			= $3 || '';
+	$$topic{text}		= "$1$3";
 	my(@lines)			= split(/\n/, $match);
 	my($line_count)		= $#lines + 1;
-	$$topic{text}		= "$1$3";
 
 	return ($line_count, $topic);
 
