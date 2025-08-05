@@ -257,7 +257,7 @@ sub handle_pre
 	my($suffix)			= $3 || '';
 	$$topic{text}		= "$prefix$suffix"; # Hopefully, $suffix is always empty.
 	my(@pre_ara)		= split(/\n/, $match);
-	my($pre_count)		= $pre_ara + 1;
+	my($pre_count)		= $#pre_ara + 1;
 
 	return ($pre_count, \@pre_ara, $topic);
 
