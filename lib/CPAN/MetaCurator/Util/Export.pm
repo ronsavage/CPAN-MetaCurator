@@ -92,53 +92,20 @@ sub export_as_tree
 sub format_text
 {
 	my($self, $pad, $topic)	= @_;
+	($pre_count, $topic)	= $self -> handle_pre($topic); # Excises <pre>...</pre>. Uses $$topic{text}.
 	my(@text)				= grep{length} split(/\n/, $$topic{text});
 	@text					= map{s/^-\s+//; s/:$//; s/\s+$//; $_} @text;
 	my($inside_see_also)	= false;
 	my($topic_name_re)		= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
-	my($skip_count)			= 0;
-	my($skip_pre)			= false;
 
 	my($href, @hover);
 	my($item);
-	my(@lines);
-	my($offset);
 	my(@see_also);
 
 	$self -> logger -> info("Called format_text(). title: $$topic{title}. id: $$topic{id}. text: $$topic{text}");
 
 	for (0 .. $#text)
 	{
-		if ($skip_pre)
-		{
-			$skip_count++;
-
-			$skip_pre = false if ($text[$_] =~ /<\/pre>/);
-
-			if (! $skip_pre) # Ie no longer skipping.
-			{
-				say "Topic: $$topic{title}. Stop  skipping";
-
-				$item = {href => '', id => 0, text => "Skipped $skip_count lines of preformatted text"};
-
-				push @lines, $item;
-
-				$skip_count = 0;
-			}
-
-			next;
-		}
-		elsif ($text[$_] =~ /<pre>/)
-		{
-			$skip_count++;
-
-			$skip_pre = true;
-
-			say "Topic: $$topic{title}. Start skipping";
-
-			next;
-		}
-
 		$$topic{id}++;
 
 		$item = {href => '', id => $$topic{id}, text => ''};
@@ -147,8 +114,6 @@ sub format_text
 
 		if ($text[$_] =~ /^o\s+/)
 		{
-			$offset = $_;
-
 			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
 
 			$self -> logger -> error("Missing text @ line # $_") if (length($text[$_]) == 0);
@@ -263,12 +228,36 @@ sub format_text
 		push @lines, $item;
 	}
 
+	if ($pre_count > 0)
+	{
+		push @lines, {href => '', id => 0, text => "Skipped $pre_count lines inside <pre>...</pre>"};
+	}
+
 	$self -> logger -> info("Line $_: <$lines[$_]{text}> & <$lines[$_]{href}>") for (0 .. $#lines);
-	$self -> logger -> info("ZZZ. Count: $count");
+	$self -> logger -> info("ZZZ. Count: $count. Pre count: $pre_count");
 
 	return \@lines;
 
 } # End of format_text.
+
+# --------------------------------------------------
+
+sub handle_pre
+{
+	my($self, $topic)	= @_;
+	my($open_tag)		= '<pre>';
+	my($close_tag)		= '</pre>';
+	$$topic{text}		=~ /(.*?)$open_tag(.*)$close_tag(.*)/s;
+	my($prefix)			= $1 || '';
+	my($match)			= $2 || '';
+	my($suffix)			= $3 || '';
+	my(@lines)			= split(/\n/, $match);
+	my($line_count)		= $#lines + 1;
+	$$topic{text}		= "$1$3";
+
+	return ($line_count, $topic);
+
+} # End of handle_pre.
 
 # --------------------------------------------------
 
