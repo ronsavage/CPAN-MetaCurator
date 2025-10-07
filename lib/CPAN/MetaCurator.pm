@@ -20,15 +20,16 @@ Note:
 3: My web host and I use case-sensitive file systems.
 
 Note: Development process. File sizes as of 2025-08-05.
-1: Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403 bytes.
+1: Check the Note below before using the dev process.
+2: Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403 bytes.
 	Download using: wget https://www.cpan.org/modules/02packages.details.txt.gz
 	Unpack using: gunzip 02packages.details.txt.gz
-2: Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
+3: Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
 	Actually, the code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
 	The modules.table.csv file wass manually exported from an initial run using data/02packages.details.txt.
 	If I wish to check in new code I run redo.sh rather than build.db.sh.
-3: Either way, the code creates data/cpan.metacurator.sqlite. Size: 13,737,984 bytes.
-4: Delete data/02packages.details.txt since there is no point shipping it.
+4: Either way, the code creates data/cpan.metacurator.sqlite. Size: 13,737,984 bytes.
+5: Delete data/02packages.details.txt since there is no point shipping it.
 
 Note: Utilizing the code:
 Download Perl.Wiki.html from http://savage.net.au/ like this...
@@ -39,7 +40,7 @@ Export its data by clicking the Tools tab on the top right:
 2: Choose 'JSON format' in the pop-up.
 3: The file tiddlers.json will appear in your downloads directory (eg ~/Downloads/ under Debian).
 4: Move tiddlers.json into the distro's data/ as cpan.metacurator.tiddlers.json to replace the copy shipped with the distro.
-Run scripts/build.db.sh or scripts/redo.sh.
+5: Run scripts/build.db.sh or scripts/redo.sh.
 They read data/cpan.metacurator.tiddlers.json and output data/cpan.metacurator.sqlite.
 Then they read data/cpan.metacurator.sqlite and output html/cpan.metacurator.tree.html.
 The code shipped can be configured to change the home_path().
