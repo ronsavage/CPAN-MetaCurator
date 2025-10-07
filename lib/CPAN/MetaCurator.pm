@@ -4,7 +4,7 @@ use 5.36.0;
 use parent 'CPAN::MetaCurator::Util::Database';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 #-------------------------------------------------
 
@@ -21,6 +21,8 @@ Note:
 
 Note: Development process. File sizes as of 2025-08-05.
 1: Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403 bytes.
+	Download using: wget https://www.cpan.org/modules/02packages.details.txt.gz
+	Unpack using: gunzip 02packages.details.txt.gz
 2: Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
 	Actually, the code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
 	The modules.table.csv file wass manually exported from an initial run using data/02packages.details.txt.
