@@ -26,7 +26,7 @@ Note: Development process. File sizes as of 2025-08-05.
 	Unpack using: gunzip 02packages.details.txt.gz
 3: Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
 	Actually, the code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
-	The modules.table.csv file wass manually exported from an initial run using data/02packages.details.txt.
+	The modules.table.csv file was manually exported from an initial run using data/02packages.details.txt.
 	If I wish to check in new code I run redo.sh rather than build.db.sh.
 4: Either way, the code creates data/cpan.metacurator.sqlite. Size: 13,737,984 bytes.
 5: Delete data/02packages.details.txt since there is no point shipping it.
