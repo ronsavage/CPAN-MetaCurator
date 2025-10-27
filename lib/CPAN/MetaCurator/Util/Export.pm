@@ -99,7 +99,7 @@ sub format_text
 		my($file_name) = "data/$target.txt";
 
 		open(my $fh, '>:encoding(UTF-8)', $file_name);
-		write $fh, $$topic{text};
+		print $fh $$topic{text};
 		close $fh;
 
 		say "Created $file_name";
