@@ -4,7 +4,7 @@ use 5.36.0;
 use parent 'CPAN::MetaCurator::Util::Database';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 #-------------------------------------------------
 

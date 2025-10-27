@@ -14,7 +14,7 @@ use File::Spec;
 
 use Moo;
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 # -----------------------------------------------
 
@@ -27,7 +27,7 @@ sub export_as_tree
 
 	my($pad)					= $self -> build_pad;
 	$$pad{topic_count}			= $#{$$pad{topics} } + 1;
-	my($header, $body, $footer)	= $self -> build_html($pad);
+	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
 	# Populate the body.
 
@@ -92,6 +92,16 @@ sub export_as_tree
 sub format_text
 {
 	my($self, $pad, $topic) = @_;
+	my($target)				= 'TestingHelp';
+
+	if ($$topic{title} eq $target)
+	{
+		my($file_name) = "data/$target";
+
+		open(my $fh, '>:encoding(UTF-8)', $file_name);
+		write($fh, $topic{text});
+		close $fh;
+	}
 
 	my($pre_count, $pre_ara);
 
