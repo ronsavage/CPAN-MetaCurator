@@ -93,17 +93,6 @@ sub format_text
 	my($self, $pad, $topic) = @_;
 	my($target)				= 'TestingHelp';
 
-	if ($$topic{title} eq $target)
-	{
-		my($file_name) = "data/$target.txt";
-
-		open(my $fh, '>:encoding(UTF-8)', $file_name);
-		print $fh $$topic{text};
-		close $fh;
-
-		say "Created $file_name";
-	}
-
 	my($pre_count, $pre_ara);
 
 	($pre_count, $pre_ara, $topic)	= $self -> handle_pre($topic); # Excises <pre>...</pre>. Uses $$topic{text}.
