@@ -99,7 +99,7 @@ sub format_text
 		my($file_name) = "data/$target";
 
 		open(my $fh, '>:encoding(UTF-8)', $file_name);
-		write($fh, $$topic{text});
+		write $fh $$topic{text};
 		close $fh;
 	}
 
