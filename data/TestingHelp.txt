@@ -1,0 +1,606 @@
+o See also:
+- DataTraversal
+- DebuggingStuff
+- ExceptionHandling
+- FileHandling
+- InstallationMatters
+- ModuleBuilding
+- NewOperators
+- StringStuff
+- Test::InDomain within DataValidation
+- test.openssl.pl - Test regexps
+- WantArray
+- https://perlmaven.com/devel-cover-for-markua-parser
+
+<pre>
+Users are encouraged to switch away from the Test::* suite to Test2::* (below).
+</pre>
+
+o A directory-per-test setup:
+- A script to set up a new directory+cpanm for each type of testing
+- https://github.com/MartijnLievaart/penv
+
+o A guide to testing:
+- Tips for testing Perl modules via GitHub
+- https://github.com/FGasper/perl-github-action-tips
+
+o App::Prove:
+- Implements the prove command
+- https://metacpan.org/pod/App::Prove
+- Part of Test::Harness (below)
+
+o App::Prove::Plugin::SetEnv:
+- A prove plugin to set environment variables
+- https://metacpan.org/pod/App::Prove::Plugin::SetEnv
+
+o App::ReportPrereqs:
+- Report prerequisite versions
+- https://metacpan.org/pod/App::ReportPrereqs
+
+o App::SimpleScan:
+- simple_scan's core code
+- https://metacpan.org/dist/App-SimpleScan
+- Contains simple_scan and simple_report and many examples
+- simple_scan reads test specifications from standard input and generates Perl code based on these specifications
+
+o App::Test::Generator:
+- Generate fuzz and corpus-driven test harnesses
+- https://metacpan.org/dist/App-Test-Generator
+
+o Archive::Merged:
+- Virtually merge two archives
+- https://metacpan.org/dist/Archive-Merged
+- Meaning you can interrogate one or more archives or directories
+
+o Assert::Refute:
+- Unified testing and assertion tool
+- https://metacpan.org/dist/Assert-Refute
+
+o assertions:
+- Select assertions in blocks of code
+- https://metacpan.org/pod/assertions
+
+o Carp::Assert:
+- Executable comments
+- https://metacpan.org/pod/Carp::Assert
+
+o Carp::Assert::More:
+- Convenience assertions for common situations
+- https://metacpan.org/pod/Carp::Assert::More
+
+o Chicken::Ipsum:
+- Generate random chicken noises
+- https://metacpan.org/dist/Chicken-Ipsum
+
+o CPAN test results for a typical module:
+- https://matrix.perl-magpie.org/dist.php?dist=Tree-DAG_Node
+- https://fast2-matrix.cpantesters.org/?dist=Tree%3A%3ADAG_Node
+
+o Cucumber::Messages:
+- Library of classes to encapsulate Cucumber messages
+- https://metacpan.org/dist/Cucumber-Messages
+
+o Cucumber::TagExpressions:
+- Tag expression parser
+- https://metacpan.org/dist/Cucumber-TagExpressions
+
+o Cucumber::Test::Release::Automation:
+- In lib/Cucumber/Test/Release/Automation.pm
+- https://metacpan.org/dist/Cucumber-Test-Release-Automation
+
+o Data::Compare:
+- Compare Perl data structures
+- https://metacpan.org/dist/Data-Compare
+
+o Data::Maker:
+- Simple, flexible and extensible generation of realistic data - Iincludes gender
+- https://metacpan.org/pod/Data::Maker
+
+o Data::Person:
+- Data object for person - Includes gender
+- https://metacpan.org/pod/Data::Person
+
+o Data::Random:
+- Perl module to generate random data
+- https://metacpan.org/pod/Data::Random
+
+o Data::RandomPerson:
+- Create random person data - Includes gender
+- https://metacpan.org/pod/Data::RandomPerson
+
+o Data::Random::Person:
+- Random person objects
+- https://metacpan.org/dist/Data-Random-Person
+- Could use Mock::Person::US instead of Mock::Person:CZ
+- Uses Data::Person
+- Includes gender
+
+o Date::Range:
+- Work with a range of dates
+- https://metacpan.org/pod/Date::Range
+
+o Date::Simple:
+- A simple date object
+- https://metacpan.org/pod/Date::Simple
+
+o Data::SimplePassword:
+- Simple random password generator
+- https://metacpan.org/pod/Data::SimplePassword
+
+o DBD::Mock::Session::GenerateFixtures:
+- This distribution generates fixtures for DBD-Mock-Session module
+- https://metacpan.org/pod/DBD::Mock::Session::GenerateFixtures
+
+o Debug::CodeBlock:
+- Add DEBUG codeblocks to your code
+- https://metacpan.org/dist/Debug-CodeBlock
+
+o Devel::Assert:
+- Assertions for Perl >= 5.14
+- https://metacpan.org/pod/Devel::Assert
+- See also assertions
+
+o Devel::EndStats:
+- Display run time and dependencies after running code:
+- https://metacpan.org/dist/Devel-EndStats
+
+o Devel::Size:
+- Perl extension for finding the memory usage of Perl variables
+- https://metacpan.org/dist/Devel-Size
+
+o Devel::StrictMode:
+- Determine whether strict (but slow) tests should be enabled
+- https://metacpan.org/pod/Devel::StrictMode
+
+o Devel::Trace::Subs:
+- Generate, track, store and print code flow and stack traces:
+- https://metacpan.org/dist/Devel-Trace-Subs
+
+o Environment::Is:
+- Detect environments like Docker or WSL
+- https://metacpan.org/dist/Environment-Is
+
+o Gherkin:
+- A parser and compiler for the Gherkin language
+- https://metacpan.org/pod/Gherkin
+- See Test::BDD::Cucumber below
+
+o Getopt::Kingpin:
+- Command line options parser (like golang kingpin)
+- https://metacpan.org/dist/Getopt-Kingpin
+
+o Keyword::DEVELOPMENT:
+- Have code blocks which don't exist unless you ask for them.
+- https://metacpan.org/pod/Keyword::DEVELOPMENT
+
+o Mock::Config:
+- Temporarily set Config or XSConfig values
+- https://metacpan.org/dist/Mock-Config
+
+o Mock::Data:
+- Extensible toolkit for generating mock data
+- https://metacpan.org/dist/Mock-Data
+- Has a dozen subclasses
+
+o Mock::Data::Regex:
+- Generator that uses a Regex as a template to generate strings
+- https://metacpan.org/pod/Mock::Data::Regex
+- Similar to String::Random::Regexp::regxstring in StringStuff
+
+o Mock::Person:
+- Generates random last, first and middle name of person
+- https://metacpan.org/pod/Mock::Person
+
+o Mock::Populate:
+- Mock data creation
+- https://metacpan.org/pod/Mock::Populate
+
+o Mockery:
+- Mock objects for testing purposes
+- https://metacpan.org/pod/Mockery
+
+o Module::Mask:
+- Pretend certain modules are not installed
+- https://metacpan.org/dist/Module-Mask
+
+o Perl::PrereqScanner:
+- A tool to scan your Perl code for its prerequisites
+- https://metacpan.org/dist/Perl-PrereqScanner
+
+o PerlX::Assert:
+- Yet another assertion keyword
+- https://metacpan.org/pod/PerlX::Assert
+
+o Plack::Test::Agent:
+- OO interface for testing low-level Plack/PSGI apps
+- https://metacpan.org/dist/Plack-Test-Agent
+
+o Result::Simple:
+- A dead simple perl-ish Result like F#, Rust, Go, etc
+- https://metacpan.org/pod/Result::Simple
+- Result represents a function's return value as success or failure, enabling safer error handling and more effective control flow management
+
+o Return::Set:
+- Return a value optionally validated against a strict schema
+- https://metacpan.org/dist/Return-Set
+
+o Scientist:
+- Test new code against old.
+- https://metacpan.org/pod/Scientist
+
+o Sub::Assert:
+- Subroutine pre- and postconditions, etc
+- https://metacpan.org/pod/Sub::Assert
+
+o Subs::Trace:
+- Trace all calls in a package
+- https://metacpan.org/dist/Subs-Trace
+
+o Syntax::Keyword::Assert:
+- Assert keyword for Perl
+- https://metacpan.org/pod/Syntax::Keyword::Assert
+
+o TAP::DOM:
+- TAP as Document Object Model
+- https://metacpan.org/pod/TAP::DOM
+
+o TAP::Formatter::HTML:
+- TAP Test Harness output delegate for html output
+- https://metacpan.org/dist/TAP-Formatter-HTML
+
+o TAP::Harness:
+- Prove supports TAP::Harness plugins and has a plugin system of its own
+- https://metacpan.org/dist/Test-Harness
+- Usage: prove -Ilib [-j 9] -r t where t is the dir name
+- See "FORMATTERS" in prove, "SOURCE HANDLERS" in prove and App::Prove for more details
+
+o Tapper::Cmd:
+- Backend functions for CLI and Web
+- https://metacpan.org/dist/Tapper-Cmd
+- Search MetaCPAN for Tapper:: to find other components of this set
+
+o Task::Perl::Critic:
+- Install everything Perl::Critic
+- https://metacpan.org/pod/Task::Perl::Critic
+
+<pre>
+Start of the (old) Test::* suite
+</pre>
+
+o Test::Against::Commit:
+- Test CPAN modules against Perl dev releases
+- https://metacpan.org/dist/Test-Against-Commit
+
+o Test::Against::Dev:
+- Test CPAN modules against Perl dev releases
+- https://metacpan.org/dist/Test-Against-Dev
+
+o Test::BDD::Cucumber:
+- Feature-complete Cucumber-style testing in Perl
+- https://metacpan.org/dist/Test-BDD-Cucumber
+
+o Test::Builder:
+- Back-end for building test libraries
+- https://metacpan.org/pod/Test::Builder
+
+o Test::CheckGitStatus:
+- Check git status after every test
+- https://metacpan.org/dist/Test-CheckGitStatus
+
+o Test::Class::Moose:
+- Serious testing for serious Perl
+- https://metacpan.org/dist/Test-Class-Moose
+
+o Test::CVE:
+- Test against known CVE's
+- https://metacpan.org/dist/Test-CVE
+
+o Test::Data:
+- Provides utility functions to check properties and values of data and variables
+- https://metacpan.org/dist/Test-Data
+- See also Mock::Data above
+
+o  Test::Database::Temp:
+- https://metacpan.org/dist/Test-Database-Temp
+- Create temporary test databases and run tests in all available ones
+- Database::Temp is also in DatabaseAndSQL
+
+o Test::Deep:
+- Extremely flexible deep comparison
+- https://metacpan.org/dist/Test-Deep
+
+o Test::Dependencies:
+- Ensure that the dependency listing is complete
+- https://metacpan.org/dist/Test-Dependencies
+
+o Test::DescribeMe:
+- Tell test runners what kind of test you are
+- https://metacpan.org/pod/Test::DescribeMe
+
+o Test::Env:
+- Test the environment
+- https://metacpan.org/dist/Test-Env
+
+o Test::Expander:
+- Expansion of test functionalities that appear to be frequently used while testing
+- https://metacpan.org/dist/Test-Expander
+
+o Test::ExpectAndCheck:
+- Expect/check-style unit testing with object methods
+- https://metacpan.org/dist/Test-ExpectAndCheck
+
+o Test::File:
+- Test file attributes
+- https://metacpan.org/dist/Test-File
+
+o Test::File::Contents:
+- Test routines for examining the contents of files
+- https://metacpan.org/dist/Test-File-Contents
+
+o Test::File::Cmp:
+- Test routine for file comparison independent of CRLF or LF line endings.
+- https://metacpan.org/dist/Test-File-Cmp
+
+o Test::Fixme:
+- Check code for FIXMEs
+- https://metacpan.org/dist/Test-Fixme
+
+o Test::Future::IO::Impl:
+- Acceptance tests for Future::IO implementations
+- https://metacpan.org/dist/Test-Future-IO-Impl
+
+o Test::Harness:
+- Run Perl standard test scripts with statistics
+- https://metacpan.org/dist/Test-Harness
+
+o Test::HTML::Content:
+- Perl extension for testing HTML output
+- https://metacpan.org/dist/Test-HTML-Content
+
+o Test::HTTP::LocalServer:
+- Spawn a local HTTP server for testing
+- https://metacpan.org/dist/Test-HTTP-LocalServer
+
+o Test::HTTPStatus:
+- Check an HTTP status
+- https://metacpan.org/dist/Test-HTTPStatus
+
+o Test::Instruction:
+- A test framework
+- https://metacpan.org/dist/Test-Instruction
+
+o Test::Is:
+- Skip test in a declarative way, following the Lancaster Consensus
+- https://metacpan.org/pod/Test::Is
+
+o Test::ISBN:
+- Check International Standard Book Numbers
+- https://metacpan.org/dist/Test-ISBN
+
+o Test::JSON::Schema:
+- Test your data against a JSON Schema
+- https://metacpan.org/dist/Test-JSON-Schema
+
+o Test::JSON::Schema::Acceptance:
+- Acceptance testing for JSON-Schema based validators
+- https://metacpan.org/pod/Test::JSON::Schema::Acceptance
+
+o Test::Kit:
+- Build custom test packages with only the features you want
+- https://metacpan.org/pod/Test::Kit
+- Similar modules: Import::Base, Toolset
+- Test::Kit largely differs from these in that it always makes your module behave like Test::More
+
+o Test::Manifest:
+- Interact with a t/test_manifest file
+- https://metacpan.org/dist/Test-Manifest
+
+o Test::MixedScripts:
+- Test text for mixed and potentially confusable Unicode scripts
+- https://metacpan.org/pod/Test::MixedScripts
+- See also https://util.unicode.org/UnicodeJsps/confusables.jsp
+
+o Test::MockFile:
+- Allows tests to validate code that can interact with files without touching the file system
+- https://metacpan.org/dist/Test-MockFile
+
+o Test::Mockingbird:
+- Advanced mocking library for Perl with support for dependency injection and spies
+- https://metacpan.org/dist/Test-Mockingbird
+
+o Test::MockModule:
+- Override subroutines in a module for unit testing
+- https://metacpan.org/dist/Test-MockModule
+
+o Test::More:
+- See Test::Simple or Test::Simpler or Test2::V0
+- https://metacpan.org/pod/Test::More
+
+o Test::mysqld:
+- mysqld runner for tests
+- https://metacpan.org/pod/Test::mysqld
+
+o Test::Needs:
+- Skip tests when modules not available
+- https://metacpan.org/pod/Test::Needs
+
+o Test::Output:
+- Utilities to test STDOUT and STDERR messages
+- https://metacpan.org/dist/Test-Output
+
+o Test::Perl::Critic:
+- Use Perl::Critic in test programs
+- https://metacpan.org/pod/Test::Perl::Critic
+
+o Test::Perl::Critic::Progressive:
+- Gradually enforce coding standards
+- https://metacpan.org/pod/Test::Perl::Critic::Progressive
+
+o Test::PostgreSQL:
+- PostgreSQL runner for tests
+- https://metacpan.org/pod/Test::PostgreSQL
+
+o  Test::Prereq:
+- Check if Makefile.PL has the right prerequisites
+- https://metacpan.org/dist/Test-Prereq
+- Supersedes the next module
+
+o Test::Prereq::Meta:
+- Test distribution prerequisites against CPAN meta data file
+- https://metacpan.org/dist/Test-Prereq-Meta
+- But see Test::Prereq
+
+o Test::Regexp::Pattern:
+- Test Regexp::Pattern patterns
+- https://metacpan.org/pod/Test::Regexp::Pattern
+
+o Test::Returns:
+- Verify that a method's output agrees with its specification
+- https://metacpan.org/dist/Test-Returns
+
+o Test::Script:
+- Basic cross-platform tests for scripts
+- https://metacpan.org/dist/Test-Script
+
+o Test::Settings:
+- Ask or tell when certain types of tests should be run
+- https://metacpan.org/pod/Test::Settings
+
+o Test::Signature:
+- Automated SIGNATURE testing
+- https://metacpan.org/pod/Test::Signature
+- See also Module::Signature in ModuleBuilding
+
+o Test::Simple:
+- Basic utilities for writing tests
+- https://metacpan.org/dist/Test-Simple
+- Has a huge array of components
+- Contains Test::More and Test2
+- But see the next module
+
+o Test::Simpler:
+- Simpler than Test::Simple; more powerful than Test::More
+- https://metacpan.org/pod/Test::Simpler
+
+o Test::Smoke:
+- The Perl core test smoke suite
+- https://metacpan.org/dist/Test-Smoke
+
+o Test::SQLite:
+- SQLite setup/teardown for tests
+- https://metacpan.org/pod/Test::SQLite
+
+o Test::TempDir::Tiny:
+- Temporary directories that stick around when tests fail
+- https://metacpan.org/dist/Test-TempDir-Tiny
+- Strongly recommended over File::Temp which uses global "our" variables, which affects Capture::Tiny, since the latter also uses File::Temp. Don't do that
+
+o Test::URI:
+- Check Uniform Resource Identifiers
+- https://metacpan.org/dist/Test-URI
+
+o Test::utf8:
+- Handy utf8 tests
+- https://metacpan.org/dist/Test-utf8
+
+o Test::Warnings:
+- Test for warnings and the lack of them
+- https://metacpan.org/dist/Test-Warnings
+
+o Test::WWW::Simple:
+- Test Web applications using TAP
+- https://metacpan.org/pod/Test::WWW::Simple
+
+o Test::XML::Simple:
+- Easy testing for XML
+- https://metacpan.org/pod/Test::XML::Simple
+
+o Test::YAFT:
+- Yet another testing framework
+- https://metacpan.org/dist/Test-YAFT
+
+<pre>
+Start of the Test2::* suite
+</pre>
+
+o Test2::API:
+- Primary interface for writing Test2 based testing tools
+- https://metacpan.org/pod/Test2::API
+
+o Test2::Harness:
+- Contains yath, which replaces test and prove (see below for usage  of prove)
+- https://metacpan.org/pod/yath. Install via App::Yath
+- https://perladvent.org/2023/2023-12-23.html
+
+o Test2::Plugin::SubtestFilter:
+- Filter subtests by name
+- https://metacpan.org/dist/Test2-Plugin-SubtestFilter
+
+o Test2::Plugin::UUID:
+- Use REAL UUIDs in Test2
+- https://metacpan.org/dist/Test2-Plugin-UUID
+
+o Test2::Require::ProgramInPath:
+- Skip test unless a program exists in the PATH
+- https://metacpan.org/dist/Test2-Require-ProgramInPath
+
+o Test2::Tools::ComboObject:
+- Combine checks and diagnostics into a single test as an object
+- https://metacpan.org/dist/Test2-Tools-ComboObject
+
+o Test2::Tools::DOM:
+- Tools to test HTML/XML-based DOM representations
+- https://metacpan.org/dist/Test2-Tools-DOM
+
+o Test2::Tools::TypeTiny:
+- Test2 tools for checking Type::Tiny types
+- https://metacpan.org/dist/Test2-Tools-TypeTiny
+
+o Test2::Transition:
+- Transition notes when upgrading to Test2
+- https://metacpan.org/dist/Test-Simple/view/lib/Test2/Transition.pod
+- See also: https://metacpan.org/pod/Test2::Suite
+
+o Test2::Util::DistFiles:
+- Gather files in a distribution
+- https://metacpan.org/dist/Test2-Util-DistFiles
+
+o Test2::V0:
+- 0Th edition of the Test2 recommended bundle
+- https://metacpan.org/pod/Test2::V0
+- Convert from Test::More to Test2::V0 as described below in the 'pre' tagged section
+
+o Time::RTM:
+- Run-time metrics stats
+- https://metacpan.org/pod/Time::RTM
+
+o UNIVERSAL::dump:
+- Add dump and other methods to all classes and objects
+- https://metacpan.org/dist/UNIVERSAL-dump
+
+o Overview of conversion from Test::More to Test2::V0:
+<pre>
+Test2 has a "migration guide" manual that you might find useful:
+
+  https://metacpan.org/pod/Test2::Manual::Testing::Migrating
+
+Though honestly I find I get my tests about 99% correct already by
+simply doing:
+
+  $ find -name \*.t | xargs sed -i 's/use Test::More/use Test2::V0/'
+  $ find -name \*.t | xargs sed -i 's/is_deeply(/is(/'
+
+then manually editing any other edge-cases that I find; but that's
+perhaps easier because my existing test style already mostly matched
+what Test2 wanted.
+
+I gave this a bash in a codebase I help maintain, and it worked well
+enough, save for the fact that we use(d) the "tests => <num_tests>"
+syntax, so I had to get rid of that and add "done_testing" to the end of
+all the tests. I never enjoyed counting and updating the number of tests
+anyway, so I consider this an improvement :-)
+
+FWIW, the replacement of this is a subsequent call to plan($num); but
+done_testing is certainly more commonly used as maintenance of the plan
+tends to be more trouble than it's worth.
+</pre>

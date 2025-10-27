@@ -126,8 +126,6 @@ sub format_text
 
 		$item = {href => '', id => $$topic{id}, text => ''};
 
-		$self -> logger -> info("Starting leaf: id: $$topic{id}. $text[$_]");
-
 		if ($text[$_] =~ /^o\s+/)
 		{
 			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
@@ -188,23 +186,15 @@ sub format_text
 		}
 	}
 
-	$self -> logger -> info('Hover: ' . $self -> separator);
-	$self -> logger -> info("Hover. $_: $hover[$_]") for 0 .. $#hover;
-	$self -> logger -> info('Hover: ' . $self -> separator);
-
 	my($count) = 0;
 
 	my($entry);
 	my(@pieces);
 	my($text_is_topic, $topic_id);
 
-	$self -> logger -> info("AAA. Size of see_also: @{[$#see_also + 1]}");
-
 	for $item (@see_also)
 	{
 		$count++;
-
-		$self -> logger -> info("Starting see_also: id: $$item{id}. $$item{text}");
 
 		if ($count == 1)
 		{
@@ -219,13 +209,10 @@ sub format_text
 
 		if ($$item{text} =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
-			$self -> logger -> info("$$item{text} is a URI");
-
 			$$item{text} = "<a href = '$pieces[0]'>$$item{text}</a>";
 		}
 		elsif ($text_is_topic) # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
-			$self -> logger -> info("$$item{text} is a topic");
 			$self -> logger -> error("Missing id for topic") if ($topic_id == 0);
 
 			$$item{text}	= "$pieces[0] (topic)";
@@ -236,8 +223,6 @@ sub format_text
 		}
 		else # Eg: It's a module.
 		{
-			$self -> logger -> info("$$item{text} is a module");
-
 			$$item{text} = "<a href = 'https://metacpan.org/pod/$pieces[0]'>$$item{text}</a>";
 		}
 
@@ -248,9 +233,6 @@ sub format_text
 	{
 		push @lines, {href => '', id => 0, text => "Skipped $pre_count lines inside <pre>...</pre>"};
 	}
-
-	$self -> logger -> info("Line $_: <$lines[$_]{text}> & <$lines[$_]{href}>") for (0 .. $#lines);
-	$self -> logger -> info("ZZZ. Count: $count. Pre count: $pre_count");
 
 	return \@lines;
 
