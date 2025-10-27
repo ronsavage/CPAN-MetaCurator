@@ -64,7 +64,6 @@ sub export_as_tree
 		push @list, '</li>';
 
 		$self -> logger -> info($self -> separator);
-		$self -> logger -> info($self -> separator);
 	}
 
 	push @list, '</ul>', '</li>', '</ul>';
@@ -118,7 +117,7 @@ sub format_text
 	my(@lines);
 	my(@see_also);
 
-	$self -> logger -> info("Called format_text(). title: $$topic{title}. id: $$topic{id}. text: $$topic{text}");
+	$self -> logger -> info("Called format_text(). title: $$topic{title}. id: $$topic{id}");
 
 	for (0 .. $#text)
 	{
