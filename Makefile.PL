@@ -14,8 +14,8 @@ my(%params) =
 (
 	($] ge '5.005') ?
 	(
-		AUTHOR   => 'Ron Savage (ron@savage.net.au)',
-		ABSTRACT => 'Manage a database of curated Perl modules',
+		AUTHOR		=> 'Ron Savage (ron@savage.net.au)',
+		ABSTRACT	=> 'Manage a database of curated Perl modules',
 	) : (),
 	clean =>
 	{
@@ -23,13 +23,14 @@ my(%params) =
 	},
 	dist =>
 	{
-		COMPRESS => 'gzip',
-		SUFFIX   => 'gz'
+		COMPRESS	=> 'gzip',
+		SUFFIX		=> 'gz'
 	},
-	DISTNAME  => 'CPAN-MetaCurator',
-	NAME      => 'CPAN::MetaCurator',
-	PL_FILES  => {},
-	PREREQ_PM =>
+	DISTNAME	=> 'CPAN-MetaCurator',
+	LICENSE		=> 'perl',
+	NAME		=> 'CPAN::MetaCurator',
+	PL_FILES	=> {},
+	PREREQ_PM	=>
 	{
 		'boolean'								=> 0.46,
 		'Config::Tiny'							=> 2.30,
