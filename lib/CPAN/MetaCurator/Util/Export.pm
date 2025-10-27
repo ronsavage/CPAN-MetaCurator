@@ -96,11 +96,13 @@ sub format_text
 
 	if ($$topic{title} eq $target)
 	{
-		my($file_name) = "data/$target";
+		my($file_name) = "data/$target.txt";
 
 		open(my $fh, '>:encoding(UTF-8)', $file_name);
 		write $fh $$topic{text};
 		close $fh;
+
+		say "Created $file_name";
 	}
 
 	my($pre_count, $pre_ara);
