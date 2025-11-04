@@ -168,6 +168,8 @@ sub populate_modules_table
 
 	if ($status eq 'Present')
 	{
+		$self -> logger -> info("Importing modules from $csv_path");
+
 		#Takes 3-4 hours. The next line takes 2.7s!
 		#$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 
@@ -175,6 +177,7 @@ sub populate_modules_table
 	}
 	else
 	{
+		$self -> logger -> info('Importing modules from ' . $self -> perl_modules_path);
 		$self -> import_perl_modules($self -> home_path, $self -> perl_modules_path, $table_name);
 	}
 
