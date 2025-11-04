@@ -22,10 +22,13 @@ Note:
 Note: Development process. File sizes as of 2025-08-05.
 1: Check the Note below before using the dev process.
 2: Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403 bytes.
+	cd ~/perl.modules/CPAN-MetaCurator/data
 	Download using: wget https://www.cpan.org/modules/02packages.details.txt.gz
 	Unpack using: gunzip 02packages.details.txt.gz
+	Output is: 02packages.details.txt
 3: Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
 	Actually, the code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
+	Therefore - before running buidl.db.sh - hide data/modules.table.csv if you wish to use data/02packages.details.txt.
 	The modules.table.csv file was manually exported from an initial run using data/02packages.details.txt.
 	If I wish to check in new code I run redo.sh rather than build.db.sh.
 4: Either way, the code creates data/cpan.metacurator.sqlite. Size: 13,737,984 bytes.
