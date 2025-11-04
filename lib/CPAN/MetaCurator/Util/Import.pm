@@ -25,7 +25,7 @@ sub import_csv_file
 {
 	my($self, $csv, $path, $table_name, $col_name_1, $col_name_2) = @_;
 
-	$self -> logger -> info("Populating the 'table_name' table with import_csv_file()");
+	$self -> logger -> info("Populating the '$table_name' table with import_csv_file()");
 
 	open(my $io, '<', $path) || die "Can't open($path): $!\n";
 
