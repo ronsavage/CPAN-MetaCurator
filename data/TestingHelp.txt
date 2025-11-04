@@ -10,6 +10,7 @@ o See also:
 - Test::InDomain within DataValidation
 - test.openssl.pl - Test regexps
 - WantArray
+- https://fast2-matrix.cpantesters.org/ - For test results for any module
 - https://perlmaven.com/devel-cover-for-markua-parser
 
 <pre>
@@ -76,6 +77,14 @@ o CPAN test results for a typical module:
 - https://matrix.perl-magpie.org/dist.php?dist=Tree-DAG_Node
 - https://fast2-matrix.cpantesters.org/?dist=Tree%3A%3ADAG_Node
 
+o CPAN::Test::Dummy::Perl5::ModuleBuildTiny:
+- Test distribution that depends on Module::Build::Tiny
+- https://metacpan.org/dist/CPAN-Test-Dummy-Perl5-ModuleBuildTiny
+
+o CPAN::Test::Dummy::Perl5::ExtUtilsMakeMaker:
+- Test distribution that depends on ExtUtils::MakeMaker
+- https://metacpan.org/dist/CPAN-Test-Dummy-Perl5-ExtUtilsMakeMaker
+
 o Cucumber::Messages:
 - Library of classes to encapsulate Cucumber messages
 - https://metacpan.org/dist/Cucumber-Messages
@@ -114,6 +123,10 @@ o Data::Random::Person:
 - Could use Mock::Person::US instead of Mock::Person:CZ
 - Uses Data::Person
 - Includes gender
+
+o Data::Random::String::Matches:
+- Generate random strings matching a regex
+- https://metacpan.org/dist/Data-Random-String-Matches
 
 o Date::Range:
 - Work with a range of dates
@@ -551,6 +564,10 @@ o Test2::Tools::ComboObject:
 o Test2::Tools::DOM:
 - Tools to test HTML/XML-based DOM representations
 - https://metacpan.org/dist/Test2-Tools-DOM
+
+o Test2::Tools::Subtest:
+- Tools for writing subtests
+- https://metacpan.org/pod/Test2::Tools::Subtest
 
 o Test2::Tools::TypeTiny:
 - Test2 tools for checking Type::Tiny types
