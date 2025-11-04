@@ -168,15 +168,18 @@ sub populate_modules_table
 
 	if ($status eq 'Present')
 	{
+		# Takes 2.7s.
+
 		$self -> logger -> info("Importing modules from $csv_path");
 
-		#Takes 3-4 hours. The next line takes 2.7s!
-		#$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
+		# $self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 
 		`csv2sqlite --format=csv --table modules $csv_path $database_path`;
 	}
 	else
 	{
+		# Takes 1.5 hours.
+
 		my($packages_path) = File::Spec -> catfile($self -> home_path, $self -> perl_modules_path);
 
 		$self -> logger -> info("Importing modules from '$packages_path'");

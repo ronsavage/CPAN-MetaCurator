@@ -19,35 +19,40 @@ Note:
 2: There is assumed to be just 1 item containing '<pre>...</pre> per topic. It can appear anywhere within the topic.
 3: My web host and I use case-sensitive file systems.
 
-Note: Development process. File sizes as of 2025-08-05.
-1: Check the Note below before using the dev process.
-2: Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403 bytes.
-	cd ~/perl.modules/CPAN-MetaCurator/data
-	Download using: wget https://www.cpan.org/modules/02packages.details.txt.gz
-	Unpack using: gunzip 02packages.details.txt.gz
-	Output is: 02packages.details.txt
-3: Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
-	Actually, the code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
-	Therefore - before running buidl.db.sh - hide data/modules.table.csv if you wish to use data/02packages.details.txt.
-	The modules.table.csv file was manually exported from an initial run using data/02packages.details.txt.
-	If I wish to check in new code I run redo.sh rather than build.db.sh.
-4: Either way, the code creates data/cpan.metacurator.sqlite. Size: 13,737,984 bytes.
-5: Delete data/02packages.details.txt since there is no point shipping it.
+If you wish to download a new version of Perl.Wiki.html:
+1. Download and unpack the distro CPAN::MetaCurator from https://metacpan.org/.
+2. Download it from http://savage.net.au/.
+3. Update Perl.Wiki.html if desired. but note that the format is very strict!
+4. Export its data by clicking the 'Tools' tab on the top right:
+	a. Choose 'export all'.
+	b. Choose 'JSON format' in the pop-up.
+	c. The file tiddlers.json will appear in your downloads directory (eg ~/Downloads/ under Debian).
+	d. Move tiddlers.json into the distro's data/ as cpan.metacurator.tiddlers.json to replace the copy shipped with the distro.
 
-Note: Utilizing the code:
-Download Perl.Wiki.html from http://savage.net.au/ like this...
-Download and unpack the distro CPAN::MetaCurator from https://metacpan.org/.
-Update Perl.Wiki.html if desired. but note that the format is very strict!
-Export its data by clicking the Tools tab on the top right:
-1: Choose 'export all'.
-2: Choose 'JSON format' in the pop-up.
-3: The file tiddlers.json will appear in your downloads directory (eg ~/Downloads/ under Debian).
-4: Move tiddlers.json into the distro's data/ as cpan.metacurator.tiddlers.json to replace the copy shipped with the distro.
-5: Run scripts/build.db.sh or scripts/redo.sh.
-They read data/cpan.metacurator.tiddlers.json and output data/cpan.metacurator.sqlite.
-Then they read data/cpan.metacurator.sqlite and output html/cpan.metacurator.tree.html.
-The code shipped can be configured to change the home_path().
-And it logs to log/development.log.
+If you with to rebuld the database:
+Note: File sizes as of 2025-08-05.
+Note: The code shipped can be configured to change the home_path().
+1. Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403 bytes.
+	a. cd ~/perl.modules/CPAN-MetaCurator/data
+	b. Download using: wget https://www.cpan.org/modules/02packages.details.txt.gz
+	c. Unpack using: gunzip 02packages.details.txt.gz
+	Output is: 02packages.details.txt
+	d. cd ..
+2. If editing the code, do this before the next step:
+	a. Empty the log since we don't want to commit it full: cp /dev/null log/development.log
+	b. Remove giant file from commit: mv data/02packages.details.txt /tmp
+	c. Rebuild the module with: build.module.sh CPAN::MetaCustodian 1.02 (or whatever version)
+	d. git commit -am"Some commit note..."
+	e. Restore giant file: cp /tmp/02packages.details.txt data
+3. Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
+	a. Actually, the code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
+	Therefore - before running build.db.sh - hide data/modules.table.csv if you wish to use data/02packages.details.txt.
+	The modules.table.csv file was manually exported from an initial run using data/02packages.details.txt.
+	b. If I wish to check in new code I run redo.sh rather than build.db.sh.
+4. Either way, the code creates data/cpan.metacurator.sqlite. Size: 13,737,984 bytes.
+	And outputs html/cpan.metacurator.tree.html.
+	And it logs to log/development.log.
+6. Delete data/02packages.details.txt since there is no point shipping it.
 
 =head1 Machine-Readable Change Log
 
