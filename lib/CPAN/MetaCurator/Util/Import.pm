@@ -89,7 +89,7 @@ sub import_perl_modules
 	my(%names);
 	my(@pieces);
 
-	$self -> logger -> info("Populating the 'table_name' table with import_perl_modules()");
+	$self -> logger -> info("Populating the 'table_name' table with '$path'");
 
 	for (@names)
 	{
@@ -177,8 +177,10 @@ sub populate_modules_table
 	}
 	else
 	{
-		$self -> logger -> info('Importing modules from ' . $self -> perl_modules_path);
-		$self -> import_perl_modules($self -> home_path, $self -> perl_modules_path, $table_name);
+		my($packages_path) = File::Spec -> catfile($self -> home_path, $self -> perl_modules_path);
+
+		$self -> logger -> info("Importing modules from '$packages_path'");
+		$self -> import_perl_modules($packages_path, $table_name);
 	}
 
 }	# End of populate_modules_table.
