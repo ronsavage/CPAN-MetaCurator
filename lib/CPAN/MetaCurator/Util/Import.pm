@@ -177,7 +177,9 @@ sub populate_modules_table
 		# $self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 
 		`csv2sqlite --format=csv --table modules $csv_path $database_path`;
+
 		$module_count = `echo 'select count(*) from modules' | sqlite3 $database_path`;
+		chomp($module_count);
 
 		$self -> logger -> info("Imported $module_count modules");
 	}
