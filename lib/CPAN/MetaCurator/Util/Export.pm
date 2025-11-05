@@ -233,7 +233,7 @@ sub handle_pre
 	my($self, $topic)	= @_;
 	my($open_tag)		= '<pre>';
 	my($close_tag)		= '</pre>';
-	$$topic{text}		=~ /(.*?)$open_tag(.*)$close_tag(.*)/s;
+	$$topic{text}		=~ /(.*?)$open_tag(.{1})$close_tag(.*)/s;
 	my($prefix)			= $1 || '';
 	my($match)			= $2 || '';
 	my($suffix)			= $3 || '';
