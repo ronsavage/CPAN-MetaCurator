@@ -177,7 +177,7 @@ sub populate_modules_table
 		# $self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 
 		`csv2sqlite --format=csv --table modules $csv_path $database_path`;
-		$module_count = `echo -e 'select count(*) from modules' | sqlite3 $database_path`;
+		$module_count = `echo 'select count(*) from modules' | sqlite3 $database_path`;
 
 		$self -> logger -> info("Imported $module_count modules");
 	}
@@ -190,7 +190,7 @@ sub populate_modules_table
 		$self -> logger -> info("Importing modules from '$packages_path'");
 		$self -> import_perl_modules($packages_path, $table_name);
 
-		my($command) = `echo -e ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $csv_path`;
+		my($command) = `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $csv_path`;
 		$self -> logger -> info("Exported modules table to '$csv_path'");
 
 		my($line_count) = `wc -l $csv_path`;
