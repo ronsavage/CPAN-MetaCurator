@@ -239,12 +239,6 @@ sub populate_topics_table
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
 		$$record{text}		= $text;
 		$id					= $self -> insert_hashref($table_name, $record);
-
-		if ($title eq 'AiEngines')
-		{
-			$self -> logger -> info('Test UTF-8 chars');
-			$self -> logger -> info('AiEngines: ' . $text);
-		}
 	}
 
 	$self -> logger -> info("Finished populate_topics_table(). Stored $count records into '$table_name'");
