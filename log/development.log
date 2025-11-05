@@ -1,0 +1,893 @@
+[2025-11-05 13:26:43.16208] [118078] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-11-05 13:26:43.16227] [118078] [info] --------------------------------------------------
+[2025-11-05 13:26:43.16230] [118078] [info] Dropping all tables
+[2025-11-05 13:26:43.18841] [118078] [info] Dropped all tables
+[2025-11-05 13:26:43.18848] [118078] [info] --------------------------------------------------
+[2025-11-05 13:26:43.41310] [118080] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-11-05 13:26:43.41328] [118080] [info] --------------------------------------------------
+[2025-11-05 13:26:43.41331] [118080] [info] Creating all tables
+[2025-11-05 13:26:43.42886] [118080] [info] Created all tables
+[2025-11-05 13:26:43.42890] [118080] [info] --------------------------------------------------
+[2025-11-05 13:26:43.67883] [118083] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-11-05 13:26:43.67902] [118083] [info] --------------------------------------------------
+[2025-11-05 13:26:43.67904] [118083] [info] Populating all tables
+[2025-11-05 13:26:43.67991] [118083] [info] Populating the 'constants' table with import_csv_file()
+[2025-11-05 13:26:43.71454] [118083] [info] Stored 7 records into 'constants'
+[2025-11-05 13:26:43.71478] [118083] [info] Importing modules from /home/ron/perl.modules/CPAN-MetaCurator/data/modules.table.csv
+[2025-11-05 13:26:45.36090] [118083] [info] Imported 269144 modules
+[2025-11-05 13:26:45.36101] [118083] [info] Finished populate_modules_table()
+[2025-11-05 13:26:45.38189] [118083] [info] AiEngines: o See also:
+- [[Acronyms]] - For RFC2045
+- ChatGTP - For a MS product
+
+o Langertha:
+- The clan of fierce vikings with 🪓 and 🛡️ to AId your rAId
+- https://metacpan.org/dist/Langertha
+- This module is designed to facilitate interactions with various AI models
+
+o Net::Gemini:
+- A small gemini client
+- https://metacpan.org/dist/Net-Gemini
+- POD refers to RFC2045
+
+o OpenAPI::Client::OpenAI:
+- A client for the (Microsoft) OpenAI API
+- https://metacpan.org/dist/OpenAPI-Client-OpenAI
+
+[2025-11-05 13:26:45.74037] [118083] [info] Finished populate_topics_table(). Stored 210 records into 'topics'
+[2025-11-05 13:26:45.74053] [118083] [info] Populated all tables
+[2025-11-05 13:26:45.74055] [118083] [info] --------------------------------------------------
+[2025-11-05 13:26:45.97321] [118099] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2025-11-05 13:26:45.97346] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.52937] [118099] [info] Constants:
+[2025-11-05 13:26:46.52943] [118099] [info] domain_name => savage.net.au
+[2025-11-05 13:26:46.52945] [118099] [info] encoding => :encoding(UTF-8)
+[2025-11-05 13:26:46.52947] [118099] [info] logo_path => /assets/images/local/rons.logo.png
+[2025-11-05 13:26:46.52949] [118099] [info] page_name => cpan.metacurator.tree.html
+[2025-11-05 13:26:46.52950] [118099] [info] time_zone => Australia/Melbourne
+[2025-11-05 13:26:46.52952] [118099] [info] title_font_path => /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
+[2025-11-05 13:26:46.52953] [118099] [info] title_font_size => 16
+[2025-11-05 13:26:46.52955] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.63915] [118099] [info] Topics:
+[2025-11-05 13:26:46.63926] [118099] [info] ABeCeDarian => 2
+[2025-11-05 13:26:46.63929] [118099] [info] ASN => 15
+[2025-11-05 13:26:46.63930] [118099] [info] Acronyms => 3
+[2025-11-05 13:26:46.63932] [118099] [info] AdminUtils => 4
+[2025-11-05 13:26:46.63934] [118099] [info] AdventPlanet => 5
+[2025-11-05 13:26:46.63935] [118099] [info] AiEngines => 6
+[2025-11-05 13:26:46.63937] [118099] [info] AlgorithmicStuff => 7
+[2025-11-05 13:26:46.63938] [118099] [info] AnimationStuff => 8
+[2025-11-05 13:26:46.63940] [118099] [info] AntiVirusStuff => 9
+[2025-11-05 13:26:46.63941] [118099] [info] ApacheStuff => 10
+[2025-11-05 13:26:46.63944] [118099] [info] AppleMac => 11
+[2025-11-05 13:26:46.63945] [118099] [info] ArchiveFiles => 12
+[2025-11-05 13:26:46.63947] [118099] [info] ArrayHandling => 13
+[2025-11-05 13:26:46.63948] [118099] [info] AsciiCodes => 14
+[2025-11-05 13:26:46.63950] [118099] [info] AssemblerX86 => 16
+[2025-11-05 13:26:46.63951] [118099] [info] AudioVisual => 17
+[2025-11-05 13:26:46.63953] [118099] [info] AutoCAD => 18
+[2025-11-05 13:26:46.63954] [118099] [info] AutomatedBackups => 19
+[2025-11-05 13:26:46.63956] [118099] [info] BarCodes => 20
+[2025-11-05 13:26:46.63957] [118099] [info] BenchmarkingTools => 21
+[2025-11-05 13:26:46.63959] [118099] [info] BibTeX => 23
+[2025-11-05 13:26:46.63960] [118099] [info] BibliographicStuff => 22
+[2025-11-05 13:26:46.63962] [118099] [info] BillOfMaterials => 24
+[2025-11-05 13:26:46.63963] [118099] [info] BioInformatics => 25
+[2025-11-05 13:26:46.63965] [118099] [info] BlockChain => 26
+[2025-11-05 13:26:46.63966] [118099] [info] BoneMarrrowDonorRegistry => 27
+[2025-11-05 13:26:46.63968] [118099] [info] BrowserStuff => 28
+[2025-11-05 13:26:46.63969] [118099] [info] BsdWare => 29
+[2025-11-05 13:26:46.63971] [118099] [info] BusinessApps => 31
+[2025-11-05 13:26:46.63972] [118099] [info] CPAN => 49
+[2025-11-05 13:26:46.63974] [118099] [info] CachingStuff => 32
+[2025-11-05 13:26:46.63975] [118099] [info] CaptchaStuff => 33
+[2025-11-05 13:26:46.63977] [118099] [info] ChangeLog => 34
+[2025-11-05 13:26:46.63978] [118099] [info] ChangesFiles => 35
+[2025-11-05 13:26:46.63980] [118099] [info] ChartingAndPlotting => 36
+[2025-11-05 13:26:46.63981] [118099] [info] ChatBots => 37
+[2025-11-05 13:26:46.63983] [118099] [info] ChemistryStuff => 38
+[2025-11-05 13:26:46.63984] [118099] [info] ChildProcesses => 39
+[2025-11-05 13:26:46.63986] [118099] [info] ClassStuff => 40
+[2025-11-05 13:26:46.63987] [118099] [info] ClipBoard => 41
+[2025-11-05 13:26:46.63989] [118099] [info] CodeTidyingCode => 42
+[2025-11-05 13:26:46.63990] [118099] [info] CodingStyle => 43
+[2025-11-05 13:26:46.63992] [118099] [info] Color => 44
+[2025-11-05 13:26:46.63993] [118099] [info] CommandLineStuff => 45
+[2025-11-05 13:26:46.63995] [118099] [info] ConfigFiles => 46
+[2025-11-05 13:26:46.63996] [118099] [info] ConstantStuff => 47
+[2025-11-05 13:26:46.63998] [118099] [info] Corinna => 48
+[2025-11-05 13:26:46.63999] [118099] [info] CpanFile => 50
+[2025-11-05 13:26:46.64001] [118099] [info] CryptoStuff => 52
+[2025-11-05 13:26:46.64002] [118099] [info] CssHandling => 53
+[2025-11-05 13:26:46.64004] [118099] [info] DFA => 62
+[2025-11-05 13:26:46.64005] [118099] [info] DataCleaning => 55
+[2025-11-05 13:26:46.64006] [118099] [info] DataTraversal => 56
+[2025-11-05 13:26:46.64008] [118099] [info] DataTypes => 57
+[2025-11-05 13:26:46.64009] [118099] [info] DataValidation => 58
+[2025-11-05 13:26:46.64011] [118099] [info] DatabaseAndSQL => 54
+[2025-11-05 13:26:46.64013] [118099] [info] DatesAndTimes => 59
+[2025-11-05 13:26:46.64014] [118099] [info] DebianOS => 60
+[2025-11-05 13:26:46.64016] [118099] [info] DebuggingStuff => 61
+[2025-11-05 13:26:46.64017] [118099] [info] DnsStuff => 63
+[2025-11-05 13:26:46.64018] [118099] [info] DocumentationManagement => 64
+[2025-11-05 13:26:46.64020] [118099] [info] DomainNames => 65
+[2025-11-05 13:26:46.64021] [118099] [info] EBookHandling => 66
+[2025-11-05 13:26:46.64023] [118099] [info] EditorConfigFiles => 67
+[2025-11-05 13:26:46.64024] [118099] [info] EmailStuff => 68
+[2025-11-05 13:26:46.64026] [118099] [info] EnterpriseApps => 69
+[2025-11-05 13:26:46.64027] [118099] [info] EnumStuff => 70
+[2025-11-05 13:26:46.64029] [118099] [info] EventStuff => 71
+[2025-11-05 13:26:46.64030] [118099] [info] ExceptionHandling => 72
+[2025-11-05 13:26:46.64032] [118099] [info] ExportHandling => 73
+[2025-11-05 13:26:46.64033] [118099] [info] ExtensibleProvisioningProtocol => 74
+[2025-11-05 13:26:46.64035] [118099] [info] FeaturesAndPragmas => 75
+[2025-11-05 13:26:46.64036] [118099] [info] FileHandling => 76
+[2025-11-05 13:26:46.64038] [118099] [info] FindDependencies => 77
+[2025-11-05 13:26:46.64039] [118099] [info] Games => 78
+[2025-11-05 13:26:46.64041] [118099] [info] GenealogyStuff => 79
+[2025-11-05 13:26:46.64043] [118099] [info] GeographicStuff => 80
+[2025-11-05 13:26:46.64044] [118099] [info] GitStuff => 81
+[2025-11-05 13:26:46.64046] [118099] [info] GnuPG => 82
+[2025-11-05 13:26:46.64047] [118099] [info] GoogleStuff => 83
+[2025-11-05 13:26:46.64049] [118099] [info] GrammarProcessing => 84
+[2025-11-05 13:26:46.64050] [118099] [info] Graphs => 85
+[2025-11-05 13:26:46.64052] [118099] [info] HTMLHandling => 90
+[2025-11-05 13:26:46.64053] [118099] [info] HTTPHandling => 91
+[2025-11-05 13:26:46.64055] [118099] [info] HTTPServers => 92
+[2025-11-05 13:26:46.64056] [118099] [info] HardwareStuff => 86
+[2025-11-05 13:26:46.64058] [118099] [info] HashHandling => 87
+[2025-11-05 13:26:46.64060] [118099] [info] HealthMatters => 88
+[2025-11-05 13:26:46.64062] [118099] [info] HowToBuildPerl => 89
+[2025-11-05 13:26:46.64063] [118099] [info] IO => 97
+[2025-11-05 13:26:46.64065] [118099] [info] IRI => 101
+[2025-11-05 13:26:46.64066] [118099] [info] ImageStuff => 93
+[2025-11-05 13:26:46.64068] [118099] [info] InlineStuff => 94
+[2025-11-05 13:26:46.64069] [118099] [info] InstallationMatters => 95
+[2025-11-05 13:26:46.64071] [118099] [info] InterestingModules => 96
+[2025-11-05 13:26:46.64072] [118099] [info] IoLayers => 98
+[2025-11-05 13:26:46.64074] [118099] [info] IoT => 99
+[2025-11-05 13:26:46.64075] [118099] [info] IpC => 100
+[2025-11-05 13:26:46.64077] [118099] [info] IteratorStuff => 102
+[2025-11-05 13:26:46.64078] [118099] [info] JavaScript => 103
+[2025-11-05 13:26:46.64080] [118099] [info] JsonStuff => 104
+[2025-11-05 13:26:46.64082] [118099] [info] KohaLibrary => 105
+[2025-11-05 13:26:46.64083] [118099] [info] LaTeX => 107
+[2025-11-05 13:26:46.64084] [118099] [info] LargeLanguageModels => 106
+[2025-11-05 13:26:46.64086] [118099] [info] LibVirt => 108
+[2025-11-05 13:26:46.64087] [118099] [info] LicenceStuff => 109
+[2025-11-05 13:26:46.64089] [118099] [info] LinguaStuff => 110
+[2025-11-05 13:26:46.64090] [118099] [info] LocaleStuff => 111
+[2025-11-05 13:26:46.64092] [118099] [info] LoggingStuff => 112
+[2025-11-05 13:26:46.64093] [118099] [info] MailingLists => 113
+[2025-11-05 13:26:46.64095] [118099] [info] MariaDB => 114
+[2025-11-05 13:26:46.64096] [118099] [info] MarkdownHandling => 115
+[2025-11-05 13:26:46.64098] [118099] [info] Marpa => 116
+[2025-11-05 13:26:46.64099] [118099] [info] MathsLibraries => 117
+[2025-11-05 13:26:46.64101] [118099] [info] MeasureMetrics => 118
+[2025-11-05 13:26:46.64102] [118099] [info] MemoryUsage => 119
+[2025-11-05 13:26:46.64104] [118099] [info] MetaCurator => 1
+[2025-11-05 13:26:46.64105] [118099] [info] MidiControllers => 120
+[2025-11-05 13:26:46.64107] [118099] [info] MobilePhones => 121
+[2025-11-05 13:26:46.64108] [118099] [info] ModernPerl => 122
+[2025-11-05 13:26:46.64110] [118099] [info] ModuleBuilding => 123
+[2025-11-05 13:26:46.64111] [118099] [info] ModulePlugins => 124
+[2025-11-05 13:26:46.64113] [118099] [info] MoneyMatters => 125
+[2025-11-05 13:26:46.64114] [118099] [info] MusicStuff => 126
+[2025-11-05 13:26:46.64116] [118099] [info] NetworkProgramming => 127
+[2025-11-05 13:26:46.64117] [118099] [info] NewOperators => 128
+[2025-11-05 13:26:46.64119] [118099] [info] OfficeFiles => 129
+[2025-11-05 13:26:46.64120] [118099] [info] OpenCloud => 130
+[2025-11-05 13:26:46.64122] [118099] [info] OpenGL => 131
+[2025-11-05 13:26:46.64123] [118099] [info] OpenGraphProtocol => 132
+[2025-11-05 13:26:46.64125] [118099] [info] OpenTelemetry => 133
+[2025-11-05 13:26:46.64126] [118099] [info] OrgDocHandling => 134
+[2025-11-05 13:26:46.64128] [118099] [info] POSIX => 149
+[2025-11-05 13:26:46.64129] [118099] [info] PacketCapture => 135
+[2025-11-05 13:26:46.64131] [118099] [info] ParallelProcessing => 136
+[2025-11-05 13:26:46.64132] [118099] [info] ParameterTypes => 137
+[2025-11-05 13:26:46.64134] [118099] [info] ParsingStuff => 138
+[2025-11-05 13:26:46.64135] [118099] [info] PdfStuff => 139
+[2025-11-05 13:26:46.64137] [118099] [info] Perl V7 => 140
+[2025-11-05 13:26:46.64138] [118099] [info] PerlDeltas => 141
+[2025-11-05 13:26:46.64140] [118099] [info] PerlDistros => 142
+[2025-11-05 13:26:46.64142] [118099] [info] PerlDocumentation => 143
+[2025-11-05 13:26:46.64143] [118099] [info] PerlInternals => 144
+[2025-11-05 13:26:46.64144] [118099] [info] PhoneNumbers => 145
+[2025-11-05 13:26:46.64146] [118099] [info] PhpStuff => 146
+[2025-11-05 13:26:46.64147] [118099] [info] PipeLines => 147
+[2025-11-05 13:26:46.64149] [118099] [info] PodHandling => 148
+[2025-11-05 13:26:46.64150] [118099] [info] ProfilingCode => 150
+[2025-11-05 13:26:46.64152] [118099] [info] ProjectManagement => 151
+[2025-11-05 13:26:46.64153] [118099] [info] ProperNames => 152
+[2025-11-05 13:26:46.64155] [118099] [info] QrCodes => 153
+[2025-11-05 13:26:46.64156] [118099] [info] RSS => 163
+[2025-11-05 13:26:46.64158] [118099] [info] RaspberryPi => 154
+[2025-11-05 13:26:46.64159] [118099] [info] RedBlackTrees => 155
+[2025-11-05 13:26:46.64161] [118099] [info] ReferenceStuff => 156
+[2025-11-05 13:26:46.64162] [118099] [info] RegexpStuff => 157
+[2025-11-05 13:26:46.64164] [118099] [info] RegistrySystemTesting => 158
+[2025-11-05 13:26:46.64165] [118099] [info] RemoteDesktops => 159
+[2025-11-05 13:26:46.64167] [118099] [info] RequestTracker => 160
+[2025-11-05 13:26:46.64168] [118099] [info] RestfulInterface => 161
+[2025-11-05 13:26:46.64170] [118099] [info] RotateLogFiles => 162
+[2025-11-05 13:26:46.64171] [118099] [info] SSH => 175
+[2025-11-05 13:26:46.64173] [118099] [info] SampleCode => 164
+[2025-11-05 13:26:46.64174] [118099] [info] SandBoxes => 165
+[2025-11-05 13:26:46.64176] [118099] [info] ScreenStuff => 166
+[2025-11-05 13:26:46.64177] [118099] [info] SecurityPolicy => 167
+[2025-11-05 13:26:46.64179] [118099] [info] SeismicAnalysis => 168
+[2025-11-05 13:26:46.64180] [118099] [info] SeismicOS => 169
+[2025-11-05 13:26:46.64182] [118099] [info] SetStuff => 170
+[2025-11-05 13:26:46.64183] [118099] [info] SlackWare => 171
+[2025-11-05 13:26:46.64185] [118099] [info] SocialMedia => 172
+[2025-11-05 13:26:46.64186] [118099] [info] SortModules => 173
+[2025-11-05 13:26:46.64188] [118099] [info] SpreadsheetStuff => 174
+[2025-11-05 13:26:46.64189] [118099] [info] StaticSiteGenerators => 176
+[2025-11-05 13:26:46.64191] [118099] [info] StatisticsStuff => 177
+[2025-11-05 13:26:46.64192] [118099] [info] StreamingMedia => 178
+[2025-11-05 13:26:46.64194] [118099] [info] StringStuff => 179
+[2025-11-05 13:26:46.64195] [118099] [info] SwitchStatements => 180
+[2025-11-05 13:26:46.64197] [118099] [info] SystemInfo => 181
+[2025-11-05 13:26:46.64198] [118099] [info] SystemMonitoring => 182
+[2025-11-05 13:26:46.64200] [118099] [info] TCP/IP => 183
+[2025-11-05 13:26:46.64201] [118099] [info] TemplateStuff => 184
+[2025-11-05 13:26:46.64203] [118099] [info] TestingHelp => 185
+[2025-11-05 13:26:46.64204] [118099] [info] TextAnalysisAndFormatting => 186
+[2025-11-05 13:26:46.64206] [118099] [info] TiddlyWikis => 187
+[2025-11-05 13:26:46.64207] [118099] [info] TrueTypeFonts => 188
+[2025-11-05 13:26:46.64209] [118099] [info] UTF8 => 194
+[2025-11-05 13:26:46.64210] [118099] [info] UUID => 195
+[2025-11-05 13:26:46.64212] [118099] [info] UninstallModule => 189
+[2025-11-05 13:26:46.64213] [118099] [info] UnixWare => 190
+[2025-11-05 13:26:46.64215] [118099] [info] UserInfo => 191
+[2025-11-05 13:26:46.64217] [118099] [info] UserInput => 192
+[2025-11-05 13:26:46.64219] [118099] [info] UsernamePassword => 193
+[2025-11-05 13:26:46.64220] [118099] [info] VersionWare => 196
+[2025-11-05 13:26:46.64222] [118099] [info] VirtualMachines => 197
+[2025-11-05 13:26:46.64223] [118099] [info] WantArray => 198
+[2025-11-05 13:26:46.64225] [118099] [info] WebPush => 199
+[2025-11-05 13:26:46.64226] [118099] [info] WebSecurity => 200
+[2025-11-05 13:26:46.64228] [118099] [info] WebServices => 201
+[2025-11-05 13:26:46.64229] [118099] [info] WebSites => 202
+[2025-11-05 13:26:46.64231] [118099] [info] WeirdAndWonderful => 203
+[2025-11-05 13:26:46.64232] [118099] [info] WikiStuff => 204
+[2025-11-05 13:26:46.64233] [118099] [info] XDGBaseDirectorySpecification => 205
+[2025-11-05 13:26:46.64235] [118099] [info] XML => 206
+[2025-11-05 13:26:46.64237] [118099] [info] XS => 207
+[2025-11-05 13:26:46.64238] [118099] [info] XWindowsStuff => 208
+[2025-11-05 13:26:46.64240] [118099] [info] YamlStuff => 209
+[2025-11-05 13:26:46.64241] [118099] [info] ZMQ => 210
+[2025-11-05 13:26:46.64243] [118099] [info] builtins => 30
+[2025-11-05 13:26:46.64244] [118099] [info] cron => 51
+[2025-11-05 13:26:46.64246] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64269] [118099] [info] New topic record. id: 2. title: ABeCeDarian
+[2025-11-05 13:26:46.64275] [118099] [info] Called format_text(). title: ABeCeDarian. id: 20000
+[2025-11-05 13:26:46.64277] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64279] [118099] [info] New topic record. id: 3. title: Acronyms
+[2025-11-05 13:26:46.64281] [118099] [info] Called format_text(). title: Acronyms. id: 30000
+[2025-11-05 13:26:46.64283] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64285] [118099] [info] New topic record. id: 4. title: AdminUtils
+[2025-11-05 13:26:46.64287] [118099] [info] Called format_text(). title: AdminUtils. id: 40000
+[2025-11-05 13:26:46.64289] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64290] [118099] [info] New topic record. id: 5. title: AdventPlanet
+[2025-11-05 13:26:46.64292] [118099] [info] Called format_text(). title: AdventPlanet. id: 50000
+[2025-11-05 13:26:46.64294] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64296] [118099] [info] New topic record. id: 6. title: AiEngines
+[2025-11-05 13:26:46.64298] [118099] [info] Called format_text(). title: AiEngines. id: 60000
+[2025-11-05 13:26:46.64300] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64301] [118099] [info] New topic record. id: 7. title: AlgorithmicStuff
+[2025-11-05 13:26:46.64303] [118099] [info] Called format_text(). title: AlgorithmicStuff. id: 70000
+[2025-11-05 13:26:46.64305] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64306] [118099] [info] New topic record. id: 8. title: AnimationStuff
+[2025-11-05 13:26:46.64309] [118099] [info] Called format_text(). title: AnimationStuff. id: 80000
+[2025-11-05 13:26:46.64310] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64312] [118099] [info] New topic record. id: 9. title: AntiVirusStuff
+[2025-11-05 13:26:46.64314] [118099] [info] Called format_text(). title: AntiVirusStuff. id: 90000
+[2025-11-05 13:26:46.64316] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64317] [118099] [info] New topic record. id: 10. title: ApacheStuff
+[2025-11-05 13:26:46.64319] [118099] [info] Called format_text(). title: ApacheStuff. id: 100000
+[2025-11-05 13:26:46.64321] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64323] [118099] [info] New topic record. id: 11. title: AppleMac
+[2025-11-05 13:26:46.64325] [118099] [info] Called format_text(). title: AppleMac. id: 110000
+[2025-11-05 13:26:46.64326] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64328] [118099] [info] New topic record. id: 12. title: ArchiveFiles
+[2025-11-05 13:26:46.64344] [118099] [info] Called format_text(). title: ArchiveFiles. id: 120000
+[2025-11-05 13:26:46.64369] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64371] [118099] [info] New topic record. id: 13. title: ArrayHandling
+[2025-11-05 13:26:46.64374] [118099] [info] Called format_text(). title: ArrayHandling. id: 130000
+[2025-11-05 13:26:46.64376] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64378] [118099] [info] New topic record. id: 14. title: AsciiCodes
+[2025-11-05 13:26:46.64380] [118099] [info] Called format_text(). title: AsciiCodes. id: 140000
+[2025-11-05 13:26:46.64382] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64384] [118099] [info] New topic record. id: 15. title: ASN
+[2025-11-05 13:26:46.64386] [118099] [info] Called format_text(). title: ASN. id: 150000
+[2025-11-05 13:26:46.64388] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64390] [118099] [info] New topic record. id: 16. title: AssemblerX86
+[2025-11-05 13:26:46.64392] [118099] [info] Called format_text(). title: AssemblerX86. id: 160000
+[2025-11-05 13:26:46.64393] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64395] [118099] [info] New topic record. id: 17. title: AudioVisual
+[2025-11-05 13:26:46.64397] [118099] [info] Called format_text(). title: AudioVisual. id: 170000
+[2025-11-05 13:26:46.64399] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64400] [118099] [info] New topic record. id: 18. title: AutoCAD
+[2025-11-05 13:26:46.64402] [118099] [info] Called format_text(). title: AutoCAD. id: 180000
+[2025-11-05 13:26:46.64404] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64405] [118099] [info] New topic record. id: 19. title: AutomatedBackups
+[2025-11-05 13:26:46.64407] [118099] [info] Called format_text(). title: AutomatedBackups. id: 190000
+[2025-11-05 13:26:46.64409] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64411] [118099] [info] New topic record. id: 20. title: BarCodes
+[2025-11-05 13:26:46.64413] [118099] [info] Called format_text(). title: BarCodes. id: 200000
+[2025-11-05 13:26:46.64414] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64416] [118099] [info] New topic record. id: 21. title: BenchmarkingTools
+[2025-11-05 13:26:46.64418] [118099] [info] Called format_text(). title: BenchmarkingTools. id: 210000
+[2025-11-05 13:26:46.64420] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64421] [118099] [info] New topic record. id: 22. title: BibliographicStuff
+[2025-11-05 13:26:46.64423] [118099] [info] Called format_text(). title: BibliographicStuff. id: 220000
+[2025-11-05 13:26:46.64425] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64426] [118099] [info] New topic record. id: 23. title: BibTeX
+[2025-11-05 13:26:46.64428] [118099] [info] Called format_text(). title: BibTeX. id: 230000
+[2025-11-05 13:26:46.64430] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64432] [118099] [info] New topic record. id: 24. title: BillOfMaterials
+[2025-11-05 13:26:46.64434] [118099] [info] Called format_text(). title: BillOfMaterials. id: 240000
+[2025-11-05 13:26:46.64435] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64437] [118099] [info] New topic record. id: 25. title: BioInformatics
+[2025-11-05 13:26:46.64439] [118099] [info] Called format_text(). title: BioInformatics. id: 250000
+[2025-11-05 13:26:46.64440] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64442] [118099] [info] New topic record. id: 26. title: BlockChain
+[2025-11-05 13:26:46.64444] [118099] [info] Called format_text(). title: BlockChain. id: 260000
+[2025-11-05 13:26:46.64446] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64447] [118099] [info] New topic record. id: 27. title: BoneMarrrowDonorRegistry
+[2025-11-05 13:26:46.64449] [118099] [info] Called format_text(). title: BoneMarrrowDonorRegistry. id: 270000
+[2025-11-05 13:26:46.64451] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64453] [118099] [info] New topic record. id: 28. title: BrowserStuff
+[2025-11-05 13:26:46.64455] [118099] [info] Called format_text(). title: BrowserStuff. id: 280000
+[2025-11-05 13:26:46.64456] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64459] [118099] [info] New topic record. id: 29. title: BsdWare
+[2025-11-05 13:26:46.64461] [118099] [info] Called format_text(). title: BsdWare. id: 290000
+[2025-11-05 13:26:46.64463] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64464] [118099] [info] New topic record. id: 30. title: builtins
+[2025-11-05 13:26:46.64466] [118099] [info] Called format_text(). title: builtins. id: 300000
+[2025-11-05 13:26:46.64468] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64470] [118099] [info] New topic record. id: 31. title: BusinessApps
+[2025-11-05 13:26:46.64472] [118099] [info] Called format_text(). title: BusinessApps. id: 310000
+[2025-11-05 13:26:46.64473] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64475] [118099] [info] New topic record. id: 32. title: CachingStuff
+[2025-11-05 13:26:46.64477] [118099] [info] Called format_text(). title: CachingStuff. id: 320000
+[2025-11-05 13:26:46.64478] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64480] [118099] [info] New topic record. id: 33. title: CaptchaStuff
+[2025-11-05 13:26:46.64482] [118099] [info] Called format_text(). title: CaptchaStuff. id: 330000
+[2025-11-05 13:26:46.64484] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64485] [118099] [info] New topic record. id: 34. title: ChangeLog
+[2025-11-05 13:26:46.64488] [118099] [info] Called format_text(). title: ChangeLog. id: 340000
+[2025-11-05 13:26:46.64489] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64491] [118099] [info] New topic record. id: 35. title: ChangesFiles
+[2025-11-05 13:26:46.64493] [118099] [info] Called format_text(). title: ChangesFiles. id: 350000
+[2025-11-05 13:26:46.64495] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64496] [118099] [info] New topic record. id: 36. title: ChartingAndPlotting
+[2025-11-05 13:26:46.64498] [118099] [info] Called format_text(). title: ChartingAndPlotting. id: 360000
+[2025-11-05 13:26:46.64500] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64501] [118099] [info] New topic record. id: 37. title: ChatBots
+[2025-11-05 13:26:46.64503] [118099] [info] Called format_text(). title: ChatBots. id: 370000
+[2025-11-05 13:26:46.64505] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64507] [118099] [info] New topic record. id: 38. title: ChemistryStuff
+[2025-11-05 13:26:46.64509] [118099] [info] Called format_text(). title: ChemistryStuff. id: 380000
+[2025-11-05 13:26:46.64510] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64512] [118099] [info] New topic record. id: 39. title: ChildProcesses
+[2025-11-05 13:26:46.64514] [118099] [info] Called format_text(). title: ChildProcesses. id: 390000
+[2025-11-05 13:26:46.64515] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64517] [118099] [info] New topic record. id: 40. title: ClassStuff
+[2025-11-05 13:26:46.64519] [118099] [info] Called format_text(). title: ClassStuff. id: 400000
+[2025-11-05 13:26:46.64521] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64522] [118099] [info] New topic record. id: 41. title: ClipBoard
+[2025-11-05 13:26:46.64524] [118099] [info] Called format_text(). title: ClipBoard. id: 410000
+[2025-11-05 13:26:46.64526] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64528] [118099] [info] New topic record. id: 42. title: CodeTidyingCode
+[2025-11-05 13:26:46.64529] [118099] [info] Called format_text(). title: CodeTidyingCode. id: 420000
+[2025-11-05 13:26:46.64531] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64533] [118099] [info] New topic record. id: 43. title: CodingStyle
+[2025-11-05 13:26:46.64535] [118099] [info] Called format_text(). title: CodingStyle. id: 430000
+[2025-11-05 13:26:46.64536] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64538] [118099] [info] New topic record. id: 44. title: Color
+[2025-11-05 13:26:46.64550] [118099] [info] Called format_text(). title: Color. id: 440000
+[2025-11-05 13:26:46.64567] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64569] [118099] [info] New topic record. id: 45. title: CommandLineStuff
+[2025-11-05 13:26:46.64582] [118099] [info] Called format_text(). title: CommandLineStuff. id: 450000
+[2025-11-05 13:26:46.64599] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64601] [118099] [info] New topic record. id: 46. title: ConfigFiles
+[2025-11-05 13:26:46.64603] [118099] [info] Called format_text(). title: ConfigFiles. id: 460000
+[2025-11-05 13:26:46.64606] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64607] [118099] [info] New topic record. id: 47. title: ConstantStuff
+[2025-11-05 13:26:46.64610] [118099] [info] Called format_text(). title: ConstantStuff. id: 470000
+[2025-11-05 13:26:46.64611] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64613] [118099] [info] New topic record. id: 48. title: Corinna
+[2025-11-05 13:26:46.64615] [118099] [info] Called format_text(). title: Corinna. id: 480000
+[2025-11-05 13:26:46.64617] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64618] [118099] [info] New topic record. id: 49. title: CPAN
+[2025-11-05 13:26:46.64634] [118099] [info] Called format_text(). title: CPAN. id: 490000
+[2025-11-05 13:26:46.64657] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64659] [118099] [info] New topic record. id: 50. title: CpanFile
+[2025-11-05 13:26:46.64663] [118099] [info] Called format_text(). title: CpanFile. id: 500000
+[2025-11-05 13:26:46.64668] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64669] [118099] [info] New topic record. id: 51. title: cron
+[2025-11-05 13:26:46.64672] [118099] [info] Called format_text(). title: cron. id: 510000
+[2025-11-05 13:26:46.64673] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64675] [118099] [info] New topic record. id: 52. title: CryptoStuff
+[2025-11-05 13:26:46.64702] [118099] [info] Called format_text(). title: CryptoStuff. id: 520000
+[2025-11-05 13:26:46.64740] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64742] [118099] [info] New topic record. id: 53. title: CssHandling
+[2025-11-05 13:26:46.64745] [118099] [info] Called format_text(). title: CssHandling. id: 530000
+[2025-11-05 13:26:46.64748] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64749] [118099] [info] New topic record. id: 54. title: DatabaseAndSQL
+[2025-11-05 13:26:46.64789] [118099] [info] Called format_text(). title: DatabaseAndSQL. id: 540000
+[2025-11-05 13:26:46.64843] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64846] [118099] [info] New topic record. id: 55. title: DataCleaning
+[2025-11-05 13:26:46.64852] [118099] [info] Called format_text(). title: DataCleaning. id: 550000
+[2025-11-05 13:26:46.64862] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64864] [118099] [info] New topic record. id: 56. title: DataTraversal
+[2025-11-05 13:26:46.64915] [118099] [info] Called format_text(). title: DataTraversal. id: 560000
+[2025-11-05 13:26:46.64989] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.64992] [118099] [info] New topic record. id: 57. title: DataTypes
+[2025-11-05 13:26:46.64995] [118099] [info] Called format_text(). title: DataTypes. id: 570000
+[2025-11-05 13:26:46.64998] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65000] [118099] [info] New topic record. id: 58. title: DataValidation
+[2025-11-05 13:26:46.65002] [118099] [info] Called format_text(). title: DataValidation. id: 580000
+[2025-11-05 13:26:46.65005] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65006] [118099] [info] New topic record. id: 59. title: DatesAndTimes
+[2025-11-05 13:26:46.65026] [118099] [info] Called format_text(). title: DatesAndTimes. id: 590000
+[2025-11-05 13:26:46.65052] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65055] [118099] [info] New topic record. id: 60. title: DebianOS
+[2025-11-05 13:26:46.65058] [118099] [info] Called format_text(). title: DebianOS. id: 600000
+[2025-11-05 13:26:46.65063] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65065] [118099] [info] New topic record. id: 61. title: DebuggingStuff
+[2025-11-05 13:26:46.65068] [118099] [info] Called format_text(). title: DebuggingStuff. id: 610000
+[2025-11-05 13:26:46.65070] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65071] [118099] [info] New topic record. id: 62. title: DFA
+[2025-11-05 13:26:46.65073] [118099] [info] Called format_text(). title: DFA. id: 620000
+[2025-11-05 13:26:46.65075] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65076] [118099] [info] New topic record. id: 63. title: DnsStuff
+[2025-11-05 13:26:46.65078] [118099] [info] Called format_text(). title: DnsStuff. id: 630000
+[2025-11-05 13:26:46.65080] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65082] [118099] [info] New topic record. id: 64. title: DocumentationManagement
+[2025-11-05 13:26:46.65084] [118099] [info] Called format_text(). title: DocumentationManagement. id: 640000
+[2025-11-05 13:26:46.65086] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65087] [118099] [info] New topic record. id: 65. title: DomainNames
+[2025-11-05 13:26:46.65089] [118099] [info] Called format_text(). title: DomainNames. id: 650000
+[2025-11-05 13:26:46.65091] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65092] [118099] [info] New topic record. id: 66. title: EBookHandling
+[2025-11-05 13:26:46.65096] [118099] [info] Called format_text(). title: EBookHandling. id: 660000
+[2025-11-05 13:26:46.65100] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65102] [118099] [info] New topic record. id: 67. title: EditorConfigFiles
+[2025-11-05 13:26:46.65104] [118099] [info] Called format_text(). title: EditorConfigFiles. id: 670000
+[2025-11-05 13:26:46.65106] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65108] [118099] [info] New topic record. id: 68. title: EmailStuff
+[2025-11-05 13:26:46.65110] [118099] [info] Called format_text(). title: EmailStuff. id: 680000
+[2025-11-05 13:26:46.65111] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65113] [118099] [info] New topic record. id: 69. title: EnterpriseApps
+[2025-11-05 13:26:46.65115] [118099] [info] Called format_text(). title: EnterpriseApps. id: 690000
+[2025-11-05 13:26:46.65117] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65118] [118099] [info] New topic record. id: 70. title: EnumStuff
+[2025-11-05 13:26:46.65120] [118099] [info] Called format_text(). title: EnumStuff. id: 700000
+[2025-11-05 13:26:46.65122] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65124] [118099] [info] New topic record. id: 71. title: EventStuff
+[2025-11-05 13:26:46.65126] [118099] [info] Called format_text(). title: EventStuff. id: 710000
+[2025-11-05 13:26:46.65127] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65129] [118099] [info] New topic record. id: 72. title: ExceptionHandling
+[2025-11-05 13:26:46.65131] [118099] [info] Called format_text(). title: ExceptionHandling. id: 720000
+[2025-11-05 13:26:46.65133] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65134] [118099] [info] New topic record. id: 73. title: ExportHandling
+[2025-11-05 13:26:46.65137] [118099] [info] Called format_text(). title: ExportHandling. id: 730000
+[2025-11-05 13:26:46.65138] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65140] [118099] [info] New topic record. id: 74. title: ExtensibleProvisioningProtocol
+[2025-11-05 13:26:46.65142] [118099] [info] Called format_text(). title: ExtensibleProvisioningProtocol. id: 740000
+[2025-11-05 13:26:46.65144] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65145] [118099] [info] New topic record. id: 75. title: FeaturesAndPragmas
+[2025-11-05 13:26:46.65147] [118099] [info] Called format_text(). title: FeaturesAndPragmas. id: 750000
+[2025-11-05 13:26:46.65149] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65150] [118099] [info] New topic record. id: 76. title: FileHandling
+[2025-11-05 13:26:46.65153] [118099] [info] Called format_text(). title: FileHandling. id: 760000
+[2025-11-05 13:26:46.65154] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65156] [118099] [info] New topic record. id: 77. title: FindDependencies
+[2025-11-05 13:26:46.65158] [118099] [info] Called format_text(). title: FindDependencies. id: 770000
+[2025-11-05 13:26:46.65160] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65161] [118099] [info] New topic record. id: 78. title: Games
+[2025-11-05 13:26:46.65163] [118099] [info] Called format_text(). title: Games. id: 780000
+[2025-11-05 13:26:46.65165] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65166] [118099] [info] New topic record. id: 79. title: GenealogyStuff
+[2025-11-05 13:26:46.65168] [118099] [info] Called format_text(). title: GenealogyStuff. id: 790000
+[2025-11-05 13:26:46.65170] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65172] [118099] [info] New topic record. id: 80. title: GeographicStuff
+[2025-11-05 13:26:46.65174] [118099] [info] Called format_text(). title: GeographicStuff. id: 800000
+[2025-11-05 13:26:46.65176] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65177] [118099] [info] New topic record. id: 81. title: GitStuff
+[2025-11-05 13:26:46.65179] [118099] [info] Called format_text(). title: GitStuff. id: 810000
+[2025-11-05 13:26:46.65181] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65182] [118099] [info] New topic record. id: 82. title: GnuPG
+[2025-11-05 13:26:46.65184] [118099] [info] Called format_text(). title: GnuPG. id: 820000
+[2025-11-05 13:26:46.65186] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65188] [118099] [info] New topic record. id: 83. title: GoogleStuff
+[2025-11-05 13:26:46.65189] [118099] [info] Called format_text(). title: GoogleStuff. id: 830000
+[2025-11-05 13:26:46.65191] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65193] [118099] [info] New topic record. id: 84. title: GrammarProcessing
+[2025-11-05 13:26:46.65195] [118099] [info] Called format_text(). title: GrammarProcessing. id: 840000
+[2025-11-05 13:26:46.65196] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65198] [118099] [info] New topic record. id: 85. title: Graphs
+[2025-11-05 13:26:46.65200] [118099] [info] Called format_text(). title: Graphs. id: 850000
+[2025-11-05 13:26:46.65202] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65203] [118099] [info] New topic record. id: 86. title: HardwareStuff
+[2025-11-05 13:26:46.65205] [118099] [info] Called format_text(). title: HardwareStuff. id: 860000
+[2025-11-05 13:26:46.65207] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65209] [118099] [info] New topic record. id: 87. title: HashHandling
+[2025-11-05 13:26:46.65211] [118099] [info] Called format_text(). title: HashHandling. id: 870000
+[2025-11-05 13:26:46.65212] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65214] [118099] [info] New topic record. id: 88. title: HealthMatters
+[2025-11-05 13:26:46.65216] [118099] [info] Called format_text(). title: HealthMatters. id: 880000
+[2025-11-05 13:26:46.65218] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65219] [118099] [info] New topic record. id: 89. title: HowToBuildPerl
+[2025-11-05 13:26:46.65222] [118099] [info] Called format_text(). title: HowToBuildPerl. id: 890000
+[2025-11-05 13:26:46.65223] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65225] [118099] [info] New topic record. id: 90. title: HTMLHandling
+[2025-11-05 13:26:46.65227] [118099] [info] Called format_text(). title: HTMLHandling. id: 900000
+[2025-11-05 13:26:46.65228] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65230] [118099] [info] New topic record. id: 91. title: HTTPHandling
+[2025-11-05 13:26:46.65232] [118099] [info] Called format_text(). title: HTTPHandling. id: 910000
+[2025-11-05 13:26:46.65234] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65235] [118099] [info] New topic record. id: 92. title: HTTPServers
+[2025-11-05 13:26:46.65237] [118099] [info] Called format_text(). title: HTTPServers. id: 920000
+[2025-11-05 13:26:46.65239] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65241] [118099] [info] New topic record. id: 93. title: ImageStuff
+[2025-11-05 13:26:46.65243] [118099] [info] Called format_text(). title: ImageStuff. id: 930000
+[2025-11-05 13:26:46.65244] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65246] [118099] [info] New topic record. id: 94. title: InlineStuff
+[2025-11-05 13:26:46.65248] [118099] [info] Called format_text(). title: InlineStuff. id: 940000
+[2025-11-05 13:26:46.65249] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65251] [118099] [info] New topic record. id: 95. title: InstallationMatters
+[2025-11-05 13:26:46.65253] [118099] [info] Called format_text(). title: InstallationMatters. id: 950000
+[2025-11-05 13:26:46.65255] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65256] [118099] [info] New topic record. id: 96. title: InterestingModules
+[2025-11-05 13:26:46.65259] [118099] [info] Called format_text(). title: InterestingModules. id: 960000
+[2025-11-05 13:26:46.65260] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65262] [118099] [info] New topic record. id: 97. title: IO
+[2025-11-05 13:26:46.65264] [118099] [info] Called format_text(). title: IO. id: 970000
+[2025-11-05 13:26:46.65266] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65267] [118099] [info] New topic record. id: 98. title: IoLayers
+[2025-11-05 13:26:46.65269] [118099] [info] Called format_text(). title: IoLayers. id: 980000
+[2025-11-05 13:26:46.65271] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65272] [118099] [info] New topic record. id: 99. title: IoT
+[2025-11-05 13:26:46.65274] [118099] [info] Called format_text(). title: IoT. id: 990000
+[2025-11-05 13:26:46.65276] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65278] [118099] [info] New topic record. id: 100. title: IpC
+[2025-11-05 13:26:46.65280] [118099] [info] Called format_text(). title: IpC. id: 1000000
+[2025-11-05 13:26:46.65281] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65283] [118099] [info] New topic record. id: 101. title: IRI
+[2025-11-05 13:26:46.65285] [118099] [info] Called format_text(). title: IRI. id: 1010000
+[2025-11-05 13:26:46.65286] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65288] [118099] [info] New topic record. id: 102. title: IteratorStuff
+[2025-11-05 13:26:46.65290] [118099] [info] Called format_text(). title: IteratorStuff. id: 1020000
+[2025-11-05 13:26:46.65292] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65294] [118099] [info] New topic record. id: 103. title: JavaScript
+[2025-11-05 13:26:46.65298] [118099] [info] Called format_text(). title: JavaScript. id: 1030000
+[2025-11-05 13:26:46.65304] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65306] [118099] [info] New topic record. id: 104. title: JsonStuff
+[2025-11-05 13:26:46.65316] [118099] [info] Called format_text(). title: JsonStuff. id: 1040000
+[2025-11-05 13:26:46.65329] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65331] [118099] [info] New topic record. id: 105. title: KohaLibrary
+[2025-11-05 13:26:46.65334] [118099] [info] Called format_text(). title: KohaLibrary. id: 1050000
+[2025-11-05 13:26:46.65336] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65337] [118099] [info] New topic record. id: 106. title: LargeLanguageModels
+[2025-11-05 13:26:46.65340] [118099] [info] Called format_text(). title: LargeLanguageModels. id: 1060000
+[2025-11-05 13:26:46.65341] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65343] [118099] [info] New topic record. id: 107. title: LaTeX
+[2025-11-05 13:26:46.65345] [118099] [info] Called format_text(). title: LaTeX. id: 1070000
+[2025-11-05 13:26:46.65347] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65348] [118099] [info] New topic record. id: 108. title: LibVirt
+[2025-11-05 13:26:46.65350] [118099] [info] Called format_text(). title: LibVirt. id: 1080000
+[2025-11-05 13:26:46.65352] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65353] [118099] [info] New topic record. id: 109. title: LicenceStuff
+[2025-11-05 13:26:46.65355] [118099] [info] Called format_text(). title: LicenceStuff. id: 1090000
+[2025-11-05 13:26:46.65357] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65359] [118099] [info] New topic record. id: 110. title: LinguaStuff
+[2025-11-05 13:26:46.65361] [118099] [info] Called format_text(). title: LinguaStuff. id: 1100000
+[2025-11-05 13:26:46.65363] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65364] [118099] [info] New topic record. id: 111. title: LocaleStuff
+[2025-11-05 13:26:46.65372] [118099] [info] Called format_text(). title: LocaleStuff. id: 1110000
+[2025-11-05 13:26:46.65382] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65384] [118099] [info] New topic record. id: 112. title: LoggingStuff
+[2025-11-05 13:26:46.65386] [118099] [info] Called format_text(). title: LoggingStuff. id: 1120000
+[2025-11-05 13:26:46.65388] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65390] [118099] [info] New topic record. id: 113. title: MailingLists
+[2025-11-05 13:26:46.65392] [118099] [info] Called format_text(). title: MailingLists. id: 1130000
+[2025-11-05 13:26:46.65393] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65395] [118099] [info] New topic record. id: 114. title: MariaDB
+[2025-11-05 13:26:46.65397] [118099] [info] Called format_text(). title: MariaDB. id: 1140000
+[2025-11-05 13:26:46.65399] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65400] [118099] [info] New topic record. id: 115. title: MarkdownHandling
+[2025-11-05 13:26:46.65402] [118099] [info] Called format_text(). title: MarkdownHandling. id: 1150000
+[2025-11-05 13:26:46.65404] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65406] [118099] [info] New topic record. id: 116. title: Marpa
+[2025-11-05 13:26:46.65407] [118099] [info] Called format_text(). title: Marpa. id: 1160000
+[2025-11-05 13:26:46.65410] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65411] [118099] [info] New topic record. id: 117. title: MathsLibraries
+[2025-11-05 13:26:46.65413] [118099] [info] Called format_text(). title: MathsLibraries. id: 1170000
+[2025-11-05 13:26:46.65415] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65417] [118099] [info] New topic record. id: 118. title: MeasureMetrics
+[2025-11-05 13:26:46.65419] [118099] [info] Called format_text(). title: MeasureMetrics. id: 1180000
+[2025-11-05 13:26:46.65420] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65422] [118099] [info] New topic record. id: 119. title: MemoryUsage
+[2025-11-05 13:26:46.65424] [118099] [info] Called format_text(). title: MemoryUsage. id: 1190000
+[2025-11-05 13:26:46.65425] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65427] [118099] [info] New topic record. id: 120. title: MidiControllers
+[2025-11-05 13:26:46.65429] [118099] [info] Called format_text(). title: MidiControllers. id: 1200000
+[2025-11-05 13:26:46.65431] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65432] [118099] [info] New topic record. id: 121. title: MobilePhones
+[2025-11-05 13:26:46.65436] [118099] [info] Called format_text(). title: MobilePhones. id: 1210000
+[2025-11-05 13:26:46.65440] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65442] [118099] [info] New topic record. id: 122. title: ModernPerl
+[2025-11-05 13:26:46.65444] [118099] [info] Called format_text(). title: ModernPerl. id: 1220000
+[2025-11-05 13:26:46.65446] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65447] [118099] [info] New topic record. id: 123. title: ModuleBuilding
+[2025-11-05 13:26:46.65449] [118099] [info] Called format_text(). title: ModuleBuilding. id: 1230000
+[2025-11-05 13:26:46.65451] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65453] [118099] [info] New topic record. id: 124. title: ModulePlugins
+[2025-11-05 13:26:46.65455] [118099] [info] Called format_text(). title: ModulePlugins. id: 1240000
+[2025-11-05 13:26:46.65457] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65458] [118099] [info] New topic record. id: 125. title: MoneyMatters
+[2025-11-05 13:26:46.65460] [118099] [info] Called format_text(). title: MoneyMatters. id: 1250000
+[2025-11-05 13:26:46.65462] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65463] [118099] [info] New topic record. id: 126. title: MusicStuff
+[2025-11-05 13:26:46.65465] [118099] [info] Called format_text(). title: MusicStuff. id: 1260000
+[2025-11-05 13:26:46.65467] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65468] [118099] [info] New topic record. id: 127. title: NetworkProgramming
+[2025-11-05 13:26:46.65479] [118099] [info] Called format_text(). title: NetworkProgramming. id: 1270000
+[2025-11-05 13:26:46.65495] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65497] [118099] [info] New topic record. id: 128. title: NewOperators
+[2025-11-05 13:26:46.65499] [118099] [info] Called format_text(). title: NewOperators. id: 1280000
+[2025-11-05 13:26:46.65502] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65504] [118099] [info] New topic record. id: 129. title: OfficeFiles
+[2025-11-05 13:26:46.65506] [118099] [info] Called format_text(). title: OfficeFiles. id: 1290000
+[2025-11-05 13:26:46.65507] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65509] [118099] [info] New topic record. id: 130. title: OpenCloud
+[2025-11-05 13:26:46.65511] [118099] [info] Called format_text(). title: OpenCloud. id: 1300000
+[2025-11-05 13:26:46.65513] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65514] [118099] [info] New topic record. id: 131. title: OpenGL
+[2025-11-05 13:26:46.65517] [118099] [info] Called format_text(). title: OpenGL. id: 1310000
+[2025-11-05 13:26:46.65518] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65520] [118099] [info] New topic record. id: 132. title: OpenGraphProtocol
+[2025-11-05 13:26:46.65524] [118099] [info] Called format_text(). title: OpenGraphProtocol. id: 1320000
+[2025-11-05 13:26:46.65530] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65531] [118099] [info] New topic record. id: 133. title: OpenTelemetry
+[2025-11-05 13:26:46.65534] [118099] [info] Called format_text(). title: OpenTelemetry. id: 1330000
+[2025-11-05 13:26:46.65536] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65537] [118099] [info] New topic record. id: 134. title: OrgDocHandling
+[2025-11-05 13:26:46.65539] [118099] [info] Called format_text(). title: OrgDocHandling. id: 1340000
+[2025-11-05 13:26:46.65541] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65543] [118099] [info] New topic record. id: 135. title: PacketCapture
+[2025-11-05 13:26:46.65545] [118099] [info] Called format_text(). title: PacketCapture. id: 1350000
+[2025-11-05 13:26:46.65546] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65548] [118099] [info] New topic record. id: 136. title: ParallelProcessing
+[2025-11-05 13:26:46.65550] [118099] [info] Called format_text(). title: ParallelProcessing. id: 1360000
+[2025-11-05 13:26:46.65552] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65553] [118099] [info] New topic record. id: 137. title: ParameterTypes
+[2025-11-05 13:26:46.65555] [118099] [info] Called format_text(). title: ParameterTypes. id: 1370000
+[2025-11-05 13:26:46.65557] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65558] [118099] [info] New topic record. id: 138. title: ParsingStuff
+[2025-11-05 13:26:46.65560] [118099] [info] Called format_text(). title: ParsingStuff. id: 1380000
+[2025-11-05 13:26:46.65562] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65564] [118099] [info] New topic record. id: 139. title: PdfStuff
+[2025-11-05 13:26:46.65579] [118099] [info] Called format_text(). title: PdfStuff. id: 1390000
+[2025-11-05 13:26:46.65598] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65601] [118099] [info] New topic record. id: 140. title: Perl V7
+[2025-11-05 13:26:46.65603] [118099] [info] Called format_text(). title: Perl V7. id: 1400000
+[2025-11-05 13:26:46.65605] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65607] [118099] [info] New topic record. id: 141. title: PerlDeltas
+[2025-11-05 13:26:46.65609] [118099] [info] Called format_text(). title: PerlDeltas. id: 1410000
+[2025-11-05 13:26:46.65611] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65612] [118099] [info] New topic record. id: 142. title: PerlDistros
+[2025-11-05 13:26:46.65615] [118099] [info] Called format_text(). title: PerlDistros. id: 1420000
+[2025-11-05 13:26:46.65616] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65618] [118099] [info] New topic record. id: 143. title: PerlDocumentation
+[2025-11-05 13:26:46.65620] [118099] [info] Called format_text(). title: PerlDocumentation. id: 1430000
+[2025-11-05 13:26:46.65621] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65623] [118099] [info] New topic record. id: 144. title: PerlInternals
+[2025-11-05 13:26:46.65625] [118099] [info] Called format_text(). title: PerlInternals. id: 1440000
+[2025-11-05 13:26:46.65627] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65628] [118099] [info] New topic record. id: 145. title: PhoneNumbers
+[2025-11-05 13:26:46.65630] [118099] [info] Called format_text(). title: PhoneNumbers. id: 1450000
+[2025-11-05 13:26:46.65632] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65634] [118099] [info] New topic record. id: 146. title: PhpStuff
+[2025-11-05 13:26:46.65636] [118099] [info] Called format_text(). title: PhpStuff. id: 1460000
+[2025-11-05 13:26:46.65637] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65639] [118099] [info] New topic record. id: 147. title: PipeLines
+[2025-11-05 13:26:46.65641] [118099] [info] Called format_text(). title: PipeLines. id: 1470000
+[2025-11-05 13:26:46.65643] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65644] [118099] [info] New topic record. id: 148. title: PodHandling
+[2025-11-05 13:26:46.65646] [118099] [info] Called format_text(). title: PodHandling. id: 1480000
+[2025-11-05 13:26:46.65648] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65649] [118099] [info] New topic record. id: 149. title: POSIX
+[2025-11-05 13:26:46.65651] [118099] [info] Called format_text(). title: POSIX. id: 1490000
+[2025-11-05 13:26:46.65653] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65654] [118099] [info] New topic record. id: 150. title: ProfilingCode
+[2025-11-05 13:26:46.65656] [118099] [info] Called format_text(). title: ProfilingCode. id: 1500000
+[2025-11-05 13:26:46.65659] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65660] [118099] [info] New topic record. id: 151. title: ProjectManagement
+[2025-11-05 13:26:46.65662] [118099] [info] Called format_text(). title: ProjectManagement. id: 1510000
+[2025-11-05 13:26:46.65664] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65666] [118099] [info] New topic record. id: 152. title: ProperNames
+[2025-11-05 13:26:46.65668] [118099] [info] Called format_text(). title: ProperNames. id: 1520000
+[2025-11-05 13:26:46.65669] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65671] [118099] [info] New topic record. id: 153. title: QrCodes
+[2025-11-05 13:26:46.65673] [118099] [info] Called format_text(). title: QrCodes. id: 1530000
+[2025-11-05 13:26:46.65674] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65676] [118099] [info] New topic record. id: 154. title: RaspberryPi
+[2025-11-05 13:26:46.65678] [118099] [info] Called format_text(). title: RaspberryPi. id: 1540000
+[2025-11-05 13:26:46.65680] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65681] [118099] [info] New topic record. id: 155. title: RedBlackTrees
+[2025-11-05 13:26:46.65683] [118099] [info] Called format_text(). title: RedBlackTrees. id: 1550000
+[2025-11-05 13:26:46.65685] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65686] [118099] [info] New topic record. id: 156. title: ReferenceStuff
+[2025-11-05 13:26:46.65688] [118099] [info] Called format_text(). title: ReferenceStuff. id: 1560000
+[2025-11-05 13:26:46.65690] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65691] [118099] [info] New topic record. id: 157. title: RegexpStuff
+[2025-11-05 13:26:46.65693] [118099] [info] Called format_text(). title: RegexpStuff. id: 1570000
+[2025-11-05 13:26:46.65695] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65697] [118099] [info] New topic record. id: 158. title: RegistrySystemTesting
+[2025-11-05 13:26:46.65699] [118099] [info] Called format_text(). title: RegistrySystemTesting. id: 1580000
+[2025-11-05 13:26:46.65700] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65702] [118099] [info] New topic record. id: 159. title: RemoteDesktops
+[2025-11-05 13:26:46.65704] [118099] [info] Called format_text(). title: RemoteDesktops. id: 1590000
+[2025-11-05 13:26:46.65706] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65707] [118099] [info] New topic record. id: 160. title: RequestTracker
+[2025-11-05 13:26:46.65710] [118099] [info] Called format_text(). title: RequestTracker. id: 1600000
+[2025-11-05 13:26:46.65711] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65713] [118099] [info] New topic record. id: 161. title: RestfulInterface
+[2025-11-05 13:26:46.65715] [118099] [info] Called format_text(). title: RestfulInterface. id: 1610000
+[2025-11-05 13:26:46.65717] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65718] [118099] [info] New topic record. id: 162. title: RotateLogFiles
+[2025-11-05 13:26:46.65720] [118099] [info] Called format_text(). title: RotateLogFiles. id: 1620000
+[2025-11-05 13:26:46.65722] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65723] [118099] [info] New topic record. id: 163. title: RSS
+[2025-11-05 13:26:46.65725] [118099] [info] Called format_text(). title: RSS. id: 1630000
+[2025-11-05 13:26:46.65727] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65728] [118099] [info] New topic record. id: 164. title: SampleCode
+[2025-11-05 13:26:46.65733] [118099] [info] Called format_text(). title: SampleCode. id: 1640000
+[2025-11-05 13:26:46.65739] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65741] [118099] [info] New topic record. id: 165. title: SandBoxes
+[2025-11-05 13:26:46.65743] [118099] [info] Called format_text(). title: SandBoxes. id: 1650000
+[2025-11-05 13:26:46.65745] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65747] [118099] [info] New topic record. id: 166. title: ScreenStuff
+[2025-11-05 13:26:46.65749] [118099] [info] Called format_text(). title: ScreenStuff. id: 1660000
+[2025-11-05 13:26:46.65751] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65753] [118099] [info] New topic record. id: 167. title: SecurityPolicy
+[2025-11-05 13:26:46.65755] [118099] [info] Called format_text(). title: SecurityPolicy. id: 1670000
+[2025-11-05 13:26:46.65756] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65758] [118099] [info] New topic record. id: 168. title: SeismicAnalysis
+[2025-11-05 13:26:46.65760] [118099] [info] Called format_text(). title: SeismicAnalysis. id: 1680000
+[2025-11-05 13:26:46.65762] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65763] [118099] [info] New topic record. id: 169. title: SeismicOS
+[2025-11-05 13:26:46.65765] [118099] [info] Called format_text(). title: SeismicOS. id: 1690000
+[2025-11-05 13:26:46.65767] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65768] [118099] [info] New topic record. id: 170. title: SetStuff
+[2025-11-05 13:26:46.65770] [118099] [info] Called format_text(). title: SetStuff. id: 1700000
+[2025-11-05 13:26:46.65772] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65774] [118099] [info] New topic record. id: 171. title: SlackWare
+[2025-11-05 13:26:46.65776] [118099] [info] Called format_text(). title: SlackWare. id: 1710000
+[2025-11-05 13:26:46.65777] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65779] [118099] [info] New topic record. id: 172. title: SocialMedia
+[2025-11-05 13:26:46.65781] [118099] [info] Called format_text(). title: SocialMedia. id: 1720000
+[2025-11-05 13:26:46.65783] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65784] [118099] [info] New topic record. id: 173. title: SortModules
+[2025-11-05 13:26:46.65786] [118099] [info] Called format_text(). title: SortModules. id: 1730000
+[2025-11-05 13:26:46.65788] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65789] [118099] [info] New topic record. id: 174. title: SpreadsheetStuff
+[2025-11-05 13:26:46.65792] [118099] [info] Called format_text(). title: SpreadsheetStuff. id: 1740000
+[2025-11-05 13:26:46.65793] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65795] [118099] [info] New topic record. id: 175. title: SSH
+[2025-11-05 13:26:46.65797] [118099] [info] Called format_text(). title: SSH. id: 1750000
+[2025-11-05 13:26:46.65799] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65800] [118099] [info] New topic record. id: 176. title: StaticSiteGenerators
+[2025-11-05 13:26:46.65802] [118099] [info] Called format_text(). title: StaticSiteGenerators. id: 1760000
+[2025-11-05 13:26:46.65804] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65806] [118099] [info] New topic record. id: 177. title: StatisticsStuff
+[2025-11-05 13:26:46.65808] [118099] [info] Called format_text(). title: StatisticsStuff. id: 1770000
+[2025-11-05 13:26:46.65809] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65811] [118099] [info] New topic record. id: 178. title: StreamingMedia
+[2025-11-05 13:26:46.65813] [118099] [info] Called format_text(). title: StreamingMedia. id: 1780000
+[2025-11-05 13:26:46.65814] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65816] [118099] [info] New topic record. id: 179. title: StringStuff
+[2025-11-05 13:26:46.65818] [118099] [info] Called format_text(). title: StringStuff. id: 1790000
+[2025-11-05 13:26:46.65820] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65821] [118099] [info] New topic record. id: 180. title: SwitchStatements
+[2025-11-05 13:26:46.65823] [118099] [info] Called format_text(). title: SwitchStatements. id: 1800000
+[2025-11-05 13:26:46.65825] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65827] [118099] [info] New topic record. id: 181. title: SystemInfo
+[2025-11-05 13:26:46.65829] [118099] [info] Called format_text(). title: SystemInfo. id: 1810000
+[2025-11-05 13:26:46.65830] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65832] [118099] [info] New topic record. id: 182. title: SystemMonitoring
+[2025-11-05 13:26:46.65834] [118099] [info] Called format_text(). title: SystemMonitoring. id: 1820000
+[2025-11-05 13:26:46.65836] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65837] [118099] [info] New topic record. id: 183. title: TCP/IP
+[2025-11-05 13:26:46.65839] [118099] [info] Called format_text(). title: TCP/IP. id: 1830000
+[2025-11-05 13:26:46.65841] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65842] [118099] [info] New topic record. id: 184. title: TemplateStuff
+[2025-11-05 13:26:46.65844] [118099] [info] Called format_text(). title: TemplateStuff. id: 1840000
+[2025-11-05 13:26:46.65846] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65848] [118099] [info] New topic record. id: 185. title: TestingHelp
+[2025-11-05 13:26:46.65855] [118099] [info] Called format_text(). title: TestingHelp. id: 1850000
+[2025-11-05 13:26:46.65863] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65865] [118099] [info] New topic record. id: 186. title: TextAnalysisAndFormatting
+[2025-11-05 13:26:46.65881] [118099] [info] Called format_text(). title: TextAnalysisAndFormatting. id: 1860000
+[2025-11-05 13:26:46.65903] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65905] [118099] [info] New topic record. id: 187. title: TiddlyWikis
+[2025-11-05 13:26:46.65909] [118099] [info] Called format_text(). title: TiddlyWikis. id: 1870000
+[2025-11-05 13:26:46.65913] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65915] [118099] [info] New topic record. id: 188. title: TrueTypeFonts
+[2025-11-05 13:26:46.65918] [118099] [info] Called format_text(). title: TrueTypeFonts. id: 1880000
+[2025-11-05 13:26:46.65920] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65921] [118099] [info] New topic record. id: 189. title: UninstallModule
+[2025-11-05 13:26:46.65923] [118099] [info] Called format_text(). title: UninstallModule. id: 1890000
+[2025-11-05 13:26:46.65925] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65927] [118099] [info] New topic record. id: 190. title: UnixWare
+[2025-11-05 13:26:46.65929] [118099] [info] Called format_text(). title: UnixWare. id: 1900000
+[2025-11-05 13:26:46.65931] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65932] [118099] [info] New topic record. id: 191. title: UserInfo
+[2025-11-05 13:26:46.65934] [118099] [info] Called format_text(). title: UserInfo. id: 1910000
+[2025-11-05 13:26:46.65936] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65937] [118099] [info] New topic record. id: 192. title: UserInput
+[2025-11-05 13:26:46.65939] [118099] [info] Called format_text(). title: UserInput. id: 1920000
+[2025-11-05 13:26:46.65941] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65942] [118099] [info] New topic record. id: 193. title: UsernamePassword
+[2025-11-05 13:26:46.65945] [118099] [info] Called format_text(). title: UsernamePassword. id: 1930000
+[2025-11-05 13:26:46.65946] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65948] [118099] [info] New topic record. id: 194. title: UTF8
+[2025-11-05 13:26:46.65950] [118099] [info] Called format_text(). title: UTF8. id: 1940000
+[2025-11-05 13:26:46.65951] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65953] [118099] [info] New topic record. id: 195. title: UUID
+[2025-11-05 13:26:46.65955] [118099] [info] Called format_text(). title: UUID. id: 1950000
+[2025-11-05 13:26:46.65957] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65958] [118099] [info] New topic record. id: 196. title: VersionWare
+[2025-11-05 13:26:46.65960] [118099] [info] Called format_text(). title: VersionWare. id: 1960000
+[2025-11-05 13:26:46.65962] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65964] [118099] [info] New topic record. id: 197. title: VirtualMachines
+[2025-11-05 13:26:46.65966] [118099] [info] Called format_text(). title: VirtualMachines. id: 1970000
+[2025-11-05 13:26:46.65967] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65969] [118099] [info] New topic record. id: 198. title: WantArray
+[2025-11-05 13:26:46.65971] [118099] [info] Called format_text(). title: WantArray. id: 1980000
+[2025-11-05 13:26:46.65972] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65974] [118099] [info] New topic record. id: 199. title: WebPush
+[2025-11-05 13:26:46.65976] [118099] [info] Called format_text(). title: WebPush. id: 1990000
+[2025-11-05 13:26:46.65978] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65979] [118099] [info] New topic record. id: 200. title: WebSecurity
+[2025-11-05 13:26:46.65981] [118099] [info] Called format_text(). title: WebSecurity. id: 2000000
+[2025-11-05 13:26:46.65983] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65984] [118099] [info] New topic record. id: 201. title: WebServices
+[2025-11-05 13:26:46.65986] [118099] [info] Called format_text(). title: WebServices. id: 2010000
+[2025-11-05 13:26:46.65988] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65989] [118099] [info] New topic record. id: 202. title: WebSites
+[2025-11-05 13:26:46.65991] [118099] [info] Called format_text(). title: WebSites. id: 2020000
+[2025-11-05 13:26:46.65993] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.65995] [118099] [info] New topic record. id: 203. title: WeirdAndWonderful
+[2025-11-05 13:26:46.65997] [118099] [info] Called format_text(). title: WeirdAndWonderful. id: 2030000
+[2025-11-05 13:26:46.65999] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.66000] [118099] [info] New topic record. id: 204. title: WikiStuff
+[2025-11-05 13:26:46.66002] [118099] [info] Called format_text(). title: WikiStuff. id: 2040000
+[2025-11-05 13:26:46.66007] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.66009] [118099] [info] New topic record. id: 205. title: XDGBaseDirectorySpecification
+[2025-11-05 13:26:46.66011] [118099] [info] Called format_text(). title: XDGBaseDirectorySpecification. id: 2050000
+[2025-11-05 13:26:46.66013] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.66014] [118099] [info] New topic record. id: 206. title: XML
+[2025-11-05 13:26:46.66016] [118099] [info] Called format_text(). title: XML. id: 2060000
+[2025-11-05 13:26:46.66018] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.66019] [118099] [info] New topic record. id: 207. title: XS
+[2025-11-05 13:26:46.66021] [118099] [info] Called format_text(). title: XS. id: 2070000
+[2025-11-05 13:26:46.66023] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.66024] [118099] [info] New topic record. id: 208. title: XWindowsStuff
+[2025-11-05 13:26:46.66026] [118099] [info] Called format_text(). title: XWindowsStuff. id: 2080000
+[2025-11-05 13:26:46.66028] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.66030] [118099] [info] New topic record. id: 209. title: YamlStuff
+[2025-11-05 13:26:46.66032] [118099] [info] Called format_text(). title: YamlStuff. id: 2090000
+[2025-11-05 13:26:46.66033] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.66035] [118099] [info] New topic record. id: 210. title: ZMQ
+[2025-11-05 13:26:46.66037] [118099] [info] Called format_text(). title: ZMQ. id: 2100000
+[2025-11-05 13:26:46.66039] [118099] [info] --------------------------------------------------
+[2025-11-05 13:26:46.66139] [118099] [info] Created /home/ron/perl.modules/CPAN-MetaCurator/html/cpan.metacurator.tree.html. Encoding: :encoding(utf-8)
+[2025-11-05 13:26:46.66142] [118099] [info] Leaf count:  877
+[2025-11-05 13:26:46.66144] [118099] [info] Topic count: 210
+
