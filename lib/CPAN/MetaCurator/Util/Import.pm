@@ -166,6 +166,8 @@ sub populate_modules_table
 
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 
+	my($module_count);
+
 	if ($status eq 'Present')
 	{
 		# Takes 2.7s.
@@ -175,6 +177,9 @@ sub populate_modules_table
 		# $self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 
 		`csv2sqlite --format=csv --table modules $csv_path $database_path`;
+		$module_count = `echo -e "select count(*) from modules" | sqlite3 $database_path`;
+
+		$self -> logger -> info("Imported $module_count modules");
 	}
 	else
 	{
@@ -184,7 +189,18 @@ sub populate_modules_table
 
 		$self -> logger -> info("Importing modules from '$packages_path'");
 		$self -> import_perl_modules($packages_path, $table_name);
+
+		my($command) = `echo -e ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $csv_path`;
+		$self -> logger -> info("Exported modules table to '$csv_path'");
+
+		my($line_count) = `wc -l $csv_path`;
+		($module_count, my $dummy) = split(' ', $line_count);
+		$module_count--; # Allow for header record.
+
+		$self -> logger -> info("Exported $module_count modules");
 	}
+
+	$self -> logger -> info("Finished populate_modules_table()");
 
 }	# End of populate_modules_table.
 
@@ -225,7 +241,7 @@ sub populate_topics_table
 		$self -> logger -> info('AiEngines: ' . $text) if ($title eq 'AiEngines'); # Test UTF-8 chars.
 	}
 
-	$self -> logger -> info("Stored $count records into '$table_name'");
+	$self -> logger -> info("Finished populate_topics_table(). Stored $count records into '$table_name'");
 
 } # End of populate_topics_table;
 

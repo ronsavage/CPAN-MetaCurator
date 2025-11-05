@@ -27,9 +27,9 @@ If you wish to download a new version of Perl.Wiki.html:
 	a. Choose 'export all'.
 	b. Choose 'JSON format' in the pop-up.
 	c. The file tiddlers.json will appear in your downloads directory (eg ~/Downloads/ under Debian).
-	d. Move tiddlers.json into the distro's data/ as cpan.metacurator.tiddlers.json to replace the copy shipped with the distro.
+	d. Use tiddlers.json to overwrite the distro's data/cpan.metacurator.tiddlers.json.
 
-If you with to rebuld the database:
+If you wish to rebuld the database:
 Note: File sizes as of 2025-08-05.
 Note: The code shipped can be configured to change the home_path().
 1. Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403 bytes.
