@@ -41,7 +41,7 @@ Note: The code shipped can be configured to change the home_path().
 2. If editing the code, do this before the next step:
 	a. Empty the log since we don't want to commit it full: cp /dev/null log/development.log
 	b. Remove giant file from commit: mv data/02packages.details.txt /tmp
-	c. Rebuild the module with: build.module.sh CPAN::MetaCustodian 1.02 (or whatever version)
+	c. Rebuild the module with: build.module.sh CPAN::MetaCurator 1.02 (or whatever version)
 	d. git commit -am"Some commit note..."
 	e. Restore giant file: cp /tmp/02packages.details.txt data
 3. Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
