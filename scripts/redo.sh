@@ -10,7 +10,7 @@ cp /dev/null log/development.log
 
 if [ "$1" != "" ]; then
 	git commit -am"$1"
-	build.module.sh CPAN::MetaCurator 1.01
+	build.module.sh CPAN::MetaCurator 1.02
 fi
 scripts/drop.tables.pl
 scripts/create.tables.pl
