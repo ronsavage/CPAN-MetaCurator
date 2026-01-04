@@ -30,9 +30,9 @@ If you wish to download a new version of Perl.Wiki.html:
 	d. Use tiddlers.json to overwrite the distro's data/cpan.metacurator.tiddlers.json.
 
 If you wish to rebuld the database:
-Note: File sizes as of 2025-08-05.
+Note: File sizes as of 2026-01-04.
 Note: The code shipped can be configured to change the home_path().
-1. Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,868,403 bytes.
+1. Optionally, download Perl's 02packages.details.txt and store it in data/. Size: 23,986,933 bytes.
 	a. cd ~/perl.modules/CPAN-MetaCurator/data
 	b. Download using: wget https://www.cpan.org/modules/02packages.details.txt.gz
 	c. Unpack using: gunzip 02packages.details.txt.gz
@@ -42,9 +42,9 @@ Note: The code shipped can be configured to change the home_path().
 	a. Empty the log since we don't want to commit it full: cp /dev/null log/development.log
 	b. Remove giant file from commit: mv data/02packages.details.txt /tmp
 	c. Rebuild the module with: build.module.sh CPAN::MetaCurator 1.02 (or whatever version)
-	d. git commit -am"Some commit note..."
+	d. git commit -am"..."
 	e. Restore giant file: cp /tmp/02packages.details.txt data
-3. Run build.db.sh which uses that data to populate the modules table, which contains 268,476 records.
+3. Run build.db.sh which uses that data to populate the modules table, which contains about 270,000 records.
 	a. Actually, the code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
 	Therefore - before running build.db.sh - hide data/modules.table.csv if you wish to use data/02packages.details.txt.
 	The modules.table.csv file was manually exported from an initial run using data/02packages.details.txt.

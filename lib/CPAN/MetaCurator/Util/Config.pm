@@ -114,7 +114,7 @@ has separator =>
 
 # Warning. Order is important because of foreign key constraints.
 # The tables are created in this order, and dropped in reverse order.
-# Currently, memos and modules are not used.
+# Currently, memos is not used.
 
 has table_names =>
 (
