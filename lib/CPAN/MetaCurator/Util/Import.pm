@@ -243,7 +243,7 @@ sub populate_topics_table
 		$$record{text}		= $text;
 		$id					= $self -> insert_hashref($table_name, $record);
 
-		$self -> logger -> info("$topic_count: $$record{text} => $$record{title}");
+		$self -> logger -> info("$topic_count: $$record{text}");
 	}
 
 	$self -> logger -> info("Finished populate_topics_table(). Stored $topic_count records into '$table_name'");
