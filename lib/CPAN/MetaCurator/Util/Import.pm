@@ -232,10 +232,10 @@ sub populate_topics_table
 
 		next if ($title =~ /GettingStarted|MainMenu/); # TiddlyWiki special cases.
 
-		$$pad{topic_count}++;
-
 		$self -> logger -> info("Missing text @ line: $index. title: $title"), next if (! defined $text);
 		$self -> logger -> info("Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
+
+		$topic_count++;
 
 		$$record{parent_id}	= $root_id;
 		$$record{title}		= $title;
