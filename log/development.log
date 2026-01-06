@@ -1,0 +1,35 @@
+[2026-01-06 17:38:08.38758] [32075] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-06 17:38:08.38777] [32075] [info] --------------------------------------------------
+[2026-01-06 17:38:08.38779] [32075] [info] Dropping all tables
+[2026-01-06 17:38:08.41349] [32075] [info] Dropped all tables
+[2026-01-06 17:38:08.41354] [32075] [info] --------------------------------------------------
+[2026-01-06 17:38:08.63891] [32076] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-06 17:38:08.63908] [32076] [info] --------------------------------------------------
+[2026-01-06 17:38:08.63911] [32076] [info] Creating all tables
+[2026-01-06 17:38:08.65622] [32076] [info] Created all tables
+[2026-01-06 17:38:08.65627] [32076] [info] --------------------------------------------------
+[2026-01-06 17:38:09.11537] [32078] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-06 17:38:09.11554] [32078] [info] --------------------------------------------------
+[2026-01-06 17:38:09.11590] [32078] [info] Constants:
+[2026-01-06 17:38:09.11594] [32078] [info] domain_name => 
+[2026-01-06 17:38:09.11596] [32078] [info] encoding => 
+[2026-01-06 17:38:09.11602] [32078] [info] logo_path => 
+[2026-01-06 17:38:09.11606] [32078] [info] page_name => 
+[2026-01-06 17:38:09.11608] [32078] [info] time_zone => 
+[2026-01-06 17:38:09.11610] [32078] [info] title_font_path => 
+[2026-01-06 17:38:09.11612] [32078] [info] title_font_size => 
+[2026-01-06 17:38:09.11618] [32078] [info] --------------------------------------------------
+[2026-01-06 17:38:09.11661] [32078] [info] Created /home/ron/perl.modules/CPAN-MetaCurator/html/cpan.metacurator.tree.html. Encoding: 
+[2026-01-06 17:38:09.11664] [32078] [info] Leaf count:  0
+[2026-01-06 17:38:09.11666] [32078] [info] Topic count: 0
+
+[2026-01-06 17:51:25.79518] [32414] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-06 17:51:25.79536] [32414] [info] --------------------------------------------------
+[2026-01-06 17:51:25.79539] [32414] [info] Dropping all tables
+[2026-01-06 17:51:25.81509] [32414] [info] Dropped all tables
+[2026-01-06 17:51:25.81515] [32414] [info] --------------------------------------------------
+[2026-01-06 17:51:33.64445] [32419] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-06 17:51:33.64467] [32419] [info] --------------------------------------------------
+[2026-01-06 17:51:33.64471] [32419] [info] Creating all tables
+[2026-01-06 17:51:33.66067] [32419] [info] Created all tables
+[2026-01-06 17:51:33.66071] [32419] [info] --------------------------------------------------

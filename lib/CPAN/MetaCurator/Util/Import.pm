@@ -210,16 +210,15 @@ sub populate_modules_table
 
 sub populate_topics_table
 {
-	my($self)		= @_;
-	my($data)		= $self -> read_tiddlers_file;
-	my($record)		= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
-	my($table_name)	= 'topics';
-	my($root_id)	= $self -> insert_hashref($table_name, $record);
-
-	$$pad{topic_count}++;
+	my($self)			= @_;
+	my($data)			= $self -> read_tiddlers_file;
+	my($record)			= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
+	my($table_name)		= 'topics';
+	my($root_id)		= $self -> insert_hashref($table_name, $record);
+	my($topic_count)	= 0; # Can't use $$pad{topic_count} since can't call Database.build_pad() yet.
 
 	$self -> logger -> info("Topics:");
-	$self -> logger -> info("$$pad{topic_count}: $$record{text} => $$record{title}");
+	$self -> logger -> info("$topic_count: $$record{text} => $$record{title}");
 
 	my($id);
 	my($text, $title);
@@ -244,10 +243,10 @@ sub populate_topics_table
 		$$record{text}		= $text;
 		$id					= $self -> insert_hashref($table_name, $record);
 
-		$self -> logger -> info("$$pad{topic_count}: $$record{text} => $$record{title}");
+		$self -> logger -> info("$topic_count: $$record{text} => $$record{title}");
 	}
 
-	$self -> logger -> info("Finished populate_topics_table(). Stored $$pad{topic_count} records into '$table_name'");
+	$self -> logger -> info("Finished populate_topics_table(). Stored $topic_count records into '$table_name'");
 
 } # End of populate_topics_table;
 
