@@ -146,6 +146,10 @@ sub build_pad
 
 	$self -> logger -> info('Topics:');
 
+	$$pad{topic_count}++;
+
+	$self -> logger -> info("$$pad{topic_count}: $_ => Root");
+
 	for (sort keys %{$$pad{topic_names} })
 	{
 		$$pad{topic_count}++;
