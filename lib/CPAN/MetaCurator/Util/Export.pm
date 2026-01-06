@@ -42,7 +42,9 @@ sub export_as_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
-		$self -> logger -> info("New topic record. id: $$topic{id}. title: $$topic{title}");
+		$$pad{topic_count}++;
+
+		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
 
 		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
