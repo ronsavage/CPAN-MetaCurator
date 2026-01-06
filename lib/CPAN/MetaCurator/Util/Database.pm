@@ -148,7 +148,9 @@ sub build_pad
 
 	for (sort keys %{$$pad{topic_names} })
 	{
-		$self -> logger -> info("$_ => $$pad{topic_names}{$_}");
+		$$pad{topic_count}++;
+
+		$self -> logger -> info("$$pad{topic_count}: $_ => $$pad{topic_names}{$_}");
 	}
 
 	$self -> logger -> info($self -> separator);

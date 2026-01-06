@@ -26,7 +26,6 @@ sub export_as_tree
 	$self -> init_db;
 
 	my($pad)					= $self -> build_pad;
-	$$pad{topic_count}			= $#{$$pad{topics} } + 1;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
 	# Populate the body.
