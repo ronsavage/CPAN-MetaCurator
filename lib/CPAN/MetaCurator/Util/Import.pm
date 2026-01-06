@@ -212,10 +212,14 @@ sub populate_topics_table
 {
 	my($self)		= @_;
 	my($data)		= $self -> read_tiddlers_file;
-	my($count)		= 1;
 	my($record)		= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
 	my($table_name)	= 'topics';
 	my($root_id)	= $self -> insert_hashref($table_name, $record);
+
+	$$pad{topic_count}++;
+
+	$self -> logger -> info("Topics:");
+	$self -> logger -> info("$$pad{topic_count}: $$record{text} => $$record{title}");
 
 	my($id);
 	my($text, $title);
@@ -229,7 +233,7 @@ sub populate_topics_table
 
 		next if ($title =~ /GettingStarted|MainMenu/); # TiddlyWiki special cases.
 
-		$count++;
+		$$pad{topic_count}++;
 
 		$self -> logger -> info("Missing text @ line: $index. title: $title"), next if (! defined $text);
 		$self -> logger -> info("Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
@@ -239,9 +243,11 @@ sub populate_topics_table
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
 		$$record{text}		= $text;
 		$id					= $self -> insert_hashref($table_name, $record);
+
+		$self -> logger -> info("$$pad{topic_count}: $$record{text} => $$record{title}");
 	}
 
-	$self -> logger -> info("Finished populate_topics_table(). Stored $count records into '$table_name'");
+	$self -> logger -> info("Finished populate_topics_table(). Stored $$pad{topic_count} records into '$table_name'");
 
 } # End of populate_topics_table;
 

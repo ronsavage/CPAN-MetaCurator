@@ -144,21 +144,6 @@ sub build_pad
 		$$pad{topic_names}{$$_{title} } = $$_{id};
 	}
 
-	$self -> logger -> info('Topics:');
-
-	$$pad{topic_count}++;
-
-	$self -> logger -> info("$$pad{topic_count}: root => Root");
-
-	for (sort keys %{$$pad{topic_names} })
-	{
-		$$pad{topic_count}++;
-
-		$self -> logger -> info("$$pad{topic_count}: $_ => $$pad{topic_names}{$_}");
-	}
-
-	$self -> logger -> info($self -> separator);
-
 	# Dates.
 	# DateTime::Tiny does not handle time_zone.
 
