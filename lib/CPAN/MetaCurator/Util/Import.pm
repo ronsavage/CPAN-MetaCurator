@@ -215,10 +215,10 @@ sub populate_topics_table
 	my($record)			= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
 	my($table_name)		= 'topics';
 	my($root_id)		= $self -> insert_hashref($table_name, $record);
-	my($topic_count)	= 0; # Can't use $$pad{topic_count} since can't call Database.build_pad() yet.
+	my($topic_count)	= 1; # Can't use $$pad{topic_count} since can't call Database.build_pad() yet.
 
 	$self -> logger -> info("Topics:");
-	$self -> logger -> info("$topic_count: $$record{text} => $$record{title}");
+	$self -> logger -> info("$topic_count: $$record{title} => $$record{text}");
 
 	my($id);
 	my($text, $title);
@@ -243,7 +243,7 @@ sub populate_topics_table
 		$$record{text}		= $text;
 		$id					= $self -> insert_hashref($table_name, $record);
 
-		$self -> logger -> info("$topic_count: $$record{text}");
+		$self -> logger -> info("$topic_count: $$record{title}");
 	}
 
 	$self -> logger -> info("Finished populate_topics_table(). Stored $topic_count records into '$table_name'");
