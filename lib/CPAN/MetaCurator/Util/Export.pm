@@ -54,7 +54,7 @@ sub export_as_tree
 		$$topic{id}	= id_scale_factor * $$topic{id}; # Fake id offset for leaf.
 		$lines_ref	= $self -> format_text($pad, $topic);
 
-		say "$$pad{topic_count}: " . Dumper($lines_ref);
+		say "$$pad{topic_count}: " . Dumper($topic);
 
 		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
 
