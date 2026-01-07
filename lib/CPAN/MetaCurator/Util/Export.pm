@@ -42,7 +42,7 @@ sub export_as_tree
 
 	my(@divs);
 	my($item);
-	my($lines);
+	my($lines_ref);
 
 	for my $topic (@{$$pad{topics} })
 	{
@@ -52,11 +52,11 @@ sub export_as_tree
 		push @list, '<ul>';
 
 		$$topic{id}	= id_scale_factor * $$topic{id}; # Fake id offset for leaf.
-		$lines		= $self -> format_text($pad, $topic);
+		$lines_ref	= $self -> format_text($pad, $topic);
 
 		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
 
-		for (@$lines)
+		for (@$lines_ref)
 		{
 			$$pad{leaf_count}++;
 
@@ -224,7 +224,7 @@ sub format_text
 		push @lines, {href => '', id => 0, text => "Skipped $pre_count lines inside <pre>...</pre>"};
 	}
 
-	return \@lines;
+	return [@lines];
 
 } # End of format_text.
 
