@@ -44,13 +44,13 @@ sub export_as_tree
 	{
 		$$pad{topic_count}++;
 
-		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
-
 		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
 
 		$$topic{id}	= id_scale_factor * $$topic{id}; # Fake id offset for leaf.
 		$lines		= $self -> format_text($pad, $topic);
+
+		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
 
 		for (@$lines)
 		{
@@ -64,7 +64,6 @@ sub export_as_tree
 		push @list, '</ul>';
 		push @list, '</li>';
 
-		$self -> logger -> info($self -> separator);
 	}
 
 	push @list, '</ul>', '</li>', '</ul>';
@@ -106,8 +105,6 @@ sub format_text
 	my($item);
 	my(@lines);
 	my(@see_also);
-
-	$self -> logger -> info("Called format_text(). title: $$topic{title}. id: $$topic{id}");
 
 	for (0 .. $#text)
 	{
