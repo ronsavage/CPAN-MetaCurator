@@ -56,10 +56,10 @@ sub export_as_tree
 
 		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
 
-		say $lines_ref;
-
 		for (@$lines_ref)
 		{
+			say $_;
+
 			$$pad{leaf_count}++;
 
 			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
