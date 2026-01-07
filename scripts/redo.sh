@@ -31,4 +31,6 @@ declare -x FILE1='/home/ron/Downloads/tiddlers(1).json'
 if [[ -a $FILE1 ]]
 then
 	echo Warning: $FILE1 exists
+else
+	echo Nope
 fi
