@@ -56,6 +56,8 @@ sub export_as_tree
 
 		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
 
+		say $lines_ref;
+
 		for (@$lines_ref)
 		{
 			$$pad{leaf_count}++;
