@@ -1,0 +1,448 @@
+[2026-01-08 16:48:22.09252] [273652] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-08 16:48:22.09271] [273652] [info] --------------------------------------------------
+[2026-01-08 16:48:22.09274] [273652] [info] Dropping all tables
+[2026-01-08 16:48:22.11877] [273652] [info] Dropped all tables
+[2026-01-08 16:48:22.11883] [273652] [info] --------------------------------------------------
+[2026-01-08 16:48:22.34617] [273661] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-08 16:48:22.34635] [273661] [info] --------------------------------------------------
+[2026-01-08 16:48:22.34637] [273661] [info] Creating all tables
+[2026-01-08 16:48:22.36472] [273661] [info] Created all tables
+[2026-01-08 16:48:22.36477] [273661] [info] --------------------------------------------------
+[2026-01-08 16:48:22.61557] [273662] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-08 16:48:22.61575] [273662] [info] --------------------------------------------------
+[2026-01-08 16:48:22.61577] [273662] [info] Populating all tables
+[2026-01-08 16:48:22.61654] [273662] [info] Populating the 'constants' table with import_csv_file()
+[2026-01-08 16:48:22.65311] [273662] [info] Stored 7 records into 'constants'
+[2026-01-08 16:48:22.65332] [273662] [info] Importing modules from /home/ron/perl.modules/CPAN-MetaCurator/data/modules.table.csv
+[2026-01-08 16:48:24.17818] [273662] [info] Imported 269851 modules
+[2026-01-08 16:48:24.17829] [273662] [info] Finished populate_modules_table()
+[2026-01-08 16:48:24.18957] [273662] [info] Topics:
+[2026-01-08 16:48:24.18961] [273662] [info] 1: MetaCurator => Root
+[2026-01-08 16:48:24.19207] [273662] [info] 2: ABeCeDarian
+[2026-01-08 16:48:24.19472] [273662] [info] 3: Acronyms
+[2026-01-08 16:48:24.19644] [273662] [info] 4: AdventPlanet
+[2026-01-08 16:48:24.19889] [273662] [info] 5: AiEngines
+[2026-01-08 16:48:24.20055] [273662] [info] 6: AlgorithmicStuff
+[2026-01-08 16:48:24.20298] [273662] [info] 7: AnimationStuff
+[2026-01-08 16:48:24.20465] [273662] [info] 8: AntiVirusStuff
+[2026-01-08 16:48:24.20714] [273662] [info] 9: ApacheStuff
+[2026-01-08 16:48:24.20879] [273662] [info] 10: AppleMac
+[2026-01-08 16:48:24.21102] [273662] [info] 11: ArchiveFiles
+[2026-01-08 16:48:24.21270] [273662] [info] 12: ArrayHandling
+[2026-01-08 16:48:24.21506] [273662] [info] 13: AsciiCodes
+[2026-01-08 16:48:24.21664] [273662] [info] 14: ASN
+[2026-01-08 16:48:24.21885] [273662] [info] 15: AssemblerX86
+[2026-01-08 16:48:24.22042] [273662] [info] 16: AstroStuff
+[2026-01-08 16:48:24.22251] [273662] [info] 17: AudioVisual
+[2026-01-08 16:48:24.22407] [273662] [info] 18: AutoCAD
+[2026-01-08 16:48:24.22592] [273662] [info] 19: BarCodes
+[2026-01-08 16:48:24.22747] [273662] [info] 20: BenchmarkingTools
+[2026-01-08 16:48:24.22901] [273662] [info] 21: BibliographicStuff
+[2026-01-08 16:48:24.23087] [273662] [info] 22: BillOfMaterials
+[2026-01-08 16:48:24.23243] [273662] [info] 23: BioInformatics
+[2026-01-08 16:48:24.23453] [273662] [info] 24: BlockChain
+[2026-01-08 16:48:24.23609] [273662] [info] 25: BoneMarrrowDonorRegistry
+[2026-01-08 16:48:24.23792] [273662] [info] 26: BrowserStuff
+[2026-01-08 16:48:24.23948] [273662] [info] 27: BsdWare
+[2026-01-08 16:48:24.24103] [273662] [info] 28: builtins
+[2026-01-08 16:48:24.24293] [273662] [info] 29: BusinessApps
+[2026-01-08 16:48:24.24449] [273662] [info] 30: CachingStuff
+[2026-01-08 16:48:24.24658] [273662] [info] 31: CaptchaStuff
+[2026-01-08 16:48:24.24839] [273662] [info] 32: ChangeLog
+[2026-01-08 16:48:24.25051] [273662] [info] 33: ChartingAndPlotting
+[2026-01-08 16:48:24.25207] [273662] [info] 34: ChemistryStuff
+[2026-01-08 16:48:24.25394] [273662] [info] 35: ChildProcesses
+[2026-01-08 16:48:24.25548] [273662] [info] 36: ClipBoard
+[2026-01-08 16:48:24.25707] [273662] [info] 37: CodingStyle
+[2026-01-08 16:48:24.25892] [273662] [info] 38: Color
+[2026-01-08 16:48:24.26048] [273662] [info] 39: CommandLineStuff
+[2026-01-08 16:48:24.26258] [273662] [info] 40: ConfigFiles
+[2026-01-08 16:48:24.26414] [273662] [info] 41: ConstantStuff
+[2026-01-08 16:48:24.26628] [273662] [info] 42: Corinna
+[2026-01-08 16:48:24.26783] [273662] [info] 43: CPAN
+[2026-01-08 16:48:24.26971] [273662] [info] 44: CpanFile
+[2026-01-08 16:48:24.27134] [273662] [info] 45: cron
+[2026-01-08 16:48:24.27292] [273662] [info] 46: CryptoStuff
+[2026-01-08 16:48:24.27477] [273662] [info] 47: CssHandling
+[2026-01-08 16:48:24.27635] [273662] [info] 48: DatabaseAndSQL
+[2026-01-08 16:48:24.27846] [273662] [info] 49: DataCleaning
+[2026-01-08 16:48:24.28023] [273662] [info] 50: DataTraversal
+[2026-01-08 16:48:24.28236] [273662] [info] 51: DataTypes
+[2026-01-08 16:48:24.28396] [273662] [info] 52: DataValidation
+[2026-01-08 16:48:24.28583] [273662] [info] 53: DatesAndTimes
+[2026-01-08 16:48:24.28746] [273662] [info] 54: DebianOS
+[2026-01-08 16:48:24.28908] [273662] [info] 55: DebuggingStuff
+[2026-01-08 16:48:24.29097] [273662] [info] 56: DFA
+[2026-01-08 16:48:24.29261] [273662] [info] 57: DnsStuff
+[2026-01-08 16:48:24.29477] [273662] [info] 58: DocumentationManagement
+[2026-01-08 16:48:24.29645] [273662] [info] 59: DomainNames
+[2026-01-08 16:48:24.29855] [273662] [info] 60: EBookHandling
+[2026-01-08 16:48:24.30014] [273662] [info] 61: EditorConfigFiles
+[2026-01-08 16:48:24.30231] [273662] [info] 62: EmailStuff
+[2026-01-08 16:48:24.30440] [273662] [info] 63: EnumStuff
+[2026-01-08 16:48:24.30658] [273662] [info] 64: EventStuff
+[2026-01-08 16:48:24.30816] [273662] [info] 65: ExceptionHandling
+[2026-01-08 16:48:24.31034] [273662] [info] 66: ExportHandling
+[2026-01-08 16:48:24.31192] [273662] [info] 67: ExtensibleProvisioningProtocol
+[2026-01-08 16:48:24.31381] [273662] [info] 68: FeaturesAndPragmas
+[2026-01-08 16:48:24.31543] [273662] [info] 69: FileHandling
+[2026-01-08 16:48:24.31707] [273662] [info] 70: FindDependencies
+[2026-01-08 16:48:24.31897] [273662] [info] 71: Games
+[2026-01-08 16:48:24.32059] [273662] [info] 72: GenealogyStuff
+[2026-01-08 16:48:24.32284] [273662] [info] 73: GeographicStuff
+[2026-01-08 16:48:24.32447] [273662] [info] 74: GitStuff
+[2026-01-08 16:48:24.32661] [273662] [info] 75: GnuPG
+[2026-01-08 16:48:24.32820] [273662] [info] 76: GoogleStuff
+[2026-01-08 16:48:24.33036] [273662] [info] 77: GrammarProcessing
+[2026-01-08 16:48:24.33195] [273662] [info] 78: Graphs
+[2026-01-08 16:48:24.33388] [273662] [info] 79: HardwareStuff
+[2026-01-08 16:48:24.33545] [273662] [info] 80: HashHandling
+[2026-01-08 16:48:24.33711] [273662] [info] 81: HealthMatters
+[2026-01-08 16:48:24.33897] [273662] [info] 82: HowToBuildPerl
+[2026-01-08 16:48:24.34065] [273662] [info] 83: HTMLHandling
+[2026-01-08 16:48:24.34285] [273662] [info] 84: HTTPHandling
+[2026-01-08 16:48:24.34448] [273662] [info] 85: HTTPServers
+[2026-01-08 16:48:24.34658] [273662] [info] 86: ImageStuff
+[2026-01-08 16:48:24.34818] [273662] [info] 87: InlineStuff
+[2026-01-08 16:48:24.35038] [273662] [info] 88: InterestingModules
+[2026-01-08 16:48:24.35199] [273662] [info] 89: IO
+[2026-01-08 16:48:24.35390] [273662] [info] 90: IoLayers
+[2026-01-08 16:48:24.35550] [273662] [info] 91: IoT
+[2026-01-08 16:48:24.35708] [273662] [info] 92: IRI
+[2026-01-08 16:48:24.35893] [273662] [info] 93: IteratorStuff
+[2026-01-08 16:48:24.36051] [273662] [info] 94: JavaScript
+[2026-01-08 16:48:24.36265] [273662] [info] 95: JsonStuff
+[2026-01-08 16:48:24.36424] [273662] [info] 96: KohaLibrary
+[2026-01-08 16:48:24.36637] [273662] [info] 97: LargeLanguageModels
+[2026-01-08 16:48:24.36796] [273662] [info] 98: LateralThinking
+[2026-01-08 16:48:24.36983] [273662] [info] 99: LaTeX
+[2026-01-08 16:48:24.37150] [273662] [info] 100: LicenceStuff
+[2026-01-08 16:48:24.37318] [273662] [info] 101: LinguaStuff
+[2026-01-08 16:48:24.37507] [273662] [info] 102: LocaleStuff
+[2026-01-08 16:48:24.37676] [273662] [info] 103: LoggingStuff
+[2026-01-08 16:48:24.37863] [273662] [info] 104: MailingLists
+[2026-01-08 16:48:24.38022] [273662] [info] 105: MariaDB
+[2026-01-08 16:48:24.38239] [273662] [info] 106: MarkdownHandling
+[2026-01-08 16:48:24.38400] [273662] [info] 107: Marpa
+[2026-01-08 16:48:24.38593] [273662] [info] 108: MathsLibraries
+[2026-01-08 16:48:24.38758] [273662] [info] 109: MeasureMetrics
+[2026-01-08 16:48:24.38921] [273662] [info] 110: MemoryUsage
+[2026-01-08 16:48:24.39109] [273662] [info] 111: MidiControllers
+[2026-01-08 16:48:24.39265] [273662] [info] 112: MobilePhones
+[2026-01-08 16:48:24.39480] [273662] [info] 113: ModernPerl
+[2026-01-08 16:48:24.39672] [273662] [info] 114: ModuleBuilding
+[2026-01-08 16:48:24.39863] [273662] [info] 115: ModulePlugins
+[2026-01-08 16:48:24.40029] [273662] [info] 116: MoneyMatters
+[2026-01-08 16:48:24.40244] [273662] [info] 117: MusicStuff
+[2026-01-08 16:48:24.40414] [273662] [info] 118: NetworkProgramming
+[2026-01-08 16:48:24.40634] [273662] [info] 119: NewOperators
+[2026-01-08 16:48:24.40794] [273662] [info] 120: OfficeFiles
+[2026-01-08 16:48:24.40981] [273662] [info] 121: OpenCloud
+[2026-01-08 16:48:24.41146] [273662] [info] 122: OpenGL
+[2026-01-08 16:48:24.41306] [273662] [info] 123: OpenGraphProtocol
+[2026-01-08 16:48:24.41495] [273662] [info] 124: OpenTelemetry
+[2026-01-08 16:48:24.41658] [273662] [info] 125: OrgDocHandling
+[2026-01-08 16:48:24.41875] [273662] [info] 126: PacketCapture
+[2026-01-08 16:48:24.42033] [273662] [info] 127: ParallelProcessing
+[2026-01-08 16:48:24.42248] [273662] [info] 128: ParsingStuff
+[2026-01-08 16:48:24.42413] [273662] [info] 129: PdfStuff
+[2026-01-08 16:48:24.42627] [273662] [info] 130: Perl V7
+[2026-01-08 16:48:24.42787] [273662] [info] 131: PerlDeltas
+[2026-01-08 16:48:24.42975] [273662] [info] 132: PerlDistros
+[2026-01-08 16:48:24.43136] [273662] [info] 133: PerlDocumentation
+[2026-01-08 16:48:24.43298] [273662] [info] 134: PerlInternals
+[2026-01-08 16:48:24.43493] [273662] [info] 135: PhoneNumbers
+[2026-01-08 16:48:24.43657] [273662] [info] 136: PhpStuff
+[2026-01-08 16:48:24.43868] [273662] [info] 137: PipeLines
+[2026-01-08 16:48:24.44028] [273662] [info] 138: PlackServer
+[2026-01-08 16:48:24.44243] [273662] [info] 139: PodHandling
+[2026-01-08 16:48:24.44407] [273662] [info] 140: POSIX
+[2026-01-08 16:48:24.44623] [273662] [info] 141: ProfilingCode
+[2026-01-08 16:48:24.44785] [273662] [info] 142: ProjectManagement
+[2026-01-08 16:48:24.44973] [273662] [info] 143: ProperNames
+[2026-01-08 16:48:24.45139] [273662] [info] 144: QandA
+[2026-01-08 16:48:24.45305] [273662] [info] 145: QrCodes
+[2026-01-08 16:48:24.45495] [273662] [info] 146: RakuLanguage
+[2026-01-08 16:48:24.45658] [273662] [info] 147: RaspberryPi
+[2026-01-08 16:48:24.45868] [273662] [info] 148: RedBlackTrees
+[2026-01-08 16:48:24.46027] [273662] [info] 149: ReferenceStuff
+[2026-01-08 16:48:24.46241] [273662] [info] 150: RegexpStuff
+[2026-01-08 16:48:24.46404] [273662] [info] 151: RegistrySystemTesting
+[2026-01-08 16:48:24.46592] [273662] [info] 152: RemoteDesktops
+[2026-01-08 16:48:24.46756] [273662] [info] 153: RequestTracker
+[2026-01-08 16:48:24.46915] [273662] [info] 154: RestfulInterface
+[2026-01-08 16:48:24.47102] [273662] [info] 155: RotateLogFiles
+[2026-01-08 16:48:24.47260] [273662] [info] 156: RSS
+[2026-01-08 16:48:24.47476] [273662] [info] 157: SampleCode
+[2026-01-08 16:48:24.47635] [273662] [info] 158: SandBoxes
+[2026-01-08 16:48:24.47850] [273662] [info] 159: ScreenStuff
+[2026-01-08 16:48:24.48009] [273662] [info] 160: SecurityPolicy
+[2026-01-08 16:48:24.48227] [273662] [info] 161: SeismicAnalysis
+[2026-01-08 16:48:24.48383] [273662] [info] 162: SeismicOS
+[2026-01-08 16:48:24.48577] [273662] [info] 163: SetStuff
+[2026-01-08 16:48:24.48737] [273662] [info] 164: SidefLanguage
+[2026-01-08 16:48:24.48895] [273662] [info] 165: SlackWare
+[2026-01-08 16:48:24.49082] [273662] [info] 166: SocialMedia
+[2026-01-08 16:48:24.49240] [273662] [info] 167: SortModules
+[2026-01-08 16:48:24.49456] [273662] [info] 168: SpreadsheetStuff
+[2026-01-08 16:48:24.49618] [273662] [info] 169: SSH
+[2026-01-08 16:48:24.49832] [273662] [info] 170: StaticSiteBuilders
+[2026-01-08 16:48:24.49992] [273662] [info] 171: StatisticsStuff
+[2026-01-08 16:48:24.50183] [273662] [info] 172: StreamingMedia
+[2026-01-08 16:48:24.50348] [273662] [info] 173: StringStuff
+[2026-01-08 16:48:24.50509] [273662] [info] 174: SwitchStatements
+[2026-01-08 16:48:24.50700] [273662] [info] 175: SystemInfo
+[2026-01-08 16:48:24.50863] [273662] [info] 176: SystemMonitoring
+[2026-01-08 16:48:24.51077] [273662] [info] 177: TabularData
+[2026-01-08 16:48:24.51236] [273662] [info] 178: TCP/IP
+[2026-01-08 16:48:24.51453] [273662] [info] 179: TemplateStuff
+[2026-01-08 16:48:24.51626] [273662] [info] 180: TestingHelp
+[2026-01-08 16:48:24.51848] [273662] [info] 181: TextAnalysisAndFormatting
+[2026-01-08 16:48:24.52009] [273662] [info] 182: TiddlyWikis
+[2026-01-08 16:48:24.52224] [273662] [info] 183: TrueTypeFonts
+[2026-01-08 16:48:24.52383] [273662] [info] 184: UninstallModule
+[2026-01-08 16:48:24.52572] [273662] [info] 185: UnixWare
+[2026-01-08 16:48:24.52731] [273662] [info] 186: UserInfo
+[2026-01-08 16:48:24.52889] [273662] [info] 187: UserInput
+[2026-01-08 16:48:24.53079] [273662] [info] 188: UsernamePassword
+[2026-01-08 16:48:24.53253] [273662] [info] 189: UTF8
+[2026-01-08 16:48:24.53467] [273662] [info] 190: UUID
+[2026-01-08 16:48:24.53626] [273662] [info] 191: VersionWare
+[2026-01-08 16:48:24.53840] [273662] [info] 192: VirtualMachines
+[2026-01-08 16:48:24.53996] [273662] [info] 193: WantArray
+[2026-01-08 16:48:24.54188] [273662] [info] 194: WeatherStuff
+[2026-01-08 16:48:24.54347] [273662] [info] 195: WebSecurity
+[2026-01-08 16:48:24.54509] [273662] [info] 196: WebServices
+[2026-01-08 16:48:24.54701] [273662] [info] 197: WeirdAndWonderful
+[2026-01-08 16:48:24.54859] [273662] [info] 198: WikiStuff
+[2026-01-08 16:48:24.55074] [273662] [info] 199: X11
+[2026-01-08 16:48:24.55233] [273662] [info] 200: XDGBaseDirectorySpecification
+[2026-01-08 16:48:24.55448] [273662] [info] 201: XML
+[2026-01-08 16:48:24.55607] [273662] [info] 202: XS
+[2026-01-08 16:48:24.55820] [273662] [info] 203: XWindowsStuff
+[2026-01-08 16:48:24.55978] [273662] [info] 204: YamlStuff
+[2026-01-08 16:48:24.56168] [273662] [info] 205: ZMQ
+[2026-01-08 16:48:24.56171] [273662] [info] Finished populate_topics_table(). Stored 205 records into 'topics'
+[2026-01-08 16:48:24.56183] [273662] [info] Populated all tables
+[2026-01-08 16:48:24.56186] [273662] [info] --------------------------------------------------
+[2026-01-08 16:48:24.79360] [273685] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-08 16:48:24.79377] [273685] [info] --------------------------------------------------
+[2026-01-08 16:48:24.79380] [273685] [info] Exporting the wiki as a JSTree
+[2026-01-08 16:48:25.34804] [273685] [info] Constants:
+[2026-01-08 16:48:25.34810] [273685] [info] domain_name => savage.net.au
+[2026-01-08 16:48:25.34813] [273685] [info] encoding => :encoding(UTF-8)
+[2026-01-08 16:48:25.34814] [273685] [info] logo_path => /assets/images/local/rons.logo.png
+[2026-01-08 16:48:25.34816] [273685] [info] page_name => cpan.metacurator.tree.html
+[2026-01-08 16:48:25.34817] [273685] [info] time_zone => Australia/Melbourne
+[2026-01-08 16:48:25.34819] [273685] [info] title_font_path => /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
+[2026-01-08 16:48:25.34820] [273685] [info] title_font_size => 16
+[2026-01-08 16:48:25.34822] [273685] [info] --------------------------------------------------
+[2026-01-08 16:48:25.45925] [273685] [info] Topic: 1. id: 1. title: MetaCurator
+[2026-01-08 16:48:25.45962] [273685] [info] Topic: 2. id: 20106. title: ABeCeDarian
+[2026-01-08 16:48:25.46035] [273685] [info] Topic: 3. id: 30348. title: Acronyms
+[2026-01-08 16:48:25.46045] [273685] [info] Topic: 4. id: 40006. title: AdventPlanet
+[2026-01-08 16:48:25.46055] [273685] [info] Topic: 5. id: 50026. title: AiEngines
+[2026-01-08 16:48:25.46070] [273685] [info] Topic: 6. id: 60053. title: AlgorithmicStuff
+[2026-01-08 16:48:25.46075] [273685] [info] Topic: 7. id: 70006. title: AnimationStuff
+[2026-01-08 16:48:25.46079] [273685] [info] Topic: 8. id: 80007. title: AntiVirusStuff
+[2026-01-08 16:48:25.46089] [273685] [info] Topic: 9. id: 90030. title: ApacheStuff
+[2026-01-08 16:48:25.46094] [273685] [info] Topic: 10. id: 100006. title: AppleMac
+[2026-01-08 16:48:25.46130] [273685] [info] Topic: 11. id: 110152. title: ArchiveFiles
+[2026-01-08 16:48:25.46153] [273685] [info] Topic: 12. id: 120085. title: ArrayHandling
+[2026-01-08 16:48:25.46159] [273685] [info] Topic: 13. id: 130005. title: AsciiCodes
+[2026-01-08 16:48:25.46164] [273685] [info] Topic: 14. id: 140006. title: ASN
+[2026-01-08 16:48:25.46167] [273685] [info] Topic: 15. id: 150003. title: AssemblerX86
+[2026-01-08 16:48:25.46177] [273685] [info] Topic: 16. id: 160032. title: AstroStuff
+[2026-01-08 16:48:25.46190] [273685] [info] Topic: 17. id: 170045. title: AudioVisual
+[2026-01-08 16:48:25.46197] [273685] [info] Topic: 18. id: 180014. title: AutoCAD
+[2026-01-08 16:48:25.46203] [273685] [info] Topic: 19. id: 190011. title: BarCodes
+[2026-01-08 16:48:25.46213] [273685] [info] Topic: 20. id: 200031. title: BenchmarkingTools
+[2026-01-08 16:48:25.46227] [273685] [info] Topic: 21. id: 210054. title: BibliographicStuff
+[2026-01-08 16:48:25.46232] [273685] [info] Topic: 22. id: 220006. title: BillOfMaterials
+[2026-01-08 16:48:25.46241] [273685] [info] Topic: 23. id: 230028. title: BioInformatics
+[2026-01-08 16:48:25.46246] [273685] [info] Topic: 24. id: 240003. title: BlockChain
+[2026-01-08 16:48:25.46250] [273685] [info] Topic: 25. id: 250006. title: BoneMarrrowDonorRegistry
+[2026-01-08 16:48:25.46262] [273685] [info] Topic: 26. id: 260043. title: BrowserStuff
+[2026-01-08 16:48:25.46266] [273685] [info] Topic: 27. id: 270003. title: BsdWare
+[2026-01-08 16:48:25.46273] [273685] [info] Topic: 28. id: 280022. title: builtins
+[2026-01-08 16:48:25.46287] [273685] [info] Topic: 29. id: 290057. title: BusinessApps
+[2026-01-08 16:48:25.46304] [273685] [info] Topic: 30. id: 300058. title: CachingStuff
+[2026-01-08 16:48:25.46310] [273685] [info] Topic: 31. id: 310003. title: CaptchaStuff
+[2026-01-08 16:48:25.46523] [273685] [info] Topic: 32. id: 321198. title: ChangeLog
+[2026-01-08 16:48:25.46564] [273685] [info] Topic: 33. id: 330181. title: ChartingAndPlotting
+[2026-01-08 16:48:25.46574] [273685] [info] Topic: 34. id: 340005. title: ChemistryStuff
+[2026-01-08 16:48:25.46603] [273685] [info] Topic: 35. id: 350121. title: ChildProcesses
+[2026-01-08 16:48:25.46611] [273685] [info] Topic: 36. id: 360010. title: ClipBoard
+[2026-01-08 16:48:25.46619] [273685] [info] Topic: 37. id: 370025. title: CodingStyle
+[2026-01-08 16:48:25.46643] [273685] [info] Topic: 38. id: 380100. title: Color
+[2026-01-08 16:48:25.46676] [273685] [info] Topic: 39. id: 390143. title: CommandLineStuff
+[2026-01-08 16:48:25.46702] [273685] [info] Topic: 40. id: 400103. title: ConfigFiles
+[2026-01-08 16:48:25.46717] [273685] [info] Topic: 41. id: 410055. title: ConstantStuff
+[2026-01-08 16:48:25.46722] [273685] [info] Topic: 42. id: 420003. title: Corinna
+[2026-01-08 16:48:25.46763] [273685] [info] Topic: 43. id: 430192. title: CPAN
+[2026-01-08 16:48:25.46779] [273685] [info] Topic: 44. id: 440058. title: CpanFile
+[2026-01-08 16:48:25.46788] [273685] [info] Topic: 45. id: 450027. title: cron
+[2026-01-08 16:48:25.46855] [273685] [info] Topic: 46. id: 460343. title: CryptoStuff
+[2026-01-08 16:48:25.46867] [273685] [info] Topic: 47. id: 470021. title: CssHandling
+[2026-01-08 16:48:25.46966] [273685] [info] Topic: 48. id: 480460. title: DatabaseAndSQL
+[2026-01-08 16:48:25.46990] [273685] [info] Topic: 49. id: 490064. title: DataCleaning
+[2026-01-08 16:48:25.47120] [273685] [info] Topic: 50. id: 500614. title: DataTraversal
+[2026-01-08 16:48:25.47180] [273685] [info] Topic: 51. id: 510220. title: DataTypes
+[2026-01-08 16:48:25.47212] [273685] [info] Topic: 52. id: 520122. title: DataValidation
+[2026-01-08 16:48:25.47270] [273685] [info] Topic: 53. id: 530248. title: DatesAndTimes
+[2026-01-08 16:48:25.47281] [273685] [info] Topic: 54. id: 540011. title: DebianOS
+[2026-01-08 16:48:25.47293] [273685] [info] Topic: 55. id: 550040. title: DebuggingStuff
+[2026-01-08 16:48:25.47300] [273685] [info] Topic: 56. id: 560016. title: DFA
+[2026-01-08 16:48:25.47316] [273685] [info] Topic: 57. id: 570059. title: DnsStuff
+[2026-01-08 16:48:25.47322] [273685] [info] Topic: 58. id: 580008. title: DocumentationManagement
+[2026-01-08 16:48:25.47328] [273685] [info] Topic: 59. id: 590010. title: DomainNames
+[2026-01-08 16:48:25.47336] [273685] [info] Topic: 60. id: 600027. title: EBookHandling
+[2026-01-08 16:48:25.47341] [273685] [info] Topic: 61. id: 610008. title: EditorConfigFiles
+[2026-01-08 16:48:25.47369] [273685] [info] Topic: 62. id: 620128. title: EmailStuff
+[2026-01-08 16:48:25.47380] [273685] [info] Topic: 63. id: 630027. title: EnumStuff
+[2026-01-08 16:48:25.47407] [273685] [info] Topic: 64. id: 640112. title: EventStuff
+[2026-01-08 16:48:25.47436] [273685] [info] Topic: 65. id: 650117. title: ExceptionHandling
+[2026-01-08 16:48:25.47445] [273685] [info] Topic: 66. id: 660020. title: ExportHandling
+[2026-01-08 16:48:25.47452] [273685] [info] Topic: 67. id: 670018. title: ExtensibleProvisioningProtocol
+[2026-01-08 16:48:25.47458] [273685] [info] Topic: 68. id: 680011. title: FeaturesAndPragmas
+[2026-01-08 16:48:25.47526] [273685] [info] Topic: 69. id: 690326. title: FileHandling
+[2026-01-08 16:48:25.47537] [273685] [info] Topic: 70. id: 700009. title: FindDependencies
+[2026-01-08 16:48:25.47549] [273685] [info] Topic: 71. id: 710042. title: Games
+[2026-01-08 16:48:25.47559] [273685] [info] Topic: 72. id: 720028. title: GenealogyStuff
+[2026-01-08 16:48:25.47596] [273685] [info] Topic: 73. id: 730169. title: GeographicStuff
+[2026-01-08 16:48:25.47616] [273685] [info] Topic: 74. id: 740070. title: GitStuff
+[2026-01-08 16:48:25.47623] [273685] [info] Topic: 75. id: 750007. title: GnuPG
+[2026-01-08 16:48:25.47629] [273685] [info] Topic: 76. id: 760012. title: GoogleStuff
+[2026-01-08 16:48:25.47635] [273685] [info] Topic: 77. id: 770010. title: GrammarProcessing
+[2026-01-08 16:48:25.47651] [273685] [info] Topic: 78. id: 780063. title: Graphs
+[2026-01-08 16:48:25.47663] [273685] [info] Topic: 79. id: 790033. title: HardwareStuff
+[2026-01-08 16:48:25.47684] [273685] [info] Topic: 80. id: 800079. title: HashHandling
+[2026-01-08 16:48:25.47690] [273685] [info] Topic: 81. id: 810009. title: HealthMatters
+[2026-01-08 16:48:25.47694] [273685] [info] Topic: 82. id: 820003. title: HowToBuildPerl
+[2026-01-08 16:48:25.47735] [273685] [info] Topic: 83. id: 830157. title: HTMLHandling
+[2026-01-08 16:48:25.47798] [273685] [info] Topic: 84. id: 840270. title: HTTPHandling
+[2026-01-08 16:48:25.47821] [273685] [info] Topic: 85. id: 850071. title: HTTPServers
+[2026-01-08 16:48:25.47827] [273685] [info] Topic: 86. id: 860005. title: ImageStuff
+[2026-01-08 16:48:25.47832] [273685] [info] Topic: 87. id: 870009. title: InlineStuff
+[2026-01-08 16:48:25.47838] [273685] [info] Topic: 88. id: 880014. title: InterestingModules
+[2026-01-08 16:48:25.47866] [273685] [info] Topic: 89. id: 890117. title: IO
+[2026-01-08 16:48:25.47889] [273685] [info] Topic: 90. id: 900051. title: IoLayers
+[2026-01-08 16:48:25.47898] [273685] [info] Topic: 91. id: 910015. title: IoT
+[2026-01-08 16:48:25.47902] [273685] [info] Topic: 92. id: 920004. title: IRI
+[2026-01-08 16:48:25.47905] [273685] [info] Topic: 93. id: 930002. title: IteratorStuff
+[2026-01-08 16:48:25.47914] [273685] [info] Topic: 94. id: 940030. title: JavaScript
+[2026-01-08 16:48:25.47942] [273685] [info] Topic: 95. id: 950132. title: JsonStuff
+[2026-01-08 16:48:25.47951] [273685] [info] Topic: 96. id: 960005. title: KohaLibrary
+[2026-01-08 16:48:25.47958] [273685] [info] Topic: 97. id: 970019. title: LargeLanguageModels
+[2026-01-08 16:48:25.47962] [273685] [info] Topic: 98. id: 980003. title: LateralThinking
+[2026-01-08 16:48:25.47972] [273685] [info] Topic: 99. id: 990033. title: LaTeX
+[2026-01-08 16:48:25.47982] [273685] [info] Topic: 100. id: 1000031. title: LicenceStuff
+[2026-01-08 16:48:25.48015] [273685] [info] Topic: 101. id: 1010145. title: LinguaStuff
+[2026-01-08 16:48:25.48036] [273685] [info] Topic: 102. id: 1020086. title: LocaleStuff
+[2026-01-08 16:48:25.48064] [273685] [info] Topic: 103. id: 1030120. title: LoggingStuff
+[2026-01-08 16:48:25.48071] [273685] [info] Topic: 104. id: 1040005. title: MailingLists
+[2026-01-08 16:48:25.48074] [273685] [info] Topic: 105. id: 1050002. title: MariaDB
+[2026-01-08 16:48:25.48096] [273685] [info] Topic: 106. id: 1060087. title: MarkdownHandling
+[2026-01-08 16:48:25.48111] [273685] [info] Topic: 107. id: 1070038. title: Marpa
+[2026-01-08 16:48:25.48151] [273685] [info] Topic: 108. id: 1080176. title: MathsLibraries
+[2026-01-08 16:48:25.48171] [273685] [info] Topic: 109. id: 1090059. title: MeasureMetrics
+[2026-01-08 16:48:25.48180] [273685] [info] Topic: 110. id: 1100024. title: MemoryUsage
+[2026-01-08 16:48:25.48187] [273685] [info] Topic: 111. id: 1110018. title: MidiControllers
+[2026-01-08 16:48:25.48194] [273685] [info] Topic: 112. id: 1120018. title: MobilePhones
+[2026-01-08 16:48:25.48198] [273685] [info] Topic: 113. id: 1130005. title: ModernPerl
+[2026-01-08 16:48:25.48348] [273685] [info] Topic: 114. id: 1140717. title: ModuleBuilding
+[2026-01-08 16:48:25.48370] [273685] [info] Topic: 115. id: 1150021. title: ModulePlugins
+[2026-01-08 16:48:25.48385] [273685] [info] Topic: 116. id: 1160058. title: MoneyMatters
+[2026-01-08 16:48:25.48392] [273685] [info] Topic: 117. id: 1170015. title: MusicStuff
+[2026-01-08 16:48:25.48421] [273685] [info] Topic: 118. id: 1180126. title: NetworkProgramming
+[2026-01-08 16:48:25.48440] [273685] [info] Topic: 119. id: 1190064. title: NewOperators
+[2026-01-08 16:48:25.48449] [273685] [info] Topic: 120. id: 1200023. title: OfficeFiles
+[2026-01-08 16:48:25.48453] [273685] [info] Topic: 121. id: 1210003. title: OpenCloud
+[2026-01-08 16:48:25.48459] [273685] [info] Topic: 122. id: 1220016. title: OpenGL
+[2026-01-08 16:48:25.48468] [273685] [info] Topic: 123. id: 1230021. title: OpenGraphProtocol
+[2026-01-08 16:48:25.48477] [273685] [info] Topic: 124. id: 1240021. title: OpenTelemetry
+[2026-01-08 16:48:25.48487] [273685] [info] Topic: 125. id: 1250030. title: OrgDocHandling
+[2026-01-08 16:48:25.48496] [273685] [info] Topic: 126. id: 1260026. title: PacketCapture
+[2026-01-08 16:48:25.48529] [273685] [info] Topic: 127. id: 1270147. title: ParallelProcessing
+[2026-01-08 16:48:25.48542] [273685] [info] Topic: 128. id: 1280032. title: ParsingStuff
+[2026-01-08 16:48:25.48577] [273685] [info] Topic: 129. id: 1290156. title: PdfStuff
+[2026-01-08 16:48:25.48582] [273685] [info] Topic: 130. id: 1300002. title: Perl V7
+[2026-01-08 16:48:25.48587] [273685] [info] Topic: 131. id: 1310006. title: PerlDeltas
+[2026-01-08 16:48:25.48593] [273685] [info] Topic: 132. id: 1320013. title: PerlDistros
+[2026-01-08 16:48:25.48603] [273685] [info] Topic: 133. id: 1330034. title: PerlDocumentation
+[2026-01-08 16:48:25.48614] [273685] [info] Topic: 134. id: 1340031. title: PerlInternals
+[2026-01-08 16:48:25.48619] [273685] [info] Topic: 135. id: 1350007. title: PhoneNumbers
+[2026-01-08 16:48:25.48623] [273685] [info] Topic: 136. id: 1360006. title: PhpStuff
+[2026-01-08 16:48:25.48631] [273685] [info] Topic: 137. id: 1370023. title: PipeLines
+[2026-01-08 16:48:25.48644] [273685] [info] Topic: 138. id: 1380051. title: PlackServer
+[2026-01-08 16:48:25.48667] [273685] [info] Topic: 139. id: 1390092. title: PodHandling
+[2026-01-08 16:48:25.48673] [273685] [info] Topic: 140. id: 1400009. title: POSIX
+[2026-01-08 16:48:25.48678] [273685] [info] Topic: 141. id: 1410008. title: ProfilingCode
+[2026-01-08 16:48:25.48684] [273685] [info] Topic: 142. id: 1420011. title: ProjectManagement
+[2026-01-08 16:48:25.48690] [273685] [info] Topic: 143. id: 1430015. title: ProperNames
+[2026-01-08 16:48:25.48698] [273685] [info] Topic: 144. id: 1440020. title: QandA
+[2026-01-08 16:48:25.48704] [273685] [info] Topic: 145. id: 1450011. title: QrCodes
+[2026-01-08 16:48:25.48707] [273685] [info] Topic: 146. id: 1460003. title: RakuLanguage
+[2026-01-08 16:48:25.48710] [273685] [info] Topic: 147. id: 1470003. title: RaspberryPi
+[2026-01-08 16:48:25.48716] [273685] [info] Topic: 148. id: 1480014. title: RedBlackTrees
+[2026-01-08 16:48:25.48720] [273685] [info] Topic: 149. id: 1490006. title: ReferenceStuff
+[2026-01-08 16:48:25.48736] [273685] [info] Topic: 150. id: 1500061. title: RegexpStuff
+[2026-01-08 16:48:25.48745] [273685] [info] Topic: 151. id: 1510006. title: RegistrySystemTesting
+[2026-01-08 16:48:25.48750] [273685] [info] Topic: 152. id: 1520007. title: RemoteDesktops
+[2026-01-08 16:48:25.48775] [273685] [info] Topic: 153. id: 1530110. title: RequestTracker
+[2026-01-08 16:48:25.48780] [273685] [info] Topic: 154. id: 1540003. title: RestfulInterface
+[2026-01-08 16:48:25.48784] [273685] [info] Topic: 155. id: 1550006. title: RotateLogFiles
+[2026-01-08 16:48:25.48789] [273685] [info] Topic: 156. id: 1560013. title: RSS
+[2026-01-08 16:48:25.48799] [273685] [info] Topic: 157. id: 1570034. title: SampleCode
+[2026-01-08 16:48:25.48804] [273685] [info] Topic: 158. id: 1580006. title: SandBoxes
+[2026-01-08 16:48:25.48809] [273685] [info] Topic: 159. id: 1590009. title: ScreenStuff
+[2026-01-08 16:48:25.48822] [273685] [info] Topic: 160. id: 1600051. title: SecurityPolicy
+[2026-01-08 16:48:25.48827] [273685] [info] Topic: 161. id: 1610005. title: SeismicAnalysis
+[2026-01-08 16:48:25.48831] [273685] [info] Topic: 162. id: 1620006. title: SeismicOS
+[2026-01-08 16:48:25.48841] [273685] [info] Topic: 163. id: 1630038. title: SetStuff
+[2026-01-08 16:48:25.48846] [273685] [info] Topic: 164. id: 1640005. title: SidefLanguage
+[2026-01-08 16:48:25.48851] [273685] [info] Topic: 165. id: 1650011. title: SlackWare
+[2026-01-08 16:48:25.48855] [273685] [info] Topic: 166. id: 1660007. title: SocialMedia
+[2026-01-08 16:48:25.48863] [273685] [info] Topic: 167. id: 1670025. title: SortModules
+[2026-01-08 16:48:25.48880] [273685] [info] Topic: 168. id: 1680069. title: SpreadsheetStuff
+[2026-01-08 16:48:25.48891] [273685] [info] Topic: 169. id: 1690034. title: SSH
+[2026-01-08 16:48:25.48896] [273685] [info] Topic: 170. id: 1700006. title: StaticSiteBuilders
+[2026-01-08 16:48:25.48907] [273685] [info] Topic: 171. id: 1710039. title: StatisticsStuff
+[2026-01-08 16:48:25.48912] [273685] [info] Topic: 172. id: 1720003. title: StreamingMedia
+[2026-01-08 16:48:25.48935] [273685] [info] Topic: 173. id: 1730099. title: StringStuff
+[2026-01-08 16:48:25.48952] [273685] [info] Topic: 174. id: 1740057. title: SwitchStatements
+[2026-01-08 16:48:25.48965] [273685] [info] Topic: 175. id: 1750044. title: SystemInfo
+[2026-01-08 16:48:25.48996] [273685] [info] Topic: 176. id: 1760135. title: SystemMonitoring
+[2026-01-08 16:48:25.49019] [273685] [info] Topic: 177. id: 1770083. title: TabularData
+[2026-01-08 16:48:25.49025] [273685] [info] Topic: 178. id: 1780002. title: TCP/IP
+[2026-01-08 16:48:25.49051] [273685] [info] Topic: 179. id: 1790114. title: TemplateStuff
+[2026-01-08 16:48:25.49165] [273685] [info] Topic: 180. id: 1800535. title: TestingHelp
+[2026-01-08 16:48:25.49216] [273685] [info] Topic: 181. id: 1810175. title: TextAnalysisAndFormatting
+[2026-01-08 16:48:25.49230] [273685] [info] Topic: 182. id: 1820029. title: TiddlyWikis
+[2026-01-08 16:48:25.49238] [273685] [info] Topic: 183. id: 1830013. title: TrueTypeFonts
+[2026-01-08 16:48:25.49242] [273685] [info] Topic: 184. id: 1840003. title: UninstallModule
+[2026-01-08 16:48:25.49246] [273685] [info] Topic: 185. id: 1850006. title: UnixWare
+[2026-01-08 16:48:25.49251] [273685] [info] Topic: 186. id: 1860007. title: UserInfo
+[2026-01-08 16:48:25.49256] [273685] [info] Topic: 187. id: 1870012. title: UserInput
+[2026-01-08 16:48:25.49280] [273685] [info] Topic: 188. id: 1880091. title: UsernamePassword
+[2026-01-08 16:48:25.49316] [273685] [info] Topic: 189. id: 1890163. title: UTF8
+[2026-01-08 16:48:25.49333] [273685] [info] Topic: 190. id: 1900051. title: UUID
+[2026-01-08 16:48:25.49340] [273685] [info] Topic: 191. id: 1910015. title: VersionWare
+[2026-01-08 16:48:25.49349] [273685] [info] Topic: 192. id: 1920028. title: VirtualMachines
+[2026-01-08 16:48:25.49354] [273685] [info] Topic: 193. id: 1930007. title: WantArray
+[2026-01-08 16:48:25.49362] [273685] [info] Topic: 194. id: 1940025. title: WeatherStuff
+[2026-01-08 16:48:25.49368] [273685] [info] Topic: 195. id: 1950012. title: WebSecurity
+[2026-01-08 16:48:25.49419] [273685] [info] Topic: 196. id: 1960235. title: WebServices
+[2026-01-08 16:48:25.49428] [273685] [info] Topic: 197. id: 1970005. title: WeirdAndWonderful
+[2026-01-08 16:48:25.49445] [273685] [info] Topic: 198. id: 1980032. title: WikiStuff
+[2026-01-08 16:48:25.49451] [273685] [info] Topic: 199. id: 1990006. title: X11
+[2026-01-08 16:48:25.49455] [273685] [info] Topic: 200. id: 2000005. title: XDGBaseDirectorySpecification
+[2026-01-08 16:48:25.49468] [273685] [info] Topic: 201. id: 2010049. title: XML
+[2026-01-08 16:48:25.49476] [273685] [info] Topic: 202. id: 2020017. title: XS
+[2026-01-08 16:48:25.49482] [273685] [info] Topic: 203. id: 2030015. title: XWindowsStuff
+[2026-01-08 16:48:25.49493] [273685] [info] Topic: 204. id: 2040040. title: YamlStuff
+[2026-01-08 16:48:25.49499] [273685] [info] Topic: 205. id: 2050011. title: ZMQ
+[2026-01-08 16:48:25.49889] [273685] [info] Created /home/ron/perl.modules/CPAN-MetaCurator/html/cpan.metacurator.tree.html. Encoding: :encoding(utf-8)
+[2026-01-08 16:48:25.49892] [273685] [info] Leaf count:  4314
+[2026-01-08 16:48:25.49894] [273685] [info] Topic count: 205
+
