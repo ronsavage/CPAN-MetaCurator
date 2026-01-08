@@ -32,5 +32,5 @@ if [[ -a $FILE1 ]]
 then
 	echo Warning: $FILE1 exists
 else
-	echo Nope
+	echo Nope. All clear
 fi

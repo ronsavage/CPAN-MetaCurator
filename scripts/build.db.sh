@@ -12,7 +12,7 @@ time scripts/populate.sqlite.tables.pl
 time scripts/export.as.tree.pl
 
 declare -x SOURCE=html/cpan.metacurator.tree.html
-declare -x DEST=$DS/misc
+declare -x DEST=$DH/misc
 
 cp $SOURCE $DEST
 echo Copied $SOURCE to $DEST
