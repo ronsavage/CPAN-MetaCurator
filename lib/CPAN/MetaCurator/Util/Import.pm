@@ -181,7 +181,7 @@ sub populate_modules_table
 		$module_count = `echo 'select count(*) from modules' | sqlite3 $database_path`;
 		chomp($module_count);
 
-		$self -> logger -> info("Imported $module_count modules");
+		$self -> logger -> info("Imported $module_count modules in populate_modules_table()");
 	}
 	else
 	{

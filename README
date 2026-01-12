@@ -1,0 +1,19 @@
+This file is the README for CPAN::MetaCurator
+
+Purpose
+
+To convert a curated subset of Perl modules from the file
+02packages.details.txt into a tree managed by JSTree
+
+Public Repository
+
+https://github.com/ronsavage/CPAN-MetaCurator
+
+AUTHOR
+
+Ron Savage
+
+LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
