@@ -118,6 +118,7 @@ sub format_text
 		{
 			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
 
+			$self -> logger -> debug("$$item{text}");
 			$self -> logger -> error("Missing text @ line # $_") if (length($text[$_]) == 0);
 
 			if ($inside_see_also)
@@ -143,7 +144,7 @@ sub format_text
 			{
 				if ($text[$_ + 1] =~ /^http/) # Eg: AudioVisual.
 				{
-					$$item{href} = "$text[$_ + 1] (*)";
+					$$item{href} = $text[$_ + 1];
 				}
 				elsif ($$pad{module_names}{$$item{text} }) # Eg: builtins, GD, GD::Polyline.
 				{
