@@ -143,7 +143,7 @@ sub format_text
 			{
 				if ($text[$_ + 1] =~ /^http/) # Eg: AudioVisual.
 				{
-					$$item{href} = $text[$_ + 1];
+					$$item{href} = "$text[$_ + 1] (*)";
 				}
 				elsif ($$pad{module_names}{$$item{text} }) # Eg: builtins, GD, GD::Polyline.
 				{
@@ -197,7 +197,7 @@ sub format_text
 
 		if ($$item{text} =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
 		{
-			$$item{text} = "<a href = '$pieces[0]'>$$item{text} (a link)</a>";
+			$$item{text} = "<a href = '$pieces[0]'>$$item{text}</a>";
 		}
 		elsif ($text_is_topic) # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
 		{
@@ -211,7 +211,7 @@ sub format_text
 		}
 		else # Eg: It's a module.
 		{
-			$$item{text} = "<a href = 'https://metacpan.org/pod/$pieces[0]'>$$item{text} (a module)</a>";
+			$$item{text} = "<a href = 'https://metacpan.org/pod/$pieces[0]'>$$item{text}</a>";
 		}
 
 		push @lines, $item;
