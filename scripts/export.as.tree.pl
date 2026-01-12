@@ -28,7 +28,7 @@ my(%options);
 
 $options{help}	 		= 0;
 $options{home_path}		= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
-$options{log_level}		= 'info';
+$options{log_level}		= 'debug';
 $options{output_path}	= 'html/cpan.metacurator.tree.html';
 my(%opts)				=
 (

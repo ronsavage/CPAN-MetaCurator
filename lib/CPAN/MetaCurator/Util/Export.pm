@@ -118,21 +118,27 @@ sub format_text
 		{
 			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
 
-			$self -> logger -> debug("$$item{text}");
+			$self -> logger -> debug("a. Topic is $$item{text}");
 			$self -> logger -> error("Missing text @ line # $_") if (length($text[$_]) == 0);
 
 			if ($inside_see_also)
 			{
+				$self -> logger -> debug("b. Topic is $$item{text}");
+
 				$inside_see_also = false;
 			}
 
 			if ($$item{text} =~ /^[A-Z]+$/) # Eg: Any acronym.
 			{
 				$$item{text} .= " => $text[$_ + 1]";
+
+				$self -> logger -> debug("c. Topic is $$item{text}");
 			}
 			elsif ($$item{text} =~ /^http/) # Eg: AdventPlanet.
 			{
 				$$item{href} = $$item{text};
+
+				$self -> logger -> debug("d. Topic is $$item{text}");
 			}
 			elsif ($$item{text} =~ /^See also/) # Eg: ABeCeDarian.
 			{
@@ -145,10 +151,14 @@ sub format_text
 				if ($text[$_ + 1] =~ /^http/) # Eg: AudioVisual.
 				{
 					$$item{href} = $text[$_ + 1];
+
+					$self -> logger -> debug("e. Topic is $$item{text}");
 				}
 				elsif ($$pad{module_names}{$$item{text} }) # Eg: builtins, GD, GD::Polyline.
 				{
 					$$item{text} = "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text} - $text[$_ + 1]</a>";
+
+					$self -> logger -> debug("f. Topic is $$item{text}");
 				}
 				else
 				{
@@ -158,6 +168,8 @@ sub format_text
 					{
 						$$item{href} = $text[$_ + 2];
 					}
+
+					$self -> logger -> debug("g. Topic is $$item{text}");
 				}
 			}
 			else
@@ -172,6 +184,8 @@ sub format_text
 			$$item{text} = $text[$_];
 
 			push @see_also, $item;
+
+			$self -> logger -> debug("h. Topic is $$item{text}");
 		}
 	}
 
