@@ -15,7 +15,23 @@ use Moo;
 use Mojo::JSON 'from_json';
 
 use Text::CSV::Encoded;
-use Types::Standard qw/Str/;
+use Types::Standard qw/ArrayRef/;
+
+has constants_table =>
+(
+	default		=> sub{return []},
+	is			=> 'rw',
+	isa			=> ArrayRef,
+	required	=> 0,
+);
+
+has topics_table =>
+(
+	default		=> sub{return []},
+	is			=> 'rw',
+	isa			=> ArrayRef,
+	required	=> 0,
+);
 
 our $VERSION = '1.03';
 
@@ -78,7 +94,7 @@ sub import_csv_file
 
 # -----------------------------------------------
 
-sub import_perl_modules
+sub import_perl_packages
 {
 	my($self, $path, $table_name) = @_;
 	my($count)	= 0;
@@ -104,12 +120,12 @@ sub import_perl_modules
 		$$record{version}	= $pieces[1];
 		$id					= $self -> insert_hashref($table_name, $record);
 
-		say "Stored $count records into '$table_name'" if ($count % 10000 == 0);
+		$self -> logger -> info("Stored $count records so far into '$table_name'") if ($count % 10000 == 0);
 	}
 
 	$self -> logger -> info("Stored $count records into '$table_name'");
 
-} # End of import_perl_modules.
+} # End of import_perl_packages.
 
 # -----------------------------------------------
 
@@ -129,7 +145,7 @@ sub populate_all_tables
 	});
 
 	$self -> populate_constants_table($csv);
-	$self -> populate_modules_table($csv);
+	$self -> populate_packages_table($csv);
 	$self -> populate_topics_table;
 
 	$self -> logger -> info('Populated all tables');
@@ -152,73 +168,53 @@ sub populate_constants_table
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
+	$self -> constants_table($self -> read_table($table_name) );
+
+	my($topic_count) = $#{$self -> constants_table};
+
+	$self -> logger -> info("Finished populate_constants_table(). Stored $topic_count records into '$table_name'");
+	$self -> logger -> debug('Table: ' . ucfirst($table_name) );
+	$self -> logger -> debug(Dumper($self -> constants_table) );
+
 }	# End of populate_constants_table.
 
 # -----------------------------------------------
 
-sub populate_modules_table
+sub populate_packages_table
 {
 	my($self, $csv)		= @_;
 	my($database_path)	= File::Spec -> catfile($self -> home_path, $self -> database_path);
-	my($csv_path)		= File::Spec -> catfile($self -> home_path, $self -> modules_table_path);
-	my($status)			= (-e $csv_path) ? 'Present' : 'Absent';
-	my($table_name)		= 'modules';
+	my($table_name)		= 'packages';
 
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 
-	my($module_count);
+	my($package_count);
 
-	if ($status eq 'Present')
-	{
-		# Takes 2.7s.
+	my($packages_path) = File::Spec -> catfile($self -> home_path, $self -> packages_path);
 
-		$self -> logger -> info("Importing modules from $csv_path");
+	$self -> logger -> info("Importing packages from '$packages_path'");
+	$self -> import_perl_packages($packages_path, $table_name);
 
-		# $self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
+#	my($command) = `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $csv_path`;
+#	$self -> logger -> info("Exported modules table to '$csv_path'");
 
-		`csv2sqlite --format=csv --table modules $csv_path $database_path`;
+	my($line_count) = `wc -l $csv_path`;
+	($module_count, my $dummy) = split(' ', $line_count);
+	$module_count--; # Allow for header record.
 
-		$module_count = `echo 'select count(*) from modules' | sqlite3 $database_path`;
-		chomp($module_count);
+	$self -> logger -> info("Finished populate_packages_table()");
 
-		$self -> logger -> info("Imported $module_count modules in populate_modules_table()");
-	}
-	else
-	{
-		# Takes 1.5 hours.
-
-		my($packages_path) = File::Spec -> catfile($self -> home_path, $self -> perl_modules_path);
-
-		$self -> logger -> info("Importing modules from '$packages_path'");
-		$self -> import_perl_modules($packages_path, $table_name);
-
-		my($command) = `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $csv_path`;
-		$self -> logger -> info("Exported modules table to '$csv_path'");
-
-		my($line_count) = `wc -l $csv_path`;
-		($module_count, my $dummy) = split(' ', $line_count);
-		$module_count--; # Allow for header record.
-
-		$self -> logger -> info("Exported $module_count modules");
-	}
-
-	$self -> logger -> info("Finished populate_modules_table()");
-
-}	# End of populate_modules_table.
+}	# End of populate_packages_table.
 
 # -----------------------------------------------
 
 sub populate_topics_table
 {
-	my($self)			= @_;
-	my($data)			= $self -> read_tiddlers_file;
-	my($record)			= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
-	my($table_name)		= 'topics';
-	my($root_id)		= $self -> insert_hashref($table_name, $record);
-	my($topic_count)	= 1; # Can't use $$pad{topic_count} since can't call Database.build_pad() yet.
-
-	$self -> logger -> info("Topics:");
-	$self -> logger -> info("$topic_count: $$record{title} => $$record{text}");
+	my($self)		= @_;
+	my($data)		= $self -> read_tiddlers_file;
+	my($record)		= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
+	my($table_name)	= 'topics';
+	my($root_id)	= $self -> insert_hashref($table_name, $record);
 
 	my($id);
 	my($text, $title);
@@ -235,18 +231,20 @@ sub populate_topics_table
 		$self -> logger -> info("Missing text @ line: $index. title: $title"), next if (! defined $text);
 		$self -> logger -> info("Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
 
-		$topic_count++;
-
 		$$record{parent_id}	= $root_id;
 		$$record{title}		= $title;
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
 		$$record{text}		= $text;
 		$id					= $self -> insert_hashref($table_name, $record);
-
-		$self -> logger -> info("$topic_count: $$record{title}");
 	}
 
+	$self -> topics_table($self -> read_table($table_name) );
+
+	my($topic_count) = $#{$self -> topics_table};
+
 	$self -> logger -> info("Finished populate_topics_table(). Stored $topic_count records into '$table_name'");
+	$self -> logger -> debug('Table: ' . ucfirst($table_name) );
+	$self -> logger -> debug(Dumper($self -> topics_table) );
 
 } # End of populate_topics_table;
 

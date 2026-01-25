@@ -96,7 +96,7 @@ has modules_table_path =>
 	required	=> 0,
 );
 
-has perl_modules_path =>
+has packages_path =>
 (
 	default		=> sub{return 'data/02packages.details.txt'}, # Format: Header + linear.
 	is			=> 'rw',
