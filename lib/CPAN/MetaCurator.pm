@@ -4,7 +4,7 @@ use 5.36.0;
 use parent 'CPAN::MetaCurator::Util::Database';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 #-------------------------------------------------
 
@@ -13,6 +13,13 @@ our $VERSION = '1.02';
 =pod
 
 =head1 How to convert a Perl.Wiki.html into a jsTree
+
+
+Counts:
+1. Count the # of topics:
+	cd ~/perl.modules/CPAN-MetaCurator
+	scripts/read.tiddlers.pl | wc -l
+	203 [in Perl.Wiki V 1.38 as at 2026-01-25]
 
 Note:
 1: There is assumed to be just 1 item called 'See also' per topic, preferably at the start.

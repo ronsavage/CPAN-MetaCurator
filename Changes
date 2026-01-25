@@ -1,5 +1,9 @@
 Revision history for Perl extension CPAN::MetaCurator.
 
+1.03  2026-01-25T12:44:00
+	- Update scripts/read.tiddlers.pl to recognize both ChangeLog & MainMenu as special para names
+	- Update details in CPAN::MetaCurator of the process of reading the tiddlers file & gathering statistics
+
 1.02  2025-10-07T11:01:57
 	- Add LICENSE to Makefile.PL
 	- Start rewriting Export.pm to handle multiples of <pre>...</pre> and See Also and to keep them in situ

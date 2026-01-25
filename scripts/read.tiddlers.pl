@@ -23,7 +23,7 @@ for my $index (0 .. $#$data)
 	$text	= $$data[$index]{text};
 	$title	= $$data[$index]{title};
 
-	next if ($title =~ 'MainMenu'); # TiddlyWiki special case.
+	next if ($title =~ /ChangeLog|MainMenu/); # Special case para names.
 
 	$count++;
 
