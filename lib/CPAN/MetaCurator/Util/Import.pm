@@ -197,10 +197,10 @@ sub populate_packages_table
 
 #	my($command) = `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $csv_path`;
 #	$self -> logger -> info("Exported modules table to '$csv_path'");
-
-	my($line_count) = `wc -l $csv_path`;
-	($module_count, my $dummy) = split(' ', $line_count);
-	$module_count--; # Allow for header record.
+#
+#	my($line_count) = `wc -l $csv_path`;
+#	($module_count, my $dummy) = split(' ', $line_count);
+#	$module_count--; # Allow for header record.
 
 	$self -> logger -> info("Finished populate_packages_table()");
 
