@@ -99,33 +99,30 @@ SQL
 
 # --------------------------------------------------
 
-sub create_memos_table
+sub create_modules_table
 {
 	my($self)        = @_;
-	my($table_name)  = 'memos';
+	my($table_name)  = 'modules';
 	my($engine)      = $self -> engine;
 	my($primary_key) = $self -> creator -> generate_primary_key_sql($table_name);
-	my($time_option) = $self -> time_option;
 	my($result)      = $self -> creator -> create_table(<<SQL);
 create table $table_name
 (
-id			$primary_key,
-topic_id	integer references topics(id),
-text		text not null,
-timestamp	text $time_option not null default current_timestamp
+id		$primary_key,
+name	text not null
 ) strict $engine
 SQL
 
 	return $result;
 
-}	# End of create_memos_table.
+}	# End of create_modules_table.
 
 # --------------------------------------------------
 
-sub create_modules_table
+sub create_packages_table
 {
 	my($self)        = @_;
-	my($table_name)  = 'modules';
+	my($table_name)  = 'packages';
 	my($engine)      = $self -> engine;
 	my($primary_key) = $self -> creator -> generate_primary_key_sql($table_name);
 	my($result)      = $self -> creator -> create_table(<<SQL);
@@ -139,7 +136,7 @@ SQL
 
 	return $result;
 
-}	# End of create_modules_table.
+}	# End of create_packages_table.
 
 # --------------------------------------------------
 # Note: The columns are not in alphabetical order
