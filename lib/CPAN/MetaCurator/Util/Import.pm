@@ -105,7 +105,7 @@ sub import_perl_packages
 	my(%names);
 	my(@pieces);
 
-	$self -> logger -> info("Populating the 'table_name' table with '$path'");
+	$self -> logger -> info("Populating the '$table_name' table with '$path'");
 
 	for (@names)
 	{

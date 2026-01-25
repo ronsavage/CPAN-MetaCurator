@@ -1,0 +1,54 @@
+[2026-01-25 16:25:26.29896] [39963] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-25 16:25:26.29915] [39963] [info] --------------------------------------------------
+[2026-01-25 16:25:26.29918] [39963] [info] Populating all tables
+[2026-01-25 16:25:26.30004] [39963] [info] Populating the 'constants' table with import_csv_file()
+[2026-01-25 16:50:43.50844] [40258] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-25 16:50:43.50863] [40258] [info] --------------------------------------------------
+[2026-01-25 16:50:43.50866] [40258] [info] Dropping all tables
+[2026-01-25 16:50:43.52481] [40258] [info] Dropped all tables
+[2026-01-25 16:50:43.52487] [40258] [info] --------------------------------------------------
+[2026-01-25 16:50:46.32873] [40262] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-25 16:50:46.32891] [40262] [info] --------------------------------------------------
+[2026-01-25 16:50:46.32893] [40262] [info] Creating all tables
+[2026-01-25 16:50:46.34755] [40262] [info] Created all tables
+[2026-01-25 16:50:46.34761] [40262] [info] --------------------------------------------------
+[2026-01-25 16:50:54.34694] [40278] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-25 16:50:54.34712] [40278] [info] --------------------------------------------------
+[2026-01-25 16:50:54.34715] [40278] [info] Populating all tables
+[2026-01-25 16:50:54.34798] [40278] [info] Populating the 'constants' table with import_csv_file()
+[2026-01-25 16:50:54.38891] [40278] [info] Stored 8 records into 'constants'
+[2026-01-25 16:50:54.38913] [40278] [info] Finished populate_constants_table(). Stored 7 records into 'constants'
+[2026-01-25 16:50:54.38942] [40278] [info] Importing packages from '/home/ron/perl.modules/CPAN-MetaCurator/data/02packages.details.txt'
+[2026-01-25 16:50:54.47959] [40278] [info] Populating the 'table_name' table with '/home/ron/perl.modules/CPAN-MetaCurator/data/02packages.details.txt'
+[2026-01-25 16:51:43.62348] [40278] [info] Stored 10000 records so far into 'packages'
+[2026-01-25 16:54:01.34854] [40278] [info] Stored 20000 records so far into 'packages'
+[2026-01-25 16:55:49.39453] [40278] [info] Stored 30000 records so far into 'packages'
+[2026-01-25 16:57:58.13243] [40278] [info] Stored 40000 records so far into 'packages'
+[2026-01-25 16:59:46.80243] [40278] [info] Stored 50000 records so far into 'packages'
+[2026-01-25 17:01:39.45773] [40278] [info] Stored 60000 records so far into 'packages'
+[2026-01-25 17:03:33.43426] [40278] [info] Stored 70000 records so far into 'packages'
+[2026-01-25 17:05:35.82722] [40278] [info] Stored 80000 records so far into 'packages'
+[2026-01-25 17:07:29.67170] [40278] [info] Stored 90000 records so far into 'packages'
+[2026-01-25 17:09:14.66857] [40278] [info] Stored 100000 records so far into 'packages'
+[2026-01-25 20:23:43.36520] [40278] [info] Stored 110000 records so far into 'packages'
+[2026-01-25 20:25:57.41807] [40278] [info] Stored 120000 records so far into 'packages'
+[2026-01-25 20:28:15.42585] [40278] [info] Stored 130000 records so far into 'packages'
+[2026-01-25 20:30:24.14766] [40278] [info] Stored 140000 records so far into 'packages'
+[2026-01-25 20:32:33.14255] [40278] [info] Stored 150000 records so far into 'packages'
+[2026-01-25 20:34:50.88847] [40278] [info] Stored 160000 records so far into 'packages'
+[2026-01-25 20:37:12.89728] [40278] [info] Stored 170000 records so far into 'packages'
+[2026-01-25 20:39:23.59523] [40278] [info] Stored 180000 records so far into 'packages'
+[2026-01-25 20:41:42.94484] [40278] [info] Stored 190000 records so far into 'packages'
+[2026-01-25 20:43:52.79508] [40278] [info] Stored 200000 records so far into 'packages'
+[2026-01-26 07:29:32.68435] [40278] [info] Stored 210000 records so far into 'packages'
+[2026-01-26 07:31:56.49759] [40278] [info] Stored 220000 records so far into 'packages'
+[2026-01-26 07:34:17.96178] [40278] [info] Stored 230000 records so far into 'packages'
+[2026-01-26 07:36:35.45277] [40278] [info] Stored 240000 records so far into 'packages'
+[2026-01-26 07:39:00.11295] [40278] [info] Stored 250000 records so far into 'packages'
+[2026-01-26 07:41:19.49776] [40278] [info] Stored 260000 records so far into 'packages'
+[2026-01-26 07:43:39.09361] [40278] [info] Stored 270000 records so far into 'packages'
+[2026-01-26 07:43:45.61706] [40278] [info] Stored 270458 records into 'packages'
+[2026-01-26 07:43:45.62691] [40278] [info] Finished populate_packages_table()
+[2026-01-26 07:43:48.66040] [40278] [info] Finished populate_topics_table(). Stored 205 records into 'topics'
+[2026-01-26 07:43:48.68010] [40278] [info] Populated all tables
+[2026-01-26 07:43:48.68025] [40278] [info] --------------------------------------------------

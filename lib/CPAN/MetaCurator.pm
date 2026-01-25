@@ -14,11 +14,11 @@ our $VERSION = '1.03';
 
 =head1 How to convert a Perl.Wiki.html into a jsTree
 
-Steps:
+Steps (2025-01-25):
 	a. cd ~/perl.modules/CPAN-MetaCurator/
 	b. cp /dev/null log/development.log
 	c. wget https://www.cpan.org/modules/02packages.details.txt.gz
-	d. gunzip 02packages.details.txt.gz
+	d. gunzip 02packages.details.txt.gz (Contains 270,458 records + 10 header lines)
 	e. mv 02packages.details.txt data/
 	f. Browse Perl.Wiki.html
 	g. In the 'Tools' tab click 'export all'
@@ -26,6 +26,7 @@ Steps:
 	i. cp ~/Downloads/tiddlers.json data/cpan.metacurator.tiddlers.json
 	j. git commit -am"Some message"
 	k. build.module.sh CPAN::MetaCurator 1.03
+	l. scripts/build.db.sh (Takes 15 hours. Output: data/cpan.metacurator.sqlite. Size: 14,094,336 bytes)
 
 Counts:
 1. Count the # of topics:
