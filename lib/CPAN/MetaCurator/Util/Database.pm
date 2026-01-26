@@ -183,6 +183,9 @@ sub init_db
 {
 	my($self)		= @_;
 	my($config)		= $self -> config;
+
+	say Dumper($config);
+
 	my(%attributes)	=
 	(
 		AutoCommit 			=> $$config{AutoCommit},

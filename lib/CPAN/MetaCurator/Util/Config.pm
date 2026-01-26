@@ -144,6 +144,7 @@ sub init_config
 	$$config{config_path}	= $path;
 	$$config{log_path}		= File::Spec -> catfile($self -> home_path, $$config{log_path});
 
+	$self -> config($config);
 	$self -> logger(Mojo::Log -> new(level => $self -> log_level, path => $$config{log_path}) );
 
 } # End of init_config.
