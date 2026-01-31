@@ -153,7 +153,7 @@ sub populate_all_tables
 	});
 
 	$self -> populate_constants_table($csv);
-	$self -> populate_packages_table($csv) if (include_packages == 1);
+	$self -> populate_packages_table($csv) if ($self -> include_packages == 1);
 	$self -> populate_topics_table;
 
 	$self -> logger -> info('Populated all tables');
