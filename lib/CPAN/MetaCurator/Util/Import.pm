@@ -224,13 +224,14 @@ sub populate_topics_table
 	my($table_name)	= 'topics';
 	my($root_id)	= $self -> insert_hashref($table_name, $record);
 
-	say Dumper($self -> constants_table);
+	my($special_para_names);
 
 	for my $row (@{$self -> constants_table})
 	{
 		$special_para_names = $$row{value} if ($$row{name} eq 'special_para_names');
 	}
 
+	say Dumper($self -> constants_table);
 	say "special_para_names: $special_para_names";
 
 	my($id);
