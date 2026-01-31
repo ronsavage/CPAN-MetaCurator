@@ -15,13 +15,21 @@ use Moo;
 use Mojo::JSON 'from_json';
 
 use Text::CSV::Encoded;
-use Types::Standard qw/ArrayRef/;
+use Types::Standard qw/ArrayRef Int/;
 
 has constants_table =>
 (
 	default		=> sub{return []},
 	is			=> 'rw',
 	isa			=> ArrayRef,
+	required	=> 0,
+);
+
+has include_packages =>
+(
+	default		=> sub{return 0},
+	is			=> 'rw',
+	isa			=> Int,
 	required	=> 0,
 );
 
@@ -145,7 +153,7 @@ sub populate_all_tables
 	});
 
 	$self -> populate_constants_table($csv);
-	$self -> populate_packages_table($csv);
+	$self -> populate_packages_table($csv) if (include_packages == 1);
 	$self -> populate_topics_table;
 
 	$self -> logger -> info('Populated all tables');

@@ -15,3 +15,20 @@
 [2026-01-31 17:43:26.42774] [875844] [info] Leaf count:  0
 [2026-01-31 17:43:26.42776] [875844] [info] Topic count: 1
 
+[2026-01-31 17:47:01.81807] [877552] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-01-31 17:47:01.81826] [877552] [info] --------------------------------------------------
+[2026-01-31 17:47:01.81829] [877552] [info] Exporting the wiki as a JSTree
+[2026-01-31 17:47:01.83418] [877552] [info] Constants:
+[2026-01-31 17:47:01.83422] [877552] [info] domain_name => savage.net.au
+[2026-01-31 17:47:01.83424] [877552] [info] encoding => :encoding(UTF-8)
+[2026-01-31 17:47:01.83426] [877552] [info] logo_path => /assets/images/local/rons.logo.png
+[2026-01-31 17:47:01.83428] [877552] [info] page_name => cpan.metacurator.tree.html
+[2026-01-31 17:47:01.83429] [877552] [info] time_zone => Australia/Melbourne
+[2026-01-31 17:47:01.83431] [877552] [info] title_font_path => /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
+[2026-01-31 17:47:01.83432] [877552] [info] title_font_size => 16
+[2026-01-31 17:47:01.83434] [877552] [info] --------------------------------------------------
+[2026-01-31 17:47:01.83457] [877552] [info] Topic: 1. id: . title: 
+[2026-01-31 17:47:01.83478] [877552] [info] Created /home/ron/perl.modules/CPAN-MetaCurator/html/cpan.metacurator.tree.html. Encoding: :encoding(utf-8)
+[2026-01-31 17:47:01.83481] [877552] [info] Leaf count:  0
+[2026-01-31 17:47:01.83483] [877552] [info] Topic count: 1
+
