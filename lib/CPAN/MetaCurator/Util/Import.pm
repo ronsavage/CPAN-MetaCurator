@@ -178,9 +178,9 @@ sub populate_constants_table
 
 	$self -> constants_table($self -> read_table($table_name) );
 
-	my($topic_count) = $#{$self -> constants_table};
+	my($constants_count) = $#{$self -> constants_table};
 
-	$self -> logger -> info("Finished populate_constants_table(). Stored $topic_count records into '$table_name'");
+	$self -> logger -> info("Finished populate_constants_table(). Stored $constants_count records into '$table_name'");
 	$self -> logger -> debug('Table: ' . ucfirst($table_name) );
 	$self -> logger -> debug(Dumper($self -> constants_table) );
 
@@ -223,6 +223,8 @@ sub populate_topics_table
 	my($record)		= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
 	my($table_name)	= 'topics';
 	my($root_id)	= $self -> insert_hashref($table_name, $record);
+
+	say Dumper($self -> constants_table);
 
 	my($id);
 	my($text, $title);
