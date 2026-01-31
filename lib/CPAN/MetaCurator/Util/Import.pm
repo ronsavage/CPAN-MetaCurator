@@ -226,6 +226,13 @@ sub populate_topics_table
 
 	say Dumper($self -> constants_table);
 
+	for my $row (@{$self -> constants_table})
+	{
+		$special_para_names = $$row{value} if ($$row{name} eq 'special_para_names');
+	}
+
+	say "special_para_names: $special_para_names";
+
 	my($id);
 	my($text, $title);
 
