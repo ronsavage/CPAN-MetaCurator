@@ -231,7 +231,7 @@ sub populate_topics_table
 		$special_para_names = $$row{value} if ($$row{name} eq 'special_para_names');
 	}
 
-	my($regexp) = qr/$special_para_names/o;
+	my($regexp) = qr/($special_para_names)/o;
 
 	my($id);
 	my($text, $title);
