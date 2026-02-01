@@ -245,7 +245,7 @@ sub populate_topics_table
 
 		if ($title =~ $regexp)
 		{
-			$self -> logger -> warn("Skipping paragraph/topic: ${^MATCH}");
+			$self -> logger -> warn("Skipping paragraph/topic: $1");
 
 			next;
 		}
