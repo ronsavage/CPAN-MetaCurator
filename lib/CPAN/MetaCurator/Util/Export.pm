@@ -54,7 +54,7 @@ sub export_as_tree
 
 		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
 
-		$lines_ref = $self -> t($pad, $topic);
+		$lines_ref = $self -> format_text($pad, $topic);
 
 		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
