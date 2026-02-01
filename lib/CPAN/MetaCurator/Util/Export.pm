@@ -33,7 +33,7 @@ sub export_as_tree
 	# Populate the body.
 
 	my(@list)	= '<ul>';
-	my($root)	= shift @{$$pad{topics} };
+	my($root)	= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
 
 	$$pad{topic_count}++;
 
@@ -50,10 +50,11 @@ sub export_as_tree
 	{
 		$$pad{topic_count}++;
 
-		$$topic{id}	= id_scale_factor * $$topic{id}; # Fake id offset for leaf.
-		$lines_ref	= $self -> format_text($pad, $topic);
+		$$topic{id} = id_scale_factor * $$topic{id}; # Fake id offset for leaf.
 
 		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
+
+		$lines_ref = $self -> t($pad, $topic);
 
 		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
