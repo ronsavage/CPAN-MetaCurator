@@ -2,9 +2,6 @@
 
 cd $HOME/perl.modules/CPAN-MetaCurator/
 echo Work dir: `pwd`
-cp /dev/null log/development.log
-git commit -am"Rebuilding the distro"
-build.module.sh CPAN::MetaCurator 1.03
 
 scripts/drop.tables.pl
 scripts/create.tables.pl
