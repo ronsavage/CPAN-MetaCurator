@@ -26,7 +26,11 @@ Steps (2025-01-25):
 	i. cp ~/Downloads/tiddlers.json data/cpan.metacurator.tiddlers.json
 	j. git commit -am"Some message"
 	k. build.module.sh CPAN::MetaCurator 1.03
-	l. scripts/build.db.sh (Takes 15 hours. Output: data/cpan.metacurator.sqlite. Size: 14,094,336 bytes)
+
+	Slow:
+	l. scripts/build.db.sh --include_packages 1 (Takes 15 hours. Output: data/cpan.metacurator.sqlite. Size: 14,094,336 bytes)
+	Quick:
+	m. scripts/build.db.sh
 
 Counts:
 1. Count the # of topics:
