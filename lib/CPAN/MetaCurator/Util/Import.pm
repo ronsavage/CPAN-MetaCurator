@@ -231,8 +231,7 @@ sub populate_topics_table
 		$special_para_names = $$row{value} if ($$row{name} eq 'special_para_names');
 	}
 
-	say Dumper($self -> constants_table);
-	say "special_para_names: $special_para_names";
+	my($regexp) = qr/$special_para_names/o;
 
 	my($id);
 	my($text, $title);
@@ -244,7 +243,12 @@ sub populate_topics_table
 		$text	= $$data[$index]{text};
 		$title	= $$data[$index]{title};
 
-		next if ($title =~ /GettingStarted|MainMenu/); # TiddlyWiki special cases.
+		if ($title =~ $regexp)
+		{
+			$self -> logger -> warn("Skipping paragraph/topic: ${^MATCH}");
+
+			next;
+		}
 
 		$self -> logger -> info("Missing text @ line: $index. title: $title"), next if (! defined $text);
 		$self -> logger -> info("Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
