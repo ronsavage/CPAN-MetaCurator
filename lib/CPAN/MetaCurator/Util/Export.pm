@@ -97,7 +97,11 @@ sub export_as_tree
 
 sub export_modules_table
 {
-	my($self)				= @_;
+	my($self) = @_;
+
+	$self -> init_config;
+	$self -> init_db;
+
 	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
 	my($modules_csv_path)	= File::Spec -> catfile($self -> home_path, $self -> output_path);
 
