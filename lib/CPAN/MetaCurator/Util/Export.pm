@@ -63,7 +63,7 @@ sub export_as_tree
 		{
 			$$pad{leaf_count}++;
 
-			$item = $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
+			$item = $$_{href} ? "<a href = '$$_{href}' target = '_blank'>$$_{text}</a>" : $$_{text};
 
 			push @list, "<li id = '$$_{id}'>$item</li>";
 		}
