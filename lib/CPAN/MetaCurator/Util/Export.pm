@@ -56,7 +56,7 @@ sub export_as_tree
 
 		$lines_ref = $self -> format_text($pad, $topic);
 
-		push @list, qq|\t<li id = '$$topic{id}'>$$topic{title}|;
+		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
 
 		for (@$lines_ref)

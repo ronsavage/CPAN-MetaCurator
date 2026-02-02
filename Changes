@@ -1,5 +1,8 @@
 Revision history for Perl extension CPAN::MetaCurator.
 
+1.04  2026-02-02T12:20:00
+	- Make each topic's node clickable
+
 1.03  2026-01-25T12:44:00
 	- Update scripts/read.tiddlers.pl to recognize both ChangeLog & MainMenu as special para names
 	- Update details in CPAN::MetaCurator of the process of reading the tiddlers file & gathering statistics
