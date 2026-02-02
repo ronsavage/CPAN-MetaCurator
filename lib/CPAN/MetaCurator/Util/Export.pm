@@ -95,6 +95,27 @@ sub export_as_tree
 
 # --------------------------------------------------
 
+sub export_modules_table
+{
+	my($self)				= @_;
+	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
+	my($modules_csv_path)	= File::Spec -> catfile($self -> home_path, $self -> modules_csv_path);
+
+	$self -> logger -> info("Exporting modules table");
+	$self -> logger -> info("Reading: $database_path");
+	$self -> logger -> info("Writing: $modules_csv_path");
+
+	my($command)				= `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $modules_csv_path`;
+	my($line_count)				= `wc -l $modules_csv_path`;
+	my($module_count, $name)	= split(' ', $line_count);
+	$module_count--; # Allow for header record.
+
+	$self -> logger -> info("Output record count (excluding header): $module_count");
+
+} # End of export_modules_table.
+
+# --------------------------------------------------
+
 sub format_text
 {
 	my($self, $pad, $topic) = @_;

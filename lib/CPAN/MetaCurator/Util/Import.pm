@@ -152,6 +152,8 @@ sub populate_all_tables
 		strict				=> 1,
 	});
 
+	# Note: populate_topics_table() reads the constants table, so the latter must be populated first.
+
 	$self -> populate_constants_table($csv);
 	$self -> populate_packages_table($csv) if ($self -> include_packages == 1);
 	$self -> populate_topics_table;
@@ -202,14 +204,6 @@ sub populate_packages_table
 
 	$self -> logger -> info("Importing packages from '$packages_path'");
 	$self -> import_perl_packages($packages_path, $table_name);
-
-#	my($command) = `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $csv_path`;
-#	$self -> logger -> info("Exported modules table to '$csv_path'");
-#
-#	my($line_count) = `wc -l $csv_path`;
-#	($module_count, my $dummy) = split(' ', $line_count);
-#	$module_count--; # Allow for header record.
-
 	$self -> logger -> info("Finished populate_packages_table()");
 
 }	# End of populate_packages_table.
@@ -224,6 +218,8 @@ sub populate_topics_table
 	my($table_name)	= 'topics';
 	my($root_id)	= $self -> insert_hashref($table_name, $record);
 
+	# We have just populated the constants table, so read it to get the names of the special (TiddlyWiki) paragraphs.
+
 	my($special_para_names);
 
 	for my $row (@{$self -> constants_table})
@@ -231,7 +227,7 @@ sub populate_topics_table
 		$special_para_names = $$row{value} if ($$row{name} eq 'special_para_names');
 	}
 
-	my($regexp) = qr/($special_para_names)/o;
+	my($regexp) = qr/($special_para_names)/o; # No longer used. I.e. all paras are processed.
 
 	my($id);
 	my($text, $title);
@@ -243,12 +239,12 @@ sub populate_topics_table
 		$text	= $$data[$index]{text};
 		$title	= $$data[$index]{title};
 
-		if ($title =~ $regexp)
-		{
-			$self -> logger -> warn("Skipping paragraph/topic: $1");
-
-			next;
-		}
+		#if ($title =~ $regexp)
+		#{
+		#	$self -> logger -> warn("Skipping paragraph: $1");
+		#
+		#	next;
+		#}
 
 		$self -> logger -> info("Missing text @ line: $index. title: $title"), next if (! defined $text);
 		$self -> logger -> info("Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);

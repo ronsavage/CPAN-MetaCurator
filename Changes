@@ -1,5 +1,9 @@
 Revision history for Perl extension CPAN::MetaCurator.
 
+1.05  2026-02-03T09:10:00
+	- Add sub export_modules_table() to Export.pm.
+	- Add scripts/export.modules2csv.pl.
+
 1.04  2026-02-02T12:20:00
 	- Make each topic's node clickable
 
