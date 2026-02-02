@@ -41,7 +41,7 @@ has topics_table =>
 	required	=> 0,
 );
 
-our $VERSION = '1.03';
+our $VERSION = '1.04';
 
 # -----------------------------------------------
 
