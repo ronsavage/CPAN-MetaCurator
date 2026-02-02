@@ -16,13 +16,13 @@ sub process
 
 	return CPAN::MetaCurator::Util::Export
 			-> new(home_path => $options{home_path}, log_level => $options{log_level}, output_path => $options{output_path})
-			-> export_as_tree;
+			-> export_modules_table;
 
 } # End of process.
 
 # ------------------------------------------------
 
-say "export.module2csv.pl - Export cpan.metacurator.sqlite as HTML + jsTree\n";
+say "export.module2csv.pl - Export modules table to csv file\n";
 
 my(%options);
 

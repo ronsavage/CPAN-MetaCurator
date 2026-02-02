@@ -99,7 +99,7 @@ sub export_modules_table
 {
 	my($self)				= @_;
 	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
-	my($modules_csv_path)	= File::Spec -> catfile($self -> home_path, $self -> modules_csv_path);
+	my($modules_csv_path)	= File::Spec -> catfile($self -> home_path, $self -> output_path);
 
 	$self -> logger -> info("Exporting modules table");
 	$self -> logger -> info("Reading: $database_path");
