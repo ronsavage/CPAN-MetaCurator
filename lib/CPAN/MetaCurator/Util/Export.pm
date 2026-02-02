@@ -190,6 +190,8 @@ sub format_text
 		}
 	}
 
+=pod
+
 	my($count) = 0;
 
 	my($entry);
@@ -234,6 +236,8 @@ sub format_text
 
 		push @lines, $item;
 	}
+
+=cut
 
 	return [@lines];
 
