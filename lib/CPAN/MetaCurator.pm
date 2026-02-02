@@ -14,6 +14,8 @@ our $VERSION = '1.04';
 
 =head1 How to convert a Perl.Wiki.html into a jsTree
 
+Note: My web host and I use case-sensitive file systems.
+
 Steps (2025-01-25):
 	a. cd ~/perl.modules/CPAN-MetaCurator/
 	b. cp /dev/null log/development.log
@@ -27,34 +29,11 @@ Steps (2025-01-25):
 	j. git commit -am"Some message"
 	k. build.module.sh CPAN::MetaCurator 1.03
 
+Now create data/cpan.metacurator.sqlite. Size: 14,094,336 bytes as at 2026-02-02.
 	Slow:
-	l. scripts/build.db.sh --include_packages 1 (Takes 15 hours. Output: data/cpan.metacurator.sqlite. Size: 14,094,336 bytes)
+	l. scripts/build.db.sh --include_packages 1 (Takes 15 hours)
 	Quick:
-	m. scripts/build.db.sh
-
-Counts:
-1. Count the # of topics:
-	cd ~/perl.modules/CPAN-MetaCurator
-	scripts/redo.sh
-	Outputs: Topic count: 206. Leaf count: 4711 in http://127.0.0.1/misc/cpan.metacurator.tree.html
-
-Note:
-1: There is assumed to be just 1 item called 'See also' per topic, preferably at the start.
-2: There is assumed to be just 1 item containing '<pre>...</pre> per topic. It can appear anywhere within the topic.
-3: My web host and I use case-sensitive file systems.
-
-If you wish to rebuld the database:
-Note: File sizes as of 2026-01-04.
-Note: The code shipped can be configured to change the home_path().
-3. Run build.db.sh which uses that data to populate the modules table, which contains about 270,000 records.
-	a. Actually, the code preferentially uses data/modules.table.csv rather than 02packages.details.txt.
-	Therefore - before running build.db.sh - hide data/modules.table.csv if you wish to use data/02packages.details.txt.
-	The modules.table.csv file was manually exported from an initial run using data/02packages.details.txt.
-	b. If I wish to check in new code I run redo.sh rather than build.db.sh.
-4. Either way, the code creates data/cpan.metacurator.sqlite. Size: 13,737,984 bytes.
-	And outputs html/cpan.metacurator.tree.html.
-	And it logs to log/development.log.
-6. Delete data/02packages.details.txt since there is no point shipping it.
+	m. scripts/build.db.sh (Takes 1 second);
 
 =head1 Machine-Readable Change Log
 
