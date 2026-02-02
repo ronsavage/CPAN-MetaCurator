@@ -122,7 +122,7 @@ has tiddlers_path =>
 	required	=> 0,
 );
 
-our $VERSION = '1.04';
+our $VERSION = '1.05';
 
 # -----------------------------------------------
 
