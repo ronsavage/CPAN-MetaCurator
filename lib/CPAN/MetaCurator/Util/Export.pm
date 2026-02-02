@@ -202,7 +202,7 @@ sub format_text
 
 		if ($count == 1)
 		{
-			push @lines, {href => '', id => 0, text => 'See also:'};
+			push @lines, {href => '', text => 'See also:'};
 		}
 
 		@pieces			= split(/ - /, $$item{text});
