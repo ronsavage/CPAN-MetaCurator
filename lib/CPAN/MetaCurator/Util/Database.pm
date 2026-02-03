@@ -117,14 +117,21 @@ sub build_pad
 	# There is a db table called topics so we need another name for the hash
 	# where the keys are the names of the topics and the values are db ids.
 
+	$$pad{topic_count}		= 0;
 	$$pad{topic_names}		= {};
 	$$pad{topic_html_ids}	= {};
 
 	for (@{$$pad{topics} })
 	{
+		$$pad{topic_count}++;
+
 		$$pad{topic_html_ids}{$$_{title} }	= html_id_offset * $$_{id};
 		$$pad{topic_names}{$$_{title} }		= $$_{id};
 	}
+
+	$self -> logger -> debug(Dumper($$pad{topic_names});
+	$self -> logger -> debug(Dumper($$pad{topic_html_ids});
+	$self -> logger -> debug("Topic count: $$pad{topic_count}");
 
 	# Dates.
 	# DateTime::Tiny does not handle time_zone.

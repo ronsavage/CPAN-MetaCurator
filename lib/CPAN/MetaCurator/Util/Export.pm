@@ -13,9 +13,6 @@ use File::Spec;
 
 use Moo;
 
-our $pad;
-our %topics;
-
 our $VERSION = '1.06';
 
 # -----------------------------------------------
@@ -33,12 +30,11 @@ sub export_as_tree
 
 	# Populate the body.
 
+	my($pad)	= $self -> pad;
 	my(@list)	= '<ul>';
 	my($root)	= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
 
-	$$pad{topic_count}++;
-
-	$self -> logger -> info("Topic: $$pad{topic_count}. id: $$root{id}. title: $$root{title}");
+	$self -> logger -> info("Topic: id: $$root{id}. title: $$root{title}");
 
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$$root{id}'><a href = '#'>$$root{title}</a>|;
 	push @list, '<ul>';
@@ -49,11 +45,7 @@ sub export_as_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
-		$$pad{topic_count}++;
-
-		$$topic{id} = id_scale_factor * $$topic{id}; # Fake id offset for leaf.
-
-		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
+		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
 		$lines_ref = $self -> format_text($topic);
 
@@ -88,7 +80,6 @@ sub export_as_tree
 	$self -> write_file($header, $body, $footer);
 
 	$self -> logger -> info("Leaf count:  $$pad{leaf_count}");
-	$self -> logger -> info("Topic count: $$pad{topic_count}\n");
 
 	return 0;
 
