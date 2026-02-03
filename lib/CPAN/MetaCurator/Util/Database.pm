@@ -1,6 +1,7 @@
 package CPAN::MetaCurator::Util::Database;
 
 use 5.36.0;
+use constant html_id_offset => 10000;
 use parent 'CPAN::MetaCurator::Util::Config';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
@@ -103,36 +104,26 @@ sub build_pad
 
 	# Constants.
 
-	my($key);
-
-	for $key (@{$$pad{constants} })
-	{
-		for (qw/domain_name encoding logo_path page_name time_zone title_font_path title_font_size/)
-		{
-			$$pad{$_} = $$key{value} if ($$key{name} eq $_);
-		}
-	}
+	$$pad{$$_{name} } = $$_{value} for (@{$$pad{constants} });
 
 	# Modules.
 	# There is a db table called modules so we need another name for the hash
 	# where the keys are the names of the modules and the values are db ids.
 
-	$$pad{module_names} = {};
-
-	for $_ (@{$$pad{modules} })
-	{
-		$$pad{module_names}{$$_{name} } = $$_{id};
-	}
+	$$pad{module_names}				= {};
+	$$pad{module_names}{$$_{name} }	= $$_{id} for (@{$$pad{modules} });
 
 	# Topics.
 	# There is a db table called topics so we need another name for the hash
 	# where the keys are the names of the topics and the values are db ids.
 
-	$$pad{topic_names} = {};
+	$$pad{topic_names}		= {};
+	$$pad{topic_html_ids}	= {};
 
-	for $_ (@{$$pad{topics} })
+	for (@{$$pad{topics} })
 	{
-		$$pad{topic_names}{$$_{title} } = $$_{id};
+		$$pad{topic_html_ids}{$$_{title} }	= html_id_offset * $$_{id};
+		$$pad{topic_names}{$$_{title} }		= $$_{id};
 	}
 
 	# Dates.

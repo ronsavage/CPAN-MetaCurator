@@ -96,7 +96,8 @@ has separator =>
 
 # Warning. Order is important because of foreign key constraints.
 # The tables are created in this order, and dropped in reverse order.
-# Currently, memos is not used.
+# Lastly, we process the topics table to extract the module names.
+# See also Database.build_pad().
 
 has table_names =>
 (

@@ -2,7 +2,6 @@ package CPAN::MetaCurator::Util::Export;
 
 use 5.36.0;
 use boolean;
-use constant id_scale_factor => 10000;
 use open qw(:std :utf8);
 use parent 'CPAN::MetaCurator::Util::HTML';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
@@ -14,6 +13,9 @@ use File::Spec;
 
 use Moo;
 
+our $pad;
+our %topics;
+
 our $VERSION = '1.06';
 
 # -----------------------------------------------
@@ -22,12 +24,11 @@ sub export_as_tree
 {
 	my($self) = @_;
 
-	$self -> init_config;
-	$self -> init_db;
-
 	$self -> logger -> info('Exporting the wiki as a JSTree');
+	$self -> logger -> debug($$pad{topic_html_ids});
 
-	my($pad)					= $self -> build_pad;
+	$self -> init; # Populates $pad.
+
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
 	# Populate the body.
@@ -54,7 +55,7 @@ sub export_as_tree
 
 		$self -> logger -> info("Topic: $$pad{topic_count}. id: $$topic{id}. title: $$topic{title}");
 
-		$lines_ref = $self -> format_text($pad, $topic);
+		$lines_ref = $self -> format_text($topic);
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
@@ -84,7 +85,7 @@ sub export_as_tree
 		$header =~ s/!$_!/$data{$_}/;
 	}
 
-	$self -> write_file($header, $body, $footer, $pad);
+	$self -> write_file($header, $body, $footer);
 
 	$self -> logger -> info("Leaf count:  $$pad{leaf_count}");
 	$self -> logger -> info("Topic count: $$pad{topic_count}\n");
@@ -99,8 +100,7 @@ sub export_modules_table
 {
 	my($self) = @_;
 
-	$self -> init_config;
-	$self -> init_db;
+	$self -> init; # Populates $pad.
 
 	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
 	my($modules_csv_path)	= File::Spec -> catfile($self -> home_path, $self -> output_path);
@@ -122,7 +122,7 @@ sub export_modules_table
 
 sub format_text
 {
-	my($self, $pad, $topic) = @_;
+	my($self, $topic)		= @_;
 	my($target)				= 'TestingHelp';
 	my(@text)				= grep{length} split(/\n/, $$topic{text});
 	@text					= map{s/\s+$//; s/^-\s//; s/:$//; $_} @text;
@@ -270,9 +270,22 @@ sub format_text
 
 # --------------------------------------------------
 
+sub init
+{
+	my($self) = @_;
+
+	$self -> init_config;
+	$self -> init_db;
+
+	$pad = $self -> build_pad;
+
+} # End of init;
+
+# --------------------------------------------------
+
 sub write_file
 {
-	my($self, $header, $body, $footer, $pad) = @_;
+	my($self, $header, $body, $footer) = @_;
 	my($encoding)		= lc $$pad{encoding};
 	my($output_path)	= File::Spec -> catfile($self -> home_path, $self -> output_path);
 
