@@ -77,7 +77,7 @@ sub export_as_tree
 		$header =~ s/!$_!/$data{$_}/;
 	}
 
-	$self -> write_file($header, $body, $footer);
+	$self -> write_file($header, $body, $footer, $pad);
 
 	$self -> logger -> info("Leaf count:  $$pad{leaf_count}");
 
@@ -264,7 +264,7 @@ sub format_text
 
 sub write_file
 {
-	my($self, $header, $body, $footer) = @_;
+	my($self, $header, $body, $footer, $pad) = @_;
 	my($encoding)		= lc $$pad{encoding};
 	my($output_path)	= File::Spec -> catfile($self -> home_path, $self -> output_path);
 
