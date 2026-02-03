@@ -113,15 +113,6 @@ sub build_pad
 		}
 	}
 
-	$self -> logger -> info('Constants:');
-
-	for (qw/domain_name encoding logo_path page_name time_zone title_font_path title_font_size/)
-	{
-		$self -> logger -> info("$_ => $$pad{$_}");
-	}
-
-	$self -> logger -> info($self -> separator);
-
 	# Modules.
 	# There is a db table called modules so we need another name for the hash
 	# where the keys are the names of the modules and the values are db ids.
