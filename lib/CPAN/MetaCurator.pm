@@ -16,7 +16,7 @@ our $VERSION = '1.05';
 
 Note: My web host and I use case-sensitive file systems.
 
-Steps (2025-01-25):
+Steps (2026-01-25):
 	a. cd ~/perl.modules/CPAN-MetaCurator/
 	b. cp /dev/null log/development.log
 	c. wget https://www.cpan.org/modules/02packages.details.txt.gz

@@ -219,6 +219,7 @@ sub populate_topics_table
 	my($root_id)	= $self -> insert_hashref($table_name, $record);
 
 	# We have just populated the constants table, so read it to get the names of the special (TiddlyWiki) paragraphs.
+	# Typically: GettingStarted|MainMenu.
 
 	my($special_para_names);
 
@@ -227,7 +228,7 @@ sub populate_topics_table
 		$special_para_names = $$row{value} if ($$row{name} eq 'special_para_names');
 	}
 
-	my($regexp) = qr/($special_para_names)/o; # No longer used. I.e. all paras are processed.
+	my($regexp) = qr/($special_para_names)/o;
 
 	my($id);
 	my($text, $title);
@@ -239,15 +240,15 @@ sub populate_topics_table
 		$text	= $$data[$index]{text};
 		$title	= $$data[$index]{title};
 
-		#if ($title =~ $regexp)
-		#{
-		#	$self -> logger -> warn("Skipping paragraph: $1");
-		#
-		#	next;
-		#}
+		if ($title =~ $regexp)
+		{
+			$self -> logger -> warn("Skipping paragraph: $1");
 
-		$self -> logger -> info("Missing text @ line: $index. title: $title"), next if (! defined $text);
-		$self -> logger -> info("Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
+			next;
+		}
+
+		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. title: $title"), next if (! defined $text);
+		$self -> logger -> info("populate_topics_table(). Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
 
 		$$record{parent_id}	= $root_id;
 		$$record{title}		= $title;
