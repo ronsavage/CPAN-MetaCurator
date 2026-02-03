@@ -23,7 +23,8 @@ sub export_as_tree
 
 	$self -> logger -> info('Exporting the wiki as a JSTree');
 
-	$self -> init; # Populates $pad.
+	$self -> init_config;
+	$self -> init_db;
 
 	my($pad)					= $self -> pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
@@ -90,7 +91,8 @@ sub export_modules_table
 {
 	my($self) = @_;
 
-	$self -> init; # Populates $pad.
+	$self -> init_config;
+	$self -> init_db;
 
 	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
 	my($modules_csv_path)	= File::Spec -> catfile($self -> home_path, $self -> output_path);
@@ -257,19 +259,6 @@ sub format_text
 	return [@lines];
 
 } # End of format_text.
-
-# --------------------------------------------------
-
-sub init
-{
-	my($self) = @_;
-
-	$self -> init_config;
-	$self -> init_db;
-
-	$pad = $self -> build_pad;
-
-} # End of init;
 
 # --------------------------------------------------
 
