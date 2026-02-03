@@ -86,14 +86,6 @@ has logo_path =>
 	required	=> 0,
 );
 
-has packages_path =>
-(
-	default		=> sub{return 'data/02packages.details.txt'}, # Format: Header + linear.
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
 has separator =>
 (
 	default		=> '-' x 50,
@@ -108,7 +100,7 @@ has separator =>
 
 has table_names =>
 (
-	default		=> sub{return [qw/constants log modules packages topics/]},
+	default		=> sub{return [qw/constants log modules topics/]},
 	is			=> 'rw',
 	isa			=> ArrayRef,
 	required	=> 0,

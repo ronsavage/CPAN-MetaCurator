@@ -19,21 +19,20 @@ Note: My web host and I use case-sensitive file systems.
 Steps (2026-01-25):
 	a. cd ~/perl.modules/CPAN-MetaCurator/
 	b. cp /dev/null log/development.log
-	c. wget https://www.cpan.org/modules/02packages.details.txt.gz
-	d. gunzip 02packages.details.txt.gz (Contains 270,458 records + 10 header lines)
-	e. mv 02packages.details.txt data/
-	f. Browse Perl.Wiki.html
-	g. In the 'Tools' tab click 'export all'
-	h. In the pop-up, click 'JSON format'
-	i. cp ~/Downloads/tiddlers.json data/cpan.metacurator.tiddlers.json
-	j. git commit -am"Some message"
-	k. build.module.sh CPAN::MetaCurator 1.03
+	c. Browse Perl.Wiki.html
+	d. In the 'Tools' tab click 'export all'
+	e. In the pop-up, click 'JSON format'
+	f. cp ~/Downloads/tiddlers.json data/cpan.metacurator.tiddlers.json
+	g. git commit -am"Some message"
+	h. build.module.sh CPAN::MetaCurator 1.03
+	i. scripts/build.db.sh
 
-Now create data/cpan.metacurator.sqlite. Size: 14,094,336 bytes as at 2026-02-02.
-	Slow:
-	l. scripts/build.db.sh --include_packages 1 (Takes 15 hours)
-	Quick:
-	m. scripts/build.db.sh (Takes 1 second);
+No longer relevent now I have discarded the 'packages' table:
+	a. wget https://www.cpan.org/modules/02packages.details.txt.gz
+	b. gunzip 02packages.details.txt.gz (Contains 270,458 records + 10 header lines)
+	c. mv 02packages.details.txt data/
+	d. Patch Create.pm to add the packages table.
+	e. scripts/build.db.sh --include_packages 1 (Takes 15 hours)
 
 =head1 Machine-Readable Change Log
 
