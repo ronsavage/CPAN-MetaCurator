@@ -46,7 +46,7 @@ sub export_as_tree
 	{
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
-		$lines_ref = $self -> format_text($topic);
+		$lines_ref = $self -> format_text($pad, $topic);
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$topic{id}'>$$topic{title}|;
 		push @list, '<ul>';
@@ -112,7 +112,7 @@ sub export_modules_table
 
 sub format_text
 {
-	my($self, $topic)		= @_;
+	my($self, $pad, $topic)	= @_;
 	my($target)				= 'TestingHelp';
 	my(@text)				= grep{length} split(/\n/, $$topic{text});
 	@text					= map{s/\s+$//; s/^-\s//; s/:$//; $_} @text;
