@@ -22,15 +22,14 @@ sub export_as_tree
 	my($self) = @_;
 
 	$self -> logger -> info('Exporting the wiki as a JSTree');
-	$self -> logger -> debug($$pad{topic_html_ids});
 
 	$self -> init; # Populates $pad.
 
+	my($pad)					= $self -> pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
 	# Populate the body.
 
-	my($pad)	= $self -> pad;
 	my(@list)	= '<ul>';
 	my($root)	= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
 
