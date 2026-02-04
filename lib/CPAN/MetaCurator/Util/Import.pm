@@ -15,7 +15,7 @@ use Moo;
 use Mojo::JSON 'from_json';
 
 use Text::CSV::Encoded;
-use Types::Standard qw/ArrayRef Int/;
+use Types::Standard qw/ArrayRef Int Str/;
 
 has constants_path =>
 (
