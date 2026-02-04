@@ -129,8 +129,6 @@ sub build_pad
 		$$pad{topic_names}{$$_{title} }		= $$_{id};
 	}
 
-	$self -> logger -> debug(Dumper($$pad{topic_names}) );
-	$self -> logger -> debug(Dumper($$pad{topic_html_ids}) );
 	$self -> logger -> debug("Topic count: $$pad{topic_count}");
 
 	# Dates.
