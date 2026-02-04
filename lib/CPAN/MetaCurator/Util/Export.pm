@@ -49,8 +49,8 @@ sub export_as_tree
 	{
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
+		$id			= $$pad{topic_html_ids}{$$topic{title} };
 		$lines_ref	= $self -> format_text($pad, $topic);
-		$id			= $$pad{topic_html_ids}{$$topic{title} } + $$topic{id};
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$id'>$$topic{title}|;
 		push @list, '<ul>';
@@ -59,9 +59,10 @@ sub export_as_tree
 		{
 			$$pad{leaf_count}++;
 
-			$item = $$_{href} ? "<a href = '$$_{href}' target = '_blank'>$$_{text}</a>" : $$_{text};
+			$id		= $self -> format_text($pad, $topic) + $$_{id};
+			$item	= $$_{href} ? "<a href = '$$_{href}' target = '_blank'>$$_{text}</a>" : $$_{text};
 
-			push @list, "<li id = '$$_{id}'>$item</li>";
+			push @list, "<li id = '$id'>$item</li>";
 		}
 
 		push @list, '</ul>';
