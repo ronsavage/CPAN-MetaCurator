@@ -60,7 +60,7 @@ sub export_as_tree
 			$$pad{leaf_count}++;
 
 			$id		= $self -> format_text($leaf_id, $pad, $topic);
-			$item	= $$_{href} ? "<a href = '$$_{href}' target = '_blank'>$$_{text}</a>" : $$_{text};
+			$item	= $$_{href} ? "<a href = '$$_{href}'</a>" : $$_{text};
 
 			push @list, "<li id = '$$_{id}'>$item</li>";
 		}
