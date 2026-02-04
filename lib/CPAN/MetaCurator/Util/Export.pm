@@ -50,7 +50,7 @@ sub export_as_tree
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
 		$lines_ref	= $self -> format_text($pad, $topic);
-		$id			= $$pad{topic_html_ids}{$$topic{title} };
+		$id			= $$pad{topic_html_ids}{$$topic{title} } + $$topic{id};
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$id'>$$topic{title}|;
 		push @list, '<ul>';
