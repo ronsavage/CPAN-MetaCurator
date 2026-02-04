@@ -23,6 +23,7 @@ sub export_as_tree
 
 	$self -> init_config;
 	$self -> init_db;
+	$self -> build_pad;
 
 	my($pad)					= $self -> pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
