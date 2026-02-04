@@ -21,13 +21,13 @@ sub export_as_tree
 {
 	my($self) = @_;
 
-	$self -> logger -> info('Exporting the wiki as a JSTree');
-
 	$self -> init_config;
 	$self -> init_db;
 
 	my($pad)					= $self -> pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
+
+	$self -> logger -> info('Exporting the wiki as a JSTree');
 
 	# Populate the body.
 
