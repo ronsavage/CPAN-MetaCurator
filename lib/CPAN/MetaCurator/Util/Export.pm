@@ -43,26 +43,26 @@ sub export_as_tree
 
 	my(@divs);
 	my($item);
-	my($lines_ref);
+	my($leaf_id, $lines_ref);
 
 	for my $topic (@{$$pad{topics} })
 	{
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
-		$id			= $$pad{topic_html_ids}{$$topic{title} };
-		$lines_ref	= $self -> format_text($pad, $topic);
+		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
+		$lines_ref	= $self -> format_text($leaf_id, $pad, $topic);
 
-		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$id'>$$topic{title}|;
+		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
 
 		for (@$lines_ref)
 		{
 			$$pad{leaf_count}++;
 
-			$id		= $self -> format_text($pad, $topic) + $$_{id};
+			$id		= $self -> format_text($leaf_id, $pad, $topic);
 			$item	= $$_{href} ? "<a href = '$$_{href}' target = '_blank'>$$_{text}</a>" : $$_{text};
 
-			push @list, "<li id = '$id'>$item</li>";
+			push @list, "<li id = '$$_{id}'>$item</li>";
 		}
 
 		push @list, '</ul>';
@@ -118,12 +118,12 @@ sub export_modules_table
 
 sub format_text
 {
-	my($self, $pad, $topic)	= @_;
-	my($target)				= 'TestingHelp';
-	my(@text)				= grep{length} split(/\n/, $$topic{text});
-	@text					= map{s/\s+$//; s/^-\s//; s/:$//; $_} @text;
-	my($inside_see_also)	= false;
-	my($topic_name_re)		= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
+	my($self, $leaf_id, $pad, $topic)	= @_;
+	my($target)							= 'TestingHelp';
+	my(@text)							= grep{length} split(/\n/, $$topic{text});
+	@text								= map{s/\s+$//; s/^-\s//; s/:$//; $_} @text;
+	my($inside_see_also)				= false;
+	my($topic_name_re)					= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
 
 	my($href, @hover);
 	my($item);
@@ -132,9 +132,9 @@ sub format_text
 
 	for (0 .. $#text)
 	{
-		$$topic{id}++;
+		$leaf_id++;
 
-		$item = {href => '', id => $$topic{id}, text => ''};
+		$item = {href => '', id => $leaf_id, text => ''};
 
 		if ($text[$_] =~ /^o\s+/)
 		{
