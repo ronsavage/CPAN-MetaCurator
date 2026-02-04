@@ -34,10 +34,11 @@ sub export_as_tree
 
 	my(@list)	= '<ul>';
 	my($root)	= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
+	my($id)		= $$pad{topic_html_ids}{$$root{title} };
 
-	$self -> logger -> info("Topic: id: $$root{id}. title: $$root{title}");
+	$self -> logger -> info("Topic: id: $id. title: $$root{title}");
 
-	push @list, qq|<li data-jstree='{"opened": true}' id = '$$root{id}'><a href = '#'>$$root{title}</a>|;
+	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$$root{title}</a>|;
 	push @list, '<ul>';
 
 	my(@divs);
@@ -48,9 +49,10 @@ sub export_as_tree
 	{
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
-		$lines_ref = $self -> format_text($pad, $topic);
+		$lines_ref	= $self -> format_text($pad, $topic);
+		$id			= $$pad{topic_html_ids}{$$topic{title} };
 
-		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$topic{id}'>$$topic{title}|;
+		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$id'>$$topic{title}|;
 		push @list, '<ul>';
 
 		for (@$lines_ref)
