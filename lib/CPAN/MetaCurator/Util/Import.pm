@@ -17,6 +17,14 @@ use Mojo::JSON 'from_json';
 use Text::CSV::Encoded;
 use Types::Standard qw/ArrayRef Int/;
 
+has constants_path =>
+(
+	default		=> sub{return 'data/cpan.metacurator.constants.csv'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
 has constants_table =>
 (
 	default		=> sub{return []},
@@ -30,6 +38,22 @@ has include_packages =>
 	default		=> sub{return 0},
 	is			=> 'rw',
 	isa			=> Int,
+	required	=> 0,
+);
+
+has packages_csv_path =>
+(
+	default		=> sub{return 'Downloads/02packages.details.csv'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
+has packages_details_path =>
+(
+	default		=> sub{return 'Downloads/02packages.details.txt'},
+	is			=> 'rw',
+	isa			=> Str,
 	required	=> 0,
 );
 

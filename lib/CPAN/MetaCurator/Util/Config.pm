@@ -29,13 +29,6 @@ has config_path =>
 	required	=> 0,
 );
 
-has constants_path =>
-(
-	default		=> sub{return 'data/cpan.metacurator.constants.csv'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
 
 has database_path =>
 (
@@ -75,7 +68,7 @@ has logger =>
 (
 	is			=> 'rw',
 	isa			=> Object,
-	required	=> 0,
+	required	=> 1,
 );
 
 has logo_path =>
@@ -83,7 +76,7 @@ has logo_path =>
 	default		=> '',
 	is			=> 'rw',
 	isa			=> Str,
-	required	=> 0,
+	required	=> 1,
 );
 
 has separator =>
