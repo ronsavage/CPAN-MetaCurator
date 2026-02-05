@@ -296,7 +296,9 @@ sub text2csv
 
 	my($out_file) = File::Spec -> catfile($self -> home_path, $self -> output_path);
 
-	open(OUT, '>encoding(UTF-8)', );
+	$self -> logger -> debug("Writing $out_file");
+
+	open(OUT, '>encoding(UTF-8)', $out_file);
 	print OUT "module,version\n";
 
 	my(@fields);
