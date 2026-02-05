@@ -55,7 +55,9 @@ for (@details)
 {
 	$count++;
 
-	last if ($count == 10);
+	next if ($count < 10);
+
+	last if ($count == 15);
 
 	@fields = split(' ', $_);
 
