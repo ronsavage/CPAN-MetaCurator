@@ -17,19 +17,11 @@ use Mojo::JSON 'from_json';
 use Text::CSV::Encoded;
 use Types::Standard qw/ArrayRef Int Str/;
 
-has constants_path =>
+has constants_csv_path =>
 (
 	default		=> sub{return 'data/cpan.metacurator.constants.csv'},
 	is			=> 'rw',
 	isa			=> Str,
-	required	=> 0,
-);
-
-has constants_table =>
-(
-	default		=> sub{return []},
-	is			=> 'rw',
-	isa			=> ArrayRef,
 	required	=> 0,
 );
 
@@ -180,19 +172,16 @@ sub populate_all_tables
 sub populate_constants_table
 {
 	my($self, $csv)	= @_;
-	my($path)		= File::Spec -> catfile($self -> home_path, $self -> constants_path);
+	my($path)		= File::Spec -> catfile($self -> home_path, $self -> constants_csv_path);
 	my($table_name)	= 'constants';
 
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
-	$self -> constants_table($self -> read_table($table_name) );
-
-	my($constants_count) = $#{$self -> constants_table};
+	$$pad{$table_name}		= $self -> read_table($table_name);
+	my($constants_count)	= $#{$self -> constants_table} + 1;
 
 	$self -> logger -> info("Finished populate_constants_table(). Stored $constants_count records into '$table_name'");
-	$self -> logger -> debug('Table: ' . ucfirst($table_name) );
-	$self -> logger -> debug(Dumper($self -> constants_table) );
 
 }	# End of populate_constants_table.
 
@@ -215,6 +204,27 @@ sub populate_packages_table
 	$self -> logger -> info("Finished populate_packages_table()");
 
 }	# End of populate_packages_table.
+
+# -----------------------------------------------
+
+sub populate_packages_table_from_csv
+{
+	my($self, $csv)	= @_;
+	my($path)		= File::Spec -> catfile($self -> home_path, $self -> packages_csv_path);
+	my($table_name)	= 'packages';
+
+	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
+	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
+
+	$self -> constants_table($self -> read_table($table_name) );
+
+	my($constants_count) = $#{$self -> constants_table};
+
+	$self -> logger -> info("Finished populate_constants_table(). Stored $constants_count records into '$table_name'");
+	$self -> logger -> debug('Table: ' . ucfirst($table_name) );
+	$self -> logger -> debug(Dumper($self -> constants_table) );
+
+}	# End of populate_packages_table_from_csv.
 
 # -----------------------------------------------
 

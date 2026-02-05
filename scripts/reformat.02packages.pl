@@ -16,7 +16,8 @@ sub process
 	my(%options) = @_;
 
 	return CPAN::MetaCurator::Util::Export
-		-> new(home_path => $options{home_path}, input_path => $options{input_path}, log_level => $options{log_level}, output_path => $options{output_path})
+		-> new(home_path => $options{home_path, packages_txt_path => $options{packages_txt_path},
+				log_level => $options{log_level}, packages_csv_path => $options{packages_csv_path})
 		-> text2csv;
 
 } # End of process.
@@ -27,18 +28,18 @@ say "reformat.02packages.pl - Convert 02packages.details.txt to csv, for quicker
 
 my(%options);
 
-$options{help}	 		= 0;
-$options{home_path}		= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
-$options{input_path}	= 'data/02packages.details.txt';
-$options{log_level}		= 'debug';
-$options{output_path}	= 'data/02packages.details.csv';
+$options{help}	 			= 0;
+$options{home_path}			= '';
+$options{log_level}			= 'debug';
+$options{packages_csv_path}	= 'data/02packages.details.txt';
+$options{packages_txt_path}	= 'data/02packages.details.csv';
 my(%opts)				=
 (
-	'help'			=> \$options{help},
-	'home_path'		=> \$options{home_path},
-	'input_path=s'	=> \$options{input_path},
-	'log_level=s'	=> \$options{log_level},
-	'output_path=s'	=> \$options{output_path},
+	'help'					=> \$options{help},
+	'home_path=s'			=> \$options{home_path},
+	'log_level=s'			=> \$options{log_level},
+	'packages_csv_path=s'	=> \$options{packages_csv_path},
+	'packages_txt_path=s'	=> \$options{packages_txt_path},
 );
 
 GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
@@ -67,9 +68,9 @@ reformat.02packages.pl [options]
 	Options:
 	-help
 	-home_path
-	-input_path Path
 	-log_level info
-	-output_path Path
+	-packages_csv_path Path
+	-packages_txt_path Path
 
 All switches can be reduced to a single letter, except of course -he and -ho.
 
@@ -89,23 +90,23 @@ The path to the directory containing data/ and html/. Unpack distro to populate.
 
 Default: $ENV{HOME}/perl.modules/CPAN-MetaCurator.
 
-=item input_path Path
-
-The path for the input text file.
-
-Default: 'Downloads/02packages.details.txt'.
-
 =item -log_level String
 
 Available log levels are trace, debug, info, warn, error and fatal, in that order.
 
 Default: info.
 
-=item output_path Path
+=item packages_csv_path Path
 
 The path for the output CSV file.
 
-Default: 'Downloads/02packages.details.csv'.
+Default: 'data/02packages.details.csv'.
+
+=item packages_txt_path Path
+
+The path for the input txt file.
+
+Default: 'data/02packages.details.txt'.
 
 =back
 
