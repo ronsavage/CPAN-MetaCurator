@@ -174,7 +174,7 @@ sub populate_constants_table
 
 	my($pad)				= $self -> pad; # For temporary use, during import.
 	$$pad{$table_name}		= $self -> read_table($table_name);
-	my($constants_count)	= $#{$self -> constants_table} + 1;
+	my($constants_count)	= $#{$$pad{$table_name} } + 1;
 
 	$self -> logger -> info("Finished populate_constants_table(). Stored $constants_count records into '$table_name'");
 
