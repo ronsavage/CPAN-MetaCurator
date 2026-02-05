@@ -110,7 +110,7 @@ has separator =>
 
 has table_names =>
 (
-	default		=> sub{return [qw/constants log modules topics/]},
+	default		=> sub{return [qw/constants log modules packages topics/]},
 	is			=> 'rw',
 	isa			=> ArrayRef,
 	required	=> 0,

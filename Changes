@@ -1,13 +1,19 @@
 Revision history for Perl extension CPAN::MetaCurator.
 
+1.07  2026-02-05T17:11:00
+	- Re-introduce data/02packages.details.txt
+	- Get reformat.02packages.pl working
+	- Re-introduce the packages table
+	- Populate the packages table from CSV not from txt file
+
 1.06  2026-02-03T17:09:00
-	- Remove almost all references to the 'packages' table for now.
-	- Remove import file data/02packages.details.txt.
-	- Remove export file data/modules.table.csv for now.
+	- Remove almost all references to the 'packages' table for now
+	- Remove import file data/02packages.details.txt
+	- Remove export file data/modules.table.csv for now
 
 1.05  2026-02-03T09:10:00
-	- Add sub export_modules_table() to Export.pm.
-	- Add scripts/export.modules2csv.pl.
+	- Add sub export_modules_table() to Export.pm
+	- Add scripts/export.modules2csv.pl
 
 1.04  2026-02-02T12:20:00
 	- Make each topic's node clickable
