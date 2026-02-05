@@ -286,6 +286,14 @@ sub text2csv
 
 	$self -> logger -> debug("Read @{[$#details + 1]} records from $in_file");
 
+	my($record);
+	for (1 .. 9)
+	{
+		$record = shift @details;
+
+		$self -> logger -> debug("Discarding input. Line: $_ => $record");
+	}
+
 	my($out_file) = File::Spec -> catfile($self -> home_path, $self -> output_path);
 
 	open(OUT, '>encoding(UTF-8)', );
