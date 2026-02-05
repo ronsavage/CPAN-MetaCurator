@@ -209,7 +209,7 @@ sub populate_packages_table_from_csv
 	my($table_name)	= 'packages';
 
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
-	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
+	$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
 
 	my($pad)			= $self -> pad; # For temporary use, during import.
 	$$pad{$table_name}	= $self -> read_table($table_name);
