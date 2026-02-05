@@ -279,14 +279,14 @@ sub text2csv
 
 	# Read 02packages.details.txt.
 
-	my($in_file)	= File::Spec -> catfile($self -> home_path, $self -> packages_details_path);
+	my($in_file)	= File::Spec -> catfile($self -> home_path, $self -> input_path);
 	my(@details)	= read_lines($in_file);
 	my($header)		= "package,version";
 	my($count)		= 0;
 
 	$self -> logger -> debug("Read @{[$#details + 1]} records from $in_file");
 
-	my($out_file) = File::Spec -> catfile($self -> home_path, $self -> packages_details_path);
+	my($out_file) = File::Spec -> catfile($self -> home_path, $self -> output_path);
 
 	open(OUT, '>encoding(UTF-8)', );
 	print OUT "module,version\n";

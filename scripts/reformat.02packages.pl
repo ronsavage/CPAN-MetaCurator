@@ -28,10 +28,10 @@ say "reformat.02packages.pl - Convert 02packages.details.txt to csv, for quicker
 my(%options);
 
 $options{help}	 		= 0;
-$options{home_path}		= $ENV{HOME};
-$options{input_path)	= 'Downloads/02packages.details.txt';
+$options{home_path}		= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
+$options{input_path}	= 'data/02packages.details.txt';
 $options{log_level}		= 'debug';
-$options{output_path}	= 'Downloads/02packages.details.csv';
+$options{output_path}	= 'data/02packages.details.csv';
 my(%opts)				=
 (
 	'help'			=> \$options{help},
