@@ -43,6 +43,8 @@ GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
 if ($options{help} == 1)
 {
 	pod2usage(1);
+
+	exit 0;
 }
 
 exit process(%options);

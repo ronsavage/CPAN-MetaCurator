@@ -2,9 +2,9 @@
 
 use 5.36.0;
 
-use Getopt::Long;
-
 use CPAN::MetaCurator::Util::Export;
+
+use Getopt::Long;
 
 use Pod::Usage; # For pod2usage().
 
@@ -43,6 +43,8 @@ GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
 if ($options{help} == 1)
 {
 	pod2usage(1);
+
+	exit 0;
 }
 
 exit process(%options);

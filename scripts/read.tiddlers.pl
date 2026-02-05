@@ -7,9 +7,13 @@ use Data::Dumper::Concise; # For Dumper().
 use CPAN::MetaCurator::Util::Import;
 
 # ---------------------------------
+
+say "read.tiddlers.pl - Read tiddlers file and report some statistics\n";
+
 binmode STDOUT, ':encoding(UTF-8)';
 
-my($importer)	= CPAN::MetaCurator::Util::Import -> new(home_path => '.');
+my($log_level)	= 'debug';
+my($importer)	= CPAN::MetaCurator::Util::Import -> new(home_path => '.', log_level => $log_level);
 my($data)		= $importer -> read_tiddlers_file;
 my($count)		= 0;
 

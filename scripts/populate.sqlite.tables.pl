@@ -2,6 +2,8 @@
 
 use 5.36.0;
 
+use Data::Dumper::Concise; # For Dumper.
+
 use Getopt::Long;
 
 use CPAN::MetaCurator::Util::Import;
@@ -43,6 +45,8 @@ GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
 if ($options{help} == 1)
 {
 	pod2usage(1);
+
+	exit 0;
 }
 
 exit process(%options);

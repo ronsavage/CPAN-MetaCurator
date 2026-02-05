@@ -41,14 +41,6 @@ has include_packages =>
 	required	=> 0,
 );
 
-has packages_csv_path =>
-(
-	default		=> sub{return 'Downloads/02packages.details.csv'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
 has packages_details_path =>
 (
 	default		=> sub{return 'Downloads/02packages.details.txt'},
@@ -295,7 +287,11 @@ sub populate_topics_table
 
 sub read_tiddlers_file
 {
-	my($self)		= @_;
+	my($self) = @_;
+
+	$self -> init_config;
+	$self -> init_db;
+
 	my($file_name)	= File::Spec -> catfile($self -> home_path, $self -> tiddlers_path);
 	my($json)		= join('', read_lines($file_name, 'UTF-8') );
 
