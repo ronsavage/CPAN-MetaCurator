@@ -298,6 +298,7 @@ sub read_tiddlers_file
 	return from_json $json;
 
 } # End of read_tiddlers_file.
+
 # --------------------------------------------------
 
 1;
