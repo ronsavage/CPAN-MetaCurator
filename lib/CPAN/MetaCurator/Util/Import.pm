@@ -33,14 +33,6 @@ has include_packages =>
 	required	=> 0,
 );
 
-has topics_table =>
-(
-	default		=> sub{return []},
-	is			=> 'rw',
-	isa			=> ArrayRef,
-	required	=> 0,
-);
-
 our $VERSION = '1.07';
 
 # -----------------------------------------------
@@ -155,7 +147,9 @@ sub populate_all_tables
 	# Note: populate_topics_table() reads the constants table, so the latter must be populated first.
 
 	$self -> populate_constants_table($csv);
-	$self -> populate_packages_table($csv) if ($self -> include_packages == 1);
+
+	($self -> include_packages == 1) ? $self -> populate_packages_table($csv) : $self -> populate_packages_table_from_csv($csv);
+
 	$self -> populate_topics_table;
 
 	$self -> logger -> info('Populated all tables');
@@ -178,6 +172,7 @@ sub populate_constants_table
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
+	my($pad)				= $self -> pad; # For temporary use, during import.
 	$$pad{$table_name}		= $self -> read_table($table_name);
 	my($constants_count)	= $#{$self -> constants_table} + 1;
 
@@ -216,11 +211,11 @@ sub populate_packages_table_from_csv
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
-	$self -> constants_table($self -> read_table($table_name) );
+	my($pad)			= $self -> pad; # For temporary use, during import.
+	$$pad{$table_name}	= $self -> read_table($table_name) );
+	my($packages_count)	= $#{$$pad{$table_name} };
 
-	my($constants_count) = $#{$self -> constants_table};
-
-	$self -> logger -> info("Finished populate_constants_table(). Stored $constants_count records into '$table_name'");
+	$self -> logger -> info("Finished populate_packages_table_from_csv(). Stored $packages_count records into table '$table_name'");
 	$self -> logger -> debug('Table: ' . ucfirst($table_name) );
 	$self -> logger -> debug(Dumper($self -> constants_table) );
 
@@ -275,13 +270,11 @@ sub populate_topics_table
 		$id					= $self -> insert_hashref($table_name, $record);
 	}
 
-	$self -> topics_table($self -> read_table($table_name) );
+	my($pad)			= $self -> pad; # For temporary use, during import.
+	$$pad{$table_name}	= $self -> read_table($table_name);
+	my($topic_count)	= $#{$$pad{$$table_name} };
 
-	my($topic_count) = $#{$self -> topics_table};
-
-	$self -> logger -> info("Finished populate_topics_table(). Stored $topic_count records into '$table_name'");
-	$self -> logger -> debug('Table: ' . ucfirst($table_name) );
-	$self -> logger -> debug(Dumper($self -> topics_table) );
+	$self -> logger -> info("Finished populate_topics_table(). Stored $topic_count records into table '$table_name'");
 
 } # End of populate_topics_table;
 
