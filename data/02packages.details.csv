@@ -1,0 +1,6 @@
+module,version
+AAC::Pvoice,0.91
+AAC::Pvoice::Bitmap,1.12
+AAC::Pvoice::Dialog,1.01
+AAC::Pvoice::EditableRow,1.04
+AAC::Pvoice::Input,1.12

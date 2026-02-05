@@ -287,6 +287,7 @@ sub text2csv
 	$self -> logger -> debug("Read @{[$#details + 1]} records from $in_file");
 
 	my($record);
+
 	for (1 .. 9)
 	{
 		$record = shift @details;
@@ -307,16 +308,15 @@ sub text2csv
 	{
 		$count++;
 
-		next if ($count < 10);
-
-		last if ($count == 15);
-
 		@fields = split(' ', $_);
 
 		say OUT "$fields[0],$fields[1]";
 	}
 
 	close OUT;
+
+	$self -> logger -> debug("Wrote $count records to $out_file");
+
 } # End of text2csv.
 
 # --------------------------------------------------
