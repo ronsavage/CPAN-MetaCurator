@@ -212,7 +212,7 @@ sub populate_packages_table_from_csv
 	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
 	my($pad)			= $self -> pad; # For temporary use, during import.
-	$$pad{$table_name}	= $self -> read_table($table_name) );
+	$$pad{$table_name}	= $self -> read_table($table_name);
 	my($packages_count)	= $#{$$pad{$table_name} };
 
 	$self -> logger -> info("Finished populate_packages_table_from_csv(). Stored $packages_count records into table '$table_name'");
