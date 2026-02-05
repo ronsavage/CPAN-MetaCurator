@@ -41,14 +41,6 @@ has include_packages =>
 	required	=> 0,
 );
 
-has packages_details_path =>
-(
-	default		=> sub{return 'Downloads/02packages.details.txt'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
 has topics_table =>
 (
 	default		=> sub{return []},
