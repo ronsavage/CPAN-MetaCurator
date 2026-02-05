@@ -279,7 +279,7 @@ sub text2csv
 
 	# Read 02packages.details.txt.
 
-	my($in_file)	= File::Spec -> catfile($self -> home_path, $self -> input_path);
+	my($in_file)	= File::Spec -> catfile($self -> home_path, $self -> packages_txt_path);
 	my(@details)	= read_lines($in_file);
 	my($header)		= "package,version";
 	my($count)		= 0;
@@ -295,7 +295,7 @@ sub text2csv
 		$self -> logger -> debug("Discarding input. Line: $_ => $record");
 	}
 
-	my($out_file) = File::Spec -> catfile($self -> home_path, $self -> output_path);
+	my($out_file) = File::Spec -> catfile($self -> home_path, $self -> packages_csv_path);
 
 	$self -> logger -> debug("Writing $out_file");
 

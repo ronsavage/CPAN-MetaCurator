@@ -16,7 +16,7 @@ sub process
 	my(%options) = @_;
 
 	return CPAN::MetaCurator::Util::Export
-		-> new(home_path => $options{home_path, packages_txt_path => $options{packages_txt_path},
+		-> new(home_path => $options{home_path}, packages_txt_path => $options{packages_txt_path},
 				log_level => $options{log_level}, packages_csv_path => $options{packages_csv_path})
 		-> text2csv;
 
@@ -29,7 +29,7 @@ say "reformat.02packages.pl - Convert 02packages.details.txt to csv, for quicker
 my(%options);
 
 $options{help}	 			= 0;
-$options{home_path}			= '';
+$options{home_path}			= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
 $options{log_level}			= 'debug';
 $options{packages_csv_path}	= 'data/02packages.details.txt';
 $options{packages_txt_path}	= 'data/02packages.details.csv';
