@@ -31,8 +31,8 @@ my(%options);
 $options{help}	 			= 0;
 $options{home_path}			= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
 $options{log_level}			= 'debug';
-$options{packages_csv_path}	= 'data/02packages.details.txt';
-$options{packages_txt_path}	= 'data/02packages.details.csv';
+$options{packages_csv_path}	= 'data/02packages.details.csv';
+$options{packages_txt_path}	= 'data/02packages.details.txt';
 my(%opts)				=
 (
 	'help'					=> \$options{help},
@@ -69,8 +69,8 @@ reformat.02packages.pl [options]
 	-help
 	-home_path
 	-log_level info
-	-packages_csv_path Path
-	-packages_txt_path Path
+	-packages_csv_path Output Path
+	-packages_txt_path Input Path
 
 All switches can be reduced to a single letter, except of course -he and -ho.
 
@@ -96,13 +96,13 @@ Available log levels are trace, debug, info, warn, error and fatal, in that orde
 
 Default: info.
 
-=item packages_csv_path Path
+=item packages_csv_path Output Path
 
 The path for the output CSV file.
 
 Default: 'data/02packages.details.csv'.
 
-=item packages_txt_path Path
+=item packages_txt_path Input Path
 
 The path for the input txt file.
 

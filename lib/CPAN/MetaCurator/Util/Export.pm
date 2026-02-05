@@ -285,8 +285,6 @@ sub text2csv
 	$self -> logger -> debug("Reading $in_file");
 	$self -> logger -> debug("Writing $out_file");
 
-	return 0;
-
 	my(@details)	= read_lines($in_file);
 	my($header)		= "package,version";
 	my($count)		= 0;
