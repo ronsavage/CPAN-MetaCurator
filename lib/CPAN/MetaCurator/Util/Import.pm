@@ -234,7 +234,8 @@ sub populate_topics_table
 
 	my($special_para_names);
 
-	$$pad{constants} = $self -> read_table('constants');
+	my($pad)			= $self -> pad; # For temporary use, during import.
+	$$pad{constants}	= $self -> read_table('constants');
 
 	for my $row (@{$$pad{constants} })
 	{
