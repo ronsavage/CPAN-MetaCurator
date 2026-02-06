@@ -146,9 +146,9 @@ sub populate_all_tables
 
 	# Note: populate_topics_table() reads the constants table, so the latter must be populated first.
 
-	$self -> populate_constants_table($csv);
-
-	($self -> include_packages == 1) ? $self -> populate_packages_table($csv) : $self -> populate_packages_table_from_csv($csv);
+#	$self -> populate_constants_table($csv);
+#
+#	($self -> include_packages == 1) ? $self -> populate_packages_table($csv) : $self -> populate_packages_table_from_csv($csv);
 
 	$self -> populate_topics_table;
 
@@ -216,8 +216,6 @@ sub populate_packages_table_from_csv
 	my($packages_count)	= $#{$$pad{$table_name} };
 
 	$self -> logger -> info("Finished populate_packages_table_from_csv(). Stored $packages_count records into table '$table_name'");
-	$self -> logger -> debug('Table: ' . ucfirst($table_name) );
-	$self -> logger -> debug(Dumper($self -> constants_table) );
 
 }	# End of populate_packages_table_from_csv.
 
