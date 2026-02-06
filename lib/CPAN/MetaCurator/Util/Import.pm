@@ -234,7 +234,9 @@ sub populate_topics_table
 
 	my($special_para_names);
 
-	for my $row (@{$self -> constants_table})
+	$$pad{constants} = $self -> read_table('constants');
+
+	for my $row (@{$$pad{constants} })
 	{
 		$special_para_names = $$row{value} if ($$row{name} eq 'special_para_names');
 	}
