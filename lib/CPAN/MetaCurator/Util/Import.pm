@@ -271,7 +271,6 @@ sub populate_topics_table
 		$id					= $self -> insert_hashref($table_name, $record);
 	}
 
-	my($pad)			= $self -> pad; # For temporary use, during import.
 	$$pad{$table_name}	= $self -> read_table($table_name);
 	my($topic_count)	= $#{$$pad{$$table_name} };
 
