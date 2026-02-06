@@ -272,7 +272,7 @@ sub populate_topics_table
 	}
 
 	$$pad{$table_name}	= $self -> read_table($table_name);
-	my($topic_count)	= $#{$$pad{$$table_name} };
+	my($topic_count)	= $#{$$pad{$table_name} };
 
 	$self -> logger -> info("Finished populate_topics_table(). Stored $topic_count records into table '$table_name'");
 
