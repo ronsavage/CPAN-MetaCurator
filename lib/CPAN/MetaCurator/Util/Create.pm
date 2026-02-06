@@ -141,6 +141,8 @@ SQL
 # --------------------------------------------------
 # Note: The columns are not in alphabetical order
 # so that they display prettily in SQLite.
+# create table topics(id integer primary key autoincrement, parent_id integer references topics(id),
+#	title text not null, text text not null, timestamp text not null default current_timestamp);
 
 sub create_topics_table
 {
