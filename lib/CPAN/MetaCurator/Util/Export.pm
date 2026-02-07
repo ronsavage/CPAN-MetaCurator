@@ -71,9 +71,10 @@ sub export_as_tree
 		}
 
 		push @list, '</ul>';
-		push @list, '</li>';
+
 =cut
 
+		push @list, '</li>';
 	}
 
 	push @list, '</ul>', '</li>', '</ul>';
