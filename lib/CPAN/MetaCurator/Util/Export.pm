@@ -140,7 +140,7 @@ sub format_text
 	{
 		$line = $lines[$index];
 
-		next if ($line !~ /^o (.+)/);
+		next if ( (! $line) || ($line !~ /^o (.+)/) );
 
 		$leaf_id++;
 
