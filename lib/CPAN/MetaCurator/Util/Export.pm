@@ -163,9 +163,9 @@ sub format_text
 
 			$self -> logger -> debug("Topic: $line");
 
-			$topic_id = $$pad{topic_html_ids}{$line};
+			$target_id = $$pad{topic_html_ids}{$line};
 
-			$$item{text} = "<a href = 'http://127.0.0.1/misc/cpan.metacurator.tree.html#$topic_id'>$line</a>";
+			$$item{text} = "<a href = 'http://127.0.0.1/misc/cpan.metacurator.tree.html#$target_id'>$line</a>";
 
 			push @items, $item;
 	}
