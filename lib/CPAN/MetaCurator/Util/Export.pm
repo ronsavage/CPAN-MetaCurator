@@ -143,6 +143,9 @@ sub format_text
 		$leaf_id++;
 
 		$item			= {href => '', id => $leaf_id, text => $1};
+
+		$self -> logger -> debug("Item: $$item{text}");
+
 		$its_a_package	= $$pad{package_names}{$$item{text} } ? true : false;
 		$its_a_topic	= $$pad{topic_names}{$$item{text} } ? true : false;
 
