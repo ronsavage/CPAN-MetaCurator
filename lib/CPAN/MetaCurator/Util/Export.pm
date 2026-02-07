@@ -288,9 +288,10 @@ sub format_text
 		}
 
 		push @lines, $item;
-	}
 
 =cut
+
+	}
 
 	return [@lines];
 
