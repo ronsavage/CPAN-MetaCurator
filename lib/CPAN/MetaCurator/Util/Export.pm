@@ -63,7 +63,7 @@ sub export_as_tree
 		{
 			$$pad{leaf_count}++;
 
-			push @list, "<li id = '$$_{id}'>$$_{text}</li>";
+			push @list, $$_{html} ? "<a href = '$$_{html}>$$_{text}</a>" : "<li id = '$$_{id}'>$$_{text}</li>";
 		}
 
 		push @list, '</ul>';
@@ -130,7 +130,6 @@ sub format_text
 	my($item, @items);
 	my($line);
 	my(@see_also);
-	my($target_id);
 
 	for my $index (0 .. $#lines + 1)
 	{
@@ -161,11 +160,10 @@ sub format_text
 		{
 			$count{topics}++;
 
-			$self -> logger -> debug("Topic: $line");
+			#$self -> logger -> debug("Topic: $line");
 
-			$target_id = $$pad{topic_html_ids}{$line};
-
-			$$item{text} = "<a href = '#$target_id'>$line</a>";
+			$$item{html}	= "#$$pad{topic_html_ids}{$line}";
+			$$item{text}	= $line;
 
 			push @items, $item;
 	}
