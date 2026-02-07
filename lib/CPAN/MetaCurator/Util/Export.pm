@@ -138,10 +138,11 @@ sub format_text
 
 	for (0 .. $#text)
 	{
+		next if ($_ !~ /^o (.+)/);
+
 		$leaf_id++;
 
-		$item			= {href => '', id => $leaf_id, text => ''};
-		$$item{text}	=~ /o (.+)/; # Chop off 'o ' prefix.
+		$item			= {href => '', id => $leaf_id, text => $1};
 		$its_a_package	= $$pad{package_names}{$$item{text} } ? true : false;
 		$its_a_topic	= $$pad{topic_names}{$$item{text} } ? true : false;
 
