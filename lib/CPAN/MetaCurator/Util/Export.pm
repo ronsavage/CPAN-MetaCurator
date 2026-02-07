@@ -70,10 +70,9 @@ sub export_as_tree
 			push @list, "<li id = '$$_{id}'>$item</li>";
 		}
 
-		push @list, '</ul>';
-
 =cut
 
+		push @list, '</ul>';
 		push @list, '</li>';
 	}
 
