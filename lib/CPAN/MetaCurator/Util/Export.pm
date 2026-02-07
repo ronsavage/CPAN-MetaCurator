@@ -63,7 +63,7 @@ sub export_as_tree
 		{
 			$$pad{leaf_count}++;
 
-			push @list, "<li id = '$$_{id}'>$item</li>";
+			push @list, "<li id = '$$_{id}'>$$_{text}</li>";
 		}
 
 		push @list, '</ul>';
