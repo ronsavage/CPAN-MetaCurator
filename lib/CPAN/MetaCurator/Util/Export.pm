@@ -165,7 +165,7 @@ sub format_text
 		{
 			$count{topics}++;
 
-			$self -> logger -> debug("Topic: $text");
+			$self -> logger -> debug("Topic: $line");
 
 			#$$item{href} = $$item{text};
 	}
@@ -173,7 +173,7 @@ sub format_text
 		{
 			$count{unknowns}++;
 
-			$self -> logger -> debug("Unknown: $text");
+			$self -> logger -> debug("Unknown: $line");
 		}
 
 =pod
