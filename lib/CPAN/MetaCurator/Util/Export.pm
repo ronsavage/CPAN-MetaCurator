@@ -40,7 +40,7 @@ sub export_as_tree
 	my($root)	= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
 	my($id)		= $$pad{topic_html_ids}{$$root{title} };
 
-	$self -> logger -> info("Topic: id: $id. title: $$root{title}");
+	$self -> logger -> info("Entry: id: $id. title: $$root{title}");
 
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$$root{title}</a>|;
 	push @list, '<ul>';
