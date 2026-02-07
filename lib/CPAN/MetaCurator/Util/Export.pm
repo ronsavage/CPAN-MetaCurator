@@ -89,7 +89,7 @@ sub export_as_tree
 
 	$self -> write_file($header, $body, $footer, $pad);
 
-	$self -> logger -> info("$_ count: $counts{$_}") for (sort keys %counts);
+	$self -> logger -> info("$_ count: $count{$_}") for (sort keys %count);
 	$self -> logger -> info("Leaf count: $$pad{leaf_count}");
 
 	return 0;
