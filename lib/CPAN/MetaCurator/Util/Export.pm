@@ -165,6 +165,7 @@ sub format_text
 		}
 
 =pod
+
 		if ($text[$_] =~ /^o\s+/)
 		{
 
@@ -239,7 +240,9 @@ sub format_text
 			$self -> logger -> debug("h. Topic is $$item{text}");
 		}
 	}
+
 =cut
+
 =pod
 
 	my($count) = 0;
