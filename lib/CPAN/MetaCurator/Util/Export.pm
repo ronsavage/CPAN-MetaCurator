@@ -162,7 +162,7 @@ sub format_text
 
 			$self -> logger -> debug("Topic: $line");
 
-			$$item{text} = "<a href = '#$leaf_id'>$line</a>";
+			$$item{text} = "<a href = 'http://127.0.0.1/misc/cpan.metacurator.tree.html#$leaf_id'>$line</a>";
 
 			push @items, $item;
 	}
