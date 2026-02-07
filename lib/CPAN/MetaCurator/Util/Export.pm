@@ -145,7 +145,7 @@ sub format_text
 		$its_a_package	= $$pad{package_names}{$$item{text} } ? true : false;
 		$its_a_topic	= $$pad{topic_names}{$$item{text} } ? true : false;
 
-		if ($its_a_module)
+		if ($its_a_package)
 		{
 			$count{packages}++;
 
