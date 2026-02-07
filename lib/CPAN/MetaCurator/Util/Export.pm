@@ -136,10 +136,8 @@ sub format_text
 	my(@lines);
 	my(@see_also);
 
-	for (0 .. $#text)
+	for (@text)
 	{
-		$self -> logger -> debug("Item: $_");
-
 		next if ($_ !~ /^o (.+)/);
 
 		$leaf_id++;
@@ -147,6 +145,8 @@ sub format_text
 		$item			= {href => '', id => $leaf_id, text => $1};
 		$its_a_package	= $$pad{package_names}{$$item{text} } ? true : false;
 		$its_a_topic	= $$pad{topic_names}{$$item{text} } ? true : false;
+
+		$self -> logger -> debug("Item: $$item{text}. Package: $its_a_package. Topic: $its_a_topic");
 
 		if ($its_a_package)
 		{
