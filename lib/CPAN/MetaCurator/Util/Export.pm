@@ -51,7 +51,7 @@ sub export_as_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
-		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
+		$self -> logger -> info("Entry: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
 		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
 		$lines_ref	= $self -> format_text($leaf_id, $pad, $topic);
