@@ -126,43 +126,54 @@ sub export_modules_table
 sub format_text
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
-	my(@text)							= grep{length} split(/\n/, $$topic{text});
-	@text								= map{s/\s+$//; s/^-\s//; s/:$//; $_} @text;
+	my(@lines)							= grep{length} split(/\n/, $$topic{text});
+	@lines								= map{s/\s+$//; s/^-\s//; s/:$//; $_} @lines;
 	my($inside_see_also)				= false;
 
 	my($href, @hover);
 	my($its_a_package, $its_a_topic);
-	my($item);
-	my(@lines);
+	my($item, @items);
+	my($line);
 	my(@see_also);
 
-	for (@text)
+	for my $index (0 .. $#lines + 1)
 	{
-		next if ($_ !~ /^o (.+)/);
+		$line = $lines[$index];
+
+		next if ($line !~ /^o (.+)/);
 
 		$leaf_id++;
 
-		$item			= {href => '', id => $leaf_id, text => $1};
-		$its_a_package	= $$pad{package_names}{$$item{text} } ? true : false;
-		$its_a_topic	= $$pad{topic_names}{$$item{text} } ? true : false;
+		$line			= $1;
+		$item			= {href => '', id => $leaf_id, text => $line};
+		$its_a_package	= $$pad{package_names}{$line} ? true : false;
+		$its_a_topic	= $$pad{topic_names}{$line} ? true : false;
+
+		# Warning: Some names might be acronyms & module names & topic names.
 
 		if ($its_a_package)
 		{
 			$count{packages}++;
 
-			$self -> logger -> debug("Package: $$item{text}");
+			#$self -> logger -> debug("Package: $line");
+
+			$$item{text} = "<a href = 'https://metacpan.org/pod/$line'>$line - $line[$index + 1]</a>";
+
+			push @items, $item;
 		}
 		elsif ($its_a_topic)
 		{
 			$count{topics}++;
 
-			$self -> logger -> debug("Topic: $$item{text}");
-		}
+			$self -> logger -> debug("Topic: $text");
+
+			#$$item{href} = $$item{text};
+	}
 		else
 		{
 			$count{unknowns}++;
 
-			$self -> logger -> debug("Unknown: $$item{text}");
+			$self -> logger -> debug("Unknown: $text");
 		}
 
 =pod
@@ -294,7 +305,7 @@ sub format_text
 
 	}
 
-	return [@lines];
+	return [@items];
 
 } # End of format_text.
 
