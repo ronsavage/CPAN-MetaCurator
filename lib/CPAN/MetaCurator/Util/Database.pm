@@ -113,6 +113,11 @@ sub build_pad
 	$$pad{module_names}				= {};
 	$$pad{module_names}{$$_{name} }	= $$_{id} for (@{$$pad{modules} });
 
+	# Packages.
+
+	$$pad{package_names}				= {};
+	$$pad{package_names}{$$_{name} }	= $$_{id} for (@{$$pad{packages} });
+
 	# Topics.
 	# There is a db table called topics so we need another name for the hash
 	# where the keys are the names of the topics and the values are db ids.

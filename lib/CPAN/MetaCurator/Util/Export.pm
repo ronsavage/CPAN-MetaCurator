@@ -15,6 +15,8 @@ use Moo;
 
 use File::Slurper 'read_lines';
 
+our %counts;
+
 our $VERSION = '1.07';
 
 # -----------------------------------------------
@@ -25,9 +27,9 @@ sub export_as_tree
 
 	$self -> init_config;
 	$self -> init_db;
-	$self -> build_pad;
 
-	my($pad)					= $self -> pad;
+	$count{packages}			= $count{topics} = $count{unknowns} = 0;
+	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
 	$self -> logger -> info('Exporting the wiki as a JSTree');
@@ -57,6 +59,7 @@ sub export_as_tree
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
 
+=pod
 		for (@$lines_ref)
 		{
 			$$pad{leaf_count}++;
@@ -69,6 +72,7 @@ sub export_as_tree
 
 		push @list, '</ul>';
 		push @list, '</li>';
+=cut
 
 	}
 
@@ -85,7 +89,8 @@ sub export_as_tree
 
 	$self -> write_file($header, $body, $footer, $pad);
 
-	$self -> logger -> info("Leaf count:  $$pad{leaf_count}");
+	$self -> logger -> info("$_ count: $counts{$_}") for (sort keys %counts);
+	$self -> logger -> info("Leaf count: $$pad{leaf_count}");
 
 	return 0;
 
@@ -121,13 +126,12 @@ sub export_modules_table
 sub format_text
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
-	my($target)							= 'TestingHelp';
 	my(@text)							= grep{length} split(/\n/, $$topic{text});
 	@text								= map{s/\s+$//; s/^-\s//; s/:$//; $_} @text;
 	my($inside_see_also)				= false;
-	my($topic_name_re)					= qr/\[\[(.+)\]\]/o; # A topic name, eg [[XS]].
 
 	my($href, @hover);
+	my($its_a_package, $its_a_topic);
 	my($item);
 	my(@lines);
 	my(@see_also);
@@ -136,11 +140,33 @@ sub format_text
 	{
 		$leaf_id++;
 
-		$item = {href => '', id => $leaf_id, text => ''};
+		$item			= {href => '', id => $leaf_id, text => ''};
+		$$item{text}	=~ /o (.+)/; # Chop off 'o ' prefix.
+		$its_a_package	= $$pad{package_names}{$$item{text} } ? true : false;
+		$its_a_topic	= $$pad{topic_names}{$$item{text} } ? true : false;
 
+		if ($its_a_module)
+		{
+			$count{packages}++;
+
+			$self -> logger -> debug("Package: $$item{text}");
+		}
+		elsif ($its_a_topic)
+		{
+			$count{topics}++;
+
+			$self -> logger -> debug("Topic: $$item{text}");
+		}
+		else
+		{
+			$count{unknowns}++;
+
+			$self -> logger -> debug("Unknown: $$item{text}");
+		}
+
+=pod
 		if ($text[$_] =~ /^o\s+/)
 		{
-			$$item{text} = substr($text[$_], 2); # Chop off 'o ' prefix.
 
 			$self -> logger -> debug("a. Topic is $$item{text}");
 			$self -> logger -> error("Missing text @ line # $_") if (length($text[$_]) == 0);
@@ -151,6 +177,7 @@ sub format_text
 
 				$inside_see_also = false;
 			}
+
 
 			if ($$item{text} =~ /^[A-Z]+$/) # Eg: Any acronym.
 			{
@@ -212,7 +239,7 @@ sub format_text
 			$self -> logger -> debug("h. Topic is $$item{text}");
 		}
 	}
-
+=cut
 =pod
 
 	my($count) = 0;
