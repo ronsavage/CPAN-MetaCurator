@@ -59,18 +59,12 @@ sub export_as_tree
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
 
-=pod
 		for (@$lines_ref)
 		{
 			$$pad{leaf_count}++;
 
-			$id		= $self -> format_text($leaf_id, $pad, $topic);
-			$item	= $$_{href} ? "<a href = '$$_{href}'>$$_{text}</a>" : $$_{text};
-
 			push @list, "<li id = '$$_{id}'>$item</li>";
 		}
-
-=cut
 
 		push @list, '</ul>';
 		push @list, '</li>';
