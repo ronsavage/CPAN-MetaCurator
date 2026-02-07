@@ -123,6 +123,7 @@ sub format_text
 	my(@lines)							= grep{length} split(/\n/, $$topic{text});
 	@lines								= map{s/\s+$//; s/^-\s//; s/:$//; $_} @lines;
 	my($inside_see_also)				= false;
+	my($line_id)						= $leaf_id;
 
 	my($href, @hover);
 	my($its_a_package, $its_a_topic);
@@ -136,10 +137,10 @@ sub format_text
 
 		next if ( (! $line) || ($line !~ /^o (.+)/) );
 
-		$leaf_id++;
+		$line_id++;
 
 		$line			= $1;
-		$item			= {href => '', id => $leaf_id, text => $line};
+		$item			= {href => '', id => $line_id, text => $line};
 		$its_a_package	= $$pad{package_names}{$line} ? true : false;
 		$its_a_topic	= $$pad{topic_names}{$line} ? true : false;
 
@@ -161,7 +162,9 @@ sub format_text
 
 			$self -> logger -> debug("Topic: $line");
 
-			#$$item{href} = $$item{text};
+			$$item{text} = "<a href = 'https://metacpan.org/pod/#$leaf_id'>$line</a>";
+
+			push @items, $item;
 	}
 		else
 		{
