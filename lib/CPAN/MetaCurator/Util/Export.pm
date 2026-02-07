@@ -130,6 +130,7 @@ sub format_text
 	my($item, @items);
 	my($line);
 	my(@see_also);
+	my($target_id);
 
 	for my $index (0 .. $#lines + 1)
 	{
@@ -162,7 +163,9 @@ sub format_text
 
 			$self -> logger -> debug("Topic: $line");
 
-			$$item{text} = "<a href = 'http://127.0.0.1/misc/cpan.metacurator.tree.html#$leaf_id'>$line</a>";
+			$topic_id = $$pad{topic_html_ids}{$line};
+
+			$$item{text} = "<a href = 'http://127.0.0.1/misc/cpan.metacurator.tree.html#$topic_id'>$line</a>";
 
 			push @items, $item;
 	}
