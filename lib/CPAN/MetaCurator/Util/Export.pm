@@ -157,7 +157,7 @@ sub format_text
 
 			#$self -> logger -> debug("Package: $line");
 
-			$$item{text} = "<a href = 'https://metacpan.org/pod/$line'>$line - $line[$index + 1]</a>";
+			$$item{text} = "<a href = 'https://metacpan.org/pod/$line'>$line - $lines[$index + 1]</a>";
 
 			push @items, $item;
 		}
