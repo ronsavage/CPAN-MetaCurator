@@ -146,8 +146,6 @@ sub format_text
 		$its_a_package	= $$pad{package_names}{$$item{text} } ? true : false;
 		$its_a_topic	= $$pad{topic_names}{$$item{text} } ? true : false;
 
-		$self -> logger -> debug("Item: $$item{text}. Package: $its_a_package. Topic: $its_a_topic");
-
 		if ($its_a_package)
 		{
 			$count{packages}++;
