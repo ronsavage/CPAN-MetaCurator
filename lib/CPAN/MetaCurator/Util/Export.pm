@@ -173,7 +173,7 @@ sub format_text
 			$count{acronyms}++;
 
 			$$item{text}	.= ' => ' . $lines[$index + 1];
-			$$item{text}	= "<a href = '$lines[$index + 1]'>$$item{text}</a>";
+			$$item{text}	= "<a href = '$lines[$index + 2]'>$$item{text}</a>";
 
 			push @items, $item;
 		}
