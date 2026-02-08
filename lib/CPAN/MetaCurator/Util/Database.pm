@@ -111,7 +111,7 @@ sub build_pad
 	for (@{$$pad{acronyms} })
 	{
 		$$pad{count}{acronym}++;
-`	}
+	}
 
 	# Constants.
 
