@@ -150,8 +150,6 @@ sub build_pad
 		$$pad{topic_names}{$$_{title} }		= $$_{id};
 	}
 
-	$self -> logger -> debug("Topic count: $$pad{topic_count}");
-
 	# Dates.
 	# DateTime::Tiny does not handle time_zone.
 
