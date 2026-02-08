@@ -106,13 +106,6 @@ sub build_pad
 
 	for (@{$self -> table_names}) {$$pad{$_} = $self -> read_table($_) };
 
-	# Acronyms.
-
-	for (@{$$pad{acronyms} })
-	{
-		$$pad{count}{acronym}++;
-	}
-
 	# Constants.
 
 	$$pad{$$_{name} } = $$_{value} for (@{$$pad{constants} });

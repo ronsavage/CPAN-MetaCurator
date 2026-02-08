@@ -159,6 +159,8 @@ sub format_text
 
 		if ($its_an_acronym)
 		{
+			$$pad{count}{acronym}++;
+
 			$$item{text}	.= ' => ' . $lines[$index + 1];
 			$$item{text}	= "<a href = '$lines[$index + 2]'>$$item{text}</a>";
 
