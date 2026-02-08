@@ -181,7 +181,11 @@ sub format_text
 			push @items, $item;
 		}
 
-		if ! ($its_a_package || $its_a_topic || $its_an_acronym)
+		if ($its_a_package || $its_a_topic || $its_an_acronym)
+		{
+			# Ignore it here.
+		}
+		else
 		{
 			$count{unknowns}++;
 
