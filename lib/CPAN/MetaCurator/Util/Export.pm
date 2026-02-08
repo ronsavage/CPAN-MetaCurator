@@ -15,8 +15,6 @@ use Moo;
 
 use File::Slurper 'read_lines';
 
-our %count;
-
 our $VERSION = '1.07';
 
 # -----------------------------------------------
@@ -28,7 +26,6 @@ sub export_as_tree
 	$self -> init_config;
 	$self -> init_db;
 
-	$count{acronyms}			= $count{packages} = $count{topics} = $count{unknowns} = 0;
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
@@ -61,7 +58,7 @@ sub export_as_tree
 
 		for (@$lines_ref)
 		{
-			$$pad{leaf_count}++;
+			$$pad{count}{leaf}++;
 
 			push @list, $$_{html} ? "<a href = '$$_{html}>$$_{text}</a>" : "<li id = '$$_{id}'>$$_{text}</li>";
 		}
@@ -74,11 +71,10 @@ sub export_as_tree
 
 	my($list)	= join("\n", @list);
 	$body		=~ s/!list!/$list/;
-	my(%data)	= (leaf_count => $$pad{leaf_count}, topic_count => $$pad{topic_count});
 
-	for $_ (keys %data)
+	for $_ (keys %{$$pad{count} })
 	{
-		$header =~ s/!$_!/$data{$_}/;
+		$header =~ s/!$_!/$$pad{count}{$_}/;
 	}
 
 	$self -> write_file($header, $body, $footer, $pad);
@@ -146,14 +142,10 @@ sub format_text
 		$its_a_topic	= $$pad{topic_names}{$line} ? true : false;
 
 		# Some names might be acronyms & module names & topic names.
-		# Examples: IoT, RSS.
+		# Example: RSS.
 
 		if ($its_a_package)
 		{
-			$count{packages}++;
-
-			#$self -> logger -> debug("Package: $line");
-
 			$$item{text} = "<a href = 'https://metacpan.org/pod/$line'>$line - $lines[$index + 1]</a>";
 
 			push @items, $item;
@@ -161,10 +153,6 @@ sub format_text
 
 		if ($its_a_topic)
 		{
-			$count{topics}++;
-
-			#$self -> logger -> debug("Topic: $line");
-
 			$$item{html}	= "#$$pad{topic_html_ids}{$line}";
 			$$item{text}	= $line;
 
@@ -173,8 +161,6 @@ sub format_text
 
 		if ($its_an_acronym)
 		{
-			$count{acronyms}++;
-
 			$$item{text}	.= ' => ' . $lines[$index + 1];
 			$$item{text}	= "<a href = '$lines[$index + 2]'>$$item{text}</a>";
 
@@ -187,7 +173,7 @@ sub format_text
 		}
 		else
 		{
-			$count{unknowns}++;
+			$$pad{count}{unknown}++;
 
 			$self -> logger -> debug("Unknown: $line");
 		}

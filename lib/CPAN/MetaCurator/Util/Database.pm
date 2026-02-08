@@ -95,12 +95,23 @@ our $VERSION = '1.07';
 
 sub build_pad
 {
-	my($self)			= @_;
-	my($pad)			= {};
-	$$pad{leaf_count}	= 0;
-	$$pad{topic_count}	= 0;
+	my($self)				= @_;
+	my($pad)				= {};
+	$$pad{count}			= {};
+	$$pad{count}{acronym}	= 0;
+	$$pad{count}{leaf}		= 0;
+	$$pad{count}{package}	= 0;
+	$$pad{count}{topic}		= 0;
+	$$pad{count}{unknown}	= 0;
 
 	for (@{$self -> table_names}) {$$pad{$_} = $self -> read_table($_) };
+
+	# Acronyms.
+
+	for (@{$$pad{acronyms} })
+	{
+		$$pad{count}{acronym}++;
+`	}
 
 	# Constants.
 
@@ -115,20 +126,25 @@ sub build_pad
 
 	# Packages.
 
-	$$pad{package_names}				= {};
-	$$pad{package_names}{$$_{name} }	= $$_{id} for (@{$$pad{packages} });
+	$$pad{package_names} = {};
+
+	for (@{$$pad{packages} })
+	{
+		$$pad{count}{package}++;
+
+		$$pad{package_names}{$$_{name} } = $$_{id};
+	}
 
 	# Topics.
 	# There is a db table called topics so we need another name for the hash
 	# where the keys are the names of the topics and the values are db ids.
 
-	$$pad{topic_count}		= 0;
 	$$pad{topic_names}		= {};
 	$$pad{topic_html_ids}	= {};
 
 	for (@{$$pad{topics} })
 	{
-		$$pad{topic_count}++;
+		$$pad{count}{topic}++;
 
 		$$pad{topic_html_ids}{$$_{title} }	= html_id_offset * $$_{id};
 		$$pad{topic_names}{$$_{title} }		= $$_{id};
