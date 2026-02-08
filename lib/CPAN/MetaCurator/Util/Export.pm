@@ -145,7 +145,8 @@ sub format_text
 		$its_a_package	= $$pad{package_names}{$line} ? true : false;
 		$its_a_topic	= $$pad{topic_names}{$line} ? true : false;
 
-		# Warning: Some names might be acronyms & module names & topic names.
+		# Some names might be acronyms & module names & topic names.
+		# Examples: IoT, RSS.
 
 		if ($its_a_package)
 		{
@@ -157,7 +158,8 @@ sub format_text
 
 			push @items, $item;
 		}
-		elsif ($its_a_topic)
+
+		if ($its_a_topic)
 		{
 			$count{topics}++;
 
@@ -168,7 +170,8 @@ sub format_text
 
 			push @items, $item;
 		}
-		elsif ($its_an_acronym)
+
+		if ($its_an_acronym)
 		{
 			$count{acronyms}++;
 
@@ -177,91 +180,13 @@ sub format_text
 
 			push @items, $item;
 		}
-		else
+
+		if ! ($its_a_package || $its_a_topic || $its_an_acronym)
 		{
 			$count{unknowns}++;
 
 			$self -> logger -> debug("Unknown: $line");
 		}
-
-=pod
-
-		if ($text[$_] =~ /^o\s+/)
-		{
-
-			$self -> logger -> debug("a. Topic is $$item{text}");
-			$self -> logger -> error("Missing text @ line # $_") if (length($text[$_]) == 0);
-
-			if ($inside_see_also)
-			{
-				$self -> logger -> debug("b. Topic is $$item{text}");
-
-				$inside_see_also = false;
-			}
-
-
-			if ($$item{text} =~ /^[A-Z]+$/) # Eg: Any acronym.
-			{
-				$$item{text} .= " => $text[$_ + 1]";
-
-				$self -> logger -> debug("c. Topic is $$item{text}");
-			}
-			elsif ($$item{text} =~ /^http/) # Eg: AdventPlanet.
-			{
-				$$item{href} = $$item{text};
-
-				$self -> logger -> debug("d. Topic is $$item{text}");
-			}
-			elsif ($$item{text} =~ /^See also/) # Eg: ABeCeDarian.
-			{
-				$inside_see_also = true;
-
-				next; # Discard this line. Add it back below, with a ':'.
-			}
-			elsif ($_ <= $#text - 2)
-			{
-				if ($text[$_ + 1] =~ /^http/) # Eg: AudioVisual.
-				{
-					$$item{href} = $text[$_ + 1];
-
-					$self -> logger -> debug("e. Topic is $$item{text}");
-				}
-				elsif ($$pad{module_names}{$$item{text} }) # Eg: builtins, GD, GD::Polyline.
-				{
-					$$item{text} = "<a href = 'https://metacpan.org/pod/$$item{text}'>$$item{text} - $text[$_ + 1]</a>";
-
-					$self -> logger -> debug("f. Topic is $$item{text}");
-				}
-				else
-				{
-					$$item{text} .= " => $text[$_ + 1]";
-
-					if ($text[$_ + 2] =~ /^http/) # Eg: Most entries.
-					{
-						$$item{href} = $text[$_ + 2];
-					}
-
-					$self -> logger -> debug("g. Topic is $$item{text}");
-				}
-			}
-			else
-			{
-				push @hover, $text[$_];
-			}
-
-			push @lines, $item;
-		}
-		elsif ($inside_see_also)
-		{
-			$$item{text} = $text[$_];
-
-			push @see_also, $item;
-
-			$self -> logger -> debug("h. Topic is $$item{text}");
-		}
-	}
-
-=cut
 
 =pod
 
