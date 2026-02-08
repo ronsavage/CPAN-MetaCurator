@@ -28,7 +28,7 @@ sub export_as_tree
 	$self -> init_config;
 	$self -> init_db;
 
-	$count{packages}			= $count{topics} = $count{unknowns} = 0;
+	$count{acronyms}			= $count{packages} = $count{topics} = $count{unknowns} = 0;
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
@@ -126,7 +126,7 @@ sub format_text
 	my($line_id)						= $leaf_id;
 
 	my($href, @hover);
-	my($its_a_package, $its_a_topic);
+	my($its_an_acronym, $its_a_package, $its_a_topic);
 	my($item, @items);
 	my($line);
 	my(@see_also);
@@ -141,6 +141,7 @@ sub format_text
 
 		$line			= $1;
 		$item			= {href => '', id => $line_id, text => $line};
+		$its_an_acronym	= $$topic{title} eq 'Acronyms' ? true : false;
 		$its_a_package	= $$pad{package_names}{$line} ? true : false;
 		$its_a_topic	= $$pad{topic_names}{$line} ? true : false;
 
@@ -166,7 +167,15 @@ sub format_text
 			$$item{text}	= $line;
 
 			push @items, $item;
-	}
+		}
+		elsif ($its_an_acronym)
+		{
+			$count{acronyms}++;
+
+			$$item{text} .= ' => ' . $lines[$index + 1];
+
+			push @items, $item;
+		}
 		else
 		{
 			$count{unknowns}++;
