@@ -95,14 +95,10 @@ our $VERSION = '1.07';
 
 sub build_pad
 {
-	my($self)				= @_;
-	my($pad)				= {};
-	$$pad{count}			= {};
-	$$pad{count}{acronym}	= 0;
-	$$pad{count}{leaf}		= 0;
-	$$pad{count}{package}	= 0;
-	$$pad{count}{topic}		= 0;
-	$$pad{count}{unknown}	= 0;
+	my($self)			= @_;
+	my($pad)			= {};
+	$$pad{count}		= {};
+	$$pad{count}{$_}	= 0 for (@{$self -> node_types});
 
 	for (@{$self -> table_names}) {$$pad{$_} = $self -> read_table($_) };
 

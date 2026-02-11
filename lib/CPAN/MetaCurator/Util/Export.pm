@@ -120,9 +120,9 @@ sub format_text
 	my($line_id)						= $leaf_id;
 
 	my($href, @hover);
-	my($its_an_acronym, $its_a_package, $its_a_topic);
 	my($item, @items);
 	my($line);
+	my(%node_type);
 	my(@see_also);
 
 	for my $index (0 .. $#lines + 1)
@@ -133,31 +133,36 @@ sub format_text
 
 		$line_id++;
 
-		$line			= $1;
-		$item			= {href => '', id => $line_id, text => $line};
-		$its_an_acronym	= $$topic{title} eq 'Acronyms' ? true : false;
-		$its_a_package	= $$pad{package_names}{$line} ? true : false;
-		$its_a_topic	= $$pad{topic_names}{$line} ? true : false;
+		$line				= $1;
+		$item				= {href => '', id => $line_id, text => $line};
+		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
+		$node_type{package}	= $$pad{package_names}{$line} ? true : false;
+		$node_type{topic}	= $$pad{topic_names}{$line} ? true : false;
+		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{package} || $node_type{topic});
 
 		# Some names might be acronyms & module names & topic names.
 		# Example: RSS.
 
-		if ($its_a_package)
+		if ($node_type{package})
 		{
+			# These are counted in Database.build_pad().
+
 			$$item{text} = "<a href = 'https://metacpan.org/pod/$line'>$line - $lines[$index + 1]</a>";
 
 			push @items, $item;
 		}
 
-		if ($its_a_topic)
+		if ($node_type{topic})
 		{
+			# These are counted in Database.build_pad().
+
 			$$item{html}	= "#$$pad{topic_html_ids}{$line}";
 			$$item{text}	= $line;
 
 			push @items, $item;
 		}
 
-		if ($its_an_acronym)
+		if ($node_type{acronym})
 		{
 			$$pad{count}{acronym}++;
 
@@ -167,11 +172,7 @@ sub format_text
 			push @items, $item;
 		}
 
-		if ($its_a_package || $its_a_topic || $its_an_acronym)
-		{
-			# Ignore it here.
-		}
-		else
+		if ($$node_type{unknown})
 		{
 			$$pad{count}{unknown}++;
 

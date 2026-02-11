@@ -79,6 +79,14 @@ has logo_path =>
 	required	=> 1,
 );
 
+has node_types =>
+(
+	default		=> sub{return [qw/acronym leaf package topic unknown/]},
+	is			=> 'rw',
+	isa			=> ArrayRef,
+	required	=> 0,
+);
+
 has packages_csv_path =>
 (
 	default		=> sub{return 'data/02packages.details.csv'},
