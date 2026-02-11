@@ -172,7 +172,7 @@ sub format_text
 			push @items, $item;
 		}
 
-		if ($$node_type{unknown})
+		if ($node_type{unknown})
 		{
 			$$pad{count}{unknown}++;
 
