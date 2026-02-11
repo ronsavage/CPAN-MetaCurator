@@ -147,7 +147,7 @@ sub format_text
 		{
 			# These are counted in Database.build_pad().
 
-			$$item{text} = "<a href = 'https://metacpan.org/pod/$line'>$line - $lines[$index + 1]</a>";
+			$$item{text} = "<a href = 'https://metacpan.org/pod/$line'>$line - $lines[$index + 1] [package]</a>";
 
 			push @items, $item;
 		}
@@ -156,7 +156,7 @@ sub format_text
 		{
 			# These are counted in Database.build_pad().
 
-			$$item{html}	= "#$$pad{topic_html_ids}{$line}";
+			$$item{html}	= "#$$pad{topic_html_ids}{$line} [topic]";
 			$$item{text}	= $line;
 
 			push @items, $item;
@@ -167,7 +167,7 @@ sub format_text
 			$$pad{count}{acronym}++;
 
 			$$item{text}	.= ' => ' . $lines[$index + 1];
-			$$item{text}	= "<a href = '$lines[$index + 2]'>$$item{text}</a>";
+			$$item{text}	= "<a href = '$lines[$index + 2]'>$$item{text}</a> [acronym]";
 
 			push @items, $item;
 		}

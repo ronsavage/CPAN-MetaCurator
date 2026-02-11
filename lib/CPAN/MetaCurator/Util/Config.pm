@@ -81,7 +81,7 @@ has logo_path =>
 
 has node_types =>
 (
-	default		=> sub{return [qw/acronym leaf package topic unknown/]},
+	default		=> sub{return [qw/acronym leaf package see_also topic unknown/]},
 	is			=> 'rw',
 	isa			=> ArrayRef,
 	required	=> 0,
