@@ -158,7 +158,7 @@ sub format_text
 			$$item{html}	= '';
 			$$item{text}	= '';
 
-			while ( ($index <= ($#lines - 3) ) && (length($lines[$index + 3]) > 0) )
+			while ( ($index <= ($#lines - 3) ) && ($lines[$index + 3] !~ /^o/) )
 			{
 				$$item{id}++;
 
