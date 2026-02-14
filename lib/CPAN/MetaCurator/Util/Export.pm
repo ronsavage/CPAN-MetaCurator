@@ -158,6 +158,8 @@ sub format_text
 			$$item{html}	= '';
 			$$item{text}	= '';
 
+=pod
+
 			while ( ($index <= ($#lines - 3) ) && ($lines[$index + 3] !~ /^o/) )
 			{
 				$$item{id}++;
@@ -170,6 +172,8 @@ sub format_text
 
 				$index++;
 			}
+
+=cut
 
 			next;
 		}
