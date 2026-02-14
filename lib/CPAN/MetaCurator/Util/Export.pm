@@ -137,6 +137,7 @@ sub format_text
 
 		next if ($line eq 'See also');
 
+		$index++;
 		$line_id++;
 
 		$item				= {href => '', id => $line_id, text => ''};
@@ -170,8 +171,6 @@ sub format_text
 				push @items, $item;
 
 				$self -> logger -> debug("  & $$item{id} => $$item{text}");
-
-				$index++;
 			}
 =cut
 		}
