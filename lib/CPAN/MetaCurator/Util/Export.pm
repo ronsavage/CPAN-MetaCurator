@@ -153,14 +153,20 @@ sub format_text
 
 			push @items, $item;
 
+			$self -> logger -> debug("Pushed $$item{id} => $$item{text}");
+
 			$$item{html}	= '';
 			$$item{text}	= '';
 
 			while ( ($index <= ($#lines - 3) ) && ($lines[$index + 3] =~ /^-/) )
 			{
+				$$item{id}++;
+
 				$$item{text} = $lines[$index + 3];
 
 				push @items, $item;
+
+				$self -> logger -> debug("  & $$item{id} => $$item{text}");
 
 				$index++;
 			}
