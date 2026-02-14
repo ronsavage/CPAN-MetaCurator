@@ -118,9 +118,10 @@ sub format_text
 	@lines								= map{s/\s+$//; s/^-\s//; s/:$//; $_} @lines;
 	my($inside_see_also)				= false;
 	my($line_id)						= $leaf_id;
+	my($index)							= 0;
 
 	my($href, @hover);
-	my($index, $item, @items);
+	my($item, @items);
 	my($line);
 	my(%node_type);
 	my(@see_also);
