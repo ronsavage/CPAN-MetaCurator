@@ -120,12 +120,12 @@ sub format_text
 	my($line_id)						= $leaf_id;
 
 	my($href, @hover);
-	my($item, @items);
+	my($index, $item, @items);
 	my($line);
 	my(%node_type);
 	my(@see_also);
 
-	for my $index (0 .. $#lines + 1)
+	while ($index <= $#lines)
 	{
 		$line = $lines[$index];
 
