@@ -60,7 +60,7 @@ sub export_as_tree
 		{
 			$$pad{count}{leaf}++;
 
-			push @list, $$_{html} ? $$_{html} : "<li id = '$$_{id}'>$$_{text}</li>";
+			push @list, $$_{html} ? "<li>$$_{html}</li>" : "<li id = '$$_{id}'>$$_{text}</li>";
 		}
 
 		push @list, '</ul>';
