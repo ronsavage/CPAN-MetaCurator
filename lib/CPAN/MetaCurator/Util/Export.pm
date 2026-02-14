@@ -143,6 +143,18 @@ sub format_text
 		# Some names might be acronyms & module names & topic names.
 		# Example: RSS.
 
+		if ($node_type{acronym})
+		{
+			$$pad{count}{acronym}++;
+
+			$$item{text}	.= ' => ' . $lines[$index + 1];
+			$$item{text}	= "<a href = '$lines[$index + 2]'>$$item{text}</a>";
+
+			push @items, $item;
+
+			next;
+		}
+
 		if ($node_type{package})
 		{
 			# These are counted in Database.build_pad().
@@ -158,16 +170,6 @@ sub format_text
 
 			$$item{html}	= "#$$pad{topic_html_ids}{$line} [topic]";
 			$$item{text}	= $line;
-
-			push @items, $item;
-		}
-
-		if ($node_type{acronym})
-		{
-			$$pad{count}{acronym}++;
-
-			$$item{text}	.= ' => ' . $lines[$index + 1];
-			$$item{text}	= "<a href = '$lines[$index + 2]'>$$item{text} [acronym]</a>";
 
 			push @items, $item;
 		}
