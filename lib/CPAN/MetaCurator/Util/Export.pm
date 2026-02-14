@@ -150,7 +150,7 @@ sub format_text
 		{
 			$$pad{count}{acronym}++;
 
-			$$item{html}	= "<a href = '@{[$lines[$index + 2]]}' target = '_blank'>$line - @{[$lines[$index + 1]]}</a>";
+			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$line - @{[$lines[$index]]}</a>";
 			$$item{text}	= "";
 
 			push @items, $item;
