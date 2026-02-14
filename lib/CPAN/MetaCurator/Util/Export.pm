@@ -60,7 +60,7 @@ sub export_as_tree
 		{
 			$$pad{count}{leaf}++;
 
-			push @list, $$_{html} ? "<a href = '$$_{html}>$$_{text}</a>" : "<li id = '$$_{id}'>$$_{text}</li>";
+			push @list, $$_{html} ? $$_{html} : "<li id = '$$_{id}'>$$_{text}</li>";
 		}
 
 		push @list, '</ul>';
@@ -134,7 +134,7 @@ sub format_text
 		$line_id++;
 
 		$line				= $1;
-		$item				= {href => '', id => $line_id, text => $line};
+		$item				= {href => '', id => $line_id, text => ''};
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
 		$node_type{package}	= $$pad{package_names}{$line} ? true : false;
 		$node_type{topic}	= $$pad{topic_names}{$line} ? true : false;
@@ -147,13 +147,15 @@ sub format_text
 		{
 			$$pad{count}{acronym}++;
 
-			$$item{text}	.= ' => ' . $lines[$index + 1];
-			$$item{text}	= "<a href = '$lines[$index + 2]'>$$item{text}</a>";
+			$$item{html}	= "<a href = '@{[$line[$index + 2]]}' target = '_blank'>$line - @{[$line[$index + 1]]}</a>";
+			$$item{text}	= '';
 
 			push @items, $item;
 
 			next;
 		}
+
+=pod
 
 		if ($node_type{package})
 		{
@@ -180,6 +182,8 @@ sub format_text
 
 			$self -> logger -> debug("Unknown: $line");
 		}
+
+=cut
 
 =pod
 
