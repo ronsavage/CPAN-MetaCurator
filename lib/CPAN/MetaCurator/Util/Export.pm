@@ -153,6 +153,18 @@ sub format_text
 
 			push @items, $item;
 
+			$$item{html}	= '';
+			$$item{text}	= '';
+
+			while ($lines[$index + 3] =~ /^-/)
+			{
+				$$item{text} = $lines[$index + 3];
+
+				push @items, $item;
+
+				$index++;
+			}
+
 			next;
 		}
 
