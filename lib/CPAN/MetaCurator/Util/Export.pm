@@ -156,7 +156,7 @@ sub format_text
 			$$item{html}	= '';
 			$$item{text}	= '';
 
-			while ( ($index <= ($#lines - 2) ) && ($lines[$index + 3] =~ /^-/) )
+			while ( ($index <= ($#lines - 3) ) && ($lines[$index + 3] =~ /^-/) )
 			{
 				$$item{text} = $lines[$index + 3];
 
