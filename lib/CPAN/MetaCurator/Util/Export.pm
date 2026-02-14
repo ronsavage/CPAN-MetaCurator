@@ -130,12 +130,15 @@ sub format_text
 	{
 		$line = $lines[$index];
 
-		next if ( (! $line) || ($line !~ /^o (.+)/) );
-		next if ($line =~ /See also/);
+		next if (! $line);
+		next if ($line !~ /^o (.+)/);
+
+		$line = $1;
+
+		next if ($line eq 'See also');
 
 		$line_id++;
 
-		$line				= $1;
 		$item				= {href => '', id => $line_id, text => ''};
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
 		$node_type{package}	= $$pad{package_names}{$line} ? true : false;
