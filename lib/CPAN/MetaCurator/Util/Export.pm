@@ -155,10 +155,9 @@ sub format_text
 
 			$self -> logger -> debug("Pushed $$item{html}");
 
+=pod
 			$$item{html}	= '';
 			$$item{text}	= '';
-
-=pod
 
 			while ( ($index <= ($#lines - 3) ) && ($lines[$index + 3] !~ /^o/) )
 			{
@@ -172,7 +171,6 @@ sub format_text
 
 				$index++;
 			}
-
 =cut
 
 			next;
