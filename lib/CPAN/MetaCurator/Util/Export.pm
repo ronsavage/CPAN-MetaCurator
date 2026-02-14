@@ -130,6 +130,7 @@ sub format_text
 		$line = $lines[$index];
 
 		next if ( (! $line) || ($line !~ /^o (.+)/) );
+		next if ($line =~ /See also/);
 
 		$line_id++;
 
@@ -148,7 +149,7 @@ sub format_text
 			$$pad{count}{acronym}++;
 
 			$$item{html}	= "<a href = '@{[$lines[$index + 2]]}' target = '_blank'>$line - @{[$lines[$index + 1]]}</a>";
-			$$item{text}	= '';
+			$$item{text}	= "";
 
 			push @items, $item;
 
