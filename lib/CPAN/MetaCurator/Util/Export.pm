@@ -172,8 +172,6 @@ sub format_text
 				$index++;
 			}
 =cut
-
-			next;
 		}
 
 =pod
