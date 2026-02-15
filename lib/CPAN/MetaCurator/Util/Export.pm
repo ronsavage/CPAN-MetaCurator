@@ -148,16 +148,26 @@ sub format_text
 		# Some names might be acronyms & module names & topic names.
 		# Example: RSS.
 
-=pod
 		if ($node_type{acronym})
 		{
 			$$pad{count}{acronym}++;
-=cut
+		}
+		elsif ($node_type{topic})
+		{
+			# These are counted in Database.build_pad().
+		}
+		elsif ($node_type{unknown})
+		{
+			$$pad{count}{unknown}++;
 
-			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$lines[$index]]}</a>";
-			$$item{text}	= "";
+			$self -> logger -> debug("Unknown: $token");
+		}
 
-			push @items, $item;
+		$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$lines[$index]]}</a>";
+		$$item{text}	= "";
+
+		push @items, $item;
+
 =pod
 			$self -> logger -> debug("Pushed acronym $token");
 
@@ -202,12 +212,6 @@ sub format_text
 		}
 =cut
 =pod
-		if ($node_type{unknown})
-		{
-			$$pad{count}{unknown}++;
-
-			$self -> logger -> debug("Unknown: $token");
-		}
 
 	my($count) = 0;
 
