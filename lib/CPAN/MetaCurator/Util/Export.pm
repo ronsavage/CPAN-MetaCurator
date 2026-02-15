@@ -170,6 +170,8 @@ sub format_text
 				push @items, $item;
 
 				$self -> logger -> debug("  & $$item{id} => $$item{text}");
+
+				$index++;
 			}
 		}
 
