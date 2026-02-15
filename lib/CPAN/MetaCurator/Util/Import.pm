@@ -25,14 +25,6 @@ has constants_csv_path =>
 	required	=> 0,
 );
 
-has include_packages =>
-(
-	default		=> sub{return 0},
-	is			=> 'rw',
-	isa			=> Int,
-	required	=> 0,
-);
-
 our $VERSION = '1.07';
 
 # -----------------------------------------------
@@ -94,41 +86,6 @@ sub import_csv_file
 
 # -----------------------------------------------
 
-sub import_perl_packages
-{
-	my($self, $path, $table_name) = @_;
-	my($count)	= 0;
-	my(@names)	= read_lines($path);
-	my($record)	= {};
-
-	my($id);
-	my(%names);
-	my(@pieces);
-
-	$self -> logger -> info("Populating the '$table_name' table with '$path'");
-
-	for (@names)
-	{
-		@pieces = split(/\s+/, $_, 3); # 3 => [0], [1], [*].
-
-		next if (! $pieces[0]);			# Skip blank lines.
-		next if ($pieces[0] =~ /:$/);	# Skip headers.
-
-		$count++;
-
-		$$record{name}		= $pieces[0];
-		$$record{version}	= $pieces[1];
-		$id					= $self -> insert_hashref($table_name, $record);
-
-		$self -> logger -> info("Stored $count records so far into '$table_name'") if ($count % 10000 == 0);
-	}
-
-	$self -> logger -> info("Stored $count records into '$table_name'");
-
-} # End of import_perl_packages.
-
-# -----------------------------------------------
-
 sub populate_all_tables
 {
 	my($self) = @_;
@@ -147,9 +104,6 @@ sub populate_all_tables
 	# Note: populate_topics_table() reads the constants table, so the latter must be populated first.
 
 	$self -> populate_constants_table($csv);
-
-	($self -> include_packages == 1) ? $self -> populate_packages_table($csv) : $self -> populate_packages_table_from_csv($csv);
-
 	$self -> populate_topics_table;
 
 	$self -> logger -> info('Populated all tables');
@@ -179,45 +133,6 @@ sub populate_constants_table
 	$self -> logger -> info("Finished populate_constants_table(). Stored $constants_count records into '$table_name'");
 
 }	# End of populate_constants_table.
-
-# -----------------------------------------------
-
-sub populate_packages_table
-{
-	my($self, $csv)		= @_;
-	my($database_path)	= File::Spec -> catfile($self -> home_path, $self -> database_path);
-	my($table_name)		= 'packages';
-
-	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
-
-	my($package_count);
-
-	my($packages_path) = File::Spec -> catfile($self -> home_path, $self -> packages_path);
-
-	$self -> logger -> info("Importing packages from '$packages_path'");
-	$self -> import_perl_packages($packages_path, $table_name);
-	$self -> logger -> info("Finished populate_packages_table()");
-
-}	# End of populate_packages_table.
-
-# -----------------------------------------------
-
-sub populate_packages_table_from_csv
-{
-	my($self, $csv)	= @_;
-	my($path)		= File::Spec -> catfile($self -> home_path, $self -> packages_csv_path);
-	my($table_name)	= 'packages';
-
-	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
-	$self -> import_csv_file($csv, $path, $table_name, 'name', 'version');
-
-	my($pad)			= $self -> pad; # For temporary use, during import.
-	$$pad{$table_name}	= $self -> read_table($table_name);
-	my($packages_count)	= $#{$$pad{$table_name} };
-
-	$self -> logger -> info("Finished populate_packages_table_from_csv(). Stored $packages_count records into table '$table_name'");
-
-}	# End of populate_packages_table_from_csv.
 
 # -----------------------------------------------
 

@@ -23,18 +23,8 @@ Steps (2026-01-25):
 	d. In the 'Tools' tab click 'export all'
 	e. In the pop-up, click 'JSON format'
 	f. cp ~/Downloads/tiddlers.json data/cpan.metacurator.tiddlers.json
-	g. wget https://www.cpan.org/modules/02packages.details.txt.gz
-	h. gunzip 02packages.details.txt.gz (Contains 270,458 records + 10 header lines)
-	i. mv 02packages.details.txt data/
-	j. Run scripts/reformat.02packages.pl
-	g. git commit -am"Some message"
 	h. build.module.sh CPAN::MetaCurator 1.03
 	i. scripts/build.db.sh
-
-Ancient notes:
-No longer relevent now I have discarded the 'packages' table:
-	d. Patch Create.pm to add the packages table.
-	e. scripts/build.db.sh --include_packages 1 (Takes 15 hours)
 
 =head1 Machine-Readable Change Log
 

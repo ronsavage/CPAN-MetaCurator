@@ -142,9 +142,8 @@ sub format_text
 		$token				= $1;
 		$item				= {href => '', id => ++$line_id, text => ''};
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
-		$node_type{package}	= $$pad{package_names}{$token} ? true : false;
 		$node_type{topic}	= $$pad{topic_names}{$token} ? true : false;
-		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{package} || $node_type{topic});
+		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{topic});
 
 		# Some names might be acronyms & module names & topic names.
 		# Example: RSS.
@@ -190,15 +189,6 @@ sub format_text
 		}
 
 =pod
-
-		if ($node_type{package})
-		{
-			# These are counted in Database.build_pad().
-
-			$$item{text} = "<a href = 'https://metacpan.org/pod/$token'>$token - $lines[$index + 1] [package]</a>";
-
-			push @items, $item;
-		}
 
 		if ($node_type{topic})
 		{
@@ -272,60 +262,6 @@ sub format_text
 	return [@items];
 
 } # End of format_text.
-
-# --------------------------------------------------
-
-sub text2csv
-{
-	my($self) = @_;
-
-	$self -> init_config;
-	$self -> init_db;
-
-	my($pad) = $self -> build_pad;
-
-	# Read 02packages.details.txt.
-
-	my($in_file)	= File::Spec -> catfile($self -> home_path, $self -> packages_txt_path);
-	my($out_file)	= File::Spec -> catfile($self -> home_path, $self -> packages_csv_path);
-
-	$self -> logger -> debug("Reading $in_file");
-	$self -> logger -> debug("Writing $out_file");
-
-	my(@details)	= read_lines($in_file);
-	my($header)		= 'name,version';
-	my($count)		= 0;
-
-	$self -> logger -> debug("Read @{[$#details + 1]} records from $in_file");
-
-	my($record);
-
-	for (1 .. 9)
-	{
-		$record = shift @details;
-
-		$self -> logger -> debug("Discarding input. Line: $_ => $record");
-	}
-
-	open(OUT, '>encoding(UTF-8)', $out_file);
-	print OUT "module,version\n";
-
-	my(@fields);
-
-	for (@details)
-	{
-		$count++;
-
-		@fields = split(' ', $_);
-
-		say OUT "$fields[0],$fields[1]";
-	}
-
-	close OUT;
-
-	$self -> logger -> debug("Wrote $count records to $out_file");
-
-} # End of text2csv.
 
 # --------------------------------------------------
 

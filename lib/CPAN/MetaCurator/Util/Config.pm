@@ -81,25 +81,9 @@ has logo_path =>
 
 has node_types =>
 (
-	default		=> sub{return [qw/acronym leaf package see_also topic unknown/]},
+	default		=> sub{return [qw/acronym leaf see_also topic unknown/]},
 	is			=> 'rw',
 	isa			=> ArrayRef,
-	required	=> 0,
-);
-
-has packages_csv_path =>
-(
-	default		=> sub{return 'data/02packages.details.csv'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
-has packages_txt_path =>
-(
-	default		=> sub{return 'data/02packages.details.txt'},
-	is			=> 'rw',
-	isa			=> Str,
 	required	=> 0,
 );
 
@@ -118,7 +102,7 @@ has separator =>
 
 has table_names =>
 (
-	default		=> sub{return [qw/constants log modules packages topics/]},
+	default		=> sub{return [qw/constants log modules topics/]},
 	is			=> 'rw',
 	isa			=> ArrayRef,
 	required	=> 0,
