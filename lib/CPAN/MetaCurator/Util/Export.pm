@@ -120,6 +120,7 @@ sub format_text
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
 
+	my($finished);
 	my($href, @hover);
 	my($item, @items);
 	my($line);
@@ -160,7 +161,9 @@ sub format_text
 
 			$index++;
 
-			while ($lines[$index] !~ /^o/)
+			$finished = $lines[$index] =~ /^o/ ? true : false;
+
+			while (! finished)
 			{
 				$$item{id}++;
 
@@ -172,6 +175,8 @@ sub format_text
 				$self -> logger -> debug("  & $$item{id} => $$item{text}");
 
 				$index++;
+
+				$finished = true if ($index > $#lines;
 			}
 		}
 
