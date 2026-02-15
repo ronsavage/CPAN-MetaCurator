@@ -166,7 +166,7 @@ sub format_text
 
 			$self -> logger -> debug("  Test $lines[$index] => $finished");
 
-			push @list, '<ul>' if (! $finished);
+			push @items, '<ul>' if (! $finished);
 
 			while (! $finished)
 			{
@@ -185,7 +185,7 @@ sub format_text
 
 				$self -> logger -> debug("  Test $lines[$index] => $finished");
 
-				push @list, '</ul>' if ($finished);
+				push @items, '</ul>' if ($finished);
 			}
 		}
 
