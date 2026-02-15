@@ -148,17 +148,19 @@ sub format_text
 		# Some names might be acronyms & module names & topic names.
 		# Example: RSS.
 
+=pod
 		if ($node_type{acronym})
 		{
 			$$pad{count}{acronym}++;
+=cut
 
 			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$lines[$index]]}</a>";
 			$$item{text}	= "";
 
 			push @items, $item;
-
-			$self -> logger -> debug("Pushed acronym $token");
 =pod
+			$self -> logger -> debug("Pushed acronym $token");
+
 			$index += 2;
 
 			$finished = $lines[$index] =~ $token_re ? true : false;
@@ -185,6 +187,7 @@ sub format_text
 				#push @items, {html => '', text => '</ul>'} if ($finished);
 			}
 =cut
+=pod
 		}
 		elsif ($node_type{topic})
 		{
@@ -197,7 +200,7 @@ sub format_text
 
 			$self -> logger -> debug("Pushed topic $$item{html}");
 		}
-
+=cut
 =pod
 		if ($node_type{unknown})
 		{
