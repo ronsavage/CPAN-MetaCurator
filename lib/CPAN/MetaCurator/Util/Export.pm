@@ -164,6 +164,8 @@ sub format_text
 
 			$finished = $lines[$index] =~ $token_re ? true : false;
 
+			$self -> logger -> debug("  Test $lines[$index] => $finished");
+
 			while (! $finished)
 			{
 				$$item{id}++;
@@ -178,6 +180,9 @@ sub format_text
 				$index++;
 
 				$finished = true if ( (! $lines[$index]) || ($lines[$index] =~ $token_re) || ($index > $#lines) );
+
+				$self -> logger -> debug("  Test $lines[$index] => $finished");
+
 			}
 		}
 
