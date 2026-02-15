@@ -184,8 +184,8 @@ sub format_text
 
 				#push @items, {html => '', text => '</ul>'} if ($finished);
 			}
-		}
 =cut
+		}
 
 =pod
 		if ($node_type{topic})
