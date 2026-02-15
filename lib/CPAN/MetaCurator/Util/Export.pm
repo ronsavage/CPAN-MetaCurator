@@ -158,19 +158,19 @@ sub format_text
 
 			$self -> logger -> debug("Pushed $$item{html}");
 
-=pod
-			while ( ($index <= ($#lines - 3) ) && ($lines[$index + 3]) && ($lines[$index + 3] !~ /^o/) )
+			$index++;
+
+			while ($lines[$index] !~ /^o/)
 			{
 				$$item{id}++;
 
 				$$item{html}	= '';
-				$$item{text}	= $lines[$index + 3];
+				$$item{text}	= $lines[$index];
 
 				push @items, $item;
 
 				$self -> logger -> debug("  & $$item{id} => $$item{text}");
 			}
-=cut
 		}
 
 =pod
