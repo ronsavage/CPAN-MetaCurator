@@ -158,14 +158,12 @@ sub format_text
 			push @items, $item;
 
 			$self -> logger -> debug("Pushed $$item{html}");
-
+=pod
 			$index += 2;
 
 			$finished = $lines[$index] =~ $token_re ? true : false;
 
 			$self -> logger -> debug("  Test $lines[$index] => $finished");
-
-			#push @items, {html => '', text => '<ul>'} if (! $finished);
 
 			while (! $finished)
 			{
@@ -187,9 +185,9 @@ sub format_text
 				#push @items, {html => '', text => '</ul>'} if ($finished);
 			}
 		}
+=cut
 
 =pod
-
 		if ($node_type{topic})
 		{
 			# These are counted in Database.build_pad().
@@ -210,7 +208,6 @@ sub format_text
 =cut
 
 =pod
-
 	my($count) = 0;
 
 	my($entry);
@@ -254,7 +251,6 @@ sub format_text
 		}
 
 		push @lines, $item;
-
 =cut
 
 	}
