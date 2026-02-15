@@ -157,7 +157,7 @@ sub format_text
 
 			push @items, $item;
 
-			$self -> logger -> debug("Pushed $$item{html}");
+			$self -> logger -> debug("Pushed acronym $$item{html}");
 =pod
 			$index += 2;
 
@@ -195,6 +195,8 @@ sub format_text
 			$$item{text}	= $token;
 
 			push @items, $item;
+
+			$self -> logger -> debug("Pushed topic $$item{html}");
 		}
 
 		if ($node_type{unknown})
