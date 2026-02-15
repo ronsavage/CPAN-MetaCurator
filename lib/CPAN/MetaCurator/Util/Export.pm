@@ -177,7 +177,7 @@ sub format_text
 
 				$index++;
 
-				$finished = true if ( ($lines[$index] =~ $token_re) || ($index > $#lines) );
+				$finished = true if ( (! $lines[$index]) || ($lines[$index] =~ $token_re) || ($index > $#lines) );
 			}
 		}
 
