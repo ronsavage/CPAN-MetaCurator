@@ -176,7 +176,7 @@ sub format_text
 
 				$index++;
 
-				$finished = true if ($index > $#lines;
+				$finished = true if ($index > $#lines);
 			}
 		}
 
