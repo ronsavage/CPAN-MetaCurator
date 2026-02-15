@@ -139,7 +139,7 @@ sub format_text
 		next if ($line =~ /o See also/); # For the moment.
 		next if ($line !~ /^o (.+)/);
 
-		$token				= $1;
+		$token				= $1 || '';
 		$item				= {href => '', id => ++$line_id, text => ''};
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
 		$node_type{topic}	= $$pad{topic_names}{$token} ? true : false;
@@ -163,10 +163,17 @@ sub format_text
 			$self -> logger -> debug("Unknown: $token");
 		}
 
-		$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$lines[$index]]}</a>";
-		$$item{text}	= "";
+		if ($token)
+		{
+			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$lines[$index]]}</a>";
+			$$item{text}	= "";
 
-		push @items, $item;
+			push @items, $item;
+		}
+		else
+		{
+			$self -> logger -> warn("Undefined token @ $line") if (! $token);
+		}
 
 =pod
 			$self -> logger -> debug("Pushed acronym $token");
