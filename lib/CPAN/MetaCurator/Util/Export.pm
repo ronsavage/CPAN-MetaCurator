@@ -160,7 +160,7 @@ sub format_text
 
 			$self -> logger -> debug("Pushed $$item{html}");
 
-			$index++;
+			$index += 2;
 
 			$finished = $lines[$index] =~ $token_re ? true : false;
 
