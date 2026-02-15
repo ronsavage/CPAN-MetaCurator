@@ -125,6 +125,7 @@ sub format_text
 	my($line);
 	my(%node_type);
 	my(@see_also);
+	my($token);
 
 	while ($index <= $#lines)
 	{
@@ -136,11 +137,11 @@ sub format_text
 		next if ($line =~ /o See also/); # For the moment.
 		next if ($line !~ /^o (.+)/);
 
-		$line				= $1;
+		$token				= $1;
 		$item				= {href => '', id => ++$line_id, text => ''};
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
-		$node_type{package}	= $$pad{package_names}{$line} ? true : false;
-		$node_type{topic}	= $$pad{topic_names}{$line} ? true : false;
+		$node_type{package}	= $$pad{package_names}{$token} ? true : false;
+		$node_type{topic}	= $$pad{topic_names}{$token} ? true : false;
 		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{package} || $node_type{topic});
 
 		# Some names might be acronyms & module names & topic names.
@@ -150,7 +151,7 @@ sub format_text
 		{
 			$$pad{count}{acronym}++;
 
-			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$line - @{[$lines[$index]]}</a>";
+			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$lines[$index]]}</a>";
 			$$item{text}	= "";
 
 			push @items, $item;
@@ -178,7 +179,7 @@ sub format_text
 		{
 			# These are counted in Database.build_pad().
 
-			$$item{text} = "<a href = 'https://metacpan.org/pod/$line'>$line - $lines[$index + 1] [package]</a>";
+			$$item{text} = "<a href = 'https://metacpan.org/pod/$token'>$token - $lines[$index + 1] [package]</a>";
 
 			push @items, $item;
 		}
@@ -187,8 +188,8 @@ sub format_text
 		{
 			# These are counted in Database.build_pad().
 
-			$$item{html}	= "#$$pad{topic_html_ids}{$line} [topic]";
-			$$item{text}	= $line;
+			$$item{html}	= "#$$pad{topic_html_ids}{$token} [topic]";
+			$$item{text}	= $token;
 
 			push @items, $item;
 		}
@@ -197,7 +198,7 @@ sub format_text
 		{
 			$$pad{count}{unknown}++;
 
-			$self -> logger -> debug("Unknown: $line");
+			$self -> logger -> debug("Unknown: $token");
 		}
 
 =cut
