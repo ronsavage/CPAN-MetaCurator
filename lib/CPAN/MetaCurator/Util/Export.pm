@@ -187,7 +187,6 @@ sub format_text
 =cut
 		}
 
-=pod
 		if ($node_type{topic})
 		{
 			# These are counted in Database.build_pad().
@@ -204,8 +203,6 @@ sub format_text
 
 			$self -> logger -> debug("Unknown: $token");
 		}
-
-=cut
 
 =pod
 	my($count) = 0;
