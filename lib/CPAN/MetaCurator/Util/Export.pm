@@ -163,7 +163,7 @@ sub format_text
 			$self -> logger -> debug("Unknown: $token");
 		}
 
-		if ($token)
+		if (defined $lines[$index + 1])
 		{
 			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$lines[$index]]}</a>";
 			$$item{text}	= "";
@@ -172,7 +172,7 @@ sub format_text
 		}
 		else
 		{
-			$self -> logger -> warn("Undefined token @ $line") if (! $token);
+			$self -> logger -> warn("Undefined token @ $line");
 		}
 
 =pod
