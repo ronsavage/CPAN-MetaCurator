@@ -157,7 +157,7 @@ sub format_text
 
 			push @items, $item;
 
-			$self -> logger -> debug("Pushed acronym $$item{html}");
+			$self -> logger -> debug("Pushed acronym $token");
 =pod
 			$index += 2;
 
