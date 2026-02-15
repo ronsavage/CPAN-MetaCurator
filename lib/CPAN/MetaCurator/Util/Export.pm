@@ -163,7 +163,7 @@ sub format_text
 
 			$finished = $lines[$index] =~ /^o/ ? true : false;
 
-			while (! finished)
+			while (! $finished)
 			{
 				$$item{id}++;
 
