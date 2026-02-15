@@ -119,6 +119,7 @@ sub format_text
 	my($inside_see_also)				= false;
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
+	my($token_re)						= qr/^o/o;
 
 	my($finished);
 	my($href, @hover);
@@ -161,7 +162,7 @@ sub format_text
 
 			$index++;
 
-			$finished = $lines[$index] =~ /^o/ ? true : false;
+			$finished = $lines[$index] =~ $token_re ? true : false;
 
 			while (! $finished)
 			{
@@ -176,7 +177,7 @@ sub format_text
 
 				$index++;
 
-				$finished = true if ($index > $#lines);
+				$finished = true if ( ($lines[$index] =~ $token_re) || ($index > $#lines) );
 			}
 		}
 
