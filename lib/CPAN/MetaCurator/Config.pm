@@ -1,4 +1,4 @@
-package CPAN::MetaCurator::Util::Config;
+package CPAN::MetaCurator::Config;
 
 use 5.36.0;
 use boolean;
@@ -166,7 +166,7 @@ sub _init_config
 
 =head1 NAME
 
-CPAN::MetaCurator::Util::Config - Manage the cpan.metacurator.sqlite database
+CPAN::MetaCurator::Config - Manage the cpan.metacurator.sqlite database
 
 =head1 Synopsis
 

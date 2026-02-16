@@ -6,7 +6,7 @@ use Data::Dumper::Concise; # For Dumper.
 
 use Getopt::Long;
 
-use CPAN::MetaCurator::Util::Create;
+use CPAN::MetaCurator::Create;
 
 use Pod::Usage; # For pod2usage().
 
@@ -16,7 +16,7 @@ sub process
 {
 	my(%options) = @_;
 
-	return CPAN::MetaCurator::Util::Create
+	return CPAN::MetaCurator::Create
 			-> new(home_path => $options{home_path}, log_level => $options{log_level})
 			-> create_all_tables;
 

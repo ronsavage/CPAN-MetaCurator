@@ -1,5 +1,9 @@
 Revision history for Perl extension CPAN::MetaCurator.
 
+1.09  2026-02-16T16:36:00
+	- Move all modules in lib/CPAN/MetaCurator/Util up 1 level and fix all references to match.
+	- This just simplifies the dir structure.
+
 1.08  2026-02-15T15:15:15
 	- Remove packages data & table because the table takes too long to populate.
 	- A future version or module will ship the packages in a separate SQLite db.

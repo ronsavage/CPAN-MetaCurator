@@ -2,7 +2,7 @@
 
 use 5.36.0;
 
-use CPAN::MetaCurator::Util::Export;
+use CPAN::MetaCurator::Export;
 
 use Getopt::Long;
 
@@ -14,7 +14,7 @@ sub process
 {
 	my(%options) = @_;
 
-	return CPAN::MetaCurator::Util::Export
+	return CPAN::MetaCurator::Export
 			-> new(home_path => $options{home_path}, log_level => $options{log_level}, output_path => $options{output_path})
 			-> export_as_tree;
 

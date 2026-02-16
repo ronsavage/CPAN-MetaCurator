@@ -1,7 +1,7 @@
-package CPAN::MetaCurator::Util::Create;
+package CPAN::MetaCurator::Create;
 
 use 5.36.0;
-use parent 'CPAN::MetaCurator::Util::Database';
+use parent 'CPAN::MetaCurator::Database';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 use Moo;

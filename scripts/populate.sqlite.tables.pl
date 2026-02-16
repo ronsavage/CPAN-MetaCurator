@@ -6,7 +6,7 @@ use Data::Dumper::Concise; # For Dumper.
 
 use Getopt::Long;
 
-use CPAN::MetaCurator::Util::Import;
+use CPAN::MetaCurator::Import;
 
 use Pod::Usage; # For pod2usage().
 
@@ -16,7 +16,7 @@ sub process
 {
 	my(%options)	= @_;
 
-	return CPAN::MetaCurator::Util::Import
+	return CPAN::MetaCurator::Import
 			-> new(home_path => $options{home_path}, include_packages => $options{include_packages}, log_level => $options{log_level})
 			-> populate_all_tables;
 

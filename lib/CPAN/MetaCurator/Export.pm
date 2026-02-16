@@ -1,9 +1,9 @@
-package CPAN::MetaCurator::Util::Export;
+package CPAN::MetaCurator::Export;
 
 use 5.36.0;
 use boolean;
 use open qw(:std :utf8);
-use parent 'CPAN::MetaCurator::Util::HTML';
+use parent 'CPAN::MetaCurator::HTML';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 use Data::Dumper::Concise; # For Dumper().

@@ -1,8 +1,8 @@
-package CPAN::MetaCurator::Util::Database;
+package CPAN::MetaCurator::Database;
 
 use 5.36.0;
 use constant html_id_offset => 10000;
-use parent 'CPAN::MetaCurator::Util::Config';
+use parent 'CPAN::MetaCurator::Config';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 use Data::Dumper::Concise; # For Dumper().
