@@ -110,7 +110,7 @@ has table_names =>
 
 has tiddlers_path =>
 (
-	default		=> sub{return 'data/cpan.metacurator.tiddlers.json'},
+	default		=> sub{return 'data/tiddlers.json'},
 	is			=> 'rw',
 	isa			=> Str,
 	required	=> 0,
