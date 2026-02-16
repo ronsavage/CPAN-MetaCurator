@@ -2,8 +2,16 @@ This file is the README for CPAN::MetaCurator
 
 Purpose
 
-To convert a curated subset of Perl modules from the file
-02packages.details.txt into a tree managed by JSTree
+To convert a curated subset of Perl modules from the feed at
+https://metacpan.org/recent into both a TiddlyWiki & a tree managed by JSTree.
+
+The data: see both the TiddlyWiki called Perl.Wiki.html in my Wiki Haven at
+http://savage.net.au/, and the corresponding JSTree version of that wiki as well.
+
+Installation of CPAN::MetaCurator
+
+Use the cpan command line client:
+cpanm CPAN::MetaCurator
 
 Public Repository
 
