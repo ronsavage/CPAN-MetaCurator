@@ -64,7 +64,7 @@ populate.sqlite.tables.pl [options]
 
 	Options:
 	-help
-	-home_path
+	-home_path string
 	-log_level info
 
 All switches can be reduced to a single letter, except of course -he and -ho.
