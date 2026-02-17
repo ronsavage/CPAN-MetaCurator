@@ -2,7 +2,7 @@ package CPAN::MetaCurator;
 
 use 5.36.0;
 
-our $VERSION = '1.09';
+our $VERSION = '1.10';
 
 #-------------------------------------------------
 

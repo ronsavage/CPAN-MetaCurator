@@ -25,7 +25,7 @@ has constants_csv_path =>
 	required	=> 0,
 );
 
-our $VERSION = '1.09';
+our $VERSION = '1.10';
 
 # -----------------------------------------------
 
