@@ -53,6 +53,16 @@ sub export_as_tree
 		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
 		$lines_ref	= $self -> format_text($leaf_id, $pad, $topic);
 
+		# QandA is special-cased. FixMe!
+
+		if ($$topic{title} eq 'QandA')
+		{
+			push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
+			push @list, "<ul><li>QandA is formatted differently and so needs special parsing</li></ul></li>";
+
+			next;
+		}
+
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
 

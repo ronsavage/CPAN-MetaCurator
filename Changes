@@ -1,5 +1,8 @@
 Revision history for Perl extension CPAN::MetaCurator.
 
+1.11  2026-02-20T12:52:19
+	- Special-case topic QandA because it is formatted differently than the other topics.
+
 1.10  2026-02-17T17:18:19
 	- Cleanup script now include_packages switch is useless. Rerun to test
 
