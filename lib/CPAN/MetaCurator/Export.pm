@@ -150,6 +150,10 @@ sub format_text
 
 		next if (! $line);
 		next if ($line =~ /o See also/); # For the moment.
+		next if ($line !~ /^o (.+)/);
+
+		$token	= $1 || '';
+		$item	= {href => '', id => ++$line_id, text => ''};
 
 		if ($line =~ /<pre>/)
 		{
@@ -163,8 +167,8 @@ sub format_text
 			{
 				$special_case{pre_pre} = false;
 
-				$$item{html}	= '';
-				$$item{text}	= 'Pre-formatted section';
+				$$item{html}	= '<button id="trigger">Hover over me</button>';
+				$$item{text}	= $token;
 			}
 			else
 			{
@@ -172,10 +176,6 @@ sub format_text
 			}
 		}
 
-		next if ($line !~ /^o (.+)/);
-
-		$token				= $1 || '';
-		$item				= {href => '', id => ++$line_id, text => ''};
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
 		$node_type{topic}	= $$pad{topic_names}{$token} ? true : false;
 		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{topic});
