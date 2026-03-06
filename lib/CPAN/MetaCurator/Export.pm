@@ -53,16 +53,6 @@ sub export_tree
 		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
 		$lines_ref	= $self -> format_text($leaf_id, $pad, $topic);
 
-		# FAQ is special-cased. FixMe!
-
-		if ($$topic{title} eq 'FAQ')
-		{
-			push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
-			push @list, "<ul><li>FAQ is formatted differently and so needs special parsing</li></ul></li>";
-
-			next;
-		}
-
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
 
@@ -155,6 +145,7 @@ sub format_text
 		$token	= $1 || '';
 		$item	= {href => '', id => ++$line_id, text => ''};
 
+=pod
 		if ($line =~ /<pre>/)
 		{
 			$special_case{pre_pre} = true;
@@ -175,6 +166,7 @@ sub format_text
 				push @pre_pre, $line;
 			}
 		}
+=cut
 
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
 		$node_type{topic}	= $$pad{topic_names}{$token} ? true : false;
