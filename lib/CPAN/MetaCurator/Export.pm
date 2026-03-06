@@ -159,7 +159,7 @@ sub format_text
 		}
 		elsif ($special_case{pre_pre})
 		{
-			if ($line =~ !</pre>!)
+			if ($line =~ /<\/pre>/)
 			{
 				$special_case{pre_pre} = false;
 
