@@ -106,7 +106,7 @@ has metapackager_database_path =>
 
 has node_types =>
 (
-	default		=> sub{return [qw/acronym leaf see_also topic unknown/]},
+	default		=> sub{return [qw/acronym known leaf see_also topic unknown/]},
 	is			=> 'rw',
 	isa			=> ArrayRef,
 	required	=> 0,

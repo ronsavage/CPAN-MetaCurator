@@ -171,8 +171,9 @@ sub format_text
 		}
 =cut
 
-		$node_type{acronym}	= $$topic{title} eq 'Acronyms' ? true : false;
-		$node_type{topic}	= $$pad{topic_names}{$token} ? true : false;
+		$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
+		$node_type{topic}	= $$pad{topic_names}{$token}	? true : false;
+		$node_type{known}	= $$pad{package_names}{$token}	? true : false;
 		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{topic});
 
 		# Some names might be acronyms & module names & topic names.
@@ -185,6 +186,10 @@ sub format_text
 		elsif ($node_type{topic})
 		{
 			# These are counted in Database.build_pad().
+		}
+		elsif ($node_type{known})
+		{
+			$$pad{count}{known}++;
 		}
 		elsif ($node_type{unknown})
 		{
