@@ -124,13 +124,16 @@ sub build_pad
 
 	# MetaPackager.
 
-	my($table_name)				= 'packages';
-	$$pad{$table_name}			= $self -> read_metapackager_table($table_name);
-	$$pad{count}{$table_name}	= $#{$$pad{$table_name} } + 1;
+	my($package_table_name)				= 'packages';
+	$$pad{$package_table_name}			= $self -> read_metapackager_table($package_table_name);
+	$$pad{count}{$package_table_name}	= $#{$$pad{$package_table_name} } + 1;
 
-	$self -> logger -> debug("Size of cpan.metapackager.sqlite $table_name: $$pad{count}{$table_name}");
-	$self -> logger -> debug("First record: \n" . Dumper($$pad{$table_name}[0]) );
-	$self -> logger -> debug("Last  record: \n" . Dumper($$pad{$table_name}[$$pad{count}{$table_name} - 1]) );
+	$self -> logger -> debug("Size of cpan.metapackager.sqlite table '$package_table_name': $$pad{count}{$package_table_name}");
+	$self -> logger -> debug("First record: \n" . Dumper($$pad{$package_table_name}[0]) );
+	$self -> logger -> debug("Last  record: \n" . Dumper($$pad{$package_table_name}[$$pad{count}{$package_table_name} - 1]) );
+
+	$$pad{package_names}				= {};
+	$$pad{package_names}{$$_{name} }	= $$_{id} for (@{$$pad{$package_table_name} });
 
 	# Modules.
 	# There is a db table called modules so we need another name for the hash
