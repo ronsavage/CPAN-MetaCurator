@@ -170,10 +170,12 @@ sub init_db
 
 	my(%attributes)	=
 	(
-		AutoCommit 			=> $$config{AutoCommit},
-		mysql_enable_utf8	=> $$config{mysql_enable_utf8},	# Ignored if not using MySQL.
-		RaiseError 			=> $$config{RaiseError},
-		sqlite_unicode		=> $$config{sqlite_unicode},	# Ignored if not using SQLite.
+		AutoCommit 				=> $$config{AutoCommit},
+		mysql_enable_utf8		=> $$config{mysql_enable_utf8},		# Ignored if not using MySQL.
+		mysql_enable_utf8mb4	=> $$config{mysql_enable_utf8mb4},	# Ignored if not using MySQL.
+		pg_enable_utf8			=> $$config{pg_enable_utf8},		# Ignored if not using Pg.
+		RaiseError 				=> $$config{RaiseError},
+		sqlite_unicode			=> $$config{sqlite_unicode},		# Ignored if not using SQLite.
 	);
 
 	my(@dsn)	= split('=', $$config{dsn});
