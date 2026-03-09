@@ -126,7 +126,7 @@ sub build_pad
 
 	my($table_name) = 'packages';
 
-	$$pad{$table_name} = $self -> read_table($table_name);
+	$$pad{$table_name} = $self -> read_metapackager_table($table_name);
 
 	$self -> logger -> debug("Size of $table_name: {[$#{$$pad{$table_name} } + 1]}");
 	# Modules.
@@ -285,6 +285,20 @@ sub read_table
 	return [$set -> hashes];
 
 } # End of read_table.
+
+# --------------------------------------------------
+
+sub read_metapackager_table
+{
+	my($self, $table_name)	= @_;
+	my($sql)				= "select * from $table_name";
+	my($set)				= $self -> metapackager_db -> query($sql) || die $self -> metapackager_db -> error;
+
+	# Return an arrayref of hashrefs.
+
+	return [$set -> hashes];
+
+} # End of read_metapackager_table.
 
 # --------------------------------------------------
 
