@@ -81,6 +81,7 @@ sub export_tree
 
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
+	$self -> metapackager_dbh -> disconnect;
 
 	return 0;
 
