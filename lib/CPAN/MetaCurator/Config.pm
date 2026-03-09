@@ -79,6 +79,31 @@ has logo_path =>
 	required	=> 1,
 );
 
+has metapackager_config =>
+(
+	default		=> sub{return {} },
+	is			=> 'rw',
+	isa			=> HashRef,
+	required	=> 1,
+);
+
+has metapackager_config_path =>
+(
+	default		=> sub{return 'data/cpan.metapackager.conf'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
+
+has metapackager_database_path =>
+(
+	default		=> sub{return '/tmp/cpan.metapackager.sqlite'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
 has node_types =>
 (
 	default		=> sub{return [qw/acronym leaf see_also topic unknown/]},
@@ -159,6 +184,19 @@ sub _init_config
 	return $$config{$section};
 
 }	# End of _init_config.
+
+# -----------------------------------------------
+
+sub init_metapackager_config
+{
+	my($self)				= @_;
+	my($path)				= File::Spec -> catfile($self -> home_path, $self -> metapackager_config_path);
+	my($config)				= $self -> config($self -> _init_config($path) );
+	$$config{config_path}	= $path;
+
+	$self -> metapackager_config($config);
+
+} # End of init_metapackager_config.
 
 # --------------------------------------------------
 

@@ -1,5 +1,9 @@
 Revision history for Perl extension CPAN::MetaCurator.
 
+1.12  2026-03-09T11:00:00
+	- Add code to read cpan.metapackager.sqlite as shipped with CPAN::MetaPackager.
+	- Default location is /tmp/cpan.metapackager.sqlite.
+
 1.11  2026-02-20T12:52:19
 	- Special-case topic FAQ because it is formatted differently than the other topics.
 	- Special-case <pre>...</pre> with a simple message for now.
