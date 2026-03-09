@@ -1,4 +1,0 @@
-[2026-03-09 15:55:08.82123] [284553] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
-[2026-03-09 15:55:08.82143] [284553] [info] --------------------------------------------------
-[2026-03-09 15:55:08.82188] [284553] [info] Connected to dbi:SQLite:dbname=/tmp/cpan.metapackager.sqlite
-[2026-03-09 15:55:08.82191] [284553] [info] --------------------------------------------------
