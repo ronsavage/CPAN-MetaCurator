@@ -65,6 +65,22 @@ has input_path =>
 	required	=> 1,
 );
 
+has metapackager_db =>
+(
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Any,
+	required	=> 0,
+);
+
+has metapackager_dbh =>
+(
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Any,
+	required	=> 0,
+);
+
 has output_path =>
 (
 	default		=> sub{return ''},
@@ -106,6 +122,13 @@ sub build_pad
 
 	$$pad{$$_{name} } = $$_{value} for (@{$$pad{constants} });
 
+	# MetaPackager.
+
+	my($table_name) = 'packages';
+
+	$$pad{$table_name} = $self -> read_table($table_name);
+
+	$self -> logger -> debug("Size of $table_name: {[$#{$$pad{$table_name} + 1]}");
 	# Modules.
 	# There is a db table called modules so we need another name for the hash
 	# where the keys are the names of the modules and the values are db ids.
@@ -205,6 +228,35 @@ sub insert_hashref
 	return $self -> db -> last_insert_id(undef, undef, $table_name, undef);
 
 } # End of insert_hashref.
+
+# -----------------------------------------------
+
+sub init_metapackager_db
+{
+	my($self)		= @_;
+	my($config)		= $self -> metapackager_config;
+
+	my(%attributes)	=
+	(
+		AutoCommit 				=> $$config{AutoCommit},
+		mysql_enable_utf8		=> $$config{mysql_enable_utf8},		# Ignored if not using MySQL.
+		mysql_enable_utf8mb4	=> $$config{mysql_enable_utf8mb4},	# Ignored if not using MySQL.
+		pg_enable_utf8			=> $$config{pg_enable_utf8},		# Ignored if not using Pg.
+		RaiseError 				=> $$config{RaiseError},
+		sqlite_unicode			=> $$config{sqlite_unicode},		# Ignored if not using SQLite.
+	);
+
+	my(@dsn)	= split('=', $$config{dsn});
+	$dsn[1]	 	= File::Spec -> catfile($self -> home_path, $dsn[1]);
+	$dsn[0]		= "$dsn[0]=$dsn[1]";
+
+	$self -> metapackager_dbh(DBI -> connect($dsn[0], $$config{username}, $$config{password}, \%attributes) );
+	$self -> metapackager_dbh -> do('PRAGMA foreign_keys = ON') if ($$config{dsn} =~ /SQLite/i);
+	$self -> metapackager_db(DBIx::Simple -> new($self -> metapackager_dbh) );
+	$self -> logger -> info("Connected to $dsn[0]");
+	$self -> logger -> info($self -> separator);
+
+} # End of init_metapackager_db.
 
 # --------------------------------------------------
 
