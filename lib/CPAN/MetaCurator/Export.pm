@@ -27,7 +27,7 @@ sub export_tree
 	$self -> init_db;
 	$self -> init_metapackager_config;
 
-	$self -> logger -> debug($self -> metapackager_config);
+	$self -> logger -> debug(Dumper $self -> metapackager_config);
 
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
