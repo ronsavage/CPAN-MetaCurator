@@ -247,7 +247,7 @@ sub init_metapackager_db
 	);
 
 	my(@dsn)	= split('=', $$config{dsn});
-	$dsn[1]	 	= File::Spec -> catfile($self -> home_path, $dsn[1]);
+	$dsn[1]	 	= File::Spec -> catfile($dsn[1]);
 	$dsn[0]		= "$dsn[0]=$dsn[1]";
 
 	$self -> metapackager_dbh(DBI -> connect($dsn[0], $$config{username}, $$config{password}, \%attributes) );
