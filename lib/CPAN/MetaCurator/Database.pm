@@ -128,7 +128,7 @@ sub build_pad
 
 	$$pad{$table_name} = $self -> read_table($table_name);
 
-	$self -> logger -> debug("Size of $table_name: {[$#{$$pad{$table_name} + 1]}");
+	$self -> logger -> debug("Size of $table_name: {[$#{$$pad{$table_name} } + 1]}");
 	# Modules.
 	# There is a db table called modules so we need another name for the hash
 	# where the keys are the names of the modules and the values are db ids.
