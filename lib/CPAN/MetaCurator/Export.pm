@@ -29,7 +29,7 @@ sub export_tree
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
-	$self -> logger -> info('Exporting the wiki as a JSTree. include_metapackager: ' . $self -> include_metapackager);
+	$self -> logger -> info('Exporting the wiki as a JSTree. include_metapackager: ' . $self -> include_packages);
 
 	# Populate the body.
 
