@@ -139,8 +139,8 @@ sub build_pad
 		my($table_name) = $self -> read_metapackager_table($pad);
 
 		$self -> logger -> debug("Size of cpan.metapackager.sqlite table '$table_name': $$pad{count}{$table_name}");
-		$self -> logger -> debug("First record: \n" . Dumper($$pad{packages}[0]) );
-		$self -> logger -> debug("Last  record: \n" . Dumper($$pad{packages}[$$pad{count}{$table_name} - 1]) );
+		$self -> logger -> debug("First record: \n" . Dumper($$pad{$table_name}[0]) );
+		$self -> logger -> debug("Last  record: \n" . Dumper($$pad{$table_name}[$$pad{count}{$table_name} - 1]) );
 	}
 	else
 	{
@@ -315,13 +315,13 @@ sub read_metapackager_table
 
 	# Return an arrayref of hashrefs.
 
-	my($table_name)						= 'packages';
-	my($sql)							= "select * from $table_name";
-	my($set)							= $self -> metapackager_db -> query($sql) || die $self -> metapackager_db -> error;
-	$set								= [$set -> hashes];
-	$$pad{count}{$table_name}			= $#$set + 1;
-	$$pad{package_names}				= {};
-	$$pad{package_names}{$$_{name} }	= $$_{id} for (@$set);
+	my($table_name)					= 'packages';
+	my($sql)						= "select * from $table_name";
+	my($set)						= $self -> metapackager_db -> query($sql) || die $self -> metapackager_db -> error;
+	$set							= [$set -> hashes];
+	$$pad{count}{$table_name}		= $#$set + 1;
+	$$pad{$table_name}				= {};
+	$$pad{$table_name}{$$_{name} }	= $$_{id} for (@$set);
 
 	$self -> metapackager_dbh -> disconnect;
 
