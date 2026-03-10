@@ -4,6 +4,8 @@ use 5.36.0;
 
 use CPAN::MetaCurator::Export;
 
+use Data::Dumper::Concise; # For Dumper.
+
 use Getopt::Long;
 
 use Pod::Usage; # For pod2usage().
@@ -26,18 +28,18 @@ say "export.as.tree.pl - Export cpan.metacurator.sqlite as HTML + jsTree\n";
 
 my(%options);
 
-$options{help}					= 0;
+$options{help}				= 0;
 $options{home_path}			= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
 $options{include_packages}	= 0;
 $options{log_level}			= 'debug';
 $options{output_path}		= 'html/cpan.metacurator.tree.html';
 my(%opts)					=
 (
-	'help'				=> \$options{help},
-	'home_path'			=> \$options{home_path},
-	'include_packages'	=> \$options{include_packages},
-	'log_level=s'		=> \$options{log_level},
-	'output_path=s'		=> \$options{output_path},
+	'help'					=> \$options{help},
+	'home_path=s'			=> \$options{home_path},
+	'include_packages=i'	=> \$options{include_packages},
+	'log_level=s'			=> \$options{log_level},
+	'output_path=s'			=> \$options{output_path},
 );
 
 GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );

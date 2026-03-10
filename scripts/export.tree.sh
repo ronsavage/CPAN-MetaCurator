@@ -3,14 +3,12 @@
 cd $HOME/perl.modules/CPAN-MetaCurator/
 
 if [ "$INCLUDE_PACKAGES" == "" ]; then
-	INCLUDE_METAPACKAGER = 0
+	INCLUDE_PACKAGES=0
 else
-	INCLUDE_METAPACKAGER = 1
+	INCLUDE_PACKAGES=1
 fi
 
-export $INCLUDE_METAPACKAGER
-
-scripts/export.tree.pl -include_metapackager $INCLUDE_METAPACKAGER
+scripts/export.tree.pl -include_packages $INCLUDE_PACKAGES
 
 declare -x SOURCE=html/cpan.metacurator.tree.html
 declare -x DEST=$DH/misc
