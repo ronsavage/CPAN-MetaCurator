@@ -17,7 +17,7 @@ sub process
 	my(%options) = @_;
 
 	return CPAN::MetaCurator::Export
-			-> new(home_path => $options{home_path}, log_level => $options{log_level}, output_path => $options{output_path})
+			-> new(home_path => $options{home_path}, include_packages => $options{include_packages}, log_level => $options{log_level}, output_path => $options{output_path})
 			-> export_tree;
 
 } # End of process.
@@ -41,6 +41,8 @@ my(%opts)					=
 	'log_level=s'			=> \$options{log_level},
 	'output_path=s'			=> \$options{output_path},
 );
+
+say "include_packages: $options{include_packages}";
 
 GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
 
@@ -68,7 +70,7 @@ export.as.tree.pl [options]
 	Options:
 	-help
 	-home_path
-	-include_metapackager
+	-include_packages
 	-log_level info
 	-output_path Path
 
@@ -90,12 +92,12 @@ The path to the directory containing data/ and html/. Unpack distro to populate.
 
 Default: $ENV{HOME}/perl.modules/CPAN-MetaCurator.
 
-=item -include_metapackager Boolean
+=item include_packages Boolean
 
 Allow CPAN::MetaCurator to include or exclude the table 'packages' from CPAN::MetaPackager.
 If the table is included in processing, the code then recognizes all known module names.
 
-scripts/export.tree.sh looks for an env var called INCLUDE_METAPACKAGER.
+scripts/export.tree.sh looks for an env var called INCLUDE_PACKAGES.
 
 Default: 0 (exclude).
 

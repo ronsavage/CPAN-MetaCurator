@@ -2,11 +2,7 @@
 
 cd $HOME/perl.modules/CPAN-MetaCurator/
 
-if [ "$INCLUDE_PACKAGES" == "" ]; then
-	INCLUDE_PACKAGES=0
-else
-	INCLUDE_PACKAGES=1
-fi
+echo ... $INCLUDE_PACKAGES ...
 
 scripts/export.tree.pl -include_packages $INCLUDE_PACKAGES
 

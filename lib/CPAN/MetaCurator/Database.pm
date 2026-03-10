@@ -57,7 +57,7 @@ has engine =>
 	required	=> 0,
 );
 
-has include_metapackager =>
+has include_packages =>
 (
 	default		=> sub{return 0},
 	is			=> 'rw',
@@ -132,7 +132,7 @@ sub build_pad
 
 	# MetaPackager.
 
-	if ($self -> include_metapackager)
+	if ($self -> include_packages)
 	{
 		$self -> logger -> debug("Including metapackager table 'packages'");
 
