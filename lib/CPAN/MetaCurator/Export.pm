@@ -15,7 +15,7 @@ use Moo;
 
 use File::Slurper 'read_lines';
 
-our $VERSION = '1.12';
+our $VERSION = '1.13';
 
 # -----------------------------------------------
 
