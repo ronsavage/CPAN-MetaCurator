@@ -16,7 +16,7 @@ use File::Spec;
 
 use Moo;
 
-use Types::Standard qw/Any ArrayRef HashRef Object Str/;
+use Types::Standard qw/Any ArrayRef Bool HashRef Object Str/;
 
 has column_names =>
 (
@@ -54,6 +54,14 @@ has engine =>
 	default		=> sub{return ''},
 	is			=> 'rw',
 	isa			=> Str,
+	required	=> 0,
+);
+
+has include_metapackager =>
+(
+	default		=> sub{return 0},
+	is			=> 'rw',
+	isa			=> Bool,
 	required	=> 0,
 );
 
@@ -124,16 +132,14 @@ sub build_pad
 
 	# MetaPackager.
 
-	my($package_table_name)				= 'packages';
-	$$pad{$package_table_name}			= $self -> read_metapackager_table($package_table_name);
-	$$pad{count}{$package_table_name}	= $#{$$pad{$package_table_name} } + 1;
+	if ($self -> include_metapackager)
+	{
+		my($table_name) = $self -> read_metapackager_table($pad);
 
-	$self -> logger -> debug("Size of cpan.metapackager.sqlite table '$package_table_name': $$pad{count}{$package_table_name}");
-	$self -> logger -> debug("First record: \n" . Dumper($$pad{$package_table_name}[0]) );
-	$self -> logger -> debug("Last  record: \n" . Dumper($$pad{$package_table_name}[$$pad{count}{$package_table_name} - 1]) );
-
-	$$pad{package_names}				= {};
-	$$pad{package_names}{$$_{name} }	= $$_{id} for (@{$$pad{$package_table_name} });
+		$self -> logger -> debug("Size of cpan.metapackager.sqlite table '$table_name': $$pad{count}{$table_name}");
+		$self -> logger -> debug("First record: \n" . Dumper($$pad{packages}[0]) );
+		$self -> logger -> debug("Last  record: \n" . Dumper($$pad{packages}[$$pad{count}{$table_name} - 1]) );
+	}
 
 	# Modules.
 	# There is a db table called modules so we need another name for the hash
@@ -296,13 +302,22 @@ sub read_table
 
 sub read_metapackager_table
 {
-	my($self, $table_name)	= @_;
-	my($sql)				= "select * from $table_name";
-	my($set)				= $self -> metapackager_db -> query($sql) || die $self -> metapackager_db -> error;
+	my($self, $pad)	= @_;
+
+	$self -> init_metapackager_config;
+	$self -> init_metapackager_db;
 
 	# Return an arrayref of hashrefs.
 
-	return [$set -> hashes];
+	my($table_name)						= 'packages';
+	my($sql)							= "select * from $table_name";
+	my($set)							= $self -> metapackager_db -> query($sql) || die $self -> metapackager_db -> error;
+	$set								= [$set -> hashes];
+	$$pad{count}{$table_name}			= $#{$$set} + 1;
+	$$pad{package_names}				= {};
+	$$pad{package_names}{$$_{name} }	= $$_{id} for (@{$$set} });
+
+	return $table_name;
 
 } # End of read_metapackager_table.
 

@@ -1,0 +1,474 @@
+[2026-03-10 10:16:38.72279] [329638] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-03-10 10:16:38.72298] [329638] [info] --------------------------------------------------
+[2026-03-10 10:16:38.72342] [329638] [info] Connected to dbi:SQLite:dbname=/tmp/cpan.metapackager.sqlite
+[2026-03-10 10:16:38.72345] [329638] [info] --------------------------------------------------
+[2026-03-10 10:16:39.34812] [329638] [debug] Size of cpan.metapackager.sqlite table 'packages': 270452
+[2026-03-10 10:16:39.34827] [329638] [debug] First record: 
+{
+  author => "CEEJAY",
+  id => 1,
+  name => "A1z::Html",
+  version => "0.04",
+}
+
+[2026-03-10 10:16:39.34833] [329638] [debug] Last  record: 
+{
+  author => "STDCRM",
+  id => 270452,
+  name => "ZZZ::SDK",
+  version => "v0.0.1",
+}
+
+[2026-03-10 10:16:39.46506] [329638] [info] Exporting the wiki as a JSTree
+[2026-03-10 10:16:39.46511] [329638] [info] Entry: id: 10000. title: MetaCurator
+[2026-03-10 10:16:39.46513] [329638] [info] Entry: id: 2. html_id: 20000. title: ABeCeDarian
+[2026-03-10 10:16:39.46535] [329638] [debug] Unknown: csv2sqlite
+[2026-03-10 10:16:39.46540] [329638] [debug] Unknown: Data::Path::XS
+[2026-03-10 10:16:39.46546] [329638] [debug] Unknown: ixchel
+[2026-03-10 10:16:39.46550] [329638] [debug] Unknown: Net::IPData
+[2026-03-10 10:16:39.46555] [329638] [debug] Unknown: pdftotext
+[2026-03-10 10:16:39.46566] [329638] [info] Entry: id: 3. html_id: 30000. title: Acronyms
+[2026-03-10 10:16:39.46678] [329638] [info] Entry: id: 4. html_id: 40000. title: AdventPlanet
+[2026-03-10 10:16:39.46682] [329638] [debug] Unknown: Advent Planet
+[2026-03-10 10:16:39.46687] [329638] [info] Entry: id: 5. html_id: 50000. title: AiEngines
+[2026-03-10 10:16:39.46702] [329638] [debug] Unknown:  Claude::Agent::Code::Review
+[2026-03-10 10:16:39.46705] [329638] [debug] Unknown: Langertha::Knarr
+[2026-03-10 10:16:39.46708] [329638] [debug] Unknown: MCP::Run
+[2026-03-10 10:16:39.46711] [329638] [debug] Unknown: MCP::Server::Run
+[2026-03-10 10:16:39.46713] [329638] [debug] Unknown: Ollama
+[2026-03-10 10:16:39.46716] [329638] [debug] Unknown: Sim::AgentSoar
+[2026-03-10 10:16:39.46718] [329638] [debug] Unknown: Sim::Agent
+[2026-03-10 10:16:39.46723] [329638] [info] Entry: id: 6. html_id: 60000. title: AlgorithmicStuff
+[2026-03-10 10:16:39.46740] [329638] [info] Entry: id: 7. html_id: 70000. title: AnimationStuff
+[2026-03-10 10:16:39.46744] [329638] [info] Entry: id: 8. html_id: 80000. title: AntiVirusStuff
+[2026-03-10 10:16:39.46749] [329638] [info] Entry: id: 9. html_id: 90000. title: ApacheStuff
+[2026-03-10 10:16:39.46756] [329638] [debug] Unknown: Apache::Session::Generate::Random
+[2026-03-10 10:16:39.46762] [329638] [info] Entry: id: 10. html_id: 100000. title: AppleMac
+[2026-03-10 10:16:39.46766] [329638] [info] Entry: id: 11. html_id: 110000. title: ArchiveFiles
+[2026-03-10 10:16:39.46790] [329638] [debug] Unknown: Compress::Stream::Zstd
+[2026-03-10 10:16:39.46795] [329638] [debug] Unknown: FU::Utils
+[2026-03-10 10:16:39.46799] [329638] [debug] Unknown: IO::Compress::FAQ
+[2026-03-10 10:16:39.46805] [329638] [debug] Unknown: streamzip
+[2026-03-10 10:16:39.46810] [329638] [info] Entry: id: 12. html_id: 120000. title: ArrayHandling
+[2026-03-10 10:16:39.46830] [329638] [info] Entry: id: 13. html_id: 130000. title: AsciiCodes
+[2026-03-10 10:16:39.46834] [329638] [info] Entry: id: 14. html_id: 140000. title: ASN
+[2026-03-10 10:16:39.46838] [329638] [info] Entry: id: 15. html_id: 150000. title: AssemblerX86
+[2026-03-10 10:16:39.46841] [329638] [info] Entry: id: 16. html_id: 160000. title: AstroStuff
+[2026-03-10 10:16:39.46851] [329638] [info] Entry: id: 17. html_id: 170000. title: AudioVisual
+[2026-03-10 10:16:39.46858] [329638] [debug] Unknown: See Also
+[2026-03-10 10:16:39.46862] [329638] [debug] Unknown: libvlc
+[2026-03-10 10:16:39.46865] [329638] [debug] Unknown: Perl I/F
+[2026-03-10 10:16:39.46868] [329638] [debug] Unknown: SWF
+[2026-03-10 10:16:39.46871] [329638] [debug] Unknown: VLC media player
+[2026-03-10 10:16:39.46874] [329638] [info] Entry: id: 18. html_id: 180000. title: AutoCAD
+[2026-03-10 10:16:39.46881] [329638] [info] Entry: id: 19. html_id: 190000. title: BarCodes
+[2026-03-10 10:16:39.46886] [329638] [info] Entry: id: 20. html_id: 200000. title: BenchmarkingTools
+[2026-03-10 10:16:39.46894] [329638] [debug] Unknown: Hyperfine
+[2026-03-10 10:16:39.46896] [329638] [debug] Unknown: Mean Absolute Deviation
+[2026-03-10 10:16:39.46900] [329638] [info] Entry: id: 21. html_id: 210000. title: BibliographicStuff
+[2026-03-10 10:16:39.46915] [329638] [debug] Unknown: Data::MARC::Validator::Report
+[2026-03-10 10:16:39.46918] [329638] [debug] Unknown: MARC
+[2026-03-10 10:16:39.46924] [329638] [debug] Unknown: Marc::Validator::Filter
+[2026-03-10 10:16:39.46929] [329638] [info] Entry: id: 22. html_id: 220000. title: BillOfMaterials
+[2026-03-10 10:16:39.46934] [329638] [info] Entry: id: 23. html_id: 230000. title: BioInformatics
+[2026-03-10 10:16:39.46939] [329638] [debug] Unknown: Bio::Monophylizer
+[2026-03-10 10:16:39.46944] [329638] [info] Entry: id: 24. html_id: 240000. title: BlockChain
+[2026-03-10 10:16:39.46948] [329638] [info] Entry: id: 25. html_id: 250000. title: BoneMarrrowDonorRegistry
+[2026-03-10 10:16:39.46952] [329638] [info] Entry: id: 26. html_id: 260000. title: BrowserStuff
+[2026-03-10 10:16:39.46965] [329638] [info] Entry: id: 27. html_id: 270000. title: BsdWare
+[2026-03-10 10:16:39.46970] [329638] [info] Entry: id: 28. html_id: 280000. title: BusinessApps
+[2026-03-10 10:16:39.46984] [329638] [debug] Unknown: masser::home
+[2026-03-10 10:16:39.46989] [329638] [info] Entry: id: 29. html_id: 290000. title: CachingStuff
+[2026-03-10 10:16:39.47005] [329638] [info] Entry: id: 30. html_id: 300000. title: CaptchaStuff
+[2026-03-10 10:16:39.47009] [329638] [info] Entry: id: 31. html_id: 310000. title: ChartingAndPlotting
+[2026-03-10 10:16:39.47036] [329638] [debug] Unknown: Image::APNG
+[2026-03-10 10:16:39.47042] [329638] [debug] Unknown: Image::ExifTool::TagNames
+[2026-03-10 10:16:39.47045] [329638] [debug] Unknown: ImageMagick
+[2026-03-10 10:16:39.47055] [329638] [debug] Unknown: Resizing images
+[2026-03-10 10:16:39.47062] [329638] [info] Entry: id: 32. html_id: 320000. title: ChemistryStuff
+[2026-03-10 10:16:39.47073] [329638] [debug] Unknown: Chemistry::Tutorial
+[2026-03-10 10:16:39.47076] [329638] [info] Entry: id: 33. html_id: 330000. title: ChildProcesses
+[2026-03-10 10:16:39.47091] [329638] [debug] Unknown: Alternatives copies from the POD of Sys::Cmd
+[2026-03-10 10:16:39.47100] [329638] [debug] Unknown: IPC::LockTicket
+[2026-03-10 10:16:39.47113] [329638] [info] Entry: id: 34. html_id: 340000. title: ClipBoard
+[2026-03-10 10:16:39.47120] [329638] [info] Entry: id: 35. html_id: 350000. title: CodingStyle
+[2026-03-10 10:16:39.47126] [329638] [debug] Unknown: Generic advice
+[2026-03-10 10:16:39.47129] [329638] [debug] Unknown: HTML validator
+[2026-03-10 10:16:39.47133] [329638] [debug] Unknown: Perl::Critic::Policy::ControlStructures::ProhibitReturnInMappingBlock
+[2026-03-10 10:16:39.47138] [329638] [info] Entry: id: 36. html_id: 360000. title: Color
+[2026-03-10 10:16:39.47151] [329638] [debug] Unknown: Colors
+[2026-03-10 10:16:39.47165] [329638] [info] Entry: id: 37. html_id: 370000. title: CommandLineStuff
+[2026-03-10 10:16:39.47188] [329638] [debug] Unknown: Aion::Emitter
+[2026-03-10 10:16:39.47201] [329638] [debug] Unknown: cpanm-shcompgen
+[2026-03-10 10:16:39.47212] [329638] [debug] Unknown: PerlVision
+[2026-03-10 10:16:39.47215] [329638] [debug] Unknown: Progress::Any::SIGHandler
+[2026-03-10 10:16:39.47218] [329638] [debug] Unknown: shcompgen
+[2026-03-10 10:16:39.47229] [329638] [info] Entry: id: 38. html_id: 380000. title: ConfigFiles
+[2026-03-10 10:16:39.47246] [329638] [debug] Unknown: Configuration Files
+[2026-03-10 10:16:39.47262] [329638] [info] Entry: id: 39. html_id: 390000. title: ConstantStuff
+[2026-03-10 10:16:39.47275] [329638] [debug] Unknown: Readonly::Values::Boolean
+[2026-03-10 10:16:39.47281] [329638] [info] Entry: id: 40. html_id: 400000. title: Corinna
+[2026-03-10 10:16:39.47284] [329638] [info] Entry: id: 41. html_id: 410000. title: CPAN
+[2026-03-10 10:16:39.47306] [329638] [debug] Unknown: CPAN Tester results
+[2026-03-10 10:16:39.47309] [329638] [debug] Unknown: A daily report on new releases
+[2026-03-10 10:16:39.47320] [329638] [debug] Unknown: CPAN::Changes::Parser::KeepAChangeLog
+[2026-03-10 10:16:39.47329] [329638] [debug] Unknown: CPAN Testers wiki
+[2026-03-10 10:16:39.47335] [329638] [debug] Unknown: MetaCPAN
+[2026-03-10 10:16:39.47346] [329638] [info] Entry: id: 42. html_id: 420000. title: CpanFile
+[2026-03-10 10:16:39.47353] [329638] [debug] Unknown: Docs
+[2026-03-10 10:16:39.47359] [329638] [info] Entry: id: 43. html_id: 430000. title: cron
+[2026-03-10 10:16:39.47366] [329638] [debug] Unknown: Chronic
+[2026-03-10 10:16:39.47371] [329638] [info] Entry: id: 44. html_id: 440000. title: CryptoStuff
+[2026-03-10 10:16:39.47427] [329638] [debug] Unknown:  Crypt::Random::Source
+[2026-03-10 10:16:39.47442] [329638] [debug] Unknown: Kubernetes::REST
+[2026-03-10 10:16:39.47444] [329638] [debug] Unknown: libcrypto
+[2026-03-10 10:16:39.47448] [329638] [debug] Unknown: Math::Random::MTwist
+[2026-03-10 10:16:39.47452] [329638] [debug] Unknown: Net::Async::Kubernetes
+[2026-03-10 10:16:39.47456] [329638] [debug] Unknown: Rand::URandom
+[2026-03-10 10:16:39.47465] [329638] [info] Entry: id: 45. html_id: 450000. title: DatabaseAndSQL
+[2026-03-10 10:16:39.47515] [329638] [debug] Unknown: Alien::libpq
+[2026-03-10 10:16:39.47518] [329638] [debug] Unknown: Alien::MariaDB
+[2026-03-10 10:16:39.47520] [329638] [debug] Unknown: Alien::sqlite_vec
+[2026-03-10 10:16:39.47530] [329638] [debug] Unknown: Database - various
+[2026-03-10 10:16:39.47562] [329638] [debug] Unknown: gh-ost
+[2026-03-10 10:16:39.47587] [329638] [debug] Unknown: SQLite::VecDB
+[2026-03-10 10:16:39.47592] [329638] [debug] Unknown: Yote::SQLObjectStore
+[2026-03-10 10:16:39.47603] [329638] [info] Entry: id: 46. html_id: 460000. title: DataTraversal
+[2026-03-10 10:16:39.47677] [329638] [debug] Unknown: App::DataSizeSpeedUtils
+[2026-03-10 10:16:39.47709] [329638] [debug] Unknown: Data::MessagePack::Unpacker
+[2026-03-10 10:16:39.47714] [329638] [debug] Unknown: Data::Path::XS
+[2026-03-10 10:16:39.47718] [329638] [debug] Unknown: Data::Printer::Filter::EscapeNonPrintable
+[2026-03-10 10:16:39.47734] [329638] [debug] Unknown: Data::Smile
+[2026-03-10 10:16:39.47736] [329638] [debug] Unknown: Data::Smile::XS
+[2026-03-10 10:16:39.47764] [329638] [debug] Unknown: LTSV::LINQ
+[2026-03-10 10:16:39.47786] [329638] [debug] Unknown: Tree::DAG_Mode
+[2026-03-10 10:16:39.47806] [329638] [info] Entry: id: 47. html_id: 470000. title: DataTypes
+[2026-03-10 10:16:39.47833] [329638] [debug] Unknown: Data types in SQLite
+[2026-03-10 10:16:39.47869] [329638] [info] Entry: id: 48. html_id: 480000. title: DataValidation
+[2026-03-10 10:16:39.47891] [329638] [debug] Unknown: CGI::FormMagick::Validator
+[2026-03-10 10:16:39.47903] [329638] [debug] Unknown: Flat::Profile
+[2026-03-10 10:16:39.47906] [329638] [debug] Unknown: Flat::Schema
+[2026-03-10 10:16:39.47916] [329638] [debug] Unknown: Sah::FAQ
+[2026-03-10 10:16:39.47919] [329638] [debug] Unknown: Sah::Schema::identifier
+[2026-03-10 10:16:39.47921] [329638] [debug] Unknown: Sah::Type
+[2026-03-10 10:16:39.47928] [329638] [info] Entry: id: 49. html_id: 490000. title: DatesAndTimes
+[2026-03-10 10:16:39.47984] [329638] [debug] Unknown:  DateTime::Tiny
+[2026-03-10 10:16:39.48005] [329638] [info] Entry: id: 50. html_id: 500000. title: DebianOS
+[2026-03-10 10:16:39.48009] [329638] [debug] Unknown: /etc/services
+[2026-03-10 10:16:39.48012] [329638] [debug] Unknown: Container::Builder
+[2026-03-10 10:16:39.48014] [329638] [debug] Unknown: DPKG::Packages::Parser
+[2026-03-10 10:16:39.48018] [329638] [info] Entry: id: 51. html_id: 510000. title: DebuggingStuff
+[2026-03-10 10:16:39.48026] [329638] [debug] Unknown:  Carp::Always
+[2026-03-10 10:16:39.48034] [329638] [debug] Unknown: perl
+[2026-03-10 10:16:39.48038] [329638] [info] Entry: id: 52. html_id: 520000. title: DFA
+[2026-03-10 10:16:39.48045] [329638] [debug] Unknown: Data::FSM
+[2026-03-10 10:16:39.48052] [329638] [info] Entry: id: 53. html_id: 530000. title: DnsStuff
+[2026-03-10 10:16:39.48070] [329638] [info] Entry: id: 54. html_id: 540000. title: DomainNames
+[2026-03-10 10:16:39.48076] [329638] [info] Entry: id: 55. html_id: 550000. title: EBookHandling
+[2026-03-10 10:16:39.48080] [329638] [debug] Unknown: See Also
+[2026-03-10 10:16:39.48084] [329638] [info] Entry: id: 56. html_id: 560000. title: EditorConfigFiles
+[2026-03-10 10:16:39.48088] [329638] [info] Entry: id: 57. html_id: 570000. title: EmailStuff
+[2026-03-10 10:16:39.48110] [329638] [debug] Unknown: Exim
+[2026-03-10 10:16:39.48125] [329638] [debug] Unknown: MIME-tools
+[2026-03-10 10:16:39.48132] [329638] [info] Entry: id: 58. html_id: 580000. title: EnumStuff
+[2026-03-10 10:16:39.48142] [329638] [info] Entry: id: 59. html_id: 590000. title: EventStuff
+[2026-03-10 10:16:39.48175] [329638] [debug] Unknown: EV::Etcd
+[2026-03-10 10:16:39.48178] [329638] [debug] Unknown: EV::Future
+[2026-03-10 10:16:39.48181] [329638] [debug] Unknown: EV::Pg
+[2026-03-10 10:16:39.48186] [329638] [debug] Unknown: Future::IO::Impl::KQueue
+[2026-03-10 10:16:39.48197] [329638] [debug] Unknown: IO::Async::Loop::FutureIO
+[2026-03-10 10:16:39.48212] [329638] [debug] Unknown: libev
+[2026-03-10 10:16:39.48224] [329638] [info] Entry: id: 60. html_id: 600000. title: ExceptionHandling
+[2026-03-10 10:16:39.48259] [329638] [info] Entry: id: 61. html_id: 610000. title: ExtensibleProvisioningProtocol
+[2026-03-10 10:16:39.48266] [329638] [info] Entry: id: 62. html_id: 620000. title: FAQ
+[2026-03-10 10:16:39.48273] [329638] [debug] Unknown: What is the point of the ABeCeDarian para?
+[2026-03-10 10:16:39.48276] [329638] [debug] Unknown: What modules ship with Perl?
+[2026-03-10 10:16:39.48278] [329638] [debug] Unknown: What does deprecated mean?
+[2026-03-10 10:16:39.48280] [329638] [debug] Unknown: How do I deprecate a module?
+[2026-03-10 10:16:39.48282] [329638] [debug] Unknown: Where can I learn about Object Oriented Programming (OOP)?
+[2026-03-10 10:16:39.48284] [329638] [debug] Unknown: What is Semantic Versioning?
+[2026-03-10 10:16:39.48286] [329638] [debug] Unknown: Where do I find info on iterators?
+[2026-03-10 10:16:39.48288] [329638] [debug] Unknown: Why don't you include Catalyst, Dancer, Moose, etc?
+[2026-03-10 10:16:39.48290] [329638] [debug] Unknown: Why are AI agents so dangerous
+[2026-03-10 10:16:39.48292] [329638] [debug] Unknown: What is prompt injection
+[2026-03-10 10:16:39.48294] [329638] [debug] Unknown: Why is prompt injection dangerous
+[2026-03-10 10:16:39.48296] [329638] [debug] Unknown: What is the problem
+[2026-03-10 10:16:39.48298] [329638] [info] Entry: id: 63. html_id: 630000. title: FeaturesAndPragmas
+[2026-03-10 10:16:39.48307] [329638] [info] Entry: id: 64. html_id: 640000. title: FileHandling
+[2026-03-10 10:16:39.48352] [329638] [debug] Unknown: File diffs
+[2026-03-10 10:16:39.48372] [329638] [debug] Unknown: File::StatX
+[2026-03-10 10:16:39.48383] [329638] [debug] Unknown: Flat::Profile
+[2026-03-10 10:16:39.48391] [329638] [debug] Unknown: Redirection (sends errors to /dev/null)
+[2026-03-10 10:16:39.48397] [329638] [debug] Unknown: rename
+[2026-03-10 10:16:39.48404] [329638] [info] Entry: id: 65. html_id: 650000. title: FindDependencies
+[2026-03-10 10:16:39.48411] [329638] [info] Entry: id: 66. html_id: 660000. title: Games
+[2026-03-10 10:16:39.48426] [329638] [debug] Unknown: LibOrigin
+[2026-03-10 10:16:39.48432] [329638] [info] Entry: id: 67. html_id: 670000. title: GenealogyStuff
+[2026-03-10 10:16:39.48442] [329638] [info] Entry: id: 68. html_id: 680000. title: GeographicStuff
+[2026-03-10 10:16:39.48466] [329638] [debug] Unknown: Geographic IP stuff and network data
+[2026-03-10 10:16:39.48500] [329638] [info] Entry: id: 69. html_id: 690000. title: GitStuff
+[2026-03-10 10:16:39.48533] [329638] [debug] Unknown: git::workflow
+[2026-03-10 10:16:39.48536] [329638] [debug] Unknown: PitHub
+[2026-03-10 10:16:39.48541] [329638] [info] Entry: id: 70. html_id: 700000. title: GnuPG
+[2026-03-10 10:16:39.48547] [329638] [info] Entry: id: 71. html_id: 710000. title: GoogleStuff
+[2026-03-10 10:16:39.48557] [329638] [info] Entry: id: 72. html_id: 720000. title: Graphs
+[2026-03-10 10:16:39.48572] [329638] [debug] Unknown:  Graph
+[2026-03-10 10:16:39.48580] [329638] [debug] Unknown: libplot
+[2026-03-10 10:16:39.48585] [329638] [info] Entry: id: 73. html_id: 730000. title: HardwareStuff
+[2026-03-10 10:16:39.48599] [329638] [debug] Unknown: Net::MQTT
+[2026-03-10 10:16:39.48605] [329638] [info] Entry: id: 74. html_id: 740000. title: HashHandling
+[2026-03-10 10:16:39.48632] [329638] [info] Entry: id: 75. html_id: 750000. title: HealthMatters
+[2026-03-10 10:16:39.48639] [329638] [info] Entry: id: 76. html_id: 760000. title: HTMLHandling
+[2026-03-10 10:16:39.48660] [329638] [debug] Unknown: The HTML spec
+[2026-03-10 10:16:39.48664] [329638] [debug] Unknown: A table of HTML entities
+[2026-03-10 10:16:39.48673] [329638] [debug] Unknown: HTML::HTMLdoc
+[2026-03-10 10:16:39.48688] [329638] [info] Entry: id: 77. html_id: 770000. title: HTTPHandling
+[2026-03-10 10:16:39.48722] [329638] [debug] Unknown: Headers
+[2026-03-10 10:16:39.48724] [329638] [debug] Unknown: Header help
+[2026-03-10 10:16:39.48731] [329638] [debug] Unknown:  HTTP::DAV
+[2026-03-10 10:16:39.48744] [329638] [debug] Unknown:  LWP::UserAgent::Throttled
+[2026-03-10 10:16:39.48753] [329638] [debug] Unknown: URI::_punycode
+[2026-03-10 10:16:39.48764] [329638] [info] Entry: id: 78. html_id: 780000. title: HTTPServers
+[2026-03-10 10:16:39.48783] [329638] [debug] Unknown: HTTP::Handy
+[2026-03-10 10:16:39.48795] [329638] [debug] Unknown: PAGI::Tutorial
+[2026-03-10 10:16:39.48807] [329638] [info] Entry: id: 79. html_id: 790000. title: HumanRights
+[2026-03-10 10:16:39.48812] [329638] [info] Entry: id: 80. html_id: 800000. title: IoLayers
+[2026-03-10 10:16:39.48819] [329638] [debug] Unknown: To turn off encoding layers
+[2026-03-10 10:16:39.48822] [329638] [debug] Unknown: IO::Divert
+[2026-03-10 10:16:39.48829] [329638] [debug] Unknown: PerlIO::via:xz
+[2026-03-10 10:16:39.48832] [329638] [info] Entry: id: 81. html_id: 810000. title: JavaScript
+[2026-03-10 10:16:39.48837] [329638] [debug] Unknown:  JE
+[2026-03-10 10:16:39.48843] [329638] [info] Entry: id: 82. html_id: 820000. title: JsonStuff
+[2026-03-10 10:16:39.48869] [329638] [debug] Unknown:  JSON::SIMD
+[2026-03-10 10:16:39.48877] [329638] [info] Entry: id: 83. html_id: 830000. title: KohaLibrary
+[2026-03-10 10:16:39.48882] [329638] [info] Entry: id: 84. html_id: 840000. title: LaTeX
+[2026-03-10 10:16:39.48892] [329638] [info] Entry: id: 85. html_id: 850000. title: LicenceStuff
+[2026-03-10 10:16:39.48898] [329638] [debug] Unknown: Module::LicenseScanner
+[2026-03-10 10:16:39.48904] [329638] [info] Entry: id: 86. html_id: 860000. title: LinguaStuff
+[2026-03-10 10:16:39.48934] [329638] [debug] Unknown: Lingua::FR::Numbers::Ordinate
+[2026-03-10 10:16:39.48938] [329638] [debug] Unknown: Lingua-RU-Numeral
+[2026-03-10 10:16:39.48942] [329638] [debug] Unknown: Locale::Maketext::TPJ13
+[2026-03-10 10:16:39.48952] [329638] [info] Entry: id: 87. html_id: 870000. title: LinuxOS
+[2026-03-10 10:16:39.48957] [329638] [debug] Unknown: Linux::Event
+[2026-03-10 10:16:39.48960] [329638] [debug] Unknown: Linux::Event::Clock
+[2026-03-10 10:16:39.48962] [329638] [debug] Unknown: Linux::Event::Connect
+[2026-03-10 10:16:39.48965] [329638] [debug] Unknown: Linux::Event::Fork
+[2026-03-10 10:16:39.48968] [329638] [debug] Unknown: Linux::Event::Listen
+[2026-03-10 10:16:39.48970] [329638] [debug] Unknown: Linux::Event::Loop
+[2026-03-10 10:16:39.48972] [329638] [debug] Unknown: Linux::Event::Stream
+[2026-03-10 10:16:39.48974] [329638] [debug] Unknown: Linux::Event::Timer
+[2026-03-10 10:16:39.48976] [329638] [debug] Unknown: Linux::Event::Watcher
+[2026-03-10 10:16:39.48980] [329638] [info] Entry: id: 88. html_id: 880000. title: LocaleStuff
+[2026-03-10 10:16:39.48999] [329638] [info] Entry: id: 89. html_id: 890000. title: LoggingStuff
+[2026-03-10 10:16:39.49029] [329638] [info] Entry: id: 90. html_id: 900000. title: MarkdownHandling
+[2026-03-10 10:16:39.49041] [329638] [debug] Unknown: Specifications and Tutorials
+[2026-03-10 10:16:39.49043] [329638] [debug] Unknown: App::Greple::md
+[2026-03-10 10:16:39.49048] [329638] [debug] Unknown: Markdent::Dialect::GitHub
+[2026-03-10 10:16:39.49052] [329638] [debug] Unknown: mdcat
+[2026-03-10 10:16:39.49055] [329638] [debug] Unknown: Mermaid
+[2026-03-10 10:16:39.49064] [329638] [info] Entry: id: 91. html_id: 910000. title: MarlinStuff
+[2026-03-10 10:16:39.49072] [329638] [info] Entry: id: 92. html_id: 920000. title: Marpa
+[2026-03-10 10:16:39.49078] [329638] [debug] Unknown: Backlog for IRC channel #marpa
+[2026-03-10 10:16:39.49085] [329638] [debug] Unknown: Unicode bracketing
+[2026-03-10 10:16:39.49088] [329638] [info] Entry: id: 93. html_id: 930000. title: MathsLibraries
+[2026-03-10 10:16:39.49122] [329638] [debug] Unknown: Math::Interpolator
+[2026-03-10 10:16:39.49133] [329638] [debug] Unknown: Math::Vector::Similarity
+[2026-03-10 10:16:39.49139] [329638] [debug] Unknown:  PDL
+[2026-03-10 10:16:39.49147] [329638] [info] Entry: id: 94. html_id: 940000. title: MeasureMetrics
+[2026-03-10 10:16:39.49156] [329638] [debug] Unknown: Grafana
+[2026-03-10 10:16:39.49158] [329638] [debug] Unknown: Lab::Measurement::Manual
+[2026-03-10 10:16:39.49165] [329638] [debug] Unknown: Prometheus
+[2026-03-10 10:16:39.49170] [329638] [info] Entry: id: 95. html_id: 950000. title: MemoryUsage
+[2026-03-10 10:16:39.49181] [329638] [info] Entry: id: 96. html_id: 960000. title: MobilePhones
+[2026-03-10 10:16:39.49187] [329638] [info] Entry: id: 97. html_id: 970000. title: ModernPerl
+[2026-03-10 10:16:39.49190] [329638] [info] Entry: id: 98. html_id: 980000. title: ModuleBuilding
+[2026-03-10 10:16:39.49271] [329638] [debug] Unknown: Alt::Params::Util::PLICEASE
+[2026-03-10 10:16:39.49292] [329638] [debug] Unknown: Cons
+[2026-03-10 10:16:39.49311] [329638] [debug] Unknown: ExtUtils::MakeMaker::FAQ
+[2026-03-10 10:16:39.49327] [329638] [debug] Unknown: Install without using CPAN
+[2026-03-10 10:16:39.49348] [329638] [debug] Unknown: Multiple, separate Perls
+[2026-03-10 10:16:39.49360] [329638] [debug] Unknown: Params::SomeUtil
+[2026-03-10 10:16:39.49366] [329638] [debug] Unknown: Perlbrew
+[2026-03-10 10:16:39.49369] [329638] [debug] Unknown: PerlBuildSystem
+[2026-03-10 10:16:39.49379] [329638] [debug] Unknown: Singleton::Method
+[2026-03-10 10:16:39.49401] [329638] [info] Entry: id: 99. html_id: 990000. title: ModulePlugins
+[2026-03-10 10:16:39.49412] [329638] [info] Entry: id: 100. html_id: 1000000. title: MoneyMatters
+[2026-03-10 10:16:39.49428] [329638] [info] Entry: id: 101. html_id: 1010000. title: MusicStuff
+[2026-03-10 10:16:39.49439] [329638] [debug] Unknown: MIDI::Stream
+[2026-03-10 10:16:39.49444] [329638] [info] Entry: id: 102. html_id: 1020000. title: NetworkProgramming
+[2026-03-10 10:16:39.49463] [329638] [debug] Unknown: Check::SuricataFlows
+[2026-03-10 10:16:39.49468] [329638] [debug] Unknown: grepcidr
+[2026-03-10 10:16:39.49470] [329638] [debug] Unknown: libnet
+[2026-03-10 10:16:39.49473] [329638] [debug] Unknown: ipgrep
+[2026-03-10 10:16:39.49482] [329638] [debug] Unknown: NetBox::API
+[2026-03-10 10:16:39.49487] [329638] [debug] Unknown: socat
+[2026-03-10 10:16:39.49491] [329638] [info] Entry: id: 103. html_id: 1030000. title: NewOperators
+[2026-03-10 10:16:39.49502] [329638] [debug] Unknown: Syntax::Feature::Void
+[2026-03-10 10:16:39.49510] [329638] [info] Entry: id: 104. html_id: 1040000. title: OfficeFiles
+[2026-03-10 10:16:39.49521] [329638] [info] Entry: id: 105. html_id: 1050000. title: OpenGL
+[2026-03-10 10:16:39.49528] [329638] [info] Entry: id: 106. html_id: 1060000. title: OpenGraphProtocol
+[2026-03-10 10:16:39.49535] [329638] [info] Entry: id: 107. html_id: 1070000. title: OpenTelemetry
+[2026-03-10 10:16:39.49543] [329638] [info] Entry: id: 108. html_id: 1080000. title: OrgDocHandling
+[2026-03-10 10:16:39.49551] [329638] [info] Entry: id: 109. html_id: 1090000. title: PacketCapture
+[2026-03-10 10:16:39.49560] [329638] [info] Entry: id: 110. html_id: 1100000. title: ParallelProcessing
+[2026-03-10 10:16:39.49580] [329638] [debug] Unknown:  IPC::System::Options
+[2026-03-10 10:16:39.49585] [329638] [debug] Unknown: Net::Async::MCP
+[2026-03-10 10:16:39.49602] [329638] [info] Entry: id: 111. html_id: 1110000. title: ParsingStuff
+[2026-03-10 10:16:39.49609] [329638] [debug] Unknown: analizo
+[2026-03-10 10:16:39.49618] [329638] [info] Entry: id: 112. html_id: 1120000. title: PdfStuff
+[2026-03-10 10:16:39.49637] [329638] [debug] Unknown: Adobe PDF reference
+[2026-03-10 10:16:39.49651] [329638] [debug] Unknown: PDFio::Architect
+[2026-03-10 10:16:39.49655] [329638] [debug] Unknown: qpdf
+[2026-03-10 10:16:39.49658] [329638] [debug] Unknown: Google Bard says
+[2026-03-10 10:16:39.49662] [329638] [info] Entry: id: 113. html_id: 1130000. title: PerlDeltas
+[2026-03-10 10:16:39.49667] [329638] [info] Entry: id: 114. html_id: 1140000. title: PerlDistros
+[2026-03-10 10:16:39.49672] [329638] [info] Entry: id: 115. html_id: 1150000. title: PerlDocumentation
+[2026-03-10 10:16:39.49680] [329638] [debug] Unknown:  App::sdview
+[2026-03-10 10:16:39.49683] [329638] [debug] Unknown: perlxs
+[2026-03-10 10:16:39.49686] [329638] [debug] Unknown: perlxstut
+[2026-03-10 10:16:39.49688] [329638] [debug] Unknown: podweaver
+[2026-03-10 10:16:39.49692] [329638] [info] Entry: id: 116. html_id: 1160000. title: PerlInternals
+[2026-03-10 10:16:39.49703] [329638] [debug] Unknown: B::CC
+[2026-03-10 10:16:39.49718] [329638] [info] Entry: id: 117. html_id: 1170000. title: PhoneNumbers
+[2026-03-10 10:16:39.49724] [329638] [info] Entry: id: 118. html_id: 1180000. title: PhpStuff
+[2026-03-10 10:16:39.49728] [329638] [info] Entry: id: 119. html_id: 1190000. title: PipeLines
+[2026-03-10 10:16:39.49736] [329638] [info] Entry: id: 120. html_id: 1200000. title: PlackServer
+[2026-03-10 10:16:39.49751] [329638] [debug] Unknown: Plack::Middleware::DirIndex::Htaccess
+[2026-03-10 10:16:39.49753] [329638] [debug] Unknown: Plack::Middleware::DirListing
+[2026-03-10 10:16:39.49759] [329638] [debug] Unknown: WebServer::DirIndex
+[2026-03-10 10:16:39.49762] [329638] [info] Entry: id: 121. html_id: 1210000. title: PodHandling
+[2026-03-10 10:16:39.49775] [329638] [debug] Unknown: App::pod
+[2026-03-10 10:16:39.49777] [329638] [debug] Unknown: App::pod2gfm
+[2026-03-10 10:16:39.49794] [329638] [info] Entry: id: 122. html_id: 1220000. title: PoeStuff
+[2026-03-10 10:16:39.49802] [329638] [info] Entry: id: 123. html_id: 1230000. title: POSIX
+[2026-03-10 10:16:39.49806] [329638] [info] Entry: id: 124. html_id: 1240000. title: ProfilingCode
+[2026-03-10 10:16:39.49811] [329638] [info] Entry: id: 125. html_id: 1250000. title: ProjectManagement
+[2026-03-10 10:16:39.49819] [329638] [info] Entry: id: 126. html_id: 1260000. title: ProperNames
+[2026-03-10 10:16:39.49825] [329638] [info] Entry: id: 127. html_id: 1270000. title: QrCodes
+[2026-03-10 10:16:39.49831] [329638] [info] Entry: id: 128. html_id: 1280000. title: RakuLanguage
+[2026-03-10 10:16:39.49835] [329638] [info] Entry: id: 129. html_id: 1290000. title: RaspberryPi
+[2026-03-10 10:16:39.49838] [329638] [info] Entry: id: 130. html_id: 1300000. title: RedBlackTrees
+[2026-03-10 10:16:39.49843] [329638] [info] Entry: id: 131. html_id: 1310000. title: ReferenceStuff
+[2026-03-10 10:16:39.49847] [329638] [info] Entry: id: 132. html_id: 1320000. title: RegexpStuff
+[2026-03-10 10:16:39.49862] [329638] [info] Entry: id: 133. html_id: 1330000. title: RegistrySystemTesting
+[2026-03-10 10:16:39.49866] [329638] [info] Entry: id: 134. html_id: 1340000. title: RemoteDesktops
+[2026-03-10 10:16:39.49870] [329638] [info] Entry: id: 135. html_id: 1350000. title: RequestTracker
+[2026-03-10 10:16:39.49884] [329638] [debug] Unknown: Best Practical
+[2026-03-10 10:16:39.49906] [329638] [info] Entry: id: 136. html_id: 1360000. title: RestfulInterface
+[2026-03-10 10:16:39.49910] [329638] [info] Entry: id: 137. html_id: 1370000. title: RotateLogFiles
+[2026-03-10 10:16:39.49914] [329638] [info] Entry: id: 138. html_id: 1380000. title: RSS
+[2026-03-10 10:16:39.49920] [329638] [info] Entry: id: 139. html_id: 1390000. title: SampleCode
+[2026-03-10 10:16:39.49926] [329638] [debug] Unknown: Interpolate arithmetic into a string. e.g. an array record count
+[2026-03-10 10:16:39.49928] [329638] [debug] Unknown: Invert the keys and values in a hash
+[2026-03-10 10:16:39.49932] [329638] [info] Entry: id: 140. html_id: 1400000. title: SandBoxes
+[2026-03-10 10:16:39.49935] [329638] [debug] Unknown: Linux::Landlock
+[2026-03-10 10:16:39.49937] [329638] [info] Entry: id: 141. html_id: 1410000. title: ScreenStuff
+[2026-03-10 10:16:39.49942] [329638] [info] Entry: id: 142. html_id: 1420000. title: SecurityPolicy
+[2026-03-10 10:16:39.49951] [329638] [debug] Unknown: Link to draft guidelines for a security policy for Perl module authors
+[2026-03-10 10:16:39.49957] [329638] [debug] Unknown: CVE
+[2026-03-10 10:16:39.49963] [329638] [info] Entry: id: 143. html_id: 1430000. title: SeismicAnalysis
+[2026-03-10 10:16:39.49967] [329638] [info] Entry: id: 144. html_id: 1440000. title: SeismicOS
+[2026-03-10 10:16:39.49971] [329638] [info] Entry: id: 145. html_id: 1450000. title: SetStuff
+[2026-03-10 10:16:39.49981] [329638] [info] Entry: id: 146. html_id: 1460000. title: SidefLanguage
+[2026-03-10 10:16:39.49985] [329638] [info] Entry: id: 147. html_id: 1470000. title: SlackWare
+[2026-03-10 10:16:39.49990] [329638] [info] Entry: id: 148. html_id: 1480000. title: SocialMedia
+[2026-03-10 10:16:39.49996] [329638] [info] Entry: id: 149. html_id: 1490000. title: SortModules
+[2026-03-10 10:16:39.50005] [329638] [info] Entry: id: 150. html_id: 1500000. title: SpreadsheetStuff
+[2026-03-10 10:16:39.50014] [329638] [debug] Unknown: Spreadsheet stuff
+[2026-03-10 10:16:39.50024] [329638] [info] Entry: id: 151. html_id: 1510000. title: SpvmLanguage
+[2026-03-10 10:16:39.50035] [329638] [debug] Unknown: SPVM::DBI
+[2026-03-10 10:16:39.50045] [329638] [debug] Unknown: SPVM::Resource::SQLite
+[2026-03-10 10:16:39.50052] [329638] [info] Entry: id: 152. html_id: 1520000. title: SSH
+[2026-03-10 10:16:39.50062] [329638] [debug] Unknown: ssh_config
+[2026-03-10 10:16:39.50065] [329638] [info] Entry: id: 153. html_id: 1530000. title: StaticSiteBuilders
+[2026-03-10 10:16:39.50070] [329638] [info] Entry: id: 154. html_id: 1540000. title: StatisticsStuff
+[2026-03-10 10:16:39.50078] [329638] [debug] Unknown:  Statistics::Descriptive
+[2026-03-10 10:16:39.50084] [329638] [info] Entry: id: 155. html_id: 1550000. title: StradaStuff
+[2026-03-10 10:16:39.50088] [329638] [info] Entry: id: 156. html_id: 1560000. title: StreamingMedia
+[2026-03-10 10:16:39.50091] [329638] [info] Entry: id: 157. html_id: 1570000. title: StringStuff
+[2026-03-10 10:16:39.50112] [329638] [debug] Unknown: String::Redactable
+[2026-03-10 10:16:39.50116] [329638] [debug] Unknown: String::Tagged::Formatting
+[2026-03-10 10:16:39.50128] [329638] [info] Entry: id: 158. html_id: 1580000. title: SwitchStatements
+[2026-03-10 10:16:39.50139] [329638] [debug] Unknown: switch
+[2026-03-10 10:16:39.50142] [329638] [debug] Unknown:  Switch::Back
+[2026-03-10 10:16:39.50148] [329638] [info] Entry: id: 159. html_id: 1590000. title: SystemInfo
+[2026-03-10 10:16:39.50160] [329638] [info] Entry: id: 160. html_id: 1600000. title: SystemMonitoring
+[2026-03-10 10:16:39.50197] [329638] [info] Entry: id: 161. html_id: 1610000. title: TabularData
+[2026-03-10 10:16:39.50220] [329638] [info] Entry: id: 162. html_id: 1620000. title: TCP/IP
+[2026-03-10 10:16:39.50223] [329638] [debug] Unknown: IO::Socket::HappyEyeballs
+[2026-03-10 10:16:39.50226] [329638] [info] Entry: id: 163. html_id: 1630000. title: TemplateStuff
+[2026-03-10 10:16:39.50242] [329638] [debug] Unknown: Interpolating an array element count into a string
+[2026-03-10 10:16:39.50248] [329638] [debug] Unknown: Templates in general
+[2026-03-10 10:16:39.50257] [329638] [debug] Unknown: Text::XSlate
+[2026-03-10 10:16:39.50261] [329638] [info] Entry: id: 164. html_id: 1640000. title: TestingHelp
+[2026-03-10 10:16:39.50315] [329638] [debug] Unknown: A directory-per-test setup
+[2026-03-10 10:16:39.50318] [329638] [debug] Unknown: A guide to testing
+[2026-03-10 10:16:39.50326] [329638] [debug] Unknown: CPAN test results for a typical module
+[2026-03-10 10:16:39.50356] [329638] [debug] Unknown:  Test::Database::Temp
+[2026-03-10 10:16:39.50377] [329638] [debug] Unknown: Test::PostgreSQL::v2
+[2026-03-10 10:16:39.50380] [329638] [debug] Unknown:  Test::Prereq
+[2026-03-10 10:16:39.50388] [329638] [debug] Unknown: Test::Spelling::Stopwords
+[2026-03-10 10:16:39.50405] [329638] [debug] Unknown: Test2::Transition
+[2026-03-10 10:16:39.50417] [329638] [info] Entry: id: 165. html_id: 1650000. title: TextAnalysisAndFormatting
+[2026-03-10 10:16:39.50448] [329638] [debug] Unknown: Intellexer
+[2026-03-10 10:16:39.50475] [329638] [info] Entry: id: 166. html_id: 1660000. title: TiddlyWikis
+[2026-03-10 10:16:39.50482] [329638] [debug] Unknown: Escape character for '/' is '#&47;'. See also /''''/ and '////'. Click edit (pencil) to examine
+[2026-03-10 10:16:39.50485] [329638] [debug] Unknown: Care! TiddlyWikis contains executable code in order to provide all the features listed below
+[2026-03-10 10:16:39.50487] [329638] [debug] Unknown: Overview
+[2026-03-10 10:16:39.50489] [329638] [debug] Unknown: Inbuilt features of all TiddlyWikis
+[2026-03-10 10:16:39.50492] [329638] [debug] Unknown: On-line help
+[2026-03-10 10:16:39.50496] [329638] [info] Entry: id: 167. html_id: 1670000. title: TrueTypeFonts
+[2026-03-10 10:16:39.50502] [329638] [info] Entry: id: 168. html_id: 1680000. title: UninstallModule
+[2026-03-10 10:16:39.50505] [329638] [info] Entry: id: 169. html_id: 1690000. title: UnixWare
+[2026-03-10 10:16:39.50508] [329638] [info] Entry: id: 170. html_id: 1700000. title: UserInfo
+[2026-03-10 10:16:39.50512] [329638] [info] Entry: id: 171. html_id: 1710000. title: UserInput
+[2026-03-10 10:16:39.50518] [329638] [info] Entry: id: 172. html_id: 1720000. title: UsernamePassword
+[2026-03-10 10:16:39.50531] [329638] [debug] Unknown: Concierge
+[2026-03-10 10:16:39.50533] [329638] [debug] Unknown: Concierge::Auth
+[2026-03-10 10:16:39.50536] [329638] [debug] Unknown: Concierge::Sessions
+[2026-03-10 10:16:39.50538] [329638] [debug] Unknown: Concierge::Users
+[2026-03-10 10:16:39.50551] [329638] [info] Entry: id: 173. html_id: 1730000. title: UTF8
+[2026-03-10 10:16:39.50570] [329638] [debug] Unknown: Encode/Decode character sets
+[2026-03-10 10:16:39.50575] [329638] [debug] Unknown: Fix, if possible, the Unicode bug
+[2026-03-10 10:16:39.50578] [329638] [debug] Unknown: Remove accents with
+[2026-03-10 10:16:39.50584] [329638] [debug] Unknown: Tom Christensen
+[2026-03-10 10:16:39.50587] [329638] [debug] Unknown: Unicode
+[2026-03-10 10:16:39.50593] [329638] [debug] Unknown: Unicode::Towctrans
+[2026-03-10 10:16:39.50599] [329638] [info] Entry: id: 174. html_id: 1740000. title: UUID
+[2026-03-10 10:16:39.50613] [329638] [info] Entry: id: 175. html_id: 1750000. title: VersionControl
+[2026-03-10 10:16:39.50617] [329638] [info] Entry: id: 176. html_id: 1760000. title: VersionWare
+[2026-03-10 10:16:39.50630] [329638] [info] Entry: id: 177. html_id: 1770000. title: VirtualMachines
+[2026-03-10 10:16:39.50636] [329638] [debug] Unknown: See Also
+[2026-03-10 10:16:39.50643] [329638] [debug] Unknown: WWW::Docker
+[2026-03-10 10:16:39.50645] [329638] [info] Entry: id: 178. html_id: 1780000. title: WantArray
+[2026-03-10 10:16:39.50650] [329638] [info] Entry: id: 179. html_id: 1790000. title: WeatherStuff
+[2026-03-10 10:16:39.50659] [329638] [info] Entry: id: 180. html_id: 1800000. title: WebSecurity
+[2026-03-10 10:16:39.50665] [329638] [info] Entry: id: 181. html_id: 1810000. title: WebServices
+[2026-03-10 10:16:39.50696] [329638] [debug] Unknown: Amazon::CreatorsAPI
+[2026-03-10 10:16:39.50703] [329638] [debug] Unknown: DeyeCloud::Client
+[2026-03-10 10:16:39.50707] [329638] [debug] Unknown: MCP::K8s
+[2026-03-10 10:16:39.50710] [329638] [debug] Unknown: Net::Async::Hetzner
+[2026-03-10 10:16:39.50712] [329638] [debug] Unknown: Net::Async::NATS
+[2026-03-10 10:16:39.50720] [329638] [debug] Unknown: Net::IPData
+[2026-03-10 10:16:39.50741] [329638] [debug] Unknown: WWW::Bund
+[2026-03-10 10:16:39.50752] [329638] [info] Entry: id: 182. html_id: 1820000. title: WeirdAndWonderful
+[2026-03-10 10:16:39.50759] [329638] [debug] Unknown: Prelude
+[2026-03-10 10:16:39.50763] [329638] [info] Entry: id: 183. html_id: 1830000. title: WikiStuff
+[2026-03-10 10:16:39.50773] [329638] [debug] Unknown: Kwiki-Kwiki
+[2026-03-10 10:16:39.50783] [329638] [info] Entry: id: 184. html_id: 1840000. title: XDGBaseDirectorySpecification
+[2026-03-10 10:16:39.50787] [329638] [info] Entry: id: 185. html_id: 1850000. title: XML
+[2026-03-10 10:16:39.50796] [329638] [debug] Unknown: Alien::pugixml
+[2026-03-10 10:16:39.50804] [329638] [debug] Unknown: XML::PugiXML
+[2026-03-10 10:16:39.50810] [329638] [info] Entry: id: 186. html_id: 1860000. title: XS
+[2026-03-10 10:16:39.50819] [329638] [info] Entry: id: 187. html_id: 1870000. title: XWindowsStuff
+[2026-03-10 10:16:39.50828] [329638] [info] Entry: id: 188. html_id: 1880000. title: YamlStuff
+[2026-03-10 10:16:39.50840] [329638] [debug] Unknown: Yote::Spiderpup
+[2026-03-10 10:16:39.50843] [329638] [info] Entry: id: 189. html_id: 1890000. title: ZMQ
+[2026-03-10 10:16:39.51295] [329638] [info] Created /home/ron/perl.modules/CPAN-MetaCurator/html/cpan.metacurator.tree.html. Encoding: :encoding(utf-8)
+[2026-03-10 10:16:39.51299] [329638] [info] acronym count: 143
+[2026-03-10 10:16:39.51301] [329638] [info] known count: 3657
+[2026-03-10 10:16:39.51303] [329638] [info] leaf count: 4049
+[2026-03-10 10:16:39.51304] [329638] [info] packages count: 270452
+[2026-03-10 10:16:39.51306] [329638] [info] see_also count: 0
+[2026-03-10 10:16:39.51307] [329638] [info] topic count: 189
+[2026-03-10 10:16:39.51308] [329638] [info] unknown count: 255
