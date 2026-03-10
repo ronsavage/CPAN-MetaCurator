@@ -321,7 +321,7 @@ sub read_metapackager_table
 	$set								= [$set -> hashes];
 	$$pad{count}{$table_name}			= $#$set + 1;
 	$$pad{package_names}				= {};
-	$$pad{package_names}{$$_{name} }	= $$_{id} for (@{$$set});
+	$$pad{package_names}{$$_{name} }	= $$_{id} for (@$set);
 
 	$self -> metapackager_dbh -> disconnect;
 
