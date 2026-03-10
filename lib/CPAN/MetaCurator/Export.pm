@@ -195,10 +195,14 @@ sub format_text
 
 		if ($$topic{title} eq 'FAQ')
 		{
+			$$item{html}	= '';
+			$$item{text}	= $line;
+
+			push @items, $item;
 		}
 		elsif (defined $lines[$index + 1])
 		{
-			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$lines[$index]]}</a>";
+			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - @{[$line]}</a>";
 			$$item{text}	= "";
 
 			push @items, $item;

@@ -1,7 +1,10 @@
 Revision history for Perl extension CPAN::MetaCurator.
 
+1.13  2026-03-11T10:18:00
+	- Finally start parsing the FAQ para. This may be easy.
+
 1.12  2026-03-09T11:00:00
-	- Add code to read cpan.metapackager.sqlite as shipped with CPAN::MetaPackager.
+	- Add code to optionally read cpan.metapackager.sqlite as shipped with CPAN::MetaPackager.
 	- Default location is /tmp/cpan.metapackager.sqlite.
 
 1.11  2026-02-20T12:52:19
