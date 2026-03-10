@@ -29,8 +29,6 @@ sub export_tree
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
-	$self -> logger -> info('Exporting the wiki as a JSTree. include_metapackager: ' . $self -> include_packages);
-
 	# Populate the body.
 
 	my(@list)	= '<ul>';
@@ -170,8 +168,8 @@ sub format_text
 
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
 		$node_type{topic}	= $$pad{topic_names}{$token}	? true : false;
-		$node_type{known}	= $$pad{package_names}{$token}	? true : false;
-		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{topic});
+		$node_type{known}	= $$pad{packages}{$token}		? true : false;
+		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{known} || $node_type{topic});
 
 		# Some names might be acronyms & module names & topic names.
 		# Example: RSS.

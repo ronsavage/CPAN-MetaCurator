@@ -136,12 +136,12 @@ sub build_pad
 	{
 		my($table_name) = $self -> read_metapackager_table($pad);
 
-		$self -> logger -> debug("Including metapackager table 'packages'");
-		$self -> logger -> debug("Size of cpan.metapackager.sqlite table '$table_name': $$pad{count}{$table_name}");
+		$self -> logger -> info("Including metapackager table 'packages'");
+		$self -> logger -> info("Size of cpan.metapackager.sqlite table '$table_name': $$pad{count}{$table_name}");
 	}
 	else
 	{
-		$self -> logger -> debug("Excluding metapackager table 'packages'");
+		$self -> logger -> info("Excluding metapackager table 'packages'");
 	}
 
 	# Modules.
