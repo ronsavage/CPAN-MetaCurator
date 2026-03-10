@@ -317,6 +317,8 @@ sub read_metapackager_table
 	$$pad{package_names}				= {};
 	$$pad{package_names}{$$_{name} }	= $$_{id} for (@{$$set});
 
+	$self -> metapackager_dbh -> disconnect;
+
 	return $table_name;
 
 } # End of read_metapackager_table.
