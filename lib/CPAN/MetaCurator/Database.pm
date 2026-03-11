@@ -1,7 +1,6 @@
 package CPAN::MetaCurator::Database;
 
 use 5.36.0;
-use constant html_id_offset => 10000;
 use parent 'CPAN::MetaCurator::Config';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
@@ -162,7 +161,7 @@ sub build_pad
 	{
 		$$pad{count}{topic}++;
 
-		$$pad{topic_html_ids}{$$_{title} }	= html_id_offset * $$_{id};
+		$$pad{topic_html_ids}{$$_{title} }	= $$pad{html_id_offset} * $$_{id};
 		$$pad{topic_names}{$$_{title} }		= $$_{id};
 	}
 

@@ -42,8 +42,6 @@ my(%opts)					=
 	'output_path=s'			=> \$options{output_path},
 );
 
-say "include_packages: $options{include_packages}";
-
 GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
 
 if ($options{help} == 1)
