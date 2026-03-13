@@ -34,7 +34,6 @@ my(%params) =
 	{
 		'boolean'					=> 0.46,
 		'Config::Tiny'				=> 2.30,
-		'constant'					=> 1.33,
 		'DBI'						=> 1.645,
 		'DBIx::Admin::CreateTable'	=> 2.11,
 		'DBIx::Simple'				=> 1.37,
