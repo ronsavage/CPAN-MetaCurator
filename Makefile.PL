@@ -68,7 +68,9 @@ my(%params) =
 	},
 	TEST_REQUIRES =>
 	{
-		'Test::More' => 1.001002,
+		'Test::CPAN::Changes'			=> 0.500005,
+		'Test::Changes::Strict::Simple'	=> 0.01,
+		'Test::More'					=> 1.001002,
 	},
 	VERSION_FROM => 'lib/CPAN/MetaCurator.pm',
 );
