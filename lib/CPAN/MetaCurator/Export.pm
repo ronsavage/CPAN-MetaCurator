@@ -15,6 +15,8 @@ use Moo;
 
 use File::Slurper 'read_lines';
 
+our %seen;
+
 our $VERSION = '1.13';
 
 # -----------------------------------------------
@@ -186,7 +188,12 @@ sub format_text
 		{
 			$$pad{count}{known}++;
 
-			$self -> insert_hashref('modules', {name => $$topic{title} });
+			if (! $seen{$$topic{title} })
+			{
+				$self -> insert_hashref('modules', {name => $$topic{title} });
+
+				$seen{$$topic{title} } = true;
+			}
 		}
 		elsif ($node_type{unknown})
 		{
