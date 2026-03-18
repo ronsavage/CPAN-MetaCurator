@@ -190,7 +190,7 @@ sub format_text
 
 			if (! $seen{$$topic{title} })
 			{
-				$self -> insert_hashref('modules', {name => $$topic{title} });
+				$self -> insert_hashref('modules', {name => $token});
 
 				$seen{$$topic{title} } = true;
 			}
