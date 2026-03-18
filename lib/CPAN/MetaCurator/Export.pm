@@ -185,6 +185,8 @@ sub format_text
 		elsif ($node_type{known})
 		{
 			$$pad{count}{known}++;
+
+			$self -> insert_hashref('modules', {name => $$topic{title} });
 		}
 		elsif ($node_type{unknown})
 		{

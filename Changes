@@ -1,7 +1,8 @@
 Revision history for perl module CPAN::MetaCurator
 
 1.13  2026-03-11
-    - Finally start parsing the FAQ para. This may be easy.
+    - Clean up counting of nodes
+    - Write module names to the 'modules' table if they appear in Perl.Wiki
 
 1.12  2026-03-09
     - Add code to optionally read cpan.metapackager.sqlite as shipped with CPAN::MetaPackager.
