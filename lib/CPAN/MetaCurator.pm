@@ -31,6 +31,7 @@ C: Rebuild Perl Wiki Tree:
 Note: Optionally use sqlite database (15 Mb) from CPAN::MetaPackager
 1. Set env var INCLUDE_PACKAGES=1 if you have /tmp/cpan.metapackager.sqlite available & to 0 (default) otherwise
 2: Run scripts/build.db.sh to import tiddlers.json file into database data/cpan.metacurator.sqlite
+	 (takes 15+ hours on my Levono M70Q 'Tiny' desktop)
 3: Run scripts/export.tree.sh to export CPAN::MetaCurator database to html/cpan.metacurator.tree.html
 4: Run script to backup new files: bu5.sh savage.net.au
 
