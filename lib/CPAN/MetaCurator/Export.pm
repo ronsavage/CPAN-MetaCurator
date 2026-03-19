@@ -187,13 +187,6 @@ sub format_text
 		elsif ($node_type{known})
 		{
 			$$pad{count}{known}++;
-
-			if (! $seen{$$topic{title} })
-			{
-				$self -> insert_hashref('modules', {name => $token});
-
-				$seen{$$topic{title} } = true;
-			}
 		}
 		elsif ($node_type{unknown})
 		{
@@ -219,6 +212,13 @@ sub format_text
 		else
 		{
 			$self -> logger -> warn("Undefined token @ $line");
+		}
+
+		if (! $seen{$token})
+		{
+			$self -> insert_hashref('modules', {name => $token});
+
+			$seen{$token} = true;
 		}
 
 =pod
