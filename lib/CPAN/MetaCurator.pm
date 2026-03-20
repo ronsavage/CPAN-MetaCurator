@@ -10,6 +10,10 @@ our $VERSION = '1.13';
 
 =pod
 
+=head1 NAME
+
+CPAN::MetaPackager - Manage the cpan.metapackager.sqlite database
+
 =head1 How to convert a Perl.Wiki.html into a jsTree
 
 Note: My web host and I use case-sensitive file systems.
