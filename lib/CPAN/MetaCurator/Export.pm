@@ -17,7 +17,7 @@ use File::Slurper 'read_lines';
 
 our %seen;
 
-our $VERSION = '1.14';
+our $VERSION = '1.13';
 
 # -----------------------------------------------
 
@@ -204,7 +204,7 @@ sub format_text
 		}
 		elsif (defined $lines[$index + 1])
 		{
-			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $line[$index]</a>";
+			$$item{html}	= "<a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $lines[$index]</a>";
 			$$item{text}	= "";
 
 			push @items, $item;
