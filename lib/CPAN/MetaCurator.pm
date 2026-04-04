@@ -12,7 +12,7 @@ our $VERSION = '1.14';
 
 =head1 NAME
 
-CPAN::MetaPackager - Manage the cpan.metapackager.sqlite database
+CPAN::MetaCurator - Manage the cpan.metacurator.sqlite database
 
 =head1 How to convert a Perl.Wiki.html into a jsTree
 
