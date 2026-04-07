@@ -1,5 +1,8 @@
 Revision history for perl module CPAN::MetaCurator
 
+1.16  2026-04-06
+    - Start adding buttons on each line of the tree, to support popups
+
 1.15  2026-04-06
     - Re-build db with newest data/tiddlers.json. Export as tree
 
