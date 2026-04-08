@@ -204,7 +204,7 @@ sub format_text
 		}
 		elsif (defined $lines[$index + 1])
 		{
-			$$item{html}	= "<span><a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $lines[$index]</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span>Hints</span>";
+			$$item{html}	= "<span><a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $lines[$index]</a></span><span>&nbsp;&nbsp;</span><span>Hints</span>";
 			$$item{text}	= "";
 
 			push @items, $item;
