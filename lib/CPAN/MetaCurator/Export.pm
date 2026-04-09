@@ -120,6 +120,7 @@ sub format_text
 	my($index)							= 0;
 	my($token_re)						= qr/^o/o;
 
+	my($button);
 	my(@extras);
 	my($finished);
 	my($href, @hover);
@@ -221,11 +222,14 @@ sub format_text
 			#
 			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
 
+			$button	= '';
 			@extras	= ();
 			@extras = map{$lines[$_]} ($index + 2 .. $#lines);
 
 			if ($#extras >= 0)
 			{
+				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
+
 				$self -> logger -> debug("Token: $lines[$index]. Extras:");
 				$self -> logger -> debug("\t$_") for @items;
 
@@ -234,8 +238,7 @@ sub format_text
 				}
 			}
 
-			$$item{html}	= "<span><a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $lines[$index]</a></span><span>.</span>" .
-								"<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button><span>&nbsp;&nbsp;</span>";
+			$$item{html}	= "<span><a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $lines[$index]</a></span><span>.</span>$button";
 			$$item{text}	= "";
 
 			push @items, $item;
