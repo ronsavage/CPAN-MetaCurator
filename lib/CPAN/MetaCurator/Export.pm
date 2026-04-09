@@ -120,6 +120,7 @@ sub format_text
 	my($index)							= 0;
 	my($token_re)						= qr/^o/o;
 
+	my(@extras);
 	my($finished);
 	my($href, @hover);
 	my($item, @items);
@@ -204,6 +205,35 @@ sub format_text
 		}
 		elsif (defined $lines[$index + 1])
 		{
+			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
+			#
+			# 3 line entry:
+			# o DKIM:
+			# - DomainKeys Identified Mail
+			# - https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail
+			#
+			# 3+ line entry:
+			# o DMARC:
+			# - Domain-based Message Authentication, Reporting, and Conformance
+			# - https://en.wikipedia.org/wiki/DMARC
+			# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
+			# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
+			#
+			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
+
+			@extras	= ();
+			@extras = map{$lines[$i]} ($index + 2 .. $#lines);
+
+			if ($#extras >= 0)
+			{
+				$self -> logger -> debug("Token: $lines[$index]. Extras:");
+				$self -> logger -> debug("\t$_") for @items;
+
+				for (@items)
+				{
+				}
+			}
+
 			$$item{html}	= "<span><a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $lines[$index]</a></span><span>.</span>" .
 								"<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button><span>&nbsp;&nbsp;</span>";
 			$$item{text}	= "";
