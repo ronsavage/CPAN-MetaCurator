@@ -222,7 +222,7 @@ sub format_text
 			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
 
 			@extras	= ();
-			@extras = map{$lines[$i]} ($index + 2 .. $#lines);
+			@extras = map{$lines[$_]} ($index + 2 .. $#lines);
 
 			if ($#extras >= 0)
 			{
