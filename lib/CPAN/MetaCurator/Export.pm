@@ -117,7 +117,7 @@ sub format_text
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
 	my(@lines)							= split(/\n/, $$topic{text});
-	@lines								= grep{length} map{s/^\s+//; s/\s+$//; s/\s+/\s/g; s/\s://; $_} @lines;
+	@lines								= grep{length} map{s/^\s+//; s/\s+$//; s/\s+/\s/g; s/\s+://; $_} @lines;
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
 
@@ -203,7 +203,7 @@ sub format_text
 			$button		= '';
 			@extras		= ();
 
-			while ( ($index <= $#lines) && ($lines[$last_index] !~ /^o/) )
+			while ( ($index <= $#lines) && ($lines[$index] !~ /^o/) )
 			{
 				push @extras, $lines[$index++];
 			}
