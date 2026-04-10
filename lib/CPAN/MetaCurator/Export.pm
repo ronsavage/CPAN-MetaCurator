@@ -141,6 +141,8 @@ sub format_text
 
 		$index++;
 
+		$self -> logger -> debug("Line 1 of 2: >$line<");
+
 		next if ($line =~ /o See also/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
 
@@ -198,6 +200,8 @@ sub format_text
 			# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
 			#
 			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
+
+			$self -> logger -> debug("Line 2 of 2: >$line<");
 
 			$button			= '';
 			@extras			= ();
