@@ -122,6 +122,7 @@ sub format_text
 	my($index)							= 0;
 
 	my($button);
+	my($description);
 	my(@extras);
 	my($href, @hover);
 	my($item, @items);
@@ -212,6 +213,12 @@ sub format_text
 			$self -> logger -> error("Token: $token. Missing -text"), next if ($extras[0] !~ /^-/);
 			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($extras[1] !~ /^-/) );
 
+			$description	= shift @extras;
+			$href			= shift @extras;
+
+			$self -> logger -> error("Token: $token. Missing description"),	next if (! defined($description) );
+			$self -> logger -> error("Token: $token. Missing href"), 		next if (! defined($href) );
+
 			if ($#extras >= 0)
 			{
 				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
@@ -220,7 +227,7 @@ sub format_text
 				$self -> logger -> debug("\t$_") for (@extras);
 			}
 
-			$$item{html}	= "<span><a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $lines[$index]</a></span><span>.</span>$button";
+			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button";
 			$$item{text}	= "";
 
 			push @items, $item;
