@@ -208,7 +208,7 @@ sub format_text
 
 			@extras = map{$lines[$_]} ($first_index .. $last_index);
 
-			if ($#extras >= 0)
+			if ($#extras > 0)
 			{
 				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
 
