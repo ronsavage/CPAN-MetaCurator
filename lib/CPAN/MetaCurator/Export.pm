@@ -210,7 +210,7 @@ sub format_text
 			$first_index	= $index + 2;
 			$last_index		= $first_index;
 
-			push @extras, $lines[$last_index++] while (defined($lines[$last_index]) && ($lines[$last_index] != /^o/) );
+			push @extras, $lines[$last_index++] while (defined($lines[$last_index]) && ($lines[$last_index] !~ /^o/) );
 
 			@extras = map{$lines[$_]} ($first_index .. $last_index);
 
