@@ -104,6 +104,14 @@ has pad =>
 	required	=> 0,
 );
 
+has visual_break =>
+(
+	default		=> sub{return '-' x 50},
+	is			=> 'rw',
+	isa			=> HashRef,
+	required	=> 0,
+);
+
 has time_option =>
 (
 	default		=> sub{return ''},

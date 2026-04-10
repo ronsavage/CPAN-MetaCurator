@@ -65,6 +65,8 @@ sub export_tree
 
 		push @list, '</ul>';
 		push @list, '</li>';
+
+		$self -> logger -> info($self -> visual_break);
 	}
 
 	push @list, '</ul>', '</li>', '</ul>';
@@ -115,7 +117,7 @@ sub format_text
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
 	my(@lines)							= grep{length} split(/\n/, $$topic{text});
-	@lines								= map{s/\s+$//; s/^-\s//; s/:$//; $_} @lines;
+	@lines								= map{s/^\s+|\s+$//g; s/^-\s//; s/:$//; $_} @lines;
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
 
@@ -132,13 +134,6 @@ sub format_text
 
 	$special_case{pre_pre}	= false;
 	$special_case{see_also}	= false;
-
-	# Remove leading & training spaces & newlines.
-
-	for my $i (0 .. $#lines)
-	{
-		$lines[$i] =~ s/^\s+|\s+$//mg;
-	}
 
 	while ($index <= $#lines)
 	{
