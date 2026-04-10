@@ -140,6 +140,16 @@ sub format_text
 		$line = $lines[$index];
 
 		# Skip <pre>...</pre>.
+		# Do not stockpile ATM.
+
+		if ($line =~ /<pre>/)
+		{
+			$index++ while ($lines[$index] !~ !</pre>!);
+
+			$index++;
+
+			next;
+		}
 
 		$index++;
 
