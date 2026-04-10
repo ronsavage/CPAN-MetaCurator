@@ -201,12 +201,12 @@ sub format_text
 			#
 			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
 
-			$self -> logger -> debug("Line 2 of 2: >$line<");
-
 			$button			= '';
 			@extras			= ();
 			$first_index	= $index + 2;
 			$last_index		= $first_index;
+
+			$self -> logger -> debug("Line 2 of 2: >$line<. Size of extras: $#extras");
 
 			while (defined($lines[$last_index]) && ($lines[$last_index] !~ /^o/) )
 			{
@@ -215,7 +215,7 @@ sub format_text
 
 			@extras = map{$lines[$_]} ($first_index .. $last_index);
 
-			if ($#extras > 0)
+			if ($#extras >= 0)
 			{
 				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
 
