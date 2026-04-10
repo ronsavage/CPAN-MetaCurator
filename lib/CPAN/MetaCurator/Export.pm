@@ -236,7 +236,7 @@ sub format_text
 				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
 
 				$self -> logger -> debug("Token: $lines[$index]. Extras:");
-				$self -> logger -> debug("\t$_") for @extras;
+				$self -> logger -> debug("\t$_") for (@extras);
 
 				for (@extras)
 				{
