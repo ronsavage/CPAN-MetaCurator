@@ -153,7 +153,11 @@ sub format_text
 
 		$index++;
 
-		$self -> logger -> debug("Line 1 of 2: >$line<");
+		# Handle the case of PdfStuff where the </pre> is the last line...
+
+		last if ($index > $#lines);
+
+		$self -> logger -> debug("Line $index: >$line<");
 
 		next if ($line =~ /^o See also|^o builtins/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
@@ -221,7 +225,12 @@ sub format_text
 				push @extras, $lines[$index++];
 			}
 
-			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 2);
+			if ($#extras < 2)
+			{
+				$self -> logger -> error("Token: $token. Extra: $_ >$extras[$_]<") for (0 .. $#extras);
+			}
+
+			#$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 2);
 			$self -> logger -> error("Token: $token. Missing -text"), next if ($extras[0] !~ /^-/);
 			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($extras[1] !~ /^-/) );
 
