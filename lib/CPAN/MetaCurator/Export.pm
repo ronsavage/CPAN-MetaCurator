@@ -117,7 +117,7 @@ sub format_text
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
 	my(@lines)							= split(/\n/, $$topic{text});
-	@lines								= grep{length} map{s/^\s+//; s/\s+$//; s/\s+/\s/g; s/\s+://; $_} @lines;
+	@lines								= grep{length} map{s/^\s+//; s/\s+$//; s/\s+/\s{1,1}/g; s/\s+://; $_} @lines;
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
 
@@ -209,8 +209,8 @@ sub format_text
 			}
 
 			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 2);
-			$self -> logger -> error("Token: $token. Missing -text"), next if ($#extras[0] !~ /^-/);
-			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($#extras[1] !~ /^-/) );
+			$self -> logger -> error("Token: $token. Missing -text"), next if ($extras[0] !~ /^-/);
+			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($extras[1] !~ /^-/) );
 
 			if ($#extras >= 0)
 			{
