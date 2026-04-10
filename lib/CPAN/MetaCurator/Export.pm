@@ -144,7 +144,7 @@ sub format_text
 
 		if ($line =~ /<pre>/)
 		{
-			$index++ while ($lines[$index] !~ !</pre>!);
+			$index++ while ($lines[$index] !~ /<\/pre>/);
 
 			$index++;
 
