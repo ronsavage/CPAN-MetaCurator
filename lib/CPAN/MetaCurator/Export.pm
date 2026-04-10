@@ -122,10 +122,10 @@ sub format_text
 
 	my($button);
 	my(@extras);
-	my($finished);
+	my($first_index);
 	my($href, @hover);
 	my($item, @items);
-	my($line);
+	my($last_index, $line);
 	my(%node_type);
 	my(@pre_pre);
 	my(%special_case, @see_also);
@@ -222,9 +222,14 @@ sub format_text
 			#
 			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
 
-			$button	= '';
-			@extras	= ();
-			@extras = map{$lines[$_]} ($index + 2 .. $#lines);
+			$button			= '';
+			@extras			= ();
+			$first_index	= $index + 2;
+			$last_index		= $first_index;
+
+			push @extras, $lines[$last_index++] while (defined($lines[$last_index]) && ($lines[$last_index]) < $#lines && ($lines[$last_index] ne '') );
+
+			@extras = map{$lines[$_]} ($first_index .. $last_index);
 
 			if ($#extras >= 0)
 			{
