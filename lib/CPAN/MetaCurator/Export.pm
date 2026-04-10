@@ -139,11 +139,13 @@ sub format_text
 	{
 		$line = $lines[$index];
 
+		# Skip <pre>...</pre>.
+
 		$index++;
 
 		$self -> logger -> debug("Line 1 of 2: >$line<");
 
-		next if ($line =~ /^o See also/); # For the moment.
+		next if ($line =~ /^o See also|^o builtins/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
 
 		$token	= $1 || '';
