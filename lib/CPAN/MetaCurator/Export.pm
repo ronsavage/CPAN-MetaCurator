@@ -116,8 +116,8 @@ sub export_modules_table
 sub format_text
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
-	my(@lines)							= grep{length} split(/\n/, $$topic{text});
-	@lines								= map{s/^\s+|\s+$//g; s/^-\s//; s/:$//; $_} @lines;
+	my(@lines)							= split(/\n/, $$topic{text});
+	@lines								= grep{length} map{s/^\s+|\s+$//g; s/^-\s//; s/:$//; $_} @lines;
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
 
@@ -141,7 +141,6 @@ sub format_text
 
 		$index++;
 
-		next if (! $line);
 		next if ($line =~ /o See also/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
 
