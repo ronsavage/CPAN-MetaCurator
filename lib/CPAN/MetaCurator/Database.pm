@@ -108,7 +108,7 @@ has visual_break =>
 (
 	default		=> sub{return '-' x 50},
 	is			=> 'rw',
-	isa			=> HashRef,
+	isa			=> Str,
 	required	=> 0,
 );
 
