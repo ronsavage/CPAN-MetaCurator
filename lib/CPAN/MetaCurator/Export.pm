@@ -117,16 +117,15 @@ sub format_text
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
 	my(@lines)							= split(/\n/, $$topic{text});
-	@lines								= grep{length} map{s/^\s+|\s+$//g; s/^-\s//; s/:$//; $_} @lines;
+	@lines								= grep{length} map{s/^\s+//; s/\s+/\s/g; s/\s?:\s?$//; $_} @lines;
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
 
 	my($button);
 	my(@extras);
-	my($first_index);
 	my($href, @hover);
 	my($item, @items);
-	my($last_index, $line);
+	my($line);
 	my(%node_type);
 	my(@pre_pre);
 	my(%special_case, @see_also);
@@ -143,7 +142,7 @@ sub format_text
 
 		$self -> logger -> debug("Line 1 of 2: >$line<");
 
-		next if ($line =~ /o See also/); # For the moment.
+		next if ($line =~ /^o See also/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
 
 		$token	= $1 || '';
@@ -183,35 +182,35 @@ sub format_text
 
 			push @items, $item;
 		}
-		elsif (defined $lines[$index + 1])
+		else
 		{
 			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
 			#
 			# 3 line entry:
 			# o DKIM:
-			# - DomainKeys Identified Mail
+			# - DomainKeys Identified Mail <- $index
 			# - https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail
 			#
 			# 3+ line entry:
 			# o DMARC:
-			# - Domain-based Message Authentication, Reporting, and Conformance
+			# - Domain-based Message Authentication, Reporting, and Conformance <- $index
 			# - https://en.wikipedia.org/wiki/DMARC
 			# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
 			# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
 			#
 			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
 
-			$button			= '';
-			@extras			= ();
-			$first_index	= $index + 2;
-			$last_index		= $first_index;
+			$button		= '';
+			@extras		= ();
 
-			while (defined($lines[$last_index]) && ($lines[$last_index] !~ /^o/) )
+			while ( ($index <= $#lines) && ($lines[$last_index] !~ /^o/) )
 			{
-				push @extras, $lines[$last_index++];
+				push @extras, $lines[$index++];
 			}
 
-			@extras = map{$lines[$_]} ($first_index .. $last_index);
+			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 2);
+			$self -> logger -> error("Token: $token. Missing -text"), next if ($#extras[0] !~ /^-/);
+			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($#extras[1] !~ /^-/) );
 
 			if ($#extras >= 0)
 			{
@@ -219,21 +218,12 @@ sub format_text
 
 				$self -> logger -> debug("Token: $token. Extras:");
 				$self -> logger -> debug("\t$_") for (@extras);
-
-				for $_ (0 .. $#extras)
-				{
-					say "Token: $token. index: $_. extras[] ! defined" if (! defined($extras[$_]) );
-				}
 			}
 
 			$$item{html}	= "<span><a href = '@{[$lines[$index + 1]]}' target = '_blank'>$token - $lines[$index]</a></span><span>.</span>$button";
 			$$item{text}	= "";
 
 			push @items, $item;
-		}
-		else
-		{
-			$self -> logger -> warn("Undefined token @ $line");
 		}
 
 		if (! $seen{$token})
