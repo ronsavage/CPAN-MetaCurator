@@ -206,8 +206,6 @@ sub format_text
 			$first_index	= $index + 2;
 			$last_index		= $first_index;
 
-			$self -> logger -> debug("Line 2 of 2: >$line<. Size of extras: $#extras");
-
 			while (defined($lines[$last_index]) && ($lines[$last_index] !~ /^o/) )
 			{
 				push @extras, $lines[$last_index++];
@@ -222,8 +220,9 @@ sub format_text
 				$self -> logger -> debug("Token: $token. Extras:");
 				$self -> logger -> debug("\t$_") for (@extras);
 
-				for (@extras)
+				for $_ (0 .. $#extras)
 				{
+					say "Token: $token. index: $_. extras[] ! defined" if (! defined($extras[$_]) );
 				}
 			}
 
