@@ -227,10 +227,10 @@ sub format_text
 
 			if ($#extras < 2)
 			{
-				$self -> logger -> error("Token: $token. Extra: $_ >$extras[$_]<") for (0 .. $#extras);
+				$self -> logger -> debug("Token: $token. Extra: $_ >$extras[$_]<") for (0 .. $#extras);
 			}
 
-			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 2);
+			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 1);
 			$self -> logger -> error("Token: $token. Missing -text"), next if ($extras[0] !~ /^-/);
 			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($extras[1] !~ /^-/) );
 
