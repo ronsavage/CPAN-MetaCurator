@@ -118,7 +118,6 @@ sub format_text
 	@lines								= map{s/\s+$//; s/^-\s//; s/:$//; $_} @lines;
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
-	my($token_re)						= qr/^o/o;
 
 	my($button);
 	my(@extras);
@@ -134,6 +133,13 @@ sub format_text
 	$special_case{pre_pre}	= false;
 	$special_case{see_also}	= false;
 
+	# Remove leading & training spaces & newlines.
+
+	for my $i (0 .. $#lines)
+	{
+		$lines[$i] =~ s/^\s+|\s+$//mg;
+	}
+
 	while ($index <= $#lines)
 	{
 		$line = $lines[$index];
@@ -142,33 +148,10 @@ sub format_text
 
 		next if (! $line);
 		next if ($line =~ /o See also/); # For the moment.
-		next if ($line !~ /^o (.+)/);
+		next if ($line !~ /^o (.+):?/);
 
 		$token	= $1 || '';
 		$item	= {href => '', id => ++$line_id, text => ''};
-
-=pod
-		if ($line =~ /<pre>/)
-		{
-			$special_case{pre_pre} = true;
-
-			next;
-		}
-		elsif ($special_case{pre_pre})
-		{
-			if ($line =~ /<\/pre>/)
-			{
-				$special_case{pre_pre} = false;
-
-				$$item{html}	= '<button id="trigger">Hover over me</button>';
-				$$item{text}	= $token;
-			}
-			else
-			{
-				push @pre_pre, $line;
-			}
-		}
-=cut
 
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
 		$node_type{topic}	= $$pad{topic_names}{$token}	? true : false;
@@ -235,7 +218,7 @@ sub format_text
 			{
 				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
 
-				$self -> logger -> debug("Token: $lines[$index]. Extras:");
+				$self -> logger -> debug("Token: $token. Extras:");
 				$self -> logger -> debug("\t$_") for (@extras);
 
 				for (@extras)
