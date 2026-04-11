@@ -119,7 +119,7 @@ SQL
 
 # --------------------------------------------------
 # Note: The columns are not in alphabetical order
-# so that they display prettily in SQLite.
+# so that they display prettily in sqlite3.
 # create table topics(id integer primary key autoincrement, parent_id integer references topics(id),
 #	title text not null, text text not null, timestamp text not null default current_timestamp);
 
@@ -135,7 +135,7 @@ create table $table_name
 (
 id			$primary_key,
 parent_id	integer references topics(id),
-name		text not null,
+title		text not null,
 text		text not null,
 timestamp	text $time_option not null default current_timestamp
 ) strict $engine

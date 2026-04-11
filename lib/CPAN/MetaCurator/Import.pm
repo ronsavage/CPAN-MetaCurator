@@ -160,30 +160,27 @@ sub populate_topics_table
 	my($regexp) = qr/($special_para_names)/o;
 
 	my($id);
-	my($name);
-	my($text);
+	my($text, $title);
 
 	for my $index (0 .. $#$data)
 	{
-		# Node keys: created modified name text.
-
-		$name	= $$data[$index]{name};
 		$text	= $$data[$index]{text};
+		$title	= $$data[$index]{title};
 
-		if ($name =~ $regexp)
+		if ($title =~ $regexp)
 		{
 			$self -> logger -> warn("Skipping paragraph: $1");
 
 			next;
 		}
 
-		$self -> logger -> info("populate_topics_table(). Missing name @ line: $index. name: $name"), next if (! defined $name);
-		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. text: $text"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
+		$self -> logger -> info("populate_topics_table(). Missing title @ line: $index. name: $title"),	next if (! defined $title);
+		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. text: $text"),	next if ($text !~ m/^\"\"\"\no (.+)$/s);
 
 		$$record{parent_id}	= $root_id;
-		$$record{name}		= $name;
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
 		$$record{text}		= $text;
+		$$record{title}		= $title;
 		$id					= $self -> insert_hashref($table_name, $record);
 	}
 
