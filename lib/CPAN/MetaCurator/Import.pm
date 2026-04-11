@@ -140,7 +140,7 @@ sub populate_topics_table
 {
 	my($self)		= @_;
 	my($data)		= $self -> read_tiddlers_file;
-	my($record)		= {parent_id => 1, text => 'Root', name => 'MetaCurator'}; # Parent is self.
+	my($record)		= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
 	my($table_name)	= 'topics';
 	my($root_id)	= $self -> insert_hashref($table_name, $record);
 
@@ -181,7 +181,6 @@ sub populate_topics_table
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
 		$$record{text}		= $text;
 		$$record{title}		= $title;
-		say Dumper($record);
 		$id					= $self -> insert_hashref($table_name, $record);
 	}
 
