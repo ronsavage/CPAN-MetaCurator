@@ -135,7 +135,7 @@ create table $table_name
 (
 id			$primary_key,
 parent_id	integer references topics(id),
-title		text not null,
+name		text not null,
 text		text not null,
 timestamp	text $time_option not null default current_timestamp
 ) strict $engine

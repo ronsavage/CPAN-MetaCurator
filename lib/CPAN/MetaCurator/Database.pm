@@ -169,8 +169,8 @@ sub build_pad
 	{
 		$$pad{count}{topic}++;
 
-		$$pad{topic_html_ids}{$$_{title} }	= $$pad{html_id_offset} * $$_{id};
-		$$pad{topic_names}{$$_{title} }		= $$_{id};
+		$$pad{topic_html_ids}{$$_{name} }	= $$pad{html_id_offset} * $$_{id};
+		$$pad{topic_names}{$$_{name} }		= $$_{id};
 	}
 
 	# Dates.
