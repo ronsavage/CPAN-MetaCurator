@@ -181,6 +181,7 @@ sub populate_topics_table
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
 		$$record{text}		= $text;
 		$$record{title}		= $title;
+		say Dumper($record);
 		$id					= $self -> insert_hashref($table_name, $record);
 	}
 
