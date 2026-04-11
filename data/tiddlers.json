@@ -848,10 +848,10 @@
         "created": "20250520231000900"
     },
     {
-        "text": "\"\"\"\n- See also:\n- ApacheStuff\n- [[HTTPHandling]]\n\no Net::API::REST:\n- Framework for RESTful APIs\n- https://metacpan.org/dist/Net-API-REST\n\no Restish::Client:\n- A RESTish client...in perl!\n- https://metacpan.org/dist/Restish-Client\n",
+        "created": "20240210001013962",
+        "text": "\"\"\"\no See also:\n- ApacheStuff\n- [[HTTPHandling]]\n\no Net::API::REST:\n- Framework for RESTful APIs\n- https://metacpan.org/dist/Net-API-REST\n\no Restish::Client:\n- A RESTish client...in perl!\n- https://metacpan.org/dist/Restish-Client\n",
         "title": "RestfulInterface",
-        "modified": "20260320220531539",
-        "created": "20240210001013962"
+        "modified": "20260411032832716"
     },
     {
         "created": "20260325063039182",
