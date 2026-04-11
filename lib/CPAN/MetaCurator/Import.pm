@@ -167,8 +167,6 @@ sub populate_topics_table
 		$text	= $$data[$index]{text};
 		$title	= $$data[$index]{title};
 
-		$self -> logger -> debug("populate_topics_table(). Processing title: $title");
-
 		if ($title =~ $regexp)
 		{
 			$self -> logger -> warn("Skipping paragraph: $1");
