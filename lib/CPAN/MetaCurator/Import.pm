@@ -140,7 +140,7 @@ sub populate_topics_table
 {
 	my($self)		= @_;
 	my($data)		= $self -> read_tiddlers_file;
-	my($record)		= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
+	my($record)		= {parent_id => 1, text => 'Root', name => 'MetaCurator'}; # Parent is self.
 	my($table_name)	= 'topics';
 	my($root_id)	= $self -> insert_hashref($table_name, $record);
 
@@ -160,14 +160,15 @@ sub populate_topics_table
 	my($regexp) = qr/($special_para_names)/o;
 
 	my($id);
-	my($text, $title);
+	my($name);
+	my($text);
 
 	for my $index (0 .. $#$data)
 	{
-		# Node keys: created modified text title.
+		# Node keys: created modified name text.
 
+		$name	= $$data[$index]{name};
 		$text	= $$data[$index]{text};
-		$title	= $$data[$index]{title};
 
 		if ($title =~ $regexp)
 		{
@@ -176,11 +177,11 @@ sub populate_topics_table
 			next;
 		}
 
-		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. title: $title"), next if (! defined $text);
-		$self -> logger -> info("populate_topics_table(). Missing prefix @ line: $index. title: $title"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
+		$self -> logger -> info("populate_topics_table(). Missing name @ line: $index. name: $name"), next if (! defined $name);
+		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. text: $text"), next if ($text !~ m/^\"\"\"\no (.+)$/s);
 
 		$$record{parent_id}	= $root_id;
-		$$record{title}		= $title;
+		$$record{name}		= $name;
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
 		$$record{text}		= $text;
 		$id					= $self -> insert_hashref($table_name, $record);
