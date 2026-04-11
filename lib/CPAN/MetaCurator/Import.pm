@@ -170,7 +170,7 @@ sub populate_topics_table
 		$name	= $$data[$index]{name};
 		$text	= $$data[$index]{text};
 
-		if ($title =~ $regexp)
+		if ($name =~ $regexp)
 		{
 			$self -> logger -> warn("Skipping paragraph: $1");
 
