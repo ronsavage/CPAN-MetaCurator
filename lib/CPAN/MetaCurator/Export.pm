@@ -139,7 +139,7 @@ sub format_text
 	{
 		$line = $lines[$index];
 
-		$self -> logger -> debug("Line $index: >$line<");
+		$self -> logger -> debug("1 Line $index: >$line<");
 
 		# Skip <pre>...</pre>.
 		# Do not stockpile ATM.
@@ -150,6 +150,7 @@ sub format_text
 
 			if ($lines[$index] =~ /<\/pre>/)
 			{
+				$self -> logger -> debug("2 \t(Loop) $index: >$lines[$index]<");
 			}
 			else
 			{
@@ -157,11 +158,11 @@ sub format_text
 				{
 					$index++;
 
-					$self -> logger -> debug("\t(Loop) $index: >$lines[$index]<");
+					$self -> logger -> debug("3 \t(Loop) $index: >$lines[$index]<");
 				} until ($lines[$index] =~ /<\/pre>/)
 			}
 
-			$self -> logger -> debug("\t(Loop) $index: >$lines[$index]<");
+			$self -> logger -> debug("4 \t(Loop) $index: >$lines[$index]<");
 
 			$index++;
 
