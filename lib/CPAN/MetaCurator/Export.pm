@@ -125,7 +125,7 @@ sub format_text
 	my($description);
 	my(@extras);
 	my($href, @hover);
-	my($item, @items);
+	my($inside_pre, $item, @items);
 	my($line);
 	my(%node_type);
 	my(@pre_pre);
@@ -139,18 +139,18 @@ sub format_text
 	{
 		$line = $lines[$index];
 
-		$self -> logger -> debug("1 Line $index: >$line<");
+		$self -> logger -> debug("Line $index: >$line<");
 
 		# Skip <pre>...</pre>.
 		# Do not stockpile ATM.
 
-		if ($line =~ /<pre>/)
-		{
-			# The <pre> & </pre> may be on the same line.
+		$inside_pre = true if ($line =~ /<pre>/);
 
-			if ($lines[$index] =~ /<\/pre>/)
+		if ($inside_pre)
+		{
+			if ($line ~= /<\/pre>/)
 			{
-				$self -> logger -> debug("2 \t(Loop) $index: >$lines[$index]<");
+				$inside_pre = false;
 			}
 			else
 			{
@@ -158,15 +158,12 @@ sub format_text
 				{
 					$index++;
 
-					$self -> logger -> debug("3 \t(Loop) $index: >$lines[$index]<");
-				} until ($lines[$index] =~ /<\/pre>/)
+					$line		= $lines[$index];
+					$inside_pre	= false if ($line =~ /<\/pre>/);
+
+					$self -> logger -> debug("Skip line $index: >$line<");
+				} until (! $inside_pre);
 			}
-
-			$self -> logger -> debug("4 \t(Loop) $index: >$lines[$index]<");
-
-			$index++;
-
-			next;
 		}
 
 		$index++;
@@ -174,8 +171,6 @@ sub format_text
 		# Handle the case of PdfStuff where the </pre> is the last line...
 
 		last if ($index > $#lines);
-
-		$self -> logger -> debug("5 \t$index: >$lines[$index]<");
 
 		next if ($line =~ /^o See also|^o builtins/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
@@ -262,8 +257,8 @@ sub format_text
 			{
 				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
 
-				$self -> logger -> debug("6 Token: $token. Extras:");
-				$self -> logger -> debug("6 \t$_") for (@extras);
+				$self -> logger -> debug("Token: $token. Extras:");
+				$self -> logger -> debug("\t$_") for (@extras);
 			}
 
 			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button";
