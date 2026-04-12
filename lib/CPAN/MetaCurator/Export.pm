@@ -157,9 +157,11 @@ sub format_text
 				{
 					$index++;
 
-					$self -> logger -> debug("\t$index: >$line<");
+					$self -> logger -> debug("\t(Loop) $index: >$lines[$index]<");
 				} until ($lines[$index] =~ /<\/pre>/)
 			}
+
+			$self -> logger -> debug("\t(Loop) $index: >$lines[$index]<");
 
 			$index++;
 
@@ -171,8 +173,6 @@ sub format_text
 		# Handle the case of PdfStuff where the </pre> is the last line...
 
 		last if ($index > $#lines);
-
-		$self -> logger -> debug("Line $index: >$line<");
 
 		next if ($line =~ /^o See also|^o builtins/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
