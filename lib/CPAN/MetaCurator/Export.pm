@@ -175,6 +175,8 @@ sub format_text
 
 		last if ($index > $#lines);
 
+		$self -> logger -> debug("5 \t$index: >$lines[$index]<");
+
 		next if ($line =~ /^o See also|^o builtins/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
 
@@ -260,8 +262,8 @@ sub format_text
 			{
 				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
 
-				$self -> logger -> debug("Token: $token. Extras:");
-				$self -> logger -> debug("\t$_") for (@extras);
+				$self -> logger -> debug("6 Token: $token. Extras:");
+				$self -> logger -> debug("6 \t$_") for (@extras);
 			}
 
 			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button";
