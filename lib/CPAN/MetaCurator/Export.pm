@@ -148,7 +148,7 @@ sub format_text
 
 		if ($inside_pre)
 		{
-			if ($line ~= /<\/pre>/)
+			if ($line =~ /<\/pre>/)
 			{
 				$inside_pre = false;
 			}
