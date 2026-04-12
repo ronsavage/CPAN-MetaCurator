@@ -125,32 +125,31 @@ sub format_text
 	my($description);
 	my(@extras);
 	my($href, @hover);
-	my($inside_pre, $item, @items);
+	my($item, @items);
 	my($line);
 	my(%node_type);
-	my(@pre_pre);
 	my(%special_case, @see_also);
 	my($token);
 
-	$special_case{pre_pre}	= false;
-	$special_case{see_also}	= false;
+	$special_case{inside_pre}	= false;
+	$special_case{see_also}		= false; #Not used yet.
 
 	while ($index <= $#lines)
 	{
 		$line = $lines[$index];
 
-		$self -> logger -> debug("Line $index: >$line<");
-
 		# Skip <pre>...</pre>.
 		# Do not stockpile ATM.
 
-		$inside_pre = true if ($line =~ /<pre>/);
+		$special_case{inside_pre} = true if ($line =~ /<pre>/);
 
-		if ($inside_pre)
+		$self -> logger -> debug("Line $index: inside_pre: $special_case{inside_pre}. line: >$line<");
+
+		if ($special_case{inside_pre})
 		{
 			if ($line =~ /<\/pre>/)
 			{
-				$inside_pre = false;
+				$special_case{inside_pre} = false;
 			}
 			else
 			{
@@ -158,10 +157,10 @@ sub format_text
 				{
 					$index++;
 
-					$line		= $lines[$index];
-					$inside_pre	= false if ($line =~ /<\/pre>/);
+					$line						= $lines[$index];
+					$special_case{inside_pre}	= false if ($line =~ /<\/pre>/);
 
-					$self -> logger -> debug("Skip line $index: >$line<");
+					$self -> logger -> debug("Line $index: inside_pre: $special_case{inside_pre}. line: >$line<");
 				} until (! $inside_pre);
 			}
 		}
