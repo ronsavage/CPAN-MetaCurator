@@ -160,7 +160,7 @@ sub format_text
 					$line						= $lines[$index];
 					$special_case{inside_pre}	= false if ($line =~ /<\/pre>/);
 
-					$self -> logger -> debug("Line $index: inside_pre: $special_case{inside_pre}. line: >$line<");
+					$self -> logger -> debug("Line $index: Skip. inside_pre: $special_case{inside_pre}. line: >$line<");
 				} until (! $special_case{inside_pre});
 			}
 		}
