@@ -139,12 +139,27 @@ sub format_text
 	{
 		$line = $lines[$index];
 
+		$self -> logger -> debug("Line $index: >$line<");
+
 		# Skip <pre>...</pre>.
 		# Do not stockpile ATM.
 
 		if ($line =~ /<pre>/)
 		{
-			$index++ while ($lines[$index] !~ /<\/pre>/);
+			# The <pre> & </pre> may be on the same line.
+
+			if ($lines[$index] =~ /<\/pre>/)
+			{
+			}
+			else
+			{
+				do
+				{
+					$index++;
+
+					$self -> logger -> debug("\t$index: >$line<");
+				} until ($lines[$index] =~ /<\/pre>/)
+			}
 
 			$index++;
 
