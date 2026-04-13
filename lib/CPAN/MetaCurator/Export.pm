@@ -160,7 +160,7 @@ sub format_text
 					$line						= $lines[$index];
 					$special_case{inside_pre}	= false if ($line =~ /<\/pre>/);
 
-					$self -> logger -> debug("Line $index: Skip. inside_pre: $special_case{inside_pre}. line: >$line<");
+					$self -> logger -> debug("Line $index: Skip. inside_pre: $special_case{inside_pre}. line: =>$line<=");
 				} until (! $special_case{inside_pre});
 			}
 		}
@@ -239,7 +239,7 @@ sub format_text
 
 			if ($#extras < 2)
 			{
-				$self -> logger -> debug("Token: $token. Extra: $_ >$extras[$_]<") for (0 .. $#extras);
+				$self -> logger -> debug("Token: $token. Expected: $_ >$extras[$_]<") for (0 .. $#extras);
 			}
 
 			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 1);
