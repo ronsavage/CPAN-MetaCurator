@@ -156,7 +156,7 @@ sub format_text
 					$line					= $lines[$index];
 					$special_case{see_also}	= false if ($line =~ /^o [Aa]/);
 
-					push @see_also = ($line) if ($special_case{see_also});
+					push @see_also, $line if ($special_case{see_also});
 
 					$self -> logger -> debug("Line $index: see_also: $special_case{see_also}. line: =>$line<=");
 			} until (! $special_case{see_also});
