@@ -165,7 +165,7 @@ sub format_text
 
 			$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[$see_also]</button>";
 
-			$self -> logger -> debug("Token: $token. $see_also:");
+			$self -> logger -> debug("Found $see_also:");
 			$self -> logger -> debug("\t$_") for (@see_also);
 		}
 
