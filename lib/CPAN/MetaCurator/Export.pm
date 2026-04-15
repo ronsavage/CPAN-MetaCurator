@@ -131,12 +131,41 @@ sub format_text
 	my(%special_case, @see_also);
 	my($token);
 
+	my($see_also)				= 'See also'; # Note case!
 	$special_case{inside_pre}	= false;
-	$special_case{see_also}		= false; #Not used yet.
+	$special_case{see_also}		= false;
 
 	while ($index <= $#lines)
 	{
 		$line = $lines[$index];
+
+		# Stockpile See also.
+
+		$special_case{see_also} = true if ($line =~ /^o S$see_also/);
+
+		$self -> logger -> debug("Line $index: see_also: $special_case{see_also}. line: =>$line<=");
+
+		if ($special_case{see_also})
+		{
+			@see_also = ($line);
+
+			do
+			{
+					$index++;
+
+					$line					= $lines[$index];
+					$special_case{see_also}	= false if ($line =~ /^o [Aa]/);
+
+					push @see_also = ($line) if ($special_case{see_also});
+
+					$self -> logger -> debug("Line $index: see_also: $special_case{see_also}. line: =>$line<=");
+			} until (! $special_case{see_also});
+
+			$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[$see_also]</button>";
+
+			$self -> logger -> debug("Token: $token. $see_also:");
+			$self -> logger -> debug("\t$_") for (@see_also);
+		}
 
 		# Skip <pre>...</pre>.
 		# Do not stockpile ATM.
@@ -171,7 +200,6 @@ sub format_text
 
 		last if ($index > $#lines);
 
-		next if ($line =~ /^o See also|^o builtins/); # For the moment.
 		next if ($line !~ /^o (.+):?/);
 
 		$token	= $1 || '';
@@ -272,54 +300,6 @@ sub format_text
 
 			$seen{$token} = true;
 		}
-
-=pod
-
-	my($count) = 0;
-
-	my($entry);
-	my(@pieces);
-	my($text_is_topic, $topic_id);
-
-	for $item (@see_also)
-	{
-		$count++;
-
-		if ($count == 1)
-		{
-			$$topic{id}++;
-
-			push @lines, {href => '', id => $$topic{id}, text => 'See also:'};
-		}
-
-		@pieces			= split(/ - /, $$item{text});
-		$pieces[0]		= $1 if ($pieces[0] =~ $topic_name_re); # Eg: [[XS]].
-		$pieces[1]		= defined($pieces[1]) && (length($pieces[1]) ) ? "$pieces[0] - $pieces[1]" : $pieces[0];
-		$topic_id		= $$pad{topic_names}{$pieces[0]} || 0;
-		$text_is_topic	= ($topic_id > 0) ? true : false;
-
-		if ($$item{text} =~ /^http/) # Eg: https://perldoc.perl.org/ - PerlDoc
-		{
-			$$item{text} = "<a href = '$pieces[0]'>$$item{text}</a>";
-		}
-		elsif ($text_is_topic) # Eg: GeographicStuff or [[HTTPHandling]] or CryptoStuff - re Data::Entropy
-		{
-			$self -> logger -> error("Missing id for topic") if ($topic_id == 0);
-
-			$$item{text}	= "$pieces[0] (topic)";
-			#$$item{text}	= "<a href = '#$topic_id'>pieces[1]</a>";
-			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('$topic_id');">$$item{text}</button>|;
-			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('#$topic_id');">$$item{text}</button>|;
-			#$$item{text}	= qq|<button onclick="\$('#jstree_div').jstree(true).select_node('\#$topic_id');">$$item{text}</button>|;
-		}
-		else # Eg: It's a module.
-		{
-			$$item{text} = "<a href = 'https://metacpan.org/pod/$pieces[0]'>$$item{text}</a>";
-		}
-
-		push @lines, $item;
-=cut
-
 	}
 
 	return [@items];
