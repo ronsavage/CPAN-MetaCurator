@@ -160,7 +160,7 @@ sub populate_topics_table
 	my($regexp) = qr/($special_para_names)/o;
 
 	my($id);
-	my($text, $title);
+	my($text, $title, $temp_text, $temp_title);
 
 	for my $index (0 .. $#$data)
 	{
@@ -174,6 +174,10 @@ sub populate_topics_table
 			next;
 		}
 
+		$temp_text	= $text		|| '';
+		$temp_title	= $title	|| '';
+
+		$self -> logger -> debug("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<=") if (! ($temp_text && $temp_title) );
 		$self -> logger -> info("populate_topics_table(). Missing title @ line: $index. name: $title"),	next if (! defined $title);
 		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. text: $text"),	next if ($text !~ m/^\"\"\"\no (.+)$/s);
 
