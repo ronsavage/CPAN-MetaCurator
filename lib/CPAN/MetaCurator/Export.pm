@@ -153,6 +153,8 @@ sub format_text
 			{
 					$index++;
 
+					last if ($index > $#lines);
+
 					$line					= $lines[$index];
 					$special_case{see_also}	= false if ($line =~ /^o [Aa]/);
 
