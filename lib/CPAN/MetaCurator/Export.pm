@@ -143,8 +143,6 @@ sub format_text
 
 		$special_case{see_also} = true if ($line =~ /^o $see_also/);
 
-		#$self -> logger -> debug("Line $index: see_also: $special_case{see_also}. line: =>$line<=");
-
 		if ($special_case{see_also})
 		{
 			@see_also = ($line);
@@ -159,8 +157,6 @@ sub format_text
 					$special_case{see_also}	= false if ($line =~ /^o /);
 
 					push @see_also, $line if ($special_case{see_also});
-
-					#$self -> logger -> debug("Line $index: see_also: $special_case{see_also}. line: =>$line<=");
 			} until (! $special_case{see_also});
 
 			$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[$see_also]</button>";
