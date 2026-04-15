@@ -141,7 +141,7 @@ sub format_text
 
 		# Stockpile See also.
 
-		$special_case{see_also} = true if ($line =~ /^o S$see_also/);
+		$special_case{see_also} = true if ($line =~ /^o $see_also/);
 
 		$self -> logger -> debug("Line $index: see_also: $special_case{see_also}. line: =>$line<=");
 
