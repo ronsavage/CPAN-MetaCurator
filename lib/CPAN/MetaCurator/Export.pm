@@ -295,7 +295,7 @@ sub handle_see_also
 	{
 		$index++;
 
-		last if ($index > $#lines);
+		last if ($index > $#$lines);
 
 		$line						= $$lines[$index];
 		$$special_case{see_also}	= false if ($line =~ /^o /);
