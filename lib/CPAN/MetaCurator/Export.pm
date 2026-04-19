@@ -141,7 +141,7 @@ sub format_text
 
 		# Handle See also.
 
-		($button, $index) = $self -> handle_see_also($index, \@lines, $see_also, \%special_case, $topic) if ($line =~ /^o $see_also/);
+		($button, $index) = $self -> handle_see_also($index, $line, \@lines, $see_also, \%special_case, $topic) if ($line =~ /^o $see_also/);
 
 		# Handle <pre>...</pre>.
 
