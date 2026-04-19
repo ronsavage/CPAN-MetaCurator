@@ -139,34 +139,11 @@ sub format_text
 	{
 		$line = $lines[$index];
 
-		# Stockpile See also.
+		# Handle See also.
 
-		$special_case{see_also} = true if ($line =~ /^o $see_also/);
+		($button, $index) = $self -> handle_see_also($index, \@lines, $see_also, \%special_case, $topic) if ($line =~ /^o $see_also/);
 
-		if ($special_case{see_also})
-		{
-			@see_also = ($line);
-
-			do
-			{
-					$index++;
-
-					last if ($index > $#lines);
-
-					$line					= $lines[$index];
-					$special_case{see_also}	= false if ($line =~ /^o /);
-
-					push @see_also, $line if ($special_case{see_also});
-			} until (! $special_case{see_also});
-
-			$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[$see_also]</button>";
-
-			$self -> logger -> debug("Found $see_also:");
-			$self -> logger -> debug("\t$_") for (@see_also);
-		}
-
-		# Skip <pre>...</pre>.
-		# Do not stockpile ATM.
+		# Handle <pre>...</pre>.
 
 		$special_case{inside_pre} = true if ($line =~ /<pre>/);
 
@@ -303,6 +280,44 @@ sub format_text
 	return [@items];
 
 } # End of format_text.
+
+# --------------------------------------------------
+
+sub handle_see_also
+{
+	my($self, $index, $line, $lines, $see_also, $special_case, $topic) = @_;
+
+	$$special_case{see_also} = true;
+
+	my(@see_also) = ($line);
+
+	do
+	{
+		$index++;
+
+		last if ($index > $#lines);
+
+		$line						= $$lines[$index];
+		$$special_case{see_also}	= false if ($line =~ /^o /);
+
+		if ($line =~ /<pre>/)
+		{
+			$self -> logger -> debug("Warning. Topic: $topic. Found <pre> straight after See also");
+
+			$$special_case{see_also} = false;
+		}
+
+		push @see_also, $line if ($$special_case{see_also});
+	} until (! $$special_case{see_also});
+
+	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[$see_also]</button>";
+
+	$self -> logger -> debug("Found $see_also:");
+	$self -> logger -> debug("\t$_") for (@see_also);
+
+	return ($button, $index);
+
+} # End of handle_see_also.
 
 # --------------------------------------------------
 
