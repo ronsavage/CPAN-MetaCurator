@@ -125,13 +125,12 @@ sub format_text
 	my($description);
 	my(@extras);
 	my($href, @hover);
-	my($item, @items);
+	my(@inside_pre, $item, @items);
 	my($line);
 	my(%node_type);
 	my(%special_case, @see_also);
 	my($token);
 
-	my($see_also)				= 'See also'; # Note case!
 	$special_case{inside_pre}	= false;
 	$special_case{see_also}		= false;
 
@@ -141,7 +140,7 @@ sub format_text
 
 		# Handle 'See also'.
 
-		($button, $index) = $self -> handle_see_also($index, $line, \@lines, $see_also, \%special_case, $topic) if ($line =~ /^o $see_also/);
+		($button, $index) = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic) if ($line =~ /^o $see_also/);
 
 		# Handle '<pre>...</pre>'.
 
@@ -206,6 +205,9 @@ sub format_text
 
 			$self -> logger -> debug("Unknown: $token");
 		}
+
+		# Special cases, due to their formatting:
+		# 1: FAQ.
 
 		if ($$topic{title} eq 'FAQ')
 		{
@@ -282,6 +284,53 @@ sub format_text
 } # End of format_text.
 
 # --------------------------------------------------
+# Note: Data is returned in:
+# 1: $button
+# 2: $index
+# 3: @$see_also
+
+sub handle_pre_pre
+{
+	my($self, $index, $line, $lines, $pre_pre, $special_case, $topic) = @_;
+
+	$$special_case{inside_pre} = true;
+
+	@$pre_pre = $line;
+
+	do
+	{
+		$index++;
+
+		if ($index <= $#$lines)
+		{
+			$line						= $$lines[$index];
+			$$special_case{inside_pre}	= false if ($line =~ /^o /);
+
+			if ($line =~ /<pre>/)
+			{
+				$self -> logger -> debug("Warning. Topic: $topic. Found <pre> straight after See also");
+
+				$$special_case{inside_pre} = false;
+			}
+
+			push @$pre_pre, $line if ($$special_case{inside_pre});
+		}
+	} until (! $$special_case{see_also});
+
+	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
+
+	$self -> logger -> debug("Found $inside_pre:");
+	$self -> logger -> debug("\t$_") for (@$pre_pre);
+
+	return ($button, $index);
+
+} # End of handle_pre_pre.
+
+# --------------------------------------------------
+# Note: Data is returned in:
+# 1: $button
+# 2: $index
+# 3: @$see_also
 
 sub handle_see_also
 {
@@ -289,7 +338,7 @@ sub handle_see_also
 
 	$$special_case{see_also} = true;
 
-	my(@see_also) = ($line);
+	@$see_also = $line;
 
 	do
 	{
@@ -307,14 +356,14 @@ sub handle_see_also
 				$$special_case{see_also} = false;
 			}
 
-			push @see_also, $line if ($$special_case{see_also});
+			push @$see_also, $line if ($$special_case{see_also});
 		}
 	} until (! $$special_case{see_also});
 
-	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[$see_also]</button>";
+	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[See also]</button>";
 
-	$self -> logger -> debug("Found $see_also:");
-	$self -> logger -> debug("\t$_") for (@see_also);
+	$self -> logger -> debug("Found See also:");
+	$self -> logger -> debug("\t$_") for (@$see_also);
 
 	return ($button, $index);
 
