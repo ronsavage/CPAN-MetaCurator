@@ -140,7 +140,7 @@ sub format_text
 
 		# Handle 'See also'.
 
-		($button, $index) = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic) if ($line =~ /^o $see_also/);
+		($button, $index) = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic) if ($line =~ /^o See also/);
 
 		# Handle '<pre>...</pre>'.
 
@@ -315,11 +315,11 @@ sub handle_pre_pre
 
 			push @$pre_pre, $line if ($$special_case{inside_pre});
 		}
-	} until (! $$special_case{see_also});
+	} until (! $$special_case{inside_pre});
 
 	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 
-	$self -> logger -> debug("Found $inside_pre:");
+	$self -> logger -> debug("Found pre...pre:");
 	$self -> logger -> debug("\t$_") for (@$pre_pre);
 
 	return ($button, $index);
@@ -351,7 +351,7 @@ sub handle_see_also
 
 			if ($line =~ /<pre>/)
 			{
-				$self -> logger -> debug("Warning. Topic: $topic. Found <pre> straight after See also");
+				$self -> logger -> debug("Warning. Topic: $topic. Found pre...pre straight after See also");
 
 				$$special_case{see_also} = false;
 			}
