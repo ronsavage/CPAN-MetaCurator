@@ -139,11 +139,11 @@ sub format_text
 	{
 		$line = $lines[$index];
 
-		# Handle See also.
+		# Handle 'See also'.
 
 		($button, $index) = $self -> handle_see_also($index, $line, \@lines, $see_also, \%special_case, $topic) if ($line =~ /^o $see_also/);
 
-		# Handle <pre>...</pre>.
+		# Handle '<pre>...</pre>'.
 
 		$special_case{inside_pre} = true if ($line =~ /<pre>/);
 
@@ -295,19 +295,20 @@ sub handle_see_also
 	{
 		$index++;
 
-		last if ($index > $#$lines);
-
-		$line						= $$lines[$index];
-		$$special_case{see_also}	= false if ($line =~ /^o /);
-
-		if ($line =~ /<pre>/)
+		if ($index <= $#$lines)
 		{
-			$self -> logger -> debug("Warning. Topic: $topic. Found <pre> straight after See also");
+			$line						= $$lines[$index];
+			$$special_case{see_also}	= false if ($line =~ /^o /);
 
-			$$special_case{see_also} = false;
+			if ($line =~ /<pre>/)
+			{
+				$self -> logger -> debug("Warning. Topic: $topic. Found <pre> straight after See also");
+
+				$$special_case{see_also} = false;
+			}
+
+			push @see_also, $line if ($$special_case{see_also});
 		}
-
-		push @see_also, $line if ($$special_case{see_also});
 	} until (! $$special_case{see_also});
 
 	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[$see_also]</button>";
