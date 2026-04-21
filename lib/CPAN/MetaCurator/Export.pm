@@ -351,7 +351,7 @@ sub handle_see_also
 
 			if ($line =~ /<pre>/)
 			{
-				$self -> logger -> debug("Warning. Topic: $topic. Found pre...pre straight after See also");
+				$self -> logger -> debug("Warning. Topic: $$topic{title}. Found pre...pre straight after See also");
 
 				$$special_case{see_also} = false;
 			}
