@@ -281,7 +281,7 @@ sub handle_inside_pre
 
 			if ($line =~ /^o See also/)
 			{
-				$self -> logger -> warning("Topic: $$topic{title}. Found 'See also' straight after <pre>...</pre>");
+				$self -> logger -> warn("Topic: $$topic{title}. Found 'See also' straight after <pre>...</pre>");
 
 				$$special_case{inside_pre} = false;
 			}
@@ -324,7 +324,7 @@ sub handle_see_also
 
 			if ($line =~ /<pre>/)
 			{
-				$self -> logger -> warning("Topic: $$topic{title}. Found <pre>...</pre> straight after 'See also'");
+				$self -> logger -> warn("Topic: $$topic{title}. Found <pre>...</pre> straight after 'See also'");
 
 				$$special_case{see_also} = false;
 			}
