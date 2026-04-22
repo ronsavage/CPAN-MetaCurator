@@ -197,7 +197,7 @@ sub format_text
 
 		if ($token eq 'See also')
 		{
-			next; # Fix me?
+			#next; # Fix me?
 		}
 		elsif ($$topic{title} eq 'FAQ')
 		{
