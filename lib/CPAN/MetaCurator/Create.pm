@@ -110,7 +110,7 @@ sub create_modules_table
 create table $table_name
 (
 id			$primary_key,
-name		text not null
+name		text not null,
 timestamp	text $time_option not null default current_timestamp
 ) strict $engine
 SQL
