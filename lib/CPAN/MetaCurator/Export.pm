@@ -192,9 +192,14 @@ sub format_text
 		}
 
 		# Special cases, due to their formatting:
-		# 1: FAQ.
+		# 1: See also.
+		# 2: FAQ.
 
-		if ($$topic{title} eq 'FAQ')
+		if ($token eq 'See also')
+		{
+			next; # Fix me?
+		}
+		elsif ($$topic{title} eq 'FAQ')
 		{
 			$$item{html}	= '';
 			$$item{text}	= $line;
