@@ -281,9 +281,8 @@ sub handle_inside_pre
 {
 	my($self, $index, $line, $lines, $inside_pre, $special_case, $topic) = @_;
 
-	$$special_case{inside_pre} = true;
-
-	@$inside_pre = $line;
+	$$special_case{inside_pre}	= true;
+	@$inside_pre				= $line;
 
 	do
 	{
@@ -291,17 +290,16 @@ sub handle_inside_pre
 
 		if ($index <= $#$lines)
 		{
-			$line						= $$lines[$index];
-			$$special_case{inside_pre}	= false if ($line =~ /^o /);
+			$line = $$lines[$index];
 
-			if ($line =~ /^o See also/)
+			if ($line =~ /^o /)
 			{
-				$self -> logger -> warn("Topic: $$topic{title}. Found 'See also' straight after <pre>...</pre>");
-
 				$$special_case{inside_pre} = false;
 			}
-
-			push @$inside_pre, $line if ($$special_case{inside_pre});
+			else
+			{
+				push @$inside_pre, $line;
+			}
 		}
 	} until (! $$special_case{inside_pre});
 
@@ -324,9 +322,8 @@ sub handle_see_also
 {
 	my($self, $index, $line, $lines, $see_also, $special_case, $topic) = @_;
 
-	$$special_case{see_also} = true;
-
-	@$see_also = $line;
+	$$special_case{see_also}	= true;
+	@$see_also					= $line;
 
 	do
 	{
@@ -334,17 +331,17 @@ sub handle_see_also
 
 		if ($index <= $#$lines)
 		{
-			$line						= $$lines[$index];
-			$$special_case{see_also}	= false if ($line =~ /^o /);
+			$line = $$lines[$index];
 
-			if ($line =~ /<pre>/)
+			if ($line =~ /^o /)
 			{
-				$self -> logger -> warn("Topic: $$topic{title}. Found <pre>...</pre> straight after 'See also'");
-
 				$$special_case{see_also} = false;
 			}
+			else
+			{
+				push @$see_also, $line;
+			}
 
-			push @$see_also, $line if ($$special_case{see_also});
 		}
 	} until (! $$special_case{see_also});
 
