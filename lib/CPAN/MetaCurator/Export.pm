@@ -38,7 +38,7 @@ sub export_tree
 	my($root)	= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
 	my($id)		= $$pad{topic_html_ids}{$$root{title} };
 
-	$self -> logger -> info("Entry: id: $id. title: $$root{title}");
+	$self -> logger -> info("Topic: id: $id. title: $$root{title}");
 
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$$root{title}</a>|;
 	push @list, '<ul>';
@@ -49,7 +49,7 @@ sub export_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
-		$self -> logger -> info("Entry: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
+		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
 		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
 		$lines_ref	= $self -> format_text($leaf_id, $pad, $topic);
@@ -305,7 +305,6 @@ sub handle_inside_pre
 
 	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 
-	$self -> logger -> debug("Found pre...pre:");
 	$self -> logger -> debug("\t$_") for (@$inside_pre);
 
 	return ($button, $index);
@@ -347,7 +346,6 @@ sub handle_see_also
 
 	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[See also]</button>";
 
-	$self -> logger -> debug("Found See also:");
 	$self -> logger -> debug("\t$_") for (@$see_also);
 
 	return ($button, $index);
