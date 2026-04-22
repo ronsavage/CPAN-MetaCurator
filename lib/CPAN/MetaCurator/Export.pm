@@ -9,11 +9,12 @@ use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 use Data::Dumper::Concise; # For Dumper().
 use DateTime::Tiny;
 
+use File::Slurper 'read_lines';
 use File::Spec;
 
 use Moo;
 
-use File::Slurper 'read_lines';
+use Syntax::Keyword::Match;
 
 our %seen;
 
@@ -121,7 +122,7 @@ sub format_text
 	my($line_id)						= $leaf_id;
 	my($index)							= 0;
 
-	my($button);
+	my($button, %button);
 	my($description);
 	my(@extras);
 	my($href, @hover);
@@ -131,6 +132,9 @@ sub format_text
 	my(%special_case, @see_also);
 	my($token);
 
+	$button{extras}				= '';
+	$button{inside_pre}			= '';
+	$button{see_also}			= '';
 	$special_case{inside_pre}	= false;
 	$special_case{see_also}		= false;
 
@@ -138,10 +142,18 @@ sub format_text
 	{
 		$line = $lines[$index];
 
-		# Fixme. If both calls are triggered, the 1st $button is lost.
+		match($line : eq)
+		{
+			case if ($line =~ /<pre>/)
+			{
+				($button{inside_pre}, $index) = $self -> handle_inside_pre($index, $line, \@lines, \@inside_pre, \%special_case, $topic);
 
-		($button, $index) = $self -> handle_see_also  ($index, $line, \@lines, \@see_also,   \%special_case, $topic) if ($line =~ /^o See also/);
-		($button, $index) = $self -> handle_inside_pre($index, $line, \@lines, \@inside_pre, \%special_case, $topic) if ($line =~ /<pre>/);
+			}
+			case if ($line =~ /^o See also/)
+			{
+				($button{see_also}, $index) = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic);
+			}
+		}
 
 		$index++;
 
@@ -152,13 +164,13 @@ sub format_text
 		$token	= $1 || '';
 		$item	= {href => '', id => ++$line_id, text => ''};
 
+		# Some names might be acronyms & module names & topic names.
+		# Example: RSS.
+
 		$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
 		$node_type{topic}	= $$pad{topic_names}{$token}	? true : false;
 		$node_type{known}	= $$pad{packages}{$token}		? true : false;
 		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{known} || $node_type{topic});
-
-		# Some names might be acronyms & module names & topic names.
-		# Example: RSS.
 
 		if ($node_type{acronym})
 		{
@@ -207,8 +219,7 @@ sub format_text
 			#
 			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
 
-			$button		= '';
-			@extras		= ();
+			@extras = ();
 
 			while ( ($index <= $#lines) && ($lines[$index] !~ /^o/) )
 			{
@@ -217,7 +228,7 @@ sub format_text
 
 			if ($#extras < 2)
 			{
-				$self -> logger -> debug("Token: $token. Expected: $_ >$extras[$_]<") for (0 .. $#extras);
+				#$self -> logger -> debug("Token: $token. Expected: $_ >$extras[$_]<") for (0 .. $#extras);
 			}
 
 			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 1);
@@ -232,13 +243,17 @@ sub format_text
 
 			if ($#extras >= 0)
 			{
-				$button = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
+				$button{extras} = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
 
 				$self -> logger -> debug("Token: $token. Extras:");
 				$self -> logger -> debug("\t$_") for (@extras);
 			}
+			else
+			{
+				$button{extras} = '';
+			}
 
-			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button";
+			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
 			$$item{text}	= "";
 
 			push @items, $item;
