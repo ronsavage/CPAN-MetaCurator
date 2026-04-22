@@ -61,6 +61,7 @@ my(%params) =
 		'perl'						=> 5.40.0,
 		'Pod::Usage'				=> 2.03,
 		'strict'					=> 1.12,
+		'Syntax::Keyword::Match'	=> 0.15,
 		'Text::Balanced'			=> 2.07,
 		'Text::CSV::Encoded'		=> 0.25,
 		'Types::Standard'			=> 2.006000,
