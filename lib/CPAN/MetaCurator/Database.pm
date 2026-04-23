@@ -131,6 +131,8 @@ sub build_pad
 	$$pad{count}		= {};
 	$$pad{count}{$_}	= 0 for (@{$self -> node_types});
 
+	# Read all tables into the pad.
+
 	for (@{$self -> table_names}) {$$pad{$_} = $self -> read_table($_) };
 
 	# Constants.
