@@ -232,7 +232,7 @@ sub init_db
 	$self -> db(DBIx::Simple -> new($self -> dbh) );
 	$self -> creator(DBIx::Admin::CreateTable -> new(dbh => $self -> dbh, verbose => 0)	);
 	$self -> engine($self -> creator -> db_vendor =~ /(?:Mysql)/i ? 'engine=innodb' : '');
-	$self -> time_option($self -> creator -> db_vendor =~ /(?:MySQL|Postgres|SQLite)/i ? '(0) without time zone' : '');
+	$self -> time_option($self -> creator -> db_vendor =~ /(?:MySQL|Postgres)/i ? '(0) without time zone' : '');
 	$self -> logger -> info("Connected to $dsn[0]");
 	$self -> logger -> info($self -> separator);
 
