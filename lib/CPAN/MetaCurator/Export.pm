@@ -184,7 +184,7 @@ sub format_text
 		{
 			$$pad{count}{known}++;
 		}
-		elsif ($node_type{unknown})
+		elsif ($node_type{unknown} && ($token ne 'See also') )
 		{
 			$$pad{count}{unknown}++;
 
