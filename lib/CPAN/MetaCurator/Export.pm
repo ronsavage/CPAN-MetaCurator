@@ -306,6 +306,10 @@ sub handle_inside_pre
 				push @$inside_pre, $line;
 			}
 		}
+		else
+		{
+			$$special_case{inside_pre} = false;
+		}
 	} until (! $$special_case{inside_pre});
 
 	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
@@ -346,6 +350,10 @@ sub handle_see_also
 				push @$see_also, $line;
 			}
 
+		}
+		else
+		{
+			$$special_case{see_also} = false;
 		}
 	} until (! $$special_case{see_also});
 
