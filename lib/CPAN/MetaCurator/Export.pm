@@ -205,7 +205,7 @@ sub handle_see_also
 # Some names might be acronyms & module names & topic names.
 # Example: RSS.
 
-sub gather_stats
+sub gather_statistics
 {
 	my($self, $node_type, $pad, $token, $topic) = @_;
 
@@ -222,7 +222,7 @@ sub gather_stats
 		$self -> logger -> debug("Unknown: $token");
 	}
 
-} # End of gather_stats;
+} # End of gather_statistics;
 
 # --------------------------------------------------
 
