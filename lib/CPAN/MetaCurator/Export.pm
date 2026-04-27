@@ -52,7 +52,7 @@ sub export_tree
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
 		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
-		$lines_ref	= $self -> format_text($leaf_id, $pad, $topic);
+		$lines_ref	= $self -> parse_topic($leaf_id, $pad, $topic);
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
@@ -111,170 +111,6 @@ sub export_modules_table
 	$self -> logger -> info("Output record count (excluding header): $module_count");
 
 } # End of export_modules_table.
-
-# --------------------------------------------------
-
-sub format_text
-{
-	my($self, $leaf_id, $pad, $topic)	= @_;
-	my(@lines)							= split(/\n/, $$topic{text});
-	@lines								= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
-	my($line_id)						= $leaf_id;
-	my($index)							= 0;
-
-	my($button, %button);
-	my($description);
-	my(@extras);
-	my($href, @hover);
-	my(@inside_pre, $item, @items);
-	my($line);
-	my(%node_type);
-	my(%special_case, @see_also);
-	my($token);
-
-	$button{extras}				= '';
-	$button{inside_pre}			= '';
-	$button{see_also}			= '';
-	$special_case{inside_pre}	= false;
-	$special_case{see_also}		= false;
-
-	while ($index <= $#lines)
-	{
-		$line = $lines[$index];
-
-		match($line : eq)
-		{
-			case if ($line =~ /<pre>/)
-			{
-				($button{inside_pre}, $index) = $self -> handle_inside_pre($index, $line, \@lines, \@inside_pre, \%special_case, $topic);
-
-			}
-			case if ($line =~ /^o See also/)
-			{
-				($button{see_also}, $index) = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic);
-			}
-		}
-
-		$index++;
-
-		last if ($index > $#lines);
-
-		next if ($line !~ /^o (.+):?/);
-
-		$token	= $1 || '';
-		$item	= {href => '', id => ++$line_id, text => ''};
-
-		# Some names might be acronyms & module names & topic names.
-		# Example: RSS.
-
-		$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
-		$node_type{topic}	= $$pad{topic_names}{$token}	? true : false;
-		$node_type{known}	= $$pad{packages}{$token}		? true : false;
-		$node_type{unknown}	= ! ($node_type{acronym} || $node_type{known} || $node_type{topic});
-
-		if ($node_type{acronym})
-		{
-			$$pad{count}{acronym}++;
-		}
-		elsif ($node_type{topic})
-		{
-			# These are counted in Database.build_pad().
-		}
-		elsif ($node_type{known})
-		{
-			$$pad{count}{known}++;
-		}
-		elsif ($node_type{unknown} && ($token ne 'See also') )
-		{
-			$$pad{count}{unknown}++;
-
-			$self -> logger -> debug("Unknown: $token");
-		}
-
-		# Special cases, due to their formatting:
-		# 1: See also.
-		# 2: FAQ.
-
-		if ($token eq 'See also')
-		{
-			#next; # Fix me?
-		}
-		elsif ($$topic{title} eq 'FAQ')
-		{
-			$$item{html}	= '';
-			$$item{text}	= $line;
-
-			push @items, $item;
-		}
-		else
-		{
-			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
-			#
-			# 3 line entry:
-			# o DKIM:
-			# - DomainKeys Identified Mail <- $index
-			# - https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail
-			#
-			# 3+ line entry:
-			# o DMARC:
-			# - Domain-based Message Authentication, Reporting, and Conformance <- $index
-			# - https://en.wikipedia.org/wiki/DMARC
-			# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
-			# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
-			#
-			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
-
-			@extras = ();
-
-			while ( ($index <= $#lines) && ($lines[$index] !~ /^o/) )
-			{
-				push @extras, $lines[$index++];
-			}
-
-			if ($#extras < 2)
-			{
-				#$self -> logger -> debug("Token: $token. Expected: $_ >$extras[$_]<") for (0 .. $#extras);
-			}
-
-			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 1);
-			$self -> logger -> error("Token: $token. Missing -text"), next if ($extras[0] !~ /^-/);
-			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($extras[1] !~ /^-/) );
-
-			$description	= shift @extras;
-			$href			= shift @extras;
-
-			$self -> logger -> error("Token: $token. Missing description"),	next if (! defined($description) );
-			$self -> logger -> error("Token: $token. Missing href"), 		next if (! defined($href) );
-
-			if ($#extras >= 0)
-			{
-				$button{extras} = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
-
-				$self -> logger -> debug("Token: $token. Extras:");
-				$self -> logger -> debug("\t$_") for (@extras);
-			}
-			else
-			{
-				$button{extras} = '';
-			}
-
-			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
-			$$item{text}	= "";
-
-			push @items, $item;
-		}
-
-		if (! $seen{$token})
-		{
-			$self -> insert_hashref('modules', {name => $token});
-
-			$seen{$token} = true;
-		}
-	}
-
-	return [@items];
-
-} # End of format_text.
 
 # --------------------------------------------------
 # Note: Data is returned in:
@@ -364,6 +200,168 @@ sub handle_see_also
 	return ($button, $index);
 
 } # End of handle_see_also.
+
+# --------------------------------------------------
+# Some names might be acronyms & module names & topic names.
+# Example: RSS.
+
+sub gather_stats
+{
+	my($self, $node_type, $pad, $topic) = @_;
+
+	$$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
+	$$node_type{topic}		= $$pad{topic_names}{$token}	? true : false;
+	$$node_type{known}		= $$pad{packages}{$token}		? true : false;
+	$$node_type{unknown}	= ! ($$node_type{acronym} || $$node_type{known} || $$node_type{topic});
+
+	$$pad{count}{acronym}++	if ($$node_type{acronym});
+	$$pad{count}{known}++	if ($node_type{known});
+
+	if ($node_type{unknown} && ($token ne 'See also') )
+	{
+		$self -> logger -> debug("Unknown: $token");
+	}
+
+} # End of gather_stats;
+
+# --------------------------------------------------
+
+sub parse_topic
+{
+	my($self, $leaf_id, $pad, $topic)	= @_;
+	my(@lines)							= split(/\n/, $$topic{text});
+	@lines								= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
+	my($line_id)						= $leaf_id;
+	my($index)							= 0;
+
+	my($button, %button);
+	my($description);
+	my(@extras);
+	my($href, @hover);
+	my(@inside_pre, $item, @items);
+	my($line);
+	my(%node_type);
+	my(%special_case, @see_also);
+	my($token);
+
+	$button{extras}				= '';
+	$button{inside_pre}			= '';
+	$button{see_also}			= '';
+	$special_case{inside_pre}	= false;
+	$special_case{see_also}		= false;
+
+	while ($index <= $#lines)
+	{
+		$line = $lines[$index];
+
+		# 1 of 2: Process non-modules.
+
+		if ($line =~ /<pre>/)
+		{
+			($button{inside_pre}, $index) = $self -> handle_inside_pre($index, $line, \@lines, \@inside_pre, \%special_case, $topic);
+		}
+		elsif ($line =~ /^o See also/)
+		{
+			($button{see_also}, $index) = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic);
+		}
+
+		$index++;
+
+		last if ($index > $#lines);
+
+		# 2 of 2: Skip everything except modules (hopefully).
+
+		next if ($line !~ /^o (.+):?/);
+
+		$token	= $1 || '';
+		$item	= {href => '', id => ++$line_id, text => ''};
+
+		$self -> gather_statistics(\%node_type, $pad, $topic);
+
+		# Special cases, due to their formatting:
+		# 1: See also.
+		# 2: FAQ.
+
+		if ($token eq 'See also')
+		{
+			$self -> logger -> debug('See also.................');
+		}
+		elsif ($$topic{title} eq 'FAQ')
+		{
+			$$item{html}	= '';
+			$$item{text}	= $line;
+
+			push @items, $item;
+		}
+		else
+		{
+			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
+			#
+			# 3 line entry:
+			# o DKIM:
+			# - DomainKeys Identified Mail <- $index
+			# - https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail
+			#
+			# 3+ line entry:
+			# o DMARC:
+			# - Domain-based Message Authentication, Reporting, and Conformance <- $index
+			# - https://en.wikipedia.org/wiki/DMARC
+			# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
+			# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
+			#
+			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
+
+			@extras = ();
+
+			while ( ($index <= $#lines) && ($lines[$index] !~ /^o/) )
+			{
+				push @extras, $lines[$index++];
+			}
+
+			if ($#extras < 2)
+			{
+				#$self -> logger -> debug("Token: $token. Expected: $_ >$extras[$_]<") for (0 .. $#extras);
+			}
+
+			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 1);
+			$self -> logger -> error("Token: $token. Missing -text"), next if ($extras[0] !~ /^-/);
+			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($extras[1] !~ /^-/) );
+
+			$description	= shift @extras;
+			$href			= shift @extras;
+
+			$self -> logger -> error("Token: $token. Missing description"),	next if (! defined($description) );
+			$self -> logger -> error("Token: $token. Missing href"), 		next if (! defined($href) );
+
+			if ($#extras >= 0)
+			{
+				$button{extras} = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
+
+				$self -> logger -> debug("Token: $token. Extras:");
+				$self -> logger -> debug("\t$_") for (@extras);
+			}
+			else
+			{
+				$button{extras} = '';
+			}
+
+			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
+			$$item{text}	= "";
+
+			push @items, $item;
+		}
+
+		if (! $seen{$token})
+		{
+			$self -> insert_hashref('modules', {name => $token});
+
+			$seen{$token} = true;
+		}
+	}
+
+	return [@items];
+
+} # End of parse_topic.
 
 # --------------------------------------------------
 
