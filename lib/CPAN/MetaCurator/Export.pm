@@ -207,7 +207,7 @@ sub handle_see_also
 
 sub gather_stats
 {
-	my($self, $node_type, $pad, $topic) = @_;
+	my($self, $node_type, $pad, $token, $topic) = @_;
 
 	$$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
 	$$node_type{topic}		= $$pad{topic_names}{$token}	? true : false;
@@ -215,9 +215,9 @@ sub gather_stats
 	$$node_type{unknown}	= ! ($$node_type{acronym} || $$node_type{known} || $$node_type{topic});
 
 	$$pad{count}{acronym}++	if ($$node_type{acronym});
-	$$pad{count}{known}++	if ($node_type{known});
+	$$pad{count}{known}++	if ($$node_type{known});
 
-	if ($node_type{unknown} && ($token ne 'See also') )
+	if ($$node_type{unknown} && ($token ne 'See also') )
 	{
 		$self -> logger -> debug("Unknown: $token");
 	}
@@ -276,7 +276,7 @@ sub parse_topic
 		$token	= $1 || '';
 		$item	= {href => '', id => ++$line_id, text => ''};
 
-		$self -> gather_statistics(\%node_type, $pad, $topic);
+		$self -> gather_statistics(\%node_type, $pad, $token, $topic);
 
 		# Special cases, due to their formatting:
 		# 1: See also.
