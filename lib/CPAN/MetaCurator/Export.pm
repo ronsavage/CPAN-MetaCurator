@@ -284,7 +284,11 @@ sub parse_topic
 
 		if ($token eq 'See also')
 		{
-			$self -> logger -> debug('See also.................');
+			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{see_also}";
+			$$item{text}	= "";
+
+			push @items, $item;
+
 		}
 		elsif ($$topic{title} eq 'FAQ')
 		{
