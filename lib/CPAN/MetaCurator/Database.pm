@@ -163,6 +163,7 @@ sub build_pad
 	# Topics.
 	# There is a db table called topics so we need another name for the hash
 	# where the keys are the names of the topics and the values are db ids.
+	# For useage, see Export.pm line 54.
 
 	$$pad{topic_names}		= {};
 	$$pad{topic_html_ids}	= {};
@@ -171,7 +172,7 @@ sub build_pad
 	{
 		$$pad{count}{topic}++;
 
-		$$pad{topic_html_ids}{$$_{title} }	= $$pad{html_id_offset} * $$_{id};
+		$$pad{topic_html_ids}{$$_{title} }	= $$pad{html_id_offset} * $$_{id}; # $leaf_id in Export.pm.
 		$$pad{topic_names}{$$_{title} }		= $$_{id};
 	}
 

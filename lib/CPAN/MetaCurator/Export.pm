@@ -193,11 +193,9 @@ sub handle_see_also
 		}
 	} until (! $$special_case{see_also});
 
-	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[See also]</button>";
-
 	$self -> logger -> debug("\t$_") for (@$see_also);
 
-	return ($button, $index);
+	return $index;
 
 } # End of handle_see_also.
 
@@ -262,7 +260,8 @@ sub parse_topic
 		}
 		elsif ($line =~ /^o See also/)
 		{
-			($button{see_also}, $index) = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic);
+			$index				= $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic);
+			$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
 		}
 
 		$index++;
