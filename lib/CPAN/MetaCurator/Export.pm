@@ -284,7 +284,7 @@ sub parse_topic
 
 		if ($token eq 'See also')
 		{
-			$$item{html}	= "<span>$token</span><span>.</span>$button{see_also}";
+			$$item{html}	= $button{see_also};
 			$$item{text}	= "";
 
 			push @items, $item;
