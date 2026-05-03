@@ -96,6 +96,14 @@ has output_path =>
 	required	=> 1,
 );
 
+has packages_path =>
+(
+	default		=> sub{return '/tmp/02packages.details.txt'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
 has pad =>
 (
 	default		=> sub{return {} },
@@ -130,6 +138,11 @@ sub build_pad
 	my($pad)			= {};
 	$$pad{count}		= {};
 	$$pad{count}{$_}	= 0 for (@{$self -> node_types});
+
+	# Special case. See HTML.pm's build_html().
+
+	my($packages_path)	= $self -> packages_path;
+	$$pad{packages_id}	= `head -8 $packages_path | tail -1`;
 
 	# Read all tables into the pad.
 

@@ -51,7 +51,6 @@ Note: Optionally use sqlite database (15 Mb) from CPAN::MetaPackager
 =item cd ~/perl.modules/Local-Website
 =item Edit Local::Website::Util::PatchIndex's sub parser() if necessary
 =item Run scripts/parse.index.sh to patch ~/savage.net.au/index.html
-=item cp index.html $DH
 =item Backup new files: bu5.sh savage.net.au
 =item Backup new files: bu5.sh perl.modules
 =back

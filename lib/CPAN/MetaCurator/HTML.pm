@@ -30,6 +30,10 @@ sub build_html
 		$header =~ s/!$_!/$data{$_}/;
 	}
 
+	# Special case. See Database.pm's build_pad().
+
+	$header =~ s/!packages_id!/$$pad{packages_id}/;
+
 	return ($header, $body, $footer);
 
 } # End of build_html.
