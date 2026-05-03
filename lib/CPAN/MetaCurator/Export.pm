@@ -217,6 +217,8 @@ sub gather_statistics
 
 	if ($$node_type{unknown} && ($token ne 'See also') )
 	{
+		$$pad{count}{unknown}++;
+
 		$self -> logger -> debug("Unknown: $token");
 	}
 
