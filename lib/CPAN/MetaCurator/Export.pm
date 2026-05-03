@@ -18,7 +18,7 @@ use Syntax::Keyword::Match;
 
 our %seen;
 
-our $VERSION = '1.17';
+our $VERSION = '1.18';
 
 # -----------------------------------------------
 
