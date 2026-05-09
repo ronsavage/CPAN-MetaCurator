@@ -29,7 +29,6 @@ has config_path =>
 	required	=> 0,
 );
 
-
 has database_path =>
 (
 	default		=> sub{return 'data/cpan.metacurator.sqlite'},

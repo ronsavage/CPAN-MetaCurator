@@ -12,10 +12,6 @@ use DateTime::Tiny;
 use File::Slurper 'read_lines';
 use File::Spec;
 
-use Moo;
-
-use Syntax::Keyword::Match;
-
 our %seen;
 
 our $VERSION = '1.19';
