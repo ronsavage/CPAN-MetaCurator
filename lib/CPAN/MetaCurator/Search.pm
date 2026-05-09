@@ -53,7 +53,7 @@ sub check
 
 		if ($found)
 		{
-			push @found, name;
+			push @found, $name;
 		}
 		else
 		{
