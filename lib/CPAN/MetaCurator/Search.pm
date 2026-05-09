@@ -51,7 +51,7 @@ sub check
 
 	for my $name (@names)
 	{
-		$found = exists($$pad{module_names}{$name);
+		$found = exists $$pad{module_names}{$name};
 
 		$self -> logger -> debug("$name not in db") if (! $found);
 	}
