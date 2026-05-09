@@ -33,10 +33,8 @@ sub check
 
 	$self -> init_config;
 	$self -> init_db;
-	$self -> logger -> debug("Called init_config() & init_db()");
 
 	my($pad)				= $self -> build_pad;
-	$self -> logger -> debug("Called build_pad()");
 	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
 	my($module_names_path)	= File::Spec -> catfile($self -> home_path, $self -> module_names_path);
 
@@ -44,14 +42,9 @@ sub check
 	$self -> logger -> info("Reading: $database_path");
 	$self -> logger -> info("Reading: $module_names_path");
 
-=pod
-	my($command)				= `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $modules_csv_path`;
-	my($line_count)				= `wc -l $modules_csv_path`;
-	my($module_count, $name)	= split(' ', $line_count);
-	$module_count--; # Allow for header record.
+	my(@lines) = read_lines($module_names_path);
 
-	$self -> logger -> info("Output record count (excluding header): $module_count");
-=cut
+	say Dumper($pad{modules});
 
 } # End of check.
 
