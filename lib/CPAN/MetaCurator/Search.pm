@@ -45,7 +45,7 @@ sub check
 	my(@names) = read_lines($module_names_path);
 
 	my($found, @found);
-	my(@not_found;
+	my(@not_found);
 
 	for my $name (sort @names)
 	{
