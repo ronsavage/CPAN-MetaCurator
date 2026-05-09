@@ -44,17 +44,27 @@ sub check
 
 	my(@names) = read_lines($module_names_path);
 
-	#say Dumper($$pad{module_names});
-	#say Dumper(@lines);
+	my($found, @found);
+	my(@not_found;
 
-	my($found);
-
-	for my $name (@names)
+	for my $name (sort @names)
 	{
 		$found = exists $$pad{module_names}{$name};
 
-		$self -> logger -> debug("$name not in db") if (! $found);
+		if ($found)
+		{
+			push @found, name;
+		}
+		else
+		{
+			push $not_found, $name;
+		}
 	}
+
+	$self -> logger -> debug('Found:');
+	$self -> logger -> debug(Dumper @found);
+	$self -> logger -> debug('Not found:');
+	$self -> logger -> debug(Dumper @not_found);
 
 } # End of check.
 
