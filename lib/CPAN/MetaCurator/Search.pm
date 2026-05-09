@@ -42,10 +42,19 @@ sub check
 	$self -> logger -> info("Reading: $database_path");
 	$self -> logger -> info("Reading: $module_names_path");
 
-	my(@lines) = read_lines($module_names_path);
+	my(@names) = read_lines($module_names_path);
 
 	#say Dumper($$pad{module_names});
-	say Dumper(@lines);
+	#say Dumper(@lines);
+
+	my($found);
+
+	for my $name (@names)
+	{
+		$found = exists($$pad{module_names}{$name);
+
+		$self -> logger -> debug("$name not in db") if (! $found);
+	}
 
 } # End of check.
 
