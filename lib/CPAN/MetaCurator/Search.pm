@@ -29,15 +29,15 @@ our $VERSION = '1.20';
 
 sub check
 {
-	my($self)	= @_;
-	$self -> logger -> debug("Calling build_pad()");
-	my($pad)	= $self -> build_pad;
+	my($self) = @_;
 
 	$self -> logger -> debug("Calling init_config()");
 	$self -> init_config;
 	$self -> logger -> debug("Calling init_db()");
 	$self -> init_db;
 
+	$self -> logger -> debug("Calling build_pad()");
+	my($pad)				= $self -> build_pad;
 	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
 	my($module_names_path)	= File::Spec -> catfile($self -> home_path, $self -> module_names_path);
 
