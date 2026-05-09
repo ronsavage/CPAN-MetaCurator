@@ -57,7 +57,7 @@ sub check
 		}
 		else
 		{
-			push $not_found, $name;
+			push @not_found, $name;
 		}
 	}
 
