@@ -44,7 +44,8 @@ sub check
 
 	my(@lines) = read_lines($module_names_path);
 
-	say Dumper($$pad{module_names});
+	#say Dumper($$pad{module_names});
+	say Dumper(@lines);
 
 } # End of check.
 
