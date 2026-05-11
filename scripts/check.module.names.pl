@@ -17,13 +17,13 @@ sub process
 	my(%options)	= @_;
 
 	return CPAN::MetaCurator::Search
-			-> new(home_path => $options{home_path}, log_level => $options{log_level}) -> check;
+			-> new(home_path => $options{home_path}, log_level => $options{log_level}, names_path => $options{names_path}) -> check;
 
 } # End of process.
 
 # ------------------------------------------------
 
-say "check.module.names.pl - Check for presence of module names\n";
+say "check.module.names.pl - Check the db for the presence/absence of the given module names\n";
 
 my(%options);
 
@@ -31,11 +31,13 @@ $options{help}	 			= 0;
 $options{home_path}			= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
 $options{include_packages}	= 0;
 $options{log_level}			= 'info';
+$options{names_path}		= 'data/names.txt';
 my(%opts)					=
 (
 	'help'					=> \$options{help},
 	'home_path'				=> \$options{home_path},
 	'log_level=s'			=> \$options{log_level},
+	'names_path=s'			=> \$options{names_path},
 );
 
 GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
@@ -65,6 +67,7 @@ check.module.names.pl [options]
 	-help
 	-home_path string
 	-log_level info
+	-names_path string
 
 All switches can be reduced to a single letter, except of course -he and -ho.
 
@@ -89,6 +92,12 @@ Default: $ENV{HOME}/perl.modules/CPAN-MetaCurator.
 Available log levels are trace, debug, info, warn, error and fatal, in that order.
 
 Default: info.
+
+=item names_path String
+
+The path which, when prefixed with home_path, specifies the file of module names.
+
+Default: data/names.txt.
 
 =back
 

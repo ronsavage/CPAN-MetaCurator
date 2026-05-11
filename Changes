@@ -1,7 +1,9 @@
 Revision history for perl module CPAN::MetaCurator
 
 1.20  2026-05-09
-	- Add CPAN::MetaCurator::Search & check.module.names.pl to read data/module.names.txt & determine if those names are in the db.
+	- Add CPAN::MetaCurator::Search & scripts/check.module.names.pl.
+	- The latter reads data/module.names.txt & determines if those names are in the db.
+	- Module names found are written to the log before the names of the modules which are not found.
 
 1.19  2026-05-04
 	- Fix Export.gather_statistics() where new code failed to count unknown modules.

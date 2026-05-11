@@ -15,7 +15,7 @@ use Moo;
 
 use Types::Standard qw/Str/;
 
-has module_names_path =>
+has names_path =>
 (
 	default		=> sub{return 'data/module.names.txt'},
 	is			=> 'rw',
@@ -34,15 +34,15 @@ sub check
 	$self -> init_config;
 	$self -> init_db;
 
-	my($pad)				= $self -> build_pad;
-	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
-	my($module_names_path)	= File::Spec -> catfile($self -> home_path, $self -> module_names_path);
+	my($pad)			= $self -> build_pad;
+	my($database_path)	= File::Spec -> catfile($self -> home_path, $self -> database_path);
+	my($names_path)		= File::Spec -> catfile($self -> home_path, $self -> names_path);
 
 	$self -> logger -> info("Searching modules table");
 	$self -> logger -> info("Reading: $database_path");
-	$self -> logger -> info("Reading: $module_names_path");
+	$self -> logger -> info("Reading: $names_path");
 
-	my(@names) = read_lines($module_names_path);
+	my(@names) = read_lines($names_path);
 
 	my($found, @found);
 	my(@not_found);
@@ -85,6 +85,15 @@ Version numbers < 1.00 represent development versions. From 1.00 up, they are pr
 =head1 Support
 
 Email the author.
+
+=head1 Method check()
+
+Note: Module names are case-sensitive.
+
+The purpose is to read a file of module names and classify them as found (already in the db)
+and not found (new). This makes updating Perl.Wiki.html much easier since I can ignore the former.
+
+This module is used via check.module.names.pl.
 
 =head1 Author
 
