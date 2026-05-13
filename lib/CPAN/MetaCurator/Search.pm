@@ -65,6 +65,7 @@ sub check
 	$self -> logger -> debug(Dumper @found);
 	$self -> logger -> debug('Not found:');
 	$self -> logger -> debug(Dumper @not_found);
+	$self -> logger -> info('check() finished);
 
 } # End of check.
 
