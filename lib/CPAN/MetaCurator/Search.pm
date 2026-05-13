@@ -41,6 +41,7 @@ sub check
 	$self -> logger -> info("Searching modules table");
 	$self -> logger -> info("Reading: $database_path");
 	$self -> logger -> info("Reading: $names_path");
+	$self -> logger -> info(Dumper $$pad{module_names});
 
 	my(@names) = read_lines($names_path);
 
@@ -50,8 +51,6 @@ sub check
 	for my $name (sort @names)
 	{
 		$found = exists $$pad{module_names}{$name};
-
-		say "$name -> $found" if ($name =~ /Algo/);
 
 		if ($found)
 		{
