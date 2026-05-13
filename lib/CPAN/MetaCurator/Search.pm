@@ -51,6 +51,8 @@ sub check
 	{
 		$found = exists $$pad{module_names}{$name};
 
+		say "$name -> $found" if ($name =~ /Algo/);
+
 		if ($found)
 		{
 			push @found, $name;
