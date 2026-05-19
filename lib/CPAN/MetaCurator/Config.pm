@@ -144,17 +144,6 @@ our $VERSION = '1.20';
 
 # -----------------------------------------------
 
-sub BUILD
-{
-	my($self) = @_;
-
-	say 'Export.BUILD() ';
-	say $self -> separator;
-
-} # End of BUILD.
-
-# -----------------------------------------------
-
 sub init_config
 {
 	my($self)				= @_;
