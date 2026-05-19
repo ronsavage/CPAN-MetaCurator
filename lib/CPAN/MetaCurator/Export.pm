@@ -18,6 +18,18 @@ our $VERSION = '1.20';
 
 # -----------------------------------------------
 
+sub BUILD
+{
+	my($self, %params) = @_;
+
+	say 'Export.BUILD() ';
+	say Dumper(%params);
+	say $self -> separator;
+
+} # End of BUILD.
+
+# -----------------------------------------------
+
 sub export_tree
 {
 	my($self) = @_;
@@ -25,10 +37,12 @@ sub export_tree
 	$self -> init_config;
 	$self -> init_db;
 
+	say 'export_tree()';
 	say 'home_path:        ', $self -> home_path;
 	say 'include_packages: ', $self -> include_packages;
 	say 'log_level:        ', $self -> log_level;
 	say 'output_path:      ', $self -> output_path;
+	say $self -> separator;
 
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
