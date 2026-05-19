@@ -21,10 +21,10 @@ Note: My web host and I use case-sensitive file systems.
 =head2 Prepare wikis
 =over
 =item cd ~/savage.net.au/
-=item Edit Perl.Wiki, etc. Includes updating the release date. Save to ~/Downloads/
-=item cp ~/Downloads/*.Wiki.html to misc/
+=item Edit Perl.Wiki as desired. Includes updating the release date. Save to ~/Downloads/
+=item cp ~/Downloads/Perl.Wiki.html to misc/
 =item git commit -am"Update Perl.Wiki V 1.xx"
-=item mv misc/*.Wiki.html to $DH (/dev/shm/html on my machine) for eye-ball check via FF
+=item cp misc/Perl.Wiki.html to $DH/misc (/dev/shm/html/misc on my machine) for eye-ball check via FF
 =back
 
 =head2 Export Perl.Wiki.html
@@ -32,7 +32,7 @@ Note: My web host and I use case-sensitive file systems.
 =item In the 'Tools' tab click 'export all'
 =item In the export menu click 'JSON format'. This creates ~/Downloads/tiddlers.json
 =item cd ~/perl.modules/CPAN-MetaCurator
-=item mv ~/Downloads/tiddlers.json data/tiddlers.json
+=item mv ~/Downloads/tiddlers.json data/
 =back
 
 =head2 Rebuild Perl Wiki Tree

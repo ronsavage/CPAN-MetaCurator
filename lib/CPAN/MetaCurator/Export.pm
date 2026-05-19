@@ -25,6 +25,11 @@ sub export_tree
 	$self -> init_config;
 	$self -> init_db;
 
+	say 'home_path:        ', $self -> home_path;
+	say 'include_packages: ', $self -> include_packages;
+	say 'log_level:        ', $self -> log_level;
+	say 'output_path:      ', $self -> output_path;
+
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 
