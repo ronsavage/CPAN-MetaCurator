@@ -20,10 +20,10 @@ our $VERSION = '1.20';
 
 sub BUILD
 {
-	my($self, %params) = @_;
+	my($self, $args) = @_;
 
 	say 'Export.BUILD() ';
-	say Dumper(%params);
+	say Dumper($args);
 	say $self -> separator;
 
 } # End of BUILD.
