@@ -1,0 +1,45 @@
+[2026-05-25 12:17:48.63229] [2304345] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-05-25 12:17:48.63698] [2304345] [info] Excluding metapackager table 'packages'
+[2026-05-25 12:17:48.63730] [2304345] [info] Searching modules table
+[2026-05-25 12:17:48.63732] [2304345] [info] Reading: /home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-05-25 12:17:48.63734] [2304345] [info] Reading: /home/ron/perl.modules/CPAN-MetaCurator/data/names.txt
+[2026-05-25 12:17:48.63760] [2304345] [info] Found:
+[2026-05-25 12:17:48.63764] [2304345] [info] 
+[2026-05-25 12:17:48.63766] [2304345] [info] Not found:
+[2026-05-25 12:17:48.63772] [2304345] [info] "App::PTP"
+ "Config::Abstraction"
+ "Config::Any"
+ "Config::Auto"
+ "Data::Reuse"
+ "File::Basename"
+ "File::Copy"
+ "File::Path"
+ "File::Spec::Functions"
+ "Hash::Merge"
+ "List::Util"
+ "Log::Abstraction"
+ "Math::Trig"
+ "Text::Tabs"
+ "Text::Wrap"
+
+[2026-05-25 12:17:48.63774] [2304345] [info] check() finished
+[2026-05-25 12:20:34.47677] [2305625] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-05-25 12:20:34.47695] [2305625] [info] Dropping all tables
+[2026-05-25 12:20:34.48962] [2305625] [info] Dropped all tables
+[2026-05-25 12:20:34.48971] [2305625] [info] --------------------------------------------------
+[2026-05-25 12:20:34.67302] [2305626] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-05-25 12:20:34.67319] [2305626] [info] Creating all tables
+[2026-05-25 12:20:34.68834] [2305626] [info] Created all tables
+[2026-05-25 12:20:34.68839] [2305626] [info] --------------------------------------------------
+[2026-05-25 12:20:34.89274] [2305635] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-05-25 12:20:34.89294] [2305635] [info] Populating all tables
+[2026-05-25 12:20:34.89382] [2305635] [info] Populating the 'constants' table with import_csv_file()
+[2026-05-25 12:20:34.94336] [2305635] [info] Stored 9 records into table 'constants'
+[2026-05-25 12:20:34.94391] [2305635] [info] Finished populate_constants_table(). Stored 9 records into table 'constants'
+[2026-05-25 12:20:34.94612] [2305635] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-05-25 12:20:35.13502] [2305635] [warn] Skipping paragraph: ChangeLog
+[2026-05-25 12:20:35.20506] [2305635] [warn] Skipping paragraph: GettingStarted
+[2026-05-25 12:20:35.24722] [2305635] [warn] Skipping paragraph: MainMenu
+[2026-05-25 12:20:35.45703] [2305635] [info] Finished populate_topics_table(). Stored 200 records into table 'topics'
+[2026-05-25 12:20:35.45716] [2305635] [info] Populated all tables
+[2026-05-25 12:20:35.45718] [2305635] [info] --------------------------------------------------
