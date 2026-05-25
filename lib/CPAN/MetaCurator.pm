@@ -1,6 +1,6 @@
 package CPAN::MetaCurator;
 
-use 5.36.0;
+use v5.40;
 
 our $VERSION = '1.20';
 
