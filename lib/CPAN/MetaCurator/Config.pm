@@ -111,14 +111,6 @@ has node_types =>
 	required	=> 0,
 );
 
-has separator =>
-(
-	default		=> '-' x 50,
-	is			=> 'ro',
-	isa			=> Str,
-	required	=> 0,
-);
-
 # Warning. Order is important because of foreign key constraints.
 # The tables are created in this order, and dropped in reverse order.
 # Lastly, we process the topics table to extract the module names.
@@ -135,6 +127,14 @@ has table_names =>
 has tiddlers_path =>
 (
 	default		=> sub{return 'data/tiddlers.json'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
+has visual_break =>
+(
+	default		=> sub{return '-' x 50},
 	is			=> 'rw',
 	isa			=> Str,
 	required	=> 0,

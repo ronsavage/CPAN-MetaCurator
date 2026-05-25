@@ -1,6 +1,6 @@
-#!/usr/bin/env perl
+#!/usr/bin/perl
 
-use 5.40.0;
+use v5.42.2;
 
 use CPAN::MetaCurator::Export;
 
