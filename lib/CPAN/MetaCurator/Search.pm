@@ -41,7 +41,7 @@ sub check
 	$self -> logger -> info("Searching modules table");
 	$self -> logger -> info("Reading: $database_path");
 	$self -> logger -> info("Reading: $names_path");
-	$self -> logger -> info(Dumper $$pad{module_names});
+	$self -> logger -> debug(Dumper $$pad{module_names});
 
 	my(@names) = read_lines($names_path);
 
@@ -62,8 +62,8 @@ sub check
 		}
 	}
 
-	$self -> logger -> debug('Found:');
-	$self -> logger -> debug(Dumper @found);
+	$self -> logger -> info('Found:');
+	$self -> logger -> info(Dumper @found);
 	$self -> logger -> info('Not found:');
 	$self -> logger -> info(Dumper @not_found);
 	$self -> logger -> info('check() finished');
