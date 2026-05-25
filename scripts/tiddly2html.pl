@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 
-use 5.36.0;
 use open qw(:std :utf8);
 use strict;
 use warnings;

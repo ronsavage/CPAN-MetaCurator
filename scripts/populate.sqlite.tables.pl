@@ -1,6 +1,4 @@
-#!/usr/bin/env perl
-
-use 5.36.0;
+#!/usr/bin/perl
 
 use Data::Dumper::Concise; # For Dumper.
 

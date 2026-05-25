@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-use 5.36.0;
-
 use File::Slurper 'read_text';
 
 use Text::Balanced qw/extract_tagged gen_extract_tagged/;

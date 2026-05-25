@@ -1,6 +1,5 @@
 package CPAN::MetaCurator::Export;
 
-use v5.40;
 use boolean;
 use open qw(:std :utf8);
 use parent 'CPAN::MetaCurator::HTML';

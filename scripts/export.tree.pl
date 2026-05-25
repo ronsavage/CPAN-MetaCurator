@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-use v5.40;
-
 use CPAN::MetaCurator::Export;
 
 use Data::Dumper::Concise; # For Dumper.
