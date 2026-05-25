@@ -18,18 +18,6 @@ our $VERSION = '1.20';
 
 # -----------------------------------------------
 
-sub BUILD
-{
-	my($self, $args) = @_;
-
-	say 'Export.BUILD() ';
-	say Dumper($args);
-	say $self -> separator;
-
-} # End of BUILD.
-
-# -----------------------------------------------
-
 sub export_tree
 {
 	my($self) = @_;

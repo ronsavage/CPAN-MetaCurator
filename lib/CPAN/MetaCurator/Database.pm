@@ -242,7 +242,6 @@ sub init_db
 	$self -> engine($self -> creator -> db_vendor =~ /(?:Mysql)/i ? 'engine=innodb' : '');
 	$self -> time_option($self -> creator -> db_vendor =~ /(?:MySQL|Postgres)/i ? '(0) without time zone' : '');
 	$self -> logger -> info("Connected to $dsn[0]");
-	$self -> logger -> info($self -> separator);
 
 } # End of init_db.
 
@@ -284,7 +283,6 @@ sub init_metapackager_db
 	$self -> metapackager_dbh -> do('PRAGMA foreign_keys = ON') if ($$config{dsn} =~ /SQLite/i);
 	$self -> metapackager_db(DBIx::Simple -> new($self -> metapackager_dbh) );
 	$self -> logger -> info("Connected to $dsn[0]");
-	$self -> logger -> info($self -> separator);
 
 } # End of init_metapackager_db.
 
