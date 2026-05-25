@@ -1,6 +1,6 @@
 package CPAN::MetaCurator::Search;
 
-use 5.36.0;
+use v5.40;
 use boolean;
 use open qw(:std :utf8);
 use parent 'CPAN::MetaCurator::HTML';

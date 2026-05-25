@@ -1,6 +1,6 @@
 package CPAN::MetaCurator::HTML;
 
-use 5.40.0;
+use v5.40;
 use parent 'CPAN::MetaCurator::Database';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 

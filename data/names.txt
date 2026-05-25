@@ -13,3 +13,11 @@ Log::Abstraction
 Math::Trig
 Text::Tabs
 Text::Wrap
+HTTP::Handy
+LTSV::LINQ
+mb
+UTF8::R2
+Jacode
+Jacode4e
+Jacode4e::RoundTrip
+mb::JSON
