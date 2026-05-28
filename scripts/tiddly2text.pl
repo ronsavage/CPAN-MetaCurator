@@ -1,5 +1,6 @@
 #!/usr/bin/env perl
 
+use feature 'say';
 use open qw(:std :utf8);
 use strict;
 use warnings;

@@ -1,5 +1,11 @@
 #!/usr/bin/env perl
 
+use feature 'say';
+use open qw(:std :utf8);
+use strict;
+use warnings;
+use warnings qw(FATAL utf8);
+
 use CPAN::MetaCurator::Export;
 
 use Data::Dumper::Concise; # For Dumper.
