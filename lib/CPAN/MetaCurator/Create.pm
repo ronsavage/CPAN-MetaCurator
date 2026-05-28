@@ -1,5 +1,7 @@
 package CPAN::MetaCurator::Create;
 
+use boolean;
+use feature 'say';
 use parent 'CPAN::MetaCurator::Database';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 

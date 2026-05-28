@@ -1,6 +1,7 @@
 package CPAN::MetaCurator::Config;
 
 use boolean;
+use feature 'say';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 use Config::Tiny;

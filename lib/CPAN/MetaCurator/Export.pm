@@ -1,6 +1,7 @@
 package CPAN::MetaCurator::Export;
 
 use boolean;
+use feature 'say';
 use open qw(:std :utf8);
 use parent 'CPAN::MetaCurator::HTML';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
