@@ -140,7 +140,7 @@ has visual_break =>
 	required	=> 0,
 );
 
-our $VERSION = '1.20';
+our $VERSION = '1.21';
 
 # -----------------------------------------------
 

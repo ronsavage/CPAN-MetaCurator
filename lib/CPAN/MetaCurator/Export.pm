@@ -14,7 +14,7 @@ use File::Spec;
 
 our %seen;
 
-our $VERSION = '1.20';
+our $VERSION = '1.21';
 
 # -----------------------------------------------
 
