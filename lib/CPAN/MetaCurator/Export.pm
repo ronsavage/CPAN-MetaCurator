@@ -294,10 +294,12 @@ sub parse_topic
 
 			for $see_item (@see_also)
 			{
-				$$item{html}	= '';
-				$$item{text}	= $see_also;
+				$$item{html}	= $see_also;
+				$$item{text}	= '';
 
 				push @items, $item;
+
+				$self -> logger -> debug("Push: $see_also");
 			}
 
 		}
