@@ -237,6 +237,7 @@ sub parse_topic
 	my($index)							= 0;
 
 	my($button, %button);
+	my($count);
 	my($description);
 	my(@extras);
 	my($href, @hover);
@@ -287,21 +288,22 @@ sub parse_topic
 
 		if ($token eq 'See also')
 		{
+			$count			= $#see_also + 1;
 			$$item{html}	= $button{see_also};
-			$$item{text}	= "See Also text: @{$#see_also + 1} items";
+			$$item{text}	= "See Also text: $count items";
 
-			$self -> logger -> debug("See Also text: @{$#see_also + 1} items");
+			$self -> logger -> debug("See Also text: $count items");
 
 			push @items, $item;
 
 			for $see_item (@see_also)
 			{
-				$$item{html}	= $see_also;
+				$$item{html}	= $see_item;
 				$$item{text}	= '';
 
 				push @items, $item;
 
-				$self -> logger -> debug("Push: $see_also");
+				$self -> logger -> debug("Push: $see_item");
 			}
 
 		}
