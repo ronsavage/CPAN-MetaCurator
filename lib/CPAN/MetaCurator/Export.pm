@@ -366,8 +366,8 @@ sub parse_topic
 				$button{extras} = '';
 			}
 
-			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
-			$$item{text}	= "";
+			$$item{html}	= "<span><a href = '$href' target = '_blank'>***** $token - $description</a></span><span>.</span>$button{extras}";
+			$$item{text}	= '';
 
 			push @items, $item;
 		}
