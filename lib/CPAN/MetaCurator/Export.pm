@@ -288,7 +288,9 @@ sub parse_topic
 		if ($token eq 'See also')
 		{
 			$$item{html}	= $button{see_also};
-			$$item{text}	= "";
+			$$item{text}	= "See Also text: @{$#see_also + 1} items";
+
+			$self -> logger -> debug("See Also text: @{$#see_also + 1} items");
 
 			push @items, $item;
 
