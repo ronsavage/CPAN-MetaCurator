@@ -243,7 +243,7 @@ sub parse_topic
 	my(@inside_pre, $item, @items);
 	my($line);
 	my(%node_type);
-	my(%special_case, @see_also);
+	my(%special_case, $see_item, @see_also);
 	my($token);
 
 	$button{extras}				= '';
@@ -291,6 +291,14 @@ sub parse_topic
 			$$item{text}	= "";
 
 			push @items, $item;
+
+			for $see_item (@see_also)
+			{
+				$$item{html}	= '';
+				$$item{text}	= $see_also;
+
+				push @items, $item;
+			}
 
 		}
 		elsif ($$topic{title} eq 'FAQ')
