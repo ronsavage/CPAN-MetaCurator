@@ -186,7 +186,7 @@ sub parse_topic
 		{
 			$context = 'text';
 		}
-		elsif ($line =~ /^o (.+?):/)
+		elsif ($line =~ /^o (.+):$/)
 		{
 			$context		= 'module';
 			$token			= $1;
@@ -194,12 +194,10 @@ sub parse_topic
 
 			$self -> insert_hashref('modules', {name => $token});
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
-			$self -> logger -> debug("1 of 2: line_id: $line_id");
 		}
 
 		if ($context eq 'module')
 		{
-			$self -> logger -> debug("2 of 2: line_id: $line_id");
 			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
 			#
 			# 3 line entry:
