@@ -194,9 +194,7 @@ sub parse_topic
 
 			if ($$pad{module_names}{$token} && ! $seen{$token})
 			{
-				$self -> insert_hashref('modules', {name => $token});
-
-				$seen{$token} = true;
+				$seen{$token} = $self -> insert_hashref('modules', {name => $token});
 			}
 		}
 
