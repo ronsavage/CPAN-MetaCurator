@@ -222,7 +222,7 @@ sub parse_topic
 
 			push @items, $item;
 
-			while ($lines[$index + 1] eq ''){$index++}; # Skip empty line (up to next 'o ...').
+			while ($lines[$index + 1] != /^o /){$index++}; # Skip empty line (up to next 'o ...').
 		}
 	}
 
