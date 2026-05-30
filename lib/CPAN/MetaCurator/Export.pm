@@ -221,6 +221,8 @@ sub parse_topic
 			$self -> logger -> debug("href: $href");
 
 			push @items, $item;
+
+			while ($lines[$index + 1] eq ''){$index++}; # Skip empty line (up to next 'o ...').
 		}
 	}
 
