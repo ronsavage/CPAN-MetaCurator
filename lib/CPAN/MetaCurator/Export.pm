@@ -218,6 +218,8 @@ sub parse_topic
 			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
 			$$item{text}	= '';
 
+			$self -> logger -> debug("href: $href");
+
 			push @items, $item;
 		}
 	}
