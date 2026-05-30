@@ -124,7 +124,7 @@ sub gather_statistics
 
 	$$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
 	$$node_type{topic}		= $$pad{topic_names}{$token}	? true : false;
-	$$node_type{known}		= $$pad{packages}{$token}		? true : false;
+	$$node_type{known}		= $$pad{module_names}{$token}	? true : false;
 	$$node_type{unknown}	= ! ($$node_type{acronym} || $$node_type{known} || $$node_type{topic});
 
 	$$pad{count}{acronym}++	if ($$node_type{acronym});
@@ -192,7 +192,7 @@ sub parse_topic
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
 			$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 
-			if (! $seen{$token})
+			if ($$pad{module_names}{$token} && ! $seen{$token})
 			{
 				$self -> insert_hashref('modules', {name => $token});
 
