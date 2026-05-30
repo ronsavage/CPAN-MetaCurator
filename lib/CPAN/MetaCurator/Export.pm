@@ -12,6 +12,8 @@ use DateTime::Tiny;
 use File::Slurper 'read_lines';
 use File::Spec;
 
+use Types::Standard 'Enum';
+
 our %seen;
 
 our $VERSION = '1.21';
@@ -115,93 +117,6 @@ sub export_modules_table
 } # End of export_modules_table.
 
 # --------------------------------------------------
-# Note: Data is returned in:
-# 1: $button
-# 2: $index
-# 3: @$inside_pre
-
-sub handle_inside_pre
-{
-	my($self, $index, $line, $lines, $inside_pre, $special_case, $topic) = @_;
-
-	$$special_case{inside_pre}	= true;
-	@$inside_pre				= $line;
-
-	do
-	{
-		$index++;
-
-		if ($index <= $#$lines)
-		{
-			$line = $$lines[$index];
-
-			if ($line =~ /^o /)
-			{
-				$$special_case{inside_pre} = false;
-			}
-			else
-			{
-				push @$inside_pre, $line;
-			}
-		}
-		else
-		{
-			$$special_case{inside_pre} = false;
-		}
-	} until (! $$special_case{inside_pre});
-
-	my($button) = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
-
-	$self -> logger -> debug("\t$_") for (@$inside_pre);
-
-	return ($button, $index);
-
-} # End of handle_inside_pre.
-
-# --------------------------------------------------
-# Note: Data is returned in:
-# 1: $button
-# 2: $index
-# 3: @$see_also
-
-sub handle_see_also
-{
-	my($self, $index, $line, $lines, $see_also, $special_case, $topic) = @_;
-
-	$$special_case{see_also}	= true;
-	@$see_also					= $line;
-
-	do
-	{
-		$index++;
-
-		if ($index <= $#$lines)
-		{
-			$line = $$lines[$index];
-
-			if ($line =~ /^o /)
-			{
-				$$special_case{see_also} = false;
-			}
-			else
-			{
-				push @$see_also, $line;
-			}
-
-		}
-		else
-		{
-			$$special_case{see_also} = false;
-		}
-	} until (! $$special_case{see_also});
-
-	$self -> logger -> debug("\t$_") for (@$see_also);
-
-	return $index;
-
-} # End of handle_see_also.
-
-# --------------------------------------------------
 # Some names might be acronyms & module names & topic names.
 # Example: RSS.
 
@@ -234,87 +149,67 @@ sub parse_topic
 	my(@lines)							= split(/\n/, $$topic{text});
 	@lines								= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
 	my($line_id)						= $leaf_id;
-	my($index)							= 0;
+	my($index)							= -1;
 
-	my($button, %button);
-	my($count);
+	my(%button);
 	my($description);
 	my(@extras);
-	my($href, @hover);
-	my(@inside_pre, $item, @items);
+	my($href);
+	my($item, @items);
 	my($line);
 	my(%node_type);
-	my(%special_case, $see_item, @see_also);
 	my($token);
 
-	$button{extras}				= '';
-	$button{inside_pre}			= '';
-	$button{see_also}			= '';
-	$special_case{inside_pre}	= false;
-	$special_case{see_also}		= false;
+	$button{extras}		= '';
+	$button{faq}		= '';
+	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
+	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
+	my($context)		= Enum['faq', 'module', 'pre_pre', 'see_also', 'text'];
 
-	while ($index <= $#lines)
+	while ($index < $#lines)
 	{
+		$index++;
+
 		$line = $lines[$index];
 
-		# 1 of 2: Process non-modules.
-
+=pod
 		if ($line =~ /<pre>/)
 		{
-			($button{inside_pre}, $index) = $self -> handle_inside_pre($index, $line, \@lines, \@inside_pre, \%special_case, $topic);
+			$index = $self -> handle_pre_pre($index, $line, \@lines, \@pre_pre, \%special_case, $topic);
+
 		}
 		elsif ($line =~ /^o See also/)
 		{
-			$index				= $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic);
-			$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
+			$index = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic);
 		}
+=cut
 
-		$index++;
-
-		last if ($index > $#lines);
-
-		# 2 of 2: Skip everything except modules (hopefully).
-
-		next if ($line !~ /^o (.+):?/);
-
-		$token	= $1 || '';
 		$item	= {href => '', id => ++$line_id, text => ''};
+		$token	= '';
 
-		$self -> gather_statistics(\%node_type, $pad, $token, $topic);
-
-		# Special cases, due to their formatting:
-		# 1: See also.
-		# 2: FAQ.
-
-		if ($token eq 'See also')
+		if ($line =~ /^o See also:/)
 		{
-			$count			= $#see_also + 1;
-			$$item{html}	= $button{see_also};
-			$$item{text}	= "See Also text: $count items";
-
-			$self -> logger -> debug("See Also text: $count items");
-
-			push @items, $item;
-
-			for $see_item (@see_also)
-			{
-				$$item{html}	= $see_item;
-				$$item{text}	= '';
-
-				push @items, $item;
-
-				$self -> logger -> debug("Push: $see_item");
-			}
-
+			$context = 'see_also';
 		}
-		elsif ($$topic{title} eq 'FAQ')
+		elsif ($line =~ /<pre>/)
 		{
-			$$item{html}	= '';
-			$$item{text}	= $line;
-
-			push @items, $item;
+			$context = 'pre_pre';
 		}
-		else
+		elsif ($line =~ |</pre>|)
+		{
+			$context = 'text';
+		}
+		elsif ($line =~ /^o (.+):/)
+		{
+			$context		= 'module';
+			$token			= $1;
+			$seen{$token}	= true;
+
+			$self -> insert_hashref('modules', {name => $token});
+			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
+		}
+
+		if ($context eq 'module')
 		{
 			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
 			#
@@ -366,17 +261,10 @@ sub parse_topic
 				$button{extras} = '';
 			}
 
-			$$item{html}	= "<span><a href = '$href' target = '_blank'>***** $token - $description</a></span><span>.</span>$button{extras}";
+			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
 			$$item{text}	= '';
 
 			push @items, $item;
-		}
-
-		if (! $seen{$token})
-		{
-			$self -> insert_hashref('modules', {name => $token});
-
-			$seen{$token} = true;
 		}
 	}
 
