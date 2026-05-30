@@ -195,7 +195,7 @@ sub parse_topic
 		{
 			$context = 'pre_pre';
 		}
-		elsif ($line =~ |</pre>|)
+		elsif ($line =~ m|</pre>|)
 		{
 			$context = 'text';
 		}
