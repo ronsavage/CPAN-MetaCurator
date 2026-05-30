@@ -199,7 +199,7 @@ sub parse_topic
 		{
 			$context = 'text';
 		}
-		elsif ($line =~ /^o (.+):/)
+		elsif ($line =~ /^o (.+?):/)
 		{
 			$context		= 'module';
 			$token			= $1;
