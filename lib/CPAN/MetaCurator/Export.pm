@@ -197,7 +197,9 @@ sub parse_topic
 			}
 		}
 
-		if ($context eq 'module')
+		match ($context : eq)
+		{
+		case ('module')
 		{
 			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
 			#
@@ -224,6 +226,20 @@ sub parse_topic
 
 			while ($lines[$index + 1] != /^o /){$index++}; # Skip empty line (up to next 'o ...').
 		}
+		case ('see_also')
+		{
+			$index++;
+
+			while ($lines[$index] ~= /^- /)
+			{
+				$$item{html}	= '';
+				$$item{text}	= $lines[$index];
+
+				push @items, $item;
+			}
+		}
+		}
+		elsif ($context
 	}
 
 	return [@items];
