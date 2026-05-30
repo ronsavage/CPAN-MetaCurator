@@ -151,7 +151,6 @@ sub parse_topic
 
 	my(%button);
 	my($description);
-	my(@extras);
 	my($href);
 	my($item, @items);
 	my($line);
@@ -213,43 +212,9 @@ sub parse_topic
 			# - https://en.wikipedia.org/wiki/DMARC
 			# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
 			# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
-			#
-			# If the latter then stockpile lines beyond 3 & stash them in a hidden field to be popped-up on a button click.
 
-			@extras = ();
-
-			while ( ($index <= $#lines) && ($lines[$index] !~ /^o/) )
-			{
-				push @extras, $lines[$index++];
-			}
-
-			if ($#extras < 2)
-			{
-				#$self -> logger -> debug("Token: $token. Expected: $_ >$extras[$_]<") for (0 .. $#extras);
-			}
-
-			$self -> logger -> error("Token: $token. Missing lines"), next if ($#extras < 1);
-			$self -> logger -> error("Token: $token. Missing -text"), next if ($extras[0] !~ /^-/);
-			$self -> logger -> error("Token: $token. Missing -link"), next if ( ($#extras < 1) || ($extras[1] !~ /^-/) );
-
-			$description	= shift @extras;
-			$href			= shift @extras;
-
-			$self -> logger -> error("Token: $token. Missing description"),	next if (! defined($description) );
-			$self -> logger -> error("Token: $token. Missing href"), 		next if (! defined($href) );
-
-			if ($#extras >= 0)
-			{
-				$button{extras} = "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[TBA]</button>";
-
-				$self -> logger -> debug("Token: $token. Extras:");
-				$self -> logger -> debug("\t$_") for (@extras);
-			}
-			else
-			{
-				$button{extras} = '';
-			}
-
+			$description	= $lines[++$index];
+			$href			= $lines[++$index];
 			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
 			$$item{text}	= '';
 
