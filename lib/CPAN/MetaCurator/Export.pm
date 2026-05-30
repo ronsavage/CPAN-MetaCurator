@@ -170,20 +170,7 @@ sub parse_topic
 	{
 		$index++;
 
-		$line = $lines[$index];
-
-=pod
-		if ($line =~ /<pre>/)
-		{
-			$index = $self -> handle_pre_pre($index, $line, \@lines, \@pre_pre, \%special_case, $topic);
-
-		}
-		elsif ($line =~ /^o See also/)
-		{
-			$index = $self -> handle_see_also($index, $line, \@lines, \@see_also, \%special_case, $topic);
-		}
-=cut
-
+		$line	= $lines[$index];
 		$item	= {href => '', id => ++$line_id, text => ''};
 		$token	= '';
 
@@ -207,10 +194,12 @@ sub parse_topic
 
 			$self -> insert_hashref('modules', {name => $token});
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
+			$self -> logger -> debug("1 of 2: line_id: $line_id");
 		}
 
 		if ($context eq 'module')
 		{
+			$self -> logger -> debug("2 of 2: line_id: $line_id");
 			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
 			#
 			# 3 line entry:
