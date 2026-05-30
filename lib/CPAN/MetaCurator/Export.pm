@@ -35,13 +35,11 @@ sub export_tree
 
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
+	my(@list)					= '<ul>';
+	my($root)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
+	my($id)						= $$pad{topic_html_ids}{$$root{title} };
 
-	# Populate the body.
-
-	my(@list)	= '<ul>';
-	my($root)	= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
-	my($id)		= $$pad{topic_html_ids}{$$root{title} };
-
+	$self -> logger -> info($self -> visual_break);
 	$self -> logger -> info("Topic: id: $id. title: $$root{title}");
 
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$$root{title}</a>|;
@@ -192,7 +190,7 @@ sub parse_topic
 			$token		= $1;
 
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
-			$self -> logger -> debug("Topic: $topic{title}. Module: $token");
+			$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 
 			if (! $seen{$token})
 			{
