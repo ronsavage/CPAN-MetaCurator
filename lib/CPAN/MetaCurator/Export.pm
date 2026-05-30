@@ -188,13 +188,18 @@ sub parse_topic
 		}
 		elsif ($line =~ /^o (.+)$/)
 		{
-			$context		= 'module';
-			$token			= $1;
-			$seen{$token}	= true;
+			$context	= 'module';
+			$token		= $1;
 
-			$self -> insert_hashref('modules', {name => $token});
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
 			$self -> logger -> debug("Topic: $topic{title}. Module: $token");
+
+			if (! $seen{$token})
+			{
+				$self -> insert_hashref('modules', {name => $token});
+
+				$seen{$token} = true;
+			}
 		}
 
 		if ($context eq 'module')
