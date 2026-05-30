@@ -189,12 +189,12 @@ sub parse_topic
 			$context	= 'module';
 			$token		= $1;
 
-			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
-			$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
-
 			if ($$pad{module_names}{$token} && ! $seen{$token})
 			{
 				$seen{$token} = $self -> insert_hashref('modules', {name => $token});
+
+				$self -> gather_statistics(\%node_type, $pad, $token, $topic);
+				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
 		}
 
