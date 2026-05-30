@@ -213,8 +213,8 @@ sub parse_topic
 			# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
 			# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
 
-			$description	= $lines[++$index];
-			$href			= $lines[++$index];
+			$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
+			$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
 			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
 			$$item{text}	= '';
 
