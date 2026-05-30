@@ -199,47 +199,46 @@ sub parse_topic
 
 		match ($context : eq)
 		{
-		case ('module')
-		{
-			# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
-			#
-			# 3 line entry:
-			# o DKIM:
-			# - DomainKeys Identified Mail <- $index
-			# - https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail
-			#
-			# 3+ line entry:
-			# o DMARC:
-			# - Domain-based Message Authentication, Reporting, and Conformance <- $index
-			# - https://en.wikipedia.org/wiki/DMARC
-			# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
-			# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
-
-			$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
-			$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
-			$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
-			$$item{text}	= '';
-
-			$self -> logger -> debug("href: $href");
-
-			push @items, $item;
-
-			while ($lines[$index + 1] != /^o /){$index++}; # Skip empty line (up to next 'o ...').
-		}
-		case ('see_also')
-		{
-			$index++;
-
-			while ($lines[$index] ~= /^- /)
+			case ('module')
 			{
-				$$item{html}	= '';
-				$$item{text}	= $lines[$index];
+				# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
+				#
+				# 3 line entry:
+				# o DKIM:
+				# - DomainKeys Identified Mail <- $index
+				# - https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail
+				#
+				# 3+ line entry:
+				# o DMARC:
+				# - Domain-based Message Authentication, Reporting, and Conformance <- $index
+				# - https://en.wikipedia.org/wiki/DMARC
+				# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
+				# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
+
+				$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
+				$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
+				$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
+				$$item{text}	= '';
+
+				$self -> logger -> debug("href: $href");
 
 				push @items, $item;
+
+				while ($lines[$index + 1] != /^o /){$index++}; # Skip empty line (up to next 'o ...').
 			}
-		}
-		}
-		elsif ($context
+			case ('see_also')
+			{
+				$index++;
+
+				while ($lines[$index] ~= /^- /)
+				{
+					$$item{html}	= '';
+					$$item{text}	= $lines[$index];
+
+					push @items, $item;
+				}
+			}
+		} # End match.
 	}
 
 	return [@items];
