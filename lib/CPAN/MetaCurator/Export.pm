@@ -232,7 +232,7 @@ sub parse_topic
 			{
 				$index++;
 
-				while ($lines[$index] ~= /^- /)
+				while ($lines[$index] =~ /^- /)
 				{
 					$$item{html}	= '';
 					$$item{text}	= $lines[$index];
