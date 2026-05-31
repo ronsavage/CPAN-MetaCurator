@@ -179,7 +179,7 @@ sub parse_topic
 			$context = 'acronym';
 
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
-			$self -> logger -> debug("Topic: $$topic{title}. Entry: $line");
+			$self -> logger -> debug("Topic: $$topic{title}. Acronym: $line");
 		}
 		elsif ($$topic{title} eq 'FAQ')
 		{
@@ -223,6 +223,7 @@ sub parse_topic
 		{
 			case('acronym')
 			{
+				$token			= ($line =~ /^o (.+)$/) ? $1 : $line;
 				$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
 				$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
 				$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
