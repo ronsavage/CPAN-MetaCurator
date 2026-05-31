@@ -38,8 +38,8 @@ Note: My web host and I use case-sensitive file systems.
 Note: Optionally use sqlite database (15 Mb) from CPAN::MetaPackager
 
 =over
-=item Set env var with INCLUDE_PACKAGES=1 if you have /tmp/cpan.metapackager.sqlite available & to 0 (default) otherwise
-=item Test with echo $INCLUDE_PACKAGES
+=item Set env var with: INCLUDE_PACKAGES=1 if you have /tmp/cpan.metapackager.sqlite available & to 0 (default) otherwise
+=item Test with: echo $INCLUDE_PACKAGES
 =item Run scripts/build.db.sh to import tiddlers.json file into database data/cpan.metacurator.sqlite
 =item Run scripts/export.tree.sh to export CPAN::MetaCurator database to html/cpan.metacurator.tree.html
 =item git push

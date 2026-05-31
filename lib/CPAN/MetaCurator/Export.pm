@@ -174,7 +174,16 @@ sub parse_topic
 		$item	= {href => '', id => ++$line_id, text => ''};
 		$token	= '';
 
-		if ($line =~ /^o See also:/)
+		if ($$topic{title} eq 'Acronyms')
+		{
+			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
+			$self -> logger -> debug("Topic: $$topic{title}. Entry: $line");
+		}
+		elsif ($$topic{title} eq 'FAQ')
+		{
+			$context = 'faq';
+		}
+		elsif ($line =~ /^o See also:/)
 		{
 			$context = 'see_also';
 		}
@@ -210,6 +219,11 @@ sub parse_topic
 
 		match($context : eq)
 		{
+			case('faq')
+			{
+				$$item{html}	= '';
+				$$item{text}	= $line;
+			}
 			case('module')
 			{
 				# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
