@@ -152,6 +152,7 @@ sub parse_topic
 	my($index)							= -1;
 
 	my(%button);
+	my($context);
 	my($description);
 	my($href);
 	my($item, @items);
@@ -163,7 +164,7 @@ sub parse_topic
 	$button{faq}		= '';
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
-	my($context)		= Enum['faq', 'module', 'pre_pre', 'see_also', 'text'];
+	my($context_enum)	= Enum['faq', 'module', 'pre_pre', 'see_also', 'text'];
 
 	while ($index < $#lines)
 	{
@@ -176,6 +177,10 @@ sub parse_topic
 		if ($line =~ /^o See also:/)
 		{
 			$context = 'see_also';
+		}
+		elsif ( ($context eq 'see_also') && ($line =~ /^- /) )
+		{
+			# No change to context.
 		}
 		elsif ($line =~ /<pre>/)
 		{
@@ -197,6 +202,10 @@ sub parse_topic
 				$self -> gather_statistics(\%node_type, $pad, $token, $topic);
 				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
+		}
+		else
+		{
+			$context = 'text';
 		}
 
 		match($context : eq)
@@ -230,22 +239,12 @@ sub parse_topic
 			}
 			case('see_also')
 			{
-				next;
-=pod
-				$index++;
-
-				while ($lines[$index] =~ /^- /)
-				{
-					$$item{html}	= '';
-					$$item{text}	= $lines[$index];
-
-					push @items, $item;
-				}
-=cut
 			}
 			case('pre_pre')
 			{
-				next;
+			}
+			case('text')
+			{
 			}
 		} # End match.
 	}
