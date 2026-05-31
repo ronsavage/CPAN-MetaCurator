@@ -335,6 +335,7 @@ sub read_metapackager_table
 	$$pad{$table_name}{$$_{name} }	= $$_{id} for (@$set);
 
 	$self -> metapackager_dbh -> disconnect;
+	$self -> logger -> info("Read $$pad{count}{$table_name} records from the '$table_name' database");
 
 	return $table_name;
 
