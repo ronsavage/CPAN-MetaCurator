@@ -164,7 +164,7 @@ sub parse_topic
 	$button{faq}		= '';
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
-	my($context_enum)	= Enum['faq', 'module', 'pre_pre', 'see_also', 'text'];
+	my($context_enum)	= Enum['acronym', 'faq', 'module', 'pre_pre', 'see_also', 'text'];
 
 	while ($index < $#lines)
 	{
@@ -176,6 +176,8 @@ sub parse_topic
 
 		if ($$topic{title} eq 'Acronyms')
 		{
+			$context = 'acronym';
+
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
 			$self -> logger -> debug("Topic: $$topic{title}. Entry: $line");
 		}
@@ -219,10 +221,19 @@ sub parse_topic
 
 		match($context : eq)
 		{
+			case('acronym')
+			{
+				$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
+				$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
+
+				push @items, $item;
+			}
 			case('faq')
 			{
 				$$item{html}	= '';
 				$$item{text}	= $line;
+
+				push @items, $item;
 			}
 			case('module')
 			{
