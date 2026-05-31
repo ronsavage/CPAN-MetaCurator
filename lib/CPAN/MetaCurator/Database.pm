@@ -330,7 +330,7 @@ sub read_metapackager_table
 	my($sql)						= "select * from $table_name";
 	my($set)						= $self -> metapackager_db -> query($sql) || die $self -> metapackager_db -> error;
 	$set							= [$set -> hashes];
-	$$pad{count}{known}				= $#$set + 1;
+	$$pad{count}{$table_name}		= $#$set + 1;
 	$$pad{$table_name}				= {};
 	$$pad{$table_name}{$$_{name} }	= $$_{id} for (@$set);
 
