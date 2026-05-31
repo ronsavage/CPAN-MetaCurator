@@ -226,8 +226,8 @@ sub parse_topic
 				$token			= ($line =~ /^o (.+)$/) ? $1 : $line;
 				$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
 				$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
-				$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
-				$$item{text}	= '';
+				$$item{html}	= "<span><a href = '$href' target = '_blank'>$description</a></span><span>.</span>$button{extras}";
+				$$item{text}	= $token;
 
 				push @items, $item;
 			}
