@@ -230,6 +230,7 @@ sub parse_topic
 			}
 			case('see_also')
 			{
+				next;
 =pod
 				$index++;
 
@@ -241,6 +242,10 @@ sub parse_topic
 					push @items, $item;
 				}
 =cut
+			}
+			case('pre_pre')
+			{
+				next;
 			}
 		} # End match.
 	}
