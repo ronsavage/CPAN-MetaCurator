@@ -12,6 +12,8 @@ use DateTime::Tiny;
 use File::Slurper 'read_lines';
 use File::Spec;
 
+use Syntax::Keyword::Match;
+
 use Types::Standard 'Enum';
 
 our %seen;
