@@ -230,6 +230,7 @@ sub parse_topic
 			}
 			case('see_also')
 			{
+=pod
 				$index++;
 
 				while ($lines[$index] =~ /^- /)
@@ -239,6 +240,7 @@ sub parse_topic
 
 					push @items, $item;
 				}
+=cut
 			}
 		} # End match.
 	}
