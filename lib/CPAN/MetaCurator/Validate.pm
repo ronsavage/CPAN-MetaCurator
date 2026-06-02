@@ -142,6 +142,7 @@ sub run
 
 	$self -> logger -> info($self -> visual_break);
 	$self -> logger -> info("Topic: id: $id. title: $$root{title}");
+	$self -> logger -> info($self -> visual_break);
 
 	for my $topic (@{$$pad{topics} })
 	{
