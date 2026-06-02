@@ -1,4 +1,4 @@
-package CPAN::MetaCurator::Validator;
+package CPAN::MetaCurator::Validate;
 
 use boolean;
 use feature 'say';
