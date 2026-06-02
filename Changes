@@ -1,5 +1,8 @@
 Revision history for perl module CPAN::MetaCurator
 
+1.22  2026-06-02
+	- Add Validate.pm, scripts/validate.tree.*.
+
 1.21  2026-05-29
 	- Fix handling of See Also when it is the only entry in the Topic. Eg: TheLanguageGuide.
 	- Rewrite some of the JSTree generation code in preparation of the whole re-write.
