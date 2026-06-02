@@ -56,7 +56,7 @@ Note: Optionally use sqlite database (15 Mb) from CPAN::MetaPackager
 
 =head2 Upload
 =over
-=item Upload Perl.Wiki.html, etc to savage.net.au
+=item Upload Perl.Wiki.html, cpan.metacurator.tree.html to savage.net.au/misc
 =item Upload index.html
 =item Log in to blogs.perl.org
 =item Post details of the uploads

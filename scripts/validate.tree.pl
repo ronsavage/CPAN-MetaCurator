@@ -6,7 +6,7 @@ use strict;
 use warnings;
 use warnings qw(FATAL utf8);
 
-use CPAN::MetaCurator::Export;
+use CPAN::MetaCurator::Validate;
 
 use Data::Dumper::Concise; # For Dumper.
 
@@ -20,15 +20,15 @@ sub process
 {
 	my(%options) = @_;
 
-	return CPAN::MetaCurator::Export
+	return CPAN::MetaCurator::Validate
 			-> new(home_path => $options{home_path}, include_packages => $options{include_packages}, log_level => $options{log_level}, output_path => $options{output_path})
-			-> export_tree;
+			-> run;
 
 } # End of process.
 
 # ------------------------------------------------
 
-say "export.tree.pl - Export cpan.metacurator.sqlite as HTML + jsTree\n";
+say "validate.tree.pl - Validate the contents of data/cpan.metacurator.sqlite\n";
 
 my(%options);
 
@@ -36,14 +36,12 @@ $options{help}				= 0;
 $options{home_path}			= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
 $options{include_packages}	= 0;
 $options{log_level}			= 'debug';
-$options{output_path}		= 'html/cpan.metacurator.tree.html';
 my(%opts)					=
 (
 	'help'					=> \$options{help},
 	'home_path=s'			=> \$options{home_path},
 	'include_packages=i'	=> \$options{include_packages},
 	'log_level=s'			=> \$options{log_level},
-	'output_path=s'			=> \$options{output_path},
 );
 
 GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
@@ -63,7 +61,7 @@ __END__
 
 =head1 NAME
 
-export.tree.pl - Export cpan.metacurator.sqlite as HTML + jsTree
+validate.tree.pl - Validate the contents of data/cpan.metacurator.sqlite
 
 =head1 SYNOPSIS
 
@@ -74,7 +72,6 @@ export.as.tree.pl [options]
 	-home_path
 	-include_packages
 	-log_level info
-	-output_path Path
 
 All switches can be reduced to a single letter, except of course -he and -ho.
 
@@ -90,7 +87,7 @@ Print help and exit.
 
 =item home_path String
 
-The path to the directory containing data/ and html/. Unpack distro to populate.
+The path to the directory containing data/.
 
 Default: $ENV{HOME}/perl.modules/CPAN-MetaCurator.
 
@@ -99,7 +96,7 @@ Default: $ENV{HOME}/perl.modules/CPAN-MetaCurator.
 Allow CPAN::MetaCurator to include or exclude the table 'packages' from CPAN::MetaPackager.
 If the table is included in processing, the code then recognizes all known module names.
 
-scripts/export.tree.sh looks for an env var called INCLUDE_PACKAGES.
+scripts/validate.tree.sh looks for an env var called INCLUDE_PACKAGES.
 
 Default: 0 (exclude).
 
@@ -108,12 +105,6 @@ Default: 0 (exclude).
 Available log levels are trace, debug, info, warn, error and fatal, in that order.
 
 Default: info.
-
-=item output_path Path
-
-The path for the output HTML + jsTree.
-
-Default: 'html/cpan.metacurator.tree.html'.
 
 =back
 
