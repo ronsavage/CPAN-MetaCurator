@@ -262,8 +262,6 @@ sub parse_topic
 				$self -> logger -> debug("href: $href");
 
 				push @items, $item;
-
-				#while ($lines[$index + 1] != /^o /){$index++}; # Skip empty line (up to next 'o ...').
 			}
 			case('see_also')
 			{
