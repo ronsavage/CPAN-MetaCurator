@@ -44,6 +44,8 @@ sub parse_topic
 		$line	= $lines[$index];
 		$token	= '';
 
+		$self -> logger -> warn('" found') if ($line =~ /"/);
+
 		if ($$topic{title} eq 'Acronyms')
 		{
 			$context = 'acronym';
