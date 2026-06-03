@@ -83,8 +83,6 @@ sub parse_topic
 			$context = 'text';
 		}
 
-		$self -> logger -> debug("Token: $token. Double-quote found") if ($line =~ /"/); # Extra " to keep UEX happy.
-
 		match($context : eq)
 		{
 			case('acronym')
@@ -98,6 +96,8 @@ sub parse_topic
 			}
 			case('module')
 			{
+				$self -> logger -> debug("Token: $token. Double-quote found") if ($line =~ /"/); # Extra " to keep UEX happy.
+
 				# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
 				#
 				# 3 line entry:
