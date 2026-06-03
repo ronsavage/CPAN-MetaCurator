@@ -30,7 +30,7 @@ sub parse_topic
 	my($index)				= -1;
 	my($context_enum)		= Enum['acronym', 'faq', 'module', 'pre_pre', 'see_also', 'text'];
 
-	my($context);
+	my($context, $current_token);
 	my($description);
 	my($href);
 	my($line);
@@ -70,8 +70,8 @@ sub parse_topic
 		}
 		elsif ($line =~ /^o (.+)$/)
 		{
-			$context	= 'module';
-			$token		= $1;
+			$context		= 'module';
+			$current_token	= $token = $1;
 
 			if ($$pad{module_names}{$token} && ! $seen{$token})
 			{
@@ -121,7 +121,7 @@ sub parse_topic
 			}
 			case('text')
 			{
-				$self -> logger -> debug("Token: $token. Double-quote found") if ($line =~ /"/); # Extra " to keep UEX happy.
+				$self -> logger -> debug("Token: $current_token. Double-quote found") if ($line =~ /"/); # Extra " to keep UEX happy.
 			}
 		} # End match.
 	}
