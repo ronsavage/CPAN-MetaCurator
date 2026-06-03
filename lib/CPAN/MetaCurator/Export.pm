@@ -246,6 +246,9 @@ sub parse_topic
 			case('other')
 			{
 			}
+		} # End match.
+	}
+
 =pod
 			case('module')
 			{
@@ -286,8 +289,6 @@ sub parse_topic
 			{
 			}
 =cut
-		} # End match.
-	}
 
 	return [@items];
 
