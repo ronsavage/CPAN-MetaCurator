@@ -174,7 +174,15 @@ sub parse_topic
 		$item	= {href => '', id => ++$line_id, text => ''};
 		$token	= '';
 
-		if ($$topic{title} eq 'Acronyms')
+		if ($line =~ /^o See also:/)
+		{
+			$context = 'see_also';
+		}
+		elsif ( ($context eq 'see_also') && ($line =~ /^- /) )
+		{
+			# No change to context.
+		}
+		elsif ($$topic{title} eq 'Acronyms')
 		{
 			$context = 'acronym';
 
@@ -184,14 +192,6 @@ sub parse_topic
 		elsif ($$topic{title} eq 'FAQ')
 		{
 			$context = 'faq';
-		}
-		elsif ($line =~ /^o See also:/)
-		{
-			$context = 'see_also';
-		}
-		elsif ( ($context eq 'see_also') && ($line =~ /^- /) )
-		{
-			# No change to context.
 		}
 		elsif ($line =~ /<pre>/)
 		{
@@ -265,6 +265,10 @@ sub parse_topic
 			}
 			case('see_also')
 			{
+				$$item{html}	= '';
+				$$item{text}	= $line;
+
+				push @items, $item;
 			}
 			case('pre_pre')
 			{
