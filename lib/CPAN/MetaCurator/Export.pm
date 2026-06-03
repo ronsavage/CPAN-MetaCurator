@@ -152,7 +152,7 @@ sub parse_topic
 	my($index)							= -1;
 
 	my(%button);
-	my($context);
+	my($module_context, $text_context);
 	my($description);
 	my($href);
 	my($item, @items);
@@ -174,37 +174,42 @@ sub parse_topic
 		$item	= {href => '', id => ++$line_id, text => ''};
 		$token	= '';
 
-		if ($line =~ /^o See also:/)
+		if ($$topic{title} eq 'Acronyms')
 		{
-			$context = 'see_also';
-		}
-		elsif ( ($context eq 'see_also') && ($line =~ /^- /) )
-		{
-			# No change to context.
-		}
-		elsif ($$topic{title} eq 'Acronyms')
-		{
-			$context = 'acronym';
+			$module_context = 'acronym';
 
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
 			$self -> logger -> debug("Topic: $$topic{title}. Acronym: $line");
 		}
 		elsif ($$topic{title} eq 'FAQ')
 		{
-			$context = 'faq';
+			$module_context = 'faq';
+		}
+		else
+		{
+			$module_context = 'other';
+		}
+
+		if ($line =~ /^o See also:/)
+		{
+			$text_context = 'see_also';
+		}
+		elsif ( ($text_context eq 'see_also') && ($line =~ /^- /) )
+		{
+			# No change to context.
 		}
 		elsif ($line =~ /<pre>/)
 		{
-			$context = 'pre_pre';
+			$text_context = 'pre_pre';
 		}
 		elsif ($line =~ m|</pre>|)
 		{
-			$context = 'text';
+			$text_context = 'text';
 		}
 		elsif ($line =~ /^o (.+)$/)
 		{
-			$context	= 'module';
-			$token		= $1;
+			$text_context	= 'module';
+			$token			= $1;
 
 			if ($$pad{module_names}{$token} && ! $seen{$token})
 			{
@@ -216,10 +221,10 @@ sub parse_topic
 		}
 		else
 		{
-			$context = 'text';
+			$text_context = 'text';
 		}
 
-		match($context : eq)
+		match($module_context : eq)
 		{
 			case('acronym')
 			{
@@ -238,6 +243,10 @@ sub parse_topic
 
 				push @items, $item;
 			}
+			case('other')
+			{
+			}
+=pod
 			case('module')
 			{
 				# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
@@ -276,6 +285,7 @@ sub parse_topic
 			case('text')
 			{
 			}
+=cut
 		} # End match.
 	}
 
