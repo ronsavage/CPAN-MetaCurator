@@ -71,7 +71,7 @@ export.as.tree.pl [options]
 	-help
 	-home_path
 	-include_packages
-	-log_level info
+	-log_level debug
 
 All switches can be reduced to a single letter, except of course -he and -ho.
 
@@ -104,7 +104,7 @@ Default: 0 (exclude).
 
 Available log levels are trace, debug, info, warn, error and fatal, in that order.
 
-Default: info.
+Default: debug.
 
 =back
 

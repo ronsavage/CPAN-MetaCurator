@@ -83,7 +83,7 @@ sub parse_topic
 			$context = 'text';
 		}
 
-		$self -> logger -> warn('" found') if ($line =~ /"/); # Extra " to keep UEX happy.
+		$self -> logger -> debug('" found') if ($line =~ /"/); # Extra " to keep UEX happy.
 
 		match($context : eq)
 		{
