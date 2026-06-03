@@ -83,7 +83,7 @@ sub parse_topic
 			$context = 'text';
 		}
 
-		$self -> logger -> debug('" found') if ($line =~ /"/); # Extra " to keep UEX happy.
+		$self -> logger -> debug("Token: $token. Double-quote found") if ($line =~ /"/); # Extra " to keep UEX happy.
 
 		match($context : eq)
 		{
