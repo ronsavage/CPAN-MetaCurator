@@ -44,8 +44,6 @@ sub parse_topic
 		$line	= $lines[$index];
 		$token	= '';
 
-		$self -> logger -> warn('" found') if ($line =~ /"/);
-
 		if ($$topic{title} eq 'Acronyms')
 		{
 			$context = 'acronym';
@@ -84,6 +82,8 @@ sub parse_topic
 		{
 			$context = 'text';
 		}
+
+		$self -> logger -> warn('" found') if ($line =~ /"/); # Extra " to keep UEX happy.
 
 		match($context : eq)
 		{
