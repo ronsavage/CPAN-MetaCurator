@@ -16,8 +16,6 @@ use HTML::Escape 'escape_html';
 
 use Syntax::Keyword::Match;
 
-use Types::Standard 'Enum';
-
 our %seen;
 
 our $VERSION = '1.22';
@@ -154,19 +152,18 @@ sub parse_topic
 	my($index)							= -1;
 
 	my(%button);
-	my($module_context, $text_context);
 	my($description);
 	my($href);
 	my($item, @items);
 	my($line);
+	my($module_context);
 	my(%node_type);
-	my($token);
+	my($text_context, $token);
 
 	$button{extras}		= '';
 	$button{faq}		= '';
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
-	my($context_enum)	= Enum['acronym', 'faq', 'module', 'pre_pre', 'see_also', 'text'];
 
 	while ($index < $#lines)
 	{
@@ -196,25 +193,13 @@ sub parse_topic
 
 		# Within Topic tests.
 =pod
-		if ($line =~ /^o See also:/)
+		if ($line =~ /^o See also/)
 		{
 			$text_context = 'see_also';
 		}
-		elsif ( ($text_context eq 'see_also') && ($line =~ /^- /) )
-		{
-			# No change to context.
-		}
-		elsif ($line =~ /<pre>/)
-		{
-			$text_context = 'pre_pre';
-		}
-		elsif ($line =~ m|</pre>|)
-		{
-			$text_context = 'text';
-		}
 		elsif ($line =~ /^o (.+)$/)
 		{
-			$text_context	= 'module';
+			$text_context	= 'module'; # Inside Acronyms these /are/ the acronyms.
 			$token			= $1;
 
 			if ($$pad{module_names}{$token} && ! $seen{$token})
@@ -224,6 +209,19 @@ sub parse_topic
 				$self -> gather_statistics(\%node_type, $pad, $token, $topic);
 				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
+		}
+		elsif ($line =~ /^- (.+)/) )
+		{
+			$text_context	= 'topic_name';
+			$token			= $1;
+		}
+		elsif ($line =~ /<pre>/)
+		{
+			$text_context = 'pre_pre';
+		}
+		elsif ($line =~ m|</pre>|)
+		{
+			$text_context = 'text';
 		}
 		else
 		{
@@ -235,20 +233,34 @@ sub parse_topic
 		{
 			case('acronym')
 			{
-				$token			= ($line =~ /^o (.+)$/) ? $1 : $line;
-				$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
-				$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
-				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
-				$$item{text}	= '';
+				# 'See also' handling.
+				do
+				{
+					$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
+					$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
+					$self -> logger -> debug("desc: $description. href: $line");
+				} until ! length($lines[++$index]);
+=pod
+				match($text_context : eq)
+				{
+					case('module')
+					{
+						$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
+						$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
+						$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
+						$$item{text}	= '';
 
-				push @items, $item;
+						push @items, $item;
+					}
+				}
+=cut
 			}
 			case('faq')
 			{
-				$$item{html}	= '';
-				$$item{text}	= $line;
-
-				push @items, $item;
+#				$$item{html}	= '';
+#				$$item{text}	= $line;
+#
+#				push @items, $item;
 			}
 			case('other')
 			{
