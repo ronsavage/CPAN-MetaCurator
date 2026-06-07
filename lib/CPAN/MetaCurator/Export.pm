@@ -232,11 +232,16 @@ sub parse_topic
 			case('acronym')
 			{
 				# 'See also' handling.
+				$token = $line; substr($token, 0, 2) = ''; # Remove 'o- '.
+				$self -> logger -> debug("token: $token (expect See also)");
+
 				do
 				{
 					$token = $lines[++$index]; substr($token, 0, 2) = ''; # Remove '^- '.
 					$self -> logger -> debug("token: $token");
 				} until ! length($lines[$index + 1]);
+
+				$self -> logger -> debug("End of do{}");
 
 =pod
 				match($text_context : eq)
