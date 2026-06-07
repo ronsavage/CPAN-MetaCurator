@@ -147,7 +147,7 @@ sub parse_topic
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
 	my(@lines)							= split(/\n/, $$topic{text});
-	@lines								= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
+	@lines								= map{s/^\s+//; s/:\s*$//; $_} @lines;
 	my($line_id)						= $leaf_id;
 	my($index)							= -1;
 
