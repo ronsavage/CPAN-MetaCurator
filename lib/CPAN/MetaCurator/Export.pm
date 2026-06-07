@@ -12,6 +12,8 @@ use DateTime::Tiny;
 use File::Slurper 'read_lines';
 use File::Spec;
 
+use HTML::Escape 'escape_html';
+
 use Syntax::Keyword::Match;
 
 use Types::Standard 'Enum';
@@ -231,7 +233,7 @@ sub parse_topic
 				$token			= ($line =~ /^o (.+)$/) ? $1 : $line;
 				$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
 				$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
-				$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
+				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
 				$$item{text}	= '';
 
 				push @items, $item;
