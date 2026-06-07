@@ -238,6 +238,8 @@ sub parse_topic
 					$token = $lines[++$index]; substr($token, 0, 2) = ''; # Remove '^- '.
 					$self -> logger -> debug("token: $token");
 				} until ! length($lines[$index + 1]);
+
+				$self -> logger -> debug("Dopped out @ line: $line. Next line: @{[$lines[$index + 2]]}");
 =pod
 				match($text_context : eq)
 				{
