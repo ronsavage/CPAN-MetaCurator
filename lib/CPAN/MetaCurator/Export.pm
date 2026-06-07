@@ -264,6 +264,8 @@ sub parse_topic
 			{
 			}
 		} # End match.
+
+		$self -> logger -> debug("End of match($module_context : eq)");
 	}
 
 =pod
