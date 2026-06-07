@@ -171,7 +171,6 @@ sub parse_topic
 
 		$line	= $lines[$index];
 		$item	= {href => '', id => ++$line_id, text => ''};
-		$token	= '';
 
 		# Topic tests.
 
@@ -236,10 +235,9 @@ sub parse_topic
 				# 'See also' handling.
 				do
 				{
-					$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
-					$href			= $lines[++$index]; substr($href, 0, 2) = '';			# Ditto.
-					$self -> logger -> debug("desc: $description. href: $href");
-				} until ! length($lines[++$index]);
+					$token = $lines[++$index]; substr($token, 0, 2) = ''; # Remove '^- '.
+					$self -> logger -> debug("token: $token");
+				} until ! length($lines[$index + 1]);
 =pod
 				match($text_context : eq)
 				{
