@@ -180,7 +180,7 @@ sub parse_topic
 			$module_context = 'acronym';
 
 			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
-			$self -> logger -> debug("Topic: $$topic{title}. Acronym: $line");
+			$self -> logger -> debug("Wthin topic: $$topic{title}. Line: $line");
 		}
 		elsif ($$topic{title} eq 'FAQ')
 		{
