@@ -237,8 +237,8 @@ sub parse_topic
 				do
 				{
 					$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
-					$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
-					$self -> logger -> debug("desc: $description. href: $line");
+					$href			= $lines[++$index]; substr($href, 0, 2) = '';			# Ditto.
+					$self -> logger -> debug("desc: $description. href: $href");
 				} until ! length($lines[++$index]);
 =pod
 				match($text_context : eq)
