@@ -176,6 +176,8 @@ sub parse_topic
 		$item	= {href => '', id => ++$line_id, text => ''};
 		$token	= '';
 
+		# Topic tests.
+
 		if ($$topic{title} eq 'Acronyms')
 		{
 			$module_context = 'acronym';
@@ -192,6 +194,8 @@ sub parse_topic
 			$module_context = 'other';
 		}
 
+		# Within Topic tests.
+=pod
 		if ($line =~ /^o See also:/)
 		{
 			$text_context = 'see_also';
@@ -225,6 +229,7 @@ sub parse_topic
 		{
 			$text_context = 'text';
 		}
+=cut
 
 		match($module_context : eq)
 		{
