@@ -184,7 +184,9 @@ sub parse_topic
 
 		if ($token)
 		{
-			$line_count = 0;
+			$description	= '';
+			$href			= '';
+			$line_count		= 0;
 
 			if ($$pad{module_names}{$token} && ! $seen{$token})
 			{
