@@ -80,7 +80,7 @@ sub import_csv_file
 
 	close $io;
 
-	$self -> logger -> info("Stored $count records into table '$table_name'");
+	return $count;
 
 } # End of import_csv_file.
 
@@ -125,13 +125,10 @@ sub populate_constants_table
 
 	$self -> logger -> info("Start populate_constants_table()");
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
-	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
-	my($pad)				= $self -> pad; # For temporary use, during import.
-	$$pad{$table_name}		= $self -> read_table($table_name);
-	my($constants_count)	= $#{$$pad{$table_name} } + 1;
+	my($record_count) = $self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
-	$self -> logger -> info("Finished populate_constants_table(). Stored $constants_count records into table '$table_name'");
+	$self -> logger -> info("Populated'$table_name'. Record count: $record_count");
 
 }	# End of populate_constants_table.
 
@@ -192,9 +189,9 @@ sub populate_topics_table
 	}
 
 	$$pad{$table_name}	= $self -> read_table($table_name);
-	my($topic_count)	= $#{$$pad{$table_name} };
+	my($record_count)	= $#{$$pad{$table_name} };
 
-	$self -> logger -> info("Finished populate_topics_table(). Stored $topic_count records into table '$table_name'");
+	$self -> logger -> info("Populated'$table_name'. Record count: $record_count");
 
 } # End of populate_topics_table;
 
