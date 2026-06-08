@@ -165,8 +165,9 @@ sub build_pad
 
 	$$pad{module_names}				= {};
 	$$pad{module_names}{$$_{name} }	= $$_{id} for (@{$$pad{modules} });
+	my($module_count)				= $#{$$pad{module_names} } + 1;
 
-	$self -> logger -> info("Records in the module table: @{[$#{$$pad{module_names} } + 1]}");
+	$self -> logger -> info("Records in the module table: $module_count");
 
 	# Topics.
 	# There is a db table called topics so we need another name for the hash

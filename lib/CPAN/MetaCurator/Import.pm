@@ -123,6 +123,7 @@ sub populate_constants_table
 	my($path)		= File::Spec -> catfile($self -> home_path, $self -> constants_csv_path);
 	my($table_name)	= 'constants';
 
+	$self -> logger -> info("Start populate_constants_table()");
 	$self -> get_table_column_names(true, $table_name); # Populates $self -> column_names.
 	$self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
@@ -142,15 +143,17 @@ sub populate_topics_table
 	my($data)		= $self -> read_tiddlers_file;
 	my($record)		= {parent_id => 1, text => 'Root', title => 'MetaCurator'}; # Parent is self.
 	my($table_name)	= 'topics';
-	my($root_id)	= $self -> insert_hashref($table_name, $record);
+
+	$self -> logger -> info("Start populate_topics_table()");
 
 	# We have just populated the constants table, so read it to get the names of the special (TiddlyWiki) paragraphs.
 	# Typically: GettingStarted|MainMenu.
 
-	my($special_para_names);
-
+	my($root_id)		= $self -> insert_hashref($table_name, $record);
 	my($pad)			= $self -> pad; # For temporary use, during import.
 	$$pad{constants}	= $self -> read_table('constants');
+
+	my($special_para_names);
 
 	for my $row (@{$$pad{constants} })
 	{
