@@ -33,8 +33,6 @@ sub import_csv_file
 {
 	my($self, $csv, $path, $table_name, $col_name_1, $col_name_2) = @_;
 
-	$self -> logger -> info("Populating the '$table_name' table with import_csv_file()");
-
 	open(my $io, '<', $path) || die "Can't open($path): $!\n";
 
 	$csv -> column_names($csv -> getline($io) );
@@ -92,7 +90,7 @@ sub populate_all_tables
 
 	$self -> init_config;
 	$self -> init_db;
-	$self -> logger -> info('Populating all tables');
+	$self -> logger -> info('Populating some tables');
 
 	my($csv) = Text::CSV::Encoded -> new
 	({
@@ -106,7 +104,7 @@ sub populate_all_tables
 	$self -> populate_constants_table($csv);
 	$self -> populate_topics_table;
 
-	$self -> logger -> info('Populated all tables');
+	$self -> logger -> info('Populated some tables');
 	$self -> logger -> info('-' x 50);
 
 	# Return 0 for OK and 1 for error.
@@ -128,7 +126,7 @@ sub populate_constants_table
 
 	my($record_count) = $self -> import_csv_file($csv, $path, $table_name, 'name', 'value');
 
-	$self -> logger -> info("Populated'$table_name'. Record count: $record_count");
+	$self -> logger -> info("Populated '$table_name'. Record count: $record_count");
 
 }	# End of populate_constants_table.
 
@@ -191,7 +189,7 @@ sub populate_topics_table
 	$$pad{$table_name}	= $self -> read_table($table_name);
 	my($record_count)	= $#{$$pad{$table_name} };
 
-	$self -> logger -> info("Populated'$table_name'. Record count: $record_count");
+	$self -> logger -> info("Populated '$table_name'. Record count: $record_count");
 
 } # End of populate_topics_table;
 
