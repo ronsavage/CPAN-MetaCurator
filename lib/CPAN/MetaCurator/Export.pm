@@ -147,7 +147,7 @@ sub parse_topic
 {
 	my($self, $leaf_id, $pad, $topic)	= @_;
 	my(@lines)							= split(/\n/, $$topic{text});
-	@lines								= map{s/^\s+//; s/:\s*$//; $_} @lines;
+	@lines								= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
 	my($line_id)						= $leaf_id;
 	my($index)							= -1;
 
@@ -155,50 +155,36 @@ sub parse_topic
 	my($description);
 	my($href);
 	my($item, @items);
-	my($line);
-	my($module_context);
+	my($line, $line_count);
 	my(%node_type);
-	my($text_context, $token);
+	my($token);
 
 	$button{extras}		= '';
 	$button{faq}		= '';
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
 
+#		$item	= {href => '', id => ++$line_id, text => ''};
+
 	while ($index < $#lines)
 	{
 		$index++;
 
 		$line	= $lines[$index];
-		$item	= {href => '', id => ++$line_id, text => ''};
+		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
-		# Topic tests.
+		# $token ne '':
+		# a. See also
+		# b. An acronym
+		# Otherwise:
+		# c. A description
+		# d. A href
+		# e. <pre>
+		# f. </pre>
 
-		if ($$topic{title} eq 'Acronyms')
+		if ($token)
 		{
-			$module_context = 'acronym';
-
-			$self -> gather_statistics(\%node_type, $pad, $token, $topic);
-		}
-		elsif ($$topic{title} eq 'FAQ')
-		{
-			$module_context = 'faq';
-		}
-		else
-		{
-			$module_context = 'other';
-		}
-
-		# Within Topic tests.
-=pod
-		if ($line =~ /^o See also/)
-		{
-			$text_context = 'see_also';
-		}
-		elsif ($line =~ /^o (.+)$/)
-		{
-			$text_context	= 'module'; # Inside Acronyms these /are/ the acronyms.
-			$token			= $1;
+			$line_count = 0;
 
 			if ($$pad{module_names}{$token} && ! $seen{$token})
 			{
@@ -208,111 +194,29 @@ sub parse_topic
 				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
 		}
-		elsif ($line =~ /^- (.+)/) )
-		{
-			$text_context	= 'topic_name';
-			$token			= $1;
-		}
-		elsif ($line =~ /<pre>/)
-		{
-			$text_context = 'pre_pre';
-		}
-		elsif ($line =~ m|</pre>|)
-		{
-			$text_context = 'text';
-		}
 		else
 		{
-			$text_context = 'text';
-		}
-=cut
+			$line_count++;
 
-		match($module_context : eq)
-		{
-			case('acronym')
+			$token = ($line =~ /^- (.+)/) ? $1 : '';
+
+			if ($line_count == 1)
 			{
-				# 'See also' handling.
-				$token = $line; substr($token, 0, 2) = ''; # Remove 'o- '.
-				$self -> logger -> debug("token: $token (expect See also)");
-
-				do
-				{
-					$token = $lines[++$index]; substr($token, 0, 2) = ''; # Remove '^- '.
-					$self -> logger -> debug("token: $token");
-				} until ! length($lines[$index + 1]);
-
-				$self -> logger -> debug("End of do{}");
-
-=pod
-				match($text_context : eq)
-				{
-					case('module')
-					{
-						$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
-						$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
-						$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
-						$$item{text}	= '';
-
-						push @items, $item;
-					}
-				}
-=cut
+				$description = $token;
 			}
-			case('faq')
+			elsif ($line_count == 2)
 			{
-#				$$item{html}	= '';
-#				$$item{text}	= $line;
-#
-#				push @items, $item;
-			}
-			case('other')
-			{
-			}
-		} # End match.
-
-		$self -> logger -> debug("End of match($module_context : eq)");
-	}
-
-=pod
-			case('module')
-			{
-				# Do we have a standard 3 line entry or 3+ lines? Examples are from Acronyms.
-				#
-				# 3 line entry:
-				# o DKIM:
-				# - DomainKeys Identified Mail <- $index
-				# - https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail
-				#
-				# 3+ line entry:
-				# o DMARC:
-				# - Domain-based Message Authentication, Reporting, and Conformance <- $index
-				# - https://en.wikipedia.org/wiki/DMARC
-				# - An email authentication protocol that helps protect domain owners and recipients from email spoofing, phishing, and other email-based attacks
-				# - https://datatracker.ietf.org/doc/html/draft-crocker-dmarc-bcp-03
-
-				$description	= $lines[++$index]; substr($description, 0, 2) = '';	# Remove '^- '.
-				$href			= $lines[++$index]; substr($href, 0, 2) = '';			# "
-				$$item{html}	= "<span><a href = '$href' target = '_blank'>$token - $description</a></span><span>.</span>$button{extras}";
+				$href			= $token;
+				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>";
 				$$item{text}	= '';
 
-				$self -> logger -> debug("href: $href");
-
 				push @items, $item;
 			}
-			case('see_also')
-			{
-				$$item{html}	= '';
-				$$item{text}	= $line;
-
-				push @items, $item;
-			}
-			case('pre_pre')
+			else # <pre> || </pre>
 			{
 			}
-			case('text')
-			{
-			}
-=cut
+		}
+	}
 
 	return [@items];
 
