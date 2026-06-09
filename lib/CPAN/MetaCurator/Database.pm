@@ -159,16 +159,6 @@ sub build_pad
 		$self -> logger -> info("Excluding metapackager table 'packages'");
 	}
 
-	# Modules.
-	# There is a db table called modules so we need another name for the hash
-	# where the keys are the names of the modules and the values are db ids.
-
-	$$pad{module_names}				= {};
-	$$pad{module_names}{$$_{name} }	= $$_{id} for (@{$$pad{modules} });
-	my($module_count)				= $#{$$pad{module_names} } + 1;
-
-	$self -> logger -> info("Records in the module table: $module_count");
-
 	# Topics.
 	# There is a db table called topics so we need another name for the hash
 	# where the keys are the names of the topics and the values are db ids.

@@ -87,6 +87,18 @@ sub export_tree
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
 
+=pod
+	# Modules.
+	# There is a db table called modules so we need another name for the hash
+	# where the keys are the names of the modules and the values are db ids.
+
+	$$pad{module_names}				= {};
+	$$pad{module_names}{$$_{name} }	= $$_{id} for (@{$$pad{modules} });
+	my($module_count)				= $#{$$pad{module_names} } + 1;
+
+	$self -> logger -> info("Records in the module table: $module_count");
+=cut
+
 	return 0;
 
 } # End of export_tree.
