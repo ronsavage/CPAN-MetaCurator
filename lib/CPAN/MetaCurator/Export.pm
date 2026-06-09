@@ -210,20 +210,24 @@ sub parse_topic
 			}
 			elsif ($line_count == 2)
 			{
-#				$item	= {href => '', id => ++$line_id, text => ''};
-
 				$href			= $token;
+				$item			= {href => '', id => ++$line_id, text => ''};
 				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>";
 				$$item{text}	= '';
 
 				push @items, $item;
+
+				$self -> logger -> debug("Adding description: $description");
 			}
 			else
 			{
+				$item			= {href => '', id => ++$line_id, text => ''};
 				$$item{html}	= '';
 				$$item{text}	= $token;
 
 				push @items, $item;
+
+				$self -> logger -> debug("Adding token: $token");
 			}
 		}
 	}
