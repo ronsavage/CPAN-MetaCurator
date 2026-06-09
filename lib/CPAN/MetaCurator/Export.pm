@@ -218,7 +218,7 @@ sub parse_topic
 
 				push @items, $item;
 			}
-			else # <pre> || </pre>
+			else
 			{
 				$$item{html}	= '';
 				$$item{text}	= $token;
