@@ -171,6 +171,8 @@ sub parse_topic
 		$line	= $lines[$index];
 		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
+		$self -> logger -> debug("Processing line $index: <$line>. token: $token");
+
 		# $token ne '':
 		# a. See also
 		# b. An acronym
