@@ -202,16 +202,13 @@ sub parse_topic
 			$href			= '';
 			$line_count		= 0;
 
-			if ($$pad{module_names}{$token} && ! $seen{$token})
+#			if ($$pad{module_names}{$token} && ! $seen{$token})
+			if (! $seen{$token})
 			{
 				$seen{$token} = $self -> insert_hashref('modules', {name => $token});
 
 				$self -> gather_statistics(\%node_type, $pad, $token, $topic);
-				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
-			}
-			else
-			{
-				$self -> logger -> debug("Unknown token: $token");
+#				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
 		}
 		else
