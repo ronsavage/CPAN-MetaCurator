@@ -151,6 +151,8 @@ sub parse_topic
 	my($line_id)						= $leaf_id;
 	my($index)							= -1;
 
+	$self -> logger -> debug("Topic: $$topic{text}. Line count: $#lines");
+
 	my(%button);
 	my($description);
 	my($href);
