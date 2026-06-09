@@ -164,8 +164,6 @@ sub parse_topic
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
 
-#		$item	= {href => '', id => ++$line_id, text => ''};
-
 	while ($index < $#lines)
 	{
 		$index++;
@@ -212,6 +210,8 @@ sub parse_topic
 			}
 			elsif ($line_count == 2)
 			{
+#				$item	= {href => '', id => ++$line_id, text => ''};
+
 				$href			= $token;
 				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>";
 				$$item{text}	= '';
@@ -220,6 +220,10 @@ sub parse_topic
 			}
 			else # <pre> || </pre>
 			{
+				$$item{html}	= '';
+				$$item{text}	= $token;
+
+				push @items, $item;
 			}
 		}
 	}
