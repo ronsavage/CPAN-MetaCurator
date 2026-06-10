@@ -53,10 +53,22 @@ sub export_tree
 	my(%wanted);
 
 	# Just for testing parse_topic().
+	# See data/special.topic.txt for what gets skipped ATM.
 
 	$wanted{ABeCeDarian}		= true;
 	$wanted{AdventPlanet }		= true;
 	$wanted{AlgorithmicStuff}	= true;
+	$wanted{AnimationStuff}		= true;
+	$wanted{AntiVirusStuff}		= true;
+	$wanted{ApacheStuff}		= true;
+	$wanted{AppleMac}			= true;
+	$wanted{ArchOS}				= true;
+	$wanted{AsciiCodes}			= true;
+	$wanted{ASN}				= true;
+	$wanted{AssemblerX86}		= true;
+	$wanted{AstroStuff}			= true;
+	$wanted{AudioVisual}		= true;
+	$wanted{AutoCAD}			= true;
 
 	for my $topic (@{$$pad{topics} })
 	{
