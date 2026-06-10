@@ -53,6 +53,8 @@ sub export_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
+		next if ($$topic{title} ne 'ABeCeDarian');
+
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
 		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
