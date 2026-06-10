@@ -52,8 +52,11 @@ sub export_tree
 	my($leaf_id, $lines_ref);
 	my(%wanted);
 
-	$wanted{ABeCeDarian}	= true;
-	$wanted{AdventPlanet }	= true;
+	# Just for testing parse_topic().
+
+	$wanted{ABeCeDarian}		= true;
+	$wanted{AdventPlanet }		= true;
+	$wanted{AlgorithmicStuff}	= true;
 
 	for my $topic (@{$$pad{topics} })
 	{
