@@ -237,6 +237,8 @@ sub parse_topic
 			{
 				$$item{html}	= '';
 				$$item{text}	= $token;
+
+				$self -> logger -> debug("See also: $token");
 			}
 			elsif ($line_count == 1)
 			{
