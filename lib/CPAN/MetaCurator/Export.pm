@@ -70,6 +70,8 @@ sub export_tree
 	$wanted{AudioVisual}		= true;
 	$wanted{AutoCAD}			= true;
 
+	$wanted{BusinessApps}		= true;
+
 	for my $topic (@{$$pad{topics} })
 	{
 		next if (! $wanted{$$topic{title} });
