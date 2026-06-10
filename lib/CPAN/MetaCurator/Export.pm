@@ -200,7 +200,14 @@ sub parse_topic
 		# e. <pre>
 		# f. </pre>
 
-		if ($token)
+		if ($token eq 'See also')
+		{
+			$$item{html}	= $button{see_also};
+			$$item{text}	= '';
+
+			push @items, $item;
+		}
+		elsif ($token)
 		{
 			$description	= '';
 			$href			= '';
@@ -221,14 +228,7 @@ sub parse_topic
 
 			$token = ($line =~ /^- (.+)/) ? $1 : '';
 
-			if ($token eq 'See also')
-			{
-				$$item{html}	= $button{see_also};
-				$$item{text}	= '';
-
-				push @items, $item;
-			}
-			elsif ($line_count == 1)
+			if ($line_count == 1)
 			{
 				$description = $token;
 			}
