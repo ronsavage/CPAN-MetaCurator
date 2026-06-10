@@ -50,10 +50,14 @@ sub export_tree
 	my(@divs);
 	my($item);
 	my($leaf_id, $lines_ref);
+	my(%wanted);
+
+	$wanted{ABeCeDarian}	= true;
+	$wanted{AdventPlanet }	= true;
 
 	for my $topic (@{$$pad{topics} })
 	{
-		next if ($$topic{title} ne 'ABeCeDarian');
+		next if (! $wanted{$$topic{title} });
 
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
