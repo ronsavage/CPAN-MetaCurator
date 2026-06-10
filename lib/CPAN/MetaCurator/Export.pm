@@ -171,7 +171,7 @@ sub parse_topic
 	my($description);
 	my(@extras);
 	my($href);
-	my($item, @items);
+	my(%inside, $item, @items);
 	my($line, $line_count);
 	my(%node_type);
 	my($token);
@@ -180,6 +180,7 @@ sub parse_topic
 	$button{faq}		= '';
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
+	$inside{see_also}	= false;
 
 	while ($index < $#lines)
 	{
@@ -202,16 +203,18 @@ sub parse_topic
 
 		if ($token eq 'See also')
 		{
-			$$item{html}	= $button{see_also};
-			$$item{text}	= '';
+			$inside{see_also}	= true;
+			$$item{html}		= $button{see_also};
+			$$item{text}		= '';
 
 			push @items, $item;
 		}
 		elsif ($token)
 		{
-			$description	= '';
-			$href			= '';
-			$line_count		= 0;
+			$description		= '';
+			$href				= '';
+			$inside{see_also}	= false;
+			$line_count			= 0;
 
 #			if ($$pad{module_names}{$token} && ! $seen{$token})
 			if (! $seen{$token})
@@ -228,7 +231,12 @@ sub parse_topic
 
 			$token = ($line =~ /^- (.+)/) ? $1 : '';
 
-			if ($line_count == 1)
+			if ($inside{see_also})
+			{
+				$$item{html}	= '';
+				$$item{text}	= $token;
+			}
+			elsif ($line_count == 1)
 			{
 				$description = $token;
 			}
