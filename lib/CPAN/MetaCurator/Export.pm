@@ -173,6 +173,7 @@ sub parse_topic
 	my($href);
 	my(%inside, $item, @items);
 	my($line, $line_count);
+	my($module);
 	my(%node_type);
 	my($token);
 
@@ -215,13 +216,14 @@ sub parse_topic
 			$href				= '';
 			$inside{see_also}	= false;
 			$line_count			= 0;
+			$module				= $token;
 
 #			if ($$pad{module_names}{$token} && ! $seen{$token})
-			if (! $seen{$token})
+			if (! $seen{$module})
 			{
-				$seen{$token} = $self -> insert_hashref('modules', {name => $token});
+				$seen{$module} = $self -> insert_hashref('modules', {name => $module});
 
-				$self -> gather_statistics(\%node_type, $pad, $token, $topic);
+				$self -> gather_statistics(\%node_type, $pad, $module, $topic);
 #				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
 		}
@@ -243,7 +245,7 @@ sub parse_topic
 			elsif ($line_count == 2)
 			{
 				$href			= $token;
-				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$description</a></span><span>.</span>";
+				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$module - $description</a></span><span>.</span>";
 				$$item{text}	= '';
 
 				push @items, $item;
