@@ -223,12 +223,10 @@ sub parse_topic
 
 			if ($token eq 'See also')
 			{
-				$$item{html}	= '';
-				$$item{text}	= $token;
+				$$item{html}	= $button{see_also};
+				$$item{text}	= '';
 
 				push @items, $item;
-
-				$self -> logger -> debug("Adding See also: $token");
 			}
 			elsif ($line_count == 1)
 			{
