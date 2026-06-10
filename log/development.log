@@ -1,0 +1,627 @@
+[2026-06-10 17:42:19.04618] [1067705] [info] Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-06-10 17:42:19.05255] [1067705] [info] Connected to dbi:SQLite:dbname=/tmp/cpan.metapackager.sqlite
+[2026-06-10 17:42:19.80160] [1067705] [info] Including metapackager table 'packages'
+[2026-06-10 17:42:19.80170] [1067705] [info] Size of cpan.metapackager.sqlite table 'packages': 264312
+[2026-06-10 17:42:19.83211] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:19.83216] [1067705] [info] Topic: id: 1. title: MetaCurator
+[2026-06-10 17:42:19.83222] [1067705] [info] Topic: id: 2. html_id: 2. title: ABeCeDarian
+[2026-06-10 17:42:19.83239] [1067705] [debug] Topic: ABeCeDarian. Line count: 195
+[2026-06-10 17:42:19.83242] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:19.83244] [1067705] [debug] Processing line 1: <- It means in abcd order, i.e. alphabetical, so I can put it first in the list of topics :-)>. token: 
+[2026-06-10 17:42:19.83246] [1067705] [debug] Processing line 2: <- ChartingAndPlotting - For Charts::ECharts or Imager, i.e. for all things to do with images>. token: 
+[2026-06-10 17:42:19.83248] [1067705] [debug] Processing line 3: <- CommandLineStuff>. token: 
+[2026-06-10 17:42:19.83250] [1067705] [debug] Processing line 4: <- CryptoStuff - For random stuff>. token: 
+[2026-06-10 17:42:19.83252] [1067705] [debug] Processing line 5: <- [[FAQ]] - For escaping & quoting special characters>. token: 
+[2026-06-10 17:42:19.83254] [1067705] [debug] Processing line 6: <- FeaturesAndPragmas - For a must-read document>. token: 
+[2026-06-10 17:42:19.83256] [1067705] [debug] Processing line 7: <- FileHandling - For Path::Class, Path::Class::Tiny, Path::Tiny>. token: 
+[2026-06-10 17:42:19.83258] [1067705] [debug] Processing line 8: <- PdfStuff - For html2pdf etc>. token: 
+[2026-06-10 17:42:19.83259] [1067705] [debug] Processing line 9: <- StringStuff>. token: 
+[2026-06-10 17:42:19.83261] [1067705] [debug] Processing line 10: <- SwitchStatements - For Multi::Dispatch, Sub::MultiMethod>. token: 
+[2026-06-10 17:42:19.83263] [1067705] [debug] Processing line 11: <- TestingHelp - For Test::Script etc>. token: 
+[2026-06-10 17:42:19.83265] [1067705] [debug] Processing line 12: <- TextAnalysisAndFormatting>. token: 
+[2026-06-10 17:42:19.83266] [1067705] [debug] Processing line 13: <- https://blogs.perl.org/users/robert_acock/2026/01/ready-set-compile-you-slow-camel.html>. token: 
+[2026-06-10 17:42:19.83268] [1067705] [debug] Processing line 14: <- https://theweeklychallenge.org/blog/serialisation-in-perl/ - Serialization of data to ram/disk>. token: 
+[2026-06-10 17:42:19.83270] [1067705] [debug] Processing line 15: <o App::CSVUtils>. token: App::CSVUtils
+[2026-06-10 17:42:19.85189] [1067705] [debug] Unknown: App::CSVUtils
+[2026-06-10 17:42:19.85195] [1067705] [debug] Processing line 16: <- CLI utilities related to CSV>. token: 
+[2026-06-10 17:42:19.85198] [1067705] [debug] Processing line 17: <- https://metacpan.org/dist/App-CSVUtils>. token: 
+[2026-06-10 17:42:19.85202] [1067705] [debug] Processing line 18: <- The module contains 64 scripts>. token: 
+[2026-06-10 17:42:19.85205] [1067705] [debug] Processing line 19: <o App::SQLiteUtils>. token: App::SQLiteUtils
+[2026-06-10 17:42:19.85489] [1067705] [debug] Unknown: App::SQLiteUtils
+[2026-06-10 17:42:19.85497] [1067705] [debug] Processing line 20: <- Utilities related to SQLite>. token: 
+[2026-06-10 17:42:19.85500] [1067705] [debug] Processing line 21: <- https://metacpan.org/dist/App-SQLiteUtils>. token: 
+[2026-06-10 17:42:19.85503] [1067705] [debug] Processing line 22: <o CPAN::Maker::Bootstrapper>. token: CPAN::Maker::Bootstrapper
+[2026-06-10 17:42:19.85808] [1067705] [debug] Unknown: CPAN::Maker::Bootstrapper
+[2026-06-10 17:42:19.85815] [1067705] [debug] Processing line 23: <- Scaffold a new CPAN distribution in one command>. token: 
+[2026-06-10 17:42:19.85818] [1067705] [debug] Processing line 24: <- https://metacpan.org/dist/CPAN-Maker-Bootstrapper>. token: 
+[2026-06-10 17:42:19.85821] [1067705] [debug] Processing line 25: <- Contains CPAN::Maker::ConfigReader etc>. token: 
+[2026-06-10 17:42:19.85824] [1067705] [debug] Processing line 26: <o Cron::Toolkit>. token: Cron::Toolkit
+[2026-06-10 17:42:19.86152] [1067705] [debug] Unknown: Cron::Toolkit
+[2026-06-10 17:42:19.86158] [1067705] [debug] Processing line 27: <- Quartz-compatible cron parser with unique extensions and over 400 tests>. token: 
+[2026-06-10 17:42:19.86161] [1067705] [debug] Processing line 28: <- https://metacpan.org/dist/Cron-Toolkit>. token: 
+[2026-06-10 17:42:19.86164] [1067705] [debug] Processing line 29: <o CXC::Exporter::Util>. token: CXC::Exporter::Util
+[2026-06-10 17:42:19.86498] [1067705] [debug] Unknown: CXC::Exporter::Util
+[2026-06-10 17:42:19.86505] [1067705] [debug] Processing line 30: <- Tagged Based Exporting>. token: 
+[2026-06-10 17:42:19.86508] [1067705] [debug] Processing line 31: <- https://metacpan.org/pod/CXC::Exporter::Util>. token: 
+[2026-06-10 17:42:19.86511] [1067705] [debug] Processing line 32: <o Data::KSUID>. token: Data::KSUID
+[2026-06-10 17:42:19.86705] [1067705] [debug] Unknown: Data::KSUID
+[2026-06-10 17:42:19.86709] [1067705] [debug] Processing line 33: <- KSUID are a globally unique identifier similar to UUIDs but designed to be naturally sorted by generation timestamp and to have representations that are easily postable across systems>. token: 
+[2026-06-10 17:42:19.86712] [1067705] [debug] Processing line 34: <- https://metacpan.org/pod/Data::KSUID>. token: 
+[2026-06-10 17:42:19.86715] [1067705] [debug] Processing line 35: <o Data::OptList::Object>. token: Data::OptList::Object
+[2026-06-10 17:42:19.86939] [1067705] [debug] Unknown: Data::OptList::Object
+[2026-06-10 17:42:19.86943] [1067705] [debug] Processing line 36: <- Data::OptList, but object-oriented>. token: 
+[2026-06-10 17:42:19.86945] [1067705] [debug] Processing line 37: <- https://metacpan.org/pod/Data::OptList::Object>. token: 
+[2026-06-10 17:42:19.86948] [1067705] [debug] Processing line 38: <o Data::Path::XS>. token: Data::Path::XS
+[2026-06-10 17:42:19.87139] [1067705] [debug] Unknown: Data::Path::XS
+[2026-06-10 17:42:19.87143] [1067705] [debug] Processing line 39: <- Fast path-based access to nested data structures>. token: 
+[2026-06-10 17:42:19.87145] [1067705] [debug] Processing line 40: <- https://metacpan.org/pod/Data::Path::XS>. token: 
+[2026-06-10 17:42:19.87148] [1067705] [debug] Processing line 41: <o DBD::SQLite>. token: DBD::SQLite
+[2026-06-10 17:42:19.87363] [1067705] [debug] Unknown: DBD::SQLite
+[2026-06-10 17:42:19.87367] [1067705] [debug] Processing line 42: <- Self-contained RDBMS in a DBI Driver>. token: 
+[2026-06-10 17:42:19.87369] [1067705] [debug] Processing line 43: <- https://metacpan.org/pod/DBD::SQLite>. token: 
+[2026-06-10 17:42:19.87372] [1067705] [debug] Processing line 44: <o DBD::SQLite::Constants>. token: DBD::SQLite::Constants
+[2026-06-10 17:42:19.87593] [1067705] [debug] Unknown: DBD::SQLite::Constants
+[2026-06-10 17:42:19.87597] [1067705] [debug] Processing line 45: <- Common SQLite constants>. token: 
+[2026-06-10 17:42:19.87600] [1067705] [debug] Processing line 46: <- https://metacpan.org/pod/DBD::SQLite::Constants>. token: 
+[2026-06-10 17:42:19.87602] [1067705] [debug] Processing line 47: <o DBIx::AutoUpgrade::NativeStrings>. token: DBIx::AutoUpgrade::NativeStrings
+[2026-06-10 17:42:19.87764] [1067705] [debug] Unknown: DBIx::AutoUpgrade::NativeStrings
+[2026-06-10 17:42:19.87767] [1067705] [debug] Processing line 48: <- Automatically upgrade Perl native strings to utf8 before sending them to the database>. token: 
+[2026-06-10 17:42:19.87770] [1067705] [debug] Processing line 49: <- https://metacpan.org/pod/DBIx::AutoUpgrade::NativeStrings>. token: 
+[2026-06-10 17:42:19.87772] [1067705] [debug] Processing line 50: <- Primarily for DBD::Oracle, DPD::Pg and DBD::SQLite>. token: 
+[2026-06-10 17:42:19.87774] [1067705] [debug] Processing line 51: <o Dev::Util>. token: Dev::Util
+[2026-06-10 17:42:19.88038] [1067705] [debug] Unknown: Dev::Util
+[2026-06-10 17:42:19.88041] [1067705] [debug] Processing line 52: <- Base modules for Perl Development>. token: 
+[2026-06-10 17:42:19.88045] [1067705] [debug] Processing line 53: <- https://metacpan.org/dist/Dev-Util>. token: 
+[2026-06-10 17:42:19.88047] [1067705] [debug] Processing line 54: <o Devel::Bug>. token: Devel::Bug
+[2026-06-10 17:42:19.88204] [1067705] [debug] Unknown: Devel::Bug
+[2026-06-10 17:42:19.88209] [1067705] [debug] Processing line 55: <- Transparent inline debugging probe (pure Perl)>. token: 
+[2026-06-10 17:42:19.88211] [1067705] [debug] Processing line 56: <- https://metacpan.org/dist/Devel-Bug>. token: 
+[2026-06-10 17:42:19.88214] [1067705] [debug] Processing line 57: <o e>. token: e
+[2026-06-10 17:42:19.88459] [1067705] [debug] Unknown: e
+[2026-06-10 17:42:19.88462] [1067705] [debug] Processing line 58: <- Beast mode unleashed>. token: 
+[2026-06-10 17:42:19.88465] [1067705] [debug] Processing line 59: <- https://metacpan.org/pod/e>. token: 
+[2026-06-10 17:42:19.88468] [1067705] [debug] Processing line 60: <o Email::Stuffer>. token: Email::Stuffer
+[2026-06-10 17:42:19.88636] [1067705] [debug] Unknown: Email::Stuffer
+[2026-06-10 17:42:19.88639] [1067705] [debug] Processing line 61: <- A more casual approach to creating and sending Email:: emails>. token: 
+[2026-06-10 17:42:19.88641] [1067705] [debug] Processing line 62: <- https://metacpan.org/pod/Email::Stuffer>. token: 
+[2026-06-10 17:42:19.88644] [1067705] [debug] Processing line 63: <o File::Sticker>. token: File::Sticker
+[2026-06-10 17:42:19.88883] [1067705] [debug] Unknown: File::Sticker
+[2026-06-10 17:42:19.88887] [1067705] [debug] Processing line 64: <- Read, Write file meta-data>. token: 
+[2026-06-10 17:42:19.88889] [1067705] [debug] Processing line 65: <- https://metacpan.org/pod/File::Sticker>. token: 
+[2026-06-10 17:42:19.88892] [1067705] [debug] Processing line 66: <- Includes sticker which sticks tags onto files, populates a database with file meta-data>. token: 
+[2026-06-10 17:42:19.88894] [1067705] [debug] Processing line 67: <- See also Data::TagDB in DatabaseAndSQL>. token: 
+[2026-06-10 17:42:19.88896] [1067705] [debug] Processing line 68: <o ixchel>. token: ixchel
+[2026-06-10 17:42:19.89065] [1067705] [debug] Unknown: ixchel
+[2026-06-10 17:42:19.89068] [1067705] [debug] Processing line 69: <- Automate various sys admin stuff>. token: 
+[2026-06-10 17:42:19.89071] [1067705] [debug] Processing line 70: <- https://metacpan.org/dist/Ixchel>. token: 
+[2026-06-10 17:42:19.89073] [1067705] [debug] Processing line 71: <- Contains about 50 modules>. token: 
+[2026-06-10 17:42:19.89075] [1067705] [debug] Processing line 72: <o List::Util::Find>. token: List::Util::Find
+[2026-06-10 17:42:19.89296] [1067705] [debug] Unknown: List::Util::Find
+[2026-06-10 17:42:19.89300] [1067705] [debug] Processing line 73: <- List utilities related to finding items>. token: 
+[2026-06-10 17:42:19.89303] [1067705] [debug] Processing line 74: <- https://metacpan.org/dist/List-Util-Find>. token: 
+[2026-06-10 17:42:19.89305] [1067705] [debug] Processing line 75: <o Locale::Codes>. token: Locale::Codes
+[2026-06-10 17:42:19.89474] [1067705] [debug] Unknown: Locale::Codes
+[2026-06-10 17:42:19.89477] [1067705] [debug] Processing line 76: <- A distribution of many modules to handle locale codes>. token: 
+[2026-06-10 17:42:19.89480] [1067705] [debug] Processing line 77: <- https://metacpan.org/dist/Locale-Codes>. token: 
+[2026-06-10 17:42:19.89482] [1067705] [debug] Processing line 78: <o Melian>. token: Melian
+[2026-06-10 17:42:19.89687] [1067705] [debug] Unknown: Melian
+[2026-06-10 17:42:19.89691] [1067705] [debug] Processing line 79: <- Perl client to the Melian cache>. token: 
+[2026-06-10 17:42:19.89693] [1067705] [debug] Processing line 80: <- https://metacpan.org/dist/Melian>. token: 
+[2026-06-10 17:42:19.89696] [1067705] [debug] Processing line 81: <- More details in CachingStuff>. token: 
+[2026-06-10 17:42:19.89698] [1067705] [debug] Processing line 82: <o Net::Gotify>. token: Net::Gotify
+[2026-06-10 17:42:19.89859] [1067705] [debug] Unknown: Net::Gotify
+[2026-06-10 17:42:19.89862] [1067705] [debug] Processing line 83: <- Gotify client for Perl>. token: 
+[2026-06-10 17:42:19.89865] [1067705] [debug] Processing line 84: <- https://gotify.net/>. token: 
+[2026-06-10 17:42:19.89867] [1067705] [debug] Processing line 85: <- I feel this may become extremely popular>. token: 
+[2026-06-10 17:42:19.89869] [1067705] [debug] Processing line 86: <o Net::IPData>. token: Net::IPData
+[2026-06-10 17:42:19.90081] [1067705] [debug] Unknown: Net::IPData
+[2026-06-10 17:42:19.90084] [1067705] [debug] Processing line 87: <- Perl client for the ipdata.co IP geolocation and threat intelligence API>. token: 
+[2026-06-10 17:42:19.90087] [1067705] [debug] Processing line 88: <- https://metacpan.org/dist/Net-IPData>. token: 
+[2026-06-10 17:42:19.90089] [1067705] [debug] Processing line 89: <o Net::Server>. token: Net::Server
+[2026-06-10 17:42:19.90254] [1067705] [debug] Unknown: Net::Server
+[2026-06-10 17:42:19.90258] [1067705] [debug] Processing line 90: <- Extensible, general Perl server engine>. token: 
+[2026-06-10 17:42:19.90260] [1067705] [debug] Processing line 91: <- https://metacpan.org/dist/Net-Server>. token: 
+[2026-06-10 17:42:19.90262] [1067705] [debug] Processing line 92: <- Has a massive amount of flexibility>. token: 
+[2026-06-10 17:42:19.90264] [1067705] [debug] Processing line 93: <o Number::Finance::Human>. token: Number::Finance::Human
+[2026-06-10 17:42:19.90485] [1067705] [debug] Unknown: Number::Finance::Human
+[2026-06-10 17:42:19.90489] [1067705] [debug] Processing line 94: <- Human-readable numbers for accounting and finance>. token: 
+[2026-06-10 17:42:19.90491] [1067705] [debug] Processing line 95: <- https://metacpan.org/dist/Number-Finance-Human>. token: 
+[2026-06-10 17:42:19.90493] [1067705] [debug] Processing line 96: <o Object::InsideOut>. token: Object::InsideOut
+[2026-06-10 17:42:19.90662] [1067705] [debug] Unknown: Object::InsideOut
+[2026-06-10 17:42:19.90665] [1067705] [debug] Processing line 97: <- Comprehensive inside-out object support module>. token: 
+[2026-06-10 17:42:19.90667] [1067705] [debug] Processing line 98: <- https://metacpan.org/pod/Object::InsideOut>. token: 
+[2026-06-10 17:42:19.90670] [1067705] [debug] Processing line 99: <o Object::InsideOut::Metadata>. token: Object::InsideOut::Metadata
+[2026-06-10 17:42:19.90879] [1067705] [debug] Unknown: Object::InsideOut::Metadata
+[2026-06-10 17:42:19.90883] [1067705] [debug] Processing line 100: <- Introspection for Object::InsideOut classes>. token: 
+[2026-06-10 17:42:19.90885] [1067705] [debug] Processing line 101: <- https://metacpan.org/pod/Object::InsideOut::Metadata>. token: 
+[2026-06-10 17:42:19.90888] [1067705] [debug] Processing line 102: <o Path::Tiny>. token: Path::Tiny
+[2026-06-10 17:42:19.91055] [1067705] [debug] Unknown: Path::Tiny
+[2026-06-10 17:42:19.91058] [1067705] [debug] Processing line 103: <- Provides methods like slurp_utf8 and spew_utf8 to read and write files using the correct encoding>. token: 
+[2026-06-10 17:42:19.91060] [1067705] [debug] Processing line 104: <- https://metacpan.org/dist/Path-Tiny>. token: 
+[2026-06-10 17:42:19.91063] [1067705] [debug] Processing line 105: <o PAX>. token: PAX
+[2026-06-10 17:42:19.91284] [1067705] [debug] Unknown: PAX
+[2026-06-10 17:42:19.91288] [1067705] [debug] Processing line 106: <- Perl Adaptive eXecution compiler and standalone binary packager>. token: 
+[2026-06-10 17:42:19.91290] [1067705] [debug] Processing line 107: <- https://metacpan.org/dist/PAX>. token: 
+[2026-06-10 17:42:19.91293] [1067705] [debug] Processing line 108: <o PDF::Reuse>. token: PDF::Reuse
+[2026-06-10 17:42:19.91470] [1067705] [debug] Unknown: PDF::Reuse
+[2026-06-10 17:42:19.91473] [1067705] [debug] Processing line 109: <- Reuse and mass produce PDF documents>. token: 
+[2026-06-10 17:42:19.91476] [1067705] [debug] Processing line 110: <- https://metacpan.org/dist/PDF-Reuse>. token: 
+[2026-06-10 17:42:19.91478] [1067705] [debug] Processing line 111: <- This module has an important See Also>. token: 
+[2026-06-10 17:42:19.91480] [1067705] [debug] Processing line 112: <o pdftotext>. token: pdftotext
+[2026-06-10 17:42:19.91709] [1067705] [debug] Unknown: pdftotext
+[2026-06-10 17:42:19.91714] [1067705] [debug] Processing line 113: <-  Poppler is a PDF rendering library based on the xpdf-3.0 code base>. token: 
+[2026-06-10 17:42:19.91716] [1067705] [debug] Processing line 114: <- https://poppler.freedesktop.org/>. token: 
+[2026-06-10 17:42:19.91719] [1067705] [debug] Processing line 115: <- Appears to be installed as part of Debian>. token: 
+[2026-06-10 17:42:19.91721] [1067705] [debug] Processing line 116: <o Perl::Critic::Community>. token: Perl::Critic::Community
+[2026-06-10 17:42:19.92655] [1067705] [debug] Unknown: Perl::Critic::Community
+[2026-06-10 17:42:19.92662] [1067705] [debug] Processing line 117: <- Community-inspired Perl::Critic policies>. token: 
+[2026-06-10 17:42:19.92665] [1067705] [debug] Processing line 118: <- https://metacpan.org/pod/Perl::Critic::Community>. token: 
+[2026-06-10 17:42:19.92668] [1067705] [debug] Processing line 119: <o Perl::Critic::Policy::Community::DiscouragedModules>. token: Perl::Critic::Policy::Community::DiscouragedModules
+[2026-06-10 17:42:19.92980] [1067705] [debug] Unknown: Perl::Critic::Policy::Community::DiscouragedModules
+[2026-06-10 17:42:19.92987] [1067705] [debug] Processing line 120: <- Various modules discouraged from use>. token: 
+[2026-06-10 17:42:19.92991] [1067705] [debug] Processing line 121: <- https://metacpan.org/pod/Perl::Critic::Policy::Community::DiscouragedModules>. token: 
+[2026-06-10 17:42:19.92994] [1067705] [debug] Processing line 122: <o Perl::Critic::Policy::Community::PreferredAlternatives>. token: Perl::Critic::Policy::Community::PreferredAlternatives
+[2026-06-10 17:42:19.93349] [1067705] [debug] Unknown: Perl::Critic::Policy::Community::PreferredAlternatives
+[2026-06-10 17:42:19.93357] [1067705] [debug] Processing line 123: <- Various modules with preferred alternatives>. token: 
+[2026-06-10 17:42:19.93361] [1067705] [debug] Processing line 124: <- https://metacpan.org/pod/Perl::Critic::Policy::Community::PreferredAlternatives>. token: 
+[2026-06-10 17:42:19.93365] [1067705] [debug] Processing line 125: <o Quote::Code>. token: Quote::Code
+[2026-06-10 17:42:19.93664] [1067705] [debug] Unknown: Quote::Code
+[2026-06-10 17:42:19.93669] [1067705] [debug] Processing line 126: <- Quoted strings with arbitrary code interpolation>. token: 
+[2026-06-10 17:42:19.93673] [1067705] [debug] Processing line 127: <- https://metacpan.org/dist/Quote-Code>. token: 
+[2026-06-10 17:42:19.93676] [1067705] [debug] Processing line 128: <o Random::Simple>. token: Random::Simple
+[2026-06-10 17:42:19.93856] [1067705] [debug] Unknown: Random::Simple
+[2026-06-10 17:42:19.93861] [1067705] [debug] Processing line 129: <- Simple, usable, real world random numbers>. token: 
+[2026-06-10 17:42:19.93865] [1067705] [debug] Processing line 130: <- https://metacpan.org/dist/Random-Simple>. token: 
+[2026-06-10 17:42:19.93868] [1067705] [debug] Processing line 131: <o Rose::DB>. token: Rose::DB
+[2026-06-10 17:42:19.94106] [1067705] [debug] Unknown: Rose::DB
+[2026-06-10 17:42:19.94112] [1067705] [debug] Processing line 132: <- A DBI wrapper and abstraction layer>. token: 
+[2026-06-10 17:42:19.94115] [1067705] [debug] Processing line 133: <- https://metacpan.org/dist/Rose-DB>. token: 
+[2026-06-10 17:42:19.94119] [1067705] [debug] Processing line 134: <o Rose::DB::Object>. token: Rose::DB::Object
+[2026-06-10 17:42:19.94313] [1067705] [debug] Unknown: Rose::DB::Object
+[2026-06-10 17:42:19.94319] [1067705] [debug] Processing line 135: <- Extensible, high performance object-relational mapper (ORM)>. token: 
+[2026-06-10 17:42:19.94323] [1067705] [debug] Processing line 136: <- https://metacpan.org/dist/Rose-DB-Object>. token: 
+[2026-06-10 17:42:19.94327] [1067705] [debug] Processing line 137: <- Contains Rose::DB::Object::Tutorial - A guided tour of the basics of Rose::DB::Object>. token: 
+[2026-06-10 17:42:19.94331] [1067705] [debug] Processing line 138: <- Contains Rose::DB::Object::Loader, Rose::DB::Object::Manager, etc>. token: 
+[2026-06-10 17:42:19.94334] [1067705] [debug] Processing line 139: <- See also https://dev.to/dragostrif/rosedb-orm-and-perl-3dig>. token: 
+[2026-06-10 17:42:19.94338] [1067705] [debug] Processing line 140: <o Server::Starter>. token: Server::Starter
+[2026-06-10 17:42:19.94555] [1067705] [debug] Unknown: Server::Starter
+[2026-06-10 17:42:19.94560] [1067705] [debug] Processing line 141: <- A superdaemon for hot-deploying server programs>. token: 
+[2026-06-10 17:42:19.94564] [1067705] [debug] Processing line 142: <- https://metacpan.org/pod/Server::Starter>. token: 
+[2026-06-10 17:42:19.94568] [1067705] [debug] Processing line 143: <o SQL::Wizard>. token: SQL::Wizard
+[2026-06-10 17:42:19.94822] [1067705] [debug] Unknown: SQL::Wizard
+[2026-06-10 17:42:19.94832] [1067705] [debug] Processing line 144: <- Composable SQL query builder with expression trees>. token: 
+[2026-06-10 17:42:19.94838] [1067705] [debug] Processing line 145: <- https://metacpan.org/dist/SQL-Wizard>. token: 
+[2026-06-10 17:42:19.94843] [1067705] [debug] Processing line 146: <o String::Escape>. token: String::Escape
+[2026-06-10 17:42:19.95057] [1067705] [debug] Unknown: String::Escape
+[2026-06-10 17:42:19.95064] [1067705] [debug] Processing line 147: <- Backslash escapes, quoted phrase, word elision, etc>. token: 
+[2026-06-10 17:42:19.95069] [1067705] [debug] Processing line 148: <- https://metacpan.org/pod/String::Escape>. token: 
+[2026-06-10 17:42:19.95073] [1067705] [debug] Processing line 149: <o String::ShellQuote>. token: String::ShellQuote
+[2026-06-10 17:42:19.95347] [1067705] [debug] Unknown: String::ShellQuote
+[2026-06-10 17:42:19.95355] [1067705] [debug] Processing line 150: <- Quote strings for passing through the shell>. token: 
+[2026-06-10 17:42:19.95360] [1067705] [debug] Processing line 151: <- https://metacpan.org/pod/String::ShellQuote>. token: 
+[2026-06-10 17:42:19.95366] [1067705] [debug] Processing line 152: <- Does not decode ANSI escape codes>. token: 
+[2026-06-10 17:42:19.95371] [1067705] [debug] Processing line 153: <o Test::Most::Explain>. token: Test::Most::Explain
+[2026-06-10 17:42:19.95720] [1067705] [debug] Unknown: Test::Most::Explain
+[2026-06-10 17:42:19.95731] [1067705] [debug] Processing line 154: <- Enhanced diagnostics for Test::More with structured diffs and helpful hints>. token: 
+[2026-06-10 17:42:19.95738] [1067705] [debug] Processing line 155: <- https://metacpan.org/dist/Test-Most-Explain>. token: 
+[2026-06-10 17:42:19.95744] [1067705] [debug] Processing line 156: <o Text::Stencil>. token: Text::Stencil
+[2026-06-10 17:42:19.96090] [1067705] [debug] Unknown: Text::Stencil
+[2026-06-10 17:42:19.96099] [1067705] [debug] Processing line 157: <- Fast XS list/table renderer with escaping, formatting, and transform chaining>. token: 
+[2026-06-10 17:42:19.96105] [1067705] [debug] Processing line 158: <- https://metacpan.org/dist/Text-Stencil>. token: 
+[2026-06-10 17:42:19.96111] [1067705] [debug] Processing line 159: <o Text::Table::Manifold>. token: Text::Table::Manifold
+[2026-06-10 17:42:19.96453] [1067705] [debug] Unknown: Text::Table::Manifold
+[2026-06-10 17:42:19.96465] [1067705] [debug] Processing line 160: <- Render tables in manifold formats>. token: 
+[2026-06-10 17:42:19.96472] [1067705] [debug] Processing line 161: <- https://metacpan.org/pod/Text::Table::Manifold>. token: 
+[2026-06-10 17:42:19.96478] [1067705] [debug] Processing line 162: <- Its See Also lists about similar 40 modules>. token: 
+[2026-06-10 17:42:19.96483] [1067705] [debug] Processing line 163: <o Text::Table::Tiny>. token: Text::Table::Tiny
+[2026-06-10 17:42:19.96824] [1067705] [debug] Unknown: Text::Table::Tiny
+[2026-06-10 17:42:19.96836] [1067705] [debug] Processing line 164: <- Generate simple text tables from 2D arrays>. token: 
+[2026-06-10 17:42:19.96843] [1067705] [debug] Processing line 165: <- https://metacpan.org/pod/Text::Table::Tiny>. token: 
+[2026-06-10 17:42:19.96849] [1067705] [debug] Processing line 166: <o Thread::Subs>. token: Thread::Subs
+[2026-06-10 17:42:19.97098] [1067705] [debug] Unknown: Thread::Subs
+[2026-06-10 17:42:19.97106] [1067705] [debug] Processing line 167: <- Execute selected subs concurrently in worker threads>. token: 
+[2026-06-10 17:42:19.97113] [1067705] [debug] Processing line 168: <- https://metacpan.org/dist/Thread-Subs>. token: 
+[2026-06-10 17:42:19.97119] [1067705] [debug] Processing line 169: <- The POD is very sophisticated>. token: 
+[2026-06-10 17:42:19.97124] [1067705] [debug] Processing line 170: <o Time::Moment>. token: Time::Moment
+[2026-06-10 17:42:19.97414] [1067705] [debug] Unknown: Time::Moment
+[2026-06-10 17:42:19.97422] [1067705] [debug] Processing line 171: <- Represents a date and time of day with an offset from UTC>. token: 
+[2026-06-10 17:42:19.97428] [1067705] [debug] Processing line 172: <- https://metacpan.org/dist/Time-Moment>. token: 
+[2026-06-10 17:42:19.97434] [1067705] [debug] Processing line 173: <o TOML>. token: TOML
+[2026-06-10 17:42:19.97768] [1067705] [debug] Unknown: TOML
+[2026-06-10 17:42:19.97779] [1067705] [debug] Processing line 174: <- Tom's Obvious, Minimal Language is a file format for configuration files>. token: 
+[2026-06-10 17:42:19.97786] [1067705] [debug] Processing line 175: <- https://en.wikipedia.org/wiki/TOML>. token: 
+[2026-06-10 17:42:19.97792] [1067705] [debug] Processing line 176: <- Supports the following data types: string, integer, float, boolean, datetime, array, and table>. token: 
+[2026-06-10 17:42:19.97797] [1067705] [debug] Processing line 177: <o Type::Registry>. token: Type::Registry
+[2026-06-10 17:42:19.98160] [1067705] [debug] Unknown: Type::Registry
+[2026-06-10 17:42:19.98172] [1067705] [debug] Processing line 178: <- A glorified hashref for looking up type constraints>. token: 
+[2026-06-10 17:42:19.98178] [1067705] [debug] Processing line 179: <- https://metacpan.org/pod/Type::Registry>. token: 
+[2026-06-10 17:42:19.98184] [1067705] [debug] Processing line 180: <o Type::Tiny>. token: Type::Tiny
+[2026-06-10 17:42:19.98553] [1067705] [debug] Unknown: Type::Tiny
+[2026-06-10 17:42:19.98564] [1067705] [debug] Processing line 181: <- Tiny, yet Moo(se)-compatible, type constraint>. token: 
+[2026-06-10 17:42:19.98571] [1067705] [debug] Processing line 182: <- https://metacpan.org/dist/Type-Tiny>. token: 
+[2026-06-10 17:42:19.98578] [1067705] [debug] Processing line 183: <- Contains Types::Standard and many other modules>. token: 
+[2026-06-10 17:42:19.98583] [1067705] [debug] Processing line 184: <o Types::Common>. token: Types::Common
+[2026-06-10 17:42:19.98922] [1067705] [debug] Unknown: Types::Common
+[2026-06-10 17:42:19.98934] [1067705] [debug] Processing line 185: <- The one stop shop>. token: 
+[2026-06-10 17:42:19.98940] [1067705] [debug] Processing line 186: <- https://metacpan.org/pod/Types::Common>. token: 
+[2026-06-10 17:42:19.98946] [1067705] [debug] Processing line 187: <o utf8::all>. token: utf8::all
+[2026-06-10 17:42:19.99301] [1067705] [debug] Unknown: utf8::all
+[2026-06-10 17:42:19.99316] [1067705] [debug] Processing line 188: <- Turn on Unicode - all of it>. token: 
+[2026-06-10 17:42:19.99326] [1067705] [debug] Processing line 189: <- https://metacpan.org/dist/utf8-all>. token: 
+[2026-06-10 17:42:19.99336] [1067705] [debug] Processing line 190: <o Unicode::CheckUTF8>. token: Unicode::CheckUTF8
+[2026-06-10 17:42:19.99704] [1067705] [debug] Unknown: Unicode::CheckUTF8
+[2026-06-10 17:42:19.99717] [1067705] [debug] Processing line 191: <- Checks if scalar is valid UTF-8>. token: 
+[2026-06-10 17:42:19.99726] [1067705] [debug] Processing line 192: <- https://metacpan.org/pod/Unicode::CheckUTF8>. token: 
+[2026-06-10 17:42:19.99735] [1067705] [debug] Processing line 193: <o Unicode::UTF8>. token: Unicode::UTF8
+[2026-06-10 17:42:20.00090] [1067705] [debug] Unknown: Unicode::UTF8
+[2026-06-10 17:42:20.00104] [1067705] [debug] Processing line 194: <- Encoding and decoding of UTF-8 encoding form>. token: 
+[2026-06-10 17:42:20.00114] [1067705] [debug] Processing line 195: <- https://metacpan.org/dist/Unicode-UTF8>. token: 
+[2026-06-10 17:42:20.00140] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.00149] [1067705] [info] Topic: id: 4. html_id: 4. title: AdventPlanet
+[2026-06-10 17:42:20.00159] [1067705] [debug] Topic: AdventPlanet. Line count: 5
+[2026-06-10 17:42:20.00169] [1067705] [debug] Processing line 0: <o Advent Planet>. token: Advent Planet
+[2026-06-10 17:42:20.00545] [1067705] [debug] Unknown: Advent Planet
+[2026-06-10 17:42:20.00548] [1067705] [debug] Processing line 1: <- An Aggregator of Advent Calendars>. token: 
+[2026-06-10 17:42:20.00551] [1067705] [debug] Processing line 2: <- http://www.lenjaffe.com/AdventPlanet/>. token: 
+[2026-06-10 17:42:20.00553] [1067705] [debug] Processing line 3: <o WWW::AdventCalendar>. token: WWW::AdventCalendar
+[2026-06-10 17:42:20.00730] [1067705] [debug] Unknown: WWW::AdventCalendar
+[2026-06-10 17:42:20.00734] [1067705] [debug] Processing line 4: <- A calendar for a month of articles (on the web)>. token: 
+[2026-06-10 17:42:20.00737] [1067705] [debug] Processing line 5: <- https://metacpan.org/dist/WWW-AdventCalendar>. token: 
+[2026-06-10 17:42:20.00743] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.00745] [1067705] [info] Topic: id: 6. html_id: 6. title: AlgorithmicStuff
+[2026-06-10 17:42:20.00752] [1067705] [debug] Topic: AlgorithmicStuff. Line count: 56
+[2026-06-10 17:42:20.00754] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:20.00756] [1067705] [debug] Processing line 1: <- DatabaseAndSQL>. token: 
+[2026-06-10 17:42:20.00758] [1067705] [debug] Processing line 2: <- EventStuff>. token: 
+[2026-06-10 17:42:20.00760] [1067705] [debug] Processing line 3: <o Action::Retry>. token: Action::Retry
+[2026-06-10 17:42:20.01010] [1067705] [debug] Unknown: Action::Retry
+[2026-06-10 17:42:20.01014] [1067705] [debug] Processing line 4: <- Module to try to perform an action, with various ways of retrying and sleeping between retries>. token: 
+[2026-06-10 17:42:20.01016] [1067705] [debug] Processing line 5: <- https://metacpan.org/pod/Action::Retry>. token: 
+[2026-06-10 17:42:20.01019] [1067705] [debug] Processing line 6: <o Action::Retry::Strategy::Constant>. token: Action::Retry::Strategy::Constant
+[2026-06-10 17:42:20.01276] [1067705] [debug] Unknown: Action::Retry::Strategy::Constant
+[2026-06-10 17:42:20.01282] [1067705] [debug] Processing line 7: <- Constant sleep time strategy>. token: 
+[2026-06-10 17:42:20.01285] [1067705] [debug] Processing line 8: <- https://metacpan.org/pod/Action::Retry::Strategy::Constant>. token: 
+[2026-06-10 17:42:20.01287] [1067705] [debug] Processing line 9: <o Action::Retry::Strategy::Fibonacci>. token: Action::Retry::Strategy::Fibonacci
+[2026-06-10 17:42:20.01464] [1067705] [debug] Unknown: Action::Retry::Strategy::Fibonacci
+[2026-06-10 17:42:20.01468] [1067705] [debug] Processing line 10: <- Fibonacci incrementation of sleep time strategy>. token: 
+[2026-06-10 17:42:20.01470] [1067705] [debug] Processing line 11: <- https://metacpan.org/pod/Action::Retry::Strategy::Fibonacci>. token: 
+[2026-06-10 17:42:20.01473] [1067705] [debug] Processing line 12: <o Action::Retry::Strategy::Linear>. token: Action::Retry::Strategy::Linear
+[2026-06-10 17:42:20.01695] [1067705] [debug] Unknown: Action::Retry::Strategy::Linear
+[2026-06-10 17:42:20.01699] [1067705] [debug] Processing line 13: <- Linear incrementation of sleep time strategy>. token: 
+[2026-06-10 17:42:20.01702] [1067705] [debug] Processing line 14: <- https://metacpan.org/pod/Action::Retry::Strategy::Linear>. token: 
+[2026-06-10 17:42:20.01704] [1067705] [debug] Processing line 15: <o Algorithm::Backoff>. token: Algorithm::Backoff
+[2026-06-10 17:42:20.01859] [1067705] [debug] Unknown: Algorithm::Backoff
+[2026-06-10 17:42:20.01862] [1067705] [debug] Processing line 16: <- Various backoff strategies for retry>. token: 
+[2026-06-10 17:42:20.01865] [1067705] [debug] Processing line 17: <- https://metacpan.org/pod/Algorithm::Backoff>. token: 
+[2026-06-10 17:42:20.01867] [1067705] [debug] Processing line 18: <o Algorithm::Backoff::Constant>. token: Algorithm::Backoff::Constant
+[2026-06-10 17:42:20.02069] [1067705] [debug] Unknown: Algorithm::Backoff::Constant
+[2026-06-10 17:42:20.02073] [1067705] [debug] Processing line 19: <- Backoff using a constant delay>. token: 
+[2026-06-10 17:42:20.02076] [1067705] [debug] Processing line 20: <- https://metacpan.org/pod/Algorithm::Backoff::Constant>. token: 
+[2026-06-10 17:42:20.02079] [1067705] [debug] Processing line 21: <o Algorithm::Backoff::Exponential>. token: Algorithm::Backoff::Exponential
+[2026-06-10 17:42:20.02232] [1067705] [debug] Unknown: Algorithm::Backoff::Exponential
+[2026-06-10 17:42:20.02236] [1067705] [debug] Processing line 22: <- Backoff exponentially>. token: 
+[2026-06-10 17:42:20.02238] [1067705] [debug] Processing line 23: <- https://metacpan.org/pod/Algorithm::Backoff::Exponential>. token: 
+[2026-06-10 17:42:20.02241] [1067705] [debug] Processing line 24: <o Algorithm::Backoff::Fibonacci>. token: Algorithm::Backoff::Fibonacci
+[2026-06-10 17:42:20.02447] [1067705] [debug] Unknown: Algorithm::Backoff::Fibonacci
+[2026-06-10 17:42:20.02450] [1067705] [debug] Processing line 25: <- Backoff using Fibonacci sequence>. token: 
+[2026-06-10 17:42:20.02453] [1067705] [debug] Processing line 26: <- https://metacpan.org/pod/Algorithm::Backoff::Fibonacci>. token: 
+[2026-06-10 17:42:20.02455] [1067705] [debug] Processing line 27: <o Algorithm::Backoff::LILD>. token: Algorithm::Backoff::LILD
+[2026-06-10 17:42:20.02606] [1067705] [debug] Unknown: Algorithm::Backoff::LILD
+[2026-06-10 17:42:20.02609] [1067705] [debug] Processing line 28: <- Linear Increment, Linear Decrement (LILD) backoff>. token: 
+[2026-06-10 17:42:20.02612] [1067705] [debug] Processing line 29: <- https://metacpan.org/pod/Algorithm::Backoff::LILD>. token: 
+[2026-06-10 17:42:20.02614] [1067705] [debug] Processing line 30: <o Algorithm::Backoff::LIMD>. token: Algorithm::Backoff::LIMD
+[2026-06-10 17:42:20.02817] [1067705] [debug] Unknown: Algorithm::Backoff::LIMD
+[2026-06-10 17:42:20.02821] [1067705] [debug] Processing line 31: <- Linear Increment, Multiplicative Decrement (LIMD) backoff>. token: 
+[2026-06-10 17:42:20.02823] [1067705] [debug] Processing line 32: <- https://metacpan.org/pod/Algorithm::Backoff::LIMD>. token: 
+[2026-06-10 17:42:20.02826] [1067705] [debug] Processing line 33: <o Algorithm::Backoff::MILD>. token: Algorithm::Backoff::MILD
+[2026-06-10 17:42:20.03014] [1067705] [debug] Unknown: Algorithm::Backoff::MILD
+[2026-06-10 17:42:20.03019] [1067705] [debug] Processing line 34: <- Multiplicative Increment, Linear Decrement (MILD) backoff>. token: 
+[2026-06-10 17:42:20.03023] [1067705] [debug] Processing line 35: <- https://metacpan.org/pod/Algorithm::Backoff::MILD>. token: 
+[2026-06-10 17:42:20.03027] [1067705] [debug] Processing line 36: <o Algorithm::Backoff::MIMD>. token: Algorithm::Backoff::MIMD
+[2026-06-10 17:42:20.03260] [1067705] [debug] Unknown: Algorithm::Backoff::MIMD
+[2026-06-10 17:42:20.03264] [1067705] [debug] Processing line 37: <- Multiplicative Increment, Multiplicative Decrement (MIMD) backoff>. token: 
+[2026-06-10 17:42:20.03267] [1067705] [debug] Processing line 38: <- https://metacpan.org/pod/Algorithm::Backoff::MIMD>. token: 
+[2026-06-10 17:42:20.03269] [1067705] [debug] Processing line 39: <o Algorithm::Backoff::RetryTimeouts>. token: Algorithm::Backoff::RetryTimeouts
+[2026-06-10 17:42:20.03443] [1067705] [debug] Unknown: Algorithm::Backoff::RetryTimeouts
+[2026-06-10 17:42:20.03447] [1067705] [debug] Processing line 40: <- A backoff-style retry algorithm with adjustable timeout support>. token: 
+[2026-06-10 17:42:20.03449] [1067705] [debug] Processing line 41: <- https://metacpan.org/pod/Algorithm::Backoff::RetryTimeouts>. token: 
+[2026-06-10 17:42:20.03452] [1067705] [debug] Processing line 42: <o Algorithm::X::DLX>. token: Algorithm::X::DLX
+[2026-06-10 17:42:20.03673] [1067705] [debug] Unknown: Algorithm::X::DLX
+[2026-06-10 17:42:20.03676] [1067705] [debug] Processing line 43: <- Solve exact cover problems with Algorithm-X and Dancing Links>. token: 
+[2026-06-10 17:42:20.03679] [1067705] [debug] Processing line 44: <- https://metacpan.org/dist/Algorithm-X>. token: 
+[2026-06-10 17:42:20.03681] [1067705] [debug] Processing line 45: <o Algorithm::DLX>. token: Algorithm::DLX
+[2026-06-10 17:42:20.03839] [1067705] [debug] Unknown: Algorithm::DLX
+[2026-06-10 17:42:20.03843] [1067705] [debug] Processing line 46: <- Solve exact cover problems>. token: 
+[2026-06-10 17:42:20.03845] [1067705] [debug] Processing line 47: <- https://metacpan.org/pod/Algorithm::DLX V 0.03>. token: 
+[2026-06-10 17:42:20.03847] [1067705] [debug] Processing line 48: <o App::AlgorithmBackoffUtils>. token: App::AlgorithmBackoffUtils
+[2026-06-10 17:42:20.04060] [1067705] [debug] Unknown: App::AlgorithmBackoffUtils
+[2026-06-10 17:42:20.04064] [1067705] [debug] Processing line 49: <- Utilities related to Algorithm::Backoff>. token: 
+[2026-06-10 17:42:20.04066] [1067705] [debug] Processing line 50: <- https://metacpan.org/pod/App::AlgorithmBackoffUtils>. token: 
+[2026-06-10 17:42:20.04069] [1067705] [debug] Processing line 51: <o Retry::Backoff>. token: Retry::Backoff
+[2026-06-10 17:42:20.04224] [1067705] [debug] Unknown: Retry::Backoff
+[2026-06-10 17:42:20.04227] [1067705] [debug] Processing line 52: <- Retry a piece of code, with backoff strategies>. token: 
+[2026-06-10 17:42:20.04230] [1067705] [debug] Processing line 53: <- https://metacpan.org/pod/Retry::Backoff>. token: 
+[2026-06-10 17:42:20.04232] [1067705] [debug] Processing line 54: <o Retry::Policy>. token: Retry::Policy
+[2026-06-10 17:42:20.04437] [1067705] [debug] Unknown: Retry::Policy
+[2026-06-10 17:42:20.04440] [1067705] [debug] Processing line 55: <- Simple retry wrapper with exponential backoff and jitter>. token: 
+[2026-06-10 17:42:20.04443] [1067705] [debug] Processing line 56: <- https://metacpan.org/dist/Retry-Policy>. token: 
+[2026-06-10 17:42:20.04447] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.04449] [1067705] [info] Topic: id: 7. html_id: 7. title: AnimationStuff
+[2026-06-10 17:42:20.04452] [1067705] [debug] Topic: AnimationStuff. Line count: 5
+[2026-06-10 17:42:20.04454] [1067705] [debug] Processing line 0: <o App::FfmpegUtils>. token: App::FfmpegUtils
+[2026-06-10 17:42:20.04613] [1067705] [debug] Unknown: App::FfmpegUtils
+[2026-06-10 17:42:20.04616] [1067705] [debug] Processing line 1: <- Utilities related to ffmpeg>. token: 
+[2026-06-10 17:42:20.04618] [1067705] [debug] Processing line 2: <- https://metacpan.org/dist/App-FfmpegUtils>. token: 
+[2026-06-10 17:42:20.04620] [1067705] [debug] Processing line 3: <o Automate::Animate::FFmpeg>. token: Automate::Animate::FFmpeg
+[2026-06-10 17:42:20.04825] [1067705] [debug] Unknown: Automate::Animate::FFmpeg
+[2026-06-10 17:42:20.04828] [1067705] [debug] Processing line 4: <- Create animation from a sequence of images using FFmpeg>. token: 
+[2026-06-10 17:42:20.04831] [1067705] [debug] Processing line 5: <- https://metacpan.org/pod/Automate::Animate::FFmpeg>. token: 
+[2026-06-10 17:42:20.04834] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.04836] [1067705] [info] Topic: id: 8. html_id: 8. title: AntiVirusStuff
+[2026-06-10 17:42:20.04838] [1067705] [debug] Topic: AntiVirusStuff. Line count: 9
+[2026-06-10 17:42:20.04840] [1067705] [debug] Processing line 0: <o Alien::YARA>. token: Alien::YARA
+[2026-06-10 17:42:20.04993] [1067705] [debug] Unknown: Alien::YARA
+[2026-06-10 17:42:20.04996] [1067705] [debug] Processing line 1: <- Find or download and install the YARA malware analysis library>. token: 
+[2026-06-10 17:42:20.04999] [1067705] [debug] Processing line 2: <- https://metacpan.org/dist/Alien-YARA>. token: 
+[2026-06-10 17:42:20.05001] [1067705] [debug] Processing line 3: <o File::Scan::ClamAV>. token: File::Scan::ClamAV
+[2026-06-10 17:42:20.05212] [1067705] [debug] Unknown: File::Scan::ClamAV
+[2026-06-10 17:42:20.05216] [1067705] [debug] Processing line 4: <- Connect to a local Clam Anti-Virus clamd service and send commands>. token: 
+[2026-06-10 17:42:20.05218] [1067705] [debug] Processing line 5: <- https://metacpan.org/dist/File-Scan-ClamAV>. token: 
+[2026-06-10 17:42:20.05221] [1067705] [debug] Processing line 6: <o YaraFFI>. token: YaraFFI
+[2026-06-10 17:42:20.05376] [1067705] [debug] Unknown: YaraFFI
+[2026-06-10 17:42:20.05379] [1067705] [debug] Processing line 7: <- Minimal Perl FFI bindings for the YARA malware scanning engine>. token: 
+[2026-06-10 17:42:20.05381] [1067705] [debug] Processing line 8: <- https://metacpan.org/dist/YaraFFI>. token: 
+[2026-06-10 17:42:20.05384] [1067705] [debug] Processing line 9: <- https://yara.readthedocs.io/en/latest/>. token: 
+[2026-06-10 17:42:20.05386] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.05388] [1067705] [info] Topic: id: 9. html_id: 9. title: ApacheStuff
+[2026-06-10 17:42:20.05394] [1067705] [debug] Topic: ApacheStuff. Line count: 43
+[2026-06-10 17:42:20.05396] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:20.05398] [1067705] [debug] Processing line 1: <- RestfulInterface'>. token: 
+[2026-06-10 17:42:20.05399] [1067705] [debug] Processing line 2: <- SystemMonitoring>. token: 
+[2026-06-10 17:42:20.05401] [1067705] [debug] Processing line 3: <- Apache::Log::Parser>. token: 
+[2026-06-10 17:42:20.05403] [1067705] [debug] Processing line 4: <- Apache::ParseLog>. token: 
+[2026-06-10 17:42:20.05405] [1067705] [debug] Processing line 5: <- ApacheLog::Parser>. token: 
+[2026-06-10 17:42:20.05406] [1067705] [debug] Processing line 6: <- Regexp::Long::Common>. token: 
+[2026-06-10 17:42:20.05408] [1067705] [debug] Processing line 7: <o Apache::Session>. token: Apache::Session
+[2026-06-10 17:42:20.05613] [1067705] [debug] Unknown: Apache::Session
+[2026-06-10 17:42:20.05616] [1067705] [debug] Processing line 8: <- A persistence framework for session data>. token: 
+[2026-06-10 17:42:20.05618] [1067705] [debug] Processing line 9: <- https://metacpan.org/pod/Apache::Session>. token: 
+[2026-06-10 17:42:20.05621] [1067705] [debug] Processing line 10: <o Apache::Session::Browseable>. token: Apache::Session::Browseable
+[2026-06-10 17:42:20.05773] [1067705] [debug] Unknown: Apache::Session::Browseable
+[2026-06-10 17:42:20.05776] [1067705] [debug] Processing line 11: <- Add index and search methods to Apache::Session>. token: 
+[2026-06-10 17:42:20.05779] [1067705] [debug] Processing line 12: <- https://metacpan.org/dist/Apache-Session-Browseable>. token: 
+[2026-06-10 17:42:20.05781] [1067705] [debug] Processing line 13: <- Written to support Lemonldap::NG. See SystemMonitoring>. token: 
+[2026-06-10 17:42:20.05783] [1067705] [debug] Processing line 14: <o Apache::Session::Generate::Random>. token: Apache::Session::Generate::Random
+[2026-06-10 17:42:20.05965] [1067705] [debug] Unknown: Apache::Session::Generate::Random
+[2026-06-10 17:42:20.05968] [1067705] [debug] Processing line 15: <- Use system randomness for generating session ids>. token: 
+[2026-06-10 17:42:20.05971] [1067705] [debug] Processing line 16: <- https://metacpan.org/dist/Apache-Session-Generate-Random>. token: 
+[2026-06-10 17:42:20.05973] [1067705] [debug] Processing line 17: <o Apache2::API>. token: Apache2::API
+[2026-06-10 17:42:20.06126] [1067705] [debug] Unknown: Apache2::API
+[2026-06-10 17:42:20.06129] [1067705] [debug] Processing line 18: <- Apache2 API Framework>. token: 
+[2026-06-10 17:42:20.06131] [1067705] [debug] Processing line 19: <- https://metacpan.org/dist/Apache2-API>. token: 
+[2026-06-10 17:42:20.06134] [1067705] [debug] Processing line 20: <o Avro>. token: Avro
+[2026-06-10 17:42:20.06290] [1067705] [debug] Unknown: Avro
+[2026-06-10 17:42:20.06296] [1067705] [debug] Processing line 21: <- The official Perl API for the Apache Avro project's serialization and RPC framework>. token: 
+[2026-06-10 17:42:20.06298] [1067705] [debug] Processing line 22: <- https://metacpan.org/dist/Avro>. token: 
+[2026-06-10 17:42:20.06300] [1067705] [debug] Processing line 23: <o Common::Log::Parser>. token: Common::Log::Parser
+[2026-06-10 17:42:20.06485] [1067705] [debug] Unknown: Common::Log::Parser
+[2026-06-10 17:42:20.06488] [1067705] [debug] Processing line 24: <- Parse the common log format lines used by Apache>. token: 
+[2026-06-10 17:42:20.06490] [1067705] [debug] Processing line 25: <- https://metacpan.org/pod/Common::Log::Parser>. token: 
+[2026-06-10 17:42:20.06492] [1067705] [debug] Processing line 26: <o ModPerl::RegistryCookerSealed>. token: ModPerl::RegistryCookerSealed
+[2026-06-10 17:42:20.06648] [1067705] [debug] Unknown: ModPerl::RegistryCookerSealed
+[2026-06-10 17:42:20.06651] [1067705] [debug] Processing line 27: <- Monkey-patch :Sealed registry handler() into ModPerl::RegistryCooker>. token: 
+[2026-06-10 17:42:20.06653] [1067705] [debug] Processing line 28: <- https://metacpan.org/dist/sealed>. token: 
+[2026-06-10 17:42:20.06656] [1067705] [debug] Processing line 29: <o Net::API::REST>. token: Net::API::REST
+[2026-06-10 17:42:20.06867] [1067705] [debug] Unknown: Net::API::REST
+[2026-06-10 17:42:20.06870] [1067705] [debug] Processing line 30: <- Framework for RESTful APIs>. token: 
+[2026-06-10 17:42:20.06873] [1067705] [debug] Processing line 31: <- https://metacpan.org/dist/Net-API-REST>. token: 
+[2026-06-10 17:42:20.06875] [1067705] [debug] Processing line 32: <o Net::Kafka::Producer::Avro>. token: Net::Kafka::Producer::Avro
+[2026-06-10 17:42:20.07028] [1067705] [debug] Unknown: Net::Kafka::Producer::Avro
+[2026-06-10 17:42:20.07031] [1067705] [debug] Processing line 33: <- Apache Kafka message producer based on librdkafka, Avro serialization and Confluent Schema Registry validation>. token: 
+[2026-06-10 17:42:20.07033] [1067705] [debug] Processing line 34: <- https://metacpan.org/dist/Net-Kafka-Producer-Avro>. token: 
+[2026-06-10 17:42:20.07035] [1067705] [debug] Processing line 35: <o ThreatDetector>. token: ThreatDetector
+[2026-06-10 17:42:20.07243] [1067705] [debug] Unknown: ThreatDetector
+[2026-06-10 17:42:20.07246] [1067705] [debug] Processing line 36: <- Apache log parser for threat detection & classification>. token: 
+[2026-06-10 17:42:20.07249] [1067705] [debug] Processing line 37: <- https://metacpan.org/dist/ThreatDetector>. token: 
+[2026-06-10 17:42:20.07251] [1067705] [debug] Processing line 38: <o Thrift>. token: Thrift
+[2026-06-10 17:42:20.07405] [1067705] [debug] Unknown: Thrift
+[2026-06-10 17:42:20.07408] [1067705] [debug] Processing line 39: <- Apache Thrift is a software framework for scalable cross-language services development.>. token: 
+[2026-06-10 17:42:20.07410] [1067705] [debug] Processing line 40: <- https://metacpan.org/dist/Thrift>. token: 
+[2026-06-10 17:42:20.07412] [1067705] [debug] Processing line 41: <o Thrift::XS>. token: Thrift::XS
+[2026-06-10 17:42:20.07618] [1067705] [debug] Unknown: Thrift::XS
+[2026-06-10 17:42:20.07622] [1067705] [debug] Processing line 42: <- Faster Thrift binary protocol encoding and decoding>. token: 
+[2026-06-10 17:42:20.07624] [1067705] [debug] Processing line 43: <- https://metacpan.org/pod/Thrift::XS>. token: 
+[2026-06-10 17:42:20.07627] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.07629] [1067705] [info] Topic: id: 10. html_id: 10. title: AppleMac
+[2026-06-10 17:42:20.07632] [1067705] [debug] Topic: AppleMac. Line count: 10
+[2026-06-10 17:42:20.07636] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:20.07639] [1067705] [debug] Processing line 1: <- TheOSGuide>. token: 
+[2026-06-10 17:42:20.07641] [1067705] [debug] Processing line 2: <o Mac::FSEvents>. token: Mac::FSEvents
+[2026-06-10 17:42:20.07794] [1067705] [debug] Unknown: Mac::FSEvents
+[2026-06-10 17:42:20.07797] [1067705] [debug] Processing line 3: <- Monitor a directory structure for changes>. token: 
+[2026-06-10 17:42:20.07799] [1067705] [debug] Processing line 4: <- https://metacpan.org/pod/Mac::FSEvents>. token: 
+[2026-06-10 17:42:20.07801] [1067705] [debug] Processing line 5: <o Mac::OSVersion>. token: Mac::OSVersion
+[2026-06-10 17:42:20.08016] [1067705] [debug] Unknown: Mac::OSVersion
+[2026-06-10 17:42:20.08019] [1067705] [debug] Processing line 6: <- Get the Mac OS X or macOS system version>. token: 
+[2026-06-10 17:42:20.08022] [1067705] [debug] Processing line 7: <- https://metacpan.org/dist/Mac-OSVersion>. token: 
+[2026-06-10 17:42:20.08025] [1067705] [debug] Processing line 8: <o Mac::PropertyList>. token: Mac::PropertyList
+[2026-06-10 17:42:20.08180] [1067705] [debug] Unknown: Mac::PropertyList
+[2026-06-10 17:42:20.08184] [1067705] [debug] Processing line 9: <- Work with Mac plists at a low level>. token: 
+[2026-06-10 17:42:20.08186] [1067705] [debug] Processing line 10: <- https://metacpan.org/dist/Mac-PropertyList>. token: 
+[2026-06-10 17:42:20.08190] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.08192] [1067705] [info] Topic: id: 12. html_id: 12. title: ArchOS
+[2026-06-10 17:42:20.08194] [1067705] [debug] Topic: ArchOS. Line count: 4
+[2026-06-10 17:42:20.08196] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:20.08198] [1067705] [debug] Processing line 1: <- TheOSGuide>. token: 
+[2026-06-10 17:42:20.08200] [1067705] [debug] Processing line 2: <o App::cpan2arch>. token: App::cpan2arch
+[2026-06-10 17:42:20.08411] [1067705] [debug] Unknown: App::cpan2arch
+[2026-06-10 17:42:20.08414] [1067705] [debug] Processing line 3: <- Generate PKGBUILD from CPAN metadata>. token: 
+[2026-06-10 17:42:20.08417] [1067705] [debug] Processing line 4: <- https://metacpan.org/dist/App-cpan2arch>. token: 
+[2026-06-10 17:42:20.08419] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.08421] [1067705] [info] Topic: id: 14. html_id: 14. title: AsciiCodes
+[2026-06-10 17:42:20.08424] [1067705] [debug] Topic: AsciiCodes. Line count: 4
+[2026-06-10 17:42:20.08426] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:20.08428] [1067705] [debug] Processing line 1: <- https://www.ascii-code.com/>. token: 
+[2026-06-10 17:42:20.08429] [1067705] [debug] Processing line 2: <o Text::ASCII::Convert>. token: Text::ASCII::Convert
+[2026-06-10 17:42:20.08582] [1067705] [debug] Unknown: Text::ASCII::Convert
+[2026-06-10 17:42:20.08585] [1067705] [debug] Processing line 3: <- Perl module to convert non-ASCII characters to their ASCII equivalents>. token: 
+[2026-06-10 17:42:20.08588] [1067705] [debug] Processing line 4: <- https://metacpan.org/dist/Text-ASCII-Convert>. token: 
+[2026-06-10 17:42:20.08590] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.08592] [1067705] [info] Topic: id: 15. html_id: 15. title: ASN
+[2026-06-10 17:42:20.08595] [1067705] [debug] Topic: ASN. Line count: 5
+[2026-06-10 17:42:20.08597] [1067705] [debug] Processing line 0: <o Convert::ASN1>. token: Convert::ASN1
+[2026-06-10 17:42:20.08781] [1067705] [debug] Unknown: Convert::ASN1
+[2026-06-10 17:42:20.08784] [1067705] [debug] Processing line 1: <- ASN.1 Encode/Decode library>. token: 
+[2026-06-10 17:42:20.08786] [1067705] [debug] Processing line 2: <- https://metacpan.org/dist/Convert-ASN1>. token: 
+[2026-06-10 17:42:20.08789] [1067705] [debug] Processing line 3: <o Convert::PEM>. token: Convert::PEM
+[2026-06-10 17:42:20.08945] [1067705] [debug] Unknown: Convert::PEM
+[2026-06-10 17:42:20.08948] [1067705] [debug] Processing line 4: <- Read/write encrypted ASN.1 PEM files>. token: 
+[2026-06-10 17:42:20.08951] [1067705] [debug] Processing line 5: <- https://metacpan.org/dist/Convert-PEM>. token: 
+[2026-06-10 17:42:20.08954] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.08956] [1067705] [info] Topic: id: 16. html_id: 16. title: AssemblerX86
+[2026-06-10 17:42:20.08958] [1067705] [debug] Topic: AssemblerX86. Line count: 2
+[2026-06-10 17:42:20.08960] [1067705] [debug] Processing line 0: <o CPU::x86_64::InstructionWriter>. token: CPU::x86_64::InstructionWriter
+[2026-06-10 17:42:20.09112] [1067705] [debug] Unknown: CPU::x86_64::InstructionWriter
+[2026-06-10 17:42:20.09115] [1067705] [debug] Processing line 1: <- Assemble x86-64 instructions using a pure-perl API>. token: 
+[2026-06-10 17:42:20.09118] [1067705] [debug] Processing line 2: <- https://metacpan.org/dist/CPU-x86_64-InstructionWriter>. token: 
+[2026-06-10 17:42:20.09121] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.09123] [1067705] [info] Topic: id: 17. html_id: 17. title: AstroStuff
+[2026-06-10 17:42:20.09128] [1067705] [debug] Topic: AstroStuff. Line count: 34
+[2026-06-10 17:42:20.09130] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:20.09132] [1067705] [debug] Processing line 1: <- [[Acronyms]]>. token: 
+[2026-06-10 17:42:20.09134] [1067705] [debug] Processing line 2: <- DatesAndTimes>. token: 
+[2026-06-10 17:42:20.09136] [1067705] [debug] Processing line 3: <- SystemMonitoring>. token: 
+[2026-06-10 17:42:20.09138] [1067705] [debug] Processing line 4: <- https://www.heavens-above.com/>. token: 
+[2026-06-10 17:42:20.09140] [1067705] [debug] Processing line 5: <o Astro::App::Satpass2>. token: Astro::App::Satpass2
+[2026-06-10 17:42:20.09324] [1067705] [debug] Unknown: Astro::App::Satpass2
+[2026-06-10 17:42:20.09327] [1067705] [debug] Processing line 6: <- Forecast satellite visibility>. token: 
+[2026-06-10 17:42:20.09329] [1067705] [debug] Processing line 7: <- https://metacpan.org/dist/Astro-App-Satpass2>. token: 
+[2026-06-10 17:42:20.09332] [1067705] [debug] Processing line 8: <o Astro::Coord::ECI>. token: Astro::Coord::ECI
+[2026-06-10 17:42:20.09489] [1067705] [debug] Unknown: Astro::Coord::ECI
+[2026-06-10 17:42:20.09492] [1067705] [debug] Processing line 9: <- Manipulate geocentric coordinates>. token: 
+[2026-06-10 17:42:20.09495] [1067705] [debug] Processing line 10: <- https://metacpan.org/dist/Astro-satpass>. token: 
+[2026-06-10 17:42:20.09497] [1067705] [debug] Processing line 11: <o Astro::Coords>. token: Astro::Coords
+[2026-06-10 17:42:20.09681] [1067705] [debug] Unknown: Astro::Coords
+[2026-06-10 17:42:20.09684] [1067705] [debug] Processing line 12: <- Class for handling astronomical coordinates>. token: 
+[2026-06-10 17:42:20.09686] [1067705] [debug] Processing line 13: <- https://metacpan.org/pod/Astro::Coords>. token: 
+[2026-06-10 17:42:20.09689] [1067705] [debug] Processing line 14: <o Astro::Nova>. token: Astro::Nova
+[2026-06-10 17:42:20.09842] [1067705] [debug] Unknown: Astro::Nova
+[2026-06-10 17:42:20.09845] [1067705] [debug] Processing line 15: <- Perl interface to libnova>. token: 
+[2026-06-10 17:42:20.09847] [1067705] [debug] Processing line 16: <- https://metacpan.org/pod/Astro::Nova>. token: 
+[2026-06-10 17:42:20.09850] [1067705] [debug] Processing line 17: <o Astro::PAL>. token: Astro::PAL
+[2026-06-10 17:42:20.10054] [1067705] [debug] Unknown: Astro::PAL
+[2026-06-10 17:42:20.10058] [1067705] [debug] Processing line 18: <- Perl interface to Starlink PAL positional astronomy library>. token: 
+[2026-06-10 17:42:20.10060] [1067705] [debug] Processing line 19: <- https://metacpan.org/pod/Astro::PAL>. token: 
+[2026-06-10 17:42:20.10063] [1067705] [debug] Processing line 20: <o Astro::SIMBAD::Client>. token: Astro::SIMBAD::Client
+[2026-06-10 17:42:20.10220] [1067705] [debug] Unknown: Astro::SIMBAD::Client
+[2026-06-10 17:42:20.10223] [1067705] [debug] Processing line 21: <- Fetch astronomical data from SIMBAD 4>. token: 
+[2026-06-10 17:42:20.10225] [1067705] [debug] Processing line 22: <- https://metacpan.org/dist/Astro-SIMBAD-Client>. token: 
+[2026-06-10 17:42:20.10228] [1067705] [debug] Processing line 23: <o Astro::SpaceTrack>. token: Astro::SpaceTrack
+[2026-06-10 17:42:20.10431] [1067705] [debug] Unknown: Astro::SpaceTrack
+[2026-06-10 17:42:20.10435] [1067705] [debug] Processing line 24: <- Retrieve orbital data from www.space-track.org>. token: 
+[2026-06-10 17:42:20.10437] [1067705] [debug] Processing line 25: <- https://metacpan.org/dist/Astro-SpaceTrack>. token: 
+[2026-06-10 17:42:20.10439] [1067705] [debug] Processing line 26: <o Astro::Sunrise>. token: Astro::Sunrise
+[2026-06-10 17:42:20.10592] [1067705] [debug] Unknown: Astro::Sunrise
+[2026-06-10 17:42:20.10595] [1067705] [debug] Processing line 27: <- Perl extension for computing the sunrise/sunset on a given day>. token: 
+[2026-06-10 17:42:20.10598] [1067705] [debug] Processing line 28: <- https://metacpan.org/pod/Astro::Sunrise>. token: 
+[2026-06-10 17:42:20.10600] [1067705] [debug] Processing line 29: <o Astro::Telescope>. token: Astro::Telescope
+[2026-06-10 17:42:20.10810] [1067705] [debug] Unknown: Astro::Telescope
+[2026-06-10 17:42:20.10814] [1067705] [debug] Processing line 30: <- Class for obtaining telescope information>. token: 
+[2026-06-10 17:42:20.10817] [1067705] [debug] Processing line 31: <-https://metacpan.org/pod/Astro::Telescope>. token: 
+[2026-06-10 17:42:20.10819] [1067705] [debug] Processing line 32: <o Astro::UTDF>. token: Astro::UTDF
+[2026-06-10 17:42:20.10974] [1067705] [debug] Unknown: Astro::UTDF
+[2026-06-10 17:42:20.10977] [1067705] [debug] Processing line 33: <- Manipulate Universal Tracking Data Format data>. token: 
+[2026-06-10 17:42:20.10980] [1067705] [debug] Processing line 34: <- https://metacpan.org/dist/Astro-UTDF>. token: 
+[2026-06-10 17:42:20.10983] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.10985] [1067705] [info] Topic: id: 18. html_id: 18. title: AudioVisual
+[2026-06-10 17:42:20.10990] [1067705] [debug] Topic: AudioVisual. Line count: 45
+[2026-06-10 17:42:20.10992] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:20.10994] [1067705] [debug] Processing line 1: <- [[Acronyms]]>. token: 
+[2026-06-10 17:42:20.10996] [1067705] [debug] Processing line 2: <- https://www.videolan.org/vlc/libvlc.html>. token: 
+[2026-06-10 17:42:20.10998] [1067705] [debug] Processing line 3: <o App::SubtitleUtils>. token: App::SubtitleUtils
+[2026-06-10 17:42:20.11208] [1067705] [debug] Unknown: App::SubtitleUtils
+[2026-06-10 17:42:20.11212] [1067705] [debug] Processing line 4: <- Utilities related to video subtitles>. token: 
+[2026-06-10 17:42:20.11214] [1067705] [debug] Processing line 5: <- https://metacpan.org/dist/App-SubtitleUtils>. token: 
+[2026-06-10 17:42:20.11217] [1067705] [debug] Processing line 6: <o Audio::Nama>. token: Audio::Nama
+[2026-06-10 17:42:20.11371] [1067705] [debug] Unknown: Audio::Nama
+[2026-06-10 17:42:20.11374] [1067705] [debug] Processing line 7: <- Multitrack recorder and digital audio workstation>. token: 
+[2026-06-10 17:42:20.11376] [1067705] [debug] Processing line 8: <- https://metacpan.org/dist/Audio-Nama>. token: 
+[2026-06-10 17:42:20.11379] [1067705] [debug] Processing line 9: <o Audio::StreamGenerator>. token: Audio::StreamGenerator
+[2026-06-10 17:42:20.11561] [1067705] [debug] Unknown: Audio::StreamGenerator
+[2026-06-10 17:42:20.11564] [1067705] [debug] Processing line 10: <- Create a 'radio' stream by mixing ('cross fading') multiple audio sources (files or anything that can be converted to PCM audio) and sending it to a streaming server (like Icecast)>. token: 
+[2026-06-10 17:42:20.11566] [1067705] [debug] Processing line 11: <- https://metacpan.org/dist/Audio-StreamGenerator>. token: 
+[2026-06-10 17:42:20.11569] [1067705] [debug] Processing line 12: <o Media::Convert>. token: Media::Convert
+[2026-06-10 17:42:20.11721] [1067705] [debug] Unknown: Media::Convert
+[2026-06-10 17:42:20.11725] [1067705] [debug] Processing line 13: <- A Moose-based library to work with media assets>. token: 
+[2026-06-10 17:42:20.11727] [1067705] [debug] Processing line 14: <- https://metacpan.org/dist/Media-Convert>. token: 
+[2026-06-10 17:42:20.11729] [1067705] [debug] Processing line 15: <o Media::Info>. token: Media::Info
+[2026-06-10 17:42:20.11881] [1067705] [debug] Unknown: Media::Info
+[2026-06-10 17:42:20.11885] [1067705] [debug] Processing line 16: <- Return information on media file/URL>. token: 
+[2026-06-10 17:42:20.11888] [1067705] [debug] Processing line 17: <- https://metacpan.org/dist/Media-Info>. token: 
+[2026-06-10 17:42:20.11891] [1067705] [debug] Processing line 18: <o Perl I/F>. token: Perl I/F
+[2026-06-10 17:42:20.12075] [1067705] [debug] Unknown: Perl I/F
+[2026-06-10 17:42:20.12078] [1067705] [debug] Processing line 19: <- Wrapper for libvlc.so>. token: 
+[2026-06-10 17:42:20.12080] [1067705] [debug] Processing line 20: <- https://metacpan.org/pod/VideoLAN::LibVLC>. token: 
+[2026-06-10 17:42:20.12083] [1067705] [debug] Processing line 21: <o SpeL::Wizard>. token: SpeL::Wizard
+[2026-06-10 17:42:20.12235] [1067705] [debug] Unknown: SpeL::Wizard
+[2026-06-10 17:42:20.12238] [1067705] [debug] Processing line 22: <- Engine to build audio files from the spel files generated by SpeL>. token: 
+[2026-06-10 17:42:20.12241] [1067705] [debug] Processing line 23: <-  https://metacpan.org/dist/SpeL-Wizard>. token: 
+[2026-06-10 17:42:20.12244] [1067705] [debug] Processing line 24: <o SReview>. token: SReview
+[2026-06-10 17:42:20.12450] [1067705] [debug] Unknown: SReview
+[2026-06-10 17:42:20.12454] [1067705] [debug] Processing line 25: <- A video review and transcoding system>. token: 
+[2026-06-10 17:42:20.12456] [1067705] [debug] Processing line 26: <- https://metacpan.org/dist/SReview>. token: 
+[2026-06-10 17:42:20.12458] [1067705] [debug] Processing line 27: <- This is a complex package containing about 50 modules and a dozen scripts>. token: 
+[2026-06-10 17:42:20.12460] [1067705] [debug] Processing line 28: <o SWF>. token: SWF
+[2026-06-10 17:42:20.12614] [1067705] [debug] Unknown: SWF
+[2026-06-10 17:42:20.12617] [1067705] [debug] Processing line 29: <- An autoloadable interface module for Ming - a library for generating ShockWave Flash format movies>. token: 
+[2026-06-10 17:42:20.12620] [1067705] [debug] Processing line 30: <- https://metacpan.org/pod/SWF>. token: 
+[2026-06-10 17:42:20.12622] [1067705] [debug] Processing line 31: <o SWF::Builder>. token: SWF::Builder
+[2026-06-10 17:42:20.12835] [1067705] [debug] Unknown: SWF::Builder
+[2026-06-10 17:42:20.12838] [1067705] [debug] Processing line 32: <- Create SWF movie>. token: 
+[2026-06-10 17:42:20.12841] [1067705] [debug] Processing line 33: <- https://metacpan.org/dist/SWF-Builder>. token: 
+[2026-06-10 17:42:20.12843] [1067705] [debug] Processing line 34: <o SWF::File>. token: SWF::File
+[2026-06-10 17:42:20.12996] [1067705] [debug] Unknown: SWF::File
+[2026-06-10 17:42:20.12999] [1067705] [debug] Processing line 35: <- Create SWF file>. token: 
+[2026-06-10 17:42:20.13001] [1067705] [debug] Processing line 36: <- https://metacpan.org/dist/SWF-File>. token: 
+[2026-06-10 17:42:20.13004] [1067705] [debug] Processing line 37: <o Video::NRK::Cache>. token: Video::NRK::Cache
+[2026-06-10 17:42:20.13210] [1067705] [debug] Unknown: Video::NRK::Cache
+[2026-06-10 17:42:20.13213] [1067705] [debug] Processing line 38: <- Cache NRK Video on Demand broadcasts for offline viewing>. token: 
+[2026-06-10 17:42:20.13216] [1067705] [debug] Processing line 39: <- https://metacpan.org/dist/Video-NRK-Cache>. token: 
+[2026-06-10 17:42:20.13218] [1067705] [debug] Processing line 40: <o VideoLAN::LibVLC>. token: VideoLAN::LibVLC
+[2026-06-10 17:42:20.13371] [1067705] [debug] Unknown: VideoLAN::LibVLC
+[2026-06-10 17:42:20.13375] [1067705] [debug] Processing line 41: <- Wrapper for libvlc.so>. token: 
+[2026-06-10 17:42:20.13377] [1067705] [debug] Processing line 42: <- https://metacpan.org/dist/VideoLAN-LibVLC>. token: 
+[2026-06-10 17:42:20.13379] [1067705] [debug] Processing line 43: <o VLC media player>. token: VLC media player
+[2026-06-10 17:42:20.13561] [1067705] [debug] Unknown: VLC media player
+[2026-06-10 17:42:20.13564] [1067705] [debug] Processing line 44: <- VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols>. token: 
+[2026-06-10 17:42:20.13566] [1067705] [debug] Processing line 45: <- http://www.videolan.org/vlc/>. token: 
+[2026-06-10 17:42:20.13571] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.13573] [1067705] [info] Topic: id: 19. html_id: 19. title: AutoCAD
+[2026-06-10 17:42:20.13576] [1067705] [debug] Topic: AutoCAD. Line count: 13
+[2026-06-10 17:42:20.13578] [1067705] [debug] Processing line 0: <o See also>. token: See also
+[2026-06-10 17:42:20.13580] [1067705] [debug] Processing line 1: <- https://en.wikipedia.org/wiki/AutoCAD_version_history>. token: 
+[2026-06-10 17:42:20.13582] [1067705] [debug] Processing line 2: <o App::Test::DWG::LibreDWG::DwgRead>. token: App::Test::DWG::LibreDWG::DwgRead
+[2026-06-10 17:42:20.13735] [1067705] [debug] Unknown: App::Test::DWG::LibreDWG::DwgRead
+[2026-06-10 17:42:20.13739] [1067705] [debug] Processing line 3: <- Base class for test-dwg-libredwg-dwgread script>. token: 
+[2026-06-10 17:42:20.13741] [1067705] [debug] Processing line 4: <- https://metacpan.org/pod/App::Test::DWG::LibreDWG::DwgRead>. token: 
+[2026-06-10 17:42:20.13744] [1067705] [debug] Processing line 5: <o CAD::AutoCAD::Detect>. token: CAD::AutoCAD::Detect
+[2026-06-10 17:42:20.13897] [1067705] [debug] Unknown: CAD::AutoCAD::Detect
+[2026-06-10 17:42:20.13901] [1067705] [debug] Processing line 6: <- Detect AutoCAD files through magic string>. token: 
+[2026-06-10 17:42:20.13904] [1067705] [debug] Processing line 7: <- https://metacpan.org/pod/CAD::AutoCAD::Detect>. token: 
+[2026-06-10 17:42:20.13906] [1067705] [debug] Processing line 8: <o CAD::Format::DWG::Version>. token: CAD::Format::DWG::Version
+[2026-06-10 17:42:20.14096] [1067705] [debug] Unknown: CAD::Format::DWG::Version
+[2026-06-10 17:42:20.14099] [1067705] [debug] Processing line 9: <- Class for work with DWG file versions>. token: 
+[2026-06-10 17:42:20.14101] [1067705] [debug] Processing line 10: <- https://metacpan.org/pod/CAD::Format::DWG::Version>. token: 
+[2026-06-10 17:42:20.14104] [1067705] [debug] Processing line 11: <o File::Find::Rule::DWG>. token: File::Find::Rule::DWG
+[2026-06-10 17:42:20.14256] [1067705] [debug] Unknown: File::Find::Rule::DWG
+[2026-06-10 17:42:20.14259] [1067705] [debug] Processing line 12: <- Common rules for searching DWG files>. token: 
+[2026-06-10 17:42:20.14261] [1067705] [debug] Processing line 13: <- https://metacpan.org/pod/File::Find::Rule::DWG>. token: 
+[2026-06-10 17:42:20.14265] [1067705] [info] --------------------------------------------------
+[2026-06-10 17:42:20.14312] [1067705] [info] Created /home/ron/perl.modules/CPAN-MetaCurator/html/cpan.metacurator.tree.html. Encoding: :encoding(utf-8)
+[2026-06-10 17:42:20.14316] [1067705] [info] acronym count: 0
+[2026-06-10 17:42:20.14318] [1067705] [info] known count: 0
+[2026-06-10 17:42:20.14319] [1067705] [info] leaf count: 136
+[2026-06-10 17:42:20.14321] [1067705] [info] packages count: 264312
+[2026-06-10 17:42:20.14322] [1067705] [info] see_also count: 0
+[2026-06-10 17:42:20.14324] [1067705] [info] topic count: 207
+[2026-06-10 17:42:20.14325] [1067705] [info] unknown count: 127
