@@ -184,6 +184,7 @@ sub parse_topic
 	{
 		$index++;
 
+		$item	= {href => '', id => ++$line_id, text => ''};
 		$line	= $lines[$index];
 		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
@@ -219,14 +220,22 @@ sub parse_topic
 
 			$token = ($line =~ /^- (.+)/) ? $1 : '';
 
-			if ($line_count == 1)
+			if ($token eq 'See also')
+			{
+				$$item{html}	= '';
+				$$item{text}	= $token;
+
+				push @items, $item;
+
+				$self -> logger -> debug("Adding See also: $token");
+			}
+			elsif ($line_count == 1)
 			{
 				$description = $token;
 			}
 			elsif ($line_count == 2)
 			{
 				$href			= $token;
-				$item			= {href => '', id => ++$line_id, text => ''};
 				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>";
 				$$item{text}	= '';
 
@@ -236,7 +245,6 @@ sub parse_topic
 			}
 			else
 			{
-				$item			= {href => '', id => ++$line_id, text => ''};
 				$$item{html}	= '';
 				$$item{text}	= $token;
 
