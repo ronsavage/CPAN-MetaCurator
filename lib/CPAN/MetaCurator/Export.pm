@@ -169,6 +169,7 @@ sub parse_topic
 
 	my(%button);
 	my($description);
+	my(@extras);
 	my($href);
 	my($item, @items);
 	my($line, $line_count);
@@ -240,17 +241,10 @@ sub parse_topic
 				$$item{text}	= '';
 
 				push @items, $item;
-
-				$self -> logger -> debug("Adding description: $description");
 			}
 			else
 			{
-				$$item{html}	= '';
-				$$item{text}	= $token;
-
-				push @items, $item;
-
-				$self -> logger -> debug("Adding token: $token");
+				push @extras, $token,
 			}
 		}
 	}
