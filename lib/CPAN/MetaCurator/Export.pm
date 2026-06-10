@@ -175,6 +175,7 @@ sub parse_topic
 	my($line, $line_count);
 	my($module);
 	my(%node_type);
+	my(@see_also);
 	my($token);
 
 	$button{extras}		= '';
@@ -235,10 +236,7 @@ sub parse_topic
 
 			if ($inside{see_also})
 			{
-				$$item{html}	= '';
-				$$item{text}	= $token;
-
-				$self -> logger -> debug("See also: $token");
+				push@see_also, $token;
 			}
 			elsif ($line_count == 1)
 			{
