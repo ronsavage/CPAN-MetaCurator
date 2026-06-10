@@ -237,7 +237,7 @@ sub parse_topic
 			elsif ($line_count == 2)
 			{
 				$href			= $token;
-				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$token - $description</a></span><span>.</span>";
+				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$description</a></span><span>.</span>";
 				$$item{text}	= '';
 
 				push @items, $item;
