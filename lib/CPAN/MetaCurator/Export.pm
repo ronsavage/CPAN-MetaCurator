@@ -57,6 +57,7 @@ sub export_tree
 
 	$wanted{ABeCeDarian}		= true;
 	$wanted{Acronyms}			= true;
+	$wanted{ArchiveFiles}		= true;
 	$wanted{AdventPlanet }		= true;
 	$wanted{AlgorithmicStuff}	= true;
 	$wanted{AnimationStuff}		= true;
@@ -70,6 +71,15 @@ sub export_tree
 	$wanted{AstroStuff}			= true;
 	$wanted{AudioVisual}		= true;
 	$wanted{AutoCAD}			= true;
+	$wanted{BarCodes}			= true;
+	$wanted{BenchmarkingTools}	= true;
+	$wanted{BibliographicStuff}	= true;
+	$wanted{BillOfMaterials}	= true;
+	$wanted{BioInformatics}		= true;
+	$wanted{BlockChain}			= true;
+	$wanted{BoneMarrrowDonorRegistry} = true;
+	$wanted{BrowserStuff}		= true;
+	$wanted{BsdWare}			= true;
 	$wanted{BusinessApps}		= true;
 
 	for my $topic (@{$$pad{topics} })
@@ -202,8 +212,8 @@ sub parse_topic
 
 	$button{extras}		= '';
 	$button{faq}		= '';
-	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
-	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
+	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>TBA: [pre.../pre]</button>";
+	$button{see_also}	= "<button id='toggle-btn'>TBA: [See also]</button>";
 	$inside{pre_pre}	= false;
 	$inside{see_also}	= false;
 
@@ -241,6 +251,8 @@ sub parse_topic
 			$inside{see_also}	= false;
 			$line_count			= 0;
 			$module				= $token;
+
+			# Fix me. Should be checking known modules.
 
 #			if ($$pad{module_names}{$token} && ! $seen{$token})
 			if (! $seen{$module})

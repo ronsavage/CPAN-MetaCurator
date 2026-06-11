@@ -156,7 +156,10 @@ sub init_config
 
 	$self -> config($config);
 	$self -> logger(Mojo::Log -> new(level => $self -> log_level, path => $$config{log_path}) );
-	$self -> logger -> info("[2018-11-08 14:20:13.77168] [28320] [info] I ♥ Mojolicious\n");
+
+	# Fix me. Test UTF8 char handling.
+
+	$self -> logger -> info("I ♥ Mojolicious\n");
 
 } # End of init_config.
 
