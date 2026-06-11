@@ -256,10 +256,10 @@ sub parse_topic
 			# Fix me. What happens if there are 2 sets of <pre>...</pre> within 1 topic?
 
 			$inside{pre_pre}	= true;
-			$$item{html}		= $button{pre_pre};
-			$$item{text}		= '';
-
-			push @items, $item;
+#			$$item{html}		= $button{pre_pre};
+#			$$item{text}		= '';
+#
+#			push @items, $item;
 		}
 		elsif ($line =~ m|</pre>|)
 		{
