@@ -13,6 +13,8 @@ use Moo;
 
 use Types::Standard qw/ArrayRef HashRef Object Str/;
 
+use utf8;
+
 has config =>
 (
 	default		=> sub{return {} },
