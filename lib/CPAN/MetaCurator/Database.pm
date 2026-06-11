@@ -302,9 +302,12 @@ sub read_table
 	my($sql)				= "select * from $table_name";
 	my($set)				= $self -> db -> query($sql) || die $self -> db -> error;
 
-	for (@$set)
+	for my $element (@$set)
 	{
-		say Dumper($_) if (%$_ =~ /codigo/);
+		for my $key (keys %$element)
+		{
+			say Dumper("$key: $$element{$key}") if ($$element{$key} =~ /codigo/);
+		}
 	}
 
 	# Return an arrayref of hashrefs.
