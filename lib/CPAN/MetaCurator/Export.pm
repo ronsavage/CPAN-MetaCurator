@@ -55,32 +55,32 @@ sub export_tree
 	# Just for testing parse_topic().
 	# See data/special.topic.txt for what gets skipped ATM.
 
-	$wanted{ABeCeDarian}		= true;
-	$wanted{Acronyms}			= true;
-	$wanted{ArchiveFiles}		= true;
-	$wanted{AdventPlanet }		= true;
-	$wanted{AlgorithmicStuff}	= true;
-	$wanted{AnimationStuff}		= true;
-	$wanted{AntiVirusStuff}		= true;
-	$wanted{ApacheStuff}		= true;
-	$wanted{AppleMac}			= true;
-	$wanted{ArchOS}				= true;
-	$wanted{AsciiCodes}			= true;
-	$wanted{ASN}				= true;
-	$wanted{AssemblerX86}		= true;
-	$wanted{AstroStuff}			= true;
-	$wanted{AudioVisual}		= true;
-	$wanted{AutoCAD}			= true;
-	$wanted{BarCodes}			= true;
-	$wanted{BenchmarkingTools}	= true;
-	$wanted{BibliographicStuff}	= true;
-	$wanted{BillOfMaterials}	= true;
-	$wanted{BioInformatics}		= true;
-	$wanted{BlockChain}			= true;
-	$wanted{BoneMarrrowDonorRegistry} = true;
-	$wanted{BrowserStuff}		= true;
-	$wanted{BsdWare}			= true;
-	$wanted{BusinessApps}		= true;
+	$wanted{ABeCeDarian}				= true;
+	$wanted{Acronyms}					= true;
+	$wanted{ArchiveFiles}				= true;
+	$wanted{AdventPlanet }				= true;
+	$wanted{AlgorithmicStuff}			= true;
+	$wanted{AnimationStuff}				= true;
+	$wanted{AntiVirusStuff}				= true;
+	$wanted{ApacheStuff}				= true;
+	$wanted{AppleMac}					= true;
+	$wanted{ArchOS}						= true;
+	$wanted{AsciiCodes}					= true;
+	$wanted{ASN}						= true;
+	$wanted{AssemblerX86}				= true;
+	$wanted{AstroStuff}					= true;
+	$wanted{AudioVisual}				= true;
+	$wanted{AutoCAD}					= true;
+	$wanted{BarCodes}					= true;
+	$wanted{BenchmarkingTools}			= true;
+	$wanted{BibliographicStuff}			= true;
+	$wanted{BillOfMaterials}			= true;
+	$wanted{BioInformatics}				= true;
+	$wanted{BlockChain}					= true;
+	$wanted{BoneMarrrowDonorRegistry}	= true;
+	$wanted{BrowserStuff}				= true;
+	$wanted{BsdWare}					= true;
+	$wanted{BusinessApps}				= true;
 
 	for my $topic (@{$$pad{topics} })
 	{
