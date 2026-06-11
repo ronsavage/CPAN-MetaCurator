@@ -55,8 +55,8 @@ sub export_tree
 	# Just for testing parse_topic().
 	# See data/special.topic.txt for what gets skipped ATM.
 
-=pod
 	$wanted{ABeCeDarian}		= true;
+	$wanted{Acronyms}			= true;
 	$wanted{AdventPlanet }		= true;
 	$wanted{AlgorithmicStuff}	= true;
 	$wanted{AnimationStuff}		= true;
@@ -70,7 +70,6 @@ sub export_tree
 	$wanted{AstroStuff}			= true;
 	$wanted{AudioVisual}		= true;
 	$wanted{AutoCAD}			= true;
-=cut
 	$wanted{BusinessApps}		= true;
 
 	for my $topic (@{$$pad{topics} })
@@ -197,6 +196,7 @@ sub parse_topic
 	my($line, $line_count);
 	my($module);
 	my(%node_type);
+	my(@pre_pre);
 	my(@see_also);
 	my($token);
 
@@ -204,6 +204,7 @@ sub parse_topic
 	$button{faq}		= '';
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>[pre.../pre]</button>";
 	$button{see_also}	= "<button id='toggle-btn'>[See also]</button>";
+	$inside{pre_pre}	= false;
 	$inside{see_also}	= false;
 
 	while ($index < $#lines)
@@ -249,6 +250,27 @@ sub parse_topic
 				$self -> gather_statistics(\%node_type, $pad, $module, $topic);
 #				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
+		}
+		elsif ($line ~= /<pre>/)
+		{
+			# Fix me. What happens if there are 2 sets of <pre>...</pre> within 1 topic?
+
+			$inside{pre_pre}	= true;
+			$$item{html}		= $button{pre_pre};
+			$$item{text}		= '';
+
+			push @items, $item;
+		}
+		elsif ($line ~= m|</pre>|)
+		{
+			$inside{pre_pre} = false;
+		}
+		elsif ($inside{pre_pre})
+		{
+			$$item{html}	= ;
+			$$item{text}	= $line;
+
+			push @pre_pre, $item;
 		}
 		else
 		{
