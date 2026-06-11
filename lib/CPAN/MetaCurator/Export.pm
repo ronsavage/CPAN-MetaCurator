@@ -251,7 +251,7 @@ sub parse_topic
 #				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
 		}
-		elsif ($line ~= /<pre>/)
+		elsif ($line =~ /<pre>/)
 		{
 			# Fix me. What happens if there are 2 sets of <pre>...</pre> within 1 topic?
 
@@ -261,13 +261,13 @@ sub parse_topic
 
 			push @items, $item;
 		}
-		elsif ($line ~= m|</pre>|)
+		elsif ($line =~ m|</pre>|)
 		{
 			$inside{pre_pre} = false;
 		}
 		elsif ($inside{pre_pre})
 		{
-			$$item{html}	= ;
+			$$item{html}	= '';
 			$$item{text}	= $line;
 
 			push @pre_pre, $item;
