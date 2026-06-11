@@ -57,20 +57,23 @@ sub export_tree
 
 	$wanted{ABeCeDarian}				= true;
 	$wanted{Acronyms}					= true;
-	$wanted{ArchiveFiles}				= true;
 	$wanted{AdventPlanet }				= true;
+	$wanted{AiEngines}					= true;
 	$wanted{AlgorithmicStuff}			= true;
 	$wanted{AnimationStuff}				= true;
 	$wanted{AntiVirusStuff}				= true;
 	$wanted{ApacheStuff}				= true;
 	$wanted{AppleMac}					= true;
+	$wanted{ArchiveFiles}				= true;
 	$wanted{ArchOS}						= true;
+	$wanted{ArrayHandling}				= true;
 	$wanted{AsciiCodes}					= true;
 	$wanted{ASN}						= true;
 	$wanted{AssemblerX86}				= true;
 	$wanted{AstroStuff}					= true;
 	$wanted{AudioVisual}				= true;
 	$wanted{AutoCAD}					= true;
+
 	$wanted{BarCodes}					= true;
 	$wanted{BenchmarkingTools}			= true;
 	$wanted{BibliographicStuff}			= true;
@@ -81,6 +84,24 @@ sub export_tree
 	$wanted{BrowserStuff}				= true;
 	$wanted{BsdWare}					= true;
 	$wanted{BusinessApps}				= true;
+
+	$wanted{CachingStuff}				= true;
+	$wanted{CaptchaStuff}				= true;
+	$wanted{ChangeLog}					= true;
+	$wanted{ChartingAndPlotting}		= true;
+	$wanted{ChemistryStuff}				= true;
+	$wanted{ChildProcesses}				= true;
+	$wanted{ClipBoard}					= true;
+	$wanted{CodingStyle}				= true;
+	$wanted{Color}						= true;
+	$wanted{CommandLineStuff}			= true;
+	$wanted{ConfigFiles}				= true;
+	$wanted{ConstantStuff}				= true;
+	$wanted{CPAN}						= true;
+	$wanted{CpanFile}					= true;
+	$wanted{cron}						= true;
+	$wanted{CryptoStuff}				= true;
+	$wanted{CssStuff}					= true;
 
 	for my $topic (@{$$pad{topics} })
 	{
