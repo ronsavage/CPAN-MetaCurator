@@ -302,17 +302,18 @@ sub read_table
 	my($sql)				= "select * from $table_name";
 	my($set)				= $self -> db -> query($sql) || die $self -> db -> error;
 
-	say Dumper($set) if ($table_name eq 'topics');
-
-=pod
-	for my $element (@$set)
+	if ($table_name eq 'topics')
 	{
-		for my $key (keys %$element)
+		my($arrayref) = [$set -> hashes];
+
+		for my $element (@$arrayref)
 		{
-			say Dumper("$key: $$element{$key}") if ($$element{$key} =~ /codigo/);
+			for my $key (keys %$element)
+			{
+				say Dumper("$key: $$element{$key}") if ($$element{$key} =~ /codigo/);
+			}
 		}
 	}
-=cut
 
 	# Return an arrayref of hashrefs.
 
