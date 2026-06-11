@@ -55,6 +55,7 @@ sub export_tree
 	# Just for testing parse_topic().
 	# See data/special.topic.txt for what gets skipped ATM.
 
+=pod
 	$wanted{ABeCeDarian}		= true;
 	$wanted{AdventPlanet }		= true;
 	$wanted{AlgorithmicStuff}	= true;
@@ -69,7 +70,7 @@ sub export_tree
 	$wanted{AstroStuff}			= true;
 	$wanted{AudioVisual}		= true;
 	$wanted{AutoCAD}			= true;
-
+=cut
 	$wanted{BusinessApps}		= true;
 
 	for my $topic (@{$$pad{topics} })
