@@ -70,7 +70,7 @@ sub export_tree
 	if (-e $self -> test_topics_path)
 	{
 		$wanted				= true;
-		my($testing_topics)	= $self -> read_csv_file();
+		my($testing_topics)	= $self -> read_csv_file($self -> test_topics_path);
 		$wanted{$_}			= true for (@$testing_topics);
 	}
 	else
