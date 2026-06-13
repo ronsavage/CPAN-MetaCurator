@@ -66,6 +66,7 @@ my(%params) =
 		'Text::Balanced'			=> 2.07,
 		'Text::CSV::Encoded'		=> 0.25,
 		'Types::Standard'			=> 2.006000,
+		'utf8'						=> 1.25,
 		'warnings'					=> 1.58,
 	},
 	TEST_REQUIRES =>

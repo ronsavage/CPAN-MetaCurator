@@ -74,7 +74,7 @@ sub export_tree
 		my(@keys)			= keys %wanted;
 
 		# If the file is empty, activate all topics.
-		# Fix me. Add file to POD.
+		# Fix me. Add file name & purpose to POD.
 
 		if ($#keys == 0)
 		{
