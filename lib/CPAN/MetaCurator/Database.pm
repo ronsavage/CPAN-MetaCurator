@@ -16,6 +16,8 @@ use File::Spec;
 
 use Moo;
 
+use Text::CSV::Encoded;
+
 use Types::Standard qw/Any ArrayRef Bool HashRef Object Str/;
 
 has column_names =>
