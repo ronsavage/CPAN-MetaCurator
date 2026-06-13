@@ -77,6 +77,8 @@ sub export_tree
 		$wanted{$_} = true for (@{$$pad{topics} });
 	}
 
+	say "EBookHandling: $wanted{EBookHandling}";
+
 	for my $topic (@{$$pad{topics} })
 	{
 		next if (! $wanted{$$topic{title} });
