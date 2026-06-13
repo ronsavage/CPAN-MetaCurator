@@ -62,25 +62,24 @@ sub export_tree
 	my(@divs);
 	my($item);
 	my($leaf_id, $lines_ref);
-	my($wanted, %wanted);
+	my(%wanted);
 
 	# Read data/testing.topics.txt for topic names to process. This just limits the output.
 	# See also data/special.topic.txt.
 
 	if (-e $self -> test_topics_path)
 	{
-		$wanted				= true;
 		my($testing_topics)	= $self -> read_csv_file($self -> test_topics_path);
 		$wanted{$_}			= true for (@$testing_topics);
 	}
 	else
 	{
-		$wanted = false;
+		$wanted{$_} = for (@{$$pad{topics} });
 	}
 
 	for my $topic (@{$$pad{topics} })
 	{
-		next if ($wanted && ! $wanted{$$topic{title} });
+		next if (! $wanted{$$topic{title} });
 
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
