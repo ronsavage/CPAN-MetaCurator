@@ -22,7 +22,7 @@ use Types::Standard qw/Str/;
 
 has test_topics_path =>
 (
-	default		=> sub{return 'data/test.topics.txt'},
+	default		=> sub{return '/tmp/test.topics.txt'},
 	is			=> 'rw',
 	isa			=> Str,
 	required	=> 0,
@@ -69,8 +69,17 @@ sub export_tree
 
 	if (-e $self -> test_topics_path)
 	{
-		my($testing_topics)	= $self -> read_csv_file($self -> test_topics_path);
-		$wanted{$_}			= true for (@$testing_topics);
+		my($test_topics)	= $self -> read_csv_file($self -> test_topics_path);
+		$wanted{$_}			= true for (@$test_topics);
+		my(@keys)			= keys %wanted;
+
+		# If the file is empty, activate all topics.
+		# Fix me. Add file to POD.
+
+		if ($#keys == 0)
+		{
+			$wanted{$$_{title} } = true for (@{$$pad{topics} });
+		}
 	}
 	else
 	{
