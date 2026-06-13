@@ -79,7 +79,7 @@ sub export_tree
 
 	for (@{$$pad{topics} })
 	{
-		say "EBookHandling: ", Dumper($_) if ($$_{id} == 57);
+		say "EBookHandling: ", Dumper($$_{id});
 	}
 
 	say "EBookHandling: $wanted{EBookHandling}";
