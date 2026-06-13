@@ -14,7 +14,17 @@ use File::Spec;
 
 use HTML::Escape 'escape_html';
 
+use Moo;
+
 use Syntax::Keyword::Match;
+
+has test_topics_path =>
+(
+	default		=> sub{return 'data/testing.topics.txt'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
 
 our %seen;
 
@@ -50,17 +60,25 @@ sub export_tree
 	my(@divs);
 	my($item);
 	my($leaf_id, $lines_ref);
-	my(%wanted);
+	my($wanted, %wanted);
 
-	# Read data/testing.topics.txt for topic names to process.
-	# See data/special.topic.txt for what gets skipped ATM.
+	# Read data/testing.topics.txt for topic names to process. This just limits the output.
+	# See also data/special.topic.txt.
 
-	my($testing_topics)	= $self -> read_csv_file('data/testing.topics.txt');
-	$wanted{$_}			= true for (@$testing_topics);
+	if (-e $self -> test_topics_path)
+	{
+		$wanted				= true;
+		my($testing_topics)	= $self -> read_csv_file();
+		$wanted{$_}			= true for (@$testing_topics);
+	}
+	else
+	{
+		$wanted = false;
+	}
 
 	for my $topic (@{$$pad{topics} })
 	{
-		next if (! $wanted{$$topic{title} });
+		next if ($wanted && ! $wanted{$$topic{title} });
 
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
