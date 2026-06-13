@@ -313,7 +313,7 @@ sub read_csv_file
 
 	close $io;
 
-	$self -> logger -> info("Read $count records from '$path'");
+	$self -> logger -> info("Read 1 heading + $count records from '$path'");
 
 	return [@records];
 
