@@ -61,6 +61,7 @@ sub export_tree
 
 	my(@divs);
 	my($item);
+	my(@keys);
 	my($leaf_id, $lines_ref);
 	my(%wanted);
 
@@ -71,27 +72,21 @@ sub export_tree
 	{
 		my($test_topics)	= $self -> read_csv_file($self -> test_topics_path);
 		$wanted{$_}			= true for (@$test_topics);
-		my(@keys)			= keys %wanted;
-
-		# If the file is empty, activate all topics.
-		# Fix me. Add file name & purpose to POD.
-
-		if ($#keys == 0)
-		{
-			$wanted{$$_{title} } = true for (@{$$pad{topics} });
-		}
 	}
-	else
-	{
-		$wanted{$$_{title} } = true for (@{$$pad{topics} });
-	}
+
+	# If the file is empty, activate all topics.
+	# Fix me. Add file name & purpose to POD.
+
+	my(@keys) = keys %wanted;
 
 	for (@{$$pad{topics} })
 	{
-		say "$$_{id}: $$_{title}";
+		$wanted{$$_{title} } = true for (@{$$pad{topics} });
+
+		say "$$_{id}: $$_{title} => $wanted{$$_{title} }";
 	}
 
-	say "EBookHandling: " . $wanted{'EBookHandling'};
+	say "wanted{EBookHandling}: " . $wanted{EBookHandling};
 
 	for my $topic (@{$$pad{topics} })
 	{
