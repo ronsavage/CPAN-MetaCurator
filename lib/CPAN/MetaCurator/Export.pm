@@ -103,6 +103,26 @@ sub export_tree
 	$wanted{CryptoStuff}				= true;
 	$wanted{CssStuff}					= true;
 
+	$wanted{DatabaseAndSQL}				= true;
+	$wanted{DataTraversal}				= true;
+	$wanted{DataTypes}					= true;
+	$wanted{DataValidation}				= true;
+	$wanted{DatesAndTimes}				= true;
+	$wanted{DebianOS}					= true;
+	$wanted{DebuggingStuff}				= true;
+	$wanted{DFA}						= true;
+	$wanted{DistZilla}					= true;
+	$wanted{DnsStuff}					= true;
+
+	$wanted{EBookHandling}				= true;
+	$wanted{EditorConfigFiles}			= true;
+	$wanted{EmailStuff}					= true;
+	$wanted{EnumStuff}					= true;
+	$wanted{EventStuff}					= true;
+	$wanted{ExceptionHandling}			= true;
+	$wanted{ExtensibleProvisioningProtocol}	= true;
+
+
 	for my $topic (@{$$pad{topics} })
 	{
 		next if (! $wanted{$$topic{title} });
