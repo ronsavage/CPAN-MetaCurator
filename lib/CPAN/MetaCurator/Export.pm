@@ -74,7 +74,7 @@ sub export_tree
 	}
 	else
 	{
-		$wanted{$_} = for (@{$$pad{topics} });
+		map{$wanted{$_} = true} @{$$pad{topics} };
 	}
 
 	for my $topic (@{$$pad{topics} })
