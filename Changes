@@ -4,6 +4,7 @@ Revision history for perl module CPAN::MetaCurator
 	- Add Validate.pm, scripts/validate.tree.*.
 	- Escape HTML entities in Export.pm when generating "<a href='...'>xxx</a>".
 	- Rewrite parser in Export.pm.
+	- Add data/testing.topics.txt to contain a list of topics to process. Other topics are ignred.
 
 1.21  2026-05-29
 	- Fix handling of See Also when it is the only entry in the Topic. Eg: TheLanguageGuide.

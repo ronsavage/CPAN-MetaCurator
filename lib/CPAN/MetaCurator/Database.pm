@@ -280,19 +280,42 @@ sub init_metapackager_db
 
 } # End of init_metapackager_db.
 
-# --------------------------------------------------
+# -----------------------------------------------
 
-sub read_1_record
+sub read_csv_file
 {
-	my($self, $table_name, $id) = @_;
-	my($sql)	= "select * from $table_name where id = $id";
-	my($set)	= $self -> db -> query($sql) || die $self -> db -> error;
+	my($self, $path) = @_;
 
-	# Return a hashref.
+	my($csv) = Text::CSV::Encoded -> new
+	({
+		allow_whitespace	=> 1,
+		encoding_in			=> 'utf-8',
+		strict				=> 1,
+	});
 
-	return ${$set -> hashes}[0];
+	open(my $io, '<', $path) || die "Can't open($path): $!\n";
 
-} # End of read_1_record.
+	my(@column_name)	= $$csv -> column_names($csv -> getline($io) );
+	my($count)			= 0;
+
+	my(@records);
+
+	for my $item (@{$csv -> getline_hr_all($io) })
+	{
+		$count++;
+
+		push @$records $$item{$column_names[0]};
+
+		say $$item{$column_names[0]};
+	}
+
+	close $io;
+
+	say "Read $count records from '$path'";
+
+	return [@records];
+
+} # End of read_csv_file.
 
 # --------------------------------------------------
 
@@ -332,6 +355,20 @@ sub read_metapackager_table
 	return $table_name;
 
 } # End of read_metapackager_table.
+
+# --------------------------------------------------
+
+sub read_1_record
+{
+	my($self, $table_name, $id) = @_;
+	my($sql)	= "select * from $table_name where id = $id";
+	my($set)	= $self -> db -> query($sql) || die $self -> db -> error;
+
+	# Return a hashref.
+
+	return ${$set -> hashes}[0];
+
+} # End of read_1_record.
 
 # --------------------------------------------------
 

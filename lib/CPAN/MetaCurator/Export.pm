@@ -52,76 +52,11 @@ sub export_tree
 	my($leaf_id, $lines_ref);
 	my(%wanted);
 
-	# Just for testing parse_topic().
+	# Read data/testing.topics.txt for topic names to process.
 	# See data/special.topic.txt for what gets skipped ATM.
 
-	$wanted{ABeCeDarian}				= true;
-	$wanted{Acronyms}					= true;
-	$wanted{AdventPlanet }				= true;
-	$wanted{AiEngines}					= true;
-	$wanted{AlgorithmicStuff}			= true;
-	$wanted{AnimationStuff}				= true;
-	$wanted{AntiVirusStuff}				= true;
-	$wanted{ApacheStuff}				= true;
-	$wanted{AppleMac}					= true;
-	$wanted{ArchiveFiles}				= true;
-	$wanted{ArchOS}						= true;
-	$wanted{ArrayHandling}				= true;
-	$wanted{AsciiCodes}					= true;
-	$wanted{ASN}						= true;
-	$wanted{AssemblerX86}				= true;
-	$wanted{AstroStuff}					= true;
-	$wanted{AudioVisual}				= true;
-	$wanted{AutoCAD}					= true;
-
-	$wanted{BarCodes}					= true;
-	$wanted{BenchmarkingTools}			= true;
-	$wanted{BibliographicStuff}			= true;
-	$wanted{BillOfMaterials}			= true;
-	$wanted{BioInformatics}				= true;
-	$wanted{BlockChain}					= true;
-	$wanted{BoneMarrrowDonorRegistry}	= true;
-	$wanted{BrowserStuff}				= true;
-	$wanted{BsdWare}					= true;
-	$wanted{BusinessApps}				= true;
-
-	$wanted{CachingStuff}				= true;
-	$wanted{CaptchaStuff}				= true;
-	$wanted{ChangeLog}					= true;
-	$wanted{ChartingAndPlotting}		= true;
-	$wanted{ChemistryStuff}				= true;
-	$wanted{ChildProcesses}				= true;
-	$wanted{ClipBoard}					= true;
-	$wanted{CodingStyle}				= true;
-	$wanted{Color}						= true;
-	$wanted{CommandLineStuff}			= true;
-	$wanted{ConfigFiles}				= true;
-	$wanted{ConstantStuff}				= true;
-	$wanted{CPAN}						= true;
-	$wanted{CpanFile}					= true;
-	$wanted{cron}						= true;
-	$wanted{CryptoStuff}				= true;
-	$wanted{CssStuff}					= true;
-
-	$wanted{DatabaseAndSQL}				= true;
-	$wanted{DataTraversal}				= true;
-	$wanted{DataTypes}					= true;
-	$wanted{DataValidation}				= true;
-	$wanted{DatesAndTimes}				= true;
-	$wanted{DebianOS}					= true;
-	$wanted{DebuggingStuff}				= true;
-	$wanted{DFA}						= true;
-	$wanted{DistZilla}					= true;
-	$wanted{DnsStuff}					= true;
-
-	$wanted{EBookHandling}				= true;
-	$wanted{EditorConfigFiles}			= true;
-	$wanted{EmailStuff}					= true;
-	$wanted{EnumStuff}					= true;
-	$wanted{EventStuff}					= true;
-	$wanted{ExceptionHandling}			= true;
-	$wanted{ExtensibleProvisioningProtocol}	= true;
-
+	my($testing_topics)	= $self -> read_csv_file('data/testing.topics.txt');
+	$wanted{$_}			= true for (@$testing_topics);
 
 	for my $topic (@{$$pad{topics} })
 	{
