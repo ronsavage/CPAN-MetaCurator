@@ -22,7 +22,7 @@ use Types::Standard qw/Str/;
 
 has test_topics_path =>
 (
-	default		=> sub{return 'data/testing.topics.txt'},
+	default		=> sub{return 'data/test.topics.txt'},
 	is			=> 'rw',
 	isa			=> Str,
 	required	=> 0,
