@@ -288,7 +288,7 @@ sub init_metapackager_db
 
 sub read_csv_file
 {
-	my($self, $path) = @_;
+	my($self, $logger, $path) = @_;
 
 	my($csv) = Text::CSV::Encoded -> new
 	({

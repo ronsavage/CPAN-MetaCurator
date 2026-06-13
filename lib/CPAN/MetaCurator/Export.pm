@@ -55,7 +55,7 @@ sub export_tree
 	# Read data/testing.topics.txt for topic names to process.
 	# See data/special.topic.txt for what gets skipped ATM.
 
-	my($testing_topics)	= $self -> read_csv_file('data/testing.topics.txt');
+	my($testing_topics)	= $self -> read_csv_file($self -> logger, 'data/testing.topics.txt');
 	$wanted{$_}			= true for (@$testing_topics);
 
 	for my $topic (@{$$pad{topics} })
