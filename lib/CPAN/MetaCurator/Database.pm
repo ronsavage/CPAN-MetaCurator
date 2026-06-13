@@ -309,13 +309,11 @@ sub read_csv_file
 		$count++;
 
 		push @records, $$item{$column_names[0]};
-
-		say $$item{$column_names[0]};
 	}
 
 	close $io;
 
-	say "Read $count records from '$path'";
+	self -> logger -> info("Read $count records from '$path'");
 
 	return [@records];
 
