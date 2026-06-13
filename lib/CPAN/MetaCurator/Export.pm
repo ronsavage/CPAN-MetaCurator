@@ -18,6 +18,8 @@ use Moo;
 
 use Syntax::Keyword::Match;
 
+use Types::Standard qw/Str/;
+
 has test_topics_path =>
 (
 	default		=> sub{return 'data/testing.topics.txt'},
