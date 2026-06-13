@@ -299,9 +299,9 @@ sub read_csv_file
 
 	open(my $io, '<', $path) || die "Can't open($path): $!\n";
 
-	say Dumper($$csv -> column_names($csv -> getline($io) ) );
+	say Dumper($csv -> column_names($csv -> getline($io) ) );
 
-	my(@column_names)	= $$csv -> column_names($csv -> getline($io) );
+	my(@column_names)	= $csv -> column_names($csv -> getline($io) );
 	my($count)			= 0;
 
 	my(@records);
