@@ -79,14 +79,10 @@ sub export_tree
 
 	my(@keys) = keys %wanted;
 
-	for (@{$$pad{topics} })
+	for ($#keys == 0)
 	{
 		$wanted{$$_{title} } = true for (@{$$pad{topics} });
-
-		say "$$_{id}: $$_{title} => $wanted{$$_{title} }";
 	}
-
-	say "wanted{EBookHandling}: " . $wanted{EBookHandling};
 
 	for my $topic (@{$$pad{topics} })
 	{
