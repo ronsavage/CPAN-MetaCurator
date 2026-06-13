@@ -159,7 +159,7 @@ sub init_config
 
 	# Fix me. Test UTF8 char handling.
 
-	$self -> logger -> info("I ♥ Mojolicious\n");
+	$self -> logger -> info("Testing write of utf8 chars to logger. I ♥ Mojolicious\n");
 
 } # End of init_config.
 
