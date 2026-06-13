@@ -77,6 +77,7 @@ sub export_tree
 		$wanted{$_} = true for (@{$$pad{topics} });
 	}
 
+	say Dumper(@{$$pad{topics} });
 	say "EBookHandling: $wanted{EBookHandling}";
 
 	for my $topic (@{$$pad{topics} })
