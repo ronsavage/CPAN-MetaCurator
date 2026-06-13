@@ -91,7 +91,7 @@ sub export_tree
 		say "$$_{id}: ", Dumper($$_{title});
 	}
 
-	say "EBookHandling: $wanted{EBookHandling}";
+	say "EBookHandling: " . $wanted{'"EBookHandling"'};
 
 	for my $topic (@{$$pad{topics} })
 	{
