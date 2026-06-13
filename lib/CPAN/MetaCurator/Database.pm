@@ -304,7 +304,7 @@ sub read_csv_file
 	{
 		$count++;
 
-		push @$records, $$item{$column_names[0]};
+		push @records, $$item{$column_names[0]};
 
 		say $$item{$column_names[0]};
 	}
