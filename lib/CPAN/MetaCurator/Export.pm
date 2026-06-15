@@ -61,7 +61,6 @@ sub export_tree
 
 	my(@divs);
 	my($item);
-	my(@keys);
 	my($leaf_id, $lines_ref);
 	my(%wanted);
 
