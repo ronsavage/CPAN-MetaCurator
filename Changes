@@ -1,5 +1,9 @@
 Revision history for perl module CPAN::MetaCurator
 
+1.23  2026-06-15
+	- Rebuild the db.
+	- Rewrite the instructions in MetaCurator.pm
+
 1.22  2026-06-02
 	- Add Validate.pm, scripts/validate.tree.*.
 	- Escape HTML entities in Export.pm when generating "<a href='...'>xxx</a>".
