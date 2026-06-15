@@ -30,7 +30,7 @@ has test_topics_path =>
 
 our %seen;
 
-our $VERSION = '1.22';
+our $VERSION = '1.23';
 
 # -----------------------------------------------
 
