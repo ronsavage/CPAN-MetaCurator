@@ -2,6 +2,8 @@
 
 cd $HOME/perl.modules/CPAN-MetaCurator/
 
+echo Echoing INCLUDE_PACKAGES = $INCLUDE_PACKAGES.
+
 scripts/zap.log.sh
 time scripts/export.tree.pl -log_level debug -include_packages $INCLUDE_PACKAGES
 
