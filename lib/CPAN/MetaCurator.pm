@@ -49,7 +49,7 @@ Note: My web host and I use case-sensitive file systems.
 
 =over
 =item cd ~/perl.modules/Local-Website
-=item Edit Local::Website::Util::PatchIndex's sub parser() if necessary
+=item Edit Local::Website's data/patches.csv
 =item Run: scripts/parse.index.sh - to patch ~/savage.net.au/index.html
 =item Run: bu5.sh savage.net.au
 =item Run: bu5.sh perl.modules
