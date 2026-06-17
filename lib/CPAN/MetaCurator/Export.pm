@@ -124,7 +124,7 @@ sub export_tree
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
 
 	say $root -> name;
-	say map{"\t" . $_ -> name} $root -> daughters;
+	say map{"\t" . $_ -> name . "\n"} $root -> daughters;
 
 	return 0;
 
