@@ -32,7 +32,7 @@ has test_topics_path =>
 
 our %seen;
 
-our $VERSION = '1.24';
+our $VERSION = '1.23';
 
 # -----------------------------------------------
 
@@ -120,7 +120,7 @@ sub export_tree
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
 
-	print map("$_\n", @{$root -> draw_ascii_tree});
+	say map($_, @{$root -> tree2string});
 
 =pod
 	# Modules.
