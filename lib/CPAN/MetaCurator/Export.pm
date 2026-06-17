@@ -126,7 +126,7 @@ sub export_tree
 #	say $root -> name;
 #	say map{"\t" . $_ -> name . "\n"} $root -> daughters;
 
-	say map($_, @{$root->tree2string});
+	say map("$_\n", @{$root->tree2string});
 
 	return 0;
 
