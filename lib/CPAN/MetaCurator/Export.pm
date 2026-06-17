@@ -123,8 +123,10 @@ sub export_tree
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
 
-	say $root -> name;
-	say map{"\t" . $_ -> name . "\n"} $root -> daughters;
+#	say $root -> name;
+#	say map{"\t" . $_ -> name . "\n"} $root -> daughters;
+
+	say map($_, @{$root->tree2string});
 
 	return 0;
 
