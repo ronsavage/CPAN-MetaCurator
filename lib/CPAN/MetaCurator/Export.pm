@@ -70,8 +70,7 @@ sub export_tree
 		$wanted{$_}			= true for (@$test_topics);
 	}
 
-	# If the file is empty, activate all topics.
-	# Fix me. Add file name & purpose to POD.
+	# If the file is absent or empty, activate all topics.
 
 	my(@keys) = keys %wanted;
 
@@ -80,6 +79,8 @@ sub export_tree
 		$wanted{$$_{title} } = true for (@{$$pad{topics} });
 	}
 
+	my($daughter);
+
 	for my $topic (@{$$pad{topics} })
 	{
 		next if (! $wanted{$$topic{title} });
@@ -87,9 +88,11 @@ sub export_tree
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
 		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
-		$lines_ref	= $self -> parse_topic($leaf_id, $pad, $topic);
+		$daughter	= Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => $leaf_id} });
 
-		$root -> add_daughter(Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => $leaf_id} }) );
+		$root -> add_daughter($daughter);
+
+		$lines_ref = $self -> parse_topic($daughter, $leaf_id, $pad, $topic);
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
@@ -120,19 +123,8 @@ sub export_tree
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
 
-	say map($_, @{$root -> tree2string});
-
-=pod
-	# Modules.
-	# There is a db table called modules so we need another name for the hash
-	# where the keys are the names of the modules and the values are db ids.
-
-	$$pad{module_names}				= {};
-	$$pad{module_names}{$$_{name} }	= $$_{id} for (@{$$pad{modules} });
-	my($module_count)				= $#{$$pad{module_names} } + 1;
-
-	$self -> logger -> info("Records in the module table: $module_count");
-=cut
+	say $root -> name;
+	say map{"\t" . $_ -> name} $root -> daughters;
 
 	return 0;
 
@@ -192,11 +184,11 @@ sub gather_statistics
 
 sub parse_topic
 {
-	my($self, $leaf_id, $pad, $topic)	= @_;
-	my(@lines)							= split(/\n/, $$topic{text});
-	@lines								= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
-	my($line_id)						= $leaf_id;
-	my($index)							= -1;
+	my($self, $daughter, $leaf_id, $pad, $topic) = @_;
+	my(@lines)		= split(/\n/, $$topic{text});
+	@lines			= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
+	my($line_id)	= $leaf_id;
+	my($index)		= -1;
 
 	$self -> logger -> debug("Topic: $$topic{title}. Line count: $#lines");
 
@@ -348,6 +340,20 @@ The file Changes was converted into Changelog.ini by L<Module::Metadata::Changes
 =head1 Version Numbers
 
 Version numbers < 1.00 represent development versions. From 1.00 up, they are production versions.
+
+=head1 Test data
+
+There is a mechanism to restrict processing to a tiny number of topics.
+
+To this end there is an option called test_topics_path, which takes a file name.
+If this file is present it is read, & each line in it is assumed to be a topic name.
+
+Topics listed are wanted, & so the program skips processing any other topics.
+
+There is a special case. If the file is present but empty, or absent, all topics are deemed
+to appear in the file & hence are processed.
+
+Default: /tmp/test.topics.txt.
 
 =head1 Support
 
