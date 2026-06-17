@@ -18,6 +18,8 @@ use Moo;
 
 use Syntax::Keyword::Match;
 
+use Tree::DAG_Node;
+
 use Types::Standard qw/Str/;
 
 has test_topics_path =>
@@ -44,13 +46,14 @@ sub export_tree
 	my($pad)					= $self -> build_pad;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 	my(@list)					= '<ul>';
-	my($root)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
-	my($id)						= $$pad{topic_html_ids}{$$root{title} };
+	my($origin)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
+	my($id)						= $$pad{topic_html_ids}{$$origin{title} };
+	my($root)					= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $id} });
 
 	$self -> logger -> info($self -> visual_break);
-	$self -> logger -> info("Topic: id: $id. title: $$root{title}");
+	$self -> logger -> info("Topic: id: $id. title: $$origin{title}");
 
-	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$$root{title}</a>|;
+	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$$origin{title}</a>|;
 	push @list, '<ul>';
 
 	my(@divs);
@@ -86,6 +89,8 @@ sub export_tree
 		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
 		$lines_ref	= $self -> parse_topic($leaf_id, $pad, $topic);
 
+		$root -> add_daughter(Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => $leaf_id} }) );
+
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
 
@@ -114,6 +119,8 @@ sub export_tree
 
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
+
+	print map("$_\n", @{$root -> draw_ascii_tree});
 
 =pod
 	# Modules.

@@ -65,6 +65,7 @@ my(%params) =
 		'Syntax::Keyword::Match'	=> 0.15,
 		'Text::Balanced'			=> 2.07,
 		'Text::CSV::Encoded'		=> 0.25,
+		'Tree::DAG_Node'			=> 1.35,
 		'Types::Standard'			=> 2.006000,
 		'utf8'						=> 1.25,
 		'warnings'					=> 1.58,
