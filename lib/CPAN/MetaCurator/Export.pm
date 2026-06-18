@@ -295,6 +295,10 @@ sub parse_topic
 			if ($inside{see_also})
 			{
 				push@see_also, $token;
+
+				$see_also = Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
+
+				$daughter -> add_daughter($see_also);
 			}
 			elsif ($line_count == 1)
 			{
