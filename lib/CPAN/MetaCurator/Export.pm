@@ -197,6 +197,7 @@ sub parse_topic
 	$self -> logger -> debug("Topic: $$topic{title}. Line count: $#lines");
 
 	my(%button);
+	my(@components);
 	my($description);
 	my(@extras);
 	my($href);
@@ -241,10 +242,6 @@ sub parse_topic
 			$$item{text}		= '';
 
 			push @items, $item;
-
-			$see_also = Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
-
-			$daughter -> add_daughter($see_also);
 		}
 		elsif ($token)
 		{
@@ -296,7 +293,8 @@ sub parse_topic
 			{
 				push@see_also, $token;
 
-				$see_also = Tree::DAG_Node -> new({name => $token, attributes => {id => ++$leaf_id} });
+				@components = split(' - ', $token);
+				$see_also	= Tree::DAG_Node -> new({name => $components[0], attributes => {id => ++$leaf_id} });
 
 				$daughter -> add_daughter($see_also);
 			}
