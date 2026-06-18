@@ -206,7 +206,7 @@ sub parse_topic
 	my($module);
 	my(%node_type);
 	my(@pre_pre);
-	my($see_also, @see_also);
+	my($see_also, $see_also_1, @see_also);
 	my($token);
 
 	$button{extras}		= '';
@@ -242,6 +242,10 @@ sub parse_topic
 			$$item{text}		= '';
 
 			push @items, $item;
+
+			$see_also = Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
+
+			$daughter -> add_daughter($see_also);
 		}
 		elsif ($token)
 		{
@@ -294,9 +298,9 @@ sub parse_topic
 				push@see_also, $token;
 
 				@components = split(' - ', $token);
-				$see_also	= Tree::DAG_Node -> new({name => $components[0], attributes => {id => ++$leaf_id} });
+				$see_also_1	= Tree::DAG_Node -> new({name => $components[0], attributes => {id => ++$leaf_id} });
 
-				$daughter -> add_daughter($see_also);
+				$see_also -> add_daughter($see_also_1);
 			}
 			elsif ($line_count == 1)
 			{
