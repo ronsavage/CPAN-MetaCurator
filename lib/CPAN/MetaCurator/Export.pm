@@ -209,10 +209,9 @@ sub parse_topic
 	my($see_also, $see_also_1, @see_also);
 	my($token);
 
-	$button{extras}		= '';
-	$button{faq}		= '';
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>TBA: [pre.../pre]</button>";
 	$inside{pre_pre}	= false;
+	$button{see_also}	= "<button id='toggle-btn'>TBA: [See also]</button>";
 	$inside{see_also}	= false;
 
 	while ($index < $#lines)
@@ -237,8 +236,8 @@ sub parse_topic
 		if ($token eq 'See also')
 		{
 			$inside{see_also}	= true;
-			$$item{html}		= '';
-			$$item{text}		= $token;
+			$$item{html}		= $button{see_also};
+			$$item{text}		= ;
 
 			push @items, $item;
 
