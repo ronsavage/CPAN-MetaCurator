@@ -237,7 +237,7 @@ sub parse_topic
 		{
 			$inside{see_also}	= true;
 			$$item{html}		= $button{see_also};
-			$$item{text}		= ;
+			$$item{text}		= '';
 
 			push @items, $item;
 
