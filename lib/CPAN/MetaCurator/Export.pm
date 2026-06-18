@@ -123,9 +123,11 @@ sub export_tree
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
 
+	# This works. It's very plain.
 #	say $root -> name;
 #	say map{"\t" . $_ -> name . "\n"} $root -> daughters;
 
+	# This works. It's nicer.
 	say map("$_\n", @{$root->tree2string});
 
 	return 0;
@@ -203,7 +205,7 @@ sub parse_topic
 	my($module);
 	my(%node_type);
 	my(@pre_pre);
-	my(@see_also);
+	my($see_also, @see_also);
 	my($token);
 
 	$button{extras}		= '';
@@ -239,6 +241,10 @@ sub parse_topic
 			$$item{text}		= '';
 
 			push @items, $item;
+
+			$see_also = Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
+
+			$daughter -> add_daughter($see_also);
 		}
 		elsif ($token)
 		{
