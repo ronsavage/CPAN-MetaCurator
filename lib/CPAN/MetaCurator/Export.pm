@@ -30,6 +30,7 @@ has test_topics_path =>
 	required	=> 0,
 );
 
+our $leaf_id;
 our %seen;
 
 our $VERSION = '1.24';
@@ -48,6 +49,7 @@ sub export_tree
 	my(@list)					= '<ul>';
 	my($origin)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
 	my($id)						= $$pad{topic_html_ids}{$$origin{title} };
+	$leaf_id					= 0;
 	my($root)					= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $id} });
 
 	$self -> logger -> info($self -> visual_break);
@@ -58,7 +60,7 @@ sub export_tree
 
 	my(@divs);
 	my($item);
-	my($leaf_id, $lines_ref);
+	my($lines_ref);
 	my(%wanted);
 
 	# Read data/testing.topics.txt for topic names to process. This just limits the output.
@@ -87,12 +89,13 @@ sub export_tree
 
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
-		$leaf_id	= $$pad{topic_html_ids}{$$topic{title} };
-		$daughter	= Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => $leaf_id} });
+		$daughter	= Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id} });
 
 		$root -> add_daughter($daughter);
 
 		$lines_ref = $self -> parse_topic($daughter, $leaf_id, $pad, $topic);
+
+		++$leaf_id;
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
@@ -189,10 +192,9 @@ sub gather_statistics
 sub parse_topic
 {
 	my($self, $daughter, $leaf_id, $pad, $topic) = @_;
-	my(@lines)		= split(/\n/, $$topic{text});
-	@lines			= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
-	my($line_id)	= $leaf_id;
-	my($index)		= -1;
+	my(@lines)	= split(/\n/, $$topic{text});
+	@lines		= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
+	my($index)	= -1;
 
 	$self -> logger -> debug("Topic: $$topic{title}. Line count: $#lines");
 
@@ -218,7 +220,7 @@ sub parse_topic
 	{
 		$index++;
 
-		$item	= {href => '', id => ++$line_id, text => ''};
+		$item	= {href => '', id => ++$leaf_id, text => ''};
 		$line	= $lines[$index];
 		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
