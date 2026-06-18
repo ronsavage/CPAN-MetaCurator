@@ -93,7 +93,7 @@ sub export_tree
 
 		$root -> add_daughter($daughter);
 
-		$lines_ref = $self -> parse_topic($daughter, $leaf_id, $pad, $topic);
+		$lines_ref = $self -> parse_topic($daughter, $pad, $topic);
 
 		++$leaf_id;
 
@@ -191,7 +191,7 @@ sub gather_statistics
 
 sub parse_topic
 {
-	my($self, $daughter, $leaf_id, $pad, $topic) = @_;
+	my($self, $daughter, $pad, $topic) = @_;
 	my(@lines)	= split(/\n/, $$topic{text});
 	@lines		= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
 	my($index)	= -1;

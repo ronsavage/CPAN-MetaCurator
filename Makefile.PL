@@ -45,6 +45,7 @@ my(%params) =
 		'File::Slurper'				=> 0.014,
 		'File::Spec'				=> 3.90,
 		'Getopt::Long'				=> 2.57,
+		'HTML::Entities'			=> 3.85,
 		'HTML::Escape'				=> 1.11,
 		'HTML::TreeBuilder'			=> 5.07,
 		'Imager'					=> 1.029,
