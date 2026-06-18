@@ -296,7 +296,7 @@ sub parse_topic
 			{
 				push@see_also, $token;
 
-				$see_also = Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
+				$see_also = Tree::DAG_Node -> new({name => $token, attributes => {id => ++$leaf_id} });
 
 				$daughter -> add_daughter($see_also);
 			}
