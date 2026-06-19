@@ -104,7 +104,7 @@ sub export_tree
 
 		push @list, '<ul>';
 
-		for $item, (@$items_ref)
+		for $item (@$items_ref)
 		{
 			$$pad{count}{leaf}++;
 
