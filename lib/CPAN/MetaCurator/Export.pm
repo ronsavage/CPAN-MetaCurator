@@ -109,6 +109,8 @@ sub export_tree
 			$$pad{count}{leaf}++;
 
 			push @list, $$_{html} ? "<li>$$_{html}</li>" : "<li id = '$$_{id}'>$$_{text}</li>";
+
+			$self -> logger -> info('See also') if ($$_{html} eq 'See also');
 		}
 
 		push @list, '</ul>', '</li>';
@@ -216,7 +218,6 @@ sub parse_topic
 
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>TBA: [pre.../pre]</button>";
 	$inside{pre_pre}	= false;
-	$button{see_also}	= 'See also';
 	$inside{see_also}	= false;
 
 	while ($index < $#lines)
@@ -241,7 +242,7 @@ sub parse_topic
 		if ($token eq 'See also')
 		{
 			$inside{see_also}	= true;
-			$$item{html}		= $button{see_also};
+			$$item{html}		= 'See also';
 			$$item{text}		= '';
 
 			push @items, $item;
