@@ -97,11 +97,6 @@ sub export_tree
 		++$leaf_id;
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
-
-		if ($#$see_also_ref >= 0)
-		{
-		}
-
 		push @list, '<ul>';
 
 		for $item (@$items_ref)
@@ -110,7 +105,7 @@ sub export_tree
 
 			push @list, $$item{html} ? "<li>$$item{html}</li>" : "<li id = '$$item{id}'>$$item{text}</li>";
 
-			if ($$_{html} eq 'See also')
+			if ($$item{text} eq 'See also')
 			{
 				push @list, '<ul>';
 				push @list, $$_{html} ? "<li>$$_{html}</li>" : "<li id = '$$_{id}'>$$_{text}</li>" for (@$see_also_ref);
@@ -247,8 +242,8 @@ sub parse_topic
 		if ($token eq 'See also')
 		{
 			$inside{see_also}	= true;
-			$$item{html}		= 'See also';
-			$$item{text}		= '';
+			$$item{html}		= '';
+			$$item{text}		= 'See also';
 
 			push @items, $item;
 
