@@ -79,7 +79,7 @@ sub export_tree
 	}
 
 	my($daughter);
-	my($items_ref);
+	my($item, $items_ref);
 	my($see_also_ref);
 
 	for my $topic (@{$$pad{topics} })
@@ -104,13 +104,18 @@ sub export_tree
 
 		push @list, '<ul>';
 
-		for (@$items_ref)
+		for $item, (@$items_ref)
 		{
 			$$pad{count}{leaf}++;
 
-			push @list, $$_{html} ? "<li>$$_{html}</li>" : "<li id = '$$_{id}'>$$_{text}</li>";
+			push @list, $$item{html} ? "<li>$$item{html}</li>" : "<li id = '$$item{id}'>$$item{text}</li>";
 
-			$self -> logger -> info('See also') if ($$_{html} eq 'See also');
+			if ($$_{html} eq 'See also')
+			{
+				push @list, '<ul>';
+				push @list, $$_{html} ? "<li>$$_{html}</li>" : "<li id = '$$_{id}'>$$_{text}</li>" for (@$see_also_ref);
+				push @list, '</ul>';
+			}
 		}
 
 		push @list, '</ul>', '</li>';
