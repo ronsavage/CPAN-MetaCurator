@@ -58,9 +58,6 @@ sub export_tree
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$$origin{title}</a>|;
 	push @list, '<ul>';
 
-	my(@divs);
-	my($item);
-	my($lines_ref);
 	my(%wanted);
 
 	# Read data/testing.topics.txt for topic names to process. This just limits the output.
@@ -82,6 +79,8 @@ sub export_tree
 	}
 
 	my($daughter);
+	my($items_ref);
+	my($see_also_ref);
 
 	for my $topic (@{$$pad{topics} })
 	{
@@ -93,14 +92,14 @@ sub export_tree
 
 		$root -> add_daughter($daughter);
 
-		$lines_ref = $self -> parse_topic($daughter, $pad, $topic);
+		($items_ref, $see_also_ref) = $self -> parse_topic($daughter, $pad, $topic);
 
 		++$leaf_id;
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
 		push @list, '<ul>';
 
-		for (@$lines_ref)
+		for (@$items_ref)
 		{
 			$$pad{count}{leaf}++;
 
@@ -213,7 +212,7 @@ sub parse_topic
 
 	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>TBA: [pre.../pre]</button>";
 	$inside{pre_pre}	= false;
-	$button{see_also}	= "<button id='toggle-btn'>TBA: [See also]</button>";
+	$button{see_also}	= 'See also';
 	$inside{see_also}	= false;
 
 	while ($index < $#lines)
@@ -321,7 +320,7 @@ sub parse_topic
 		}
 	}
 
-	return [@items];
+	return ([@items], [@see_also]);
 
 } # End of parse_topic.
 
