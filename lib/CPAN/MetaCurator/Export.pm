@@ -48,14 +48,14 @@ sub export_tree
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 	my(@list)					= '<ul>';
 	my($origin)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
-	my($id)						= $$pad{topic_html_ids}{$$origin{title} };
+	my($not_used)				= $$pad{topic_html_ids}{$$origin{title} };
 	$leaf_id					= 0;
-	my($root)					= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $id} });
+	my($root)					= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $leaf_id} });
 
 	$self -> logger -> info($self -> visual_break);
-	$self -> logger -> info("Topic: id: $id. title: $$origin{title}");
+	$self -> logger -> info("Topic: id: $leaf_id. title: $$origin{title}");
 
-	push @list, qq|<li data-jstree='{"opened": true}' id = '$id'><a href = '#'>$$origin{title}</a>|;
+	push @list, qq|<li data-jstree='{"opened": true}' id = '$leaf_id'><a href = '#'>$$origin{title}</a>|;
 	push @list, '<ul>';
 
 	my(%wanted);
@@ -97,6 +97,11 @@ sub export_tree
 		++$leaf_id;
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
+
+		if ($#$see_also_ref >= 0)
+		{
+		}
+
 		push @list, '<ul>';
 
 		for (@$items_ref)
@@ -106,8 +111,7 @@ sub export_tree
 			push @list, $$_{html} ? "<li>$$_{html}</li>" : "<li id = '$$_{id}'>$$_{text}</li>";
 		}
 
-		push @list, '</ul>';
-		push @list, '</li>';
+		push @list, '</ul>', '</li>';
 
 		$self -> logger -> info($self -> visual_break);
 	}
