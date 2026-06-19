@@ -108,7 +108,7 @@ sub export_tree
 			if ($$item{text} eq 'See also')
 			{
 				push @list, '<ul>';
-				push @list, $$_{html} ? "<li>$$_{html}</li>" : "<li id = '$$_{id}'>$$_{text}</li>" for (@$see_also_ref);
+				push @list, "<li id = '$$_{id}'>$$_{text}</li>" for (@$see_also_ref);
 				push @list, '</ul>';
 			}
 		}
