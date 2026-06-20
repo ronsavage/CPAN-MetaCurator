@@ -105,13 +105,16 @@ sub export_tree
 		{
 			$$pad{count}{leaf}++;
 
-			push @list, $$item{html} ? "<li>$$item{html}</li>" : "<li id = '$$item{id}'>$$item{text}</li>";
-
 			if ($$item{text} eq 'See also')
 			{
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>See also|;
 				push @list, '<ul>';
 				push @list, "<li id = '$$_{id}'>$$_{text}</li>" for (@$see_also_ref);
 				push @list, '</ul>';
+			}
+			else
+			{
+				push @list, $$item{html} ? "<li>$$item{html}</li>" : "<li id = '$$item{id}'>$$item{text}</li>";
 			}
 		}
 
@@ -244,12 +247,7 @@ sub parse_topic
 		if ($token eq 'See also')
 		{
 			$inside{see_also}	= true;
-			$$item{html}		= '';
-			$$item{text}		= 'See also';
-
-			push @items, $item;
-
-			$see_also_root = Tree::DAG_Node -> new({name => 'See also', attributes => {id => $leaf_id} });
+			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => $leaf_id} });
 
 			$daughter -> add_daughter($see_also_root);
 		}
