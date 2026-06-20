@@ -105,7 +105,7 @@ sub export_tree
 		{
 			$$pad{count}{leaf}++;
 
-			if ($#$see_also_ref >= 0)
+			if ($$item{text} eq 'See also')
 			{
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>See also|;
 				push @list, '<ul>';
@@ -247,6 +247,7 @@ sub parse_topic
 		if ($token eq 'See also')
 		{
 			$inside{see_also}	= true;
+			$$item{text}		= 'See also';
 			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => $leaf_id} });
 
 			$daughter -> add_daughter($see_also_root);
@@ -254,7 +255,6 @@ sub parse_topic
 		elsif ($token)
 		{
 			$description		= '';
-			$href				= '';
 			$inside{see_also}	= false;
 			$line_count			= 0;
 			$module				= $token;
