@@ -109,10 +109,10 @@ sub export_tree
 			{
 				$self -> logger -> info('====> See also');
 
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>See also|;
 				push @list, '<ul>';
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>See also|;
 				push @list, "<li id = '$$_{id}'>$$_{text}</li>" for (@$see_also_ref);
-				push @list, '</ul></li>';
+				push @list, '</ul>', '</li>';
 			}
 			else
 			{
@@ -210,7 +210,6 @@ sub parse_topic
 
 	$self -> logger -> debug("Topic: $$topic{title}. Line count: $#lines");
 
-	my(%button);
 	my(@components);
 	my($description);
 	my(@extras);
@@ -223,7 +222,6 @@ sub parse_topic
 	my($see_also_root, $see_also_1, @see_also);
 	my($token);
 
-	$button{pre_pre}	= "<span>&nbsp;&nbsp;</span><button id='toggle-btn'>TBA: [pre.../pre]</button>";
 	$inside{pre_pre}	= false;
 	$inside{see_also}	= false;
 
@@ -253,7 +251,7 @@ sub parse_topic
 
 			push @items, $item;
 
-			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => $leaf_id} });
+			$see_also_root = Tree::DAG_Node -> new({name => 'See also', attributes => {id => $leaf_id} });
 
 			$daughter -> add_daughter($see_also_root);
 		}
@@ -279,11 +277,7 @@ sub parse_topic
 		{
 			# Fix me. What happens if there are 2 sets of <pre>...</pre> within 1 topic?
 
-			$inside{pre_pre}	= true;
-#			$$item{html}		= $button{pre_pre};
-#			$$item{text}		= '';
-#
-#			push @items, $item;
+			$inside{pre_pre} = true;
 		}
 		elsif ($line =~ m|</pre>|)
 		{
@@ -321,7 +315,7 @@ sub parse_topic
 			elsif ($line_count == 2)
 			{
 				$href			= $token;
-				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$module - $description</a></span><span>.</span>";
+				$$item{html}	= "<span><a href = '" . escape_html($href) . "' target = '_blank'>$module - $description</a></span>";
 				$$item{text}	= '';
 
 				push @items, $item;
