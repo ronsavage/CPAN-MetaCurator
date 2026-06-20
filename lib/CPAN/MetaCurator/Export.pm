@@ -251,7 +251,7 @@ sub parse_topic
 			$inside{see_also}	= true;
 			$$item{text}		= 'See also';
 
-			push @pre_pre, $item;
+			push @items, $item;
 
 			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => $leaf_id} });
 
