@@ -94,6 +94,8 @@ sub export_tree
 
 		($items_ref, $see_also_ref) = $self -> parse_topic($daughter, $pad, $topic);
 
+		$self -> logger -> info("parse_topic() returned: $#$items_ref, $#$see_also_ref");
+
 		++$leaf_id;
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
