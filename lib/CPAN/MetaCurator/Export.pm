@@ -105,7 +105,7 @@ sub export_tree
 		{
 			$$pad{count}{leaf}++;
 
-			if ($$item{text} eq 'See also')
+			if ($#$see_also_ref >= 0)
 			{
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>See also|;
 				push @list, '<ul>';
