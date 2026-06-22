@@ -304,6 +304,8 @@ sub parse_topic
 				$$item{html}	= '';
 				$$item{text}	= $token;
 				@components		= split(' - ', $token); # [0] may be text or Topic.
+				say "Topic: $$topic{title}. Problem: $line" if ($#components < 0);
+				$components[0]	= '' if ($#components < 0);
 				$components[0]	= '' if ($components[0] !~ m/^[A-Za-z]+$/);
 				$is_topic		= $$pad{topic_names}{$components[0]}; # Defined => it's a topic.
 				$$item{text}	= "$$item{text} [Topic]" if ($is_topic);
