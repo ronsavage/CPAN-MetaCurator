@@ -216,7 +216,7 @@ sub parse_topic
 	my($href);
 	my(%inside, $is_topic, $item, @items);
 	my($line, $line_count);
-	my($module);
+	my($module, $module_leaf);
 	my(%node_type);
 	my(@pre_pre);
 	my($see_also_root, $see_also_1, @see_also);
@@ -329,7 +329,7 @@ sub parse_topic
 			}
 			elsif ($line_count == 1)
 			{
-				$description = escape_html($token);
+				$description = $token;
 			}
 			elsif ($line_count == 2)
 			{
@@ -338,6 +338,10 @@ sub parse_topic
 				$$item{text}	= '';
 
 				push @items, $item;
+
+				$module_leaf = Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id} });
+
+				$daughter -> add_daughter($module_leaf);
 			}
 			else
 			{
