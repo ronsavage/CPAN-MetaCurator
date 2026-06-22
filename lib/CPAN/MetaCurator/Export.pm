@@ -214,7 +214,7 @@ sub parse_topic
 	my($description);
 	my(@extras);
 	my($href);
-	my(%inside, $item, @items);
+	my(%inside, $is_topic, $item, @items);
 	my($line, $line_count);
 	my($module);
 	my(%node_type);
@@ -298,12 +298,13 @@ sub parse_topic
 
 			if ($inside{see_also})
 			{
+				@components		= split(' - ', $token);
 				$$item{html}	= '';
 				$$item{text}	= $token;
+				$is_topic		= $$pad{topic_names{$component[0]}; # Defined => it's a topic.
 
-				push@see_also, $item;
+				push@see_also, $is_topic ? "$item [Topic]": $item;
 
-				@components = split(' - ', $token);
 				$see_also_1	= Tree::DAG_Node -> new({name => $components[0], attributes => {id => ++$leaf_id} });
 
 				$see_also_root -> add_daughter($see_also_1);
