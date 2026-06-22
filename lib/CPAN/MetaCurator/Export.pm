@@ -329,7 +329,7 @@ sub parse_topic
 			}
 			elsif ($line_count == 1)
 			{
-				$description = $token;
+				$description = escape_html($token);
 			}
 			elsif ($line_count == 2)
 			{
