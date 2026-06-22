@@ -302,8 +302,9 @@ sub parse_topic
 				$$item{html}	= '';
 				$$item{text}	= $token;
 				$is_topic		= $$pad{topic_names{$components[0]}; # Defined => it's a topic.
+				$item			= "$item [Topic]" if ($is_topic);
 
-				push@see_also, $is_topic ? "$item [Topic]": $item;
+				push@see_also, $item;
 
 				$see_also_1	= Tree::DAG_Node -> new({name => $components[0], attributes => {id => ++$leaf_id} });
 
