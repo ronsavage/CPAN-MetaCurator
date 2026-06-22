@@ -109,7 +109,7 @@ sub export_tree
 			{
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>See also|;
 				push @list, "\t<ul>";
-				push @list, qq|\t\t<li>$$_{text}</li>| for (@$see_also_ref);
+#				push @list, qq|\t\t<li>$$_{text}</li>| for (@$see_also_ref);
 				push @list, "\t</ul>";
 				push @list, "\t</li>";
 			}
