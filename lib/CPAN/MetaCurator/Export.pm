@@ -301,7 +301,7 @@ sub parse_topic
 				@components		= split(' - ', $token);
 				$$item{html}	= '';
 				$$item{text}	= $token;
-				$is_topic		= $$pad{topic_names{$component[0]}; # Defined => it's a topic.
+				$is_topic		= $$pad{topic_names{$components[0]}; # Defined => it's a topic.
 
 				push@see_also, $is_topic ? "$item [Topic]": $item;
 
