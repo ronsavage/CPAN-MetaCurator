@@ -298,9 +298,9 @@ sub parse_topic
 
 			if ($inside{see_also})
 			{
-				# Sample from AbCeDarian:
+				# Sample from topic AbCeDarian:
 				# It means in abcd order, i.e. alphabetical, so I can put it first in the list of topics :-)
-				# Sample from AiEngines:
+				# Sample from topic AiEngines:
 				# [[Acronyms]]
 
 				$$item{html}	= '';
@@ -308,7 +308,7 @@ sub parse_topic
 				@components		= split(' - ', $token); # [0] may be text or Topic.
 				$components[0]	= $token if ($#components < 0);
 
-				# Must allow for AssemblerX86 & UTF8.
+				# Must allow for topics AssemblerX86 & UTF8.
 
 				if ($components[0] =~ m/^\[\[([A-Za-z]+\d?\d?)\]\]/)
 				{
