@@ -299,7 +299,7 @@ sub parse_topic
 			if ($inside{see_also})
 			{
 				@components		= split(' - ', $token); # [0] may be text or Topic.
-				$components[0]	= '' if ($components[0] !~ [A-Za-z]);
+				$components[0]	= '' if ($components[0] !~ m/[A-Za-z]+/);
 				$$item{html}	= '';
 				$$item{text}	= $token;
 				$is_topic		= $$pad{topic_names{$components[0]} }; # Defined => it's a topic.
