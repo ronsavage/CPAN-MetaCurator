@@ -303,7 +303,6 @@ sub parse_topic
 				# Sample from topic AiEngines:
 				# [[Acronyms]]
 
-				$$item{html}	= '';
 				$$item{text}	= $token;
 				@components		= split(' - ', $token); # [0] may be text or Topic.
 				$components[0]	= $token if ($#components < 0);
@@ -317,9 +316,9 @@ sub parse_topic
 				}
 
 				$components[0]	= '' if ($components[0] !~ m/^[A-Za-z]+\d{0,2}$/);
-
 				$is_topic		= $$pad{topic_names}{$components[0]}; # Defined => it's a topic.
-				$$item{text}	= "[Topic] $$item{text}" if ($is_topic && ($$item{text} !~ m/http/) );
+				$$item{text}	= "[Topic] $$item{text}" if ($is_topic && ($$item{text} !~ m/^http/) );
+				$$item{html}	= ($token =~ /^http/) ? $token : '-';
 
 				push@see_also, $item;
 
