@@ -307,7 +307,7 @@ sub parse_topic
 				$components[0]	= '' if ($#components < 0);
 				$components[0]	= '' if ($components[0] !~ m/^[A-Za-z]+$/);
 				$is_topic		= $$pad{topic_names}{$components[0]}; # Defined => it's a topic.
-				$$item{text}	= "$$item{text} [Topic]" if ($is_topic && ($$item{text} !~ m/http/) );
+				$$item{text}	= "[Topic] $$item{text}" if ($is_topic && ($$item{text} !~ m/http/) );
 
 				push@see_also, $item;
 
