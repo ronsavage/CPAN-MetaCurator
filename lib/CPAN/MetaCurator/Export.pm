@@ -318,7 +318,7 @@ sub parse_topic
 				$components[0]	= '' if ($components[0] !~ m/^[A-Za-z]+\d{0,2}$/);
 				$is_topic		= $$pad{topic_names}{$components[0]}; # Defined => it's a topic.
 				$$item{text}	= "[Topic] $$item{text}" if ($is_topic && ($$item{text} !~ m/^http/) );
-				$$item{html}	= ($token =~ /^http/) ? $token : '-';
+				$$item{text}	= $token if ($token =~ /^http/);
 
 				push@see_also, $item;
 
