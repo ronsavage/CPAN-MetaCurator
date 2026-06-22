@@ -88,7 +88,7 @@ sub export_tree
 
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
 
-		$daughter	= Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id} });
+		$daughter = Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id} });
 
 		$root -> add_daughter($daughter);
 
@@ -103,13 +103,14 @@ sub export_tree
 
 		for $item (@$items_ref)
 		{
+			++$leaf_id;
 			$$pad{count}{leaf}++;
 
 			if ($$item{text} eq 'See also')
 			{
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>See also|;
 				push @list, "\t<ul>";
-#				push @list, qq|\t\t<li>$$_{text}</li>| for (@$see_also_ref);
+				push @list, qq|\t\t<li>$$_{text}</li>| for (@$see_also_ref);
 				push @list, "\t</ul>";
 				push @list, "\t</li>";
 			}
@@ -250,7 +251,7 @@ sub parse_topic
 
 			push @items, $item;
 
-			$see_also_root = Tree::DAG_Node -> new({name => 'See also', attributes => {id => $leaf_id} });
+			$see_also_root = Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
 
 			$daughter -> add_daughter($see_also_root);
 		}
@@ -303,7 +304,7 @@ sub parse_topic
 				push@see_also, $item;
 
 				@components = split(' - ', $token);
-				$see_also_1	= Tree::DAG_Node -> new({name => $components[0], attributes => {id => $leaf_id} });
+				$see_also_1	= Tree::DAG_Node -> new({name => $components[0], attributes => {id => ++$leaf_id} });
 
 				$see_also_root -> add_daughter($see_also_1);
 			}
