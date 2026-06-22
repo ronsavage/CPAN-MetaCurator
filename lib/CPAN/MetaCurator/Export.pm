@@ -306,14 +306,15 @@ sub parse_topic
 				$$item{html}	= '';
 				$$item{text}	= $token;
 				@components		= split(' - ', $token); # [0] may be text or Topic.
-				$components[0]	= '' if ($#components < 0);
-				$components[0]	= '' if ($components[0] !~ m/^[A-Za-z]+$/);
+				$components[0]	= $token if ($#components < 0);
 
 				if ($components[0] =~ m/^\[\[([A-Za-z]+)\]\]/)
 				{
 					$components[0]	= $1;
 					$$item{text}	= $1;
 				}
+
+				$components[0]	= '' if ($components[0] !~ m/^[A-Za-z]+$/);
 
 				$is_topic		= $$pad{topic_names}{$components[0]}; # Defined => it's a topic.
 				$$item{text}	= "[Topic] $$item{text}" if ($is_topic && ($$item{text} !~ m/http/) );
