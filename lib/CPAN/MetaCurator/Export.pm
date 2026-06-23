@@ -322,7 +322,7 @@ sub parse_topic
 
 				push@see_also, $item;
 
-				$see_also_1	= Tree::DAG_Node -> new({name => $components[0], attributes => {id => ++$leaf_id} });
+				$see_also_1	= Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id} });
 
 				$see_also_root -> add_daughter($see_also_1);
 			}
