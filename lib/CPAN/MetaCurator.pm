@@ -41,7 +41,7 @@ Note: My web host and I use case-sensitive file systems.
 =item 'Run' here means run from the bash command line
 =item Run: cp ~/backup/02packages.details.txt /tmp
 =item Next, set INCLUDE_PACKAGES thus:
-=item If you have /tmp/cpan.metapackager.sqlite available use 1 or 0 (default) otherwise
+=item If you have /tmp/cpan.metapackager.sqlite available use INCLUDE_PACKAGES=1 or 0 (default) otherwise
 =item Run: INCLUDE_PACKAGES=1
 =item Run: echo $INCLUDE_PACKAGES
 =item Run: export INCLUDE_PACKAGES
