@@ -320,11 +320,11 @@ sub parse_topic
 				$is_topic		= $$pad{topic_names}{$components[0]}; # Defined => it's a topic.
 				$$item{text}	= "[Topic] <button class='btn btn-info'>$$item{text}</button>" if ($is_topic && ($$item{text} !~ m/^http/) );
 
-				$self -> logger -> debug("Inside See also. token: $token");
-
-				if ($token =~ /^http/)
+				if ($components[0] =~ /^http/)
 				{
-					$href			= $token;
+					$self -> logger -> debug("Inside See also. components[0]: $components[0]");
+
+					$href			= $components[0];
 					$$item{html}	= "<a href = '" . escape_html($href) . "' target = '_blank'>$href</a>";
 					$$item{text}	= '';
 				}
