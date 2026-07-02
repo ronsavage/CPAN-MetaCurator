@@ -325,8 +325,8 @@ sub parse_topic
 					$self -> logger -> debug("Inside See also. token: $token");
 
 					$href			= $token;
-					$$item{html}	= "<a href = '" . escape_html($href) . "' target = '_blank'>$href</a>";
-					$$item{text}	= '';
+					$$item{html}	= 'Not used in caller';
+					$$item{text}	= "<a href = '" . escape_html($href) . "' target = '_blank'>$href</a>";
 				}
 
 				push@see_also, $item;
