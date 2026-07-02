@@ -131,7 +131,10 @@ our $VERSION = '1.25';
 
 sub build_pad
 {
-	my($self)			= @_;
+	my($self) = @_;
+
+	$self -> logger -> debug("Entered Database.build_pad()");
+
 	my($pad)			= {};
 	$$pad{count}		= {};
 	$$pad{count}{$_}	= 0 for (@{$self -> node_types});
@@ -186,6 +189,8 @@ sub build_pad
 	$$pad{now}			= $_ -> as_string;
 	$$pad{current_year}	= substr($$pad{now}, 0, 4);
 
+	$self -> logger -> debug("Leaving Database.build_pad()");
+
 	return $self -> pad($pad);
 
 } # End of build_pad.
@@ -239,7 +244,7 @@ sub init_db
 	$self -> creator(DBIx::Admin::CreateTable -> new(dbh => $self -> dbh, verbose => 0)	);
 	$self -> engine($self -> creator -> db_vendor =~ /(?:Mysql)/i ? 'engine=innodb' : '');
 	$self -> time_option($self -> creator -> db_vendor =~ /(?:MySQL|Postgres)/i ? '(0) without time zone' : '');
-	$self -> logger -> info("Connected to $dsn[0]");
+	$self -> logger -> info("Database.init_db(). Connected to $dsn[0]");
 
 } # End of init_db.
 
@@ -280,7 +285,7 @@ sub init_metapackager_db
 	$self -> metapackager_dbh(DBI -> connect($dsn[0], $$config{username}, $$config{password}, \%attributes) );
 	$self -> metapackager_dbh -> do('PRAGMA foreign_keys = ON') if ($$config{dsn} =~ /SQLite/i);
 	$self -> metapackager_db(DBIx::Simple -> new($self -> metapackager_dbh) );
-	$self -> logger -> info("Connected to $dsn[0]");
+	$self -> logger -> info("Database.init_metapackager_db(). Connected to $dsn[0]");
 
 } # End of init_metapackager_db.
 

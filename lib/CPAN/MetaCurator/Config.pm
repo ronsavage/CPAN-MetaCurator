@@ -148,7 +148,13 @@ our $VERSION = '1.25';
 
 sub init_config
 {
-	my($self)				= @_;
+	my($self) = @_;
+
+	# Fix me. Test UTF8 char handling.
+
+	$self -> logger -> debug("Entered Config.init_config()");
+	$self -> logger -> info("Testing write of utf8 chars to logger. I ♥ Mojolicious");
+
 	my($path)				= File::Spec -> catfile($self -> home_path, $self -> config_path);
 	my($config)				= $self -> config($self -> _init_config($path) );
 	$$config{config_path}	= $path;
@@ -156,10 +162,7 @@ sub init_config
 
 	$self -> config($config);
 	$self -> logger(Mojo::Log -> new(level => $self -> log_level, path => $$config{log_path}) );
-
-	# Fix me. Test UTF8 char handling.
-
-	$self -> logger -> info("Testing write of utf8 chars to logger. I ♥ Mojolicious\n");
+	$self -> logger -> debug("Leaving Config.init_config()");
 
 } # End of init_config.
 
@@ -194,12 +197,16 @@ sub _init_config
 
 sub init_metapackager_config
 {
-	my($self)				= @_;
+	my($self) = @_;
+
+	$self -> logger -> debug("Entered Config.init_metapackager_config()");
+
 	my($path)				= File::Spec -> catfile($self -> home_path, $self -> metapackager_config_path);
 	my($config)				= $self -> config($self -> _init_config($path) );
 	$$config{config_path}	= $path;
 
 	$self -> metapackager_config($config);
+	$self -> logger -> debug("Leaving Config.init_metapackager_config()");
 
 } # End of init_metapackager_config.
 
