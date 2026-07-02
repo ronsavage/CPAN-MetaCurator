@@ -298,9 +298,12 @@ sub parse_topic
 
 			if ($inside{see_also})
 			{
+				$self -> logger -> debug("Empty token. line: $line") if ($token eq '');
+
 				# Fix me. This code is really a set of cases.
-				# Sample from topic AbCeDarian:
+				# Samples from topic AbCeDarian:
 				# It means in abcd order, i.e. alphabetical, so I can put it first in the list of topics :-)
+				# https://theweeklychallenge.org/blog/serialisation-in-perl/ - Serialization of data to ram/disk
 				# Sample from topic AiEngines:
 				# [[Acronyms]]
 
@@ -322,8 +325,6 @@ sub parse_topic
 
 				if ($token =~ /^http/)
 				{
-					$self -> logger -> debug("Inside See also. token: $token");
-
 					$href			= $token;
 					$$item{html}	= 'Not used in caller';
 					$$item{text}	= "<a href = '" . escape_html($href) . "' target = '_blank'>$href</a>";
