@@ -298,6 +298,7 @@ sub parse_topic
 
 			if ($inside{see_also})
 			{
+				# Fix me. This code is really a set of cases.
 				# Sample from topic AbCeDarian:
 				# It means in abcd order, i.e. alphabetical, so I can put it first in the list of topics :-)
 				# Sample from topic AiEngines:
@@ -318,7 +319,13 @@ sub parse_topic
 				$components[0]	= '' if ($components[0] !~ m/^[A-Za-z]+\d{0,2}$/);
 				$is_topic		= $$pad{topic_names}{$components[0]}; # Defined => it's a topic.
 				$$item{text}	= "[Topic] <button class='btn btn-info'>$$item{text}</button>" if ($is_topic && ($$item{text} !~ m/^http/) );
-				$$item{text}	= $token if ($token =~ /^http/);
+
+				if ($token =~ /^http/)
+				{
+					$href			= $token;
+					$$item{html}	= "<a href = '" . escape_html($href) . "' target = '_blank'>$href</a>";
+					$$item{text}	= '';
+				}
 
 				push@see_also, $item;
 
