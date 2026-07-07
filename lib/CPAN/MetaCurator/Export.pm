@@ -38,6 +38,16 @@ our $VERSION = '1.25';
 
 # -----------------------------------------------
 
+sub export_node
+{
+	my($node, $options) = @_;
+
+	say "Called export_node($node)";
+
+} # End of export_node.
+
+# -----------------------------------------------
+
 sub export_tree
 {
 	my($self) = @_;
@@ -145,6 +155,12 @@ sub export_tree
 	#
 	# This works. It's nicer.
 	#say map("$_\n", @{$root->tree2string});
+
+	# Scan the tree looking for topics. We stockpile each along with its id.
+
+	my($options) = {callbackback => \&export_node};
+
+	$root -> walk_down($options);
 
 	return 0;
 
@@ -312,7 +328,10 @@ sub parse_topic
 
 				match ($type : eq)
 				{
-					case('topic')	{$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0]; $$item{text} = "[Topic] <button class='btn btn-info'>$$item{text}</button>"}
+					case('topic')	{
+										$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0];
+										$$item{text} = "[Topic] <button class='btn btn-info'>$$item{text}</button>"
+									}
 					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
 					case('text')	{$$item{text} = $token}
 				}

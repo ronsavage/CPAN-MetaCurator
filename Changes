@@ -1,5 +1,10 @@
 Revision history for perl module CPAN::MetaCurator
 
+1.26  2026-07-07
+	- Start walking the tree. Node ids will be used to generate forward & backward references
+		from a topic in a See also to the actual node, which can then be made the current node
+		when the topic is clicked.
+
 1.25  2026-06-29
 	- In See also, output names of topics as buttons as 1st step in allowing them to be clicked,
 		which will allow the click to make the topic itself become the current topic.
