@@ -34,7 +34,7 @@ has test_topics_path =>
 our $leaf_id;
 our %seen;
 
-our $VERSION = '1.25';
+our $VERSION = '1.26';
 
 # -----------------------------------------------
 
