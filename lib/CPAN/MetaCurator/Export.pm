@@ -42,7 +42,7 @@ sub export_node
 {
 	my($self, $node, $options) = @_;
 
-	say "Called export_node($node)";
+	say Dumper($node);
 
 } # End of export_node.
 
