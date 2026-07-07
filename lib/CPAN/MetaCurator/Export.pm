@@ -150,9 +150,10 @@ sub export_tree
 
 	my($attributes);
 	my($name);
-	my($options) =
-	{
-		callbackback => sub export_node
+
+	$root -> walk_down
+	({
+		callbackback => sub
 		{
 			my($node, $options)	= @_;
 			$attributes			= $node -> attributes;
@@ -161,9 +162,7 @@ sub export_tree
 			say "$name => " . Dumper($attributes);
 
 		} # End of callbackback.
-	};
-
-	$root -> walk_down($options);
+	});
 
 	return 0;
 
