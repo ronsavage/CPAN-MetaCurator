@@ -40,7 +40,7 @@ our $VERSION = '1.26';
 
 sub export_node
 {
-	my($node, $options) = @_;
+	my($self, $node, $options) = @_;
 
 	say "Called export_node($node)";
 
