@@ -16,6 +16,7 @@ use HTML::Escape 'escape_html';
 
 use Moo;
 
+use Switch::Declare;
 use Syntax::Keyword::Match;
 
 use Tree::DAG_Node;
@@ -298,36 +299,22 @@ sub parse_topic
 
 			if ($inside{see_also})
 			{
-				$self -> logger -> debug("Empty token. line: $line") if ($token eq '');
+				# Fix me. References to topics can be forward references.
 
-				# Fix me. This code is really a set of cases.
-				# Samples from topic AbCeDarian:
-				# It means in abcd order, i.e. alphabetical, so I can put it first in the list of topics :-)
-				# https://theweeklychallenge.org/blog/serialisation-in-perl/ - Serialization of data to ram/disk
-				# Sample from topic AiEngines:
-				# [[Acronyms]]
-
-				$$item{text}	= $token;
-				@components		= split(' - ', $token); # [0] may be text or Topic.
-				$components[0]	= $token if ($#components < 0);
-
-				# Must allow for topics AssemblerX86 & UTF8.
-
-				if ($components[0] =~ m/^\[\[([A-Za-z]+\d?\d?)\]\]/)
+				@components	= split(' - ', $token);
+				$text		= ($#components < 1) ? $components[0] : $components[1];
+				$result		= switch ($components[0])
 				{
-					$components[0]	= $1;
-					$$item{text}	= $1;
-				}
+					case /^\[?\[?[A-Za-z]+\d?\d?\]?\]?$/	{'topic'}
+					case /^http/							{'uri'}
+					default									{'text'}
+				};
 
-				$components[0]	= '' if ($components[0] !~ m/^[A-Za-z]+\d{0,2}$/);
-				$is_topic		= $$pad{topic_names}{$components[0]}; # Defined => it's a topic.
-				$$item{text}	= "[Topic] <button class='btn btn-info'>$$item{text}</button>" if ($is_topic && ($$item{text} !~ m/^http/) );
-
-				if ($token =~ /^http/)
+				match ($result : eq)
 				{
-					$href			= $token;
-					$$item{html}	= 'Not used in caller';
-					$$item{text}	= "<a href = '" . escape_html($href) . "' target = '_blank'>$href</a>";
+					case('topic')	{$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0]}
+					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
+					case('text')	{$$item{text} = $token}
 				}
 
 				push@see_also, $item;
