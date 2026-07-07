@@ -40,9 +40,9 @@ our $VERSION = '1.26';
 
 sub export_node
 {
-	my($self, $node, $options) = @_;
+	my($node, $options) = @_;
 
-	say Dumper($node);
+	say Dumper($options);
 
 } # End of export_node.
 
