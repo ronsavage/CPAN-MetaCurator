@@ -149,7 +149,9 @@ sub export_tree
 	# Scan the tree looking for topics. We stockpile each along with its id.
 
 	my($attributes);
+	my($id);
 	my($name);
+	my($topic, %topic_id_map);
 
 	$root -> walk_down
 	({
@@ -159,8 +161,13 @@ sub export_tree
 			$attributes			= $node -> attributes;
 			$name       		= $node -> name;
 
-			say "$name => " . Dumper($attributes);
+			if ($name =~ /^\[Topic/)
+			{
+				$id		= $$attributes{id};
+				$topic	= $1 if ($name =~ />(.+)</);
 
+				say "$topic => $id";
+			}
 		} # End of callbackback.
 	});
 
