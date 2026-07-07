@@ -312,7 +312,7 @@ sub parse_topic
 
 				match ($type : eq)
 				{
-					case('topic')	{$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0]; $$item{text} = "[Topic] $$item{text}"}
+					case('topic')	{$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0]; $$item{text} = "[Topic] <button class='btn btn-info'>$$item{text}</button>"}
 					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
 					case('text')	{$$item{text} = $token}
 				}
