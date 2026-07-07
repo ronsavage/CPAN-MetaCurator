@@ -221,7 +221,7 @@ sub parse_topic
 	my(%node_type);
 	my(@pre_pre);
 	my($see_also_root, $see_also_1, @see_also);
-	my($token);
+	my($text, $token, $type);
 
 	$inside{pre_pre}	= false;
 	$inside{see_also}	= false;
@@ -303,14 +303,14 @@ sub parse_topic
 
 				@components	= split(' - ', $token);
 				$text		= ($#components < 1) ? $components[0] : $components[1];
-				$result		= switch ($components[0])
+				$type		= switch ($components[0])
 				{
 					case /^\[?\[?[A-Za-z]+\d?\d?\]?\]?$/	{'topic'}
 					case /^http/							{'uri'}
 					default									{'text'}
 				};
 
-				match ($result : eq)
+				match ($type : eq)
 				{
 					case('topic')	{$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0]}
 					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
