@@ -38,16 +38,6 @@ our $VERSION = '1.26';
 
 # -----------------------------------------------
 
-sub export_node
-{
-	my($node, $options) = @_;
-
-	say Dumper($options);
-
-} # End of export_node.
-
-# -----------------------------------------------
-
 sub export_tree
 {
 	my($self) = @_;
@@ -158,7 +148,20 @@ sub export_tree
 
 	# Scan the tree looking for topics. We stockpile each along with its id.
 
-	my($options) = {callbackback => \&export_node};
+	my($attributes);
+	my($name);
+	my($options) =
+	{
+		callbackback => sub export_node
+		{
+			my($node, $options)	= @_;
+			$attributes			= $node -> attributes;
+			$name       		= $node -> name;
+
+			say "$name => " . Dumper($attributes);
+
+		} # End of callbackback.
+	};
 
 	$root -> walk_down($options);
 
