@@ -87,7 +87,7 @@ sub export_tree
 	{
 		next if (! $wanted{$$topic{title} });
 
-		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
+		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_ids}{$$topic{title}}. title: $$topic{title}");
 
 		$daughter = Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id} });
 
