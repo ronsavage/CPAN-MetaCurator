@@ -1,5 +1,8 @@
 Revision history for perl module CPAN::MetaCurator
 
+1.27  2026-07-14
+	- Add scripts/parse.metacpan.recent.pl & its output data/names.csv.
+
 1.26  2026-07-07
 	- Start walking the tree. Node ids will be used to generate forward & backward references
 		from a topic in a See also to the actual node, which can then be made the current node
