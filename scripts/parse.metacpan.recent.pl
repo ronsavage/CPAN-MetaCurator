@@ -8,6 +8,11 @@ use File::Slurper 'read_lines';
 
 use Getopt::Long;
 
+#use HTML::ExtractText;
+#use HTML::Object::XQuery;
+#use HTML::TableContentParser;
+#use Text::Balanced;
+
 use Pod::Usage; # For pod2usage().
 
 use Text::CSV;
