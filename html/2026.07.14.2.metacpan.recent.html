@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Recent - metacpan.org</title>
+        <link rel="preload" as="fetch" href="https://metacpan.org/account/login_status" crossorigin="anonymous">
+        <link href="metacpan.recent.2_files/style-GRJI7QQ6.css" rel="stylesheet" type="text/css">
+        <script src="metacpan.recent.2_files/main-EH6G27H2.js" type="module"></script>
+        <link rel="alternate" type="application/rss+xml" title="Recent CPAN Uploads - MetaCPAN" href="https://metacpan.org/recent.rss?f=l">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+        <link rel="shortcut icon" href="https://metacpan.org/static/icons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://metacpan.org/static/icons/apple-touch-icon.png">
+        <link rel="search" href="https://metacpan.org/static/opensearch.xml" type="application/opensearchdescription+xml" title="MetaCPAN">
+    <script src="metacpan.recent.2_files/js" async=""></script><style>body.tablesorter-disableSelection { -ms-user-select: none; -moz-user-select: -moz-none;-khtml-user-select: none; -webkit-user-select: none; user-select: none; }.tablesorter-resizable-container { position: relative; height: 1px; }.tablesorter-resizable-handle { position: absolute; display: inline-block; width: 8px;top: 1px; cursor: ew-resize; z-index: 3; user-select: none; -moz-user-select: none; }</style></head>
+    <body class="logged-out">
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="header-logo-large d-none d-sm-block">
+              <a href="https://metacpan.org/" tabindex="0">
+                <svg class="logo" role="img" aria-label="MetaCPAN">
+                  <use class="logo" href="/static/images/metacpan-logo.svg#logo"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="header-logo-icon d-block d-sm-none">
+              <a href="https://metacpan.org/">
+                <svg class="logo" role="img" aria-label="MetaCPAN">
+                  <use class="logo" href="/static/images/metacpan-logo.svg#dots"></use>
+                </svg>
+              </a>
+            </div>
+            <ul class="nav navbar-nav menu-items d-none d-md-flex">
+              <li><a href="https://metacpan.org/about">About</a></li>
+              <li><a href="https://metacpan.org/about/sponsors">Sponsor</a></li>
+              <li><a href="https://grep.metacpan.org/">grep::cpan</a></li>
+              <li><a href="https://metacpan.org/recent">Recent</a></li>
+              <li><a href="https://metacpan.org/about/faq">FAQ</a></li>
+              <li><a href="https://metacpan.org/tools">Tools</a></li>
+              <li><a href="https://api.metacpan.org/">API</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right ms-auto">
+                <li class="d-block d-md-none">
+                    <button type="button" class="searchbar-btn" aria-label="Search">
+                        <i class="fa fa-search button-fa-icon" aria-hidden="true"></i>
+                    </button>
+                </li>
+                <li>
+                <form action="/search" class="searchbar-form search-form">
+                   <input type="hidden" name="size" id="metacpan_search-size" value="20">
+                  <div>
+                      <div class="search-group">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input type="text" name="q" placeholder="Search the CPAN" size="41" autocorrect="off" autocapitalize="none" spellcheck="false" id="metacpan_search-input" class="form-control" autocomplete="off">
+                      </div>
+                  </div>
+                </form>
+                </li>
+                    <li class="icon-slidepanel d-block d-md-none">
+                      <button data-bs-toggle="slidepanel" data-bs-target=".slidepanel" aria-label="Open navigation menu" aria-expanded="false">
+                        <span class="button-fa-icon">
+                          <i class="fa fa-bars slidepanel-open" aria-hidden="true"></i>
+                          <i class="fa fa-times slidepanel-close" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </li>
+                <li class="dropdown login-dropdown show-logged-in">
+                    <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-label="Account" aria-expanded="false">
+                      <i class="fa fa-user button-fa-icon logged-in-icon" aria-hidden="true"></i>
+                      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="https://metacpan.org/account/identities">Identities</a></li>
+                        <li><a class="dropdown-item" href="https://metacpan.org/account/profile">Profile</a></li>
+                        <li><a class="dropdown-item" href="https://metacpan.org/account/favorite/list">Favorites</a></li>
+                        <li>
+                            <button type="button" class="dropdown-item logout-button">
+                              Logout
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown login-dropdown show-logged-out">
+                    <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-label="Login" aria-expanded="false">
+                      <i class="fa fa-user button-fa-icon avatar-placeholder" aria-hidden="true"></i>
+                      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="https://metacpan.org/login/github">
+                                <i class="fab fa-github fa-fw" aria-hidden="true"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="https://metacpan.org/login/google">
+                                <i class="fab fa-google fa-fw" aria-hidden="true"></i>
+                                Google
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown login-dropdown hide-logged-in hide-logged-out">
+                    <button aria-label="Account">
+                      <i class="fa fa-user button-fa-icon" aria-hidden="true"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <div class="page-content ">
+          <div id="perl-ad-target" class="top-notify-banner perl-ad-target">
+          <div id="perl-ad" style="text-align: center; padding: 0.125rem; margin: 0px;"><p><span id="perl-ad-title"><b>Planet Perl:</b></span><span id="perl-ad-desc"> A single place to browse Perl writing from across the community </span><span id="perl-ad-link"><a href="https://perl.theplanetarium.org/?utm_source=perl-ads&amp;utm_medium=banner&amp;utm_campaign=perltoolsteam&amp;utm_content=metacpan.org" target="_blank">Learn more</a></span></p></div></div>
+          <nav class="sidebar" aria-label="Section navigation">
+            <div class="slidepanel">
+              <ul class="nav-list ">
+
+    <li class="nav-header">Activity</li>
+    <li>
+<div class="activity-graph">
+    <img src="metacpan.recent.2_files/releases.svg" alt="Activity Graph">
+    <div class="comment">24 month</div>
+</div>
+    </li>
+    <li class="nav-header">Recent Uploads</li>
+    <li>
+            <strong>Latest releases</strong>
+    </li>
+    <li>
+            <a href="https://metacpan.org/recent?f=n">New distributions</a>
+    </li>
+    <li class="nav-header">Favorites</li>
+    <li>
+            <a href="https://metacpan.org/favorite/recent">Recent Favorites</a>
+    </li>
+    <li>
+            <a href="https://metacpan.org/favorite/leaderboard">Popular Distributions</a>
+    </li>
+    <li class="nav-header">Top Uploaders</li>
+    <li>
+            <a href="https://metacpan.org/recent/topuploaders/weekly">Weekly</a>
+    </li>
+    <li>
+            <a href="https://metacpan.org/recent/topuploaders/yearly">Yearly</a>
+    </li>
+    <li>
+            <a href="https://metacpan.org/recent/topuploaders/all">All Time</a>
+    </li>
+</ul>
+              
+            </div>
+          </nav>
+          <div class="content-navigation">
+          </div>
+          <main class="">
+  <div id="metacpan_feed_subscription">
+    <h1>Latest Releases</h1>
+      <a href="https://metacpan.org/recent.rss?f=l"><i class="fa fa-rss fa-2x black"></i></a>
+  </div>
+  <hr>
+
+    <table class="table table-sm table-striped table-releases">
+      <thead>
+        <tr>
+          <th class="name pull-left-phone">Release</th>
+          <th class="d-none d-sm-table-cell invisible no-sort"></th>
+          <th class="date d-none d-sm-table-cell">Monday, 13 July 2026</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River data not yet available">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-Fondation-Layout-Bootstrap" class="ellipsis release-name" title="DAB/Mojolicious-Plugin-Fondation-Layout-Bootstrap-0.04"><span style="max-width: calc(100% - 160.05px);">Mojolicious-Plugin-Fondation-</span><span>Layout-Bootstrap-0.04</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 21:12:21 UTC">an hour ago</span></td>
+          <td class="abstract">Simple layout plugin for Fondation</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 21:12:21 UTC" title="13 Jul 2026 21:12:21 UTC">an hour ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River data not yet available">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/MojoX-Authentication" class="ellipsis release-name" title="POLETTIX/MojoX-Authentication-0.003"><span style="max-width: calc(100% - 82.4833px);">MojoX-Authentic</span><span>ation-0.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 21:08:14 UTC">an hour ago</span></td>
+          <td class="abstract">[Put something meaningful here!]</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 21:08:14 UTC" title="13 Jul 2026 21:08:14 UTC">an hour ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-cpan maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River data not yet available">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/release/POLETTIX/MojoX-Authentication-0.002" class="ellipsis release-name" title="POLETTIX/MojoX-Authentication-0.002"><span style="max-width: calc(100% - 82.1667px);">MojoX-Authentic</span><span>ation-0.002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 20:37:50 UTC">an hour ago</span></td>
+          <td class="abstract">[Put something meaningful here!]</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 20:37:50 UTC" title="13 Jul 2026 20:37:50 UTC">an hour ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-Fondation-MigrationDBIx" class="ellipsis release-name" title="DAB/Mojolicious-Plugin-Fondation-MigrationDBIx-0.03"><span style="max-width: calc(100% - 214.2px);">Mojolicious-Plugin-</span><span>Fondation-MigrationDBIx-0.03</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 20:35:05 UTC">an hour ago</span></td>
+          <td class="abstract">Migration and fixture management for DBIx::Class backends</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 20:35:05 UTC" title="13 Jul 2026 20:35:05 UTC">an hour ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage two
+• 10 direct dependents
+• 14 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/CLI-Simple" class="ellipsis release-name" title="BIGFOOT/CLI-Simple-2.0.14"><span style="max-width: calc(100% - 48.2px);">CLI-Simple</span><span>-2.0.14</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 20:26:03 UTC">an hour ago</span></td>
+          <td class="abstract">Simple command line script accelerator</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 20:26:03 UTC" title="13 Jul 2026 20:26:03 UTC">an hour ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage two
+• 5 direct dependents
+• 10 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Jacode4e-RoundTrip" class="ellipsis release-name" title="INA/Jacode4e-RoundTrip-2.13.81.17"><span style="max-width: calc(100% - 145.033px);">Jacode4e-</span><span>RoundTrip-2.13.81.17</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 20:20:45 UTC">an hour ago</span></td>
+          <td class="abstract">Converts JIS X 0213 Encodings with Round-Trip</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 20:20:45 UTC" title="13 Jul 2026 20:20:45 UTC">an hour ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Dist-Zilla-Plugin-TemplateXS" class="ellipsis release-name" title="LEONT/Dist-Zilla-Plugin-TemplateXS-0.006"><span style="max-width: calc(100% - 130.983px);">Dist-Zilla-Plugin-</span><span>TemplateXS-0.006</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 20:10:23 UTC">2 hours ago</span></td>
+          <td class="abstract">A simple xs-file-from-template plugin</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 20:10:23 UTC" title="13 Jul 2026 20:10:23 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage three
+• 78 direct dependents
+• 183 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Unicode-UTF8" class="ellipsis release-name" title="CHANSEN/Unicode-UTF8-0.74"><span style="max-width: calc(100% - 73.9px);">Unicode-</span><span>UTF8-0.74</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 20:03:53 UTC">2 hours ago</span></td>
+          <td class="abstract">Encoding and decoding of UTF-8 encoding form</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 20:03:53 UTC" title="13 Jul 2026 20:03:53 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-cpan maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/release/BIGFOOT/release-2.0.14" class="ellipsis release-name" title="BIGFOOT/release-2.0.14"><span style="max-width: calc(100% - 42.0333px);">release-</span><span>2.0.14</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 20:03:42 UTC">2 hours ago</span></td>
+          <td class="abstract"></td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 20:03:42 UTC" title="13 Jul 2026 20:03:42 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/CPAN-Maker-Bootstrapper" class="ellipsis release-name" title="BIGFOOT/CPAN-Maker-Bootstrapper-2.0.6"><span style="max-width: calc(100% - 132.7px);">CPAN-Maker-</span><span>Bootstrapper-2.0.6</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 20:00:37 UTC">2 hours ago</span></td>
+          <td class="abstract">CPAN::Maker::Bootstrapper</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 20:00:37 UTC" title="13 Jul 2026 20:00:37 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Win32-GUITaskAutomate" class="ellipsis release-name" title="ZOFFIX/Win32-GUITaskAutomate-0.07"><span style="max-width: calc(100% - 86.7667px);">Win32-GUITaskAu</span><span>tomate-0.07</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:29:27 UTC">2 hours ago</span></td>
+          <td class="abstract">A module for automating GUI tasks.</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:29:27 UTC" title="13 Jul 2026 19:29:27 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-WebDevout-BrowserSupportInfo" class="ellipsis release-name" title="ZOFFIX/WWW-WebDevout-BrowserSupportInfo-0.0104"><span style="max-width: calc(100% - 195.783px);">WWW-WebDevout-</span><span>BrowserSupportInfo-0.0104</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:29:16 UTC">2 hours ago</span></td>
+          <td class="abstract">access browser support API on http://webdevout.com</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:29:16 UTC" title="13 Jul 2026 19:29:16 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 5 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-Pastebin-Base-Retrieve" class="ellipsis release-name" title="ZOFFIX/WWW-Pastebin-Base-Retrieve-0.003"><span style="max-width: calc(100% - 104.683px);">WWW-Pastebin-Base-</span><span>Retrieve-0.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:27:26 UTC">2 hours ago</span></td>
+          <td class="abstract">base class for modules which implement retrieving of pastes from pastebins</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:27:26 UTC" title="13 Jul 2026 19:27:26 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-PAUSE-CleanUpHomeDir" class="ellipsis release-name" title="ZOFFIX/WWW-PAUSE-CleanUpHomeDir-1.001003"><span style="max-width: calc(100% - 191.033px);">WWW-PAUSE-</span><span>CleanUpHomeDir-1.001003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:27:15 UTC">2 hours ago</span></td>
+          <td class="abstract">the module to clean up old dists from your PAUSE home directory</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:27:15 UTC" title="13 Jul 2026 19:27:15 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-HTMLTagAttributeCounter" class="ellipsis release-name" title="ZOFFIX/WWW-HTMLTagAttributeCounter-0.0105"><span style="max-width: calc(100% - 109.467px);">WWW-HTMLTagAttribute</span><span>Counter-0.0105</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:23:01 UTC">2 hours ago</span></td>
+          <td class="abstract">access a webpage and count number of tags or attributes</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:23:01 UTC" title="13 Jul 2026 19:23:01 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-cpan maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 5 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/release/ZOFFIX/WWW-GetPageTitle-0.0105" class="ellipsis release-name" title="ZOFFIX/WWW-GetPageTitle-0.0105"><span style="max-width: calc(100% - 72.25px);">WWW-GetPageTi</span><span>tle-0.0105</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:22:50 UTC">2 hours ago</span></td>
+          <td class="abstract">get titles of web pages</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:22:50 UTC" title="13 Jul 2026 19:22:50 UTC">2 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River data not yet available">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-Fondation-Asset" class="ellipsis release-name" title="DAB/Mojolicious-Plugin-Fondation-Asset-0.03"><span style="max-width: calc(100% - 152.167px);">Mojolicious-Plugin-</span><span>Fondation-Asset-0.03</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:12:58 UTC">3 hours ago</span></td>
+          <td class="abstract">AssetPack wrapper -- generate via command, load pre-built def at runtime</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:12:58 UTC" title="13 Jul 2026 19:12:58 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Test-WWW-Mechanize-MultiMech" class="ellipsis release-name" title="ZOFFIX/Test-WWW-Mechanize-MultiMech-1.006002"><span style="max-width: calc(100% - 145.383px);">Test-WWW-Mechanize-</span><span>MultiMech-1.006002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:02:58 UTC">3 hours ago</span></td>
+          <td class="abstract">coordinate multi-object mech tests for multi-user web app testing</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:02:58 UTC" title="13 Jul 2026 19:02:58 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Test-Mojo-Role-SubmitForm" class="ellipsis release-name" title="ZOFFIX/Test-Mojo-Role-SubmitForm-1.004005"><span style="max-width: calc(100% - 158.883px);">Test-Mojo-Role-</span><span>SubmitForm-1.004005</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:02:46 UTC">3 hours ago</span></td>
+          <td class="abstract">Test::Mojo role that allows to submit forms</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:02:46 UTC" title="13 Jul 2026 19:02:46 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Test-Mojo-Role-ElementCounter" class="ellipsis release-name" title="ZOFFIX/Test-Mojo-Role-ElementCounter-1.001009"><span style="max-width: calc(100% - 183.917px);">Test-Mojo-Role-</span><span>ElementCounter-1.001009</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:02:35 UTC">3 hours ago</span></td>
+          <td class="abstract">Test::Mojo role that provides element count tests</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:02:35 UTC" title="13 Jul 2026 19:02:35 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Test-Mojo-Role-Debug" class="ellipsis release-name" title="ZOFFIX/Test-Mojo-Role-Debug-1.005003"><span style="max-width: calc(100% - 117.033px);">Test-Mojo-Role-</span><span>Debug-1.005003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:02:24 UTC">3 hours ago</span></td>
+          <td class="abstract">Test::Mojo role to make debugging test failures easier</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:02:24 UTC" title="13 Jul 2026 19:02:24 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Test-Mojo-Role-DOMinizer" class="ellipsis release-name" title="ZOFFIX/Test-Mojo-Role-DOMinizer-1.001002"><span style="max-width: calc(100% - 144.2px);">Test-Mojo-Role-</span><span>DOMinizer-1.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:02:13 UTC">3 hours ago</span></td>
+          <td class="abstract">Test::Mojo role to examine DOM mid test chain</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:02:13 UTC" title="13 Jul 2026 19:02:13 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Test-GetVolatileData" class="ellipsis release-name" title="ZOFFIX/Test-GetVolatileData-2.001001"><span style="max-width: calc(100% - 91.6833px);">Test-GetVolatileD</span><span>ata-2.001001</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:02:02 UTC">3 hours ago</span></td>
+          <td class="abstract">load frequently-changed data in your tests without uploading new distros</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:02:02 UTC" title="13 Jul 2026 19:02:02 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 5 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Syntax-Highlight-CSS" class="ellipsis release-name" title="ZOFFIX/Syntax-Highlight-CSS-0.0103"><span style="max-width: calc(100% - 151.6px);">Syntax-</span><span>Highlight-CSS-0.0103</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:01:51 UTC">3 hours ago</span></td>
+          <td class="abstract">highlight CSS syntax</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:01:51 UTC" title="13 Jul 2026 19:01:51 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Spreadsheet-DataToExcel" class="ellipsis release-name" title="ZOFFIX/Spreadsheet-DataToExcel-0.0105"><span style="max-width: calc(100% - 140.4px);">Spreadsheet-</span><span>DataToExcel-0.0105</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:01:39 UTC">3 hours ago</span></td>
+          <td class="abstract">Simple method to generate Excel files from 2D arrayrefs</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:01:39 UTC" title="13 Jul 2026 19:01:39 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Spreadsheet-DataFromExcel" class="ellipsis release-name" title="ZOFFIX/Spreadsheet-DataFromExcel-1.001004"><span style="max-width: calc(100% - 176.983px);">Spreadsheet-</span><span>DataFromExcel-1.001004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:01:28 UTC">3 hours ago</span></td>
+          <td class="abstract">read a sheet from Excel file into a simple arrayref of arrayrefs</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:01:28 UTC" title="13 Jul 2026 19:01:28 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Package-Localize" class="ellipsis release-name" title="ZOFFIX/Package-Localize-1.001003"><span style="max-width: calc(100% - 126.217px);">Package-</span><span>Localize-1.001003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:01:17 UTC">3 hours ago</span></td>
+          <td class="abstract">localize package variables in other packages</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:01:17 UTC" title="13 Jul 2026 19:01:17 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-WWW-XKCD-AsText" class="ellipsis release-name" title="ZOFFIX/POE-Component-WWW-XKCD-AsText-0.003"><span style="max-width: calc(100% - 140.283px);">POE-Component-WWW-</span><span>XKCD-AsText-0.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:01:06 UTC">3 hours ago</span></td>
+          <td class="abstract">non-blocking wrapper around WWW::XKCD::AsText</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:01:06 UTC" title="13 Jul 2026 19:01:06 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-WWW-OhNoRobotCom-Search" class="ellipsis release-name" title="ZOFFIX/POE-Component-WWW-OhNoRobotCom-Search-0.003"><span style="max-width: calc(100% - 213.983px);">POE-Component-WWW-</span><span>OhNoRobotCom-Search-0.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:00:55 UTC">3 hours ago</span></td>
+          <td class="abstract">non-blocking POE based wrapper around WWW::OhNoRobotCom::Search module</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:00:55 UTC" title="13 Jul 2026 19:00:55 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage two
+• 9 direct dependents
+• 15 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-NonBlockingWrapper-Base" class="ellipsis release-name" title="ZOFFIX/POE-Component-NonBlockingWrapper-Base-1.001003"><span style="max-width: calc(100% - 259.183px);">POE-Component-</span><span>NonBlockingWrapper-Base-1.001003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:00:44 UTC">3 hours ago</span></td>
+          <td class="abstract">POE based base class for non-blocking wrappers around blocking stuff</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:00:44 UTC" title="13 Jul 2026 19:00:44 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-Net-FTP" class="ellipsis release-name" title="ZOFFIX/POE-Component-Net-FTP-0.002"><span style="max-width: calc(100% - 105.05px);">POE-Component-</span><span>Net-FTP-0.002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:00:33 UTC">3 hours ago</span></td>
+          <td class="abstract">non-blocking wrapper around Net::FTP</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:00:33 UTC" title="13 Jul 2026 19:00:33 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-IRC-PluginBundle-WebDevelopment" class="ellipsis release-name" title="ZOFFIX/POE-Component-IRC-PluginBundle-WebDevelopment-2.001004"><span style="max-width: calc(100% - 197.1px);">POE-Component-IRC-PluginBundle-</span><span>WebDevelopment-2.001004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:00:21 UTC">3 hours ago</span></td>
+          <td class="abstract">a collection of plugins useful for Web Development IRC bots</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:00:21 UTC" title="13 Jul 2026 19:00:21 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-IRC-PluginBundle-Toys" class="ellipsis release-name" title="ZOFFIX/POE-Component-IRC-PluginBundle-Toys-1.001003"><span style="max-width: calc(100% - 201.233px);">POE-Component-IRC-</span><span>PluginBundle-Toys-1.001003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 19:00:10 UTC">3 hours ago</span></td>
+          <td class="abstract">a collection of fun-to-have plugins</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 19:00:10 UTC" title="13 Jul 2026 19:00:10 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-IRC-Plugin-WWW-XKCD-AsText" class="ellipsis release-name" title="ZOFFIX/POE-Component-IRC-Plugin-WWW-XKCD-AsText-0.004"><span style="max-width: calc(100% - 192.15px);">POE-Component-IRC-Plugin-</span><span>WWW-XKCD-AsText-0.004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:59:59 UTC">3 hours ago</span></td>
+          <td class="abstract">read http://xkcd.com comics on IRC</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:59:59 UTC" title="13 Jul 2026 18:59:59 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-IRC-Plugin-WWW-OhNoRobotCom-Search" class="ellipsis release-name" title="ZOFFIX/POE-Component-IRC-Plugin-WWW-OhNoRobotCom-Search-0.003"><span style="max-width: calc(100% - 213.983px);">POE-Component-IRC-Plugin-WWW-</span><span>OhNoRobotCom-Search-0.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:59:48 UTC">3 hours ago</span></td>
+          <td class="abstract">search http://ohnorobot.com/ website from IRC</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:59:48 UTC" title="13 Jul 2026 18:59:48 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-IRC-Plugin-Unicode-UCD" class="ellipsis release-name" title="ZOFFIX/POE-Component-IRC-Plugin-Unicode-UCD-0.005"><span style="max-width: calc(100% - 140.133px);">POE-Component-IRC-Plugin-</span><span>Unicode-UCD-0.005</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:59:37 UTC">3 hours ago</span></td>
+          <td class="abstract">lookup unicode chars/codes from IRC</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:59:37 UTC" title="13 Jul 2026 18:59:37 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-IRC-Plugin-FTP-EasyUpload" class="ellipsis release-name" title="ZOFFIX/POE-Component-IRC-Plugin-FTP-EasyUpload-0.003"><span style="max-width: calc(100% - 161.083px);">POE-Component-IRC-Plugin-</span><span>FTP-EasyUpload-0.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:59:26 UTC">3 hours ago</span></td>
+          <td class="abstract">provide files to IRC users via FTP</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:59:26 UTC" title="13 Jul 2026 18:59:26 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-IRC-Plugin-CPAN-Info" class="ellipsis release-name" title="ZOFFIX/POE-Component-IRC-Plugin-CPAN-Info-1.001003"><span style="max-width: calc(100% - 144.117px);">POE-Component-IRC-Plugin-</span><span>CPAN-Info-1.001003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:59:14 UTC">3 hours ago</span></td>
+          <td class="abstract">PoCo::IRC plugin for accessing information about CPAN modules, distributions and authors.</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:59:14 UTC" title="13 Jul 2026 18:59:14 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 6 direct dependents
+• 6 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-IRC-Plugin-BaseWrap" class="ellipsis release-name" title="ZOFFIX/POE-Component-IRC-Plugin-BaseWrap-1.001002"><span style="max-width: calc(100% - 140.817px);">POE-Component-IRC-Plugin-</span><span>BaseWrap-1.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:59:03 UTC">3 hours ago</span></td>
+          <td class="abstract">base class for IRC plugins which need triggers/ban/root control</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:59:03 UTC" title="13 Jul 2026 18:59:03 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Net-Blossom-Server-Backend-SQLite" class="ellipsis release-name" title="NHUBBARD/Net-Blossom-Server-Backend-SQLite-0.001002"><span style="max-width: calc(100% - 183.467px);">Net-Blossom-Server-</span><span>Backend-SQLite-0.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:58:52 UTC">3 hours ago</span></td>
+          <td class="abstract">SQLite storage backend for Net::Blossom::Server</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:58:52 UTC" title="13 Jul 2026 18:58:52 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Net-Blossom-Server-Backend-Postgres" class="ellipsis release-name" title="NHUBBARD/Net-Blossom-Server-Backend-Postgres-0.001002"><span style="max-width: calc(100% - 198.233px);">Net-Blossom-Server-</span><span>Backend-Postgres-0.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:58:41 UTC">3 hours ago</span></td>
+          <td class="abstract">Postgres storage backend for Net::Blossom::Server</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:58:41 UTC" title="13 Jul 2026 18:58:41 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-cpan maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage three
+• 78 direct dependents
+• 183 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/release/CHANSEN/Unicode-UTF8-0.73" class="ellipsis release-name" title="CHANSEN/Unicode-UTF8-0.73"><span style="max-width: calc(100% - 73.2px);">Unicode-</span><span>UTF8-0.73</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:58:30 UTC">3 hours ago</span></td>
+          <td class="abstract">Encoding and decoding of UTF-8 encoding form</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:58:30 UTC" title="13 Jul 2026 18:58:30 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River data not yet available">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-Fondation-Setup" class="ellipsis release-name" title="DAB/Mojolicious-Plugin-Fondation-Setup-0.04"><span style="max-width: calc(100% - 154.533px);">Mojolicious-Plugin-</span><span>Fondation-Setup-0.04</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:38:48 UTC">3 hours ago</span></td>
+          <td class="abstract">Setup wizard generator — scans plugins for user-configurable parameters, generates a setup workflow, and serves the wizard UI</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:38:48 UTC" title="13 Jul 2026 18:38:48 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-Archive-Any" class="ellipsis release-name" title="ZOFFIX/POE-Component-Archive-Any-0.003"><span style="max-width: calc(100% - 131.333px);">POE-Component-</span><span>Archive-Any-0.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:25:36 UTC">3 hours ago</span></td>
+          <td class="abstract">a non-blocking wrapper around Archive::Any</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:25:36 UTC" title="13 Jul 2026 18:25:36 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Number-RGB" class="ellipsis release-name" title="ZOFFIX/Number-RGB-2.001001"><span style="max-width: calc(100% - 63.8333px);">Number-RGB-</span><span>2.001001</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:25:25 UTC">3 hours ago</span></td>
+          <td class="abstract">Manipulate RGB Tuples</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:25:25 UTC" title="13 Jul 2026 18:25:25 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Number-Denominal" class="ellipsis release-name" title="ZOFFIX/Number-Denominal-2.001002"><span style="max-width: calc(100% - 146.817px);">Number-</span><span>Denominal-2.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:25:14 UTC">3 hours ago</span></td>
+          <td class="abstract">break up numbers into arbitrary denominations</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:25:14 UTC" title="13 Jul 2026 18:25:14 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Net-OBEX" class="ellipsis release-name" title="ZOFFIX/Net-OBEX-1.001002"><span style="max-width: calc(100% - 63.8333px);">Net-OBEX-</span><span>1.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:25:02 UTC">3 hours ago</span></td>
+          <td class="abstract">implementation of OBEX protocol</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:25:02 UTC" title="13 Jul 2026 18:25:02 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-Parametry" class="ellipsis release-name" title="ZOFFIX/Mojolicious-Plugin-Parametry-1.001002"><span style="max-width: calc(100% - 142.267px);">Mojolicious-Plugin-</span><span>Parametry-1.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:24:51 UTC">3 hours ago</span></td>
+          <td class="abstract">Mojolicious plugin providing param helpers</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:24:51 UTC" title="13 Jul 2026 18:24:51 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-IP2Location" class="ellipsis release-name" title="ZOFFIX/Mojolicious-Plugin-IP2Location-0.001002"><span style="max-width: calc(100% - 153.583px);">Mojolicious-Plugin-</span><span>IP2Location-0.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:24:40 UTC">3 hours ago</span></td>
+          <td class="abstract">Mojolicious wrapper around Geo::IP2Location::Lite</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:24:40 UTC" title="13 Jul 2026 18:24:40 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-FormChecker" class="ellipsis release-name" title="ZOFFIX/Mojolicious-Plugin-FormChecker-1.001004"><span style="max-width: calc(100% - 163.867px);">Mojolicious-Plugin-</span><span>FormChecker-1.001004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:24:29 UTC">3 hours ago</span></td>
+          <td class="abstract">Mojolicious plugin for validating query parameters</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:24:29 UTC" title="13 Jul 2026 18:24:29 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-Breadcrumbs" class="ellipsis release-name" title="ZOFFIX/Mojolicious-Plugin-Breadcrumbs-1.001003"><span style="max-width: calc(100% - 162.233px);">Mojolicious-Plugin-</span><span>Breadcrumbs-1.001003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:24:18 UTC">3 hours ago</span></td>
+          <td class="abstract">Mojolicious plugin for autogenerating breadcrumbs links</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:24:18 UTC" title="13 Jul 2026 18:24:18 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojolicious-Plugin-AntiSpamMailTo" class="ellipsis release-name" title="ZOFFIX/Mojolicious-Plugin-AntiSpamMailTo-1.001004"><span style="max-width: calc(100% - 185.7px);">Mojolicious-Plugin-</span><span>AntiSpamMailTo-1.001004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:24:06 UTC">3 hours ago</span></td>
+          <td class="abstract">Mojolicious plugin for obfuscating email addresses</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:24:06 UTC" title="13 Jul 2026 18:24:06 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojo-PDF" class="ellipsis release-name" title="ZOFFIX/Mojo-PDF-1.005004"><span style="max-width: calc(100% - 66.4667px);">Mojo-PDF-</span><span>1.005004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:23:55 UTC">3 hours ago</span></td>
+          <td class="abstract">Generate PDFs with the goodness of Mojo!</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:23:55 UTC" title="13 Jul 2026 18:23:55 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mojo-CSV" class="ellipsis release-name" title="ZOFFIX/Mojo-CSV-1.001005"><span style="max-width: calc(100% - 63.9833px);">Mojo-CSV-</span><span>1.001005</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:23:44 UTC">3 hours ago</span></td>
+          <td class="abstract">no-nonsense CSV handling</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:23:44 UTC" title="13 Jul 2026 18:23:44 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Mew" class="ellipsis release-name" title="ZOFFIX/Mew-1.002004"><span style="max-width: calc(100% - 66.3167px);">Mew-</span><span>1.002004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:23:33 UTC">3 hours ago</span></td>
+          <td class="abstract">Moo with sugar on top</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:23:33 UTC" title="13 Jul 2026 18:23:33 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/List-ToHumanString" class="ellipsis release-name" title="ZOFFIX/List-ToHumanString-1.003002"><span style="max-width: calc(100% - 89.3px);">List-ToHumanStri</span><span>ng-1.003002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:23:22 UTC">3 hours ago</span></td>
+          <td class="abstract">write lists in strings like a human would</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:23:22 UTC" title="13 Jul 2026 18:23:22 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Net-Blossom-Server" class="ellipsis release-name" title="NHUBBARD/Net-Blossom-Server-0.001002"><span style="max-width: calc(100% - 117.283px);">Net-Blossom-</span><span>Server-0.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:23:11 UTC">3 hours ago</span></td>
+          <td class="abstract">Server support for the Blossom protocol</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:23:11 UTC" title="13 Jul 2026 18:23:11 UTC">3 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/DBIx-QuickDB" class="ellipsis release-name" title="EXODIST/DBIx-QuickDB-0.000054"><span style="max-width: calc(100% - 75.25px);">DBIx-QuickDB</span><span>-0.000054</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 18:05:01 UTC">4 hours ago</span></td>
+          <td class="abstract">Quickly start a db server.</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 18:05:01 UTC" title="13 Jul 2026 18:05:01 UTC">4 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River data not yet available">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Scalar-ValueTags" class="ellipsis release-name" title="ZHTWN/Scalar-ValueTags-0.002"><span style="max-width: calc(100% - 118.433px);">Scalar-</span><span>ValueTags-0.002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 17:55:56 UTC">4 hours ago</span></td>
+          <td class="abstract">Attach propagated metadata to data values</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 17:55:56 UTC" title="13 Jul 2026 17:55:56 UTC">4 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/LWP-UserAgent-ProxyHopper" class="ellipsis release-name" title="ZOFFIX/LWP-UserAgent-ProxyHopper-0.005"><span style="max-width: calc(100% - 137.733px);">LWP-UserAgent-</span><span>ProxyHopper-0.005</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 17:37:56 UTC">4 hours ago</span></td>
+          <td class="abstract">LWP::UserAgent with proxi-hopping</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 17:37:56 UTC" title="13 Jul 2026 17:37:56 UTC">4 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage two
+• 11 direct dependents
+• 17 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/JavaScript-Minifier" class="ellipsis release-name" title="ZOFFIX/JavaScript-Minifier-1.17"><span style="max-width: calc(100% - 85.8167px);">JavaScript-</span><span>Minifier-1.17</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 17:37:45 UTC">4 hours ago</span></td>
+          <td class="abstract">Perl extension for minifying JavaScript code</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 17:37:45 UTC" title="13 Jul 2026 17:37:45 UTC">4 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/JSON-Meth" class="ellipsis release-name" title="ZOFFIX/JSON-Meth-1.001008"><span style="max-width: calc(100% - 64.5333px);">JSON-Meth-</span><span>1.001008</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 17:37:34 UTC">4 hours ago</span></td>
+          <td class="abstract">no nonsense JSON encoding/decoding as method calls on data</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 17:37:34 UTC" title="13 Jul 2026 17:37:34 UTC">4 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Imager-Tiler" class="ellipsis release-name" title="ZOFFIX/Imager-Tiler-1.010003"><span style="max-width: calc(100% - 102.05px);">Imager-</span><span>Tiler-1.010003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 17:37:23 UTC">4 hours ago</span></td>
+          <td class="abstract">package to aggregate images into a single tiled image via Imager</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 17:37:23 UTC" title="13 Jul 2026 17:37:23 UTC">4 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/HTML-ExtractText-Extra" class="ellipsis release-name" title="ZOFFIX/HTML-ExtractText-Extra-1.001004"><span style="max-width: calc(100% - 107.4px);">HTML-ExtractText-</span><span>Extra-1.001004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 17:37:11 UTC">4 hours ago</span></td>
+          <td class="abstract">extra useful HTML::ExtractText</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 17:37:11 UTC" title="13 Jul 2026 17:37:11 UTC">4 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Weather-Meteo" class="ellipsis release-name" title="NHORNE/Weather-Meteo-0.15"><span style="max-width: calc(100% - 78.75px);">Weather-</span><span>Meteo-0.15</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 17:07:27 UTC">5 hours ago</span></td>
+          <td class="abstract">Interface to https://open-meteo.com for historical and forecast weather data</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 17:07:27 UTC" title="13 Jul 2026 17:07:27 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Cucumber-Messages" class="ellipsis release-name" title="CUKEBOT/Cucumber-Messages-34.0.2"><span style="max-width: calc(100% - 117.567px);">Cucumber-</span><span>Messages-34.0.2</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 17:07:16 UTC">5 hours ago</span></td>
+          <td class="abstract">A library for (de)serializing Cucumber protocol messages</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 17:07:16 UTC" title="13 Jul 2026 17:07:16 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Dist-Zilla-PluginBundle-Author-ZOFFIX" class="ellipsis release-name" title="ZOFFIX/Dist-Zilla-PluginBundle-Author-ZOFFIX-1.001009"><span style="max-width: calc(100% - 177.1px);">Dist-Zilla-PluginBundle-</span><span>Author-ZOFFIX-1.001009</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:46:56 UTC">5 hours ago</span></td>
+          <td class="abstract">A plugin bundle for distributions built by ZOFFIX</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:46:56 UTC" title="13 Jul 2026 16:46:56 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Dist-Zilla-Plugin-Pod-Spiffy" class="ellipsis release-name" title="ZOFFIX/Dist-Zilla-Plugin-Pod-Spiffy-1.001008"><span style="max-width: calc(100% - 111.017px);">Dist-Zilla-Plugin-Pod-</span><span>Spiffy-1.001008</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:46:45 UTC">5 hours ago</span></td>
+          <td class="abstract">make your documentation look spiffy as HTML</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:46:45 UTC" title="13 Jul 2026 16:46:45 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage two
+• 11 direct dependents
+• 18 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Devel-TakeHashArgs" class="ellipsis release-name" title="ZOFFIX/Devel-TakeHashArgs-0.007"><span style="max-width: calc(100% - 78.4833px);">Devel-TakeHash</span><span>Args-0.007</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:46:34 UTC">5 hours ago</span></td>
+          <td class="abstract">make a hash from @_ and set defaults in subs while checking that all mandatory arguments are present</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:46:34 UTC" title="13 Jul 2026 16:46:34 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/CSS-SpriteMaker-Simple" class="ellipsis release-name" title="ZOFFIX/CSS-SpriteMaker-Simple-1.001002"><span style="max-width: calc(100% - 117.533px);">CSS-SpriteMaker-</span><span>Simple-1.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:46:23 UTC">5 hours ago</span></td>
+          <td class="abstract">generate CSS sprites from a bunch of images</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:46:23 UTC" title="13 Jul 2026 16:46:23 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/App-ZofCMS-PluginBundle-Naughty" class="ellipsis release-name" title="ZOFFIX/App-ZofCMS-PluginBundle-Naughty-1.001003"><span style="max-width: calc(100% - 129.267px);">App-ZofCMS-PluginBundle-</span><span>Naughty-1.001003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:46:11 UTC">5 hours ago</span></td>
+          <td class="abstract">a collection of ZofCMS plugins that are troublesome to install</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:46:11 UTC" title="13 Jul 2026 16:46:11 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/App-ZofCMS" class="ellipsis release-name" title="ZOFFIX/App-ZofCMS-1.001009"><span style="max-width: calc(100% - 64.4667px);">App-ZofCMS-</span><span>1.001009</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:46:00 UTC">5 hours ago</span></td>
+          <td class="abstract">web framework and templating system for small-medium sites.</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:46:00 UTC" title="13 Jul 2026 16:46:00 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/App-PNGCrush" class="ellipsis release-name" title="ZOFFIX/App-PNGCrush-0.003"><span style="max-width: calc(100% - 63.1px);">App-PNGCru</span><span>sh-0.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:45:49 UTC">5 hours ago</span></td>
+          <td class="abstract">Perl wrapper around ``pngcrush'' program</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:45:49 UTC" title="13 Jul 2026 16:45:49 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/App-Nopaste-Service-PastebinComAPI" class="ellipsis release-name" title="ZOFFIX/App-Nopaste-Service-PastebinComAPI-1.003"><span style="max-width: calc(100% - 159.433px);">App-Nopaste-Service-</span><span>PastebinComAPI-1.003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:45:38 UTC">5 hours ago</span></td>
+          <td class="abstract">App::Nopaste service for www.pastebin.com using their API</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:45:38 UTC" title="13 Jul 2026 16:45:38 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/App-Nopaste-Service-PastebinCa" class="ellipsis release-name" title="ZOFFIX/App-Nopaste-Service-PastebinCa-1.005"><span style="max-width: calc(100% - 121.633px);">App-Nopaste-Service-</span><span>PastebinCa-1.005</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:45:27 UTC">5 hours ago</span></td>
+          <td class="abstract">App::Nopaste service for www.pastebin.ca</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:45:27 UTC" title="13 Jul 2026 16:45:27 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage three
+• 199 direct dependents
+• 989 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/YAML-Syck" class="ellipsis release-name" title="TODDR/YAML-Syck-1.47"><span style="max-width: calc(100% - 65.8px);">YAML-</span><span>Syck-1.47</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:45:15 UTC">5 hours ago</span></td>
+          <td class="abstract">Fast, lightweight YAML loader and dumper</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:45:15 UTC" title="13 Jul 2026 16:45:15 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Data-ULID" class="ellipsis release-name" title="BRTASTIC/Data-ULID-1.4"><span style="max-width: calc(100% - 60.1833px);">Data-</span><span>ULID-1.4</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:45:04 UTC">5 hours ago</span></td>
+          <td class="abstract">Universally Unique Lexicographically Sortable Identifier</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:45:04 UTC" title="13 Jul 2026 16:45:04 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Config-INI-RefVars" class="ellipsis release-name" title="AAHAZRED/Config-INI-RefVars-1.04"><span style="max-width: calc(100% - 90.0833px);">Config-INI-</span><span>RefVars-1.04</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:44:53 UTC">5 hours ago</span></td>
+          <td class="abstract">INI file reader with variable references and function calls</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:44:53 UTC" title="13 Jul 2026 16:44:53 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/XTaTIK" class="ellipsis release-name" title="ZOFFIX/XTaTIK-0.005003"><span style="max-width: calc(100% - 68.3833px);">XTaTIK-</span><span>0.005003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:31:55 UTC">5 hours ago</span></td>
+          <td class="abstract">Rapidly deployable, multi-website eCommerce website base</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:31:55 UTC" title="13 Jul 2026 16:31:55 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WebService-Rollbar-Notifier" class="ellipsis release-name" title="ZOFFIX/WebService-Rollbar-Notifier-1.002011"><span style="max-width: calc(100% - 121.367px);">WebService-Rollbar-</span><span>Notifier-1.002011</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:31:44 UTC">5 hours ago</span></td>
+          <td class="abstract">send messages to www.rollbar.com service</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:31:44 UTC" title="13 Jul 2026 16:31:44 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-Pastebin-PastebinCom-Retrieve" class="ellipsis release-name" title="ZOFFIX/WWW-Pastebin-PastebinCom-Retrieve-0.004"><span style="max-width: calc(100% - 203px);">WWW-Pastebin-</span><span>PastebinCom-Retrieve-0.004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:31:32 UTC">5 hours ago</span></td>
+          <td class="abstract">retrieve pastes from http://pastebin.com/ website</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:31:32 UTC" title="13 Jul 2026 16:31:32 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-Pastebin-PastebinCom-API" class="ellipsis release-name" title="ZOFFIX/WWW-Pastebin-PastebinCom-API-1.001006"><span style="max-width: calc(100% - 191.65px);">WWW-Pastebin-</span><span>PastebinCom-API-1.001006</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:31:21 UTC">5 hours ago</span></td>
+          <td class="abstract">implementation of pastebin.com API</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:31:21 UTC" title="13 Jul 2026 16:31:21 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-Pastebin-PastebinCa-Retrieve" class="ellipsis release-name" title="ZOFFIX/WWW-Pastebin-PastebinCa-Retrieve-1.001003"><span style="max-width: calc(100% - 127.8px);">WWW-Pastebin-PastebinCa-</span><span>Retrieve-1.001003</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:31:10 UTC">5 hours ago</span></td>
+          <td class="abstract">a module to retrieve pastes from http://pastebin.ca/ website</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:31:10 UTC" title="13 Jul 2026 16:31:10 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-Pastebin-PastebinCa-Create" class="ellipsis release-name" title="ZOFFIX/WWW-Pastebin-PastebinCa-Create-0.005"><span style="max-width: calc(100% - 175.983px);">WWW-Pastebin-</span><span>PastebinCa-Create-0.005</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:30:59 UTC">5 hours ago</span></td>
+          <td class="abstract">create new pastes on http://pastebin.ca/ from Perl</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:30:59 UTC" title="13 Jul 2026 16:30:59 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-OhNoRobotCom-Search" class="ellipsis release-name" title="ZOFFIX/WWW-OhNoRobotCom-Search-0.004"><span style="max-width: calc(100% - 94.5167px);">WWW-OhNoRobotCom-</span><span>Search-0.004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:30:48 UTC">5 hours ago</span></td>
+          <td class="abstract">search comic transcriptions on http://ohnorobot.com</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:30:48 UTC" title="13 Jul 2026 16:30:48 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-Lipsum" class="ellipsis release-name" title="ZOFFIX/WWW-Lipsum-1.001015"><span style="max-width: calc(100% - 61.3667px);">WWW-Lipsum-</span><span>1.001015</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:30:37 UTC">5 hours ago</span></td>
+          <td class="abstract">perl interface to www.lipsum.com</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:30:37 UTC" title="13 Jul 2026 16:30:37 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/WWW-DoctypeGrabber" class="ellipsis release-name" title="ZOFFIX/WWW-DoctypeGrabber-0.008"><span style="max-width: calc(100% - 79.2833px);">WWW-DoctypeGra</span><span>bber-0.008</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:30:26 UTC">5 hours ago</span></td>
+          <td class="abstract">grab doctypes from webpages</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:30:26 UTC" title="13 Jul 2026 16:30:26 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-cpan maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/release/ZOFFIX/WWW-BashOrg-1.001004" class="ellipsis release-name" title="ZOFFIX/WWW-BashOrg-1.001004"><span style="max-width: calc(100% - 64.85px);">WWW-BashOrg-</span><span>1.001004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:30:14 UTC">5 hours ago</span></td>
+          <td class="abstract">simple module to obtain quotes from the bash.org archive at https://bash-org-archive.com/</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:30:14 UTC" title="13 Jul 2026 16:30:14 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-CPAN-SQLite-Info" class="ellipsis release-name" title="ZOFFIX/POE-Component-CPAN-SQLite-Info-0.12"><span style="max-width: calc(100% - 114.65px);">POE-Component-CPAN-</span><span>SQLite-Info-0.12</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:30:03 UTC">5 hours ago</span></td>
+          <td class="abstract">non-blocking wrapper around CPAN::SQLite::Info with file fetching abilities.</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:30:03 UTC" title="13 Jul 2026 16:30:03 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/POE-Component-Bundle-WebDevelopment" class="ellipsis release-name" title="ZOFFIX/POE-Component-Bundle-WebDevelopment-2.001002"><span style="max-width: calc(100% - 196.083px);">POE-Component-Bundle-</span><span>WebDevelopment-2.001002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:29:52 UTC">5 hours ago</span></td>
+          <td class="abstract">a collection of PoCos useful for Web Development</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:29:52 UTC" title="13 Jul 2026 16:29:52 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/LWP-UserAgent-ProxyHopper-Base" class="ellipsis release-name" title="ZOFFIX/LWP-UserAgent-ProxyHopper-Base-0.004"><span style="max-width: calc(100% - 177.717px);">LWP-UserAgent-</span><span>ProxyHopper-Base-0.004</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:29:41 UTC">5 hours ago</span></td>
+          <td class="abstract">base class for LWP::UserAgent based modules which want to proxy-hop their requests</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:29:41 UTC" title="13 Jul 2026 16:29:41 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 1 total dependent">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/HTML-ExtractText" class="ellipsis release-name" title="ZOFFIX/HTML-ExtractText-1.002005"><span style="max-width: calc(100% - 77.3667px);">HTML-ExtractTex</span><span>t-1.002005</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:29:30 UTC">5 hours ago</span></td>
+          <td class="abstract">extract multiple text strings from HTML content, using CSS selectors</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:29:30 UTC" title="13 Jul 2026 16:29:30 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 1 direct dependent
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/App-ColorNamer" class="ellipsis release-name" title="ZOFFIX/App-ColorNamer-1.001001"><span style="max-width: calc(100% - 74.6833px);">App-ColorName</span><span>r-1.001001</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:29:19 UTC">5 hours ago</span></td>
+          <td class="abstract">Hex to color name converter</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:29:19 UTC" title="13 Jul 2026 16:29:19 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Acme-Dump-And-Dumper" class="ellipsis release-name" title="ZOFFIX/Acme-Dump-And-Dumper-1.001006"><span style="max-width: calc(100% - 126.583px);">Acme-Dump-And-</span><span>Dumper-1.001006</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 16:29:07 UTC">5 hours ago</span></td>
+          <td class="abstract">dump data structures without seeing any object guts</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 16:29:07 UTC" title="13 Jul 2026 16:29:07 UTC">5 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/JSON-Structure" class="ellipsis release-name" title="CLEMENSV/JSON-Structure-0.8.0"><span style="max-width: calc(100% - 56.4px);">JSON-Structu</span><span>re-0.8.0</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 15:04:34 UTC">7 hours ago</span></td>
+          <td class="abstract">JSON Structure schema validation for Perl</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 15:04:34 UTC" title="13 Jul 2026 15:04:34 UTC">7 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-cpan maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/release/NHUBBARD/Net-Blossom-Server-Backend-SQLite-0.001001" class="ellipsis release-name" title="NHUBBARD/Net-Blossom-Server-Backend-SQLite-0.001001"><span style="max-width: calc(100% - 182px);">Net-Blossom-Server-</span><span>Backend-SQLite-0.001001</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 14:49:14 UTC">7 hours ago</span></td>
+          <td class="abstract">SQLite storage backend for Net::Blossom::Server</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 14:49:14 UTC" title="13 Jul 2026 14:49:14 UTC">7 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-cpan maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage zero
+No dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/release/NHUBBARD/Net-Blossom-Server-Backend-Postgres-0.001001" class="ellipsis release-name" title="NHUBBARD/Net-Blossom-Server-Backend-Postgres-0.001001"><span style="max-width: calc(100% - 196.767px);">Net-Blossom-Server-</span><span>Backend-Postgres-0.001001</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 14:49:03 UTC">7 hours ago</span></td>
+          <td class="abstract">Postgres storage backend for Net::Blossom::Server</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 14:49:03 UTC" title="13 Jul 2026 14:49:03 UTC">7 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-cpan maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 2 direct dependents
+• 2 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/release/NHUBBARD/Net-Blossom-Server-0.001001" class="ellipsis release-name" title="NHUBBARD/Net-Blossom-Server-0.001001"><span style="max-width: calc(100% - 115.817px);">Net-Blossom-</span><span>Server-0.001001</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 14:48:52 UTC">7 hours ago</span></td>
+          <td class="abstract">Server support for the Blossom protocol</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 14:48:52 UTC" title="13 Jul 2026 14:48:52 UTC">7 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage one
+• 3 direct dependents
+• 3 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/Net-Blossom" class="ellipsis release-name" title="NHUBBARD/Net-Blossom-0.001001"><span style="max-width: calc(100% - 64.9833px);">Net-Blossom-</span><span>0.001001</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 14:45:36 UTC">7 hours ago</span></td>
+          <td class="abstract">Perl client and protocol support for Blossom</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 14:45:36 UTC" title="13 Jul 2026 14:45:36 UTC">7 hours ago</td>
+        </tr>
+
+        <tr>
+          <td class="name dist-release status-latest maturity-released"><span class="release-river-gauge"><span class="river-gauge-gauge" title="River stage two
+• 16 direct dependents
+• 16 total dependents">
+<svg width="24px" height="15px" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+
+  <g>
+    <rect x="0" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="5" y="0" width="4" height="15" fill="#7ea3f2"></rect>
+    <rect x="10" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="15" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+    <rect x="20" y="0" width="4" height="15" fill="#e4e2e2"></rect>
+  </g>
+</svg>
+</span>
+</span><a href="https://metacpan.org/dist/DBIO" class="ellipsis release-name" title="GETTY/DBIO-0.900002"><span style="max-width: calc(100% - 68.55px);">DBIO-</span><span>0.900002</span></a><span class="release-date d-sm-none relatize" title="13 Jul 2026 12:29:35 UTC">9 hours ago</span></td>
+          <td class="abstract">Native relational mapping for Perl, built on DBI</td>
+          <td class="date relatize d-none d-sm-table-cell" sort="13 Jul 2026 12:29:35 UTC" title="13 Jul 2026 12:29:35 UTC">9 hours ago</td>
+        </tr>
+      </tbody>
+    </table>
+          </main>
+          <div class="content-pagination">
+<div class="text-center">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" aria-label="Previous page" aria-disabled="&quot;true&quot;" tabindex="&quot;-1&quot;" href="https://metacpan.org/recent?size=100"><span aria-hidden="true">«</span></a>
+    </li>
+
+    <li class="page-item active">
+      <a class="page-link" aria-current="&quot;page&quot;" href="https://metacpan.org/recent?p=1&amp;size=100">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=2&amp;size=100">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=3&amp;size=100">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=4&amp;size=100">4</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=5&amp;size=100">5</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=6&amp;size=100">6</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=7&amp;size=100">7</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=8&amp;size=100">8</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=9&amp;size=100">9</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="https://metacpan.org/recent?p=10&amp;size=100">10</a>
+    </li>
+
+    <li class="page-item">
+      <a class="page-link" aria-label="Next page" href="https://metacpan.org/recent?p=2&amp;size=100"><span aria-hidden="true">»</span></a>
+    </li>
+  </ul>
+</div>
+
+<div class="text-center">
+  <div class="smaller">
+    5,000
+    results
+     (0.015 seconds)
+  </div>
+</div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-social">
+              <div class="footer-link footer-logo">
+                <a href="https://metacpan.org/">
+                  <img src="metacpan.recent.2_files/metacpan-logo.svg" alt="MetaCPAN">
+                </a>
+              </div>
+              <a class="footer-social-link" href="https://github.com/metacpan" aria-label="MetaCPAN on GitHub">
+                <i class="fab fa-github-square" aria-hidden="true"></i>
+              </a>
+              <a class="footer-social-link" href="https://fosstodon.org/@metacpan" aria-label="MetaCPAN on Mastodon">
+                <i class="fab fa-mastodon" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="footer-links">
+              <div class="footer-link">
+                  <a href="https://metacpan.org/about">About</a>
+              </div>
+              <div class="footer-link">
+                  <a href="https://metacpan.org/about/sponsors">Sponsor</a>
+              </div>
+              <div class="footer-link">
+                  <a href="https://grep.metacpan.org/">grep::cpan</a>
+              </div>
+              <div class="footer-link">
+                  <a href="https://metacpan.org/recent">Recent</a>
+              </div>
+              <div class="footer-link">
+                  <a href="https://metacpan.org/about/faq">FAQ</a>
+              </div>
+              <div class="footer-link">
+                  <a href="https://metacpan.org/tools">Tools</a>
+              </div>
+              <div class="footer-link">
+                  <a href="https://api.metacpan.org/">API</a>
+              </div>
+              <div class="footer-link">
+                  <a href="https://www.perl.org/">Perl.org</a>
+              </div>
+            </div>
+            <div class="footer-sponsors">
+              <div class="footer-sponsor-row">
+                <!-- Keep until at least June 22, 2026 -->
+                <a class="footer-sponsor-link" target="_blank" href="https://www.bairesdev.com/sponsoring-open-source-projects/" rel="noopener" title="BairesDev">
+                  <img class="footer-sponsor-bairesdev" src="metacpan.recent.2_files/bairesdev.svg" alt="BairesDev" loading="lazy">
+                </a>
+                <a class="footer-sponsor-link" target="_blank" href="https://www.bytemark.co.uk/" rel="noopener" title="Bytemark">
+                  <img class="footer-sponsor-bytemark" src="metacpan.recent.2_files/bytemark_logo.svg" alt="Bytemark" loading="lazy">
+                </a>
+                <a class="footer-sponsor-link" target="_blank" href="https://www.datadoghq.com/" rel="noopener" title="Datadog">
+                  <img class="footer-sponsor-datadog" src="metacpan.recent.2_files/datadog.svg" alt="Datadog" loading="lazy">
+                </a>
+                <a class="footer-sponsor-link" target="_blank" href="https://deriv.com/careers/" rel="noopener" title="Deriv">
+                  <img class="footer-sponsor-deriv" src="metacpan.recent.2_files/deriv.svg" alt="Deriv" loading="lazy">
+                </a>
+                <a class="footer-sponsor-link" target="_blank" href="https://www.elastic.co/" rel="noopener" title="Elastic">
+                  <img class="footer-sponsor-elastic" src="metacpan.recent.2_files/elastic.svg" alt="Elastic" loading="lazy">
+                </a>
+              </div>
+              <div class="footer-sponsor-row">
+                <a class="footer-sponsor-link" target="_blank" href="https://www.fastly.com/" rel="noopener" title="Fastly">
+                  <img class="footer-sponsor-fastly" src="metacpan.recent.2_files/fastly_logo.svg" alt="Fastly" loading="lazy">
+                </a>
+                <a class="footer-sponsor-link" target="_blank" href="https://geocode.xyz/" rel="noopener" title="Geolytica">
+                  <img class="footer-sponsor-geocode" src="metacpan.recent.2_files/geocodelogo.svg" alt="Geolytica" loading="lazy">
+                </a>
+                <a class="footer-sponsor-link" target="_blank" href="https://www.iban.com/" rel="noopener" title="IBAN">
+                  <img class="footer-sponsor-iban" src="metacpan.recent.2_files/iban-logo.png" alt="IBAN" loading="lazy">
+                </a>
+                <a class="footer-sponsor-link" target="_blank" href="https://www.liquidweb.com/" rel="noopener" title="Liquid Web">
+                  <img class="footer-sponsor-liquidweb" src="metacpan.recent.2_files/liquidweb_logo.png" alt="Liquid Web" loading="lazy">
+                </a>
+                <a class="footer-sponsor-link" target="_blank" href="https://opencagedata.com/" rel="noopener" title="OpenCage">
+                  <img class="footer-sponsor-opencage" src="metacpan.recent.2_files/open-cage.svg" alt="OpenCage" loading="lazy">
+                </a>
+                <!-- Keep until at least March 1, 2027 -->
+                <a class="footer-sponsor-link" target="_blank" href="https://www.perlfoundation.org/" rel="noopener" title="The Perl and Raku Foundation">
+                  <img class="footer-sponsor-tprf" src="metacpan.recent.2_files/perl-onion.svg" alt="The Perl and Raku Foundation" loading="lazy">
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <div class="modal fade" tabindex="-1" id="metacpan_keyboard-shortcuts" aria-labelledby="keyboard-shortcuts-title">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="keyboard-shortcuts-title">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body row">
+<div class="col-md-6">
+  <table class="table keyboard-shortcuts">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Global</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="keys">
+          <kbd>s</kbd>
+        </td>
+        <td>Focus search bar</td>
+      </tr>
+      <tr>
+        <td class="keys">
+          <kbd>?</kbd>
+        </td>
+        <td>Bring up this help dialog</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table keyboard-shortcuts">
+    <thead>
+      <tr>
+        <th></th>
+        <th>GitHub</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>p</kbd>
+        </td>
+        <td>Go to pull requests</td>
+      </tr>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>i</kbd>
+        </td>
+        <td>Go to GitHub issues (only if GitHub is preferred repository)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-md-6">
+  <table class="table keyboard-shortcuts">
+    <thead>
+      <tr>
+        <th></th>
+        <th>POD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>a</kbd>
+        </td>
+        <td>Go to author</td>
+      </tr>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>c</kbd>
+        </td>
+        <td>Go to changes</td>
+      </tr>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>i</kbd>
+        </td>
+        <td>Go to issues</td>
+      </tr>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>d</kbd>
+        </td>
+        <td>Go to dist</td>
+      </tr>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>r</kbd>
+        </td>
+        <td>Go to repository/SCM</td>
+      </tr>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>s</kbd>
+        </td>
+        <td>Go to source</td>
+      </tr>
+      <tr>
+        <td class="keys">
+          <kbd>g</kbd> <kbd>b</kbd>
+        </td>
+        <td>Go to file browse</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div class="col-md-12">
+  <table class="table keyboard-shortcuts">
+    <thead>
+      <tr>
+        <th>Search terms</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>module:</em> (e.g. <a href="https://metacpan.org/search?q=module%3APlugin">module:Plugin</a>)</td>
+      </tr>
+      <tr>
+        <td><em>distribution:</em> (e.g. <a href="https://metacpan.org/search?q=distribution%3ADancer+auth">distribution:Dancer auth</a>)</td>
+      </tr>
+      <tr>
+        <td><em>author:</em> (e.g. <a href="https://metacpan.org/search?q=author%3ASONGMU+Redis">author:SONGMU Redis</a>)</td>
+      </tr>
+      <tr>
+        <td><em>version:</em> (e.g. <a href="https://metacpan.org/search?q=version%3A1.00">version:1.00</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    
+
+<div class="autocomplete-suggestions" style="position: absolute; display: none; width: 446px; max-height: 180px; z-index: 9999;"></div></body></html>
