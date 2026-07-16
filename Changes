@@ -1,7 +1,10 @@
 Revision history for perl module CPAN::MetaCurator
 
 1.27  2026-07-14
-	- Add scripts/parse.metacpan.recent.pl & its output data/names.csv.
+	- Add scripts/parse.metacpan.recent.pl & some input in html/*.html, saved from MetaCPAN Recent.
+	- Use the following to generate a new LICENSE file
+	- software-license --type license --holder "Ron Savage" --license Perl_5 --year 2026 > LICENSE
+	- Replace Moo with Mew.
 
 1.26  2026-07-07
 	- Start walking the tree. Node ids will be used to generate forward & backward references

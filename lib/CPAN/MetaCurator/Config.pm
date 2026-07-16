@@ -8,20 +8,12 @@ use Config::Tiny;
 
 use File::Spec;
 
+use Mew;
 use Mojo::Log;
-use Moo;
-
-use Types::Standard qw/ArrayRef HashRef Object Str/;
 
 use utf8;
 
-has config =>
-(
-	default		=> sub{return {} },
-	is			=> 'rw',
-	isa			=> HashRef,
-	required	=> 1,
-);
+has config => (HashRef, default => sub{return {} });
 
 has config_path =>
 (

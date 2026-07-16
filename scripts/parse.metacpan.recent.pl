@@ -27,7 +27,7 @@ sub process
 
 	open(my $fh_out, ">:encoding(UTF_8)", $$option{output_file});
 
-	my($column_names)	= ['Module', 'Description'];
+	my($column_names)	= ['Module', 'New', 'Description'];
 	my($status)			= $csv -> say($fh_out, $column_names);
 
 	if (! $status)
@@ -39,6 +39,7 @@ sub process
 	my(@fields);
 	my($line);
 	my($module);
+	my($new);
 	my($target);
 
 	for my $line_number (0 .. $#lines)
