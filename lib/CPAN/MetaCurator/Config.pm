@@ -57,7 +57,7 @@ sub init_config
 	my($path)				= File::Spec -> catfile($self -> home_path, $self -> config_path);
 	my($config)				= $self -> config($self -> _init_config($path) );
 	$$config{config_path}	= $path;
-	$$config{log_path}		= File::Spec -> catfile($self -> home_path, $$config{log_path});
+	$$config{log_path}		= File::Spec -> catfile($home_path, $$config{log_path});
 
 	$self -> config($config);
 	$self -> logger(Mojo::Log -> new(level => $self -> log_level, path => $$config{log_path}) );
