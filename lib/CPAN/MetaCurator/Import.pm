@@ -186,7 +186,7 @@ sub populate_topics_table
 	}
 
 	$$pad{$table_name}	= $self -> read_table($table_name);
-	my($record_count)	= $#{$$pad{$table_name} };
+	my($record_count)	= $#{$$pad{$table_name} } + 1;
 
 	$self -> logger -> info("Populated '$table_name'. Record count: $record_count");
 
