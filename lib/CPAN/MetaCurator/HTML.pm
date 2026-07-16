@@ -3,14 +3,16 @@ package CPAN::MetaCurator::HTML;
 use boolean;
 use feature 'say';
 use parent 'CPAN::MetaCurator::Database';
-use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 use DateTime::Tiny;
 
 use File::Slurper qw/read_dir read_text/;
 use File::Spec;
 
-use Moo;
+use Mew;
+
+has logo_path => (Str, default => '', chained => 1);
+
 
 our $VERSION = '1.27';
 

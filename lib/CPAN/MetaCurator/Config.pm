@@ -2,7 +2,6 @@ package CPAN::MetaCurator::Config;
 
 use boolean;
 use feature 'say';
-use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 use Config::Tiny;
 
@@ -13,85 +12,29 @@ use Mojo::Log;
 
 use utf8;
 
-has config => (HashRef, default => sub{return {} }, chained => 1);
+has config => (HashRef, default => {}, chained => 1);
 
-has - config_path => (Str, default => sub{return 'data/cpan.metacurator.conf'}, chained => 1);
+has -config_path => (Str, default => 'data/cpan.metacurator.conf', chained => 1);
 
-has database_path =>
-(
-	default		=> sub{return 'data/cpan.metacurator.sqlite'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has database_path => (Str, default => 'data/cpan.metacurator.sqlite', chained => 1);
 
-has error =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has -error => (Str, default => '', chained => 1);
 
-has - home_path => (Str, default => '');
+has -home_path => (Str, default => '', chained => 1);
 
 # Available log levels are trace, debug, info, warn, error and fatal, in that order.
 
-has log_level =>
-(
-	default		=> sub{return 'info'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has -log_level => (Str, default => 'info', chained => 1);
 
-has logger =>
-(
-	is			=> 'rw',
-	isa			=> Object,
-	required	=> 0,
-);
+has -logger => (Object, chained => 1);
 
-has logo_path =>
-(
-	default		=> '',
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 1,
-);
+has metapackager_config => (HashRef, default => {}, chained => 1);
 
-has metapackager_config =>
-(
-	default		=> sub{return {} },
-	is			=> 'rw',
-	isa			=> HashRef,
-	required	=> 1,
-);
+has -metapackager_config_path => (Str, default => 'data/cpan.metapackager.conf', chained => 1);
 
-has metapackager_config_path =>
-(
-	default		=> sub{return 'data/cpan.metapackager.conf'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has -metapackager_database_path => (Str, default => '/tmp/cpan.metapackager.sqlite', chained => 1);
 
-
-has metapackager_database_path =>
-(
-	default		=> sub{return '/tmp/cpan.metapackager.sqlite'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
-has node_types =>
-(
-	default		=> sub{return [qw/acronym known leaf see_also topic unknown/]},
-	is			=> 'rw',
-	isa			=> ArrayRef,
-	required	=> 0,
-);
+has -node_types => (ArrayRef, default => [qw/acronym known leaf see_also topic unknown/]}, chained => 1);
 
 # Warning. Order is important because of foreign key constraints.
 # The tables are created in this order, and dropped in reverse order.
