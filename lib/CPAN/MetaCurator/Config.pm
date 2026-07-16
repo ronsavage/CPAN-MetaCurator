@@ -60,8 +60,8 @@ sub init_config
 	my($conf)			= $self -> config($self -> _init_config($path) );
 	$$conf{config_path}	= $path;
 	say "home_path: " . $self -> home_path;
-	say "log_path:  ", $$conf{log_path};
 	$$conf{log_path}	= File::Spec -> catfile($self -> home_path, $$conf{log_path});
+	say "log_path:  ", $$conf{log_path};
 
 	$self -> config($conf);
 	$self -> logger(Mojo::Log -> new(level => $self -> log_level, path => $$conf{log_path}) );
@@ -82,7 +82,7 @@ sub _init_config
 
 	# Section: [global].
 
-	my($config) = Config::Tiny -> read($path);
+	my($conf) = Config::Tiny -> read($path);
 
 	die 'Error: ' . Config::Tiny -> errstr . "\n" if (Config::Tiny -> errstr);
 
@@ -92,12 +92,12 @@ sub _init_config
 
 	for my $i (1 .. 2)
 	{
-		$section = $i == 1 ? 'global' : $$config{$section}{host};
+		$section = $i == 1 ? 'global' : $$conf{$section}{host};
 
-		$self -> error("Error: Config file '$path' does not contain the section [$section]") if (! $$config{$section});
+		$self -> error("Error: Config file '$path' does not contain the section [$section]") if (! $$conf{$section});
 	}
 
-	return $$config{$section};
+	return $$conf{$section};
 
 }	# End of _init_config.
 
@@ -109,11 +109,11 @@ sub init_metapackager_config
 
 	$self -> logger -> debug("Entered Config.init_metapackager_config()");
 
-	my($path)				= File::Spec -> catfile($self -> home_path, $self -> metapackager_config_path);
-	my($config)				= $self -> config($self -> _init_config($path) );
-	$$config{config_path}	= $path;
+	my($path)			= File::Spec -> catfile($self -> home_path, $self -> metapackager_config_path);
+	my($conf)			= $self -> config($self -> _init_config($path) );
+	$$conf{config_path}	= $path;
 
-	$self -> metapackager_config($config);
+	$self -> metapackager_config($conf);
 	$self -> logger -> debug("Leaving Config.init_metapackager_config()");
 
 } # End of init_metapackager_config.
