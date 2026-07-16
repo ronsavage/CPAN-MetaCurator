@@ -62,7 +62,7 @@ sub init_config
 	$$conf{config_path}	= $path;
 	say "config_path: " . $$conf{config_path};
 	say "home_path:   " . $self -> home_path;
-	say "log_path:    ", $$conf{log_path};
+	say "log_path:    " . $$conf{log_path};
 	$$conf{log_path}	= File::Spec -> catfile($self -> home_path, $$conf{log_path});
 
 	$self -> config($conf);
