@@ -34,7 +34,7 @@ has -metapackager_config_path => (Str, default => 'data/cpan.metapackager.conf',
 
 has -metapackager_database_path => (Str, default => '/tmp/cpan.metapackager.sqlite', chained => 1);
 
-has -node_types => (ArrayRef, default => [qw/acronym known leaf see_also topic unknown/]);
+has -node_types => (ArrayRef, default => sub {return [qw/acronym known leaf see_also topic unknown/]});
 
 # Warning. Order is important because of foreign key constraints.
 # The tables are created in this order, and dropped in reverse order.
