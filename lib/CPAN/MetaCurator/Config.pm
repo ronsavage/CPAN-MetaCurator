@@ -59,11 +59,7 @@ sub init_config
 	my($path)			= File::Spec -> catfile($self -> home_path, $self -> config_path);
 	my($conf)			= Config::Tiny -> read($path);
 	$conf				= $conf -> {_};
-	say "conf: \n" . Dumper($conf);
 	$$conf{config_path}	= $path;
-	say "config_path: " . $$conf{config_path};
-	say "home_path:   " . $self -> home_path;
-	say "log_path:    " . $$conf{log_path};
 	$$conf{log_path}	= File::Spec -> catfile($self -> home_path, $$conf{log_path});
 
 	$self -> config($conf);
