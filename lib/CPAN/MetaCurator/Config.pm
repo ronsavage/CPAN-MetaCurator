@@ -34,36 +34,18 @@ has -metapackager_config_path => (Str, default => 'data/cpan.metapackager.conf',
 
 has -metapackager_database_path => (Str, default => '/tmp/cpan.metapackager.sqlite', chained => 1);
 
-has -node_types => (ArrayRef, default => [qw/acronym known leaf see_also topic unknown/], chained => 1);
+has -node_types => (ArrayRef, default => [qw/acronym known leaf see_also topic unknown/]);
 
 # Warning. Order is important because of foreign key constraints.
 # The tables are created in this order, and dropped in reverse order.
 # Lastly, we process the topics table to extract the module names.
 # See also Database.build_pad().
 
-has table_names =>
-(
-	default		=> sub{return [qw/constants log modules topics/]},
-	is			=> 'rw',
-	isa			=> ArrayRef,
-	required	=> 0,
-);
+has -table_names => (ArrayRef, default => sub{return [qw/constants log modules topics/]});
 
-has tiddlers_path =>
-(
-	default		=> sub{return 'data/tiddlers.json'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has -tiddlers_path => (Str, default => 'data/tiddlers.json');
 
-has visual_break =>
-(
-	default		=> sub{return '-' x 50},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has -visual_break => (Str, default => sub{return '-' x 50});
 
 our $VERSION = '1.27';
 
