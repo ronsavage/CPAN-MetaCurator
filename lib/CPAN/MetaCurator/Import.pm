@@ -179,7 +179,7 @@ sub populate_topics_table
 
 		$self -> logger -> debug("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<=") if (! ($temp_text && $temp_title) );
 		$self -> logger -> info("populate_topics_table(). Missing title @ line: $index. name: $title"),	next if (! defined $title);
-		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. text: $text"),	next if ($text !~ m/^\"\"\"\no (.+)$/s);
+		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. title: $title. text: $text"),	next if ($text !~ m/^\"\"\"\no (.+)$/s);
 
 		$$record{parent_id}	= $root_id;
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
