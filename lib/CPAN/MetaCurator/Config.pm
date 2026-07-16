@@ -12,7 +12,7 @@ use Mojo::Log;
 
 use utf8;
 
-has config => (HashRef, default => {}, chained => 1);
+has config => (HashRef, default => sub {return {} }, chained => 1);
 
 has -config_path => (Str, default => 'data/cpan.metacurator.conf', chained => 1);
 
@@ -28,7 +28,7 @@ has -log_level => (Str, default => 'info', chained => 1);
 
 has -logger => (Object, chained => 1);
 
-has metapackager_config => (HashRef, default => {}, chained => 1);
+has metapackager_config => (HashRef, default => sub {return {} }, chained => 1);
 
 has -metapackager_config_path => (Str, default => 'data/cpan.metapackager.conf', chained => 1);
 
