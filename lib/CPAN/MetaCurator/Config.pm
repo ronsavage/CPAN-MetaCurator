@@ -55,12 +55,12 @@ our $VERSION = '1.27';
 
 sub init_config
 {
-	my($self)				= @_;
-	my($path)				= File::Spec -> catfile($self -> home_path, $self -> config_path);
-	say "path: $path";
-	my($conf)				= $self -> config($self -> _init_config($path) );
-	say "conf: ", Dumper($conf);
+	my($self)			= @_;
+	my($path)			= File::Spec -> catfile($self -> home_path, $self -> config_path);
+	my($conf)			= $self -> config($self -> _init_config($path) );
 	$$conf{config_path}	= $path;
+	say "home_path: " . $self -> home_path;
+	say "log_path:  ", $$conf{log_path};
 	$$conf{log_path}	= File::Spec -> catfile($self -> home_path, $$conf{log_path});
 
 	$self -> config($conf);
