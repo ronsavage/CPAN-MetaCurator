@@ -57,7 +57,7 @@ sub init_config
 {
 	my($self)			= @_;
 	my($path)			= File::Spec -> catfile($self -> home_path, $self -> config_path);
-	my($conf)			= $self -> config($self -> _init_config($path) );
+	my($conf)			= $self -> config(Config::Tiny -> read($path) );
 	$$conf{config_path}	= $path;
 	say "config_path: " . $$conf{config_path};
 	say "home_path:   " . $self -> home_path;
@@ -74,33 +74,6 @@ sub init_config
 	$self -> logger -> debug("Leaving Config.init_config()");
 
 } # End of init_config.
-
-# -----------------------------------------------
-
-sub _init_config
-{
-	my($self, $path) = @_;
-
-	# Section: [global].
-
-	my($conf) = Config::Tiny -> read($path);
-
-	die 'Error: ' . Config::Tiny -> errstr . "\n" if (Config::Tiny -> errstr);
-
-	# Sections: [localhost] and [webhost].
-
-	my($section);
-
-	for my $i (1 .. 2)
-	{
-		$section = $i == 1 ? 'global' : $$conf{$section}{host};
-
-		$self -> error("Error: Config file '$path' does not contain the section [$section]") if (! $$conf{$section});
-	}
-
-	return $$conf{$section};
-
-}	# End of _init_config.
 
 # -----------------------------------------------
 
