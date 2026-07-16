@@ -22,7 +22,7 @@ has database_path => (Str, default => 'data/cpan.metacurator.sqlite', chained =>
 
 has -error => (Str, default => '', chained => 1);
 
-has -home_path => (Str, default => '', chained => 1);
+has home_path => (Str, default => '', chained => 1);
 
 # Available log levels are trace, debug, info, warn, error and fatal, in that order.
 
