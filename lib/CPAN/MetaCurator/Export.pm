@@ -16,8 +16,8 @@ use HTML::Escape 'escape_html';
 
 use Moo;
 
-use Switch::Declare;
-use Syntax::Keyword::Match;
+use Switch::Declare;		# For switch.
+use Syntax::Keyword::Match;	# For match.
 
 use Tree::DAG_Node;
 

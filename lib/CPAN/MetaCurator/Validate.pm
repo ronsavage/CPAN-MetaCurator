@@ -12,7 +12,7 @@ use DateTime::Tiny;
 use File::Slurper 'read_lines';
 use File::Spec;
 
-use Syntax::Keyword::Match;
+use Syntax::Keyword::Match; # For match.
 
 use Types::Standard 'Enum';
 
