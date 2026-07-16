@@ -5,6 +5,8 @@ use feature 'say';
 
 use Config::Tiny;
 
+use Data::Dumper::Concise; # For Dumper().
+
 use File::Spec;
 
 use Mew;
