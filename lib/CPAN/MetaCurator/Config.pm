@@ -15,13 +15,7 @@ use utf8;
 
 has config => (HashRef, default => sub{return {} }, chained => 1);
 
-has config_path =>
-(
-	default		=> sub{return 'data/cpan.metacurator.conf'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has - config_path => (Str, default => sub{return 'data/cpan.metacurator.conf'}, chained => 1);
 
 has database_path =>
 (
@@ -39,13 +33,7 @@ has error =>
 	required	=> 0,
 );
 
-has home_path =>
-(
-	default		=> '',
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has - home_path => (Str, default => '');
 
 # Available log levels are trace, debug, info, warn, error and fatal, in that order.
 
