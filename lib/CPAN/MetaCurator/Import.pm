@@ -175,7 +175,7 @@ sub populate_topics_table
 		$temp_text	= $text		|| '';
 		$temp_title	= $title	|| '';
 
-		say "populate_topics_table(). Missing title @ line: $index. name: $title",	next if (! defined $title);
+		say "populate_topics_table(). Missing text @ line: $index. text: $text" if ($text !~ m/^\"\"\"\no (.+)$/s);
 
 		$self -> logger -> debug("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<=") if (! ($temp_text && $temp_title) );
 		$self -> logger -> info("populate_topics_table(). Missing title @ line: $index. name: $title"),	next if (! defined $title);
