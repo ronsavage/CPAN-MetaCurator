@@ -15,7 +15,7 @@ use Getopt::Long;
 
 use Pod::Usage; # For pod2usage().
 
-use Text::CSV;
+use Text::CSV::Encoded;
 
 # ----------------------------------------------
 
