@@ -13,7 +13,7 @@ use Mojo::Log;
 
 use utf8;
 
-has config => (HashRef, default => sub{return {} });
+has config => (HashRef, default => sub{return {} }, chained => 1);
 
 has config_path =>
 (
