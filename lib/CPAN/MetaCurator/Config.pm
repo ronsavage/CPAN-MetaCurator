@@ -67,7 +67,6 @@ sub init_config
 
 	# Fix me. Test UTF8 char handling.
 
-	$self -> logger -> debug("Entered Config.init_config()");
 	$self -> logger -> info("Testing write of utf8 chars to logger. I ♥ Mojolicious");
 	$self -> logger -> debug("Leaving Config.init_config()");
 
@@ -77,12 +76,10 @@ sub init_config
 
 sub init_metapackager_config
 {
-	my($self) = @_;
-
-	$self -> logger -> debug("Entered Config.init_metapackager_config()");
-
+	my($self)			= @_;
 	my($path)			= File::Spec -> catfile($self -> home_path, $self -> metapackager_config_path);
-	my($conf)			= $self -> config($self -> _init_config($path) );
+	my($conf)			= Config::Tiny -> read($path);
+	$conf				= $conf -> {_};
 	$$conf{config_path}	= $path;
 
 	$self -> metapackager_config($conf);
