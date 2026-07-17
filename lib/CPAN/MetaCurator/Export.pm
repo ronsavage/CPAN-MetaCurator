@@ -165,8 +165,6 @@ sub export_tree
 			{
 				$id		= $$attributes{id};
 				$topic	= $1 if ($name =~ />(.+)</);
-
-				say "$topic => $id";
 			}
 		} # End of callbackback.
 	});
