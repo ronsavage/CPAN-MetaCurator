@@ -9,7 +9,8 @@ use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 use Data::Dumper::Concise; # For Dumper().
 use DateTime::Tiny;
 
-use File::Slurper 'read_lines';
+use File::Slurper qw/read_lines write_text/;
+
 use File::Spec;
 
 use HTML::Escape 'escape_html';
@@ -125,6 +126,10 @@ sub export_tree
 
 		$self -> logger -> info($self -> visual_break);
 	}
+
+	my($output_file_name) = File::Spec -> catfile('/tmp', "final.tree.txt");
+
+	write_text($output_file_name, join("\n", @{$root -> tree2string}) . "\n");
 
 	push @list, '</ul>', '</li>', '</ul>';
 
