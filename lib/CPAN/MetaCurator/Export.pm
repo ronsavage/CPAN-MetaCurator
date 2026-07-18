@@ -47,7 +47,7 @@ sub build_nodes
 	my($index)	= -1;
 
 	my(@components);
-	my(%inside);
+	my(%inside, $item);
 	my($leaf, $line, $line_count);
 	my($module);
 	my(%node_type);
@@ -62,6 +62,7 @@ sub build_nodes
 	{
 		$index++;
 
+		$item	= {href => '', id => ++$leaf_id, text => ''};
 		$line	= $lines[$index];
 		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
