@@ -257,7 +257,7 @@ sub export_tree
 		$self -> logger -> info($self -> visual_break);
 	}
 
-	my($output_file_name) = File::Spec -> catfile('/tmp', "tree.before.txt");
+	my($output_file_name) = File::Spec -> catfile('/tmp', "tree.after.txt");
 
 	write_text($output_file_name, join("\n", @{$root -> tree2string}) . "\n");
 
