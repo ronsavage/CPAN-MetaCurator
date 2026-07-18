@@ -37,6 +37,128 @@ our %seen;
 
 our $VERSION = '1.27';
 
+# --------------------------------------------------
+
+sub build_nodes
+{
+	my($self, $daughter, $pad, $topic) = @_;
+	my(@lines)	= split(/\n/, $$topic{text});
+	@lines		= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
+	my($index)	= -1;
+
+	my(@components);
+	my(%inside);
+	my($leaf, $line, $line_count);
+	my($module);
+	my(%node_type);
+	my(@pre_pre);
+	my($see_also_root);
+	my($text, $token, $type);
+
+	$inside{pre_pre}	= false;
+	$inside{see_also}	= false;
+
+	while ($index < $#lines)
+	{
+		$index++;
+
+		$line	= $lines[$index];
+		$token	= ($line =~ /^o (.+)/) ? $1 : '';
+
+		$self -> logger -> debug("Processing line $index: <$line>. token: $token");
+
+		# $token ne '':
+		# a. See also
+		# b. An acronym
+		# Otherwise:
+		# c. A description
+		# d. A href
+		# e. <pre>
+		# f. </pre>
+
+		if ($token eq 'See also')
+		{
+			$inside{see_also}	= true;
+			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
+
+			$daughter -> add_daughter($see_also_root);
+		}
+		elsif ($token)
+		{
+			$inside{see_also}	= false;
+			$line_count			= 0;
+			$module				= $token;
+
+			# Fix me. Should be checking known modules.
+
+#			if ($$pad{module_names}{$token} && ! $seen{$module})
+			if (! $seen{$module})
+			{
+				$seen{$module} = $self -> insert_hashref('modules', {name => $module});
+
+				$self -> gather_statistics(\%node_type, $pad, $module, $topic);
+			}
+		}
+		elsif ($line =~ /<pre>/)
+		{
+			# Fix me. What happens if there are 2 sets of <pre>...</pre> within 1 topic?
+
+			$inside{pre_pre} = true;
+		}
+		elsif ($line =~ m|</pre>|)
+		{
+			$inside{pre_pre} = false;
+		}
+		elsif ($inside{pre_pre})
+		{
+		}
+		else
+		{
+			$line_count++;
+
+			$token = ($line =~ /^- (.+)/) ? $1 : '';
+
+			if ($inside{see_also})
+			{
+				# Fix me. References to topics can be forward references.
+
+				@components	= split(' - ', $token);
+				$text		= ($#components < 1) ? $components[0] : $components[1];
+				$type		= switch ($components[0])
+				{
+					case /^\[?\[?[A-Za-z]+\d?\d?\]?\]?$/	{'topic'}
+					case /^http/							{'uri'}
+					default									{'text'}
+				};
+
+				match ($type : eq)
+				{
+					case('topic')	{
+										$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0];
+										$$item{text} = "[Topic] <button class='btn btn-info'>$$item{text}</button>"
+									}
+					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
+					case('text')	{$$item{text} = $token}
+				}
+
+				$leaf = Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id} });
+
+				$see_also_root -> add_daughter($leaf);
+			}
+			elsif ($line_count == 1)
+			{
+			}
+			elsif ($line_count == 2)
+			{
+				$leaf = Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id} });
+
+				$daughter -> add_daughter($leaf);
+			}
+		}
+	}
+
+} # End of build_nodes.
+
 # -----------------------------------------------
 
 sub export_tree
@@ -62,7 +184,7 @@ sub export_tree
 
 	my(%wanted);
 
-	# Read data/testing.topics.txt for topic names to process. This just limits the output.
+	# Read /tmp/test.topics.txt for topic names to process. This just limits the output.
 	# See also data/special.topic.txt.
 
 	if (-e $self -> test_topics_path)
@@ -81,6 +203,18 @@ sub export_tree
 	}
 
 	my($daughter);
+
+	for my $topic (@{$$pad{topics} })
+	{
+		next if (! $wanted{$$topic{title} });
+
+		$daughter = Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id} });
+
+		$root -> add_daughter($daughter);
+
+		$self -> build_nodes($daughter, $pad, $topic);
+	}
+
 	my($item, $items_ref);
 	my($see_also_ref);
 
@@ -90,11 +224,7 @@ sub export_tree
 
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_names}{$$topic{title}}. title: $$topic{title}");
 
-		$daughter = Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id} });
-
-		$root -> add_daughter($daughter);
-
-		($items_ref, $see_also_ref) = $self -> parse_topic($daughter, $pad, $topic);
+		($items_ref, $see_also_ref) = $self -> parse_topic($pad, $topic);
 
 		$self -> logger -> info("parse_topic() returned: $#$items_ref, $#$see_also_ref");
 
@@ -127,7 +257,7 @@ sub export_tree
 		$self -> logger -> info($self -> visual_break);
 	}
 
-	my($output_file_name) = File::Spec -> catfile('/tmp', "final.tree.txt");
+	my($output_file_name) = File::Spec -> catfile('/tmp', "tree.before.txt");
 
 	write_text($output_file_name, join("\n", @{$root -> tree2string}) . "\n");
 
@@ -232,7 +362,7 @@ sub gather_statistics
 
 sub parse_topic
 {
-	my($self, $daughter, $pad, $topic) = @_;
+	my($self, $pad, $topic) = @_;
 	my(@lines)	= split(/\n/, $$topic{text});
 	@lines		= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
 	my($index)	= -1;
@@ -243,12 +373,12 @@ sub parse_topic
 	my($description);
 	my(@extras);
 	my($href);
-	my(%inside, $is_topic, $item, @items);
+	my(%inside, $item, @items);
 	my($line, $line_count);
 	my($module, $module_leaf);
 	my(%node_type);
 	my(@pre_pre);
-	my($see_also_root, $see_also_1, @see_also);
+	my(@see_also);
 	my($text, $token, $type);
 
 	$inside{pre_pre}	= false;
@@ -279,10 +409,6 @@ sub parse_topic
 			$$item{text}		= 'See also';
 
 			push @items, $item;
-
-			$see_also_root = Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
-
-			$daughter -> add_daughter($see_also_root);
 		}
 		elsif ($token)
 		{
@@ -349,10 +475,6 @@ sub parse_topic
 				}
 
 				push@see_also, $item;
-
-				$see_also_1	= Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id} });
-
-				$see_also_root -> add_daughter($see_also_1);
 			}
 			elsif ($line_count == 1)
 			{
@@ -365,10 +487,6 @@ sub parse_topic
 				$$item{text}	= '';
 
 				push @items, $item;
-
-				$module_leaf = Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id} });
-
-				$daughter -> add_daughter($module_leaf);
 			}
 			else
 			{
