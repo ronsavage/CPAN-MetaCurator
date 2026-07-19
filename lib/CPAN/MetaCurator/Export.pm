@@ -90,9 +90,6 @@ sub build_nodes
 			$line_count			= 0;
 			$module				= $token;
 
-			# Fix me. Should be checking known modules.
-
-#			if ($$pad{module_names}{$token} && ! $seen{$module})
 			if (! $seen{$module})
 			{
 				$seen{$module} = $self -> insert_hashref('modules', {name => $module});
@@ -203,6 +200,8 @@ sub export_tree
 		$wanted{$$_{title} } = true for (@{$$pad{topics} });
 	}
 
+	# Phase 1: Build the DAG_Node tree.
+
 	my($daughter);
 
 	for my $topic (@{$$pad{topics} })
@@ -215,6 +214,8 @@ sub export_tree
 
 		$self -> build_nodes($daughter, $pad, $topic);
 	}
+
+	# Phase 2; Build the JS Tree.
 
 	my($item, $items_ref);
 	my($see_also_ref);
@@ -258,11 +259,9 @@ sub export_tree
 		$self -> logger -> info($self -> visual_break);
 	}
 
-	my($output_file_name) = File::Spec -> catfile('/tmp', "tree.after.txt");
-
-	write_text($output_file_name, join("\n", @{$root -> tree2string}) . "\n");
-
 	push @list, '</ul>', '</li>', '</ul>';
+
+	# Phase 3: Build the web page.
 
 	my($list)	= join("\n", @list);
 	$body		=~ s/!list!/$list/;
@@ -272,17 +271,19 @@ sub export_tree
 		$header =~ s/!$_!/$$pad{count}{$_}/;
 	}
 
+	# Save it to html/cpan.metacurator.tree.html
+
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
 
-	# This works. It's very plain.
-	#say $root -> name;
-	#say map{"\t" . $_ -> name . "\n"} $root -> daughters;
-	#
-	# This works. It's nicer.
-	#say map("$_\n", @{$root->tree2string});
+	# Phase 4: Save the tree to disk.
 
-	# Scan the tree looking for topics. We stockpile each along with its id.
+#	my($output_file_name) = File::Spec -> catfile('/tmp', "tree.after.txt");
+#
+#	write_text($output_file_name, join("\n", @{$root -> tree2string}) . "\n");
+
+	# Phase 5: Scan the tree for various reasons.
+	# Phase 5.1: Look for topics. We stockpile each along with its id.
 
 	my($attributes);
 	my($id);
@@ -297,12 +298,15 @@ sub export_tree
 			$attributes			= $node -> attributes;
 			$name       		= $node -> name;
 
-			if ($name =~ /^\[Topic/)
+			say $name if ($$options{_depth} == 1);
+
+			if ($name =~ /^\[Topic\]/)
 			{
 				$id		= $$attributes{id};
 				$topic	= $1 if ($name =~ />(.+)</);
 			}
-		} # End of callbackback.
+		}, # End of callbackback.
+		_depth => 0,
 	});
 
 	return 0;
@@ -349,13 +353,7 @@ sub gather_statistics
 
 	$$pad{count}{acronym}++	if ($$node_type{acronym});
 	$$pad{count}{known}++	if ($$node_type{known});
-
-	if ($$node_type{unknown} && ($token ne 'See also') )
-	{
-		$$pad{count}{unknown}++;
-
-		$self -> logger -> debug("Unknown: $token");
-	}
+	$$pad{count}{unknown}++	if ($$node_type{unknown} && ($token ne 'See also') );
 
 } # End of gather_statistics;
 
@@ -418,15 +416,11 @@ sub parse_topic
 			$line_count			= 0;
 			$module				= $token;
 
-			# Fix me. Should be checking known modules.
-
-#			if ($$pad{module_names}{$token} && ! $seen{$token})
 			if (! $seen{$module})
 			{
 				$seen{$module} = $self -> insert_hashref('modules', {name => $module});
 
 				$self -> gather_statistics(\%node_type, $pad, $module, $topic);
-#				$self -> logger -> debug("Topic: $$topic{title}. Module: $token");
 			}
 		}
 		elsif ($line =~ /<pre>/)
@@ -507,7 +501,7 @@ sub write_file
 	my($self, $header, $body, $footer, $pad) = @_;
 	my($output_path) = File::Spec -> catfile($self -> home_path, $self -> output_path);
 
-	# $$pad{encoding} has a : prefix, & the value is from the constants table, which is from
+	# $$pad{encoding} has a ':' prefix, & the value is from the constants table, which is from
 	# /home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.constants.csv.
 
 	open(my $fh, ">$$pad{encoding}", $output_path);
