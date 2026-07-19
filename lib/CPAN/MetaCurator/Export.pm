@@ -62,7 +62,7 @@ sub build_nodes
 	{
 		$index++;
 
-		$item	= {href => '', id => ++$leaf_id, text => ''};
+		$item	= {href => '', id => 0, text => ''};
 		$line	= $lines[$index];
 		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
