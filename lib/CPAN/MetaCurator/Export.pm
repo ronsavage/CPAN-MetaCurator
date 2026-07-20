@@ -506,16 +506,16 @@ sub parse_topic
 sub write_file
 {
 	my($self, $header, $body, $footer, $pad) = @_;
-	my($output_path) = File::Spec -> catfile($self -> home_path, $self -> output_path);
+	my($output_path) = File::Spec -> catfile($self -> home_path, $self -> jstree_html_path);
 
 	# $$pad{encoding} has a ':' prefix, & the value is from the constants table, which is from
 	# /home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.constants.csv.
 
-	open(my $fh, ">$$pad{encoding}", $output_path);
+	open(my $fh, ">$$pad{encoding}", $jstree_html_path);
 	print $fh $header, $body, $footer;
 	close $fh;
 
-	$self -> logger -> info("Created $output_path. Encoding: $$pad{encoding}");
+	$self -> logger -> info("Created $jstree_html_path. Encoding: $$pad{encoding}");
 
 } # End of write_file.
 
