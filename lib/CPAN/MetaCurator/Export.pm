@@ -254,7 +254,7 @@ sub export_tree
 			$attributes			= $node -> attributes;
 			$name       		= $node -> name;
 
-			if ($$options{_depth} == 1); # Topics.
+			if ($$options{_depth} == 1) # Topics.
 			{
 				$topic_id_map{$name} = $$attributes{id};
 
