@@ -47,82 +47,82 @@ has db =>
 
 has dbh =>
 (
-       default         => sub{return ''},
-       is                      => 'rw',
-       isa                     => Any,
-       required        => 0,
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Any,
+	required	=> 0,
 );
 
 has engine =>
 (
-       default         => sub{return ''},
-       is                      => 'rw',
-       isa                     => Str,
-       required        => 0,
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
 );
 
 has include_packages =>
 (
-       default         => sub{return 0},
-       is                      => 'rw',
-       isa                     => Bool,
-       required        => 0,
+	default		=> sub{return 0},
+	is			=> 'rw',
+	isa			=> Bool,
+	required	=> 0,
 );
 
 has input_path =>
 (
-       default         => sub{return ''},
-       is                      => 'rw',
-       isa                     => Str,
-       required        => 1,
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 1,
 );
 
 has metapackager_db =>
 (
-       default         => sub{return ''},
-       is                      => 'rw',
-       isa                     => Any,
-       required        => 0,
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Any,
+	required	=> 0,
 );
 
 has metapackager_dbh =>
 (
-       default         => sub{return ''},
-       is                      => 'rw',
-       isa                     => Any,
-       required        => 0,
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Any,
+	required	=> 0,
 );
 
 has output_path =>
 (
-       default         => sub{return ''},
-       is                      => 'rw',
-       isa                     => Str,
-       required        => 1,
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 1,
 );
 
 has packages_path =>
 (
-       default         => sub{return '/tmp/02packages.details.txt'},
-       is                      => 'rw',
-       isa                     => Str,
-       required        => 0,
+	default		=> sub{return '/tmp/02packages.details.txt'},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
 );
 
 has pad =>
 (
-       default         => sub{return {} },
-       is                      => 'rw',
-       isa                     => HashRef,
-       required        => 0,
+	default		=> sub{return {} },
+	is			=> 'rw',
+	isa			=> HashRef,
+	required	=> 0,
 );
 
 has time_option =>
 (
-       default         => sub{return ''},
-       is                      => 'rw',
-       isa                     => Str,
-       required        => 0,
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
 );
 
 our $VERSION = '1.27';
