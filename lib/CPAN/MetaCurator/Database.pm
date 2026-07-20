@@ -22,6 +22,8 @@ use Text::CSV::Encoded;
 
 has -column_names => (ArrayRef, default => sub{return []}, chained => 1);
 
+=pod
+
 has -creator => (Object, chained => 1); # 'DBIx::Admin::CreateTable'.
 
 has -db => (Any, default => sub{return ''}, chained => 1);
@@ -43,6 +45,8 @@ has -packages_path => (Str, default => sub{return '/tmp/02packages.details.txt'}
 has -pad => (HashRef, default => sub{return {} }, chained => 1);
 
 has -time_option => (Str, default => sub{return ''}, chained => 1);
+
+=cut
 
 our $VERSION = '1.27';
 
