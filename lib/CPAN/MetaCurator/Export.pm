@@ -24,6 +24,14 @@ use Tree::DAG_Node;
 
 use Types::Standard qw/Str/;
 
+has dag_nodetree_path =>
+(
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 0,
+);
+
 has jstree_html_path =>
 (
 	default		=> sub{return ''},
@@ -226,9 +234,10 @@ sub export_tree
 
 	# Phase 2: Save the tree to disk.
 
-#	my($output_file_name) = File::Spec -> catfile('/tmp', "tree.after.txt");
-#
-#	write_text($output_file_name, join("\n", @{$root -> tree2string}) . "\n");
+	if ($self -> dag_nodetree_path)
+	{
+		write_text($self -> dag_nodetree_path, join("\n", @{$root -> tree2string}) . "\n");
+	}
 
 	# Phase 3: Scan the tree to get the topic ids.
 

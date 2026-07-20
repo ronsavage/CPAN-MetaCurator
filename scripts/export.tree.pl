@@ -21,7 +21,8 @@ sub process
 	my(%options) = @_;
 
 	return CPAN::MetaCurator::Export
-			-> new(home_path => $options{home_path}, include_packages => $options{include_packages}, jstree_html_path => $options{jstree_html_path}, log_level => $options{log_level})
+			-> new(dag_nodetree_path => $options{dag_nodetree_path}, home_path => $options{home_path}, include_packages => $options{include_packages},
+				jstree_html_path => $options{jstree_html_path}, log_level => $options{log_level})
 			-> export_tree;
 
 } # End of process.
@@ -32,6 +33,7 @@ say "export.tree.pl - Export cpan.metacurator.sqlite as HTML + jsTree\n";
 
 my(%options);
 
+$options{dag_nodetree_path}	= '/tmp/dag_node.tree.txt';
 $options{help}				= 0;
 $options{home_path}			= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
 $options{include_packages}	= 0;
@@ -39,6 +41,7 @@ $options{jstree_html_path}	= 'html/cpan.metacurator.tree.html';
 $options{log_level}			= 'info';
 my(%opts)					=
 (
+	'dag_nodetree_path'		=> \$options{dag_nodetree_path},
 	'help'					=> \$options{help},
 	'home_path=s'			=> \$options{home_path},
 	'include_packages=i'	=> \$options{include_packages},
@@ -70,6 +73,7 @@ export.tree.pl - Export cpan.metacurator.sqlite as HTML + jsTree
 export.as.tree.pl [options]
 
 	Options:
+	-dag_nodetree_path Path
 	-help
 	-home_path
 	-include_packages
@@ -83,6 +87,12 @@ Exit value: 0.
 =head1 OPTIONS
 
 =over 4
+
+=item o dag_nodetree_path Path
+
+The path for the output of the DAG_Node::Tree.
+
+Default: '/tmp/dag_node.tree.txt'.
 
 =item o help
 
