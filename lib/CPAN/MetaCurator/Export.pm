@@ -258,7 +258,7 @@ sub export_tree
 			{
 				$topic_id_map{$name} = $$attributes{id};
 
-				say "$$attributes{id}: $name";
+				#say "$$attributes{id}: $name";
 			}
 
 		}, # End of callbackback.
