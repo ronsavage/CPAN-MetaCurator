@@ -22,7 +22,7 @@ use Text::CSV::Encoded;
 
 has -column_names => (ArrayRef, default => sub{return []}, chained => 1);
 
-has -creator => (Object, chained); # 'DBIx::Admin::CreateTable'.
+has -creator => (Object, chained => 1); # 'DBIx::Admin::CreateTable'.
 
 has -db => (Any, default => sub{return ''}, chained => 1);
 
@@ -40,7 +40,7 @@ has -metapackager_dbh => (Any, default => sub{return ''}, chained => 1);
 
 has -packages_path => (Str, default => sub{return '/tmp/02packages.details.txt'}, chained => 1);
 
-has -pad => (HAshRef, default => sub{return {} }, chained => 1);
+has -pad => (HashRef, default => sub{return {} }, chained => 1);
 
 has -time_option => (Str, default => sub{return ''}, chained => 1);
 
