@@ -16,114 +16,33 @@ use Data::Dumper::Concise; # For Dumper().
 
 use File::Spec;
 
-use Moo;
+use Mew;
 
 use Text::CSV::Encoded;
 
-use Types::Standard qw/Any ArrayRef Bool HashRef Object Str/;
+has -column_names => (ArrayRef, default => sub{return []}, chained => 1);
 
-has column_names =>
-(
-	default		=> sub{return []},
-	is			=> 'rw',
-	isa			=> ArrayRef,
-	required	=> 0,
-);
+has -creator => (Object, chained); # 'DBIx::Admin::CreateTable'.
 
-has creator =>
-(
-	is			=> 'rw',
-	isa			=> Object, # 'DBIx::Admin::CreateTable'.
-	required	=> 0,
-);
+has -db => (Any, default => sub{return ''}, chained => 1);
 
-has db =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Any,
-	required	=> 0,
-);
+has -dbh => (Any, default => sub{return ''}, chained => 1);
 
-has dbh =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Any,
-	required	=> 0,
-);
+has -engine => (Str, default => sub{return ''}, chained => 1);
 
-has engine =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has -include_packages => (Bool, sub{return false}, chained => 1);
 
-has include_packages =>
-(
-	default		=> sub{return 0},
-	is			=> 'rw',
-	isa			=> Bool,
-	required	=> 0,
-);
+has input_path => (Str, default => sub{return ''}, chained => 1);
 
-has input_path =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 1,
-);
+has -metapackager_db => (Any, default => sub{return ''}, chained => 1);
 
-has metapackager_db =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Any,
-	required	=> 0,
-);
+has -metapackager_dbh => (Any, default => sub{return ''}, chained => 1);
 
-has metapackager_dbh =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Any,
-	required	=> 0,
-);
+has -packages_path => (Str, default => sub{return '/tmp/02packages.details.txt'}, chained => 1);
 
-has output_path =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 1,
-);
+has -pad => (HAshRef, default => sub{return {} }, chained => 1);
 
-has packages_path =>
-(
-	default		=> sub{return '/tmp/02packages.details.txt'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
-has pad =>
-(
-	default		=> sub{return {} },
-	is			=> 'rw',
-	isa			=> HashRef,
-	required	=> 0,
-);
-
-has time_option =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has -time_option => (Str, default => sub{return ''}, chained => 1);
 
 our $VERSION = '1.27';
 
@@ -149,6 +68,8 @@ sub build_pad
 	for (@{$self -> table_names}) {$$pad{$_} = $self -> read_table($_) };
 
 	# Constants. Eg: encoding.
+	# The constants table used to contain page_name=html/cpan.metacurator.tree.html.
+	# Now we get the value from export.tree.pl & its parameter jstree_html_path.
 
 	$$pad{$$_{name} } = $$_{value} for (@{$$pad{constants} });
 

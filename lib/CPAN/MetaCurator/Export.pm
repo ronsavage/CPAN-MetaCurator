@@ -24,6 +24,14 @@ use Tree::DAG_Node;
 
 use Types::Standard qw/Str/;
 
+has jstree_html_path =>
+(
+	default		=> sub{return ''},
+	is			=> 'rw',
+	isa			=> Str,
+	required	=> 1,
+);
+
 has test_topics_path =>
 (
 	default		=> sub{return '/tmp/test.topics.txt'},
@@ -39,7 +47,7 @@ our $VERSION = '1.27';
 
 # --------------------------------------------------
 
-sub build_nodes
+sub build_tree
 {
 	my($self, $daughter, $pad, $topic) = @_;
 	my(@lines)	= split(/\n/, $$topic{text});
@@ -155,7 +163,7 @@ sub build_nodes
 		}
 	}
 
-} # End of build_nodes.
+} # End of build_tree.
 
 # -----------------------------------------------
 
@@ -167,6 +175,7 @@ sub export_tree
 	$self -> init_db;
 
 	my($pad)					= $self -> build_pad;
+	$$pad{jstree_html_path}		= $self -> jstree_html_path;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 	my(@list)					= '<ul>';
 	my($origin)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
@@ -212,10 +221,42 @@ sub export_tree
 
 		$root -> add_daughter($daughter);
 
-		$self -> build_nodes($daughter, $pad, $topic);
+		$self -> build_tree($daughter, $pad, $topic);
 	}
 
-	# Phase 2; Build the JS Tree.
+	# Phase 2: Save the tree to disk.
+
+#	my($output_file_name) = File::Spec -> catfile('/tmp', "tree.after.txt");
+#
+#	write_text($output_file_name, join("\n", @{$root -> tree2string}) . "\n");
+
+	# Phase 3: Scan the tree to get the topic ids.
+
+	my($attributes);
+	my($id);
+	my($name);
+	my($topic, %topic_id_map);
+
+	$root -> walk_down
+	({
+		callbackback => sub
+		{
+			my($node, $options)	= @_;
+			$attributes			= $node -> attributes;
+			$name       		= $node -> name;
+
+			say $name if ($$options{_depth} == 1); # Topics.
+
+			if ($name =~ /^\[Topic\]/)
+			{
+				$id		= $$attributes{id};
+				$topic	= $1 if ($name =~ />(.+)</);
+			}
+		}, # End of callbackback.
+		_depth => 0,
+	});
+
+	# Phase 4; Build the JS Tree.
 
 	my($item, $items_ref);
 	my($see_also_ref);
@@ -261,7 +302,8 @@ sub export_tree
 
 	push @list, '</ul>', '</li>', '</ul>';
 
-	# Phase 3: Build the web page.
+	# Phase 5: Build the web page.
+	# And save it to html/cpan.metacurator.tree.html
 
 	my($list)	= join("\n", @list);
 	$body		=~ s/!list!/$list/;
@@ -271,43 +313,8 @@ sub export_tree
 		$header =~ s/!$_!/$$pad{count}{$_}/;
 	}
 
-	# Save it to html/cpan.metacurator.tree.html
-
 	$self -> write_file($header, $body, $footer, $pad);
 	$self -> logger -> info("$_ count: $$pad{count}{$_}") for (sort keys %{$$pad{count} });
-
-	# Phase 4: Save the tree to disk.
-
-#	my($output_file_name) = File::Spec -> catfile('/tmp', "tree.after.txt");
-#
-#	write_text($output_file_name, join("\n", @{$root -> tree2string}) . "\n");
-
-	# Phase 5: Scan the tree for various reasons.
-	# Phase 5.1: Look for topics. We stockpile each along with its id.
-
-	my($attributes);
-	my($id);
-	my($name);
-	my($topic, %topic_id_map);
-
-	$root -> walk_down
-	({
-		callbackback => sub
-		{
-			my($node, $options)	= @_;
-			$attributes			= $node -> attributes;
-			$name       		= $node -> name;
-
-			say $name if ($$options{_depth} == 1);
-
-			if ($name =~ /^\[Topic\]/)
-			{
-				$id		= $$attributes{id};
-				$topic	= $1 if ($name =~ />(.+)</);
-			}
-		}, # End of callbackback.
-		_depth => 0,
-	});
 
 	return 0;
 
