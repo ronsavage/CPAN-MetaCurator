@@ -11,19 +11,12 @@ use DateTime::Tiny;
 use File::Spec;
 use File::Slurper 'read_lines';
 
-use Moo;
+use Mew;
 use Mojo::JSON 'from_json';
 
 use Text::CSV::Encoded;
-use Types::Standard qw/ArrayRef Int Str/;
 
-has constants_csv_path =>
-(
-	default		=> sub{return 'data/cpan.metacurator.constants.csv'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has -constants_csv_path => (Str, default => sub{return 'data/cpan.metacurator.constants.csv'}, chained => 1);
 
 our $VERSION = '1.27';
 
