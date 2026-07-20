@@ -7,8 +7,9 @@ Revision history for perl module CPAN::MetaCurator
 	- Replace Moo with Mew sometimes. Mew fails in Database.pm, perhaps due to type Any?
 	- Remove page_name=html/cpan.metacurator.tree.html from data/cpan.metacurator.constants.csv
 		because it is also specified in scripts/export.tree.pl.
-	- In export.pl & Export.pm rename output_path to jstree_html_path since we need a unique name
-		for that and for dumping the DAG_Node tree to a file, dag_node_tree_path.
+	- In export.pl & Export.pm rename output_path to jstree_html_path.
+	- Allow the DAG_Node::Tree to be written to disk via the param dag_nodetree_path.
+
 
 1.26  2026-07-07
 	- Start walking the tree. Node ids will be used to generate forward & backward references

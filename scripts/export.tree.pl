@@ -33,7 +33,7 @@ say "export.tree.pl - Export cpan.metacurator.sqlite as HTML + jsTree\n";
 
 my(%options);
 
-$options{dag_nodetree_path}	= '/tmp/dag_node.tree.txt';
+$options{dag_nodetree_path}	= '';
 $options{help}				= 0;
 $options{home_path}			= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
 $options{include_packages}	= 0;

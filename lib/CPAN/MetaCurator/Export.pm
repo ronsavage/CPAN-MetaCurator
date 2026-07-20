@@ -244,7 +244,7 @@ sub export_tree
 	my($attributes);
 	my($id);
 	my($name);
-	my($topic, %topic_id_map);
+	my(%topic_id_map);
 
 	$root -> walk_down
 	({
@@ -254,13 +254,13 @@ sub export_tree
 			$attributes			= $node -> attributes;
 			$name       		= $node -> name;
 
-			say $name if ($$options{_depth} == 1); # Topics.
-
-			if ($name =~ /^\[Topic\]/)
+			if ($$options{_depth} == 1); # Topics.
 			{
-				$id		= $$attributes{id};
-				$topic	= $1 if ($name =~ />(.+)</);
+				$topic_id_map{$name} = $$attributes{id};
+
+				say "$$attributes{id}: $name";
 			}
+
 		}, # End of callbackback.
 		_depth => 0,
 	});
