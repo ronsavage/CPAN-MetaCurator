@@ -231,15 +231,8 @@ sub export_tree
 	# Phase 4; Build the JS Tree.
 	# New style.
 
-	$attributes	= $root -> attributes;
-	$name      	= $root -> name;
-
 	my(@list);
 	my($previous_depth);
-
-	push @list, '<ul>';
-	push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'>$name|;
-	push @list, '<ul>';
 
 	$root -> walk_down
 	({
@@ -251,6 +244,9 @@ sub export_tree
 
 			if ($$options{_depth} == 0) # Root.
 			{
+				push @list, '<ul>';
+				push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'>$name|;
+				push @list, '<ul>';
 			}
 			elsif ($$options{_depth} == 1) # Topics.
 			{
@@ -258,10 +254,17 @@ sub export_tree
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 				push @list, '<ul>';
 			}
-			elsif ($$options{_depth} == 2) # Modules || See also.
+			elsif ($$options{_depth} == 2) # Module name || 'See also'.
 			{
 				$$pad{count}{leaf}++;
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
+
+				push @list, '</li></ul>' if ($previous_depth > $$options{_depth});
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
+				push @list, '<ul>';
+			}
+			elsif ($$options{_depth} == 3) # See also entries.
+			{
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 			}
 
 			$previous_depth = $$options{_depth};
