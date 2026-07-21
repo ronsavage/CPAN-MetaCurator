@@ -250,7 +250,7 @@ sub export_tree
 			}
 			elsif ($$options{_depth} == 1) # Topics.
 			{
-				push @list, '</li></ul>' if ($previous_depth == 2);
+				push @list, '</ul></li>' if ($previous_depth == 2);
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 				push @list, '<ul>';
 			}
@@ -258,7 +258,7 @@ sub export_tree
 			{
 				$$pad{count}{leaf}++;
 
-				push @list, '</li></ul>' if ($previous_depth == 3);
+				push @list, '</ul></li>' if ($previous_depth == 3);
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 				push @list, '<ul>';
 			}
