@@ -244,28 +244,28 @@ sub export_tree
 
 			if ($$options{_depth} == 0) # Root.
 			{
-				push @list, '<ul>';
+				push @list, '<ul>'; # Open global li.
 				push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'>$name|;
-				push @list, '<ul>';
+				push @list, '<ul>'; # Open ul for subtree below root.
 			}
 			elsif ($$options{_depth} == 1) # Topics.
 			{
-				push @list, '</li>'			if ($previous_depth == 1);
-				push @list, '</ul></li>'	if ($previous_depth == 2);
+				push @list, '</li>'			if ($previous_depth == 1); # Close li opened at this depth.
+				push @list, '</ul></li>'	if ($previous_depth == 2); # Close ul & li opened in subtree below.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 			}
 			elsif ($$options{_depth} == 2) # Module name || 'See also'.
 			{
 				$$pad{count}{leaf}++;
 
-				push @list, '<ul>'			if ($previous_depth == 1);
-				push @list, '</li>'			if ($previous_depth == 2);
-				push @list, '</ul></li>'	if ($previous_depth == 3);
+				push @list, '<ul>'			if ($previous_depth == 1); # Open ul for subtree at this level.
+				push @list, '</li>'			if ($previous_depth == 2); # Close li opened at this depth.
+				push @list, '</ul></li>'	if ($previous_depth == 3); # Close ul & li opened in subtree below.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 			}
 			elsif ($$options{_depth} == 3) # 'See also' entries.
 			{
-				push @list, '<ul>'			if ($previous_depth == 2);
+				push @list, '<ul>'			if ($previous_depth == 2); # Open ul for subtree at this level.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
 			}
 
@@ -277,58 +277,9 @@ sub export_tree
 		_depth => 0,
 	});
 
-	push @list, '</ul>', '</li>', '</ul>';
-
-	# Old style.
-=pod
-
-	my($item, $items_ref);
-	my($see_also_ref);
-
-	push @list, '<ul>';
-	push @list, qq|<li data-jstree='{"opened": true}' id = '$leaf_id'><a href = '#'>$$origin{title}</a>|;
-	push @list, '<ul>';
-
-	for my $topic (@{$$pad{topics} })
-	{
-		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_names}{$$topic{title}}. title: $$topic{title}");
-
-		($items_ref, $see_also_ref) = $self -> parse_topic($pad, $topic);
-
-		$self -> logger -> info("parse_topic() returned: $#$items_ref, $#$see_also_ref");
-
-		++$leaf_id;
-
-		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
-		push @list, '<ul>';
-
-		for $item (@$items_ref)
-		{
-			++$leaf_id;
-			$$pad{count}{leaf}++;
-
-			if ($$item{text} eq 'See also')
-			{
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>See also|;
-				push @list, "\t<ul>";
-				push @list, qq|\t\t<li>$$_{text}</li>| for (@$see_also_ref);
-				push @list, "\t</ul>";
-				push @list, "\t</li>";
-			}
-			else
-			{
-				push @list, $$item{html} ? "<li>$$item{html}</li>" : "<li id = '$$item{id}'>$$item{text}</li>";
-			}
-		}
-
-		push @list, '</ul>';
-		push @list, '</li>';
-
-		$self -> logger -> info($self -> visual_break);
-	}
-
-	push @list, '</ul>', '</li>', '</ul>';
-=cut
+	push @list, '</ul>'; # Close ul for subtree opened at root.
+	push @list, '</li>'; # CLose li opened at root.
+	push @list, '</ul>'; # Close global li.
 
 	# Phase 5: Build the web page.
 	# And save it to html/cpan.metacurator.tree.html
@@ -391,143 +342,6 @@ sub gather_statistics
 	$$pad{count}{unknown}++	if ($$node_type{unknown} && ($token ne 'See also') );
 
 } # End of gather_statistics;
-
-# --------------------------------------------------
-
-sub parse_topic
-{
-	my($self, $pad, $topic) = @_;
-	my(@lines)	= split(/\n/, $$topic{text});
-	@lines		= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
-	my($index)	= -1;
-
-	$self -> logger -> debug("Topic: $$topic{title}. Line count: $#lines");
-
-	my(@components);
-	my($description);
-	my(@extras);
-	my($href);
-	my(%inside, $item, @items);
-	my($line, $line_count);
-	my($module, $module_leaf);
-	my(%node_type);
-	my(@pre_pre);
-	my(@see_also);
-	my($text, $token, $type);
-
-	$inside{pre_pre}	= false;
-	$inside{see_also}	= false;
-
-	while ($index < $#lines)
-	{
-		$index++;
-
-		$item	= {href => '', id => ++$leaf_id, text => ''};
-		$line	= $lines[$index];
-		$token	= ($line =~ /^o (.+)/) ? $1 : '';
-
-		$self -> logger -> debug("Processing line $index: <$line>. token: $token");
-
-		# $token ne '':
-		# a. See also
-		# b. An acronym
-		# Otherwise:
-		# c. A description
-		# d. A href
-		# e. <pre>
-		# f. </pre>
-
-		if ($token eq 'See also')
-		{
-			$inside{see_also}	= true;
-			$$item{text}		= 'See also';
-
-			push @items, $item;
-		}
-		elsif ($token)
-		{
-			$description		= '';
-			$inside{see_also}	= false;
-			$line_count			= 0;
-			$module				= $token;
-
-			if (! $seen{$module})
-			{
-				$seen{$module} = $self -> insert_hashref('modules', {name => $module});
-
-				$self -> gather_statistics(\%node_type, $pad, $module, $topic);
-			}
-		}
-		elsif ($line =~ /<pre>/)
-		{
-			# Fix me. What happens if there are 2 sets of <pre>...</pre> within 1 topic?
-
-			$inside{pre_pre} = true;
-		}
-		elsif ($line =~ m|</pre>|)
-		{
-			$inside{pre_pre} = false;
-		}
-		elsif ($inside{pre_pre})
-		{
-			$$item{html}	= '';
-			$$item{text}	= $line;
-
-			push @pre_pre, $item;
-		}
-		else
-		{
-			$line_count++;
-
-			$token = ($line =~ /^- (.+)/) ? $1 : '';
-
-			if ($inside{see_also})
-			{
-				# Fix me. References to topics can be forward references.
-
-				@components	= split(' - ', $token);
-				$text		= ($#components < 1) ? $components[0] : $components[1];
-				$type		= switch ($components[0])
-				{
-					case /^\[?\[?[A-Za-z]+\d?\d?\]?\]?$/	{'topic'}
-					case /^http/							{'uri'}
-					default									{'text'}
-				};
-
-				match ($type : eq)
-				{
-					case('topic')	{
-										$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0];
-										$$item{text} = "[Topic] <button class='btn btn-info'>$$item{text}</button>"
-									}
-					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
-					case('text')	{$$item{text} = $token}
-				}
-
-				push@see_also, $item;
-			}
-			elsif ($line_count == 1)
-			{
-				$description = $token;
-			}
-			elsif ($line_count == 2)
-			{
-				$href			= $token;
-				$$item{html}	= "<a href = '" . escape_html($href) . "' target = '_blank'>$module - $description</a>";
-				$$item{text}	= '';
-
-				push @items, $item;
-			}
-			else
-			{
-				push @extras, $token,
-			}
-		}
-	}
-
-	return ([@items], [@see_also]);
-
-} # End of parse_topic.
 
 # --------------------------------------------------
 
