@@ -235,6 +235,7 @@ sub export_tree
 	$name      	= $root -> name;
 
 	my(@list);
+	my($previous_depth);
 
 	push @list, '<ul>';
 	push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'><a href = '#'>$name</a>|;
@@ -253,9 +254,16 @@ sub export_tree
 			}
 			elsif ($$options{_depth} == 1) # Topics.
 			{
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
-				push @list, '</li>';
+				push '</ul>' if ($previous_depth == 2);
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
+				push '<ul>';
 			}
+			elsif ($$options{_depth} == 2) # Modules || See also.
+			{
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
+			}
+
+			$previous_depth = $$options{_depth};
 
 		}, # End of callbackback.
 		_depth => 0,
