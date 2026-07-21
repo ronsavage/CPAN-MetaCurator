@@ -250,20 +250,22 @@ sub export_tree
 			}
 			elsif ($$options{_depth} == 1) # Topics.
 			{
-				push @list, '</ul></li>' if ($previous_depth == 2);
+				push @list, '</li>'			if ($previous_depth == 1);
+				push @list, '</ul></li>'	if ($previous_depth == 2);
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
-				push @list, '<ul>';
 			}
 			elsif ($$options{_depth} == 2) # Module name || 'See also'.
 			{
 				$$pad{count}{leaf}++;
 
-				push @list, '</ul></li>' if ($previous_depth == 3);
+				push @list, '<ul>'			if ($previous_depth == 1);
+				push @list, '</li>'			if ($previous_depth == 2);
+				push @list, '</ul></li>'	if ($previous_depth == 3);
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
-				push @list, '<ul>';
 			}
 			elsif ($$options{_depth} == 3) # 'See also' entries.
 			{
+				push @list, '<ul>'			if ($previous_depth == 2);
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
 			}
 
