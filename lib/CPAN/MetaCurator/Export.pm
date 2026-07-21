@@ -258,6 +258,7 @@ sub export_tree
 			}
 			elsif ($$options{_depth} == 2) # Modules || See also.
 			{
+				$$pad{count}{leaf}++;
 #				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
 			}
 
