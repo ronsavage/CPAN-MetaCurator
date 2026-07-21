@@ -249,6 +249,7 @@ sub export_tree
 		++$leaf_id;
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
+=pod
 		push @list, '<ul>';
 
 		for $item (@$items_ref)
@@ -270,7 +271,9 @@ sub export_tree
 			}
 		}
 
-		push @list, '</ul>', '</li>';
+		push @list, '</ul>';
+=cut
+		push @list, '</li>';
 
 		$self -> logger -> info($self -> visual_break);
 	}
