@@ -254,13 +254,11 @@ sub export_tree
 			}
 			elsif ($$options{_depth} == 1) # Topics.
 			{
-				push @list, '</ul>' if ($previous_depth == 2);
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
-				push @list, '<ul>';
 			}
 			elsif ($$options{_depth} == 2) # Modules || See also.
 			{
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
+#				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
 			}
 
 			$previous_depth = $$options{_depth};
