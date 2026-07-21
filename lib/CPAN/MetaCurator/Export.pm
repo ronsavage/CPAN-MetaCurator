@@ -243,7 +243,7 @@ sub export_tree
 
 	$root -> walk_down
 	({
-		callbackback => sub
+		callback => sub
 		{
 			my($node, $options)	= @_;
 			$attributes			= $node -> attributes;
@@ -266,7 +266,9 @@ sub export_tree
 
 			$previous_depth = $$options{_depth};
 
-		}, # End of callbackback.
+			return 1;
+
+		}, # End of callback.
 		_depth => 0,
 	});
 
