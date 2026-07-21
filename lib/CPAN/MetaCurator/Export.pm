@@ -233,6 +233,10 @@ sub export_tree
 
 	my(@list);
 
+	push @list, '<ul>';
+	push @list, qq|<li data-jstree='{"opened": true}' id = '0'><a href = '#'>$$origin{title}</a>|;
+	push @list, '<ul>';
+
 	$root -> walk_down
 	({
 		callbackback => sub
@@ -241,13 +245,8 @@ sub export_tree
 			$attributes			= $node -> attributes;
 			$name       		= $node -> name;
 
-			say "_depth: $$options{_depth}";
-
 			if ($$options{_depth} == 0) # Root.
 			{
-				push @list, '<ul>';
-				push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'><a href = '#'>$name</a>|;
-				push @list, '<ul>';
 			}
 			elsif ($$options{_depth} == 1) # Topics.
 			{
@@ -259,6 +258,8 @@ sub export_tree
 		_depth => 0,
 	});
 
+	push @list, '</ul>', '</li>', '</ul>';
+=
 	# Old style.
 =pod
 
