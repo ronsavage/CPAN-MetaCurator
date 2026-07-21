@@ -40,14 +40,6 @@ has jstree_html_path =>
 	required	=> 1,
 );
 
-has test_topics_path =>
-(
-	default		=> sub{return '/tmp/test.topics.txt'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
 our $leaf_id;
 our %seen;
 
@@ -55,7 +47,7 @@ our $VERSION = '1.27';
 
 # --------------------------------------------------
 
-sub build_tree
+sub build_dag_tree
 {
 	my($self, $daughter, $pad, $topic) = @_;
 	my(@lines)	= split(/\n/, $$topic{text});
@@ -171,7 +163,7 @@ sub build_tree
 		}
 	}
 
-} # End of build_tree.
+} # End of build_dag_tree.
 
 # -----------------------------------------------
 
@@ -185,37 +177,12 @@ sub export_tree
 	my($pad)					= $self -> build_pad;
 	$$pad{jstree_html_path}		= $self -> jstree_html_path;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
-	my(@list)					= '<ul>';
 	my($origin)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
-	my($not_used)				= $$pad{topic_html_ids}{$$origin{title} };
 	$leaf_id					= 0;
 	my($root)					= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $leaf_id} });
 
 	$self -> logger -> info($self -> visual_break);
 	$self -> logger -> info("Topic: id: $leaf_id. title: $$origin{title}");
-
-	push @list, qq|<li data-jstree='{"opened": true}' id = '$leaf_id'><a href = '#'>$$origin{title}</a>|;
-	push @list, '<ul>';
-
-	my(%wanted);
-
-	# Read /tmp/test.topics.txt for topic names to process. This just limits the output.
-	# See also data/special.topic.txt.
-
-	if (-e $self -> test_topics_path)
-	{
-		my($test_topics)	= $self -> read_csv_file($self -> test_topics_path);
-		$wanted{$_}			= true for (@$test_topics);
-	}
-
-	# If the file is absent or empty, activate all topics.
-
-	my(@keys) = keys %wanted;
-
-	for ($#keys == 0)
-	{
-		$wanted{$$_{title} } = true for (@{$$pad{topics} });
-	}
 
 	# Phase 1: Build the DAG_Node tree.
 
@@ -223,23 +190,21 @@ sub export_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
-		next if (! $wanted{$$topic{title} });
-
 		$daughter = Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id} });
 
 		$root -> add_daughter($daughter);
 
-		$self -> build_tree($daughter, $pad, $topic);
+		$self -> build_dag_tree($daughter, $pad, $topic);
 	}
 
-	# Phase 2: Save the tree to disk.
+	# Phase 2: Save the DAG_Node tree to disk.
 
 	if ($self -> dag_nodetree_path)
 	{
 		write_text($self -> dag_nodetree_path, join("\n", @{$root -> tree2string}) . "\n");
 	}
 
-	# Phase 3: Scan the tree to get the topic ids.
+	# Phase 3: Scan the DAG_Node tree to get the topic ids.
 
 	my($attributes);
 	my($id);
@@ -257,8 +222,6 @@ sub export_tree
 			if ($$options{_depth} == 1) # Topics.
 			{
 				$topic_id_map{$name} = $$attributes{id};
-
-				#say "$$attributes{id}: $name";
 			}
 
 		}, # End of callbackback.
@@ -268,12 +231,15 @@ sub export_tree
 	# Phase 4; Build the JS Tree.
 
 	my($item, $items_ref);
+	my(@list);
 	my($see_also_ref);
+
+	push @list, '<ul>';
+	push @list, qq|<li data-jstree='{"opened": true}' id = '$leaf_id'><a href = '#'>$$origin{title}</a>|;
+	push @list, '<ul>';
 
 	for my $topic (@{$$pad{topics} })
 	{
-		next if (! $wanted{$$topic{title} });
-
 		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_names}{$$topic{title}}. title: $$topic{title}");
 
 		($items_ref, $see_also_ref) = $self -> parse_topic($pad, $topic);
