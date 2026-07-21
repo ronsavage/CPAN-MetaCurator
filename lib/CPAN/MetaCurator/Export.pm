@@ -229,9 +229,38 @@ sub export_tree
 	});
 
 	# Phase 4; Build the JS Tree.
+	# New style.
+
+	my(@list);
+
+	$root -> walk_down
+	({
+		callbackback => sub
+		{
+			my($node, $options)	= @_;
+			$attributes			= $node -> attributes;
+			$name       		= $node -> name;
+
+			if ($$options{_depth} == 0) # Root.
+			{
+				push @list, '<ul>';
+				push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'><a href = '#'>$name</a>|;
+				push @list, '<ul>';
+			}
+			elsif ($$options{_depth} == 1) # Topics.
+			{
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
+				push @list, '</li>';
+			}
+
+		}, # End of callbackback.
+		_depth => 0,
+	});
+
+	# Old style.
+=pod
 
 	my($item, $items_ref);
-	my(@list);
 	my($see_also_ref);
 
 	push @list, '<ul>';
@@ -249,7 +278,6 @@ sub export_tree
 		++$leaf_id;
 
 		push @list, qq|\t<li data-jstree='{"opened": false}' id = '$leaf_id'>$$topic{title}|;
-=pod
 		push @list, '<ul>';
 
 		for $item (@$items_ref)
@@ -272,13 +300,13 @@ sub export_tree
 		}
 
 		push @list, '</ul>';
-=cut
 		push @list, '</li>';
 
 		$self -> logger -> info($self -> visual_break);
 	}
 
 	push @list, '</ul>', '</li>', '</ul>';
+=cut
 
 	# Phase 5: Build the web page.
 	# And save it to html/cpan.metacurator.tree.html
