@@ -241,6 +241,8 @@ sub export_tree
 			$attributes			= $node -> attributes;
 			$name       		= $node -> name;
 
+			say "_depth: $$options{_depth}";
+
 			if ($$options{_depth} == 0) # Root.
 			{
 				push @list, '<ul>';
