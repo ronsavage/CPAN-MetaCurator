@@ -238,7 +238,7 @@ sub export_tree
 	my($previous_depth);
 
 	push @list, '<ul>';
-	push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'><a href = '#'>$name</a>|;
+	push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'>$name|;
 	push @list, '<ul>';
 
 	$root -> walk_down
