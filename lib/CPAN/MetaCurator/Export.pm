@@ -264,7 +264,7 @@ sub export_tree
 			}
 			elsif ($$options{_depth} == 3) # See also entries.
 			{
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
 			}
 
 			$previous_depth = $$options{_depth};
