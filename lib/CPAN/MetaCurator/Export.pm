@@ -259,7 +259,7 @@ sub export_tree
 	});
 
 	push @list, '</ul>', '</li>', '</ul>';
-=
+
 	# Old style.
 =pod
 
