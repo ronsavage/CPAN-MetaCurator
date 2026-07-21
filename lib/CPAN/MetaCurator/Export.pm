@@ -231,10 +231,13 @@ sub export_tree
 	# Phase 4; Build the JS Tree.
 	# New style.
 
+	$attributes	= $root -> attributes;
+	$name      	= $root -> name;
+
 	my(@list);
 
 	push @list, '<ul>';
-	push @list, qq|<li data-jstree='{"opened": true}' id = '0'><a href = '#'>$$origin{title}</a>|;
+	push @list, qq|<li data-jstree='{"opened": true}' id = '$$attributes{id}'><a href = '#'>$name</a>|;
 	push @list, '<ul>';
 
 	$root -> walk_down
