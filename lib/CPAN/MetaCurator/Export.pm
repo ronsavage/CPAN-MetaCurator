@@ -258,11 +258,12 @@ sub export_tree
 			{
 				$$pad{count}{leaf}++;
 
+				push @list, '</li>' if ($previous_depth == $$options{_depth});
 				push @list, '</li></ul>' if ($previous_depth > $$options{_depth});
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 				push @list, '<ul>';
 			}
-			elsif ($$options{_depth} == 3) # See also entries.
+			elsif ($$options{_depth} == 3) # 'See also' entries.
 			{
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
 			}
