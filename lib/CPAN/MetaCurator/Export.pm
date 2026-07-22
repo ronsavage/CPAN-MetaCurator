@@ -70,7 +70,7 @@ sub build_dag_tree
 	{
 		$index++;
 
-		$item	= {description => '', href => '', id => 0, text => ''};
+		$item	= {description => '', href => '', id => 0, text => '', uri => ''};
 		$line	= $lines[$index];
 		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
@@ -88,7 +88,7 @@ sub build_dag_tree
 		if ($token eq 'See also')
 		{
 			$inside{see_also}	= true;
-			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id, description => ''} });
+			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id, description => '', uri => ''} });
 
 			$daughter -> add_daughter($see_also_root);
 		}
@@ -147,7 +147,7 @@ sub build_dag_tree
 					case('text')	{$$item{text} = $token}
 				}
 
-				$leaf = Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id, description => ''} });
+				$leaf = Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id, description => '', uri => $$item{text}} });
 
 				$see_also_root -> add_daughter($leaf);
 			}
@@ -157,7 +157,8 @@ sub build_dag_tree
 			}
 			elsif ($line_count == 2)
 			{
-				$leaf = Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id, description => $$item{description} } });
+				$$item{text}	= $token;
+				$leaf			= Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id, description => $$item{description}, uri => $$item{text}} });
 
 				$daughter -> add_daughter($leaf);
 			}
@@ -209,7 +210,6 @@ sub export_tree
 	# These will be used to resolve forward references.
 
 	my($attributes);
-	my($description);
 	my($id);
 	my($name);
 	my(%topic_id_map);
@@ -234,8 +234,10 @@ sub export_tree
 	# Phase 4; Build the JS Tree.
 	# New style.
 
+	my($description);
 	my(@list);
 	my($previous_depth);
+	my($uri);
 
 	$root -> walk_down
 	({
@@ -261,12 +263,14 @@ sub export_tree
 			{
 				$$pad{count}{leaf}++;
 
-				$description = $$attributes{description} || $name;
+				$description	= $$attributes{description} || $name;
+				$uri			= $$attibutes{uri} || '#';
+				$uri			= "<a href = '" . escape_html($uri) . "' target = '_blank'>$module - $description</a>";
 
 				push @list, '<ul>'			if ($previous_depth == 1); # Open ul for subtree at this level.
 				push @list, '</li>'			if ($previous_depth == 2); # Close li opened at this depth.
 				push @list, '</ul></li>'	if ($previous_depth == 3); # Close ul & li opened in subtree below.
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name<a href = 'savage.net.au'>$description</a>|;
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$uri|;
 			}
 			elsif ($$options{_depth} == 3) # 'See also' entries.
 			{
