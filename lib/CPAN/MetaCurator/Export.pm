@@ -88,7 +88,7 @@ sub build_dag_tree
 		if ($token eq 'See also')
 		{
 			$inside{see_also}	= true;
-			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id} });
+			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id, description => ''} });
 
 			$daughter -> add_daughter($see_also_root);
 		}
@@ -147,19 +147,17 @@ sub build_dag_tree
 					case('text')	{$$item{text} = $token}
 				}
 
-				$leaf = Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id} });
+				$leaf = Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id, description => ''} });
 
 				$see_also_root -> add_daughter($leaf);
 			}
 			elsif ($line_count == 1)
 			{
 				$$item{description} = $token;
-
-				$self -> logger -> info("$module => $token");
 			}
 			elsif ($line_count == 2)
 			{
-				$leaf = Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id} });
+				$leaf = Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id, description => $$item{description} } });
 
 				$daughter -> add_daughter($leaf);
 			}
@@ -182,7 +180,7 @@ sub export_tree
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 	my($origin)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
 	$leaf_id					= 0;
-	my($root)					= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $leaf_id} });
+	my($root)					= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $leaf_id, description => 'Root'} });
 
 	$self -> logger -> info($self -> visual_break);
 	$self -> logger -> info("Topic: id: $leaf_id. title: $$origin{title}");
@@ -193,7 +191,7 @@ sub export_tree
 
 	for my $topic (@{$$pad{topics} })
 	{
-		$daughter = Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id} });
+		$daughter = Tree::DAG_Node -> new({name => $$topic{title}, attributes => {id => ++$leaf_id, description => 'Topic'} });
 
 		$root -> add_daughter($daughter);
 
@@ -211,6 +209,7 @@ sub export_tree
 	# These will be used to resolve forward references.
 
 	my($attributes);
+	my($description);
 	my($id);
 	my($name);
 	my(%topic_id_map);
@@ -262,10 +261,12 @@ sub export_tree
 			{
 				$$pad{count}{leaf}++;
 
+				$description = $$attributes{$description} || $name;
+
 				push @list, '<ul>'			if ($previous_depth == 1); # Open ul for subtree at this level.
 				push @list, '</li>'			if ($previous_depth == 2); # Close li opened at this depth.
 				push @list, '</ul></li>'	if ($previous_depth == 3); # Close ul & li opened in subtree below.
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name<a href = 'savage.net.au'>$description</a>|;
 			}
 			elsif ($$options{_depth} == 3) # 'See also' entries.
 			{
