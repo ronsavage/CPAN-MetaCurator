@@ -261,7 +261,7 @@ sub export_tree
 			{
 				$$pad{count}{leaf}++;
 
-				$description = $$attributes{$description} || $name;
+				$description = $$attributes{description} || $name;
 
 				push @list, '<ul>'			if ($previous_depth == 1); # Open ul for subtree at this level.
 				push @list, '</li>'			if ($previous_depth == 2); # Close li opened at this depth.
