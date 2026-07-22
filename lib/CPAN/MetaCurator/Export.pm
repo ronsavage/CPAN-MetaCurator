@@ -263,9 +263,9 @@ sub export_tree
 			{
 				$$pad{count}{leaf}++;
 
-				$description	= $$attributes{description} || $name;
-				$uri			= $$attibutes{uri} || '#';
-				$uri			= "<a href = '" . escape_html($uri) . "' target = '_blank'>$module - $description</a>";
+				$description	= $$attributes{description};
+				$uri			= $$attributes{uri} || '#';
+				$uri			= "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
 
 				push @list, '<ul>'			if ($previous_depth == 1); # Open ul for subtree at this level.
 				push @list, '</li>'			if ($previous_depth == 2); # Close li opened at this depth.
