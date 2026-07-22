@@ -257,6 +257,7 @@ sub export_tree
 			{
 				push @list, '</li>'			if ($previous_depth == 1); # Close li opened at this depth.
 				push @list, '</ul></li>'	if ($previous_depth == 2); # Close ul & li opened in subtree below.
+				push @list, '</ul></li>'	if ($previous_depth == 3); # Close ul & li opened in subtree below. Eg: CssStuff with no entries below See also.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 			}
 			elsif ($$options{_depth} == 2) # Module name || 'See also'.
