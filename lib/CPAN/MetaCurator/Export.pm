@@ -70,7 +70,7 @@ sub build_dag_tree
 	{
 		$index++;
 
-		$item	= {href => '', id => 0, text => ''};
+		$item	= {description => '', href => '', id => 0, text => ''};
 		$line	= $lines[$index];
 		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
@@ -153,6 +153,9 @@ sub build_dag_tree
 			}
 			elsif ($line_count == 1)
 			{
+				$$item{description} = $token;
+
+				$self -> logger -> info("$module => $token");
 			}
 			elsif ($line_count == 2)
 			{
@@ -205,6 +208,7 @@ sub export_tree
 	}
 
 	# Phase 3: Scan the DAG_Node tree to get the topic ids.
+	# These will be used to resolve forward references.
 
 	my($attributes);
 	my($id);
