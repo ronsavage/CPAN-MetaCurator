@@ -273,6 +273,8 @@ sub export_tree
 			}
 			elsif ($$options{_depth} == 2) # Module name || 'See also'.
 			{
+				$self -> logger -> debug("Notes") if ($name eq 'Notes');
+
 				$$pad{count}{leaf}++;
 
 				$description	= $$attributes{description};
