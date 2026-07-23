@@ -16,9 +16,9 @@ use utf8;
 
 has config => (HashRef, default => sub {return {} }, chained => 1);
 
-has -config_path => (Str, default => 'data/cpan.metacurator.conf', chained => 1);
+has -config_path => (Str, default => 'data/cpan.metacurator.conf');
 
-has database_path => (Str, default => 'data/cpan.metacurator.sqlite', chained => 1);
+has database_path => (Str, default => 'data/cpan.metacurator.sqlite');
 
 has -error => (Str, default => '', chained => 1);
 
@@ -32,9 +32,9 @@ has -logger => (Object, chained => 1);
 
 has metapackager_config => (HashRef, default => sub {return {} }, chained => 1);
 
-has -metapackager_config_path => (Str, default => 'data/cpan.metapackager.conf', chained => 1);
+has -metapackager_config_path => (Str, default => 'data/cpan.metapackager.conf');
 
-has -metapackager_database_path => (Str, default => '/tmp/cpan.metapackager.sqlite', chained => 1);
+has -metapackager_database_path => (Str, default => '/tmp/cpan.metapackager.sqlite');
 
 has -node_types => (ArrayRef, default => sub {return [qw/acronym known leaf see_also topic unknown/]});
 
