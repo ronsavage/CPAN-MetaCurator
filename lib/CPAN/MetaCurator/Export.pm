@@ -65,12 +65,12 @@ sub build_dag_tree
 
 	$inside{pre_pre}	= false;
 	$inside{see_also}	= false;
+	$item				= {description => '', href => '', id => 0, text => '', uri => ''};
 
 	while ($index < $#lines)
 	{
 		$index++;
 
-		$item	= {description => '', href => '', id => 0, text => '', uri => ''};
 		$line	= $lines[$index];
 		$token	= ($line =~ /^o (.+)/) ? $1 : '';
 
@@ -162,6 +162,10 @@ sub build_dag_tree
 
 				$daughter -> add_daughter($leaf);
 			}
+			else
+			{
+				$self -> logger -> debug("Line $line_count. module: $module. token: $token");
+			}
 		}
 	}
 
@@ -207,7 +211,7 @@ sub export_tree
 	}
 
 	# Phase 3: Scan the DAG_Node tree to get the topic ids.
-	# These will be used to resolve forward references.
+	# These will be used to resolve forward references of topics.
 
 	my($attributes);
 	my($id);
@@ -291,7 +295,7 @@ sub export_tree
 	push @list, '</li>'; # CLose li opened at root.
 	push @list, '</ul>'; # Close global li.
 
-	# Phase 5: Build the web page.
+	# Phase 5: Build the web page which uses JSTree.
 	# And save it to html/cpan.metacurator.tree.html
 
 	my($list)	= join("\n", @list);
