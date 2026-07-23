@@ -171,7 +171,7 @@ sub build_dag_tree
 
 	if ($#notes >= 0)
 	{
-		$note = Tree::DAG_Node -> new({name => 'Notes', attributes => {id => ++$leaf_id, description => '', uri => ''} });
+		my($note) = Tree::DAG_Node -> new({name => 'Notes', attributes => {id => ++$leaf_id, description => '', uri => ''} });
 
 		$daughter -> add_daughter($note);
 	}
