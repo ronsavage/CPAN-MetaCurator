@@ -53,14 +53,13 @@ sub build_dag_tree
 	my(@lines)		= split(/\n/, $$topic{text});
 	@lines			= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
 	my($index)		= -1;
-	my($note_count)	= 0;
 
 	my(@components);
 	my($entry);
 	my(%inside, $item);
 	my($leaf, $line, $line_count);
 	my($module);
-	my(%node_type, $note);
+	my(%node_type, $note, $note_count);
 	my(@pre_pre);
 	my($see_also_root);
 	my($text, $token, $type);
@@ -99,6 +98,7 @@ sub build_dag_tree
 			$inside{see_also}	= false;
 			$line_count			= 0;
 			$module				= $token;
+			$note_count			= 0;
 
 			if (! $seen{$module})
 			{
