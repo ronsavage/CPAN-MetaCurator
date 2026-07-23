@@ -50,15 +50,17 @@ our $VERSION = '1.27';
 sub build_dag_tree
 {
 	my($self, $daughter, $pad, $topic) = @_;
-	my(@lines)	= split(/\n/, $$topic{text});
-	@lines		= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
-	my($index)	= -1;
+	my(@lines)		= split(/\n/, $$topic{text});
+	@lines			= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
+	my($index)		= -1;
+	my($note_count)	= 0;
 
 	my(@components);
+	my($entry);
 	my(%inside, $item);
 	my($leaf, $line, $line_count);
 	my($module);
-	my(%node_type, @notes);
+	my(%node_type, $note);
 	my(@pre_pre);
 	my($see_also_root);
 	my($text, $token, $type);
@@ -164,14 +166,18 @@ sub build_dag_tree
 			}
 			else
 			{
-				push @notes, $token;
+				$note_count++;
 
-				if ($#notes == 0)
+				if ($note_count == 1)
 				{
-					my($note) = Tree::DAG_Node -> new({name => 'Notes', attributes => {id => ++$leaf_id, description => '', uri => ''} });
+					$note = Tree::DAG_Node -> new({name => 'Notes', attributes => {id => ++$leaf_id, description => '', uri => ''} });
 
 					$daughter -> add_daughter($note);
 				}
+
+				$entry = Tree::DAG_Node -> new({name => $token, attributes => {id => ++$leaf_id, description => '', uri => ''} });
+
+				$note -> add_daughter($entry);
 			}
 		}
 	}
