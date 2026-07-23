@@ -277,15 +277,13 @@ sub export_tree
 				push @list, '</ul></li></ul>'	if ($previous_depth == 3); # Close ul & li opened in subtree below. Eg: CssStuff with no entries below See also.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name|;
 			}
-			elsif ($$options{_depth} == 2) # Module name || 'See also'.
+			elsif ($$options{_depth} == 2) # Module name || 'Notes for ...' || 'See also'.
 			{
-				$self -> logger -> debug("Notes") if ($name =~ /Notes for/);
-
 				$$pad{count}{leaf}++;
 
 				$description	= $$attributes{description};
 				$uri			= $$attributes{uri} || '#';
-				$uri			= ($name =~ qr/Notes|See also/) ? $name : "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
+				$uri			= ($name =~ qr/Notes for|See also/) ? "$name!" : "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
 
 				push @list, '<ul>'			if ($previous_depth == 1); # Open ul for subtree at this level.
 				push @list, '</li>'			if ($previous_depth == 2); # Close li opened at this depth.
