@@ -58,7 +58,7 @@ sub build_dag_tree
 	my(%inside, $item);
 	my($leaf, $line, $line_count);
 	my($module);
-	my(%node_type);
+	my(%node_type, @notes);
 	my(@pre_pre);
 	my($see_also_root);
 	my($text, $token, $type);
@@ -164,9 +164,16 @@ sub build_dag_tree
 			}
 			else
 			{
-				$self -> logger -> debug("Line $line_count. module: $module. token: $token");
+				push @notes, $token;
 			}
 		}
+	}
+
+	if ($#notes >= 0)
+	{
+		$note = Tree::DAG_Node -> new({name => 'Notes', attributes => {id => ++$leaf_id, description => '', uri => ''} });
+
+		$daughter -> add_daughter($note);
 	}
 
 } # End of build_dag_tree.
