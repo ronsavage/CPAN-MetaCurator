@@ -165,15 +165,15 @@ sub build_dag_tree
 			else
 			{
 				push @notes, $token;
+
+				if ($#notes == 0)
+				{
+					my($note) = Tree::DAG_Node -> new({name => 'Notes', attributes => {id => ++$leaf_id, description => '', uri => ''} });
+
+					$daughter -> add_daughter($note);
+				}
 			}
 		}
-	}
-
-	if ($#notes >= 0)
-	{
-		my($note) = Tree::DAG_Node -> new({name => 'Notes', attributes => {id => ++$leaf_id, description => '', uri => ''} });
-
-		$daughter -> add_daughter($note);
 	}
 
 } # End of build_dag_tree.
