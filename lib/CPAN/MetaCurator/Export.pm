@@ -290,7 +290,7 @@ sub export_tree
 				push @list, '</ul></li>'	if ($previous_depth == 3); # Close ul & li opened in subtree below.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$uri|;
 			}
-			elsif ($$options{_depth} == 3) # 'See also' entries.
+			elsif ($$options{_depth} == 3) # 'Notes for ...' || 'See also' entries.
 			{
 				push @list, '<ul>'			if ($previous_depth == 2); # Open ul for subtree at this level.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
