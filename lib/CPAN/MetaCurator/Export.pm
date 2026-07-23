@@ -283,7 +283,7 @@ sub export_tree
 
 				$description	= $$attributes{description};
 				$uri			= $$attributes{uri} || '#';
-				$uri			= ($name =~ qr/Notes for|See also/) ? "$name!" : "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
+				$uri			= ($name =~ qr/Notes for|See also/) ? $name : "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
 
 				push @list, '<ul>'			if ($previous_depth == 1); # Open ul for subtree at this level.
 				push @list, '</li>'			if ($previous_depth == 2); # Close li opened at this depth.
