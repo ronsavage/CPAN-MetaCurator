@@ -15,30 +15,16 @@ use File::Spec;
 
 use HTML::Escape 'escape_html';
 
-use Moo;
+use Mew;
 
 use Switch::Declare;		# For switch.
 use Syntax::Keyword::Match;	# For match.
 
 use Tree::DAG_Node;
 
-use Types::Standard qw/Str/;
+has -dag_nodetree_path => (Str, default => sub{return ''}, chained => 1);
 
-has dag_nodetree_path =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
-has jstree_html_path =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 1,
-);
+has jstree_html_path => (Str, default => sub{return ''}, chained => 1);
 
 our $leaf_id;
 our %seen;
