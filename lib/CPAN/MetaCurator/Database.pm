@@ -30,7 +30,7 @@ has -dbh => (Any, default => sub{return ''}, chained => 1);
 
 has -engine => (Str, default => sub{return ''}, chained => 1);
 
-has -include_packages => (Bool, default => sub{return false}, chained => 1);
+has -include_packages => (Bool, default => sub{return 0}, chained => 1);
 
 has input_path => (Str, default => sub{return ''}, chained => 1);
 
