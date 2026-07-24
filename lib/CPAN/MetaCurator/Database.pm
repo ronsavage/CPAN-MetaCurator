@@ -16,6 +16,38 @@ use Data::Dumper::Concise; # For Dumper().
 
 use File::Spec;
 
+use Mew;
+
+use Text::CSV::Encoded;
+
+has -column_names => (ArrayRef, default => sub{return []}, chained => 1);
+
+has -creator => (Object, default => sub{return ''}, chained => 1);
+
+has -db => (Any, default => sub{return ''}, chained => 1);
+
+has -dbh => (Any, default => sub{return ''}, chained => 1);
+
+has -engine => (Str, default => sub{return ''}, chained => 1);
+
+has -include_packages => (Bool, default => sub{return false}, chained => 1);
+
+has input_path => (Str, default => sub{return ''}, chained => 1);
+
+has -metapackager_db => (Any, default => sub{return ''}, chained => 1);
+
+has -metapackager_dbh => (Any, default => sub{return ''}, chained => 1);
+
+has output_path => (Str, default => sub{return ''}, chained => 1);
+
+has -packages_path => (Str, default => sub{return '/tmp/02packages.details.txt'}, chained => 1);
+
+has -pad => (HashRef, default => sub{return {} }, chained => 1);
+
+has -time_option => (Str, default => sub{return ''}, chained => 1);
+
+=pod
+
 use Moo; # Warning: Do not use Mew.
 
 use Text::CSV::Encoded;
@@ -124,6 +156,8 @@ has time_option =>
 	isa			=> Str,
 	required	=> 0,
 );
+
+=cut
 
 our $VERSION = '1.27';
 
