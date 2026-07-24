@@ -186,9 +186,9 @@ sub build_pad
 	# The constants table used to contain page_name=html/cpan.metacurator.tree.html.
 	# Now we get the value from export.tree.pl & its parameter jstree_html_path.
 
-	$$pad{$$_{name} } = $$_{value} for (@{$$pad{constants} });
+	say Dumper($$pad{constants});
 
-	say Dumper($pad);
+	$$pad{$$_{name} } = $$_{value} for (@{$$pad{constants} });
 
 	# MetaPackager.
 
