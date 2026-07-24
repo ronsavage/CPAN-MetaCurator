@@ -188,6 +188,8 @@ sub build_pad
 
 	$$pad{$$_{name} } = $$_{value} for (@{$$pad{constants} });
 
+	say Dumper($pad);
+
 	# MetaPackager.
 
 	if ($self -> include_packages)
