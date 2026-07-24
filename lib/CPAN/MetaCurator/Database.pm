@@ -227,9 +227,10 @@ sub build_pad
 	$$pad{now}			= $_ -> as_string;
 	$$pad{current_year}	= substr($$pad{now}, 0, 4);
 
+	$self -> pad($page);
 	$self -> logger -> debug("Leaving Database.build_pad()");
 
-	return $self -> pad($pad);
+	return $pad;
 
 } # End of build_pad.
 
