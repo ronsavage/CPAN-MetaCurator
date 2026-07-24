@@ -46,119 +46,6 @@ has -pad => (HashRef, default => sub{return {} }, chained => 1);
 
 has -time_option => (Str, default => sub{return ''}, chained => 1);
 
-=pod
-
-use Moo; # Warning: Do not use Mew.
-
-use Text::CSV::Encoded;
-
-use Types::Standard qw/Any ArrayRef Bool HashRef Object Str/;
-
-has column_names =>
-(
-	default		=> sub{return []},
-	is			=> 'rw',
-	isa			=> ArrayRef,
-	required	=> 0,
-);
-
-has creator =>
-(
-	is			=> 'rw',
-	isa			=> Object, # 'DBIx::Admin::CreateTable'.
-	required	=> 0,
-);
-
-has db =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Any,
-	required	=> 0,
-);
-
-has dbh =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Any,
-	required	=> 0,
-);
-
-has engine =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
-has include_packages =>
-(
-	default		=> sub{return 0},
-	is			=> 'rw',
-	isa			=> Bool,
-	required	=> 0,
-);
-
-has input_path =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 1,
-);
-
-has metapackager_db =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Any,
-	required	=> 0,
-);
-
-has metapackager_dbh =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Any,
-	required	=> 0,
-);
-
-has output_path =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 1,
-);
-
-has packages_path =>
-(
-	default		=> sub{return '/tmp/02packages.details.txt'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
-has pad =>
-(
-	default		=> sub{return {} },
-	is			=> 'rw',
-	isa			=> HashRef,
-	required	=> 0,
-);
-
-has time_option =>
-(
-	default		=> sub{return ''},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
-
-=cut
-
 our $VERSION = '1.27';
 
 # -----------------------------------------------
@@ -187,8 +74,6 @@ sub build_pad
 	# Now we get the value from export.tree.pl & its parameter jstree_html_path.
 
 	$$pad{$$_{name} } = $$_{value} for (@{$$pad{constants} });
-
-	say '1: ', Dumper($$pad{domain_name});
 
 	# MetaPackager.
 
