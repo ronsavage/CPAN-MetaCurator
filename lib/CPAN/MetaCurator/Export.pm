@@ -180,6 +180,9 @@ sub export_tree
 	$self -> init_db;
 
 	my($pad)					= $self -> build_pad;
+
+	say '2: ', Dumper($$pad{domain_name});
+
 	$$pad{jstree_html_path}		= $self -> jstree_html_path;
 	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
 	my($origin)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
