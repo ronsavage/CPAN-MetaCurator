@@ -22,7 +22,7 @@ use Text::CSV::Encoded;
 
 has -column_names => (ArrayRef, default => sub{return []}, chained => 1);
 
-has -creator => (Object, default => sub{return ''}, chained => 1);
+has -creator => (Object, default => sub{return Ref}, chained => 1);
 
 has -db => (Any, default => sub{return ''}, chained => 1);
 
