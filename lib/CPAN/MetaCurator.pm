@@ -53,9 +53,11 @@ Note: My web host and I use case-sensitive file systems.
 =head2 Patch ~/savage.net.au/index.html
 
 =over
+=item Check if CSS.and.JS.Wiki, Mojo.Wiki etc need to be uploaded
 =item cd ~/perl.modules/Local-Website
 =item Edit Local::Website's data/patches.csv
 =item Run: scripts/parse.index.sh - to patch ~/savage.net.au/index.html
+=item Edit index.html re any other additions, eg a News Flash
 =item Run: bu5.sh savage.net.au
 =item Run: bu5.sh perl.modules
 =back
