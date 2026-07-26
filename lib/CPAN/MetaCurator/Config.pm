@@ -49,7 +49,7 @@ has -tiddlers_path => (Str, default => 'data/tiddlers.json');
 
 has -visual_break => (Str, default => sub{return '-' x 50});
 
-our $VERSION = '1.27';
+our $VERSION = '1.28';
 
 # -----------------------------------------------
 
