@@ -348,7 +348,7 @@ sub gather_statistics
 	$$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
 	$$node_type{topic}		= $$pad{topic_names}{$token}	? true : false;
 	$$node_type{known}		= $$pad{module_names}{$token}	? true : false;
-	$$node_type{unknown}	= true if ( ($$node_type{acronym} == false) && ($$node_type{known} == false) && ($$node_type{topic} == false) );
+	$$node_type{unknown}	= ( (! $$node_type{acronym}) && (! $$node_type{known}) && (! $$node_type{topic}) ) ? true : false;
 
 	say $$topic{title} if ($$node_type{unknown});
 
