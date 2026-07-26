@@ -1,5 +1,8 @@
 Revision history for perl module CPAN::MetaCurator
 
+1.28  2026-07-26
+	- Explain what the Unclassified stat means in the header of cpan.metacurator.tree.html.
+
 1.27  2026-07-14
 	- Add scripts/parse.metacpan.recent.pl & some input in html/*.html, saved from MetaCPAN Recent.
 		This is part of catching up with 2 weeks of new releases starting on 2026-07-14 which I missed.

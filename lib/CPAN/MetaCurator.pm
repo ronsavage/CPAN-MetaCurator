@@ -54,6 +54,7 @@ Note: My web host and I use case-sensitive file systems.
 
 =over
 =item Check if CSS.and.JS.Wiki, Mojo.Wiki etc need to be uploaded
+=item In particular, check whether or not the version date is real and not 'Unreleased'
 =item cd ~/perl.modules/Local-Website
 =item Edit Local::Website's data/patches.csv
 =item Run: scripts/parse.index.sh - to patch ~/savage.net.au/index.html

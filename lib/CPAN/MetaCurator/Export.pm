@@ -350,6 +350,8 @@ sub gather_statistics
 	$$node_type{known}		= $$pad{module_names}{$token}	? true : false;
 	$$node_type{unknown}	= ! ($$node_type{acronym} || $$node_type{known} || $$node_type{topic});
 
+	say $$topic{title} if ($$node_type{unknown});
+
 	$$pad{count}{acronym}++	if ($$node_type{acronym});
 	$$pad{count}{known}++	if ($$node_type{known});
 	$$pad{count}{unknown}++	if ($$node_type{unknown} && ($token ne 'See also') );
