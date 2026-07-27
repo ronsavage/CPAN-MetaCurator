@@ -345,12 +345,10 @@ sub gather_statistics
 {
 	my($self, $node_type, $pad, $token, $topic) = @_;
 
-	$$node_type{acronym}	= $$topic{title} eq 'Acronyms'	? true : false;
-	$$node_type{topic}		= $$pad{topic_names}{$token}	? true : false;
-	$$node_type{known}		= $$pad{module_names}{$token}	? true : false;
+	$$node_type{acronym}	= $$topic{title} eq 'Acronyms'			? true : false;
+	$$node_type{topic}		= exists($$pad{topic_names}{$token})	? true : false;
+	$$node_type{known}		= exists($$pad{module_names}{$token})	? true : false;
 	$$node_type{unknown}	= ( (! $$node_type{acronym}) && (! $$node_type{known}) && (! $$node_type{topic}) ) ? true : false;
-
-	say $$topic{title} if ($$node_type{unknown});
 
 	$$pad{count}{acronym}++	if ($$node_type{acronym});
 	$$pad{count}{known}++	if ($$node_type{known});
