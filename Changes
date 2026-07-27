@@ -2,6 +2,7 @@ Revision history for perl module CPAN::MetaCurator
 
 1.28  2026-07-26
 	- Explain what the Unclassified stat means in the header of cpan.metacurator.tree.html.
+	- Remove 'use utf8;' from Config.pm & delete the string containing utf8 chars which tested utf8 handling.
 
 1.27  2026-07-14
 	- Add scripts/parse.metacpan.recent.pl & some input in html/*.html, saved from MetaCPAN Recent.
