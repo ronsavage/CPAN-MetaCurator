@@ -86,7 +86,7 @@ sub build_dag_tree
 			$module				= $token;
 			$note_count			= 0;
 
-			say "Acronym? $$topic{title}" if ($$topic{title} eq 'ACMA');
+			say "name: $$topic{name}. title: $$topic{title}" if ($$topic{name} eq 'ACMA');
 
 			if (! $seen{$module} && ($$topic{title} ne 'Acronyms') )
 			{
