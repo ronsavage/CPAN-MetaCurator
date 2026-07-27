@@ -350,7 +350,7 @@ sub gather_statistics
 	$$node_type{known}		= exists($$pad{module_names}{$token})	? true : false;
 	$$node_type{unknown}	= ( (! $$node_type{acronym}) && (! $$node_type{known}) && (! $$node_type{topic}) ) ? true : false;
 
-	say $$topic{title} if ($$node_type{unknown});
+	say "$$topic{title}. acronym: $$node_type{acronym}. topic: $$node_type{topic}. known: $$node_type{known}. unknown: $$node_type{unknown}";
 
 	$$pad{count}{acronym}++	if ($$node_type{acronym});
 	$$pad{count}{known}++	if ($$node_type{known});
