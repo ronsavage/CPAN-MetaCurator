@@ -86,7 +86,9 @@ sub build_dag_tree
 			$module				= $token;
 			$note_count			= 0;
 
-			if (! $seen{$module})
+			say $$topic{title};
+
+			if (! $seen{$module} && ($$topic{title} ne 'Acronyms') )
 			{
 				$seen{$module} = $self -> insert_hashref('modules', {name => $module});
 
