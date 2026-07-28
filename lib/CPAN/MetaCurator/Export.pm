@@ -86,13 +86,11 @@ sub build_dag_tree
 			$module				= $token;
 			$note_count			= 0;
 
-			say "title: $$topic{title}. token: $token" if ($$topic{title} eq 'Acronyms');
+			$self -> gather_statistics(\%node_type, $pad, $module, $topic);
 
 			if (! $seen{$module} && ($$topic{title} ne 'Acronyms') )
 			{
 				$seen{$module} = $self -> insert_hashref('modules', {name => $module});
-
-				$self -> gather_statistics(\%node_type, $pad, $module, $topic);
 			}
 		}
 		elsif ($line =~ /<pre>/)
@@ -351,8 +349,6 @@ sub gather_statistics
 	$$node_type{topic}		= exists($$pad{topic_names}{$token})	? true : false;
 	$$node_type{known}		= exists($$pad{module_names}{$token})	? true : false;
 	$$node_type{unknown}	= ( (! $$node_type{acronym}) && (! $$node_type{known}) && (! $$node_type{topic}) ) ? true : false;
-
-	#say "$$topic{title}. acronym: $$node_type{acronym}. topic: $$node_type{topic}. known: $$node_type{known}. unknown: $$node_type{unknown}";
 
 	$$pad{count}{acronym}++	if ($$node_type{acronym});
 	$$pad{count}{known}++	if ($$node_type{known});
