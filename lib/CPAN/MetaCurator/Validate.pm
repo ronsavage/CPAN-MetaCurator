@@ -53,7 +53,6 @@ sub validate
 
 				$description	= $$attributes{description};
 				$uri			= $$attributes{uri} || '#';
-				$uri			= ($name =~ qr/Notes for|See also/) ? "&#8853; $name" : "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
 			}
 			elsif ($$options{_depth} == 3) # 'Notes for ...' || 'See also' entries.
 			{
