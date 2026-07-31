@@ -21,20 +21,10 @@ sub validate
 	$self -> init_config;
 	$self -> init_db;
 
+	# Phase 1: Build the DAG_Node tree.
+
 	my($pad)	= $self -> build_pad;
-	my($root)	= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
-	my($id)		= $$pad{topic_html_ids}{$$root{title} };
-
-	$self -> logger -> info($self -> visual_break);
-	$self -> logger -> info("Topic: id: $id. html_id: $$pad{topic_html_ids}{$$root{title}}. title: $$root{title}");
-	$self -> logger -> info($self -> visual_break);
-
-	for my $topic (@{$$pad{topics} })
-	{
-		$self -> logger -> info("Topic: id: $$topic{id}. html_id: $$pad{topic_html_ids}{$$topic{title}}. title: $$topic{title}");
-		$self -> parse_topic($pad, $topic);
-		$self -> logger -> info($self -> visual_break);
-	}
+	my($root)	= $self -> build_tree($pad);
 
 	return 0;
 

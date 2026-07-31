@@ -2,6 +2,7 @@ Revision history for perl module CPAN::MetaCurator
 
 1.29  2026-07-31
 	- Rearrange code in Export.pm so Validate.pm can share sub build_dag_tree().
+	- Rewrite Validate.pm to use new code in Export.pm.
 
 1.28  2026-07-26
 	- Explain what the Unclassified stat means in the header of cpan.metacurator.tree.html.
