@@ -26,6 +26,47 @@ sub validate
 	my($pad)	= $self -> build_pad;
 	my($root)	= $self -> build_tree($pad);
 
+	# Phase 4; Build the JS Tree.
+	# New style.
+
+	my($description);
+	my($previous_depth);
+	my($uri);
+
+	$root -> walk_down
+	({
+		callback => sub
+		{
+			my($node, $options)	= @_;
+			$attributes			= $node -> attributes;
+			$name       		= $node -> name;
+
+			if ($$options{_depth} == 0) # Root.
+			{
+			}
+			elsif ($$options{_depth} == 1) # Topics.
+			{
+			}
+			elsif ($$options{_depth} == 2) # Module name || 'Notes for ...' || 'See also'.
+			{
+				$$pad{count}{leaf}++;
+
+				$description	= $$attributes{description};
+				$uri			= $$attributes{uri} || '#';
+				$uri			= ($name =~ qr/Notes for|See also/) ? "&#8853; $name" : "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
+			}
+			elsif ($$options{_depth} == 3) # 'Notes for ...' || 'See also' entries.
+			{
+			}
+
+			$previous_depth = $$options{_depth};
+
+			return 1;
+
+		}, # End of callback.
+		_depth => 0,
+	});
+
 	return 0;
 
 } # End of validate.
