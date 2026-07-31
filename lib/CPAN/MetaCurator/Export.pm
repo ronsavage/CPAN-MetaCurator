@@ -2,7 +2,6 @@ package CPAN::MetaCurator::Export;
 
 use boolean;
 use feature 'say';
-use open qw(:std :utf8);
 use parent 'CPAN::MetaCurator::HTML';
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
@@ -179,15 +178,10 @@ sub export_tree
 	$self -> init_config;
 	$self -> init_db;
 
-	my($pad)					= $self -> build_pad;
-	$$pad{jstree_html_path}		= $self -> jstree_html_path;
-	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
-	my($origin)					= shift @{$$pad{topics} }; # I.e.: {parent_id => 1, text => 'Root', title => 'MetaCurator'}.
-	$leaf_id					= 0;
-	my($root)					= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $leaf_id, description => 'Root'} });
-
-	$self -> logger -> info($self -> visual_break);
-	$self -> logger -> info("Topic: id: $leaf_id. title: $$origin{title}");
+	my($pad)	= $self -> build_pad;
+	my($origin)	= shift @{$$pad{topics} }; # I.e.: {id => 1, parent_id => 1, text => 'Root', title => 'MetaCurator'}.
+	$leaf_id	= 0;
+	my($root)	= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $leaf_id, description => 'Root'} });
 
 	# Phase 1: Build the DAG_Node tree.
 
@@ -297,8 +291,10 @@ sub export_tree
 	# Phase 5: Build the web page which uses JSTree.
 	# And save it to html/cpan.metacurator.tree.html
 
-	my($list)	= join("\n", @list);
-	$body		=~ s/!list!/$list/;
+	$$pad{jstree_html_path}		= $self -> jstree_html_path;
+	my($header, $body, $footer)	= $self -> build_html($pad); # Returns templates.
+	my($list)					= join("\n", @list);
+	$body						=~ s/!list!/$list/;
 
 	for $_ (keys %{$$pad{count} })
 	{
