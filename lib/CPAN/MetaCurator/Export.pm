@@ -171,19 +171,12 @@ sub build_dag_tree
 
 # -----------------------------------------------
 
-sub export_tree
+sub build_tree
 {
-	my($self) = @_;
-
-	$self -> init_config;
-	$self -> init_db;
-
-	my($pad)	= $self -> build_pad;
-	my($origin)	= shift @{$$pad{topics} }; # I.e.: {id => 1, parent_id => 1, text => 'Root', title => 'MetaCurator'}.
-	$leaf_id	= 0;
-	my($root)	= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $leaf_id, description => 'Root'} });
-
-	# Phase 1: Build the DAG_Node tree.
+	my($self, $pad)	= @_;
+	my($origin)		= shift @{$$pad{topics} }; # I.e.: {id => 1, parent_id => 1, text => 'Root', title => 'MetaCurator'}.
+	$leaf_id		= 0;
+	my($root)		= Tree::DAG_Node -> new({name => $$origin{title}, attributes => {id => $leaf_id, description => 'Root'} });
 
 	my($daughter);
 
@@ -195,6 +188,24 @@ sub export_tree
 
 		$self -> build_dag_tree($daughter, $pad, $topic);
 	}
+
+	return $root;
+
+} # End of build_tree.
+
+# -----------------------------------------------
+
+sub export_tree
+{
+	my($self) = @_;
+
+	$self -> init_config;
+	$self -> init_db;
+
+	# Phase 1: Build the DAG_Node tree.
+
+	my($pad)	= $self -> build_pad;
+	my($root)	= $self -> build_tree($pad);
 
 	# Phase 2: Save the DAG_Node tree to disk.
 
