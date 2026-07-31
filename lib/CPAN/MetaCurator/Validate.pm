@@ -18,7 +18,7 @@ use Types::Standard 'Enum';
 
 our %seen;
 
-our $VERSION = '1.28';
+our $VERSION = '1.29';
 
 # --------------------------------------------------
 
