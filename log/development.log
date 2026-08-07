@@ -21408,3 +21408,46 @@
 [2026-08-07 15:11:47.54381] [739889] [info] see_also count: 0
 [2026-08-07 15:11:47.54383] [739889] [info] topic count: 214
 [2026-08-07 15:11:47.54384] [739889] [info] unknown count: 5717
+[2026-08-07 17:26:28.41516] [775462] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-08-07 17:26:28.42131] [775462] [info] Dropping all tables
+[2026-08-07 17:26:28.43220] [775462] [info] Dropped all tables
+[2026-08-07 17:26:28.43226] [775462] [info] --------------------------------------------------
+[2026-08-07 17:26:28.67348] [775470] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-08-07 17:26:28.67366] [775470] [info] Creating all tables
+[2026-08-07 17:26:28.69002] [775470] [info] Created all tables
+[2026-08-07 17:26:28.69008] [775470] [info] --------------------------------------------------
+[2026-08-07 17:26:28.94455] [775472] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-08-07 17:26:28.94477] [775472] [info] Populating some tables
+[2026-08-07 17:26:28.95216] [775472] [info] Start populate_constants_table()
+[2026-08-07 17:26:28.98184] [775472] [info] Populated 'constants'. Record count: 7
+[2026-08-07 17:26:28.98253] [775472] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-08-07 17:26:28.98610] [775472] [info] Start populate_topics_table()
+[2026-08-07 17:26:29.04763] [775472] [warn] Skipping paragraph: ChangeLog1
+[2026-08-07 17:26:29.04770] [775472] [warn] Skipping paragraph: ChangeLog2
+[2026-08-07 17:26:29.09859] [775472] [warn] Skipping paragraph: ChangeLog2
+[2026-08-07 17:26:29.12317] [775472] [warn] Skipping paragraph: GettingStarted
+[2026-08-07 17:26:29.16392] [775472] [warn] Skipping paragraph: MainMenu
+[2026-08-07 17:26:29.39070] [775472] [info] Populated 'topics'. Record count: 214
+[2026-08-07 17:26:29.39085] [775472] [info] Populated some tables
+[2026-08-07 17:26:29.39089] [775472] [info] --------------------------------------------------
+[2026-08-07 17:27:53.19930] [776181] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-08-07 17:27:53.19949] [776181] [info] Dropping all tables
+[2026-08-07 17:27:53.21637] [776181] [info] Dropped all tables
+[2026-08-07 17:27:53.21643] [776181] [info] --------------------------------------------------
+[2026-08-07 17:27:53.45112] [776182] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-08-07 17:27:53.45129] [776182] [info] Creating all tables
+[2026-08-07 17:27:53.46743] [776182] [info] Created all tables
+[2026-08-07 17:27:53.46748] [776182] [info] --------------------------------------------------
+[2026-08-07 17:27:53.72380] [776183] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-08-07 17:27:53.72398] [776183] [info] Populating some tables
+[2026-08-07 17:27:53.72467] [776183] [info] Start populate_constants_table()
+[2026-08-07 17:27:53.75957] [776183] [info] Populated 'constants'. Record count: 7
+[2026-08-07 17:27:53.76034] [776183] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-08-07 17:27:53.76389] [776183] [info] Start populate_topics_table()
+[2026-08-07 17:27:53.82483] [776183] [warn] Skipping paragraph: ChangeLog1
+[2026-08-07 17:27:53.82489] [776183] [warn] Skipping paragraph: ChangeLog2
+[2026-08-07 17:27:53.89974] [776183] [warn] Skipping paragraph: GettingStarted
+[2026-08-07 17:27:53.94017] [776183] [warn] Skipping paragraph: MainMenu
+[2026-08-07 17:27:54.20746] [776183] [info] Populated 'topics'. Record count: 214
+[2026-08-07 17:27:54.20788] [776183] [info] Populated some tables
+[2026-08-07 17:27:54.20801] [776183] [info] --------------------------------------------------
