@@ -86,7 +86,7 @@ sub init_metapackager_config
 
 =head1 NAME
 
-CPAN::MetaCurator::Config - Manage the cpan.metacurator.sqlite database
+C<CPAN::MetaCurator::Config> - Manage the cpan.metacurator.sqlite database
 
 =head1 Synopsis
 
