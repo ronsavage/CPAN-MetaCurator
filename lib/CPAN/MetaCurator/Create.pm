@@ -176,6 +176,10 @@ sub drop_all_tables
 
 =pod
 
+=head1 NAME
+
+C<CPAN::MetaCurator::Create> - Manage the cpan.metacurator.sqlite database
+
 =head1 Machine-Readable Change Log
 
 The file Changes was converted into Changelog.ini by L<Module::Metadata::Changes>.
