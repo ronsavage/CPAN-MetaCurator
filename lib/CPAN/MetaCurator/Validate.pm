@@ -78,7 +78,7 @@ sub validate
 
 =head1 NAME
 
-C<CPAN::MetaCurator::Validate> - Manage the cpan.metacurator.sqlite database
+CPAN::MetaCurator::Validate - Manage the cpan.metacurator.sqlite database
 
 =head1 Machine-Readable Change Log
 

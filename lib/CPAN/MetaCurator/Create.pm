@@ -178,7 +178,7 @@ sub drop_all_tables
 
 =head1 NAME
 
-C<CPAN::MetaCurator::Create> - Manage the cpan.metacurator.sqlite database
+CPAN::MetaCurator::Create - Manage the cpan.metacurator.sqlite database
 
 =head1 Machine-Readable Change Log
 

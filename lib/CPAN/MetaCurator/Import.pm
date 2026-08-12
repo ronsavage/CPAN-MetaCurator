@@ -209,7 +209,7 @@ sub read_tiddlers_file
 
 =head1 NAME
 
-C<CPAN::MetaCurator::Import> - Manage the cpan.metacurator.sqlite database
+CPAN::MetaCurator::Import - Manage the cpan.metacurator.sqlite database
 
 =head1 Machine-Readable Change Log
 

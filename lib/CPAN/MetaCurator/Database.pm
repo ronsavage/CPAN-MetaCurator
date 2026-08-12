@@ -321,7 +321,7 @@ sub update_table
 
 =head1 NAME
 
-C<CPAN::MetaCurator::Database> - Manage the cpan.metacurator.sqlite database
+CPAN::MetaCurator::Database - Manage the cpan.metacurator.sqlite database
 
 =head1 Machine-Readable Change Log
 

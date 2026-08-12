@@ -389,7 +389,7 @@ sub write_file
 
 =head1 NAME
 
-C<CPAN::MetaCurator::Export> - Manage the cpan.metacurator.sqlite database
+CPAN::MetaCurator::Export - Manage the cpan.metacurator.sqlite database
 
 =head1 Machine-Readable Change Log
 
