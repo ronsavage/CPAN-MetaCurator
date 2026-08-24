@@ -39,7 +39,10 @@ Note: My web host and I use case-sensitive file systems.
 
 =over
 =item 'Run' here means run from the bash command line
-=item Run: cp ~/backup/02packages.details.txt /tmp
+=item Run: cd ~/backup
+=item Run: download.packages.details.pl or wget https://www.cpan.org/modules/02packages.details.txt.gz
+=item Run: gunzip 02packages.details.txt.gz
+=item Run: cp 02packages.details.txt /tmp
 =item Next, set INCLUDE_PACKAGES thus:
 =item If you have /tmp/cpan.metapackager.sqlite available use INCLUDE_PACKAGES=1 or 0 (default) otherwise
 =item Run: INCLUDE_PACKAGES=1
