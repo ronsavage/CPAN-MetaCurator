@@ -51,6 +51,7 @@ Note: My web host and I use case-sensitive file systems.
 =item Run: export INCLUDE_PACKAGES
 =item Run: scripts/build.db.sh - to import tiddlers.json file into database data/cpan.metacurator.sqlite
 =item Run: scripts/export.tree.sh - to export CPAN::MetaCurator database to html/cpan.metacurator.tree.html
+=item Run: git commit -am"Recreate html/cpan.metacurator.tree.html"
 =item Run: git push
 =back
 

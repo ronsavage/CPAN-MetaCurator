@@ -193,6 +193,31 @@ sub build_tree
 
 } # End of build_tree.
 
+# --------------------------------------------------
+
+sub export_modules_table
+{
+	my($self) = @_;
+
+	$self -> init_config;
+	$self -> init_db;
+
+	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
+	my($modules_csv_path)	= File::Spec -> catfile($self -> home_path, $self -> output_path);
+
+	$self -> logger -> info("Exporting modules table");
+	$self -> logger -> info("Reading: $database_path");
+	$self -> logger -> info("Writing: $modules_csv_path");
+
+	my($command)				= `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $modules_csv_path`;
+	my($line_count)				= `wc -l $modules_csv_path`;
+	my($module_count, $name)	= split(' ', $line_count);
+	$module_count--; # Allow for header record.
+
+	$self -> logger -> info("Output record count (excluding header): $module_count");
+
+} # End of export_modules_table.
+
 # -----------------------------------------------
 
 sub export_tree
@@ -320,31 +345,6 @@ sub export_tree
 } # End of export_tree.
 
 # --------------------------------------------------
-
-sub export_modules_table
-{
-	my($self) = @_;
-
-	$self -> init_config;
-	$self -> init_db;
-
-	my($database_path)		= File::Spec -> catfile($self -> home_path, $self -> database_path);
-	my($modules_csv_path)	= File::Spec -> catfile($self -> home_path, $self -> output_path);
-
-	$self -> logger -> info("Exporting modules table");
-	$self -> logger -> info("Reading: $database_path");
-	$self -> logger -> info("Writing: $modules_csv_path");
-
-	my($command)				= `echo ".h on\n.mode csv\nselect * from modules" | sqlite3 $database_path > $modules_csv_path`;
-	my($line_count)				= `wc -l $modules_csv_path`;
-	my($module_count, $name)	= split(' ', $line_count);
-	$module_count--; # Allow for header record.
-
-	$self -> logger -> info("Output record count (excluding header): $module_count");
-
-} # End of export_modules_table.
-
-# --------------------------------------------------
 # Some names might be acronyms & module names & topic names.
 # Example: RSS.
 
@@ -360,6 +360,8 @@ sub gather_statistics
 	$$pad{count}{acronym}++	if ($$node_type{acronym});
 	$$pad{count}{known}++	if ($$node_type{known});
 	$$pad{count}{unknown}++	if ($$node_type{unknown} && ($token ne 'See also') );
+
+	$self -> logger -> info("Unknown. title: $$topic{title}. token/module: $token")	if ($$node_type{unknown} && ($token ne 'See also') );
 
 } # End of gather_statistics;
 
