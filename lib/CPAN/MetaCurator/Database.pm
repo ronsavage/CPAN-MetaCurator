@@ -268,20 +268,6 @@ sub read_csv_file
 
 # --------------------------------------------------
 
-sub read_table
-{
-	my($self, $table_name)	= @_;
-	my($sql)				= "select * from $table_name";
-	my($set)				= $self -> db -> query($sql) || die $self -> db -> error;
-
-	# Return an arrayref of hashrefs.
-
-	return [$set -> hashes];
-
-} # End of read_table.
-
-# --------------------------------------------------
-
 sub read_metapackager_table
 {
 	my($self, $pad)	= @_;
@@ -318,6 +304,36 @@ sub read_1_record
 	return ${$set -> hashes}[0];
 
 } # End of read_1_record.
+
+# --------------------------------------------------
+
+sub read_table
+{
+	my($self, $table_name)	= @_;
+	my($sql)				= "select * from $table_name";
+	my($set)				= $self -> db -> query($sql) || die $self -> db -> error;
+
+	# Return an arrayref of hashrefs.
+
+	return [$set -> hashes];
+
+} # End of read_table.
+
+# --------------------------------------------------
+
+sub read_tiddlers_file
+{
+	my($self) = @_;
+
+	$self -> init_config;
+	$self -> init_db;
+
+	my($file_name)	= File::Spec -> catfile($self -> home_path, $self -> tiddlers_path);
+	my($data)		= join('', read_lines($file_name, 'UTF-8') );
+
+	return from_json $data;
+
+} # End of read_tiddlers_file.
 
 # --------------------------------------------------
 

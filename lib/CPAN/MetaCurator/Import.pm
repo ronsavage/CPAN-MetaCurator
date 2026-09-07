@@ -177,22 +177,6 @@ sub populate_topics_table
 
 # --------------------------------------------------
 
-sub read_tiddlers_file
-{
-	my($self) = @_;
-
-	$self -> init_config;
-	$self -> init_db;
-
-	my($file_name)	= File::Spec -> catfile($self -> home_path, $self -> tiddlers_path);
-	my($data)		= join('', read_lines($file_name, 'UTF-8') );
-
-	return from_json $data;
-
-} # End of read_tiddlers_file.
-
-# --------------------------------------------------
-
 1;
 
 =pod
