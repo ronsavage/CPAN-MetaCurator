@@ -9,7 +9,6 @@ use Data::Dumper::Concise; # For Dumper().
 use DateTime::Tiny;
 
 use File::Spec;
-use File::Slurper 'read_lines';
 
 use Mew;
 use Mojo::JSON 'from_json';
