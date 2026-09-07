@@ -363,6 +363,17 @@ sub gather_statistics
 
 # --------------------------------------------------
 
+sub report
+{
+	my($self)		= @_;
+	my($tiddlers)	= $self -> read_tiddlers_file;
+
+	return 1;
+
+} # End of report.
+
+# --------------------------------------------------
+
 sub write_file
 {
 	my($self, $header, $body, $footer, $pad) = @_;

@@ -6,9 +6,9 @@ use strict;
 use warnings;
 use warnings qw(FATAL utf8);
 
-use Data::Dumper::Concise; # For Dumper.
+use Data::Dumper::Concise; # For Dumper().
 
-use CPAN::MetaCurator::Create;
+use CPAN::MetaCurator::Export;
 
 use Getopt::Long;
 
@@ -20,26 +20,28 @@ sub process
 {
 	my(%options) = @_;
 
-	return CPAN::MetaCurator::Create
-			-> new(home_path => $options{home_path}, log_level => $options{log_level})
-			-> create_all_tables;
+	return CPAN::MetaCurator::Export
+			-> new(home_path => $options{home_path}, log_level => $options{log_level}, report_type => $options{report_type})
+			-> report;
 
 } # End of process.
 
 # ------------------------------------------------
 
-say "create.tables.pl - Create all tables\n";
+#say "report.pl - Read tiddlers file and report various things\n";
 
 my(%options);
 
-$options{help}	 	= 0;
-$options{home_path}	= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
-$options{log_level}	= 'info';
+$options{help}		 	= 0;
+$options{home_path}		= "$ENV{HOME}/perl.modules/CPAN-MetaCurator";
+$options{log_level}		= 'info';
+$options{report_type}	= 'topics';
 my(%opts)			=
 (
 	'help'			=> \$options{help},
 	'home_path'		=> \$options{home_path},
 	'log_level=s'	=> \$options{log_level},
+	'report_type=s'	=> \$options{report_type},
 );
 
 GetOptions(%opts) || die("Error in options. Options: " . Dumper(%opts) );
@@ -59,7 +61,7 @@ __END__
 
 =head1 NAME
 
-create.tables.pl - Create all tables
+report.pl - Read tiddlers file and report various things
 
 =head1 SYNOPSIS
 
@@ -98,3 +100,28 @@ Default: info.
 =back
 
 =cut
+
+__DATA__
+
+binmode STDOUT, ':encoding(UTF-8)';
+
+my($log_level)	= 'debug';
+my($importer)	= CPAN::MetaCurator::Import -> new(home_path => '.', log_level => $log_level);
+my($data)		= $importer -> read_tiddlers_file;
+my($count)		= 0;
+
+my($text, $title);
+
+for my $index (0 .. $#$data)
+{
+	# Node keys: created, modified, text, title.
+
+	$text	= $$data[$index]{text};
+	$title	= $$data[$index]{title};
+
+	$count++;
+
+	say "Record: $count. Missing prefix", next if ($text !~ m/^\"\"\"\no (.+)$/s);
+#	say "$$data[$index]{title}: $$data[$index]{text}";
+	say $$data[$index]{title};
+}

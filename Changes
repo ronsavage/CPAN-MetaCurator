@@ -1,5 +1,8 @@
 Revision history for perl module CPAN::MetaCurator
 
+1.31  2026-09-07
+	- New program: report.pl. Will report on various things. 1 option will simply list topics.
+
 1.30  2026-08-26
 	- Remove Unclassified from the stats produced with cpan.metacurator.tree.html.
 		Turns out they were topic names counted multiple times.

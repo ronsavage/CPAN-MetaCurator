@@ -121,6 +121,24 @@ sub build_pad
 
 # -----------------------------------------------
 
+sub get_special_para_names_regexp
+{
+	my($self, $pad)		= @_;
+	$$pad{constants}	= $self -> read_table('constants');
+
+	my($special_para_names);
+
+	for my $row (@{$$pad{constants} })
+	{
+		$special_para_names = $$row{value} if ($$row{name} eq 'special_para_names');
+	}
+
+	return qr/($special_para_names)/o;
+
+} # End of get_special_para_names_regexp.
+
+# -----------------------------------------------
+
 sub get_table_column_names
 {
 	my($self, $discard_id, $table_name)	= @_;
