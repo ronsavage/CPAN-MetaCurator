@@ -11,17 +11,11 @@ use Data::Dumper::Concise; # For Dumper().
 use File::Slurper 'read_lines';
 use File::Spec;
 
-use Moo;
+use Mew;
 
-use Types::Standard qw/Str/;
+has names_path => (Str, default => sub{return 'data/module.names.txt'}, chained => 1);
 
-has names_path =>
-(
-	default		=> sub{return 'data/module.names.txt'},
-	is			=> 'rw',
-	isa			=> Str,
-	required	=> 0,
-);
+has report_type => (Str, default => sub{return 'topics'}, chained => 1);
 
 our $VERSION = '1.31';
 
@@ -69,6 +63,40 @@ sub check
 	$self -> logger -> info('check() finished');
 
 } # End of check.
+
+# --------------------------------------------------
+
+sub report
+{
+	my($self)	= @_;
+	my($data)	= $self -> read_tiddlers_file;
+	my($pad)	= $self -> pad; # For temporary use, during import.
+	my($regexp)	= $self -> get_special_para_names_regexp($pad);
+
+	my($text, $title, $temp_text, $temp_title);
+
+	for my $index (0 .. $#$data)
+	{
+		$text	= $$data[$index]{text};
+		$title	= $$data[$index]{title};
+
+		if ($title =~ $regexp)
+		{
+			$self -> logger -> warn("Skipping paragraph: $1");
+
+			next;
+		}
+
+		$temp_text	= $text		|| '';
+		$temp_title	= $title	|| '';
+
+		$self -> logger -> warn("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<="), next if (! ($temp_text && $temp_title) );
+		$self -> logger -> info("temp_text: =>$temp_text<=. temp_title: =>$temp_title<=");
+	}
+
+	return 1;
+
+} # End of report.
 
 # --------------------------------------------------
 

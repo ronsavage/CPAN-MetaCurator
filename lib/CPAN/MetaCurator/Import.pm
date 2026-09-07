@@ -159,8 +159,7 @@ sub populate_topics_table
 		$temp_text	= $text		|| '';
 		$temp_title	= $title	|| '';
 
-		$self -> logger -> debug("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<=") if (! ($temp_text && $temp_title) );
-		$self -> logger -> info("populate_topics_table(). Missing text @ line: $index. title: $title. text: $text"),	next if ($text !~ m/^\"\"\"\no (.+)$/s);
+		$self -> logger -> warn("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<="), next if (! ($temp_text && $temp_title) );
 
 		$$record{parent_id}	= $root_id;
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
@@ -188,7 +187,7 @@ sub read_tiddlers_file
 	my($file_name)	= File::Spec -> catfile($self -> home_path, $self -> tiddlers_path);
 	my($data)		= join('', read_lines($file_name, 'UTF-8') );
 
-	return from_json $json;
+	return from_json $data;
 
 } # End of read_tiddlers_file.
 

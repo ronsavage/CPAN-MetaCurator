@@ -8,7 +8,7 @@ use warnings qw(FATAL utf8);
 
 use Data::Dumper::Concise; # For Dumper().
 
-use CPAN::MetaCurator::Export;
+use CPAN::MetaCurator::Search;
 
 use Getopt::Long;
 
@@ -20,7 +20,7 @@ sub process
 {
 	my(%options) = @_;
 
-	return CPAN::MetaCurator::Export
+	return CPAN::MetaCurator::Search
 			-> new(home_path => $options{home_path}, log_level => $options{log_level}, report_type => $options{report_type})
 			-> report;
 
