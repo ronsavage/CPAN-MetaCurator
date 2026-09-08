@@ -133,7 +133,7 @@ sub populate_topics_table
 	$self -> logger -> info("Start populate_topics_table()");
 
 	# We have just populated the constants table, so read it to get the names of the special (TiddlyWiki) paragraphs.
-	# Typically: ChangeLog1|ChangeLog2|GettingStarted|MainMenu|TableOfContents.
+	# Typically: Acronyms|ChangeLog1|ChangeLog2|FAQ|GettingStarted|MainMenu|TableOfContents
 
 	my($root_id)	= $self -> insert_hashref($table_name, $record);
 	my($pad)		= $self -> pad; # For temporary use, during import.
@@ -157,7 +157,7 @@ sub populate_topics_table
 		$temp_text	= $text		|| '';
 		$temp_title	= $title	|| '';
 
-		$self -> logger -> warn("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<="), next if (! ($temp_text && $temp_title) );
+		#$self -> logger -> warn("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<="), next if (! ($temp_text && $temp_title) );
 
 		$$record{parent_id}	= $root_id;
 		$text				= $1 if ($text =~ m/^\"\"\"\n(.+)$/s);
