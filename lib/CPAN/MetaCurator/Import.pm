@@ -11,7 +11,6 @@ use DateTime::Tiny;
 use File::Spec;
 
 use Mew;
-use Mojo::JSON 'from_json';
 
 use Text::CSV::Encoded;
 

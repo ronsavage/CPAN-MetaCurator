@@ -1,5 +1,6 @@
 Program						Purpose
 build.db.sh					Runs drop.tables.pl, create.tables.pl, populate.sqlite.tables.pl
+check.module.names.pl		Runs Search.check()
 create.tables.pl			Create all db tables in data/modules.sqlite
 drop.tables.pl				Drop all db tables in data/modules.sqlite
 export.modules2csv.pl		Export modules table to data/modules.table.csv
