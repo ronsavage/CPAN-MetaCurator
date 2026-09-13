@@ -42,8 +42,12 @@ sub check
 	my($found, @found);
 	my(@not_found);
 
-	for my $name (sort @names)
+	for my $name (@names)
 	{
+		$name = ($name =~ /^o (.+)/) ? $1 : '';
+
+		next if ($name);
+
 		$found = exists $$pad{module_names}{$name};
 
 		if ($found)
@@ -61,6 +65,8 @@ sub check
 	$self -> logger -> info('Not found:');
 	$self -> logger -> info(Dumper @not_found);
 	$self -> logger -> info('check() finished');
+
+	return 1; # Success.
 
 } # End of check.
 
@@ -106,7 +112,7 @@ sub report
 
 =head1 NAME
 
-CPAN::MetaCurator::Search - Manage the cpan.metacurator.sqlite database
+CPAN::MetaCurator::Search - Parse output from scripts/parse.metacpan.recent.pl
 
 =head1 Machine-Readable Change Log
 

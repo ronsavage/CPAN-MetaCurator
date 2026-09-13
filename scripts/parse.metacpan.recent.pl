@@ -65,6 +65,8 @@ sub process
 
 # ----------------------------------------------
 
+say "parse.metacpan.recent.pl - Parse a HTML file from MetaCPAN/recent\n";
+
 my($option_parser) = Getopt::Long::Parser -> new();
 
 my(%option);

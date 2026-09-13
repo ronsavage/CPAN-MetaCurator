@@ -61,7 +61,7 @@ __END__
 
 =head1 NAME
 
-check.module.names.pl - Check for presence of module names
+check.module.names.pl - Check the db for the presence/absence of the given module names
 
 =head1 SYNOPSIS
 
