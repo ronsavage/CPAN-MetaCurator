@@ -30,7 +30,7 @@ sub check
 
 	my($pad)			= $self -> build_pad;
 	my($database_path)	= File::Spec -> catfile($self -> home_path, $self -> database_path);
-	my($names_path)		= File::Spec -> catfile($self -> home_path, $self -> names_path);
+	my($names_path)		= $self -> names_path;
 
 	$self -> logger -> info("Searching modules table");
 	$self -> logger -> info("Reading: $database_path");
