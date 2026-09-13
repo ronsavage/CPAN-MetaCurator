@@ -35,7 +35,8 @@ sub check
 	$self -> logger -> info("Searching modules table");
 	$self -> logger -> info("Reading: $database_path");
 	$self -> logger -> info("Reading: $names_path");
-	$self -> logger -> debug(Dumper $$pad{module_names});
+	$self -> logger -> debug(Dumper $$pad{modules});
+	$self -> logger -> debug('End of intro');
 
 	my(@names) = read_lines($names_path);
 
