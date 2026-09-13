@@ -48,7 +48,7 @@ sub check
 
 		next if (! $name);
 
-		$found = exists $$pad{module_names}{$name};
+		$found = exists $$pad{modules}{$name};
 
 		if ($found)
 		{
