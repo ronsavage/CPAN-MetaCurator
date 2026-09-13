@@ -71,6 +71,8 @@ sub build_pad
 
 	for (@{$self -> table_names}) {$$pad{$_} = $self -> read_table($_) };
 
+	say Dumper($$pad{modules});
+
 	# Constants. Eg: encoding.
 	# The constants table used to contain page_name=html/cpan.metacurator.tree.html.
 	# Now we get the value from export.tree.pl & its parameter jstree_html_path.
