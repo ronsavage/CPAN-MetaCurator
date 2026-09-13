@@ -71,6 +71,13 @@ sub build_pad
 
 	for (@{$self -> table_names}) {$$pad{$_} = $self -> read_table($_) };
 
+	$$pad{module_names} = {};
+
+	for my $item (@{$$pad{modules})
+	{
+		$$pad{module_names}{$$item{name} = $item;
+	}
+
 	# Constants. Eg: encoding.
 	# The constants table used to contain page_name=html/cpan.metacurator.tree.html.
 	# Now we get the value from export.tree.pl & its parameter jstree_html_path.
