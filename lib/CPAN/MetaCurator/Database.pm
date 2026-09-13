@@ -73,7 +73,7 @@ sub build_pad
 
 	$$pad{module_names} = {};
 
-	for my $item (@{$$pad{modules})
+	for my $item (@{$$pad{modules} })
 	{
 		$$pad{module_names}{$$item{name} } = $item;
 	}
