@@ -40,14 +40,17 @@ sub check
 
 	my($found, @found);
 	my(@not_found);
+	my(%seen);
 
 	for my $name (@names)
 	{
 		$name = ($name =~ /^o (.+)/) ? $1 : '';
 
 		next if (! $name);
+		next if ($seen{$name});
 
-		$found = exists $$pad{module_names}{$name};
+		$seen{$name}	= true;
+		$found			= exists $$pad{module_names}{$name};
 
 		if ($found)
 		{
