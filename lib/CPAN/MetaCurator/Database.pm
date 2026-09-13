@@ -75,7 +75,7 @@ sub build_pad
 
 	for my $item (@{$$pad{modules})
 	{
-		$$pad{module_names}{$$item{name} = $item;
+		$$pad{module_names}{$$item{name} } = $item;
 	}
 
 	# Constants. Eg: encoding.
