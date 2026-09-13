@@ -46,7 +46,7 @@ sub check
 	{
 		$name = ($name =~ /^o (.+)/) ? $1 : '';
 
-		next if ($name);
+		next if (! $name);
 
 		$found = exists $$pad{module_names}{$name};
 
