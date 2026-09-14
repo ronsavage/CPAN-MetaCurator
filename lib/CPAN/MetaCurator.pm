@@ -23,7 +23,7 @@ Note: My web host and I use case-sensitive file systems.
 =item Edit Perl.Wiki as desired. Includes updating the release date. Save to ~/Downloads/
 =item cp ~/Downloads/Perl.Wiki.html to misc/
 =item git commit -am"Update Perl.Wiki V 1.xx"
-=item cp misc/Perl.Wiki.html to $DH/misc (/dev/shm/html/misc on my machine) for eye-ball check via FF
+=item cp misc/Perl.Wiki.html $DH/misc (/dev/shm/html/misc on my machine) for eye-ball check via FF
 =back
 
 =head2 Export Perl.Wiki.html
