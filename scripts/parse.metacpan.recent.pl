@@ -49,7 +49,7 @@ sub process
 		@fields			= split('-', $module);
 
 		pop @fields if ($fields[$#fields] =~ /TRIAL/);
-		pop @fields if ($fields[$#fields] =~ /v?[0-9]/);
+		pop @fields if ($fields[$#fields] =~ /^v?[0-9]/);
 
 		$module	= join('::', @fields);
 
