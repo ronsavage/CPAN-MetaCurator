@@ -7,6 +7,7 @@ export.modules2csv.pl		Export modules table to data/modules.table.csv
 export.topics.pl			Export constants, modules & topics tables to /tmp/topics.txt
 export.tree.pl				Export the db to html/cpan.metacurator.tree.html
 export.tree.sh				Run export.tree.pl
+fix.camel.case.pl			Runs Search.fix_camel_case() to ensure all CamelCase words are embedded in [[...]]
 flowchart.pl				Demo outputs an image with 2 text-in-boxes: TiddlyWiki & JSON file
 parse.metacpan.recent.pl	Reads MetaCPAN.org/recent HTML file & outputs module name, description & pod url in Perl.Wiki's 3-line format
 populate.sqlite.tables.pl	Populate tables constants from data/cpan.metacurator.constants.csv & topics from data/tiddlers.json

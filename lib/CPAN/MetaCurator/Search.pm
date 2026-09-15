@@ -74,6 +74,39 @@ sub check
 
 # --------------------------------------------------
 
+sub fix_camel_case
+{
+	my($self)	= @_;
+	my($data)	= $self -> read_tiddlers_file;
+	my($topics)	= $self -> read_table('topics');
+	my($regexp)	= $self -> get_special_para_names_regexp($pad);
+
+	my($text, $title, $temp_text, $temp_title);
+
+	for my $index (0 .. $#$data)
+	{
+		$text	= $$data[$index]{text};
+		$title	= $$data[$index]{title};
+
+		if ($title =~ $regexp)
+		{
+			$self -> logger -> warn("Skipping paragraph: $1");
+
+			next;
+		}
+
+		$temp_text	= $text		|| '';
+		$temp_title	= $title	|| '';
+
+		$self -> logger -> info("temp_title: $temp_title. temp_text: $temp_text");
+	}
+
+	return 1;
+
+} # End of fix_camel_case.
+
+# --------------------------------------------------
+
 sub report
 {
 	my($self)	= @_;
