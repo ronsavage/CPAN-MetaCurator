@@ -78,10 +78,11 @@ sub fix_camel_case
 {
 	my($self)	= @_;
 	my($data)	= $self -> read_tiddlers_file;
-	my($topics)	= $self -> read_table('topics');
+	my($pad)	= $self -> pad;
 	my($regexp)	= $self -> get_special_para_names_regexp($pad);
+	my($topics)	= $self -> read_table('topics');
 
-	my($text, $title, $temp_text, $temp_title);
+	my($text, $title);
 
 	for my $index (0 .. $#$data)
 	{
@@ -95,10 +96,22 @@ sub fix_camel_case
 			next;
 		}
 
-		$temp_text	= $text		|| '';
-		$temp_title	= $title	|| '';
+		if (! $text)
+		{
+			$self -> logger -> warn("title: $title. Missing text");
 
-		$self -> logger -> info("temp_title: $temp_title. temp_text: $temp_text");
+			next;
+		}
+
+		if (! $title)
+		{
+			$self -> logger -> warn("text: $text. Missing title");
+
+			next;
+		}
+
+		$self -> logger -> info("title: $title. text: $text");
+		$self -> logger -> info('-' x 50);
 	}
 
 	return 1;
@@ -111,7 +124,7 @@ sub report
 {
 	my($self)	= @_;
 	my($data)	= $self -> read_tiddlers_file;
-	my($pad)	= $self -> pad; # For temporary use, during import.
+	my($pad)	= $self -> pad;
 	my($regexp)	= $self -> get_special_para_names_regexp($pad);
 
 	my($text, $title, $temp_text, $temp_title);
