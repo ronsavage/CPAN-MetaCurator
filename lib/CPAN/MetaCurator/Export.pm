@@ -28,7 +28,7 @@ has jstree_html_path => (Str, default => sub{return ''}, chained => 1);
 our $leaf_id;
 our %seen;
 
-our $VERSION = '1.31';
+our $VERSION = '1.32';
 
 # --------------------------------------------------
 

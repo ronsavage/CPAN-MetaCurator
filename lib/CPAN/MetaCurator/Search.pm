@@ -17,7 +17,7 @@ has names_path => (Str, default => sub{return 'data/module.names.txt'}, chained 
 
 has report_type => (Str, default => sub{return 'topics'}, chained => 1);
 
-our $VERSION = '1.31';
+our $VERSION = '1.32';
 
 # --------------------------------------------------
 
