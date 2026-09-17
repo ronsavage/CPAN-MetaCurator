@@ -93,17 +93,13 @@ sub fix_camel_case
 
 		# Scan the $text looking for each topic not surrounded by [[]].
 
-		$self -> logger -> info("Tiddler: $title");
-
 		for $topic (@$topics)
 		{
-			if ($text =~ /\s$$topic{title}\s/)
+			if ($text =~ /(.+?)\s$$topic{title}\s(.*)/)
 			{
-				$self -> logger -> info("Found $title");
+				$text = "$1[[$$topic{title}]]$2";
 			}
 		}
-
-		$self -> logger -> info('-' x 50);
 	}
 
 	return 1;
