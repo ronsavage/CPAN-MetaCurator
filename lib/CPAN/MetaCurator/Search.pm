@@ -119,7 +119,7 @@ sub fix_camel_case
 	print OUT to_json([@output]);
 	close OUT;
 
-	$self -> logger -> info("Input count: $count. Size of output: $#data");
+	$self -> logger -> info("Input count: $count. Size of output: $#output");
 
 	return 1;
 
