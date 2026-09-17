@@ -82,12 +82,15 @@ sub fix_camel_case
 	my($regexp)	= $self -> get_special_para_names_regexp($pad);
 	my($topics)	= $self -> read_table('topics');
 
+	my($item);
+	my(@output);
 	my($text, $title, $topic);
 
 	for my $index (0 .. $#$data)
 	{
-		$text	= $$data[$index]{text};
-		$title	= $$data[$index]{title};
+		$item	= $$data[$index];
+		$text	= $$item{text};
+		$title	= $$item{title};
 
 		next if ($title =~ $regexp);
 
@@ -100,6 +103,10 @@ sub fix_camel_case
 				$text = "$1\[\[$$topic{title}]]$2";
 			}
 		}
+
+		$$item{text} = $text;
+
+		push @output, $item;
 	}
 
 	return 1;
