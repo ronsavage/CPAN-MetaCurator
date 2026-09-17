@@ -82,10 +82,13 @@ sub fix_camel_case
 	my($pad)	= $self -> pad;
 	my($regexp)	= $self -> get_special_para_names_regexp($pad);
 	my($topics)	= $self -> read_table('topics');
+	my($count)	= 0;
 
 	my($item);
 	my(@output);
 	my($text, $title, $topic);
+
+	$self -> logger -> info("Size of data: $#$data");
 
 	for my $index (0 .. $#$data)
 	{
@@ -94,6 +97,8 @@ sub fix_camel_case
 		$title	= $$item{title};
 
 		next if ($title =~ $regexp);
+
+		$count++;
 
 		# Scan the $text looking for each topic not surrounded by [[]].
 
@@ -111,8 +116,10 @@ sub fix_camel_case
 	}
 
 	open(OUT, '>', 'data/new.tiddlers.json');
-	print OUT to_json(@output);
+	print OUT to_json([@output]);
 	close OUT;
+
+	$self -> logger -> info("Input count: $count. Size of output: $#data");
 
 	return 1;
 
