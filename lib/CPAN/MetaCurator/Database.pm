@@ -18,7 +18,7 @@ use File::Spec;
 use File::Slurper 'read_lines';
 
 use Mew;
-use Mojo::JSON 'from_json';
+use Mojo::JSON qw/from_json to_json/;
 
 use Text::CSV::Encoded;
 

@@ -109,6 +109,10 @@ sub fix_camel_case
 		push @output, $item;
 	}
 
+	open(OUT, '>', 'data/new.tiddlers.json');
+	print OUT to_json(@output);
+	close OUT;
+
 	return 1;
 
 } # End of fix_camel_case.
