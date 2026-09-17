@@ -12,6 +12,7 @@ use File::Slurper 'read_lines';
 use File::Spec;
 
 use Mew;
+use Mojo::JSON qw/to_json/;
 
 has names_path => (Str, default => sub{return 'data/module.names.txt'}, chained => 1);
 
