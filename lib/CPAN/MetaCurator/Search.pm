@@ -82,10 +82,6 @@ sub fix_camel_case
 	my($regexp)	= $self -> get_special_para_names_regexp($pad);
 	my($topics)	= $self -> read_table('topics');
 
-	say Dumper($topics);
-
-=pod
-
 	my($text, $title, $topic);
 
 	for my $index (0 .. $#$data)
@@ -101,7 +97,7 @@ sub fix_camel_case
 
 		for $topic (@$topics)
 		{
-			if ($text =~ /\s$topic{title}\s/)
+			if ($text =~ /\s$$topic{title}\s/)
 			{
 				$self -> logger -> info("Found $title");
 			}
@@ -109,8 +105,6 @@ sub fix_camel_case
 
 		$self -> logger -> info('-' x 50);
 	}
-
-=cut
 
 	return 1;
 
