@@ -84,6 +84,8 @@ sub fix_camel_case
 
 	say Dumper($topics);
 
+=pod
+
 	my($text, $title, $topic);
 
 	for my $index (0 .. $#$data)
@@ -107,6 +109,8 @@ sub fix_camel_case
 
 		$self -> logger -> info('-' x 50);
 	}
+
+=cut
 
 	return 1;
 
