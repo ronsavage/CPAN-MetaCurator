@@ -96,20 +96,6 @@ sub fix_camel_case
 			next;
 		}
 
-		if (! $text)
-		{
-			$self -> logger -> warn("title: $title. Missing text");
-
-			next;
-		}
-
-		if (! $title)
-		{
-			$self -> logger -> warn("text: $text. Missing title");
-
-			next;
-		}
-
 		$self -> logger -> info("title: $title. text: $text");
 		$self -> logger -> info('-' x 50);
 	}
@@ -127,7 +113,7 @@ sub report
 	my($pad)	= $self -> pad;
 	my($regexp)	= $self -> get_special_para_names_regexp($pad);
 
-	my($text, $title, $temp_text, $temp_title);
+	my($text, $title);
 
 	for my $index (0 .. $#$data)
 	{
@@ -141,11 +127,8 @@ sub report
 			next;
 		}
 
-		$temp_text	= $text		|| '';
-		$temp_title	= $title	|| '';
-
-		$self -> logger -> warn("Skipping paragraph: temp_text: =>$temp_text<=. temp_title: =>$temp_title<="), next if (! ($temp_text && $temp_title) );
-		$self -> logger -> info("temp_text: =>$temp_text<=. temp_title: =>$temp_title<=");
+		$self -> logger -> info("title: $title. text: $text");
+		$self -> logger -> info('-' x 50);
 	}
 
 	return 1;
