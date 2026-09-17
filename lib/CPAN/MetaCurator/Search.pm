@@ -97,7 +97,7 @@ sub fix_camel_case
 		{
 			if ($text =~ /(.+?)\s$$topic{title}\s(.*)/)
 			{
-				$text = "$1[[$$topic{title}]]$2";
+				$text = "$1\[\[$$topic{title}]]$2";
 			}
 		}
 	}
