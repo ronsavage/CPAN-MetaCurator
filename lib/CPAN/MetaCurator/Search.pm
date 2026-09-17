@@ -82,6 +82,8 @@ sub fix_camel_case
 	my($regexp)	= $self -> get_special_para_names_regexp($pad);
 	my($topics)	= $self -> read_table('topics');
 
+	say Dumper($topics);
+
 	my($text, $title, $topic);
 
 	for my $index (0 .. $#$data)
