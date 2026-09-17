@@ -82,21 +82,27 @@ sub fix_camel_case
 	my($regexp)	= $self -> get_special_para_names_regexp($pad);
 	my($topics)	= $self -> read_table('topics');
 
-	my($text, $title);
+	my($text, $title, $topic);
 
 	for my $index (0 .. $#$data)
 	{
 		$text	= $$data[$index]{text};
 		$title	= $$data[$index]{title};
 
-		if ($title =~ $regexp)
-		{
-			$self -> logger -> warn("Skipping paragraph: $1");
+		next if ($title =~ $regexp);
 
-			next;
+		# Scan the $text looking for each topic not surrounded by [[]].
+
+		$self -> logger -> info("Tiddler: $title");
+
+		for $topic (@$topics)
+		{
+			if ($text =~ /\s$topic{title}\s/)
+			{
+				$self -> logger -> info("Found $title");
+			}
 		}
 
-		$self -> logger -> info("title: $title. text: $text");
 		$self -> logger -> info('-' x 50);
 	}
 
