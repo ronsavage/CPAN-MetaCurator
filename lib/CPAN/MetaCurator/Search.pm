@@ -64,9 +64,9 @@ sub check
 	}
 
 	$self -> logger -> info('Found:');
-	$self -> logger -> info(Dumper @found);
+	$self -> logger -> info(Dumper sort @found);
 	$self -> logger -> info('Not found:');
-	$self -> logger -> info(Dumper @not_found);
+	$self -> logger -> info(Dumper sort @not_found);
 	$self -> logger -> info('check() finished');
 
 	return 1; # Success.
