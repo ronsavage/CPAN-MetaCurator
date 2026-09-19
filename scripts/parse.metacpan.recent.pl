@@ -41,7 +41,7 @@ sub process
 		next if ($line !~ /class="ellipsis release-name"/);
 
 		$description	= $lines[$line_number + 1];
-		$description	= $1 if ($description =~ /.+?>(.+?)<.?/);
+		$description	= $1 if ($description =~ /.+?>(.+)</);
 		@fields			= split('"', $line);
 		@fields			= split('/', $fields[1]);
 		$target			= ($fields[3] eq 'dist') ? 4 : 5;

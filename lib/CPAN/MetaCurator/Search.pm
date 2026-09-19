@@ -45,7 +45,7 @@ sub check
 
 	for my $name (@names)
 	{
-		$name = ($name =~ /^o (.+)/) ? $1 : '';
+		$name = ($name =~ /^o (.+):/) ? $1 : '';
 
 		next if (! $name);
 		next if ($seen{$name});
