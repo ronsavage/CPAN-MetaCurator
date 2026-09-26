@@ -35,6 +35,14 @@ Note: My web host and I use case-sensitive file systems.
 =item mv ~/Downloads/tiddlers.json data/
 =back
 
+=head2 Restore cpan.metapackager.sqlite
+
+=over
+=item pushd ~/perl.modules/CPAN-MetaPackager
+=item cp data/cpan.metapackager.sqlite /tmp
+=item popd
+=back
+
 =head2 Rebuild Perl Wiki Tree
 
 =over
