@@ -308,8 +308,18 @@ sub export_tree
 			}
 			elsif ($$options{_depth} == 3) # 'Notes for ...' || 'See also' entries.
 			{
-				push @list, '<ul>'			if ($previous_depth == 2); # Open ul for subtree at this level.
-				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
+				push @list, '<ul>' if ($previous_depth == 2); # Open ul for subtree at this level.
+
+				if ($name =~ /(.*)(https?.+\.html)(.*)/)
+				{
+					$uri = "<a href = '" . escape_html($2) . "' target = '_blank'>$name</a>";
+
+					push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$uri</li>|;
+				}
+				else
+				{
+					push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
+				}
 
 				$self -> logger -> debug("Depth: options{_depth}: $$options{_depth}. name: $name");
 			}
