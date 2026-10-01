@@ -310,6 +310,8 @@ sub export_tree
 			{
 				push @list, '<ul>'			if ($previous_depth == 2); # Open ul for subtree at this level.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
+
+				$self -> logger -> debug("options{_depth}: $$options{_depth}. name: $name");
 			}
 
 			$previous_depth = $$options{_depth};

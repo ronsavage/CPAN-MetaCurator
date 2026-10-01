@@ -2,6 +2,8 @@ Revision history for perl module CPAN::MetaCurator
 
 1.32  2026-09-15
 	- New sub Search.fix_camel_case() to ensure all topics are embedded in [[...]]
+	- Start debugging Export's export_tree() to fix issue with text linking mindlessly to
+		cpan.metacurator.tree.html even if the text contains a URI.
 
 1.31  2026-09-07
 	- New program: report.pl. Will report on various things. 1 option will simply list topics.
