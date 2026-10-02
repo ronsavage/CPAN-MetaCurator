@@ -71,7 +71,6 @@ sub build_dag_tree
 	@lines			= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
 	my($index)		= -1;
 
-	my($entry);
 	my(%inside, $item);
 	my($leaf, $line, $line_count);
 	my($module);
@@ -172,9 +171,9 @@ sub build_dag_tree
 					$daughter -> add_daughter($note);
 				}
 
-				$entry = Tree::DAG_Node -> new({name => $token, attributes => {id => ++$leaf_id, description => '', uri => ''} });
+				$leaf = $self -> build_dag_item($item, $token);
 
-				$note -> add_daughter($entry);
+				$note -> add_daughter($leaf);
 			}
 		}
 	}
