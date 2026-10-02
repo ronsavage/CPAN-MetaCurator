@@ -130,7 +130,7 @@ sub build_dag_tree
 										$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0];
 										$$item{text} = "[Topic] <button class='btn btn-info'>$$item{text}</button>"
 									}
-					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
+					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>! $text !</a>"}
 					case('text')	{$$item{text} = $token}
 				}
 
@@ -306,23 +306,10 @@ sub export_tree
 				push @list, '</ul></li>'	if ($previous_depth == 3); # Close ul & li opened in subtree below.
 				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$uri|;
 			}
-			elsif ($$options{_depth} == 3) # 'Notes for ...' || 'See also' entries.
+			elsif ($$options{_depth} == 3) # 'Notes for' entries || 'See also' entries.
 			{
 				push @list, '<ul>' if ($previous_depth == 2); # Open ul for subtree at this level.
-
-				if ($name =~ /(https?:\/\/[A-Za-z\.\/]+)/)
-				{
-					say "\$1:     !!$1!!";
-					say "escape: !!" . escape_html($1) . '!!';
-
-					$uri = "<a href = '" . escape_html($1) . "' target = '_blank'>$name</a>";
-
-					push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$uri</li>|;
-				}
-				else
-				{
-					push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
-				}
+				push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$name</li>|;
 			}
 
 			$previous_depth = $$options{_depth};
