@@ -312,7 +312,7 @@ sub export_tree
 
 				if ($name =~ /(https?:\/\/[A-Za-z\.\/]+)(.*)/)
 				{
-					$uri = "<a href = '" . escape_html($1) . "' target = '_blank'>$name</a>";
+					$uri = "<a href = '" . escape_html($1) . "' target = '_blank'>!$name!</a>";
 
 					push @list, qq|\t<li data-jstree='{"opened": false}' id = '$$attributes{id}'>$uri</li>|;
 				}
