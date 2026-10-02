@@ -32,6 +32,38 @@ our $VERSION = '1.32';
 
 # --------------------------------------------------
 
+sub build_dag_item
+{
+	my($self, $item, $token) = @_;
+
+	my(@components);
+	my($text, $type);
+
+	@components	= split(' - ', $token);
+	$text		= ($#components < 1) ? $components[0] : $components[1];
+	$type		= switch ($components[0])
+	{
+		case /^\[?\[?[A-Za-z]+\d?\d?\]?\]?$/	{'topic'}
+		case /^http/							{'uri'}
+		default									{'text'}
+	};
+
+	match ($type : eq)
+	{
+		case('topic')	{
+							$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0];
+							$$item{text} = "[Topic] <button class='btn btn-info'>$$item{text}</button>"
+						}
+		case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
+		case('text')	{$$item{text} = $token}
+	}
+
+	return Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id, description => '', uri => $$item{text}} });
+
+} # End of build_dag_item.
+
+# --------------------------------------------------
+
 sub build_dag_tree
 {
 	my($self, $daughter, $pad, $topic) = @_;
@@ -39,7 +71,6 @@ sub build_dag_tree
 	@lines			= grep{length} map{s/^\s+//; s/:\s*$//; $_} @lines;
 	my($index)		= -1;
 
-	my(@components);
 	my($entry);
 	my(%inside, $item);
 	my($leaf, $line, $line_count);
@@ -47,7 +78,7 @@ sub build_dag_tree
 	my(%node_type, $note, $note_count);
 	my(@pre_pre);
 	my($see_also_root);
-	my($text, $token, $type);
+	my($token);
 
 	$inside{pre_pre}	= false;
 	$inside{see_also}	= false;
@@ -115,26 +146,7 @@ sub build_dag_tree
 			{
 				# Fix me. References to topics can be forward references.
 
-				@components	= split(' - ', $token);
-				$text		= ($#components < 1) ? $components[0] : $components[1];
-				$type		= switch ($components[0])
-				{
-					case /^\[?\[?[A-Za-z]+\d?\d?\]?\]?$/	{'topic'}
-					case /^http/							{'uri'}
-					default									{'text'}
-				};
-
-				match ($type : eq)
-				{
-					case('topic')	{
-										$$item{text} = ($components[0] =~ /^\[?\[?([A-Za-z]+\d?\d?)\]?\]?$/) ? $1 : $components[0];
-										$$item{text} = "[Topic] <button class='btn btn-info'>$$item{text}</button>"
-									}
-					case('uri')		{$$item{text} = "<a href = '" . escape_html($components[0]) . "' target = '_blank'>$text</a>"}
-					case('text')	{$$item{text} = $token}
-				}
-
-				$leaf = Tree::DAG_Node -> new({name => $$item{text}, attributes => {id => ++$leaf_id, description => '', uri => $$item{text}} });
+				$leaf = $self -> build_dag_item($item, $token);
 
 				$see_also_root -> add_daughter($leaf);
 			}
