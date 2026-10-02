@@ -74,7 +74,7 @@ sub build_dag_tree
 		if ($token eq 'See also')
 		{
 			$inside{see_also}	= true;
-			$see_also_root		= Tree::DAG_Node -> new({name => 'See also', attributes => {id => ++$leaf_id, description => '', uri => ''} });
+			$see_also_root		= Tree::DAG_Node -> new({name => '&#8853; See also', attributes => {id => ++$leaf_id, description => '', uri => ''} });
 
 			$daughter -> add_daughter($see_also_root);
 		}
@@ -155,7 +155,7 @@ sub build_dag_tree
 
 				if ($note_count == 1)
 				{
-					$note = Tree::DAG_Node -> new({name => "Notes for: $module", attributes => {id => ++$leaf_id, description => '', uri => ''} });
+					$note = Tree::DAG_Node -> new({name => "&#8853; Notes for: $module", attributes => {id => ++$leaf_id, description => '', uri => ''} });
 
 					$daughter -> add_daughter($note);
 				}
@@ -299,7 +299,7 @@ sub export_tree
 
 				$description	= $$attributes{description};
 				$uri			= $$attributes{uri} || '#';
-				$uri			= ($name =~ qr/Notes for|See also/) ? "&#8853; $name" : "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
+				$uri			= ($name =~ qr/Notes for|See also/) ? $name : "<a href = '" . escape_html($uri) . "' target = '_blank'>$name - $description</a>";
 
 				push @list, '<ul>'			if ($previous_depth == 1); # Open ul for subtree at this level.
 				push @list, '</li>'			if ($previous_depth == 2); # Close li opened at this depth.
