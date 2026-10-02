@@ -310,7 +310,7 @@ sub export_tree
 			{
 				push @list, '<ul>' if ($previous_depth == 2); # Open ul for subtree at this level.
 
-				if ($name =~ /(.*)(https?:\/\/[A-Za-z.]+)(.*)/)
+				if ($name =~ /(.*)(https?:\/\/[A-Za-z./]+)(.*)/)
 				{
 					$uri = "<a href = '" . escape_html($2) . "' target = '_blank'>$name</a>";
 
