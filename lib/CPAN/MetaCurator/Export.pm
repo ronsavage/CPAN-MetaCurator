@@ -312,8 +312,8 @@ sub export_tree
 
 				if ($name =~ /(https?:\/\/[A-Za-z\.\/]+)/)
 				{
-					say "\$1:     {$1}";
-					say "escape: {" . escape_html($1) '}';
+					say "\$1:     !!$1!!";
+					say "escape: !!" . escape_html($1) '!!';
 
 					$uri = "<a href = '" . escape_html($1) . "' target = '_blank'>$name</a>";
 
