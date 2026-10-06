@@ -74,6 +74,7 @@ sub check
 } # End of check.
 
 # --------------------------------------------------
+# Warning: This does not find all CamelCase usages.
 
 sub fix_camel_case
 {
