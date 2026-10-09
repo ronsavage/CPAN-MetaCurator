@@ -106,14 +106,14 @@ sub build_dag_tree
 		# e. <pre>
 		# f. </pre>
 
-		if ($token =~ /Author|See also|V\d\.\d\d/)
+		if ($token =~ /Author|See also/)
 		{
 			$inside{see_also}	= true;
 			$see_also_root		= Tree::DAG_Node -> new({name => '&#8853; See also', attributes => {id => ++$leaf_id, description => '', uri => ''} });
 
 			$daughter -> add_daughter($see_also_root);
 		}
-		elsif ($token && ($token !~ /V\d\.\d\d/) )
+		elsif ($token)
 		{
 			$inside{see_also}	= false;
 			$line_count			= 0;
@@ -154,11 +154,11 @@ sub build_dag_tree
 
 				$see_also_root -> add_daughter($leaf);
 			}
-			elsif ($line_count == 1)
+			elsif ( ($line_count == 1) && ($token !~ /V\d\.\d\d/) )
 			{
 				$$item{description} = $token;
 			}
-			elsif ($line_count == 2)
+			elsif ( ($line_count == 2) && ($token !~ /V\d\.\d\d/) )
 			{
 				$$item{text}	= $token; # Module name.
 				$leaf			= Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id, description => $$item{description}, uri => $$item{text}} });
