@@ -29,7 +29,7 @@ sub process
 
 # ------------------------------------------------
 
-say "export.tree.pl - Export cpan.metacurator.sqlite as HTML + jsTree (takes 15 secs to run)\n";
+say "export.tree.pl - Export cpan.metacurator.sqlite as HTML + jsTree (takes 18 secs to run)\n";
 
 my(%options);
 

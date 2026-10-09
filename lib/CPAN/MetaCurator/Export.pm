@@ -113,7 +113,7 @@ sub build_dag_tree
 
 			$daughter -> add_daughter($see_also_root);
 		}
-		elsif ($token)
+		elsif ($token && ($token !~ /V\d\.\d\d/) )
 		{
 			$inside{see_also}	= false;
 			$line_count			= 0;
