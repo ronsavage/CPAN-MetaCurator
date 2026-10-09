@@ -92,6 +92,11 @@ sub build_dag_tree
 
 		$self -> logger -> debug("Processing line $index: <$line>. token: $token");
 
+		# If the topic is ChangeLog[12]:
+		# $token ne '':
+		# a. Author
+		# b. V 1.23 many times
+		# Else it's a normal topic:
 		# $token ne '':
 		# a. See also
 		# b. An acronym
@@ -101,7 +106,7 @@ sub build_dag_tree
 		# e. <pre>
 		# f. </pre>
 
-		if ($token eq 'See also')
+		if ($token =~ /Author|See also|V\d\.\d\d/)
 		{
 			$inside{see_also}	= true;
 			$see_also_root		= Tree::DAG_Node -> new({name => '&#8853; See also', attributes => {id => ++$leaf_id, description => '', uri => ''} });
@@ -155,7 +160,7 @@ sub build_dag_tree
 			}
 			elsif ($line_count == 2)
 			{
-				$$item{text}	= $token;
+				$$item{text}	= $token; # Module name.
 				$leaf			= Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id, description => $$item{description}, uri => $$item{text}} });
 
 				$daughter -> add_daughter($leaf);
