@@ -1,6 +1,6 @@
 package CPAN::MetaCurator;
 
-our $VERSION = '1.32';
+our $VERSION = '1.33';
 
 #-------------------------------------------------
 
