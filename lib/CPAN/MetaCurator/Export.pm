@@ -94,8 +94,7 @@ sub build_dag_tree
 
 		# If the topic is ChangeLog[12]:
 		# $token ne '':
-		# a. Author
-		# b. V 1.23 many times
+		# a. V 1.23 many times
 		# Else it's a normal topic:
 		# $token ne '':
 		# a. See also
@@ -106,7 +105,7 @@ sub build_dag_tree
 		# e. <pre>
 		# f. </pre>
 
-		if ($token =~ /Author|See also/)
+		if ($token =~ /See also/)
 		{
 			$inside{see_also}	= true;
 			$see_also_root		= Tree::DAG_Node -> new({name => '&#8853; See also', attributes => {id => ++$leaf_id, description => '', uri => ''} });
