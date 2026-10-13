@@ -153,11 +153,11 @@ sub build_dag_tree
 
 				$see_also_root -> add_daughter($leaf);
 			}
-			elsif ( ($line_count == 1) && ($$topic{title} !~ /ChangeLog/) )
+			elsif ( ($line_count == 1) && ($$topic{title} !~ /Author|ChangeLog/) )
 			{
 				$$item{description} = $token;
 			}
-			elsif ( ($line_count == 2) && ($$topic{title} !~ /ChangeLog/) )
+			elsif ( ($line_count == 2) && ($$topic{title} !~ /Author|ChangeLog/) )
 			{
 				$$item{text}	= $token; # Module name.
 				$leaf			= Tree::DAG_Node -> new({name => $module, attributes => {id => ++$leaf_id, description => $$item{description}, uri => $$item{text}} });
