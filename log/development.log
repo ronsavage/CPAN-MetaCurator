@@ -1,24 +1,27 @@
-[2026-10-12 12:37:37.23123] [1367856] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
-[2026-10-12 12:37:37.23142] [1367856] [debug] Entered Database.build_pad()
-[2026-10-12 12:37:37.25077] [1367856] [info] Excluding metapackager table 'packages'
-[2026-10-12 12:37:37.25121] [1367856] [debug] Leaving Database.build_pad()
-[2026-10-12 12:37:37.25126] [1367856] [info] Searching modules table
-[2026-10-12 12:37:37.25128] [1367856] [info] Reading: /home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
-[2026-10-12 12:37:37.25129] [1367856] [info] Reading: /tmp/2026-10-11.csv
-[2026-10-12 12:37:37.25164] [1367856] [info] Found:
-[2026-10-12 12:37:37.25183] [1367856] [info] "App::AppSpec"
- "App::FuguWeb"
+[2026-10-13 12:11:00.34458] [1429617] [info] Database.init_db(). Connected to dbi:SQLite:dbname=/home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-10-13 12:11:00.34477] [1429617] [debug] Entered Database.build_pad()
+[2026-10-13 12:11:00.36390] [1429617] [info] Excluding metapackager table 'packages'
+[2026-10-13 12:11:00.36433] [1429617] [debug] Leaving Database.build_pad()
+[2026-10-13 12:11:00.36437] [1429617] [info] Searching modules table
+[2026-10-13 12:11:00.36439] [1429617] [info] Reading: /home/ron/perl.modules/CPAN-MetaCurator/data/cpan.metacurator.sqlite
+[2026-10-13 12:11:00.36441] [1429617] [info] Reading: /tmp/2026-10-12.csv
+[2026-10-13 12:11:00.36477] [1429617] [info] Found:
+[2026-10-13 12:11:00.36496] [1429617] [info] "AmberDB"
+ "App::AppSpec"
  "App::Spec"
  "App::perlmv::scriptlet::with_number"
  "At"
- "BarefootJS"
- "BarefootJS::Backend::Xslate"
  "Bluesky"
  "Business::UDC"
- "Class::XSAccessor"
+ "CPAN::Maker::Bootstrapper"
+ "CPAN::MetaCurator"
+ "CPANSA::DB"
  "Clay::UI"
  "Dancer2::Session::Pg"
- "File::Slurp::Remote"
+ "Database::Abstraction"
+ "Database::BI"
+ "Database::Join"
+ "Feersum"
  "FixMP3Tags"
  "Frozen"
  "Game::Backgammon"
@@ -40,17 +43,13 @@
  "Game::Snake"
  "Game::Terminal"
  "Game::Xiangqi"
- "Git::MoreHooks"
- "HiD::Processor::Markdown"
  "Hyperman"
  "IO::Handle::Common"
- "InternetData"
- "JSON::Schema::Modern"
  "Log::Abstraction"
+ "Logic::Relational"
  "MARC::Validator"
  "MIDI::RtMidi::Util"
  "Mac::PropertyList"
- "Math::Geometry::HexGrid"
  "Minilla"
  "Module::ScanDeps::Static"
  "Music::NWC2MusicXML"
@@ -59,33 +58,32 @@
  "Open::API"
  "OpenTelemetry::SDK"
  "PAGI::App::GoldenCage"
- "PAGI::App::Storage::Abstract"
- "Perl::Critic::Grape"
  "Punk"
  "QMail::QueueHandler"
- "Robots::Validate"
+ "Scientist"
  "Shared::Arena"
  "Statistics::CaseResampling"
+ "Stats::LikeR"
  "Struct::Codec"
  "Term::Chess"
  "Term::Fabulous"
  "Term::Maze"
- "Test::JSON::Schema::Acceptance"
- "Test::Log::Abstraction"
  "Test::NoShadow"
- "Text::JSCalendar"
- "Text::JSContact"
  "Text::Markup"
- "Unblock::HTTP1"
- "Unblock::HTTP2"
  "Unblock::HTTP3"
- "VPNDetection"
  "XML::Feed"
  "YAML::PP"
  "oEdtk"
 
-[2026-10-12 12:37:37.25188] [1367856] [info] Not found:
-[2026-10-12 12:37:37.25192] [1367856] [info] "Mojolicious::Plugin::BarefootJS"
+[2026-10-13 12:11:00.36501] [1429617] [info] Not found:
+[2026-10-13 12:11:00.36505] [1429617] [info] "Accessor"
+ "App::Ground"
+ "Crypter"
+ "HTML::Anchor::Audit"
+ "Hacker"
  "Mojolicious::Plugin::WithCSRFProtection"
+ "Strong::Random"
+ "mantra"
+ "singleton"
 
-[2026-10-12 12:37:37.25194] [1367856] [info] check() finished
+[2026-10-13 12:11:00.36508] [1429617] [info] check() finished

@@ -76,7 +76,7 @@ Note: My web host and I use case-sensitive file systems.
 =item Run: bu5.sh perl.modules
 =back
 
-=head2 Upload
+=head2 Upload wiki & tree
 
 =over
 =item Upload Perl.Wiki.html, cpan.metacurator.tree.html to savage.net.au/misc
@@ -84,6 +84,12 @@ Note: My web host and I use case-sensitive file systems.
 =item Log in to blogs.perl.org
 =item Post details of the uploads
 =item Wait ... Check how it appears on blogs.perl.org. Takes about 1 min
+=back
+
+=head2 Upload disto(s) to PAUSE
+
+=over
+=item Upload CPAN::MetaCurator to PAUSE
 =back
 
 =head1 Machine-Readable Change Log
