@@ -1,0 +1,79 @@
+<head>
+</head>
+<body>
+	<h1>Running CPAN::MetaPackager's build.db.sh & then CPAN::MetaCurator's</h1>
+	<h2>Part 1: My Environment:</h2>
+	<ul>
+		<li>My web host and I use case-sensitive file systems. I use Debian.</li>
+		<li>The distro CPAN::MetaPackager ships with data/cpan.metapackager.sqlite (15Mb),</li>
+		<li>which is the output of running scripts/build.db.sh.</li>
+		<li>You will need your own copy of MetaCPAN's 02packages.details.txt.gz to re-run scripts/build.db.sh.</li>
+		<li>02packages.details.txt.gz contains 9 header lines & about 270,458 records.</li>
+		<li>The distro CPAN::MetaCurator ships with data/cpan.metacurator.sqlite,</li>
+		<li>I am running SQLite V 3.46.1.</li>
+	</ul>
+	<h2>Part 2: CPAN::MetaPackager</h2>
+	<p>Note: To minimise the load on CPAN, be really sure you wish to update cpan.metapackager.sqlite.</p>
+	<p>Specific steps:</p>
+	<ul>
+		<li>Choose a download directory: cd ~/backup</li>
+		<li>Download it: wget https://www.cpan.org/modules/02packages.details.txt.gz</li>
+		<li>Unpack it: gunzip 02packages.details.txt.gz</li>
+		<li>Put it somewhere central: cp 02packages.details.txt /tmp</li>
+	</ul>
+	<p>Q & A:</p>
+	<ul>
+		<li>Q: Why did I download it into ~/backup before copying it to /tmp?</li>
+		<li>A: Because in ~/backup it will be preserved across a re-boot, whereas...</li>
+		<li>in /tmp it may not be. And yet CPAN::MetaPackager needs to be able to find...</li>
+		<li>the file on each user's machine. And for that a common directory name, /tmp, helps.</li>
+	</ul>
+	<p>Run CPAN::MetaPackager's build.db.sh.</p>
+	<p>Specific steps:</p>
+	<ul>
+		<li>Choose a download directory: cd ~/Downloads</li>
+		<li>Download CPAN-MetaPackager from MetaCPAN @ https://metacpan.org/dist/CPAN-MetaPackager</li>
+		<li>Unpack it: tar xvf CPAN-MetaPackager-1.04.tgz (or whatever the latest version is)</li>
+		<li>Move into the directory: cd CPAN-MetaPackager-1.04</li>
+		<li>The next command will take 190 minutes for 262,145 records on my Levono M70Q 'Tiny' desktop</li>
+		<li>Rebuild the db: time scripts/build.db.sh</li>
+		<li>This script looks for /tmp/02packages.details.txt, as mentioned above</li>
+		<li>The output is data/cpan.metapackager.sqlite</li>
+	</ul>
+	<h2>Part 3: CPAN::MetaCurator</h2>
+	<p>Edit Perl.Wiki.html as desired, including updating para ChangeLog2.</p>
+	<p>Specific steps:</p>
+	<ul>
+		<li>Load it into your web client: /home/ron/savage.net.au/misc/Perl.Wiki.html</li>
+		<li>Edit it</li>
+		<li>Save it by clicking on the red bullseye at the top right. This will save it in ~/Downloads</li>
+		<li>Export it as tiddlers.json thus:</li>
+		<li>In the 'Tools' tab click 'export all'</li>
+		<li>In the export menu click 'JSON format'. This exports to ~/Downloads/tiddlers.json</li>
+	</ul>
+	<p>Run CPAN::MetaCurator's build.db.sh.</p>
+	<p>Specific steps:</p>
+	<ul>
+		<li>If you wish, tell build.db.sh to use ~/Downloads/tiddlers.json via the env var INCLUDE_PACKAGES:</li>
+		<li>If you have /tmp/cpan.metapackager.sqlite available use INCLUDE_PACKAGES=1</li>
+		<li>Type: INCLUDE_PACKAGES=1</li>
+		<li>Type: echo $INCLUDE_PACKAGES</li>
+		<li>Type: export INCLUDE_PACKAGES</li>
+		<li>Choose a download directory: cd ~/Downloads</li>
+		<li>Download CPAN-MetaCurator from MetaCPAN @ https://metacpan.org/dist/CPAN-MetaCurator</li>
+		<li>Unpack it: tar xvf CPAN-MetaCrator-1.33.tgz (or whatever the latest version is)</li>
+		<li>Move into the directory: cd CPAN-MetaCurator-1.33</li>
+		<li>mv ~/Downloads/tiddlers.json data/</li>
+		<li>Rebuild the db: scripts/build.db.sh</li>
+		<li>The output is data/cpan.metacurator.sqlite</li>
+		<li>Export the db as a JS Tree: scripts/export.tree.sh</li>
+		<li>The output is html/cpan.metacurator.tree.html</li>
+	</ul>
+
+
+<p></p><p></p>
+cp ~/Downloads/Perl.Wiki.html to misc/
+git commit -am"Update Perl.Wiki V 1.xx"
+cp misc/Perl.Wiki.html $DH/misc (/dev/shm/html/misc on my machine) for eye-ball check via FF
+
+</body>
