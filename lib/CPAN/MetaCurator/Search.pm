@@ -29,7 +29,7 @@ sub check
 	$self -> init_config;
 	$self -> init_db;
 
-	my($pad)			= $self -> build_pad;
+	my($pad)			= $self -> build_pad; # In Database.pm.
 	my($database_path)	= File::Spec -> catfile($self -> home_path, $self -> database_path);
 	my($names_path)		= $self -> names_path;
 
